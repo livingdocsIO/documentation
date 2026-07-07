@@ -1061,6 +1061,23 @@ Supported plugin types in `additionalInfo`:
 
 Since {{< release "release-2025-09" >}}, additional metadata is no longer displayed by default! Users have to switch it on via the "Show metadata" control in the filter bar. The choice is remembered in local storage.
 
+##### Display options
+
+Each entry in `additionalInfo` supports two optional display properties ({{< added-in "release-2026-07" >}}):
+
+- `showLabel`: Set to `false` to hide the property's label. Useful when the label is redundant or self-explanatory. The label is shown unless explicitly set to `false`.
+- `maxLineCount`: Collapse the value after the given number of lines, with a toggle to expand it. Only positive integers (`> 0`) are allowed.
+
+```js
+additionalInfo: [
+  {
+    metadataPropertyName: 'description',
+    showLabel: false, // Optional, shown unless explicitly set to false
+    maxLineCount: 5 // Optional, positive integers only
+  }
+]
+```
+
 #### Title
 
 {{< added-in "release-2025-09" block >}}
