@@ -45,6 +45,8 @@ liServer.registerPrintFunctions([
 ])
 ```
 
+The source document's inbox is copied to the new document when it is created ({{< added-in "release-2026-07" >}}). Inbox entries that the target document's inbox config does not permit are skipped. If that leaves an inbox group empty, the empty group is still copied. Re-running a print flow to check the source for changes does not modify the inbox.
+
 ## Add document print flow to `projectConfig`
 
 ### Minimal
