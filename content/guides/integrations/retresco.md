@@ -36,12 +36,6 @@ For the test environment it is recommended to either disable the Retresco integr
 
 Each project also needs to be configured to use the Retresco integration. You must set `enabled: true` to activate the feature, and provide the Retresco API endpoint and credentials.
 
-You can also optionally provide the text extraction "matches". `titleMatches`, `supertitleMatches`, and `teaserMatches` are arrays of `<component-name>.<directive-name>` strings which can be used to extract the text content and deliver them to the Retresco API in the relevant fields within the request payload. Only the first match found for each field will be used, but multiple values can be provided so that many content types can be supported.
-
-The default behaviour is to analyse the text on the idle event, typically 5 seconds after a user stops typing, so that the tags are always up-to-date with the content. If you would like to prevent text analysis while a user is working on a document it is possible to set `enableLiveAnalysis: false`. Once disabled the only way the tags will be updated is by the user clicking the refresh button in the metadata form, or at the time of publication.
-
-The Retresco API can have issues if the text sent for analysis is too long (more than 10.000 characters). To avoid errors with longform articles, you can optionally set a `maxTextLength`, this will limit the number of characters of text being sent in the request.
-
 ```js
 {
   // ...
@@ -59,6 +53,7 @@ The Retresco API can have issues if the text sent for analysis is too long (more
           }
         },
         enableLiveAnalysis: true,
+        enableMainEntityOverride: true, // Optional
         titleMatches: ['header.title'],
         supertitleMatches: ['header.catchline'],
         teaserMatches: ['p.text'],
@@ -72,6 +67,26 @@ The Retresco API can have issues if the text sent for analysis is too long (more
   // ...
 }
 ```
+
+#### Text Extraction
+
+You can also optionally provide the text extraction "matches". `titleMatches`, `supertitleMatches`, and `teaserMatches` are arrays of `<component-name>.<directive-name>` strings which can be used to extract the text content and deliver them to the Retresco API in the relevant fields within the request payload. Only the first match found for each field will be used, but multiple values can be provided so that many content types can be supported.
+
+#### `enableLiveAnalysis`
+
+The default behaviour is to analyse the text on the idle event, typically 5 seconds after a user stops typing, so that the tags are always up-to-date with the content. If you would like to prevent text analysis while a user is working on a document it is possible to set `enableLiveAnalysis: false`. Once disabled the only way the tags will be updated is by the user clicking the refresh button in the metadata form, or at the time of publication.
+
+#### `maxTextLength`
+
+The Retresco API can have issues if the text sent for analysis is too long (more than 10.000 characters). To avoid errors with longform articles, you can optionally set a `maxTextLength`, this will limit the number of characters of text being sent in the request.
+
+#### `enableMainEntityOverride`
+
+Retresco marks the strongest tags in a document as "main entities". By default this state is stored but not editable by users in the editor. Set `enableMainEntityOverride: true` to show a star toggle on each tag so editors can promote or downgrade main entities themselves ({{< added-in "release-2026-07" >}}).
+
+{{< info >}}
+Before enabling this option, check with Retresco that main entities are enabled on your setup.
+{{< /info >}}
 
 ### Content Type
 
@@ -108,11 +123,22 @@ The Retresco entities will be stored in the document's metadata using the metada
       score: 16.924834941594718, // Only when not user-added
       userAdded: false,
       inappropriate: false, // Entity removed (but still visible in the UI with strikethrough)
-      isMain: true // Marks main entities ({{< added-in "release-2024-09" >}})
+      isMain: true, // Marks main entities ({{< added-in "release-2024-09" >}})
+      userOverrideIsMain: true // Set when an editor changed the main state ({{< added-in "release-2026-07" >}})
     }
   ]
 }
 ```
+
+### Main Entities
+
+{{< added-in "release-2026-07" block >}}
+
+Retresco marks the strongest tags in a document as main entities in the `isMain` field. When `enableMainEntityOverride` is enabled on the project, editors can override this verdict with a star toggle on each tag.
+
+{{< img src="./retresco-main-entities.png" alt="Star toggle to mark a Retresco tag as a main entity" width="600" caption="Editors mark a tag as a main entity with the star toggle." >}}
+
+Toggling a tag stores the new value in `isMain` and sets `userOverrideIsMain: true`. Once set, the tag stays even if Retresco no longer detects it, and re-enrichment no longer overwrites the editor's choice.
 
 ## Re-enrich Documents
 
