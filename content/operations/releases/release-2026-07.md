@@ -290,6 +290,22 @@ Which options are available depends on the dashboard's asset type and your confi
 
 For more information, see the [Card Tags and Display Settings]({{< ref "/guides/media-library/media-library-setup/#card-tags-and-display-settings" >}}) documentation.
 
+### Retresco Main Entity Toggle
+
+Retresco marks the strongest tags in a document as "main entities". Livingdocs stored this state but never showed it. Editors can now see and change it themselves. A star toggle on each tag promotes or demotes it as a main entity.
+
+{{< img src="release-2026-07-retresco-main-entities.png" alt="Star toggle to mark a Retresco tag as a main entity" width="600" caption="Editors mark a tag as a main entity with the star toggle." >}}
+
+The feature is opt-in. Enable it per project with the new `enableMainEntityOverride` setting in the Retresco project config.
+
+{{< info >}}
+Before enabling this option, check with Retresco that main entities are enabled on your setup.
+{{< /info >}}
+
+The Retresco and iMatrics tag components also got a design refresh. Tags are now sorted by type and then alphabetically, and a new indicator marks tags an editor added or changed.
+
+For more information and configuration details, see the [Retresco integration]({{< ref "/guides/integrations/retresco" >}}) documentation.
+
 ### Keep Inbox Items After Dropping Them Into a Document
 
 By default, an inbox item is removed from the inbox as soon as it is dragged into a document. Some workflows call for the opposite. An editor researching images for an article might want to keep them in the inbox while trying out different options during production. For those setups the item should remain in the inbox after it has been placed.
