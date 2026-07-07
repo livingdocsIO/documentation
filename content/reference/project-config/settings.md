@@ -283,6 +283,11 @@ settings: {
     mediaFile: 'file'
   },
 
+  // Keep items in the document inbox after they are dropped into a document. See the "Document Inbox" section in the Content Types documentation.
+  inbox: {
+    keepItemsOnDrop: true // Default: false
+  },
+
   // This setting can be overwritten in the `contentType` config
   imageSourcePolicy: [
     {provider: 'upload', enabled: true},

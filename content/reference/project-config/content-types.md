@@ -879,6 +879,7 @@ The print options allow you to enable the WoodWing Studio print connector on a c
 - {{< release "release-2025-03" >}}: Images can be organized in groups too, and they can be assigned to the same inbox multiple times.
 - {{< release "release-2025-03" >}}: Removed support for videos and files in inbox.
 - {{< release "release-2025-05" >}}: The Document Inbox is now also supported for documents of type Data Record.
+- {{< release "release-2026-07" >}}: Inbox items can be kept in the inbox after being dropped into a document via the `settings.inbox.keepItemsOnDrop` project setting.
 
 ### Configuration
 
@@ -897,6 +898,28 @@ using the `useDashboardColumns` property.
   }
 }
 ```
+
+### Keep Items on Drop
+
+{{< added-in "release-2026-07" block >}}
+
+By default, items are removed from the inbox once they are dragged into the document content. Set the `inbox.keepItemsOnDrop` [project setting]({{< ref "/reference/project-config/settings" >}}) to `true` to keep items in the inbox after they are dropped, for example to place an item multiple times.
+
+```js
+// projectConfig.settings
+{
+  inbox: {
+    keepItemsOnDrop: true // Default: false
+  }
+}
+```
+
+The right value depends on how the inbox is used in a newsroom:
+
+- Homepage curators typically want an item removed once it has been placed, so the inbox reflects what still needs to be published.
+- Editors producing an article often research assets in the inbox and want to keep them while trying out different options.
+
+For setups where both workflows exist, we recommend keeping items in the inbox (`keepItemsOnDrop: true`). Curators can then organize items into groups and delete a whole group once everything in it has been placed.
 
 ### Documents
 
