@@ -306,6 +306,18 @@ The Retresco and iMatrics tag components also got a design refresh. Tags are now
 
 For more information and configuration details, see the [Retresco integration]({{< ref "/guides/integrations/retresco" >}}) documentation.
 
+### Copy Document Inbox in Copy and Print Flows
+
+When editors turn a document into a copy or a print version, the source document's inbox is now carried over to the new document automatically.
+
+The inbox is copied when the new document is created. This is now the default behavior for all document copy flows and print flows, so no configuration is required. Re-running a print flow to check the source for changes does not touch the inbox.
+
+{{< info >}}
+Inbox entries that the target document's inbox config does not permit are not carried over. If this leaves an inbox group empty, the group itself is still copied.
+{{< /info >}}
+
+For more information, see the [Document Copy Flows]({{< ref "/guides/editor/document-copy-flows" >}}) and [Document Print Flows]({{< ref "/guides/editor/document-print-flows" >}}) documentation.
+
 ### Keep Inbox Items After Dropping Them Into a Document
 
 By default, an inbox item is removed from the inbox as soon as it is dragged into a document. Some workflows call for the opposite. An editor researching images for an article might want to keep them in the inbox while trying out different options during production. For those setups the item should remain in the inbox after it has been placed.
