@@ -280,6 +280,14 @@ Which options are available depends on the dashboard's asset type and your confi
 
 For more information, see the [Card Tags and Display Settings]({{< ref "/guides/media-library/media-library-setup/#card-tags-and-display-settings" >}}) documentation.
 
+### Keep Inbox Items After Dropping Them Into a Document
+
+By default, an inbox item is removed from the inbox as soon as it is dragged into a document. Some workflows call for the opposite. An editor researching images for an article might want to keep them in the inbox while trying out different options during production. For those setups the item should remain in the inbox after it has been placed.
+
+A new project setting `settings.inbox.keepItemsOnDrop` controls this behavior. When set to `true`, inbox items stay in the inbox after being dropped into a document.
+
+For more information, see the [Document Inbox]({{< ref "/reference/project-config/content-types#document-inbox" >}}) documentation.
+
 ## Vulnerability Patches
 
 We are constantly patching module vulnerabilities for the Livingdocs Server and Livingdocs Editor as module fixes are available. Below is a list of all patched vulnerabilities included in the release.
