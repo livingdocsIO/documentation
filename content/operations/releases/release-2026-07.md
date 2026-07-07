@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+
 - [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-editor/pull/11304)
 - [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-server/pull/9673)
 - [Authorization Server](https://github.com/livingdocsIO/livingdocs-editor/pull/11154)
@@ -222,7 +223,7 @@ No rollback steps are required for this release.
 
 ## Features :gift:
 
-### Get All Media Library Entry Keys for Cache Purging :gift:
+### Get All Media Library Entry Keys for Cache Purging
 
 Sometimes clearing image caches after a revoke or modification is handled by external systems. In order to do this effectively all variant keys must also be cleared. To support this a new `GET /api/:apiVersion/mediaLibrary/:id/keys` endpoint has been added to the Public API. The `:apiVersion` must be 2026-03 or above. The return value of the endpoint will look like this:
 
@@ -231,6 +232,19 @@ Sometimes clearing image caches after a revoke or modification is handled by ext
   results: ['my/key.jpg', 'my/replaced-key.jpg', 'my/translated-key.jpg', 'v/my/variant-key.webp']
 }
 ```
+
+### Image Card Metadata: Hide Labels and Limit Line Count
+
+Photo editors work through large volumes of images and rely on the metadata shown on media library cards to judge each one at a glance. When a metadata value is long - like a description - the card grows tall and the dashboard becomes harder to scan, and repetitive labels waste space. Previously the only workaround was hiding the entire additional info box, which also hid useful information.
+
+Two new options on `additionalInfo` let you keep cards compact without losing information:
+
+- **`showLabel`**: hide a property's label when it's redundant or self-explanatory
+- **`maxLineCount`**: collapse a value after a set number of lines, with a toggle to expand it
+
+This feature is opt-in. See the [Dashboard Cards documentation]({{< ref "/reference/project-config/editor-settings/#additional-metadata" >}}) for the configuration details.
+
+{{< img src="release-2026-07-image-card-metadata-before-and-after.png" alt="Media library image card without and with " width="600" >}}
 
 ## Vulnerability Patches
 
@@ -261,9 +275,11 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+
 - [v308.1.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.3): fix(print): Renumber huGO print breaking change to LIBREAKING071
 
 ### Livingdocs Editor Patches
+
 - [v126.1.2](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.2): Revert "fix(release-2026-07): Update framework to v34.1.7 (release-2026-07 tag)"
 
 ---
