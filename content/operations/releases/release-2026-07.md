@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update opentelemetry (main) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/9669)
 - [fix(deps): update dependency @livingdocs/framework from 34.1.6 to v34.1.7 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/11299)
 - [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-server/pull/9649)
 - [Remove search.metadataMapping (LIDEP069)](https://github.com/livingdocsIO/livingdocs-server/pull/9406)
