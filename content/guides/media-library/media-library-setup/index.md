@@ -81,33 +81,18 @@ A **Display Settings** dropdown is available on every Media Library dashboard (o
 
 Which options appear depends on the dashboard's asset type and your project configuration:
 
-| Option             | Availability                                                                   | Shows                                                                       |
-| ------------------ | ------------------------------------------------------------------------------ | --------------------------------------------------------------------------- |
-| **Metadata**       | When the dashboard's card defines additional metadata (`additionalInfo`)       | The additional metadata box on the card (Replaces the Metadata Toggle)      |
-| **Licenses**       | When License Profiles are configured                                           | A tag for the item's license, or a warning marker when a license is missing |
-| **In Collection**  | Image dashboards only, when image collections are configured                   | The number of image-collection placements                                   |
-| **In Inbox**       | Image dashboards only, when the document inbox is configured                   | The number of inbox placements                                              |
-| **In Use**         | When the [Usage Log]({{< ref "#usage-log" >}}) is configured (all asset types) | The number of confirmed usage-log entries                                   |
-| **Low Resolution** | Image dashboards only, when configured                                         | A `low` resolution tag                                                      |
-| **Archived**       | When `use2025Behavior` is enabled                                              | An archive marker for archived items                                        |
+| Option            | Availability                                                                   | Shows                                                                       |
+| ----------------- | ------------------------------------------------------------------------------ | --------------------------------------------------------------------------- |
+| **Metadata**      | When the dashboard's card defines additional metadata (`additionalInfo`)       | The additional metadata box on the card (Replaces the Metadata Toggle)      |
+| **Licenses**      | When License Profiles are configured                                           | A tag for the item's license, or a warning marker when a license is missing |
+| **In Collection** | Image dashboards only, when image collections are configured                   | The number of image-collection placements                                   |
+| **In Inbox**      | Image dashboards only, when the document inbox is configured                   | The number of inbox placements                                              |
+| **In Use**        | When the [Usage Log]({{< ref "#usage-log" >}}) is configured (all asset types) | The number of confirmed usage-log entries                                   |
+| **Archived**      | When `use2025Behavior` is enabled                                              | An archive marker for archived items                                        |
 
 {{< info >}}
 Warning tags (for example missing license or expired usage rights) are always shown on cards, regardless of the Display Settings selection. This also applies on images inside a document.
 {{< /info >}}
-
-### Reference Usage Counts
-
-The **In Collection**, **In Inbox**, and **In Use** tags are backed by a `referenceUsages` field returned for each Media Library entry:
-
-```js
-referenceUsages: {
-  inboxReferences: 4, // Number of inbox placements (not deduplicated)
-  collectionReferences: 1, // Number of image-collection placements (not deduplicated)
-  usageLogReferences: 0 // Number of confirmed usage-log entries (not deduplicated by day)
-}
-```
-
-These counts are computed at query time from the database, so they are always up to date on reload. Video and file entries only expose `usageLogReferences`, as they cannot be placed in inboxes or collections.
 
 ## 2025 Behavior
 
