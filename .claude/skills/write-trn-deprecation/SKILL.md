@@ -31,7 +31,7 @@ Ask **one question at a time** — wait for each answer before asking the next:
 
 ## Step 3: Write the deprecation entry
 
-Write the entry following the **Deprecation entry shape** and its **Rules** in `.claude/trn-format-reference.md` — the source of truth for the title, the `**Code:**` line, the exhaustive prose intro (which must name the planned removal release) with before/after, the greppable `Detect`, and the `Fix`. Read it now rather than restating it here.
+Write the entry following the **Deprecation entry shape** and its **Rules** in `.claude/trn-format-reference.md` — the source of truth for the title, the `**Code:**` line, the concise prose intro (which must name the planned removal release) with before/after, the greppable `Detect`, and the `Fix`. Read it now rather than restating it here.
 
 ## Step 4: Ask for feedback
 

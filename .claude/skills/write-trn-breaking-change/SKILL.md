@@ -31,7 +31,7 @@ Ask **one question at a time** — wait for each answer before asking the next:
 
 ## Step 3: Write the breaking change entry
 
-Write the entry following the **Breaking Change entry shape** and its **Rules** in `.claude/trn-format-reference.md` — the source of truth for the title, the `**Code:**` line, the exhaustive prose intro with before/after, the greppable `Detect`, and the `Fix`. Read it now rather than restating it here.
+Write the entry following the **Breaking Change entry shape** and its **Rules** in `.claude/trn-format-reference.md` — the source of truth for the title, the `**Code:**` line, the concise prose intro with before/after, the greppable `Detect`, and the `Fix`. Read it now rather than restating it here.
 
 Skill-specific note: if you adapted an earlier deprecation entry (Step 2), carry over its still-accurate detail and update whatever changed between the deprecation and the removal.
 
