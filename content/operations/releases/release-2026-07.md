@@ -219,6 +219,26 @@ No rollback steps are required for this release.
 
 ## Breaking Changes :fire:
 
+### Removal of the LIFEAT011 in-house production media-type config
+
+The `LIFEAT011` customer feature has been removed without prior deprecation. It was a temporary workaround that marked an image as an "in-house production" and rendered an icon on image cards. With the cleanup of Media Library tags and the introduction of License Profiles, it is no longer needed. It was activated by a `LIFEAT011` block on a `mediaImage` media type:
+
+```js
+LIFEAT011: {
+  inHouseHandle: 'author'
+}
+```
+
+The config schema has been removed, so any leftover `LIFEAT011` block now fails config validation on server startup.
+
+#### Detect
+
+In the server media-type configuration, a `LIFEAT011` key on a `mediaImage` media type. Search for `LIFEAT011` (e.g. `rg 'LIFEAT011'`).
+
+#### Fix
+
+Remove the entire `LIFEAT011: { ... }` block from every affected `mediaImage` media type. This was a project-specific workaround, so most projects have no occurrences. No replacement config is required.
+
 ## Deprecations
 
 ## Features :gift:
