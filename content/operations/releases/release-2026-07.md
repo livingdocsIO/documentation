@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Authorization Server](https://github.com/livingdocsIO/livingdocs-server/pull/9437)
 - [Remove huGO print integration and print edit mode (LIBREAKING077)](https://github.com/livingdocsIO/livingdocs-editor/pull/11294)
 - [Remove huGO print integration and channel editMode (LIBREAKING077)](https://github.com/livingdocsIO/livingdocs-server/pull/9663)
 - [Image Card Enhancements: Tags](https://github.com/livingdocsIO/livingdocs-editor/pull/11220)
