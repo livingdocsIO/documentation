@@ -248,7 +248,7 @@ This feature is opt-in. See the [Dashboard Cards documentation]({{< ref "/refere
 
 ### Media Library Tags
 
-Editors browsing the Media Library can now judge an image directly from its card - no need to open the detail view or lightbox first. Cards can show at a glance whether an image is already in a collection or inbox, how often it has been used, its license status, resolution, and archive state.
+Editors browsing the Media Library now see more information for judging an image directly from its card - no need to open the detail view or lightbox first. Cards can show at a glance whether an image is already in a collection or inbox, how often it has been used, its license status, and archive state.
 
 A new **Display Settings** dropdown on every Media Library dashboard lets each editor choose which tags appear, tailored per dashboard. Warning tags, such as an invalid image, are always shown. The lightbox displays every available tag, while the detail panel shows all of them except the usage references.
 
