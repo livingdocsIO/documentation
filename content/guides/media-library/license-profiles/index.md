@@ -33,20 +33,25 @@ Define the usage purposes in the project config. See the [Media Center reference
 mediaCenter: {
   usagePurposes: [
     {
+      // Internal purpose: it maps to a Livingdocs content type and records usage
+      // automatically on publish. internal, contentType and recordUsageLogEntry
+      // always go together.
       handle: 'web',
       label: {en: 'Web', de: 'Web'},
-      // Content types that resolve to this purpose.
+      internal: true,
+      // Content type(s) that resolve to this purpose.
       // A content type may belong to at most one purpose.
       contentType: ['regular'],
       // Handle of a registered recordUsageLogEntry function (see below).
-      // If omitted, usage log entries are recorded as pending.
+      // Required for an internal purpose.
       recordUsageLogEntry: 'recordWebUsage'
     },
     {
+      // External purpose: the usage happens outside Livingdocs, so it maps to no
+      // content type and sets none of internal, contentType or recordUsageLogEntry.
+      // Users record these entries manually in the editor.
       handle: 'print',
       label: {en: 'Print', de: 'Druck'},
-      contentType: 'print',
-      recordUsageLogEntry: 'recordPrintUsage',
       // Additional fields recorded with each usage log entry
       paramsSchema: [
         {
@@ -60,7 +65,12 @@ mediaCenter: {
 }
 ```
 
-Purpose handles must be unique, and a content type may be matched by at most one purpose, so a document's purpose is never ambiguous. An `internal: true` purpose must declare a `recordUsageLogEntry` function.
+Purpose handles must be unique. Every usage purpose is either internal or external:
+
+- An **internal** purpose maps to one or more Livingdocs content types through `contentType` and records usage automatically when a matching document is published. It sets `internal: true` and must declare a `recordUsageLogEntry` function. These three properties always appear together. A content type may be matched by at most one purpose, so a document's purpose is never ambiguous.
+- An **external** purpose covers usage that happens outside Livingdocs. It maps to no content type and sets none of `internal`, `contentType` or `recordUsageLogEntry`.
+
+For an internal purpose the `recordUsageLogEntry` function is the normal way entries are created; it is required, not optional. Recording an entry as pending is only a safety net for when the function is missing or fails (see [Recording Usage Log Entries](#recording-usage-log-entries)).
 
 ### License Profiles
 
@@ -178,21 +188,15 @@ metadata: [
 
 ### Recording Usage Log Entries
 
-Register one function per usage purpose in the server runtime config. The function is called on publish and decides the state and params of the recorded usage log entry:
+Register one function per internal usage purpose in the server runtime config. The function is called on publish and decides the state and params of the recorded usage log entry:
 
 ```js
 liServer.registerRecordUsageLogEntryFunctions([
   {
     handle: 'recordWebUsage',
     async recordUsageLogEntry ({documentVersion, usagePurpose, projectConfig}) {
+      // return {state: 'pending', ...} to record a pending entry instead
       return {state: 'confirmed', params: {}}
-    }
-  },
-  {
-    handle: 'recordPrintUsage',
-    async recordUsageLogEntry ({documentVersion, usagePurpose, projectConfig}) {
-      // e.g. leave print entries pending until the print system reports back
-      return {state: 'pending', params: {}}
     }
   }
 ])

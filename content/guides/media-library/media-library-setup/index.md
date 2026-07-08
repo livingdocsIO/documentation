@@ -823,7 +823,6 @@ Define at least one purpose in the `projectConfig.mediaCenter.usagePurposes` arr
           en: 'Print',
           de: 'Druck'
         },
-        internal: false,
         paramsSchema: [
           {
             handle: 'page',
@@ -844,7 +843,7 @@ Define at least one purpose in the `projectConfig.mediaCenter.usagePurposes` arr
 
 The purposes are displayed to a user when creating or updating a usage log entry, or when downloading a media library entry. Any additional properties defined within the `paramsSchema` array will also be displayed when creating or updating an entry, but not in the download form. To see which metadata plugins are supported please refer to the [Metadata Plugins List]({{< ref "reference/document/metadata/plugins">}}). We automatically store the reporting date and `userId`, and provide input fields for the publication date, the state ("pending" or "confirmed") and a url.
 
-Usage log purposes can be flagged as internal. When the `internal` property is set to `true` it prevents a user from creating, updating or deleting entries for the purpose within the editor. A read-only entry will still be visible within the UI. This is intended to be used alongside the [`addUsageLogEntriesForMediaInDocument`]({{< ref "#generating-usage-log-entries-on-publish" >}}) function to create permanent entries.
+Usage log purposes can be flagged as internal. When the `internal` property is set to `true` it prevents a user from creating, updating or deleting entries for the purpose within the editor. A read-only entry will still be visible within the UI. This is intended for purposes whose entries are created automatically on publish by a [`recordUsageLogEntry` function]({{< ref "#generating-usage-log-entries-on-publish" >}}) rather than by hand.
 
 ### Creating usage log dashboards
 
@@ -926,20 +925,24 @@ liEditor.searchFilters.registerListV2('pendingMediaUsageLogs', {
 
 ### Generating usage log entries on publish
 
-The function `mediaLibraryApi.addUsageLogEntriesForMediaInDocument()` can be used to easily create usage log entries. This function is intended to be used in a post publish hook and will add usage log entries for any referenced media library entries which do not already have a usage log entry for the document provided. The entry will automatically be marked as 'confimed' so any mandatory params must be provided.
+{{< info >}}
+The previous approach, a `mediaLibraryApi.addUsageLogEntriesForMediaInDocument()` call in a post publish hook, was **removed in {{< release "release-2026-07" >}}**. Usage log entries are now generated automatically on publish. See the {{< release "release-2026-07" >}} breaking changes for the migration.
+{{< /info >}}
+
+For an internal usage purpose, register a `recordUsageLogEntry` function and reference it from the purpose via `mediaCenter.usagePurposes[].recordUsageLogEntry`. On publish, Livingdocs resolves the document's usage purpose (by its `contentType`) and calls the function for every referenced media library entry that does not already have an entry for that document. The function returns the `params` to store and whether the entry is recorded as `confirmed` or `pending`.
 
 ```js
-liServer.registerInitializedHook(() => {
-  const mediaLibraryApi = liServer.features.api('li-media-library')
-  liServer.registerPublicationHooks({
-    async postPublishHookAsync({documentVersion}) {
-      await mediaLibraryApi.addUsageLogEntriesForMediaInDocument({
-        documentVersion,
-        purpose: 'web',
-        url: `https://example.com/my-slug-${documentVersion.id}`, // Optional
-        params: {medium: 'Internet'} // Required params mandatory
-      })
+liServer.registerRecordUsageLogEntryFunctions([
+  {
+    handle: 'recordWebUsage',
+    async recordUsageLogEntry ({documentVersion, usagePurpose, projectConfig}) {
+      return {
+        state: 'confirmed', // or 'pending'
+        params: {medium: 'Internet'}
+      }
     }
-  })
-})
+  }
+])
 ```
+
+If the function returns nothing, throws, or is not registered, the entry is recorded as pending. See the [License Profiles guide]({{< ref "/guides/media-library/license-profiles" >}}) for the full setup.

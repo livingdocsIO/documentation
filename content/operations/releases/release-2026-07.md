@@ -249,19 +249,19 @@ In the server media-type configuration, a `LIFEAT011` key on a `mediaImage` medi
 
 Remove the entire `LIFEAT011: { ... }` block from every affected `mediaImage` media type. This was a project-specific workaround, so most projects have no occurrences. No replacement config is required.
 
-### Removed `mediaCenter.usageLog.purposes`
+### Removal of the mediaCenter.usageLog config property
 
-The project config path `mediaCenter.usageLog.purposes` has been removed. It was deprecated
-earlier in this release (`LIDEP084`). Since no production project used it yet, we skipped the
-usual deprecation phase and removed it directly.
+**Code:** `LIBREAKING074`
 
-Migrate your project configs to `mediaCenter.usagePurposes`:
+The project config property `mediaCenter.usageLog` has been removed and replaced by `mediaCenter.usagePurposes`. The nested `usageLog.purposes` array becomes the top-level `usagePurposes` array. Each purpose keeps its `handle`, `label`, `internal` and `paramsSchema`; an internal purpose additionally declares a `contentType` and a `recordUsageLogEntry` function.
 
 ```js
 {
   mediaCenter: {
     // before
-    // usageLog: {purposes: [{handle: 'web', label: {en: 'Web'}}]}
+    // usageLog: {
+    //   purposes: [{handle: 'web', label: {en: 'Web'}}]
+    // }
 
     // after
     usagePurposes: [{handle: 'web', label: {en: 'Web'}}]
@@ -269,13 +269,23 @@ Migrate your project configs to `mediaCenter.usagePurposes`:
 }
 ```
 
-A config that still sends `mediaCenter.usageLog.purposes` is now rejected by config validation.
+A config that still sets `mediaCenter.usageLog` is rejected by config validation.
 
-### Removed `mediaLibraryApi.addUsageLogEntriesForMediaInDocument`
+#### Detect
 
-The server API `mediaLibraryApi.addUsageLogEntriesForMediaInDocument()` (introduced in {{< release "release-2026-05" >}}) has been removed. Usage log entries are now recorded automatically on publish for every document that resolves to a usage purpose, so a custom post publish hook is no longer needed.
+In the project config, a `usageLog` key under `mediaCenter`. Search for `usageLog:` and confirm the hit sits under `mediaCenter` (not an unrelated `usageLog` field elsewhere).
 
-Remove the hook and register a `recordUsageLogEntry` function instead:
+#### Fix
+
+Move the entries from `mediaCenter.usageLog.purposes` into a top-level `mediaCenter.usagePurposes` array and delete the `usageLog` object. Most purpose fields carry over unchanged; a purpose with `internal: true` now must also declare a `contentType` and a `recordUsageLogEntry` function, so add these where they are missing. See the [License Profiles guide]({{< ref "/guides/media-library/license-profiles" >}}) for the full `usagePurposes` shape.
+
+### Removal of the mediaLibraryApi.addUsageLogEntriesForMediaInDocument API
+
+**Code:** `LIBREAKING075`
+
+The server API `mediaLibraryApi.addUsageLogEntriesForMediaInDocument()` has been removed; calling it now throws `LIBREAKING075`. Usage log entries are recorded automatically on publish for every document that resolves to a usage purpose, so the custom publish hook that called this method is no longer needed.
+
+Register a `recordUsageLogEntry` function and reference it from the usage purpose instead:
 
 ```js
 liServer.registerRecordUsageLogEntryFunctions([
@@ -288,7 +298,15 @@ liServer.registerRecordUsageLogEntryFunctions([
 ])
 ```
 
-Reference the function from a purpose via `mediaCenter.usagePurposes[].recordUsageLogEntry`. When a purpose declares no function, entries are recorded as pending.
+The purpose references the function by handle via `mediaCenter.usagePurposes[].recordUsageLogEntry` (required for internal purposes). When the function returns nothing, throws, or is not registered, the entry is recorded as pending.
+
+#### Detect
+
+In the project's server code, a call to `addUsageLogEntriesForMediaInDocument` (typically on the media library API inside a publish hook). Search for `addUsageLogEntriesForMediaInDocument`.
+
+#### Fix
+
+Remove the publish hook that calls `mediaLibraryApi.addUsageLogEntriesForMediaInDocument()`. Register a `recordUsageLogEntry` function per usage purpose with `liServer.registerRecordUsageLogEntryFunctions([...])` and reference it from `mediaCenter.usagePurposes[].recordUsageLogEntry`. Recording then happens automatically on publish. See the [License Profiles guide]({{< ref "/guides/media-library/license-profiles" >}}).
 
 ## Deprecations
 
