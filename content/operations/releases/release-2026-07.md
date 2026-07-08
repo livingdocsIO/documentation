@@ -244,7 +244,7 @@ Two new options on `additionalInfo` let you keep cards compact without losing in
 
 This feature is opt-in. See the [Dashboard Cards documentation]({{< ref "/reference/project-config/editor-settings/#additional-metadata" >}}) for the configuration details.
 
-{{< img src="release-2026-07-image-card-metadata-before-and-after.png" alt="Media library image card without and with " width="600" >}}
+{{< img src="release-2026-07-image-card-metadata-before-and-after.png" alt="Media library image card before and after hiding labels and limiting line count" width="600" caption="Before and after: hiding redundant labels and limiting the line count keeps cards compact." >}}
 
 ### Media Library Tags
 
@@ -252,7 +252,11 @@ Editors browsing the Media Library can now judge an image directly from its card
 
 A new **Display Settings** dropdown on every Media Library dashboard lets each editor choose which tags appear, tailored per dashboard. Warning tags, such as an invalid image, are always shown. The lightbox displays every available tag, while the detail panel shows all of them except the usage references.
 
+{{< img src="release-2026-07-media-library-display-settings.png" alt="Display Settings dropdown on a Media Library dashboard" width="200" caption="The Display Settings dropdown lets each editor choose which tags / infos appear on the dashboard." >}}
+
 Which options are available depends on the dashboard's asset type and your configuration. Usage counts require the Usage Log feature, and collection and inbox counts appear on image dashboards only when collections and inboxes are configured. The feature works automatically, with each tag option appearing based on your existing setup.
+
+{{< img src="release-2026-07-media-library-tags-lightbox.png" alt="Tags shown in the Media Library lightbox" width="300" caption="All available tags are shown in the lightbox." >}}
 
 For more information, see the [Card Tags and Display Settings]({{< ref "/guides/media-library/media-library-setup/#card-tags-and-display-settings" >}}) documentation.
 
