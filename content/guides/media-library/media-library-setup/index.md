@@ -71,6 +71,44 @@ Both [Base Filters]({{< ref "/customising/advanced/editor-configuration/base-fil
 This approach has been deprecated in `release-2026-05` and will be removed in `release-2026-11`. We recommend using the new Media Library Dashboard Configuration and referencing configured Media Library dashboards directly on the Content Type via [useDashboard]({{< ref "/reference/project-config/content-types#usedashboard" >}}) (see description above).
 {{< /info >}}
 
+## Card Tags and Display Settings
+
+Small tags on each Media Library card show details about an item at a glance, such as its license, usage, and resolution, so editors can assess an image without opening its detail view or the lightbox. The same tags also appear in the lightbox, the Media Library detail panel, and the editor sidepanel.
+
+### Display Settings
+
+A **Display Settings** dropdown is available on every Media Library dashboard (or in any sidepanel / modal displaying a Medie Library Dashboard). It lets each user choose which tags are shown on the cards of that dashboard. The selection is stored per dashboard.
+
+Which options appear depends on the dashboard's asset type and your project configuration:
+
+| Option             | Availability                                                                   | Shows                                                                       |
+| ------------------ | ------------------------------------------------------------------------------ | --------------------------------------------------------------------------- |
+| **Metadata**       | When the dashboard's card defines additional metadata (`additionalInfo`)       | The additional metadata box on the card (Replaces the Metadata Toggle)      |
+| **Licenses**       | When License Profiles are configured                                           | A tag for the item's license, or a warning marker when a license is missing |
+| **In Collection**  | Image dashboards only, when image collections are configured                   | The number of image-collection placements                                   |
+| **In Inbox**       | Image dashboards only, when the document inbox is configured                   | The number of inbox placements                                              |
+| **In Use**         | When the [Usage Log]({{< ref "#usage-log" >}}) is configured (all asset types) | The number of confirmed usage-log entries                                   |
+| **Low Resolution** | Image dashboards only, when configured                                         | A `low` resolution tag                                                      |
+| **Archived**       | When `use2025Behavior` is enabled                                              | An archive marker for archived items                                        |
+
+{{< info >}}
+Warning tags (for example missing license or expired usage rights) are always shown on cards, regardless of the Display Settings selection. This also applies on images inside a document.
+{{< /info >}}
+
+### Reference Usage Counts
+
+The **In Collection**, **In Inbox**, and **In Use** tags are backed by a `referenceUsages` field returned for each Media Library entry:
+
+```js
+referenceUsages: {
+  inboxReferences: 4, // Number of inbox placements (not deduplicated)
+  collectionReferences: 1, // Number of image-collection placements (not deduplicated)
+  usageLogReferences: 0 // Number of confirmed usage-log entries (not deduplicated by day)
+}
+```
+
+These counts are computed at query time from the database, so they are always up to date on reload. Video and file entries only expose `usageLogReferences`, as they cannot be placed in inboxes or collections.
+
 ## 2025 Behavior
 
 A new set of features has been added to the Media Library which can be enabled using an opt-in server config property. To learn more please see the [2025 Behavior]({{< ref "/guides/media-library/2025-behavior" >}}) guide.
