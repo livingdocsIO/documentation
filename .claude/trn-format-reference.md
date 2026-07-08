@@ -50,7 +50,7 @@ Putting the icon on the entry heading is wrong and creates noise. The section he
 
 **Code:** `LIBREAKING000`
 
-Prose explaining what changed and why (the same content that would appear in a human-facing newsletter). Be exhaustive: a breaking change is the most upgrade-critical content, so include enough detail, examples, and references that an operator can act without asking follow-up questions. Include a concrete before/after comparison (old shape → new shape) as an inline code snippet or table whenever the change alters a config, API, or code shape.
+A short high-level intro (the same content that would appear in a human-facing newsletter): what changed and why. Include a concrete before/after comparison (old shape → new shape) as an inline code snippet or table whenever the change alters a config, API, or code shape.
 
 #### Detect
 
@@ -69,13 +69,13 @@ Mechanical instructions when possible. Use a table for property-rename mappings.
 - Title is plain text, no icon, sentence case. Name the affected thing concretely (`Removal of li-target-length UI Config Properties`, not `UI Improvements`).
 - Two `####` sub-headings only: `Detect` and `Fix`. No `Applies to` or other fields — the location lives in the Detect line.
 - Both Detect and Fix are required for every entry.
-- **Detect must be greppable.** A dot-path like `mediaTypes[].editor.dashboard` describes structure, not a search string — searching `.dashboard` won't find the `dashboard:` key. State the literal token that actually appears in the config (usually the leaf key as written) plus the context needed to disambiguate it from unrelated matches, and give a ready-to-run grep/ripgrep regex when the match is non-obvious.
+- **Detect must be greppable, terse, and specific.** Name the literal token that actually appears in the config (usually the leaf key as written) plus the minimal location needed to disambiguate it — a dot-path like `mediaTypes[].editor.dashboard` describes structure, not a search string, and searching `.dashboard` won't find the `dashboard:` key. A terse, specific token is the most reliable match; when the token is generic, add the surrounding context (a parent key, or a ready-to-run grep/ripgrep regex) so it doesn't also match unrelated code. Don't narrate the different ways it could be written.
+- **Don't assume a trailing colon or a fixed access shape.** A value is often built in a variable and then assigned or spread into the config object, so `token\s*:` can miss it — match the bare token. For chained API access like `features.api('li-hugo').printApi`, the intermediate may be stored in a variable or destructured, so grep the leaf token (`printApi`) together with the module id (`li-hugo`) rather than the full chained expression.
 - When more than one condition triggers the issue, list them as bullets under an "either of" / "any of" clause in the Detect line.
 - **Code line.** Most entries emit a runtime notification — a `LivingdocsBreakingChange` (code prefix `LIBREAKING`) for breaking changes, or a `LivingdocsDeprecation` (code prefix `LIDEP`) for deprecations. Put the code on a `**Code:**` line directly below the heading, before the prose. This is the identifier operators see in server logs, and the key an agent uses to map a log line to this entry. Take the value verbatim from the `create({type, code})` call in the source (or from the developer) — don't invent one. Some changes emit several related codes (e.g. one per affected property: `LIBREAKING064-failOn`, `LIBREAKING064-convert`, …); list them all on a `**Codes:**` line, or express the shared pattern. Omit the line entirely when there is no runtime code (e.g. static-only concerns like direct `lib/` imports).
-- The prose intro should include the inline code samples / tables / config examples that illustrate the change, and a before/after comparison whenever the change alters a config, API, or code shape. Detect and Fix should not duplicate those — they refer back to the prose.
-- Favour exhaustiveness over brevity here (unlike Feature entries, which stay minimal): include the detail, examples, and references needed to act without follow-up questions.
+- **Don't duplicate the prose in Detect/Fix.** Prose gives the what/why (plus any before/after snippet); the itemized specifics live in Detect/Fix. Detect and Fix naming the same tokens (how to find them vs. what to do) is fine — the redundancy to cut is a "removed X, Y, Z" list in the prose that Detect/Fix then restate. Breaking changes should be thorough, but via Detect/Fix detail, not padded prose.
 - Link to the relevant guide or reference page when one exists (e.g. a replacement's documentation) — as a supplement to, not a substitute for, the self-contained Detect/Fix.
-- For a mechanical Fix, spell out the old → new mapping (use a table when it has more than two rows). If a Fix requires a data migration, say so explicitly and point at Livingdocs support when appropriate.
+- Spell out the Fix mechanically: give the old → new mapping (use a table when it has more than two rows), and put "what to use instead" here — alongside the removal steps — not in a separate prose "Replacements" section. If a Fix requires a data migration, say so explicitly and point at the Customer Solutions contact when appropriate.
 - "Risk if skipped" is implicit: every entry under `## Breaking Changes :fire:` is upgrade-blocking. No need to restate.
 
 ## Deprecation entry shape
@@ -100,7 +100,7 @@ Project config property `X` is deprecated and will be removed in `release-YYYY-M
 
 ### Rules
 
-- All Breaking Change rules above apply (title, greppable Detect, Code line, before/after, exhaustiveness).
+- All Breaking Change rules above apply (title, greppable Detect, Code line, before/after, no prose/Detect duplication).
 - Always name the planned removal release in the prose intro. Open-ended deprecations (no fixed removal release announced) state that explicitly.
 
 ## Feature entry shape
@@ -126,7 +126,7 @@ For features with several distinct parts or steps, use `####` sub-sections. Incl
 - Always state activation status (auto-available vs requires config) — getting this wrong misleads readers. Show only the config diff when activation is needed.
 - Use screenshots for UI-facing features (`{{< img >}}` with meaningful alt text). Include a before/after when the feature changes existing behaviour.
 - If the feature replaces something deprecated, say so briefly and link it (`{{< ref "/path" >}}` for internal docs, `{{< release "release-YYYY-MM" >}}` for other releases).
-- For non-trivial setup, add: _"Reach out to your customer solutions contact for help getting started."_
+- For non-trivial setup, add: _"Reach out to your Customer Solutions contact for help getting started."_
 - Tone: "more Sales, less Packungsbeilage" — short, punchy, value-focused. Use regular hyphens (`-`).
 
 ## Vulnerability Patches and Patches sections
@@ -162,4 +162,6 @@ A `-fire` / `-gift` / `-warning` suffix on a link is valid only if the target he
 - Per-entry "Risk if skipped" or "Applies to" sub-headings — redundant with the `:fire:` / `:warning:` icon and the Detect line.
 - Full JSON / schema dumps in Feature entries — show only the relevant config diff and link to the reference for the rest.
 - Notes that are essentially commit-message rot ("introduced in PR #123", "see issue X"). The PR list and patches section already cover this.
+- Internal implementation detail that isn't externally observable (which internal routes, controllers, or modules were deleted). Document the surface a project actually touches — config keys, public API methods, and endpoints it calls — not the refactor behind them.
+- Links to customer or downstream migration PRs (e.g. a specific customer's migration). When a migration needs hands-on help, advise the reader to contact their Customer Solutions contact instead.
 - Emoji in entry headings.
