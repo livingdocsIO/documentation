@@ -261,6 +261,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v308.1.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.3): fix(print): Renumber huGO print breaking change to LIBREAKING071
 
 ### Livingdocs Editor Patches
 
