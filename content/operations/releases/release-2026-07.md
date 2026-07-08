@@ -264,6 +264,7 @@ Here is a list of all patches after the release has been announced.
 - [v308.1.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.3): fix(print): Renumber huGO print breaking change to LIBREAKING071
 
 ### Livingdocs Editor Patches
+- [v126.1.2](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.2): Revert "fix(release-2026-07): Update framework to v34.1.7 (release-2026-07 tag)"
 
 ---
 
