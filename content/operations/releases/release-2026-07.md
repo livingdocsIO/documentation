@@ -246,6 +246,16 @@ This feature is opt-in. See the [Dashboard Cards documentation]({{< ref "/refere
 
 {{< img src="release-2026-07-image-card-metadata-before-and-after.png" alt="Media library image card without and with " width="600" >}}
 
+### Media Library Tags
+
+Editors browsing the Media Library can now judge an image directly from its card - no need to open the detail view or lightbox first. Cards can show at a glance whether an image is already in a collection or inbox, how often it has been used, its license status, resolution, and archive state.
+
+A new **Display Settings** dropdown on every Media Library dashboard lets each editor choose which tags appear, tailored per dashboard. Warning tags, such as an invalid image, are always shown. The lightbox displays every available tag, while the detail panel shows all of them except the usage references.
+
+Which options are available depends on the dashboard's asset type and your configuration. Usage counts require the Usage Log feature, and collection and inbox counts appear on image dashboards only when collections and inboxes are configured. The feature works automatically, with each tag option appearing based on your existing setup.
+
+For more information, see the [Card Tags and Display Settings]({{< ref "/guides/media-library/media-library-setup/#card-tags-and-display-settings" >}}) documentation.
+
 ## Vulnerability Patches
 
 We are constantly patching module vulnerabilities for the Livingdocs Server and Livingdocs Editor as module fixes are available. Below is a list of all patched vulnerabilities included in the release.
