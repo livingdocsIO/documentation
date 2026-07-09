@@ -207,7 +207,17 @@ No pre-deployment steps are required before rolling out this release.
 
 #### Migrate the Postgres Database
 
-No migrations are required for this release.
+When upgrading, first run the database migrations. At Livingdocs, we run this command in an initContainer on Kubernetes.
+
+All migrations should execute quickly and not lock write-heavy tables.
+
+```sh
+# 217-backfill-image-collection-unique-ids.js
+#   Backfills unique-id entries for existing image collections into
+#   `document_unique_ids` so that duplicate collection titles are detected
+#   going forward. Existing duplicates are left untouched, not reported as errors.
+livingdocs-server migrate up
+```
 
 ### After the deployment
 
