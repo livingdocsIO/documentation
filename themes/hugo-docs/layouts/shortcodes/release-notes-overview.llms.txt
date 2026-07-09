@@ -2,6 +2,6 @@
 | ---- | -------------- | -------------- | :------: | :-----: | :--------: | :----: |
 
 {{- $page := .Site.Home }}
-{{- range sort $.Site.Data.releases "sortId" "desc" }}
+{{- range sort hugo.Data.releases "sortId" "desc" }}
 | [{{ .name }}]({{ partial "link" .key }}) | {{ .key }}{{ with .serverVersion }} ({{ . }}){{ end }} | {{ .key }}{{ with .editorVersion }} ({{ . }}){{ end }} | {{ cond (eq .upcoming true) "✔" "✗" }} | {{ cond (eq .current true) "✔" "✗" }} | {{ cond (eq .maintained true) "✔" "✗" }} | {{ cond (eq .legacy true) "✔" "✗" }} |
 {{- end -}}
