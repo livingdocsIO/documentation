@@ -308,7 +308,7 @@ For more information and configuration details, see the [Retresco integration]({
 
 ### Copy Document Inbox in Copy and Print Flows
 
-When editors turn a document into a copy or a print version, the source document's inbox is now carried over to the new document automatically.
+When editors create a copy or a print version of a document, the source document's inbox is now carried over to the new document automatically.
 
 The inbox is copied when the new document is created. This is now the default behavior for all document copy flows and print flows, so no configuration is required. Re-running a print flow to check the source for changes does not touch the inbox.
 
