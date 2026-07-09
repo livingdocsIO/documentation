@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [chore(deps): update dependency webpack from 5.108.3 to v5.108.4 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/11306)
 - [fix(deps): update opentelemetry (main) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/9679)
 
 To get an overview about new functionality, read the [Release Notes](TODO).
