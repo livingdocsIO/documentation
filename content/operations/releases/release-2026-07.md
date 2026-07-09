@@ -312,7 +312,7 @@ Remove the publish hook that calls `mediaLibraryApi.addUsageLogEntriesForMediaIn
 
 ## Features :gift:
 
-### License Profiles :gift:
+### License Profiles
 
 Images come with rules about how they may be used, and breaking them exposes a newsroom to legal and financial risk. License profiles capture a contract's terms in structured form: in which usage purposes (Web, Print, ...) an image may be published, and whether each use has to be billed. A profile is assigned to a media library entry through the new `li-license-profile` metadata plugin and enforced by the system. Editors see color indicators and warnings while they work, publishing is blocked when license requirements are not met, and profiles that need a human decision route through an approval task. On publish, a usage log entry is recorded per image with the applied rule and a billing flag, the foundation for billing reports.
 
@@ -322,7 +322,7 @@ The feature is opt-in and activates once usage purposes and license profiles are
 // project config
 mediaCenter: {
   usagePurposes: [
-    {handle: 'web', label: {en: 'Web'}, contentType: 'regular', recordUsageLogEntry: 'recordWebUsage'}
+    {handle: 'web', label: {en: 'Web'}, internal: true, contentType: 'regular', recordUsageLogEntry: 'recordWebUsage'}
   ],
   licenseProfiles: {
     approvalTaskHandle: 'licenseApproval',

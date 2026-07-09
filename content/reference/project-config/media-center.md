@@ -22,14 +22,23 @@ The `mediaCenter` project config property can be defined as follows:
 mediaCenter: {
   usagePurposes: [
     {
+      // internal purpose: records usage automatically on publish
+      handle: 'web',
+      label: {
+        en: 'Web',
+        de: 'Web'
+      },
+      internal: true,
+      contentType: ['regular'],
+      recordUsageLogEntry: 'recordWebUsage'
+    },
+    {
+      // external purpose: usage happens outside Livingdocs, entries are recorded manually
       handle: 'print',
       label: {
         en: 'Print',
         de: 'Druck'
       },
-      internal: false,
-      contentType: 'print',
-      recordUsageLogEntry: 'recordPrintUsage',
       paramsSchema: [
         {
           handle: 'page',
@@ -67,13 +76,15 @@ mediaCenter: {
 
 `mediaCenter.usagePurposes` defines the named publication contexts (Web, Print, Newsletter, ...) used by the usage log and by license profiles. It replaces `mediaCenter.usageLog.purposes`, which was removed in {{< release "release-2026-07" >}}.
 
+Every usage purpose is either **internal** (maps to Livingdocs content types, records usage automatically on publish, entries are read-only in the editor) or **external** (usage happens outside Livingdocs, entries are recorded manually). An internal purpose sets `internal`, `contentType` and `recordUsageLogEntry` together; an external purpose sets none of them.
+
 Each purpose supports:
 
 - **`handle`** (required): unique handle of the purpose.
 - **`label`** (required): translatable label shown in the UI.
-- **`internal`** (optional): marks a purpose as system-managed; entries of internal purposes cannot be edited manually. Internal purposes must declare a `recordUsageLogEntry` function.
-- **`contentType`** (optional): a content type handle or an array of handles. Documents of these content types resolve to this purpose. A content type may be matched by at most one purpose.
-- **`recordUsageLogEntry`** (optional): handle of a function registered with `liServer.registerRecordUsageLogEntryFunctions()`, called on publish to record the usage log entry. If omitted, entries are recorded as pending.
+- **`internal`** (internal purposes): set to `true`. Entries of internal purposes cannot be created or edited manually in the editor.
+- **`contentType`** (internal purposes): a content type handle or an array of handles. Documents of these content types resolve to this purpose. A content type may be matched by at most one purpose.
+- **`recordUsageLogEntry`** (internal purposes, required): handle of a function registered with `liServer.registerRecordUsageLogEntryFunctions()`, called on publish to record the usage log entry. Entries are recorded as pending when the function is missing or fails, as a safety net.
 - **`paramsSchema`** (optional): metadata-style field definitions recorded with each usage log entry.
 
 ## License Profiles
