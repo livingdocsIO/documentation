@@ -82,23 +82,24 @@ Define the usage purposes in the project config. See the [Media Center reference
 mediaCenter: {
   usagePurposes: [
     {
-      // Internal purpose: it maps to a Livingdocs content type and records usage
-      // automatically on publish. internal, contentType and recordUsageLogEntry
-      // always go together.
+      // This purpose records usage automatically on publish: when a document of a
+      // matching content type is published, each image it uses gets an entry.
       handle: 'web',
       label: {en: 'Web', de: 'Web'},
+      // Prevents users from adding entries for this purpose by hand, since they
+      // are created automatically.
       internal: true,
-      // Content type(s) that resolve to this purpose.
-      // A content type may belong to at most one purpose.
+      // Content type(s) that resolve to this purpose. A content type may belong
+      // to at most one purpose.
       contentType: ['regular'],
-      // Handle of a registered recordUsageLogEntry function (see below).
-      // Required for an internal purpose.
+      // Optional handle of a registered recordUsageLogEntry function (see below).
+      // Without it, the on-publish entry is recorded as pending.
       recordUsageLogEntry: 'recordWebUsage'
     },
     {
-      // External purpose: the usage happens outside Livingdocs, so it maps to no
-      // content type and sets none of internal, contentType or recordUsageLogEntry.
-      // Users record these entries manually in the editor.
+      // This purpose has no contentType, so nothing is recorded on publish.
+      // Users record these entries manually in the editor, for usage that
+      // happens outside Livingdocs.
       handle: 'print',
       label: {en: 'Print', de: 'Druck'},
       // Additional fields recorded with each usage log entry
@@ -114,12 +115,7 @@ mediaCenter: {
 }
 ```
 
-Purpose handles must be unique. Every usage purpose is either internal or external:
-
-- An **internal** purpose maps to one or more Livingdocs content types through `contentType` and records usage automatically when a matching document is published. It sets `internal: true` and must declare a `recordUsageLogEntry` function. These three properties always appear together. A content type may be matched by at most one purpose, so a document's purpose is never ambiguous.
-- An **external** purpose covers usage that happens outside Livingdocs. It maps to no content type and sets none of `internal`, `contentType` or `recordUsageLogEntry`.
-
-For an internal purpose the `recordUsageLogEntry` function is the normal way entries are created; it is required, not optional. Recording an entry as pending is only a safety net for when the function is missing or fails (see [Recording Usage Log Entries](#recording-usage-log-entries)).
+Purpose handles must be unique, and a content type may be matched by at most one purpose, so a document always resolves to a single purpose. The `internal`, `contentType` and `recordUsageLogEntry` properties decide how a purpose's entries are created. See the [Media Center reference]({{< ref "/reference/project-config/media-center#usage-purposes" >}}) for how each one behaves.
 
 ### License Profiles
 
@@ -202,10 +198,7 @@ Add the two license filters to your media library dashboards:
 
 ```js
 // editor settings, dashboard configuration
-displayFilters: [
-  {metadataPropertyName: 'licenseProfile'},
-  {filterName: 'liLicensePurpose'}
-]
+displayFilters: [{metadataPropertyName: 'licenseProfile'}, {filterName: 'liLicensePurpose'}]
 ```
 
 - `{metadataPropertyName: 'licenseProfile'}` renders the profile filter for the `li-license-profile` metadata property (here its handle is `licenseProfile`). It filters by a specific profile.
@@ -237,21 +230,20 @@ metadata: [
 
 ### Recording Usage Log Entries
 
-Register one function per internal usage purpose in the server runtime config. The function is called on publish and decides the state and params of the recorded usage log entry:
+For an internal purpose, register the `recordUsageLogEntry` function it references. The function runs on publish and sets the state and params of the recorded entry:
 
 ```js
 liServer.registerRecordUsageLogEntryFunctions([
   {
     handle: 'recordWebUsage',
-    async recordUsageLogEntry ({documentVersion, usagePurpose, projectConfig}) {
-      // return {state: 'pending', ...} to record a pending entry instead
+    async recordUsageLogEntry({documentVersion, usagePurpose, projectConfig}) {
       return {state: 'confirmed', params: {}}
     }
   }
 ])
 ```
 
-When a function returns nothing, throws, or no function is registered for the purpose, a pending entry is recorded. Errors are logged and never block publication.
+For advanced cases where entries must be recorded at a time you control, call the `addUsageLogEntriesForMediaInDocument` server API instead. See [Generating usage log entries on publish]({{< ref "/guides/media-library/media-library-setup/#generating-usage-log-entries-on-publish" >}}) for both approaches.
 
 That is the whole setup. With profiles configured, the publish gate, usage logging and approval workflow activate automatically. No hook registration call is needed.
 
