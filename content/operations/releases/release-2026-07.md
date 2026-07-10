@@ -172,34 +172,7 @@ In the project config, a `usageLog` key under `mediaCenter`. Search for `usageLo
 
 #### Fix
 
-Move the entries from `mediaCenter.usageLog.purposes` into a top-level `mediaCenter.usagePurposes` array and delete the `usageLog` object. Most purpose fields (`handle`, `label`, `internal`, `paramsSchema`) carry over unchanged; a purpose with `internal: true` now must also declare a `contentType` and a `recordUsageLogEntry` function, so add these where they are missing. See the [License Profiles guide]({{< ref "/guides/media-library/license-profiles" >}}) for the full `usagePurposes` shape.
-
-### Removal of the mediaLibraryApi.addUsageLogEntriesForMediaInDocument API
-
-**Code:** `LIBREAKING075`
-
-The server API `mediaLibraryApi.addUsageLogEntriesForMediaInDocument()` has been removed; calling it now throws `LIBREAKING075`. Usage log entries are recorded automatically on publish, so the custom publish hook that called this method is no longer needed.
-
-#### Detect
-
-In the project's server code, a call to `addUsageLogEntriesForMediaInDocument` (typically on the media library API inside a publish hook). Search for `addUsageLogEntriesForMediaInDocument`.
-
-#### Fix
-
-Remove the publish hook that calls `mediaLibraryApi.addUsageLogEntriesForMediaInDocument()`. Instead, register a `recordUsageLogEntry` function per internal usage purpose and reference it by handle from `mediaCenter.usagePurposes[].recordUsageLogEntry`. Recording then happens automatically on publish; when the function returns nothing, throws, or is not registered, the entry is recorded as pending.
-
-```js
-liServer.registerRecordUsageLogEntryFunctions([
-  {
-    handle: 'recordWebUsage',
-    async recordUsageLogEntry({documentVersion, usagePurpose, projectConfig}) {
-      return {state: 'confirmed', params: {}}
-    }
-  }
-])
-```
-
-See the [License Profiles guide]({{< ref "/guides/media-library/license-profiles" >}}).
+Move the entries from `mediaCenter.usageLog.purposes` into a top-level `mediaCenter.usagePurposes` array and delete the `usageLog` object. All purpose fields (`handle`, `label`, `internal`, `paramsSchema`) carry over unchanged. To record usage automatically on publish, add a `contentType` to the purpose and, optionally, a `recordUsageLogEntry` function. See the [License Profiles guide]({{< ref "/guides/media-library/license-profiles" >}}) for the full `usagePurposes` shape.
 
 ### Replacement of authApi.createAccessToken with createAccessTokenV2
 

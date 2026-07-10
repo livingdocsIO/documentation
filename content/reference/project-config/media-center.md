@@ -76,16 +76,20 @@ mediaCenter: {
 
 `mediaCenter.usagePurposes` defines the named publication contexts (Web, Print, Newsletter, ...) used by the usage log and by license profiles. It replaces `mediaCenter.usageLog.purposes`, which was removed in {{< release "release-2026-07" >}}.
 
-Every usage purpose is either **internal** (maps to Livingdocs content types, records usage automatically on publish, entries are read-only in the editor) or **external** (usage happens outside Livingdocs, entries are recorded manually). An internal purpose sets `internal`, `contentType` and `recordUsageLogEntry` together; an external purpose sets none of them.
+A purpose's `internal`, `contentType` and `recordUsageLogEntry` properties together decide how its entries are created:
+
+- Entries can be added manually in the editor, unless the purpose is `internal`.
+- Entries can be recorded automatically when a document is published, if the purpose has a `contentType`.
+- Entries can be recorded programmatically through the [`addUsageLogEntriesForMediaInDocument`]({{< ref "/guides/media-library/media-library-setup/#recording-usage-log-entries-programmatically" >}}) server API, at any time.
 
 Each purpose supports:
 
-- **`handle`** (required): unique handle of the purpose.
-- **`label`** (required): translatable label shown in the UI.
-- **`internal`** (internal purposes): set to `true`. Entries of internal purposes cannot be created or edited manually in the editor.
-- **`contentType`** (internal purposes): a content type handle or an array of handles. Documents of these content types resolve to this purpose. A content type may be matched by at most one purpose.
-- **`recordUsageLogEntry`** (internal purposes, required): handle of a function registered with `liServer.registerRecordUsageLogEntryFunctions()`, called on publish to record the usage log entry. Entries are recorded as pending when the function is missing or fails, as a safety net.
-- **`paramsSchema`** (optional): metadata-style field definitions recorded with each usage log entry.
+- `handle` (required): unique handle of the purpose.
+- `label` (required): translatable label shown in the UI.
+- `internal` (optional): when `true`, users cannot create, update or delete entries for this purpose in the editor. Read-only entries are still shown.
+- `contentType` (optional): a content type handle or an array of handles. When a document of one of these content types is published, each referenced media library entry gets a usage log entry for this purpose. A content type may be matched by at most one purpose.
+- `recordUsageLogEntry` (optional): handle of a function registered with `liServer.registerRecordUsageLogEntryFunctions()`. It runs on publish for documents whose content type matches this purpose, and sets the entry's state and params. Without it, or when it returns nothing or fails, the entry is recorded as pending.
+- `paramsSchema` (optional): metadata-style field definitions recorded with each usage log entry.
 
 ## License Profiles
 
