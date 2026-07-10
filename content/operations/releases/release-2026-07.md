@@ -253,7 +253,7 @@ Remove the entire `LIFEAT011: { ... }` block from every affected `mediaImage` me
 
 **Code:** `LIBREAKING074`
 
-The project config property `mediaCenter.usageLog` has been removed and replaced by `mediaCenter.usagePurposes`. The nested `usageLog.purposes` array becomes the top-level `usagePurposes` array. Each purpose keeps its `handle`, `label`, `internal` and `paramsSchema`; an internal purpose additionally declares a `contentType` and a `recordUsageLogEntry` function.
+The project config property `mediaCenter.usageLog` has been removed and replaced by `mediaCenter.usagePurposes`: the nested `usageLog.purposes` array becomes the top-level `usagePurposes` array.
 
 ```js
 {
@@ -269,23 +269,27 @@ The project config property `mediaCenter.usageLog` has been removed and replaced
 }
 ```
 
-A config that still sets `mediaCenter.usageLog` is rejected by config validation.
-
 #### Detect
 
-In the project config, a `usageLog` key under `mediaCenter`. Search for `usageLog:` and confirm the hit sits under `mediaCenter` (not an unrelated `usageLog` field elsewhere).
+In the project config, a `usageLog` key under `mediaCenter`. Search for `usageLog` and confirm the hit sits under `mediaCenter` (not an unrelated `usageLog` field elsewhere).
 
 #### Fix
 
-Move the entries from `mediaCenter.usageLog.purposes` into a top-level `mediaCenter.usagePurposes` array and delete the `usageLog` object. Most purpose fields carry over unchanged; a purpose with `internal: true` now must also declare a `contentType` and a `recordUsageLogEntry` function, so add these where they are missing. See the [License Profiles guide]({{< ref "/guides/media-library/license-profiles" >}}) for the full `usagePurposes` shape.
+Move the entries from `mediaCenter.usageLog.purposes` into a top-level `mediaCenter.usagePurposes` array and delete the `usageLog` object. Most purpose fields (`handle`, `label`, `internal`, `paramsSchema`) carry over unchanged; a purpose with `internal: true` now must also declare a `contentType` and a `recordUsageLogEntry` function, so add these where they are missing. See the [License Profiles guide]({{< ref "/guides/media-library/license-profiles" >}}) for the full `usagePurposes` shape.
 
 ### Removal of the mediaLibraryApi.addUsageLogEntriesForMediaInDocument API
 
 **Code:** `LIBREAKING075`
 
-The server API `mediaLibraryApi.addUsageLogEntriesForMediaInDocument()` has been removed; calling it now throws `LIBREAKING075`. Usage log entries are recorded automatically on publish for every document that resolves to a usage purpose, so the custom publish hook that called this method is no longer needed.
+The server API `mediaLibraryApi.addUsageLogEntriesForMediaInDocument()` has been removed; calling it now throws `LIBREAKING075`. Usage log entries are recorded automatically on publish, so the custom publish hook that called this method is no longer needed.
 
-Register a `recordUsageLogEntry` function and reference it from the usage purpose instead:
+#### Detect
+
+In the project's server code, a call to `addUsageLogEntriesForMediaInDocument` (typically on the media library API inside a publish hook). Search for `addUsageLogEntriesForMediaInDocument`.
+
+#### Fix
+
+Remove the publish hook that calls `mediaLibraryApi.addUsageLogEntriesForMediaInDocument()`. Instead, register a `recordUsageLogEntry` function per internal usage purpose and reference it by handle from `mediaCenter.usagePurposes[].recordUsageLogEntry`. Recording then happens automatically on publish; when the function returns nothing, throws, or is not registered, the entry is recorded as pending.
 
 ```js
 liServer.registerRecordUsageLogEntryFunctions([
@@ -298,15 +302,7 @@ liServer.registerRecordUsageLogEntryFunctions([
 ])
 ```
 
-The purpose references the function by handle via `mediaCenter.usagePurposes[].recordUsageLogEntry` (required for internal purposes). When the function returns nothing, throws, or is not registered, the entry is recorded as pending.
-
-#### Detect
-
-In the project's server code, a call to `addUsageLogEntriesForMediaInDocument` (typically on the media library API inside a publish hook). Search for `addUsageLogEntriesForMediaInDocument`.
-
-#### Fix
-
-Remove the publish hook that calls `mediaLibraryApi.addUsageLogEntriesForMediaInDocument()`. Register a `recordUsageLogEntry` function per usage purpose with `liServer.registerRecordUsageLogEntryFunctions([...])` and reference it from `mediaCenter.usagePurposes[].recordUsageLogEntry`. Recording then happens automatically on publish. See the [License Profiles guide]({{< ref "/guides/media-library/license-profiles" >}}).
+See the [License Profiles guide]({{< ref "/guides/media-library/license-profiles" >}}).
 
 ## Deprecations
 
@@ -316,32 +312,9 @@ Remove the publish hook that calls `mediaLibraryApi.addUsageLogEntriesForMediaIn
 
 Images come with rules about how they may be used, and breaking them exposes a newsroom to legal and financial risk. License profiles capture a contract's terms in structured form: in which usage purposes (Web, Print, ...) an image may be published, and whether each use has to be billed. A profile is assigned to a media library entry through the new `li-license-profile` metadata plugin and enforced by the system. Editors see color indicators and warnings while they work, publishing is blocked when license requirements are not met, and profiles that need a human decision route through an approval task. On publish, a usage log entry is recorded per image with the applied rule and a billing flag, the foundation for billing reports.
 
-The feature is opt-in and activates once usage purposes and license profiles are configured:
+{{< img src="release-2026-07-license-profiles.png" alt="Three media library cards with a green, orange, and red dot in their top-right corners" width="600" caption="Each image's license profile shows as a colored indicator on its media library card." >}}
 
-```js
-// project config
-mediaCenter: {
-  usagePurposes: [
-    {handle: 'web', label: {en: 'Web'}, internal: true, contentType: 'regular', recordUsageLogEntry: 'recordWebUsage'}
-  ],
-  licenseProfiles: {
-    approvalTaskHandle: 'licenseApproval',
-    profiles: [
-      {
-        handle: 'freelancer',
-        label: {en: 'Freelancer'},
-        color: '#e0b32d',
-        approvalRequired: false,
-        rules: {
-          web: {costClass: 'low', billingMode: 'always'}
-        }
-      }
-    ]
-  }
-}
-```
-
-Additionally, the `li-license-profile` metadata plugin is added to the participating media types, the `liLicenseProfile` and `liLicensePurpose` display filters to the media library dashboards, and an approval `li-task-v2` metadata property to the content types.
+The feature is opt-in and activates once usage purposes and license profiles are configured.
 
 {{< info >}}
 License profiles require `mediaLibrary.use2025Behavior: true`. Reach out to your customer solutions contact for help getting started.

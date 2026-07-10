@@ -17,12 +17,61 @@ Two building blocks work together:
 
 The feature is opt-in. It only activates for media types that have the `li-license-profile` metadata plugin configured, and only when profiles are present in the project config. Existing setups are unaffected.
 
-## Prerequisites
+## How License Profiles Work
+
+### Assigning a Profile
+
+Editors assign a profile in the metadata form of a media library entry. A dropdown lists every configured profile, each with its color. Picking one shows that profile's rules underneath: the usage purposes the image may be published in and whether each use is billed. Profiles can also be assigned through batch metadata editing or set automatically when an image is imported.
+
+{{< img src="./images/license-profile-select.png" alt="Open License Profile dropdown with four options - In-House, Web Agency, Freelancer, Approval Required - each with a colored dot" width="500" caption="Editors pick a profile from a dropdown, where each option shows the profile's color." >}}
+
+{{< img src="./images/license-profile-rules.png" alt="Freelancer profile selected, with WEB and PRINT rows both reading 'Expensive, Billed per publication'" width="500" caption="The selected profile lists its rules per usage purpose and whether each use is billed." >}}
+
+### While Editing
+
+Image cards, the image properties panel and placed images show the profile as a colored indicator; images without a profile get a warning tag. Placing an image is never blocked: the editor warns early when an image has no profile, an unknown profile, a profile that does not cover the document's purpose, or needs approval.
+
+{{< img src="./images/license-profile-card-indicator.png" alt="Three media library cards with a green, orange, and red dot in their top-right corners" width="600" caption="Media library cards show the profile as a colored indicator." >}}
+
+{{< img src="./images/license-profile-placement-warning.png" alt="Orange warning box reading 'This image's license profile doesn't allow using it here. You can't publish until it's covered by a valid license.'" width="500" caption="The editor warns early when a placed image is not covered by its profile." >}}
+
+### The Publish Gate
+
+The hard block comes at publication. The server checks every referenced image (in the content and in metadata) and blocks publishing when:
+
+- the image has no license profile assigned,
+- the assigned profile no longer exists in the config,
+- no rule in the profile covers the document's purpose, or
+- the profile requires approval and the image has not been approved yet.
+
+The publish control lists each violation and links to the offending image.
+
+{{< img src="./images/license-profile-publish-gate.png" alt="Publish panel with content and metadata validation errors, each stating a medium requires approval, above a 'Publish now' button" width="400" caption="Publishing is blocked and each violation links to the offending image." >}}
+
+### Approval Flow
+
+When a document contains images whose profile requires approval, the approval task is requested automatically. The publish control and the task panel show the images to review; the image desk completes the task to approve them. Approved images are recorded on the task, so re-publishing an unchanged document does not ask again. A confirmed usage log entry for the same document also counts as approval.
+
+Completing the task approves all images pending approval in that document at once.
+
+{{< img src="./images/license-profile-approval-task.png" alt="License Approval task with an 'Images to review' thumbnail and a 'Begin image license review' button" width="400" caption="The approval task panel shows the images to review before publishing." >}}
+
+### Usage Log and Billing
+
+On publish, one usage log entry is recorded per referenced image, de-duplicated per document and purpose, so re-publishing never produces duplicates. Each entry stores a snapshot of the applied rule and a billing flag derived from the rule's `billingMode`:
+
+- `never` results in `billing: false`, the use is not billed
+- `always` results in `billing: true`, the use is billed
+- unset leaves the flag undefined, and a user can set it manually in the usage log as long as it is unset
+
+{{< img src="./images/license-profile-usage-log.png" alt="Usage log panel with a 'Web' entry tagged 'No billing' and 'Confirmed'" width="600" caption="Each published image gets a usage log entry with the applied rule and billing flag." >}}
+
+## Configuration
+
+### Prerequisites
 
 - License profiles build on the [Usage Log]({{< ref "/guides/media-library/media-library-setup/#usage-log" >}}), which requires the [2025 Behavior]({{< ref "/guides/media-library/2025-behavior" >}}) (`mediaLibrary.use2025Behavior: true` in the server config).
 - At least one media type that should carry license profiles.
-
-## Configuration
 
 ### Usage Purposes
 
@@ -154,12 +203,12 @@ Add the two license filters to your media library dashboards:
 ```js
 // editor settings, dashboard configuration
 displayFilters: [
-  {filterName: 'liLicenseProfile'},
+  {metadataPropertyName: 'licenseProfile'},
   {filterName: 'liLicensePurpose'}
 ]
 ```
 
-- `liLicenseProfile` filters by a specific profile.
+- `{metadataPropertyName: 'licenseProfile'}` renders the profile filter for the `li-license-profile` metadata property (here its handle is `licenseProfile`). It filters by a specific profile.
 - `liLicensePurpose` filters by allowed usage purposes, cost classes and approval requirement, and resolves to the profiles that satisfy the selection.
 
 ### Approval Task
@@ -205,41 +254,6 @@ liServer.registerRecordUsageLogEntryFunctions([
 When a function returns nothing, throws, or no function is registered for the purpose, a pending entry is recorded. Errors are logged and never block publication.
 
 That is the whole setup. With profiles configured, the publish gate, usage logging and approval workflow activate automatically. No hook registration call is needed.
-
-## How License Profiles Work
-
-### Assigning a Profile
-
-Editors assign a profile in the metadata form of a media library entry: a select listing every profile with its color, followed by the profile's rules per usage purpose. Profiles can also be assigned through batch metadata editing or set automatically when an image is imported.
-
-### While Editing
-
-Image cards, the image properties panel and placed images show the profile as a colored indicator; images without a profile get a warning tag. Placing an image is never blocked: the editor warns early when an image has no profile, an unknown profile, a profile that does not cover the document's purpose, or needs approval.
-
-### The Publish Gate
-
-The hard block comes at publication. The server checks every referenced image (in the content and in metadata) and blocks publishing when:
-
-- the image has no license profile assigned,
-- the assigned profile no longer exists in the config,
-- no rule in the profile covers the document's purpose, or
-- the profile requires approval and the image has not been approved yet.
-
-The publish control lists each violation and links to the offending image.
-
-### Approval Flow
-
-When a document contains images whose profile requires approval, the approval task is requested automatically. The publish control and the task panel show the images to review; the image desk completes the task to approve them. Approved images are recorded on the task, so re-publishing an unchanged document does not ask again. A confirmed usage log entry for the same document also counts as approval.
-
-Completing the task approves all images pending approval in that document at once.
-
-### Usage Log and Billing
-
-On publish, one usage log entry is recorded per referenced image, de-duplicated per document and purpose, so re-publishing never produces duplicates. Each entry stores a snapshot of the applied rule and a billing flag derived from the rule's `billingMode`:
-
-- `never` results in `billing: false`, the use is not billed
-- `always` results in `billing: true`, the use is billed
-- unset leaves the flag undefined, and a user can set it manually in the usage log as long as it is unset
 
 ## Constraints
 
