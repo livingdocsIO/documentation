@@ -29,7 +29,7 @@ contentTypeConfig: |2
         handle: 'licenseProfile',
         type: 'li-license-profile',
         config: {
-          index: true // required for the liLicenseProfile and liLicensePurpose display filters
+          index: true // required for the license profile and liLicensePurpose display filters
         },
         ui: {
           label: 'License Profile' // optional, takes camelized name otherwise
