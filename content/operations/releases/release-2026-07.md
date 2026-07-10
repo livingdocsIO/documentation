@@ -78,7 +78,6 @@ These are the release notes of the upcoming release (pull requests merged to the
 - [fix(deps): update dependency @livingdocs/framework from 34.1.6 to v34.1.7 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/11299)
 - [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-server/pull/9649)
 - [Remove search.metadataMapping (LIDEP069)](https://github.com/livingdocsIO/livingdocs-server/pull/9406)
-- [feat(search): Add expert search display filter](https://github.com/livingdocsIO/livingdocs-editor/pull/11211)
 - [Usage Log Billing Part 4](https://github.com/livingdocsIO/livingdocs-editor/pull/11254)
 - [Usage Log Billing Part 4](https://github.com/livingdocsIO/livingdocs-server/pull/9609)
 - [Store li-buy-in default expiry at UTC midnight](https://github.com/livingdocsIO/livingdocs-editor/pull/11285)
@@ -87,8 +86,6 @@ These are the release notes of the upcoming release (pull requests merged to the
 - [Remove publishType from contentTypes and deliveries (LIDEP074)](https://github.com/livingdocsIO/livingdocs-server/pull/9408)
 - [Usage Log Billing Part 3](https://github.com/livingdocsIO/livingdocs-editor/pull/11245)
 - [Usage Log Billing Part 3](https://github.com/livingdocsIO/livingdocs-server/pull/9600)
-- [feat(search): Add search syntax cheat sheet for simple query dashboards](https://github.com/livingdocsIO/livingdocs-editor/pull/11222)
-- [feat(indexing): Add Norwegian language support and media library full-text search](https://github.com/livingdocsIO/livingdocs-server/pull/9542)
 - [License profiles](https://github.com/livingdocsIO/livingdocs-editor/pull/11201)
 - [License profiles](https://github.com/livingdocsIO/livingdocs-server/pull/9491)
 - [Show component groups with translated labels](https://github.com/livingdocsIO/livingdocs-editor/pull/11273)
@@ -221,7 +218,15 @@ livingdocs-server migrate up
 
 ### After the deployment
 
-No post-deployment steps are required after rolling out this release.
+#### Recreate the Elasticsearch indices
+
+This release adds Norwegian language support (Bokmål `nb` and Nynorsk `nn`) across the drafts, publications, and media library indices, and language-aware text fields plus a German decompounder to the media library. These require an Elasticsearch index recreation to activate:
+
+```sh
+livingdocs-server elasticsearch-index --recreate
+```
+
+The change is backwards compatible: until the indices are recreated, the new language-specific fields are silently skipped and search keeps working as before.
 
 ### Rollback
 
@@ -325,6 +330,41 @@ By default, an inbox item is removed from the inbox as soon as it is dragged int
 A new project setting `settings.inbox.keepItemsOnDrop` controls this behavior. When set to `true`, inbox items stay in the inbox after being dropped into a document.
 
 For more information, see the [Document Inbox]({{< ref "/reference/project-config/content-types#document-inbox" >}}) documentation.
+
+### Advanced Search Filters
+
+Text search in the Media Library is now as capable as document search. Searches understand each entry's language, split German compound words, support quoted phrases and boolean operators, and can even be driven by a full query syntax. Editors find the right asset faster with the terms they already type.
+
+#### Language-Aware Text Search
+
+Media Library entries are now indexed per locale with language-specific analyzers for German, English, French, Italian, Spanish, and Norwegian (Bokmål `nb` and Nynorsk `nn`). A German decompounder splits compound words, so searching "Dampf" now also finds "Dampfschiff". Searches support exact phrases with quotes and prefix matching with `word*`, matching the behavior editors know from document search.
+
+#### Search Syntax Cheat Sheet
+
+A new help button next to the search field opens a flyout documenting the available query operators: free text, `AND` (`+word`), `OR` (`|`), exact phrase (`"..."`), exclude (`-word`), and prefix (`word*`). It appears on Media Library dashboards and on table dashboards that use the simple search strategy.
+
+{{< img src="release-2026-07-search-syntax-cheat-sheet.png" alt="Search field with the syntax help flyout open" width="600" caption="The help button opens a cheat sheet of the search syntax." >}}
+
+#### Expert Search Filter
+
+For power users, the new `liExpertSearch` display filter accepts a JSON filter expression directly in the dashboard search UI. It supports the full Livingdocs filter DSL: `term`, `range`, and `exists` expressions combined with `and`, `or`, and `not`. The editor validates input inline, auto-formats it, and applies it on `Ctrl`/`Cmd`+`Enter`. The expression is merged with the dashboard's other active filters.
+
+Enable it per dashboard via `displayFilters`:
+
+```js
+{
+  handle: 'myDashboard',
+  displayFilters: ['liExpertSearch']
+}
+```
+
+{{< img src="release-2026-07-expert-search-filter.png" alt="Expert Search display filter with a JSON filter expression editor" width="600" caption="Expert Search lets power users enter a JSON filter expression directly." >}}
+
+{{< info >}}
+The language-aware fields and the decompounder require an Elasticsearch index recreation (`livingdocs-server elasticsearch-index --recreate`) to activate. Until the index is recreated, the new language fields are skipped and search keeps working as before.
+{{< /info >}}
+
+For more information, see the [Expert Search]({{< ref "/customising/advanced/editor-configuration/expert-search" >}}) documentation.
 
 ## Vulnerability Patches
 

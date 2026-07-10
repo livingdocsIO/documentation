@@ -78,6 +78,7 @@ They are separately listed here:
   ```
 - `includedComponents`: lets the user select a bunch of components from one of them must be used in a document in order to be shown in the result list. Use this as a proof-of-concept to showcase what is possible only. We suggest to configure your own display filter with some combinations of component usages. For example: "Image Heavy Articles" filtering for articles with more than 5 image components.
 - `missingComponents`: lets the user select a bunch of components from one of them must be absent in a document in order to be shown in the result list. Use this as a proof-of-concept to showcase what is possible only. We suggest to configure your own display filter with some combinations of component usages. For example: "Articles without a Quiz" filtering for articles not containing the Quiz component.
+- `liExpertSearch`: lets power users enter a filter expression as JSON directly in the search UI. See the [Expert Search]({{< ref "/customising/advanced/editor-configuration/expert-search" >}}) documentation. {{< added-in "release-2026-07" >}}
 
 ## Metadata Filters
 
