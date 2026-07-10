@@ -339,6 +339,10 @@ Text search in the Media Library is now as capable as document search. Searches 
 
 Media Library entries are now indexed per locale with language-specific analyzers for German, English, French, Italian, Spanish, and Norwegian (Bokmål `nb` and Nynorsk `nn`). A German decompounder splits compound words, so searching "Dampf" now also finds "Dampfschiff". Searches support exact phrases with quotes and prefix matching with `word*`, matching the behavior editors know from document search.
 
+{{< info >}}
+The language-aware fields and the decompounder require an Elasticsearch index recreation (`livingdocs-server elasticsearch-index --recreate`) to activate. Until the index is recreated, the new language fields are skipped and search keeps working as before.
+{{< /info >}}
+
 #### Search Syntax Cheat Sheet
 
 A new help button next to the search field opens a flyout documenting the available query operators: free text, `AND` (`+word`), `OR` (`|`), exact phrase (`"..."`), exclude (`-word`), and prefix (`word*`). It appears on Media Library dashboards and on table dashboards that use the simple search strategy.
@@ -359,10 +363,6 @@ Enable it per dashboard via `displayFilters`:
 ```
 
 {{< img src="release-2026-07-expert-search-filter.png" alt="Expert Search display filter with a JSON filter expression editor" width="600" caption="Expert Search lets power users enter a JSON filter expression directly." >}}
-
-{{< info >}}
-The language-aware fields and the decompounder require an Elasticsearch index recreation (`livingdocs-server elasticsearch-index --recreate`) to activate. Until the index is recreated, the new language fields are skipped and search keeps working as before.
-{{< /info >}}
 
 For more information, see the [Expert Search]({{< ref "/customising/advanced/editor-configuration/expert-search" >}}) documentation.
 
