@@ -309,6 +309,111 @@ liServer.registerRecordUsageLogEntryFunctions([
 
 See the [License Profiles guide]({{< ref "/guides/media-library/license-profiles" >}}).
 
+### Replacement of authApi.createAccessToken with createAccessTokenV2
+
+**Code:** `LIBREAKING069`
+
+The server API `authApi.createAccessToken()` has been replaced by `authApi.createAccessTokenV2()`. The new function takes a flat `userId` instead of a nested user object and returns an object with a `.token` property rather than the token string directly.
+
+```js
+// before
+const token = await authApi.createAccessToken({user: {id: userId}, sid})
+
+// after
+const {token} = await authApi.createAccessTokenV2({userId, sid})
+```
+
+#### Detect
+
+In the project's server code, a call to `createAccessToken` on the authentication API (`liServer.features.api('li-authentication')`). Search for `createAccessToken` and ignore the `createAccessTokenV2` hits (e.g. `rg 'createAccessToken\b' | rg -v createAccessTokenV2`).
+
+#### Fix
+
+Rename the call to `createAccessTokenV2` and adjust the arguments: pass `userId` instead of `user: {id}`. `sid`, `projectId`, and `projectHandle` are accepted; the former `ipAddress`, `userAgent`, and `liClient` arguments are no longer used. Read the token from the returned object's `.token` property instead of using the return value as the token.
+
+### Removal of the Google Vision integration
+
+**Code:** `LIBREAKING070`
+
+The Google Vision integration, including the `li-google-vision` metadata plugin, has been removed. It was deprecated in {{< release "release-2026-01" >}}. We do not expect any customer still uses it; if you do, contact your Customer Solutions contact for migration support.
+
+#### Detect
+
+In the server config, `integrations.googleVision`; and in the project config, `settings.integrations.googleVision`. Search for `googleVision`.
+
+#### Fix
+
+Remove `integrations.googleVision` from the server config and `settings.integrations.googleVision` from the project config, along with any use of the `li-google-vision` metadata plugin. No replacement is provided.
+
+### Removal of the search.metadataMapping server config property
+
+**Code:** `LIBREAKING072`
+
+The server config property `search.metadataMapping` has been removed. It was deprecated in {{< release "release-2026-01" >}}. Metadata is now indexed via dynamic metadata mapping configured directly on metadata plugins: set `indexing.behavior` on the plugin and `config.index: true` on the field. The core `li-*` plugins already have indexing enabled.
+
+```js
+// metadata plugin
+{
+  name: 'my-slug',
+  indexing: {
+    enabled: true,
+    behavior: [{type: 'text'}, {type: 'keyword'}]
+  },
+  storageSchema: {type: 'string'}
+}
+
+// content type or media type config
+{
+  handle: 'slug',
+  type: 'my-slug',
+  config: {index: true}
+}
+```
+
+#### Detect
+
+In the server config, a `metadataMapping` key under `search`. Search for `metadataMapping`.
+
+#### Fix
+
+Remove `search.metadataMapping`. For each field previously mapped there, enable indexing on its metadata plugin via an `indexing` config and set `config.index: true` on the field in the content-type or media-type config. See the [Publication Index metadata plugins]({{< ref "/guides/search/publication-index/#metadata-plugins" >}}) documentation.
+
+### Removal of deprecated NZZ-specific search config properties
+
+**Code:** `LIBREAKING073`
+
+The 14 NZZ-specific `search.*` server config properties deprecated in {{< release "release-2026-01" >}} have been removed. They were accepted by the config schema but never consumed by any production code — they only emitted deprecation warnings. Any server config still setting them now fails validation at startup with a clear error.
+
+#### Detect
+
+In the server config, any of these keys under `search`: `queryBuilderConfig`, `implementationVersion`, `reindexBatchSize`, `reindexDelay`, `reindexConcurrency`, `fields`, `gaussScale`, `gaussDecay`, `gaussOffset`, `gaussWeight`, `prefixQueryType`, `prefixQueryFields`, `fulltextQueryType`, `fulltextQueryOperator`. Search for them together, e.g. `rg '(queryBuilderConfig|implementationVersion|reindexBatchSize|reindexDelay|reindexConcurrency|gaussScale|gaussDecay|gaussOffset|gaussWeight|prefixQueryType|prefixQueryFields|fulltextQueryType|fulltextQueryOperator)'` and confirm each hit sits under `search`.
+
+#### Fix
+
+Remove each of the listed properties from the `search` config. They had no effect, so no replacement is required.
+
+### Removal of the publishType property on contentTypes and deliveries
+
+**Code:** `LIBREAKING076`
+
+The project config property `publishType` on `contentTypes[]` and `deliveries[]` has been removed and replaced by `publishControl.mode`. It was deprecated in {{< release "release-2026-01" >}}. The property was accepted by the schema but only emitted deprecation warnings; any config still using it now fails validation at startup.
+
+```js
+// before
+{handle: 'article', publishType: 'export'}
+
+// after
+{handle: 'article', publishControl: {mode: 'export', deliveryHandle: 'print'}}
+```
+
+#### Detect
+
+In the project config, a `publishType` key on a `contentTypes[]` or `deliveries[]` entry. Search for `publishType`.
+
+#### Fix
+
+Replace `publishType` with `publishControl.mode`, which takes the same values: `publishType: 'publish'` becomes `publishControl: {mode: 'publish'}`, and `publishType: 'export'` becomes `publishControl: {mode: 'export', deliveryHandle: '<handle>'}`. See the [Export Mode]({{< ref "/guides/editor/publish-control/export-mode" >}}) guide for the full `publishControl` shape.
+
 ## Deprecations
 
 ## Features :gift:
