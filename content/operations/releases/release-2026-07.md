@@ -99,6 +99,8 @@ All migrations should execute quickly and not lock write-heavy tables.
 #   editor session cookies, and backfills active `user_sessions` rows as legacy
 #   grants. Non-destructive to `user_sessions`; runs regardless of whether the
 #   Authorization Server is enabled.
+# 218-remove-channel-mode-column.js
+#   Drops the `channels.mode` column as part of the huGO print removal.
 livingdocs-server migrate up
 ```
 
@@ -209,6 +211,32 @@ In the server config, `integrations.googleVision`; and in the project config, `s
 #### Fix
 
 Remove `integrations.googleVision` from the server config and `settings.integrations.googleVision` from the project config, along with any use of the `li-google-vision` metadata plugin. No replacement is provided.
+
+### Removal of the huGO print integration and channel edit mode
+
+**Code:** `LIBREAKING071`
+
+The huGO print integration and the editor "Print Mode" — deprecated in {{< release "release-2026-01" >}} — are now fully removed across server and editor: the print API, the print preview and template-selection UI, the print edit mode, the `li-print` metadata plugin, and the related config. The content type `print` config's `componentMap`, kept at deprecation time, is now removed with the rest of the print config. The huGO **agency import** (drag-and-drop import and feeds; `resourceApi`, `importApi`, `feedApi`, `hugoProxy`) is unaffected.
+
+#### Detect
+
+Search project, content type, channel and editor configs (including test fixtures) for any of the following. Each may appear as an object key (`foo:`) or be assigned from a variable, so match the token rather than requiring a trailing colon:
+
+- `editMode` in the project settings.
+- A content type `print` config — look for `print` alongside `enabled`, `enableStepZooming` or `componentMap`.
+- The channel `mode` property set to `'default'` or `'print'`.
+- `app.editable.print` in the editor config (a `print` key under `editable`) — it now logs a removal warning.
+- Downstream code calling the removed APIs — the `printApi` of `features.api('li-hugo')`, `/hugo/print` endpoints, or the editor `printProxy`.
+
+#### Fix
+
+- Remove `settings.editMode`, the content type `print` config (`enabled`, `enableStepZooming`, `componentMap`), the channel `mode` property (also removed from the `LivingdocsChannel` schema), and `app.editable.print` from all configs and test fixtures. Channels are always in `default` mode now.
+- The `channels.mode` column is dropped automatically by migration `218-remove-channel-mode-column`; no manual data migration is needed.
+- Replace the removed UI and plugin:
+  - the `li-print` metadata plugin → a custom [metadata plugin]({{< ref "/guides/documents/metadata/metadata-examples/" >}}) with metadata groups (replaces the print metadata section).
+  - the huGO print preview → a [custom preview function]({{< ref "/guides/integrations/print" >}}).
+  - the print-article create/copy dialog (and its router states) → a [document creation flow]({{< ref "/guides/editor/document-creation-flow/" >}}).
+- Downstream code using `features.api('li-hugo').printApi`, `/hugo/print/*`, the editor `printProxy`, or the removed `editor.printView` defaults (`enableStepZooming`, `zoomStep`) must provide its own print client/proxy. Contact your customer solutions contact if you need support with the migration.
 
 ### Removal of the search.metadataMapping server config property
 
