@@ -468,6 +468,7 @@ Here is a list of all patches after the release has been announced.
 - [v308.1.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.3): fix(print): Renumber huGO print breaking change to LIBREAKING071
 
 ### Livingdocs Editor Patches
+- [v126.1.7](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.7): fix(media-library): hide license profile tag when profiles not configured
 - [v126.1.6](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.6): fix(media-library): hide media state badge on empty image placeholder
 - [v126.1.5](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.5): fix(metadata): initialize named crops once the image is available
 - [v126.1.4](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.4): fix(license-profiles): define default display filter for li-license-profile
