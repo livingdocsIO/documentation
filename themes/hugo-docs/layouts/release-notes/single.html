@@ -47,7 +47,7 @@
 {{ define "side" }}
   {{ if (ne (.Param "renderTOC") false) }}
     <div class="page__toc">
-      {{ .TableOfContents }}
+      {{ .Page.Fragments.ToHTML 2 3 false }}
     </div>
   {{ end }}
 {{ end }}

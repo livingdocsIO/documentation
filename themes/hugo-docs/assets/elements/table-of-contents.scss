@@ -40,7 +40,7 @@
       @extend .section-label--table-of-contents;
     }
 
-    ul ul ul a {
+    ul ul a {
       @extend %font-xs;
     }
   }
