@@ -128,54 +128,6 @@ The `217-oauth-grants.js` down migration drops the `oauth_grants` table; `user_s
 
 ## Breaking Changes :fire:
 
-### Removal of the LIFEAT011 in-house production media-type config
-
-The `LIFEAT011` customer feature has been removed without prior deprecation. It was a temporary workaround that marked an image as an "in-house production" and rendered an icon on image cards. With the cleanup of Media Library tags and the introduction of License Profiles, it is no longer needed. It was activated by a `LIFEAT011` block on a `mediaImage` media type:
-
-```js
-LIFEAT011: {
-  inHouseHandle: 'author'
-}
-```
-
-The config schema has been removed, so any leftover `LIFEAT011` block now fails config validation on server startup.
-
-#### Detect
-
-In the server media-type configuration, a `LIFEAT011` key on a `mediaImage` media type. Search for `LIFEAT011` (e.g. `rg 'LIFEAT011'`).
-
-#### Fix
-
-Remove the entire `LIFEAT011: { ... }` block from every affected `mediaImage` media type. This was a project-specific workaround, so most projects have no occurrences. No replacement config is required.
-
-### Removal of the mediaCenter.usageLog config property
-
-**Code:** `LIBREAKING074`
-
-The project config property `mediaCenter.usageLog` has been removed and replaced by `mediaCenter.usagePurposes`: the nested `usageLog.purposes` array becomes the top-level `usagePurposes` array.
-
-```js
-{
-  mediaCenter: {
-    // before
-    // usageLog: {
-    //   purposes: [{handle: 'web', label: {en: 'Web'}}]
-    // }
-
-    // after
-    usagePurposes: [{handle: 'web', label: {en: 'Web'}}]
-  }
-}
-```
-
-#### Detect
-
-In the project config, a `usageLog` key under `mediaCenter`. Search for `usageLog` and confirm the hit sits under `mediaCenter` (not an unrelated `usageLog` field elsewhere).
-
-#### Fix
-
-Move the entries from `mediaCenter.usageLog.purposes` into a top-level `mediaCenter.usagePurposes` array and delete the `usageLog` object. All purpose fields (`handle`, `label`, `internal`, `paramsSchema`) carry over unchanged. To record usage automatically on publish, add a `contentType` to the purpose and, optionally, a `recordUsageLogEntry` function. See the [License Profiles guide]({{< ref "/guides/media-library/license-profiles" >}}) for the full `usagePurposes` shape.
-
 ### Replacement of authApi.createAccessToken with createAccessTokenV2
 
 **Code:** `LIBREAKING069`
@@ -285,6 +237,34 @@ In the server config, any of these keys under `search`: `queryBuilderConfig`, `i
 
 Remove each of the listed properties from the `search` config. They had no effect, so no replacement is required.
 
+### Removal of the mediaCenter.usageLog config property
+
+**Code:** `LIBREAKING074`
+
+The project config property `mediaCenter.usageLog` has been removed and replaced by `mediaCenter.usagePurposes`: the nested `usageLog.purposes` array becomes the top-level `usagePurposes` array.
+
+```js
+{
+  mediaCenter: {
+    // before
+    // usageLog: {
+    //   purposes: [{handle: 'web', label: {en: 'Web'}}]
+    // }
+
+    // after
+    usagePurposes: [{handle: 'web', label: {en: 'Web'}}]
+  }
+}
+```
+
+#### Detect
+
+In the project config, a `usageLog` key under `mediaCenter`. Search for `usageLog` and confirm the hit sits under `mediaCenter` (not an unrelated `usageLog` field elsewhere).
+
+#### Fix
+
+Move the entries from `mediaCenter.usageLog.purposes` into a top-level `mediaCenter.usagePurposes` array and delete the `usageLog` object. All purpose fields (`handle`, `label`, `internal`, `paramsSchema`) carry over unchanged. To record usage automatically on publish, add a `contentType` to the purpose and, optionally, a `recordUsageLogEntry` function. See the [License Profiles guide]({{< ref "/guides/media-library/license-profiles" >}}) for the full `usagePurposes` shape.
+
 ### Removal of the publishType property on contentTypes and deliveries
 
 **Code:** `LIBREAKING076`
@@ -306,6 +286,26 @@ In the project config, a `publishType` key on a `contentTypes[]` or `deliveries[
 #### Fix
 
 Replace `publishType` with `publishControl.mode`, which takes the same values: `publishType: 'publish'` becomes `publishControl: {mode: 'publish'}`, and `publishType: 'export'` becomes `publishControl: {mode: 'export', deliveryHandle: '<handle>'}`. See the [Export Mode]({{< ref "/guides/editor/publish-control/export-mode" >}}) guide for the full `publishControl` shape.
+
+### Removal of the LIFEAT011 in-house production media-type config
+
+The `LIFEAT011` customer feature has been removed without prior deprecation. It was a temporary workaround that marked an image as an "in-house production" and rendered an icon on image cards. With the cleanup of Media Library tags and the introduction of License Profiles, it is no longer needed. It was activated by a `LIFEAT011` block on a `mediaImage` media type:
+
+```js
+LIFEAT011: {
+  inHouseHandle: 'author'
+}
+```
+
+The config schema has been removed, so any leftover `LIFEAT011` block now fails config validation on server startup.
+
+#### Detect
+
+In the server media-type configuration, a `LIFEAT011` key on a `mediaImage` media type. Search for `LIFEAT011` (e.g. `rg 'LIFEAT011'`).
+
+#### Fix
+
+Remove the entire `LIFEAT011: { ... }` block from every affected `mediaImage` media type. This was a project-specific workaround, so most projects have no occurrences. No replacement config is required.
 
 ## Deprecations :warning:
 
@@ -525,8 +525,8 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
-- [v308.1.4](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.4): fix(license-profile): allow internal usagePurposes without recordUsageLogEntry
 
+- [v308.1.4](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.4): fix(license-profile): allow internal usagePurposes without recordUsageLogEntry
 - [v308.1.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.3): fix(print): Renumber huGO print breaking change to LIBREAKING071
 
 ### Livingdocs Editor Patches
@@ -536,7 +536,6 @@ Here is a list of all patches after the release has been announced.
 - [v126.1.5](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.5): fix(metadata): initialize named crops once the image is available
 - [v126.1.4](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.4): fix(license-profiles): define default display filter for li-license-profile
 - [v126.1.3](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.3): fix(auth): Always refresh tokens, makes `auth.authTokenRenewalInterval` config obsolete
-
 - [v126.1.2](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.2): Revert "fix(release-2026-07): Update framework to v34.1.7 (release-2026-07 tag)"
 
 ---
