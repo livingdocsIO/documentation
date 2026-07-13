@@ -2,14 +2,14 @@
 type: release-notes
 title: July 2026 Release
 description: Technical Release Notes for release-2026-07
-excludeFromSearch: true
+excludeFromSearch: false
 hideSectionTeaser: true
 
 header:
-  upcoming: true
+  upcoming: false
   legacy: false
-  current: false
-  maintained: false
+  current: true
+  maintained: true
   branchHandle: release-2026-07
 
 systemRequirements:
