@@ -106,13 +106,24 @@ livingdocs-server migrate up
 
 #### Recreate the Elasticsearch indices
 
-This release adds Norwegian language support (Bokmål `nb` and Nynorsk `nn`) across the drafts, publications, and media library indices, and language-aware text fields plus a German decompounder to the media library. These require an Elasticsearch index recreation to activate:
-
-```sh
-livingdocs-server elasticsearch-index --recreate
-```
+This release adds Norwegian language support (Bokmål `nb` and Nynorsk `nn`) across the drafts, publications, and media library indices, and language-aware text fields plus a German decompounder to the media library.
 
 The change is backwards compatible: until the indices are recreated, the new language-specific fields are silently skipped and search keeps working as before.
+
+{{< info >}}
+To enable Norwegian language support, the affected Elasticsearch indices need to be
+recreated. This is not a quick operation:
+
+```sh
+livingdocs-server elasticsearch-index --recreate --handle=<type>
+```
+
+`--recreate` **deletes the existing index** and creates a fresh one, then repopulates it
+by re-indexing all documents in a **background job**. Depending on the number of documents,
+this can take a while to complete. Until the background indexer finishes, the index is
+incomplete and search returns partial results, so plan a maintenance window and run it per
+`--handle` (drafts, publications, media library).
+{{< /info >}}
 
 ### Rollback
 
