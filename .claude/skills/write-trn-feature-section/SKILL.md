@@ -12,7 +12,7 @@ Ask **one question at a time** — wait for each answer before asking the next:
 1. **Release** — identifier in `release-YYYY-MM` format. Accept plain year/month and normalize it yourself.
 2. **GitHub PR URLs** — ask whether they'd like to add all URLs at once or one at a time. If one at a time: ask for the first URL, then ask "Any more PRs? (say 'done' to continue)" and keep collecting until done. If all at once: accept a list of URLs in a single message.
 3. **Notion requirement URL** — original requirement page (if available)
-4. **Product Demo Presentation** — Figma Slides URLs are not supported. Ask the developer to paste the first slide screenshot (`Cmd+V` / `Ctrl+V`) or slide text/notes. Then ask "Any more slides? (say 'done' to continue)". Say "none" to skip.
+4. **Cycle Demo Presentation** — a Figma Slides URL (see Step 2 for how it's read). Prefer a **node-specific** link: in Figma, select the relevant slide → Copy link → the URL contains `node-id=...`, which lets a single slide be read at full resolution. A plain deck URL works too. Say "none" to skip.
 5. **Additional context** — free-form notes, summaries, or exclusions (e.g. "ignore PR #123"). Optional.
 6. **Screenshots or Images** — ask the developer to paste images (`Cmd+V` / `Ctrl+V`). For each: ask for the filename (`release-YYYY-MM-description.png`) and a short description of what is shown. Say "none" to skip.
 7. **Documentation link** — path under `/reference/` or `/guides/`, if one exists or will exist
@@ -21,9 +21,21 @@ Ask **one question at a time** — wait for each answer before asking the next:
 
 - Fetch each GitHub PR: title, description, linked issues — understand what was built and why.
 - If a Notion URL was provided, fetch it to understand the original user requirement.
-- Use any demo slides or notes from steps 4 and 5 to understand how the feature was positioned.
+- If a Figma Slides URL was provided, read the deck to understand how the feature was positioned (see **Reading a Figma Slides deck** below).
 - Place each image after the paragraph it best illustrates, using the developer's description to decide.
-- Use these two examples to calibrate tone and structure:
+
+### Reading a Figma Slides deck
+
+Only the Figma MCP `get_screenshot` tool works on Slides — `get_design_context` and `get_metadata` are rejected for Slides files, so there is no text/node-tree extraction. Read via screenshots:
+
+- **Node-specific link** (`node-id=X-Y` in the URL): screenshot that node directly at `maxDimension` ~2048. This is the ideal case — one crisp slide, no cropping.
+- **Plain deck URL** (no `node-id`): the page node is `0:1`. First screenshot `0:1` at a high `maxDimension` (e.g. 8000) for an overview — rows are sections, columns are slides within a section — then crop the relevant region to read it. `maxDimension` defaults to 1024, which is too small for a full deck; always raise it.
+- The tool returns a short-lived asset URL; download it (`curl`) and read the PNG. For a large deck, crop with Pillow/`sips` rather than reading the whole canvas at once.
+- If only a deck URL is available and a slide is still unreadable after cropping, ask the developer for a node-specific link to that slide.
+
+### Calibration examples
+
+Use these two examples to calibrate tone and structure:
 
 **Example 1 - Simple (auto-available, no config):**
 
