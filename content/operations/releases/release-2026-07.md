@@ -54,124 +54,7 @@ systemRequirements:
       version: Chrome >= 138, Edge >= 138, Firefox >= 140, Safari >= 18.6
 ---
 
-## Caveat :fire:
-
-These are the release notes of the upcoming release (pull requests merged to the main branch).
-
-- :information_source: this document is updated automatically by a bot (pr's to categorize section)
-- :information_source: this document will be roughly updated manually once a week (put PRs + description to the right section)
-- :fire: We don't guarantee stable APIs. They can still change until the official release
-- :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
-
-## PRs to Categorize
-
-- [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-editor/pull/11304)
-- [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-server/pull/9673)
-- [Authorization Server](https://github.com/livingdocsIO/livingdocs-editor/pull/11154)
-- [Authorization Server](https://github.com/livingdocsIO/livingdocs-server/pull/9437)
-- [Remove huGO print integration and print edit mode (LIBREAKING077)](https://github.com/livingdocsIO/livingdocs-editor/pull/11294)
-- [Remove huGO print integration and channel editMode (LIBREAKING077)](https://github.com/livingdocsIO/livingdocs-server/pull/9663)
-- [Image Card Enhancements: Tags](https://github.com/livingdocsIO/livingdocs-editor/pull/11220)
-- [Image Card Enhancements: Tags](https://github.com/livingdocsIO/livingdocs-server/pull/9547)
-- [fix(search): Prevent search cheat sheet from being clipped in side panel](https://github.com/livingdocsIO/livingdocs-editor/pull/11302)
-- [fix(deps): update opentelemetry (main) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/9669)
-- [fix(deps): update dependency @livingdocs/framework from 34.1.6 to v34.1.7 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/11299)
-- [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-server/pull/9649)
-- [Remove search.metadataMapping (LIDEP069)](https://github.com/livingdocsIO/livingdocs-server/pull/9406)
-- [Usage Log Billing Part 4](https://github.com/livingdocsIO/livingdocs-editor/pull/11254)
-- [Usage Log Billing Part 4](https://github.com/livingdocsIO/livingdocs-server/pull/9609)
-- [Store li-buy-in default expiry at UTC midnight](https://github.com/livingdocsIO/livingdocs-editor/pull/11285)
-- [Build media library mapping from config](https://github.com/livingdocsIO/livingdocs-server/pull/9664)
-- [Remove publishType references (LIDEP074)](https://github.com/livingdocsIO/livingdocs-editor/pull/11134)
-- [Remove publishType from contentTypes and deliveries (LIDEP074)](https://github.com/livingdocsIO/livingdocs-server/pull/9408)
-- [Usage Log Billing Part 3](https://github.com/livingdocsIO/livingdocs-editor/pull/11245)
-- [Usage Log Billing Part 3](https://github.com/livingdocsIO/livingdocs-server/pull/9600)
-- [License profiles](https://github.com/livingdocsIO/livingdocs-editor/pull/11201)
-- [License profiles](https://github.com/livingdocsIO/livingdocs-server/pull/9491)
-- [Show component groups with translated labels](https://github.com/livingdocsIO/livingdocs-editor/pull/11273)
-- [chore(deps): update dependency eslint from 10.5.0 to v10.6.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/9643)
-- [chore(deps): update dependency webpack from 5.108.0 to v5.108.1 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/11269)
-- [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-editor/pull/11260)
-- [Prevent li-metadata-translations save on open](https://github.com/livingdocsIO/livingdocs-editor/pull/11244)
-- [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-editor/pull/11238)
-- [Usage Log Billing Part 2](https://github.com/livingdocsIO/livingdocs-server/pull/9501)
-- [Image Collections & Inbox: Auto-scroll near edges while dragging](https://github.com/livingdocsIO/livingdocs-editor/pull/11084)
-- [fix(test): upgrade mocha to 12.0.0-rc.1 and use renamed cli.js entry](https://github.com/livingdocsIO/livingdocs-server/pull/9591)
-- [Design/history side panel brush up](https://github.com/livingdocsIO/livingdocs-editor/pull/11210)
-- [fix(blob-store): prevent S3 socket exhaustion on partial image reads](https://github.com/livingdocsIO/livingdocs-server/pull/9558)
-- [fix(deps): update dependency nodemailer from 8.0.11 to 9.0.1 [security] (main)](https://github.com/livingdocsIO/livingdocs-server/pull/9562)
-- [fix(channel-config): allow nb-NO and nn-NO in translatable strings](https://github.com/livingdocsIO/livingdocs-server/pull/9557)
-- [Add Retresco main entity toggle](https://github.com/livingdocsIO/livingdocs-server/pull/9508)
-- [Add Retresco main entity toggle](https://github.com/livingdocsIO/livingdocs-editor/pull/11205)
-- [Replace Semantic Release Check from Vercel to GitHub Action to be more reliable](https://github.com/livingdocsIO/livingdocs-server/pull/9553)
-- [chore(deps): update eslint from 10.4.1 to v10.5.0 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/11225)
-- [Show file type error in upload center dialog](https://github.com/livingdocsIO/livingdocs-editor/pull/11167)
-- [fix(deps): update dependency sharp from 0.34.5 to ^0.35.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/9540)
-- [Keep items in inbox on drop when configured](https://github.com/livingdocsIO/livingdocs-editor/pull/11214)
-- [Keep items in inbox on drop when configured](https://github.com/livingdocsIO/livingdocs-server/pull/9521)
-- [fix(deps): update dependency unsplash-js from 7.0.20 to v8 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/9497)
-- [fix(deps): update opentelemetry (main) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/9546)
-- [Remove deprecated NZZ search properties (LIDEP070)](https://github.com/livingdocsIO/livingdocs-server/pull/9407)
-- [Usage Log Billing Part 1](https://github.com/livingdocsIO/livingdocs-editor/pull/11192)
-- [Usage Log Billing Part 1](https://github.com/livingdocsIO/livingdocs-server/pull/9485)
-- [Seeding media permissions](https://github.com/livingdocsIO/livingdocs-server/pull/9507)
-- [chore(deps): update dependency undici from 8.3.0 to v8.4.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/9518)
-- [Image Collections: Check for Unique Title](https://github.com/livingdocsIO/livingdocs-editor/pull/11184)
-- [Image Card Enhancements: showLabel & maxLineCount](https://github.com/livingdocsIO/livingdocs-server/pull/9500)
-- [Pass workspace to iframe and twitter doc-html embeds](https://github.com/livingdocsIO/livingdocs-editor/pull/11204)
-- [Image Card Enhancements: showLabel & maxLineCount](https://github.com/livingdocsIO/livingdocs-editor/pull/11203)
-- [fix(deps): update dependency pdfjs-dist from 5.7.284 to v6 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/11194)
-- [Fix the REPL crashing on startup](https://github.com/livingdocsIO/livingdocs-server/pull/9499)
-- [Image Collections: Add batch editing of metadata to image collections batch actions and hide action pill when deleting items](https://github.com/livingdocsIO/livingdocs-editor/pull/11178)
-- [Copy document inbox on copy and print flows](https://github.com/livingdocsIO/livingdocs-server/pull/9438)
-- [chore(deps): update eslint from 10.4.0 to v10.4.1 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/11185)
-- [chore(deps): update dependency exifreader from 4.39.1 to v4.40.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/9477)
-- [fix(upload): Enable save button when EXIF extraction fills required metadata](https://github.com/livingdocsIO/livingdocs-editor/pull/11177)
-- [Show document translations of available languages after deleting a language](https://github.com/livingdocsIO/livingdocs-editor/pull/11170)
-- [Correct default crop computation for large images with use2025Behavior](https://github.com/livingdocsIO/livingdocs-server/pull/9457)
-- [Design/Compact Floating Panel](https://github.com/livingdocsIO/livingdocs-editor/pull/11162)
-- [Show media library entry counts on project details](https://github.com/livingdocsIO/livingdocs-editor/pull/11131)
-- [List reference labels](https://github.com/livingdocsIO/livingdocs-editor/pull/11157)
-- [fix(deps): update dependency @livingdocs/framework from 34.1.2 to v34.1.3 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/11159)
-- [fix(deps): update dependency @livingdocs/framework from 34.1.2 to v34.1.3 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/9445)
-- [Remove translations missing from the editing API update payload](https://github.com/livingdocsIO/livingdocs-server/pull/9404)
-- [Hide internal usage log purposes when downloading images](https://github.com/livingdocsIO/livingdocs-editor/pull/11132)
-- [Design/Scrollbars](https://github.com/livingdocsIO/livingdocs-editor/pull/11021)
-
-- [Expose `getAllKeysForMediaLibraryEntry` in Public API](https://github.com/livingdocsIO/livingdocs-server/pull/9312)
-- [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-editor/pull/11136)
-- [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-server/pull/9419)
-- [Remove #lib alias](https://github.com/livingdocsIO/livingdocs-server/pull/9409)
-- [Add stats endpoint for total media library entries per project](https://github.com/livingdocsIO/livingdocs-server/pull/9402)
-- [Remove Google Vision integration (LIDEP073)](https://github.com/livingdocsIO/livingdocs-server/pull/9397)
-- [Remove Google Vision integration (LIDEP073)](https://github.com/livingdocsIO/livingdocs-editor/pull/11129)
-- [chore: Migrate signup screen to vue](https://github.com/livingdocsIO/livingdocs-editor/pull/11076)
-- [Only generate statistics and references for read migrations when there is content](https://github.com/livingdocsIO/livingdocs-server/pull/9389)
-- [Fix flaky Playwright tests](https://github.com/livingdocsIO/livingdocs-editor/pull/11055)
-- [fix(drafts): Reload editor when document contentType changes via remote update](https://github.com/livingdocsIO/livingdocs-editor/pull/11099)
-- [Remove unused functions in auth api](https://github.com/livingdocsIO/livingdocs-server/pull/9374)
-- [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-server/pull/9375)
-- [fix(documents): Serialize content in transform functions to generate component IDs](https://github.com/livingdocsIO/livingdocs-server/pull/9368)
-- [fix(deps): update opentelemetry (main) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/9381)
-- [fix(deps): update dependency @livingdocs/framework from 34.1.1 to v34.1.2 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/9372)
-- [fix(deps): update dependency @livingdocs/framework from 34.1.1 to v34.1.2 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/11101)
-- [Image Collections: Improve config for main navigation item](https://github.com/livingdocsIO/livingdocs-editor/pull/11066)
-- [fix(upload): validation state for single images](https://github.com/livingdocsIO/livingdocs-editor/pull/11065)
-- [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-editor/pull/11078)
-- [fix(includes): li-string-list value not shown immediately in include service params panel](https://github.com/livingdocsIO/livingdocs-editor/pull/11051)
-- [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-server/pull/9341)
-- [chore(deps): update dependency sinon from 21.1.2 to v22 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/9349)
-- [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-server/pull/9325)
-- [fix: batch editing validation](https://github.com/livingdocsIO/livingdocs-editor/pull/11038)
-- [fix(deps): update dependency @livingdocs/framework from 34.1.0 to v34.1.1 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/11060)
-- [fix(deps): update dependency @livingdocs/framework from 34.1.0 to v34.1.1 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/9326)
-- [Hide state of media source items](https://github.com/livingdocsIO/livingdocs-editor/pull/11052)
-- [fix(deps): update opentelemetry (main) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/9318)
-- [fix(deps): update dependency @livingdocs/framework from 34.0.2 to v34.1.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/9307)
-- [fix(deps): update dependency @livingdocs/framework from 34.0.2 to v34.1.0 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/11045)
-- [Use publish button "release" label for issue pages](https://github.com/livingdocsIO/livingdocs-editor/pull/11041)
-
-To get an overview about new functionality, read the [Release Notes](TODO).
+To get an overview about new functionality, read the [Release Notes](https://livingdocs.io/en/release-july-2026).
 To learn about the necessary actions to update Livingdocs to `release-2026-07`, read on.
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
@@ -213,6 +96,11 @@ All migrations should execute quickly and not lock write-heavy tables.
 #   Backfills unique-id entries for existing image collections into
 #   `document_unique_ids` so that duplicate collection titles are detected
 #   going forward. Existing duplicates are left untouched, not reported as errors.
+# 217-oauth-grants.js
+#   Creates the `oauth_grants` table used by the new Authorization Server and by
+#   editor session cookies, and backfills active `user_sessions` rows as legacy
+#   grants. Non-destructive to `user_sessions`; runs regardless of whether the
+#   Authorization Server is enabled.
 livingdocs-server migrate up
 ```
 
@@ -230,7 +118,13 @@ The change is backwards compatible: until the indices are recreated, the new lan
 
 ### Rollback
 
-No rollback steps are required for this release.
+To roll back the database migrations of this release, run:
+
+```sh
+livingdocs-server migrate down
+```
+
+The `217-oauth-grants.js` down migration drops the `oauth_grants` table; `user_sessions` is left untouched by the up migration, so rolling back to the previous server build is safe. The exception is any (user, device) whose editor session cookie was rotated to the new `li.rt_…` shape during the new-build window — those sessions are invalidated on the rolled-back build and the affected user has to re-authenticate on that device. Other devices are unaffected.
 
 ## Breaking Changes :fire:
 
@@ -414,7 +308,31 @@ In the project config, a `publishType` key on a `contentTypes[]` or `deliveries[
 
 Replace `publishType` with `publishControl.mode`, which takes the same values: `publishType: 'publish'` becomes `publishControl: {mode: 'publish'}`, and `publishType: 'export'` becomes `publishControl: {mode: 'export', deliveryHandle: '<handle>'}`. See the [Export Mode]({{< ref "/guides/editor/publish-control/export-mode" >}}) guide for the full `publishControl` shape.
 
-## Deprecations
+## Deprecations :warning:
+
+### Deprecation of the legacy li-authentication session methods
+
+**Codes:** `LIDEP084-createCookies`, `LIDEP084-extendSessionCookie`, `LIDEP084-hasActiveClients`, `LIDEP084-isActiveClient`, `LIDEP084-isActiveSession`, `LIDEP084-revokeSessionsOfUser`, `LIDEP084-revokeSessionOfUser`
+
+With the introduction of the Authorization Server and its `oauth_grants`-backed session storage, seven legacy `li-authentication` methods are deprecated and will be removed in `release-2026-12`. Each is replaced by a grant-based equivalent on the authentication API:
+
+| Deprecated method (`LIDEP084-…`) | Replacement                                                                                                     |
+| -------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| `createCookies`                  | `authApi.createSessionGrant({...})`                                                                             |
+| `extendSessionCookie`            | `authApi.extendSessionGrant({...})`                                                                             |
+| `hasActiveClients`               | `(await authApi.listGrantsForUser({userId, clientId: 'session'})).length > 0`                                   |
+| `isActiveClient`                 | `(await authApi.listGrantsForUser({userId, clientId: 'session', name: liClient})).length > 0`                   |
+| `isActiveSession`                | `authApi.isActiveToken({jti, type: 'user', grantId})`                                                           |
+| `revokeSessionsOfUser`           | `authApi.revokeGrants({userId, clientId: 'session'})` (pass `excludeGrantId` to keep the current session alive) |
+| `revokeSessionOfUser`            | `authApi.revokeGrant({grantId, userId})`                                                                        |
+
+#### Detect
+
+In the project's server code, a call to any of the seven methods above on the `li-authentication` API. Each call emits a throttled `LIDEP084-*` deprecation warning at runtime.
+
+#### Fix
+
+Migrate each call to the grant-based replacement listed above. The new methods operate on `oauth_grants` rather than `user_sessions` directly.
 
 ## Features :gift:
 
@@ -540,6 +458,45 @@ Enable it per dashboard via `displayFilters`:
 
 For more information, see the [Expert Search]({{< ref "/customising/advanced/editor-configuration/expert-search" >}}) documentation.
 
+### OAuth 2.1 Authorization Server
+
+External integrations and editor add-ons need a standards-compliant way to obtain delegated access on a user's behalf. Livingdocs now ships an OAuth 2.1 Authorization Server alongside the existing session flow. It supports the Authorization Code and Refresh Token grants, requires PKCE (S256), and works with public clients, resource indicators (RFC 8707), and Client Identifier Metadata Document clients.
+
+When enabled, it exposes the following endpoints:
+
+- `GET /.well-known/oauth-authorization-server` (RFC 8414)
+- `GET /auth/authorize`
+- `GET|POST /auth/consent`
+- `POST /auth/token`
+- `POST /auth/token/revoke` (RFC 7009)
+
+The feature is opt-in and off by default. Enable it and register at least one client:
+
+```js
+auth: {
+  issuer: 'https://your-instance.example.com', // absolute URL the server advertises
+  authorizationServer: {
+    enabled: true,
+    scopesSupported: ['...'],
+    clients: [
+      // pre-registered clients, or `{clientId: 'https://…'}` entries that
+      // dereference a Client Identifier Metadata Document
+    ]
+    // optionally `resources: [...]` for per-resource scope sets (RFC 8707)
+  }
+}
+```
+
+Independently of the Authorization Server, editor session cookies now move from JWT-only to rotating refresh tokens backed by the new `oauth_grants` table. Legacy JWT cookies upgrade in place on the next refresh, so there is no user-visible change. This substrate also powers session-management capabilities such as listing active devices, per-device revocation, and refresh-token rotation with reuse detection through the new `authApi` grant methods (`createSessionGrant`, `listGrantsForUser`, `revokeGrant`, and others).
+
+{{< info >}}
+This change replaces the `authApi.createAccessToken` API (see `LIBREAKING069`) and deprecates seven legacy `li-authentication` session methods (see `LIDEP084`).
+{{< /info >}}
+
+### Officially Support Node.js v26
+
+Livingdocs Server and Editor now officially support Node.js v26. You can upgrade your runtime to v26; the previously supported versions continue to work.
+
 ## Vulnerability Patches
 
 We are constantly patching module vulnerabilities for the Livingdocs Server and Livingdocs Editor as module fixes are available. Below is a list of all patched vulnerabilities included in the release.
@@ -573,6 +530,7 @@ Here is a list of all patches after the release has been announced.
 - [v308.1.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.3): fix(print): Renumber huGO print breaking change to LIBREAKING071
 
 ### Livingdocs Editor Patches
+
 - [v126.1.7](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.7): fix(media-library): hide license profile tag when profiles not configured
 - [v126.1.6](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.6): fix(media-library): hide media state badge on empty image placeholder
 - [v126.1.5](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.5): fix(metadata): initialize named crops once the image is available
