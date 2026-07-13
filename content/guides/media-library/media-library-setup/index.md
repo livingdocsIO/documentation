@@ -843,7 +843,7 @@ Define at least one purpose in the `projectConfig.mediaCenter.usagePurposes` arr
 
 The purposes are displayed to a user when creating or updating a usage log entry, or when downloading a media library entry. Any additional properties defined within the `paramsSchema` array will also be displayed when creating or updating an entry, but not in the download form. To see which metadata plugins are supported please refer to the [Metadata Plugins List]({{< ref "reference/document/metadata/plugins">}}). We automatically store the reporting date and `userId`, and provide input fields for the publication date, the state ("pending" or "confirmed") and a url.
 
-Usage log purposes can be flagged as internal. When the `internal` property is set to `true` it prevents a user from creating, updating or deleting entries for the purpose within the editor. A read-only entry will still be visible within the UI. This is intended for purposes whose entries are created automatically: on publish through a [`recordUsageLogEntry` function]({{< ref "#generating-usage-log-entries-on-publish" >}}), or programmatically through the [`addUsageLogEntriesForMediaInDocument` API]({{< ref "#recording-usage-log-entries-programmatically" >}}).
+Usage log purposes can be flagged as internal. When the `internal` property is set to `true` it prevents a user from creating, updating or deleting entries for the purpose within the editor. A read-only entry will still be visible within the UI. This is intended for purposes whose entries are created automatically on publish through a [`recordUsageLogEntry` function]({{< ref "#generating-usage-log-entries-on-publish" >}}).
 
 ### Creating usage log dashboards
 
@@ -925,13 +925,17 @@ liEditor.searchFilters.registerListV2('pendingMediaUsageLogs', {
 
 ### Recording usage log entries
 
-A usage log entry can be created three ways: by hand in the editor, automatically when a document is published, or from your own server code.
+A usage log entry can be created two ways: by hand in the editor, or automatically when a document is published.
 
 #### Adding usage log entries manually
 
 Editors add and edit usage log entries directly on a media library entry. They pick a purpose, fill in its `paramsSchema` fields, and set the publication date, a URL and the state (pending or confirmed). Purposes flagged as `internal` are read-only and cannot be added or edited by hand.
 
 #### Generating usage log entries on publish
+
+{{< info >}}
+The previous approach, a `mediaLibraryApi.addUsageLogEntriesForMediaInDocument()` call in a post publish hook, is no longer recommended. It does not integrate out of the box with license profiles. Generate usage log entries automatically on publish as described below instead.
+{{< /info >}}
 
 To record usage automatically on publish, give a usage purpose a `contentType`. When a document of a matching content type is published, Livingdocs records one usage log entry for every referenced media library entry that does not already have an entry for that document. The entry is pending unless a `recordUsageLogEntry` function sets its state and params.
 
@@ -970,27 +974,3 @@ liServer.registerRecordUsageLogEntryFunctions([
 ```
 
 The `recordUsageLogEntry` function is optional. If it returns nothing, throws, or is not registered, the entry is recorded as pending. Errors are logged and never block publication.
-
-#### Recording usage log entries programmatically
-
-Some usages are not tied to a document's own publish event. A digital edition should log usage for all its pages when the edition is published, not when each page is published on its own. A newsletter should log usage when it is sent. For these cases, call `mediaLibraryApi.addUsageLogEntriesForMediaInDocument()` from your own server code, at the time that fits the use case.
-
-The API records a confirmed usage log entry for every media library entry referenced in a published document, skipping entries that already have one for the same document and purpose. It requires a published `documentVersion`.
-
-```js
-liServer.registerInitializedHook(() => {
-  const mediaLibraryApi = liServer.features.api('li-media-library')
-  liServer.registerPublicationHooks({
-    async postPublishHookAsync({documentVersion}) {
-      await mediaLibraryApi.addUsageLogEntriesForMediaInDocument({
-        documentVersion,
-        purpose: 'web',
-        url: `https://example.com/my-slug-${documentVersion.id}`,
-        params: {medium: 'Internet'}
-      })
-    }
-  })
-})
-```
-
-Pair this with an internal usage purpose that has no `contentType`. No entry is then created on the document's own publish, so the API is the only source of entries for that purpose.

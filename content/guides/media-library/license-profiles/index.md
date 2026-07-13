@@ -243,8 +243,6 @@ liServer.registerRecordUsageLogEntryFunctions([
 ])
 ```
 
-For advanced cases where entries must be recorded at a time you control, call the `addUsageLogEntriesForMediaInDocument` server API instead. See [Generating usage log entries on publish]({{< ref "/guides/media-library/media-library-setup/#generating-usage-log-entries-on-publish" >}}) for both approaches.
-
 That is the whole setup. With profiles configured, the publish gate, usage logging and approval workflow activate automatically. No hook registration call is needed.
 
 ## Constraints

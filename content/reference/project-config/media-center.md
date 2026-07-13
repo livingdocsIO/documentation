@@ -80,7 +80,6 @@ A purpose's `internal`, `contentType` and `recordUsageLogEntry` properties toget
 
 - Entries can be added manually in the editor, unless the purpose is `internal`.
 - Entries can be recorded automatically when a document is published, if the purpose has a `contentType`.
-- Entries can be recorded programmatically through the [`addUsageLogEntriesForMediaInDocument`]({{< ref "/guides/media-library/media-library-setup/#recording-usage-log-entries-programmatically" >}}) server API, at any time.
 
 Each purpose supports:
 
