@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Hide license profile tag when license profiles are not configured](https://github.com/livingdocsIO/livingdocs-editor/pull/11320)
 - [Hide "media not found" badge on empty image placeholders](https://github.com/livingdocsIO/livingdocs-editor/pull/11318)
 - [fix(auth): Always refresh tokens, makes `auth.authTokenRenewalInterval` config obsolete](https://github.com/livingdocsIO/livingdocs-editor/pull/11308)
 - [Add standard cost class translation to the license profile form](https://github.com/livingdocsIO/livingdocs-editor/pull/11310)
