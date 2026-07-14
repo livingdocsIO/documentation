@@ -15,8 +15,8 @@ Ask **one question at a time** — wait for each answer before asking the next:
 
 1. **Release** — identifier in `release-YYYY-MM` format. Accept plain year/month and normalise it yourself.
 2. **GitHub PR URLs** — ask whether they'd like to add all URLs at once or one at a time. If one at a time: ask for the first URL, then ask "Any more PRs? (say 'done' to continue)" and keep collecting until done. If all at once: accept a list of URLs in a single message.
-3. **Notification code(s)** — the `LivingdocsBreakingChange` code(s) this change emits (e.g. `LIBREAKING000`). Collect all of them if there are several (e.g. one per affected property, like `LIBREAKING000-propertyOne`, `LIBREAKING000-propertyTwo`). Say "none" if the change emits no runtime warning (e.g. a static-only concern such as direct `lib/` imports).
-4. **Notion requirement URL** — original requirement page (if available). Say "none" to skip.
+3. **Notification code(s)** — the `LivingdocsBreakingChange` code(s) this change emits (e.g. `LIBREAKING000`). Collect all of them if there are several (e.g. one per affected property, like `LIBREAKING000-propertyOne`, `LIBREAKING000-propertyTwo`). Say "no" if the change emits no runtime warning (e.g. a static-only concern such as direct `lib/` imports).
+4. **Notion requirement URL** — original requirement page (if available). Say "no" to skip.
 5. **Additional context** — free-form notes from the developer about the breaking change. Optional.
 
 ## Step 2: Read the sources

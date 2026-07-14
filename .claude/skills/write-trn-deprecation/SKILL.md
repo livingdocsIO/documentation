@@ -16,8 +16,8 @@ Ask **one question at a time** — wait for each answer before asking the next:
 1. **Release** — identifier in `release-YYYY-MM` format where the deprecation is being introduced. Accept plain year/month and normalise it yourself.
 2. **Planned removal release** — when will the deprecated property / API / behaviour be removed? Accept `release-YYYY-MM` format, or "no fixed removal release" if the deprecation is open-ended (e.g. an opt-in API default-behaviour change).
 3. **GitHub PR URLs** — ask whether they'd like to add all URLs at once or one at a time. If one at a time: ask for the first URL, then ask "Any more PRs? (say 'done' to continue)" and keep collecting until done. If all at once: accept a list of URLs in a single message.
-4. **Notification code(s)** — the `LivingdocsDeprecation` code(s) this deprecation emits (e.g. `LIDEP000`). Collect all of them if there are several. Say "none" if it emits no runtime warning.
-5. **Notion requirement URL** — original requirement page (if available). Say "none" to skip.
+4. **Notification code(s)** — the `LivingdocsDeprecation` code(s) this deprecation emits (e.g. `LIDEP000`). Collect all of them if there are several. Say "no" if it emits no runtime warning.
+5. **Notion requirement URL** — original requirement page (if available). Say "no" to skip.
 6. **Additional context** — free-form notes from the developer. Optional.
 
 ## Step 2: Read the sources
