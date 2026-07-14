@@ -181,3 +181,40 @@ Apply any requested changes to both the docs and the TRN entry.
 3. Append the entry at the end of that section, before the next `##` heading.
 4. Save and confirm to the developer — summarize both what changed in the documentation (with paths) and the TRN entry that was added.
 5. If images were provided: remind the developer to manually save each image to its target directory (`content/operations/releases/` for TRN images, the relevant doc folder for documentation images) using the exact filename from the `{{< img src="..." >}}` tags. Claude cannot write image files directly.
+
+## Step 7: Optionally commit and open a PR
+
+Ask the developer: _"Want me to commit these changes and open a PR? (yes / no)"_ If they say no, stop here — the changes are left in the working tree for them to handle.
+
+If yes:
+
+1. **Branch.** If currently on `main`, create a branch (working changes carry over):
+   ```bash
+   git checkout -b docs/<short-feature-slug>
+   ```
+   If already on a feature branch, commit there.
+2. **Stage only the files this skill touched** — the documentation page(s) from Step 3 and the release file from Step 6. Check `git status` first; don't blanket-add unrelated changes.
+3. **Commit.** Use a `feat` prefix so a docs deployment is triggered (a prefix like `docs`/`chore` does not deploy):
+   ```bash
+   git commit -m "feat(<release-handle>): document <feature name>"
+   ```
+4. **Push:**
+   ```bash
+   git push -u origin docs/<short-feature-slug>
+   ```
+5. **Open the PR** with `gh pr create`, base branch `main`. Keep the description **short, simple, and straightforward** — a couple of lines on what happened, no ceremony:
+
+   ```
+   ## Motivation
+
+   Documents <feature name> for <release-handle>.
+
+   _Created using the [document-feature](/.claude/skills/document-feature/SKILL.md) Claude Code skill._
+
+   ## Changelog
+
+   - <Added/updated doc page(s), with path(s)>
+   - Added a Feature entry to <release-handle>
+   ```
+   Omit any line that doesn't apply (e.g. drop the doc-page line if the feature had nothing to document).
+6. Return the PR URL to the developer.
