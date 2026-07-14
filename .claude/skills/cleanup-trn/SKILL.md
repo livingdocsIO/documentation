@@ -1,6 +1,6 @@
 ---
 name: cleanup-trn
-description: Clean up the Technical Release Notes (TRN) for a Livingdocs release. Use this skill whenever the user wants to clean up or work on release notes, mentions "TRN cleanup", "clean up release notes", "release notes cleanup", or asks about preparing or editing the TRN for any release (e.g. "let's clean up the TRN for release-2026-07"). This skill handles the full workflow: gathering features/breaking changes/deprecations from Notion, creating the git branch and PR, checking migrations, and systematically editing the TRN file.
+description: Clean up the Technical Release Notes (TRN) for a Livingdocs release. Use this skill whenever the user wants to clean up or work on release notes, mentions "TRN cleanup", "clean up release notes", "release notes cleanup", or asks about preparing or editing the TRN for any release (e.g. "let's clean up the TRN for release-2026-07"). This skill handles the full workflow: gathering features/breaking changes/deprecations from Notion, creating the git branch and PR, checking migrations, reviewing the System Requirements versions, and systematically editing the TRN file.
 ---
 
 # Cleanup TRN
@@ -170,6 +170,30 @@ Some entries may only have a GHSA identifier (no CVE) — that's fine, just omit
 
 Replace each `- TBD` placeholder with the extracted list. If a subsection has no patches, leave its `- TBD` in place. If neither subsection has any patches, also add a checkbox to the PR's `## Open Tasks` section (do not mention it in the changelog).
 
+### 5f. Review the System Requirements versions
+
+The System Requirements live in the file's **frontmatter** under `systemRequirements:` — a `suggested:` and a `minimal:` list, each with a `version` for Node, NPM, Postgres, Elasticsearch, OpenSearch, Redis, the two Livingdocs Docker images, and Browser Support. The release bot copies these forward from the previous release unchanged, so they must be reviewed each cycle for version bumps.
+
+Run these three checks, then confirm with the user before changing anything:
+
+1. **Diff against the previous release.** Compare this release's `systemRequirements` block against the previous release's (read in Step 1). Note which values carried forward unchanged and which differ.
+2. **Cross-check Node & NPM against the server's engines.** Use the GitHub MCP to read `package.json` (the `engines` field) and `.nvmrc` from `livingdocsIO/livingdocs-server`:
+   - `engines.node` / `engines.npm` lower bounds define the **minimal** Node / NPM.
+   - `.nvmrc` is the development Node version and is a good signal for the **suggested** Node.
+   - Flag any mismatch — e.g. engines allow `>=26` but suggested Node still says `24`.
+3. **Scan this release's own content for version changes.** Re-read the `## Features`, `## Breaking Changes`, and `## Deprecations` sections for any entry that changes a supported version — e.g. "Officially Support Node.js vXX", "Drop support for Postgres XX", or a browser-support bump. Each such entry implies a matching change in `suggested` or `minimal`.
+
+Present the findings and ask:
+
+> "System Requirements review for `<release-handle>`:
+> - <carried forward unchanged from previous release / differences found>
+> - <Node & NPM vs server engines: match or mismatch>
+> - <version changes announced in this release, if any>
+>
+> Should I update any Suggested or Minimal values? (yes, with the changes — or no, leave as is)"
+
+Apply only the changes the user confirms, editing the `systemRequirements` frontmatter. **Never bump a value on your own** — these are support commitments, so always confirm first.
+
 ## Step 6: Commit, push, and open PR
 
 Check what is staged before committing — only the TRN file should be included:
@@ -207,6 +231,7 @@ _Implemented using the [cleanup-trn](/.claude/skills/cleanup-trn/SKILL.md) Claud
 - Removed N PRs from PRs to Categorize
 - Updated release link
 - Updated Vulnerability Patches section (omit this line if no patches were found yet)
+- Updated System Requirements (e.g. Node suggested 24 → 26) (or: Reviewed System Requirements, no changes)
 ```
 
 Only add an `## Open Tasks` section if there are unresolved PRs from Step 5d:
