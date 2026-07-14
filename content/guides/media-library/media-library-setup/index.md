@@ -923,6 +923,62 @@ liEditor.searchFilters.registerListV2('pendingMediaUsageLogs', {
 })
 ```
 
+### Billing
+
+{{< added-in "release-2026-07" block >}}
+
+Each usage log entry carries a billing flag so the photo desk can track which usages require payment. It is tri-state:
+
+- **Billing required** - the usage is billable
+- **No billing** - reviewed and not billable
+- **Billing unresolved** - not yet reviewed
+
+An manual entry is always created unresolved. While it is unresolved a user can resolve it to billable or not billable directly on the entry card. Once resolved the flag is final and shown read-only - it cannot be changed or un-resolved.
+
+Internal-purpose entries, which are otherwise read-only, can still be edited for billing only.
+
+The flag can also be set automatically on publish from a license profile's `billingMode`. See [Usage Log and Billing]({{< ref "/guides/media-library/license-profiles/#usage-log-and-billing" >}}) in the License Profiles guide.
+
+### Filtering by billing date
+
+{{< added-in "release-2026-07" block >}}
+
+Two media library search filters narrow a dashboard to entries whose **confirmed** usages fall in a date range:
+
+- `usageLogBilledEntryDates` - usages flagged as billable
+- `usageLogUnresolvedBillingEntryDates` - usages whose billing is still unresolved
+
+Both are date-only (`YYYY-MM-DD`) range filters with the presets _This month_, _Last month_, _This year_ and _Last year_. Dates resolve to the Europe/Zurich calendar day. See the [Display Filter]({{< ref "/customising/advanced/editor-configuration/display-filter/#named-filters" >}}) reference for the filter behavior.
+
+They read date arrays indexed per media library entry - `usageLog.confirmedEntryDates`, `usageLog.billedEntryDates` and `usageLog.unresolvedBillingEntryDates` - each bucketed by Europe/Zurich calendar day and derived only from confirmed entries (pending entries never contribute a date).
+
+Add the filters to a media library dashboard:
+
+```js
+{
+  editorSettings: {
+    dashboards: [
+      {
+        type: 'mediaLibraryDashboard',
+        handle: 'imageBilling',
+        pageTitle: {en: 'Image Billing', de: 'Bildabrechnung'},
+        assetType: 'mediaImage',
+        baseFilters: [{key: 'usageLog.billedEntryDates', exists: true}],
+        displayFilters: ['usageLogBilledEntryDates']
+      }
+    ]
+  }
+}
+```
+
+### Exporting dashboard results
+
+{{< added-in "release-2026-07" block >}}
+
+A media library dashboard can render an export button that runs the dashboard's current search and filters through a project-supplied function and downloads the returned file - for example a per-photographer billing report. Livingdocs imposes no file format or row cap; the export function decides what to fetch and return.
+
+Configure the export flow and register its function as described in [Media Library Dashboard Export Flows]({{< ref "/reference/project-config/editor-settings/#export-flows" >}}).
+
 ### Recording usage log entries
 
 A usage log entry can be created two ways: by hand in the editor, or automatically when a document is published.

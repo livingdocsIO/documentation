@@ -462,6 +462,12 @@ Possible values are:
 
 When a query string is present, sorting is defined by the `relevance` with the search term.
 
+#### exportFlow
+
+{{< added-in "release-2026-07" block >}}
+
+Media library dashboards only. References a flow handle from [`mediaLibraryDashboardExportFlows`]({{< ref "#export-flows" >}}) to render an export button on the dashboard.
+
 ### Example: Media Library Dashboard
 
 For a detailed example and additional guidance on configuring a Media Library Dashboard, see the [Media Library Dashboard Configuration]({{< ref "/guides/media-library/media-library-setup/index#media-library-dashboard-configuration" >}}) guide.
@@ -1160,6 +1166,53 @@ dashboardCardConfigurations: [
 ```
 
 This will define a card `myImageCard` to be used in `mediaType.editor.dashboard.card.name`. See the See [Media Type config example]({{< ref "/reference/project-config/media-types.md" >}}).
+
+### Export Flows
+
+{{< added-in "release-2026-07" block >}}
+
+Media Library Dashboard Export Flows let a media library dashboard export its current result set. A dashboard that references a flow via its [`exportFlow`]({{< ref "#exportflow" >}}) property renders an export button; clicking it runs the dashboard's current search and filters through a registered function and downloads the returned file. The function decides what to fetch and which file to produce - Livingdocs imposes no format or row cap.
+
+Define the flows in `editorSettings` and reference one from a dashboard:
+
+```js
+// projectConfig.editorSettings
+mediaLibraryDashboardExportFlows: [
+  {
+    handle: 'billingReport',
+    // register the function with liServer.registerMediaLibraryDashboardExport()
+    exportDashboardFunction: 'billingReport',
+    exportButtonLabel: {en: 'Export billing report', de: 'Abrechnung exportieren'},
+    // additional info forwarded to your exportDashboard function
+    context: {}
+  }
+]
+
+// projectConfig.editorSettings.dashboards[]
+{
+  type: 'mediaLibraryDashboard',
+  handle: 'imageBilling',
+  assetType: 'mediaImage',
+  exportFlow: 'billingReport' // references a flow handle above
+}
+```
+
+Register the export function server-side. It receives the dashboard's `query`, a `find` helper scoped to the requesting project and user, the resolved `projectConfig`, the `userId` and the flow's `context`, and returns `{buffer, filename, mimeType}`:
+
+```js
+liServer.registerMediaLibraryDashboardExport({
+  handle: 'billingReport',
+  async exportDashboard({query, find, projectConfig, userId, context}) {
+    // `find` is scoped to the requesting project/user - page through the matches yourself
+    const {results} = await find({...query, offset: 0, limit: 100})
+    const csv = results.map((entry) => entry.id).join('\n')
+
+    return {buffer: Buffer.from(csv, 'utf8'), filename: 'billing-report.csv', mimeType: 'text/csv'}
+  }
+})
+```
+
+Use `registerMediaLibraryDashboardExports([...])` to register several at once. The full export is buffered in memory before it is sent, so a very large export is bounded only by what the function itself pages in.
 
 ### Prefilling Behavior
 

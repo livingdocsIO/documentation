@@ -43,7 +43,7 @@ They are separately listed here:
 
 - `documentState` (filters: unpublished, published, not yet published, my articles, needs proofreading, currently proofreading)
 - `timeRange`, filter the search results in time ranges such as last 24 hours
-- `liDateTimeRange`, filter the search results in time ranges (quick filter + from/to range)
+- `liDateTimeRange`, filter the search results in time ranges (quick ranges + from/to range)
 
   ```js
   // simple config - filters by updatedAt
@@ -79,6 +79,7 @@ They are separately listed here:
 - `includedComponents`: lets the user select a bunch of components from one of them must be used in a document in order to be shown in the result list. Use this as a proof-of-concept to showcase what is possible only. We suggest to configure your own display filter with some combinations of component usages. For example: "Image Heavy Articles" filtering for articles with more than 5 image components.
 - `missingComponents`: lets the user select a bunch of components from one of them must be absent in a document in order to be shown in the result list. Use this as a proof-of-concept to showcase what is possible only. We suggest to configure your own display filter with some combinations of component usages. For example: "Articles without a Quiz" filtering for articles not containing the Quiz component.
 - `liExpertSearch`: lets power users enter a filter expression as JSON directly in the search UI. See the [Expert Search]({{< ref "/customising/advanced/editor-configuration/expert-search" >}}) documentation. {{< added-in "release-2026-07" >}}
+- `usageLogBilledEntryDates` / `usageLogUnresolvedBillingEntryDates`<br>{{< added-in "release-2026-07" >}}, media library dashboards only.<br>Date-only (`YYYY-MM-DD`) range filters over the billing date arrays indexed on each media library entry - `usageLogBilledEntryDates` matches entries with billable confirmed usages, `usageLogUnresolvedBillingEntryDates` matches entries whose billing is still unresolved. Each is pinned to its indexed field. Presets: _This month_, _Last month_, _This year_, _Last year_; dates resolve to the Europe/Zurich calendar day. See the [Usage Log]({{< ref "/guides/media-library/media-library-setup/#filtering-by-billing-date" >}}) guide.
 
 ## Metadata Filters
 
@@ -98,7 +99,6 @@ You can use Metadata Filters, wherever Display Filters are allowed. The example 
 ```
 
 All metadata properties in your `Content Type`|`Media Type` config can be used as a Metadata Filter, if the metadata type is supported (see below).
-
 
 - [`li-integer`]({{< ref "/reference/document/metadata/plugins/li-integer">}})
 - [`li-category`]({{< ref "/reference/document/metadata/plugins/li-category">}})
