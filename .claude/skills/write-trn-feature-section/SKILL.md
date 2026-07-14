@@ -12,9 +12,9 @@ Ask **one question at a time** — wait for each answer before asking the next:
 1. **Release** — identifier in `release-YYYY-MM` format. Accept plain year/month and normalize it yourself.
 2. **GitHub PR URLs** — ask whether they'd like to add all URLs at once or one at a time. If one at a time: ask for the first URL, then ask "Any more PRs? (say 'done' to continue)" and keep collecting until done. If all at once: accept a list of URLs in a single message.
 3. **Notion requirement URL** — original requirement page (if available)
-4. **Cycle Demo Presentation** — a Figma Slides URL (see Step 2 for how it's read). Prefer a **node-specific** link: in Figma, select the relevant slide → Copy link → the URL contains `node-id=...`, which lets a single slide be read at full resolution. A plain deck URL works too. Say "none" to skip.
+4. **Cycle Demo Presentation** — a Figma Slides URL (see Step 2 for how it's read). Prefer a **node-specific** link: in Figma, select the relevant slide → Copy link → the URL contains `node-id=...`, which lets a single slide be read at full resolution. A plain deck URL works too. Say "no" to skip.
 5. **Additional context** — free-form notes, summaries, or exclusions (e.g. "ignore PR #123"). Optional.
-6. **Screenshots or Images** — ask the developer to paste images (`Cmd+V` / `Ctrl+V`). For each: ask for the filename (`release-YYYY-MM-description.png`) and a short description of what is shown. Say "none" to skip.
+6. **Screenshots or Images** — ask the developer to paste images (`Cmd+V` / `Ctrl+V`). For each: ask for the filename (`release-YYYY-MM-description.png`) and a short description of what is shown. Say "no" to skip.
 7. **Documentation link** — path under `/reference/` or `/guides/`, if one exists or will exist
 
 ## Step 2: Read the sources
