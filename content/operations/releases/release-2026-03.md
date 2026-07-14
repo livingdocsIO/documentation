@@ -402,6 +402,7 @@ Here is a list of all patches after the release has been announced.
 - [v296.2.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.1): fix(deps): update dependency @livingdocs/framework from 32.12.6 to v32.12.7
 
 ### Livingdocs Editor Patches
+- [v123.10.63](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.63): fix: toggle include overrides of only focused component
 - [v123.10.62](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.62): fix: keep drag scroll working after window resize
 - [v123.10.61](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.61): fix(deps): bump undici to 7.28.0 and form-data to 4.0.6
 - [v123.10.60](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.60): fix(buy-in): show expiry hint immediately after requesting
