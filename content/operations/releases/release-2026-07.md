@@ -542,6 +542,7 @@ Here is a list of all patches after the release has been announced.
 - [v308.1.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.3): fix(print): Renumber huGO print breaking change to LIBREAKING071
 
 ### Livingdocs Editor Patches
+- [v126.1.11](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.11): fix: toggle include overrides of only focused component
 - [v126.1.10](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.10): fix: keep drag scroll working after window resize
 - [v126.1.9](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.9): fix(search): Stop cheat sheet flyout from being pushed below the button
 - [v126.1.8](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.8): fix(media-library): add standard cost class translation to license profile form
