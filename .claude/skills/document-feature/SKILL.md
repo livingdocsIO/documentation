@@ -1,9 +1,13 @@
 ---
-name: write-trn-feature-section
-description: Write a Feature section entry for a Livingdocs Technical Release Note (TRN) and insert it into the correct release file. Use this skill whenever a developer wants to document a new feature, asks to write or add a TRN entry, mentions "write feature section", "add a feature to the release notes", or provides PR URLs and asks to document a feature for a specific release (e.g. "write the TRN entry for release-2026-05"). This skill handles the full workflow: gathering PR details, Notion requirements, and screenshots, writing the entry in the right tone and format, and inserting it into the release file.
+name: document-feature
+description: Document a new Livingdocs feature end-to-end — update the reference/guide documentation (the source of truth) with full config and API details, then write the high-level Feature section entry for the Technical Release Note (TRN) that links to it. Use this skill whenever a developer wants to document a new feature, asks to write or add a TRN entry, mentions "write feature section", "add a feature to the release notes", "document this feature", or provides PR URLs and asks to document a feature for a specific release (e.g. "write the TRN entry for release-2026-05"). This skill handles the full workflow: gathering PR details, Notion requirements, and screenshots; updating the documentation with all config options; writing the TRN entry in the right tone and format; and inserting it into the release file.
 ---
 
-# Write TRN Feature Section
+# Document a Feature (Docs + TRN)
+
+The **documentation is the source of truth**. When a feature adds or changes configuration, API, or workflow, the full details belong in the reference/guide docs. The TRN entry stays high-level and links to that documentation.
+
+Workflow order: gather inputs → read sources → **update the documentation first** → write the TRN entry that links to it → confirm → insert into the release file.
 
 ## Step 1: Gather inputs
 
@@ -15,7 +19,7 @@ Ask **one question at a time** — wait for each answer before asking the next:
 4. **Cycle Demo Presentation** — a Figma Slides URL (see Step 2 for how it's read). Prefer a **node-specific** link: in Figma, select the relevant slide → Copy link → the URL contains `node-id=...`, which lets a single slide be read at full resolution. A plain deck URL works too. Say "no" to skip.
 5. **Additional context** — free-form notes, summaries, or exclusions (e.g. "ignore PR #123"). Optional.
 6. **Screenshots or Images** — ask the developer to paste images (`Cmd+V` / `Ctrl+V`). For each: ask for the filename (`release-YYYY-MM-description.png`) and a short description of what is shown. Say "no" to skip.
-7. **Documentation link** — path under `/reference/` or `/guides/`, if one exists or will exist
+7. **Existing documentation** — path(s) to any existing `/reference/` or `/guides/` pages this feature relates to, if the developer knows them. Say "no" and the skill will search for the right page(s) in Step 3.
 
 ## Step 2: Read the sources
 
@@ -33,6 +37,62 @@ Only the Figma MCP `get_screenshot` tool works on Slides — `get_design_context
 - The tool returns a short-lived asset URL; download it (`curl`) and read the PNG. For a large deck, crop with Pillow/`sips` rather than reading the whole canvas at once.
 - If only a deck URL is available and a slide is still unreadable after cropping, ask the developer for a node-specific link to that slide.
 
+## Step 3: Update the documentation (source of truth)
+
+Do this **before** writing the TRN entry. The docs hold the complete, lasting details; the TRN only announces the change and links here.
+
+### 3a. Decide what to document
+
+Judge per feature what the change actually introduces:
+
+- **Configuration or API change** (new/changed project-config property, plugin option, API parameter, server hook, CLI flag) → belongs in **reference** under `content/reference/`. Document *every* option: name, type, default, allowed values, and a minimal example.
+- **New workflow or capability an editor/integrator uses** (setup steps, a task walkthrough, an end-to-end how-to) → belongs in a **guide** under `content/guides/`.
+- **Both** — many features need reference (the options) *and* a guide (how to use them). Update both.
+- **Neither** — a pure UI polish with no config, API, or new workflow (e.g. a modal made wider) may have nothing to document beyond the TRN. If so, say so explicitly and skip to Step 4 — don't invent doc changes.
+
+### 3b. Locate the target page
+
+For each area to document:
+
+1. If the developer gave existing paths in Step 1, start there.
+2. Otherwise search `content/reference/` and `content/guides/` for the closest related topic (grep for the feature's config handle, plugin name, or domain terms).
+3. **Extend an existing page** when the feature fits an established topic — this is the default; keep related config in one place.
+4. **Create a new page** only when no existing page fits. Place it in the right section and add correct frontmatter:
+   - Reference: `title`, `weight`, and `menus:` → `reference:` → `parent: <Section>` (match sibling pages).
+   - Guide: `title`, optional `bullets:` (list of what the guide covers), `weight`.
+
+### 3c. Draft the documentation
+
+- Be **comprehensive** — unlike the TRN, docs list all options, defaults, edge cases, and full code examples. "Be comprehensive, i.e. don't leave out stuff that would frustrate people following your guide."
+- Follow the repo conventions in `README.md`: start sections at `##`, `###` for subsections; brief, concise prose; `js`/`json`/`yaml` code blocks.
+- Mark new additions with `{{< added-in "release-YYYY-MM" >}}` (add `block` for a standalone line, e.g. `{{< added-in "release-YYYY-MM" block >}}` at the top of a new page or section).
+- Cross-link related pages with `{{< ref "/path" >}}`.
+- If screenshots/images illustrate a workflow, reference them with `{{< img >}}` and follow the image reminder in Step 6.
+
+### 3d. Confirm, then write
+
+Show the developer the planned doc changes — which page(s), extend-vs-new, and the drafted content. Ask: _"Does this documentation look right before I write it?"_ Apply changes, then write the files with the editing tools. Note the final doc path(s); the TRN entry links to them in Step 4.
+
+## Step 4: Write the TRN feature entry
+
+The TRN entry is the high-level announcement — value and excitement, not the full option list. It **links to the documentation** written in Step 3.
+
+Use this format:
+
+```
+### FEATURE NAME
+
+INTRO_PARAGRAPH
+
+[CONFIG_OR_API_SECTION if activation/config is required]
+
+[{{< img src="FILENAME" alt="ALT TEXT" width="600" >}} if screenshot provided]
+
+[{{< info >}}...{{< /info >}} if there's a prerequisite or important note]
+
+[For more information, see the [LABEL]({{< ref "/path/to/doc" >}}) documentation.]
+```
+
 ### Calibration examples
 
 Use these two examples to calibrate tone and structure:
@@ -44,7 +104,7 @@ Use these two examples to calibrate tone and structure:
 
 We've optimized the image selection modal to display more images by increasing its width. The modal now shows up to 6 images per row (depending on screen size), compared to the previous layout. This makes better use of available screen space.
 
-For more information, see the [Media Library]({{< ref "/reference/media-library" >}}) documentation.
+For more information, see the [Media Library]({{< ref "/guides/media-library" >}}) documentation.
 ```
 
 **Example 2 - Complex (sub-sections, config, before/after):**
@@ -85,24 +145,6 @@ A new optional configuration property `precision` allows you to configure whethe
 For more information, see the [Distribution Dates]({{< ref "/reference/distribution-dates" >}}) documentation.
 ```
 
-## Step 3: Write the feature entry
-
-Use this format:
-
-```
-### FEATURE NAME
-
-INTRO_PARAGRAPH
-
-[CONFIG_OR_API_SECTION if activation/config is required]
-
-[{{< img src="FILENAME" alt="ALT TEXT" width="600" >}} if screenshot provided]
-
-[{{< info >}}...{{< /info >}} if there's a prerequisite or important note]
-
-[For more information, see the [LABEL]({{< ref "/path/to/doc" >}}) documentation.]
-```
-
 ### Writing guidelines
 
 #### Content & structure
@@ -110,7 +152,8 @@ INTRO_PARAGRAPH
 - **Lead with user value**: open with what users can now do. Focus on benefit, not implementation.
 - **High-level intro**: one short paragraph — no implementation details. Link to docs instead of repeating them.
 - **Activation status**: always state whether auto-available or requires config. If unclear, ask the developer — getting this wrong misleads customers.
-- **Config/API blocks**: only if config is required to activate the feature. Show only the diff. Use `js` or `json` code blocks.
+- **Config/API blocks**: only if config is required to activate the feature. Show only the diff — the full option list lives in the documentation from Step 3. Use `js` or `json` code blocks.
+- **Always link to the docs**: end with a "For more information, see the [LABEL]({{< ref "/path" >}}) documentation." line pointing to the page(s) written/updated in Step 3, unless the feature had nothing to document.
 - **Before/after**: include if the feature changes existing familiar behavior.
 - **Lifecycle context**: if the feature replaces something deprecated, say so briefly.
 - **Complex topics**: add _"Reach out to your customer solutions contact for help getting started."_ if setup is non-trivial.
@@ -125,16 +168,16 @@ INTRO_PARAGRAPH
 - **Use regular hyphens**: write `-` not `—` in the output.
 - **Use visuals**: include screenshots for UI-facing features. Use `{{< img >}}` with meaningful alt text.
 
-## Step 4: Ask for feedback
+## Step 5: Ask for feedback
 
-Ask: _"Does this look right? Anything to adjust — wording, missing details, or config examples?"_
+Ask: _"Does this look right? Anything to adjust — in the documentation or the TRN entry — wording, missing details, or config examples?"_
 
-Apply any requested changes.
+Apply any requested changes to both the docs and the TRN entry.
 
-## Step 5: Insert into the release notes file
+## Step 6: Insert into the release notes file
 
 1. Open `content/operations/releases/<release-identifier>.md`.
 2. Locate `## Features :gift:`.
 3. Append the entry at the end of that section, before the next `##` heading.
-4. Save and confirm to the developer.
-5. If images were provided: remind the developer to manually save each image to `content/operations/releases/` using the exact filename from the `{{< img src="..." >}}` tags. Claude cannot write image files directly.
+4. Save and confirm to the developer — summarize both what changed in the documentation (with paths) and the TRN entry that was added.
+5. If images were provided: remind the developer to manually save each image to its target directory (`content/operations/releases/` for TRN images, the relevant doc folder for documentation images) using the exact filename from the `{{< img src="..." >}}` tags. Claude cannot write image files directly.
