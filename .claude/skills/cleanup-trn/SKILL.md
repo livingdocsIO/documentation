@@ -51,7 +51,7 @@ for r in filtered:
 - `Type: Customer` packages → **Features**
 - If a package titled "Deprecations and Breaking Changes" (`Type: Operational`) is present, call `notion-fetch` on its `url` to retrieve the page body, which lists the individual breaking changes and deprecations.
 
-If a Cycle Demo Presentation link was provided in Step 1, read it now — see **Reading a Figma Slides deck** in `.claude/skills/write-trn-feature-section/SKILL.md` (Step 2) — and reconcile it against the Notion buckets, flagging anything present in one source but not the other.
+If a Cycle Demo Presentation link was provided in Step 1, read it now — see **Reading a Figma Slides deck** in `.claude/skills/document-feature/SKILL.md` (Step 2) — and reconcile it against the Notion buckets, flagging anything present in one source but not the other.
 
 Present the three-bucket list to the user:
 
@@ -98,7 +98,7 @@ First, scan the existing `## Breaking Changes`, `## Deprecations`, and `## Featu
 
 For each missing item, add it to the appropriate section. Use the related PRs from the `## PRs to Categorize` list to gather details — read the PR descriptions for context on what changed and why.
 
-When writing a new **Feature entry**, follow the writing guidelines in `.claude/skills/write-trn-feature-section/SKILL.md` (Steps 3 and 4) — this covers format, tone, activation status, config blocks, and the `:gift:` emoji convention. During cleanup you won't have all the inputs that skill normally gathers (demo slides, screenshots, Notion requirement, doc links) — write the best entry you can from the PR alone, and for any inputs that are missing but would meaningfully improve the entry, add a checkbox to the PR's `## Open Tasks` list rather than leaving a placeholder in the entry itself.
+When writing a new **Feature entry**, follow the writing guidelines in `.claude/skills/document-feature/SKILL.md` (Step 4) — this covers format, tone, activation status, config blocks, and the `:gift:` emoji convention. During cleanup you won't have all the inputs that skill normally gathers (demo slides, screenshots, Notion requirement, doc links) — write the best entry you can from the PR alone, and for any inputs that are missing but would meaningfully improve the entry, add a checkbox to the PR's `## Open Tasks` list rather than leaving a placeholder in the entry itself.
 
 If items exist in the file already but are incomplete (e.g. listed as "TODO" or lacking description), flag them to the user and ask how to proceed.
 
