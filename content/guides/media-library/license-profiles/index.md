@@ -64,6 +64,8 @@ On publish, one usage log entry is recorded per referenced image, de-duplicated 
 - `always` results in `billing: true`, the use is billed
 - unset leaves the flag undefined, and a user can set it manually in the usage log as long as it is unset
 
+For resolving the flag by hand, and for filtering and exporting dashboards by billing status, see [Billing]({{< ref "/guides/media-library/media-library-setup/#billing" >}}) in the Usage Log guide.
+
 {{< img src="./images/license-profile-usage-log.png" alt="Usage log panel with a 'Web' entry tagged 'No billing' and 'Confirmed'" width="600" caption="Each published image gets a usage log entry with the applied rule and billing flag." >}}
 
 ## Configuration

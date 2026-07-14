@@ -360,6 +360,16 @@ License profiles require `mediaLibrary.use2025Behavior: true`. Reach out to your
 
 For more information, see the [License Profiles]({{< ref "/guides/media-library/license-profiles" >}}) guide.
 
+### Media Center Image Billing
+
+Photo desks can now flag which image usages require payment, review and resolve each flag by hand, filter media library dashboards by billing status and date, and export a billing report - all from the Media Center. Automatic billing decisions come from [License Profiles]({{< ref "#license-profiles" >}}).
+
+- A **billing status** on every usage log entry - Billing required, No billing, or Billing unresolved - resolvable by hand while it is unresolved, then final. See [Usage Log]({{< ref "/guides/media-library/media-library-setup/#billing" >}}).
+- Two media library date-range filters, **Billed usages** and **Unresolved billing**, narrow a dashboard to billed or still-unresolved usages in a date range. See [Display Filters]({{< ref "/customising/advanced/editor-configuration/display-filter/#named-filters" >}}).
+- A dashboard **export button** runs the current search and filters through a project-supplied function and downloads the result - a CSV, a per-photographer archive, whatever the integration returns. See [Dashboard Export Flows]({{< ref "/reference/project-config/editor-settings/#export-flows" >}}).
+
+The date filters read newly indexed usage log dates. After upgrading, reindex the media library (Server Administration / Operations / Indexing, or `livingdocs-server elasticsearch-index --handle=li-media`) so existing entries populate them.
+
 ### Get All Media Library Entry Keys for Cache Purging
 
 Sometimes clearing image caches after a revoke or modification is handled by external systems. In order to do this effectively all variant keys must also be cleared. To support this a new `GET /api/:apiVersion/mediaLibrary/:id/keys` endpoint has been added to the Public API. The `:apiVersion` must be 2026-03 or above. The return value of the endpoint will look like this:
