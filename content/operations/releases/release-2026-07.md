@@ -530,6 +530,7 @@ Here is a list of all patches after the release has been announced.
 - [v308.1.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.3): fix(print): Renumber huGO print breaking change to LIBREAKING071
 
 ### Livingdocs Editor Patches
+- [v126.1.8](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.8): fix(media-library): add standard cost class translation to license profile form
 
 - [v126.1.7](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.7): fix(media-library): hide license profile tag when profiles not configured
 - [v126.1.6](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.6): fix(media-library): hide media state badge on empty image placeholder
