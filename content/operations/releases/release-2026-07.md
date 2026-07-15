@@ -523,17 +523,10 @@ We are constantly patching module vulnerabilities for the Livingdocs Server and 
 
 ### Livingdocs Server
 
-This release we have patched the following vulnerabilities in the Livingdocs Server:
-
-- TBD
-
-No known vulnerabilities. :tada:
+This release we haven't patched any vulnerabilities in the Livingdocs Server.
+There are no known vulnerabilities. :tada:
 
 ### Livingdocs Editor
-
-This release we have patched the following vulnerabilities in the Livingdocs Editor:
-
-- TBD
 
 We are aware of the following vulnerabilities in the Livingdocs Editor:
 
@@ -546,12 +539,14 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+
 - [v308.1.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.5): fix(media-library): add file extension to image downloads in Chrome and Edge
 
 - [v308.1.4](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.4): fix(license-profile): allow internal usagePurposes without recordUsageLogEntry
 - [v308.1.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.3): fix(print): Renumber huGO print breaking change to LIBREAKING071
 
 ### Livingdocs Editor Patches
+
 - [v126.1.11](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.11): fix: toggle include overrides of only focused component
 - [v126.1.10](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.10): fix: keep drag scroll working after window resize
 - [v126.1.9](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.9): fix(search): Stop cheat sheet flyout from being pushed below the button
