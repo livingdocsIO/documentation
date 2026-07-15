@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update dependency cookie from 1.1.1 to v2 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/9635)
 - [Toggle include overrides of only focused component](https://github.com/livingdocsIO/livingdocs-editor/pull/11135)
 - [Keep drag auto-scroll working after window resize](https://github.com/livingdocsIO/livingdocs-editor/pull/11324)
 - [Add file extension to image downloads in Chrome and Edge](https://github.com/livingdocsIO/livingdocs-server/pull/9636)
