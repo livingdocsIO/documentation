@@ -546,6 +546,7 @@ Here is a list of all patches after the release has been announced.
 - [v308.1.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.3): fix(print): Renumber huGO print breaking change to LIBREAKING071
 
 ### Livingdocs Editor Patches
+- [v126.1.12](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.12): fix(metadata): report initial form validity on mount
 
 - [v126.1.11](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.11): fix: toggle include overrides of only focused component
 - [v126.1.10](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.10): fix: keep drag scroll working after window resize
