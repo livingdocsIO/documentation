@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Fix release date in deprecation message of li-authentication functions](https://github.com/livingdocsIO/livingdocs-server/pull/9701)
 - [Run node vulnerability patch weekly across main and the three latest releases](https://github.com/livingdocsIO/livingdocs-server/pull/9670)
 - [fix(metadata): report initial form validity on mount](https://github.com/livingdocsIO/livingdocs-editor/pull/11337)
 - [fix(deps): update dependency cookie from 1.1.1 to v2 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/9635)
