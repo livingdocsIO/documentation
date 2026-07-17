@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Add nb-NO to relative-time supported locales](https://github.com/livingdocsIO/livingdocs-editor/pull/11345)
 - [fix(deps): update babel from 7.29.7 to v8 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/11239)
 - [Fix release date in deprecation message of li-authentication functions](https://github.com/livingdocsIO/livingdocs-server/pull/9701)
 - [Run node vulnerability patch weekly across main and the three latest releases](https://github.com/livingdocsIO/livingdocs-server/pull/9670)
