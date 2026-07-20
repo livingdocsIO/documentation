@@ -352,6 +352,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v296.2.48](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.48): fix(deps): automatically patch Node.js vulnerabilities
 - [v296.2.47](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.47): fix(media-library): add file extension to image downloads in Chrome and Edge
 - [v296.2.46](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.46): fix(deps): bump @opentelemetry to ^0.219 to remove vulnerable protobufjs 8.0.x
 - [v296.2.45](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.45): fix: Trigger release after deps update
