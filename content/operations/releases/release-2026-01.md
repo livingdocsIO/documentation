@@ -534,6 +534,7 @@ Here is a list of all patches after the release has been announced.
 - [v294.0.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v294.0.1): fix(release-2026-01): Update framework to v32.11.2 (release-2026-01 tag)
 
 ### Livingdocs Editor Patches
+- [v123.3.61](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.3.61): fix(deps): update dependency @babel/core from 7.28.5 to 7.29.6 [security]
 - [v123.3.60](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.3.60): fix(buy-in): show expiry hint immediately after requesting
 - [v123.3.59](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.3.59): fix: show component groups with translated labels
 - [v123.3.58](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.3.58): fix(deps): update livingdocs-patch from 32.11.10 to v32.11.11
