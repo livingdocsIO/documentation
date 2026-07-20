@@ -1046,7 +1046,7 @@ mediaLibrary: {
     },
     // max upload values of Livingdocs API endpoints
     uploadRestrictions: {
-      maxFileSize: '15mb',
+      maxFileSize: '15mb', // webp and gif images are limited to a maximum size of 10MB
     },
     // {{< a href="#image-processing-with-use2025behavior" title="Image Processing (use2025Behavior: true)">}}
     // Used when use2025Behavior is true — upload-time validation only; transformation happens on-demand.
