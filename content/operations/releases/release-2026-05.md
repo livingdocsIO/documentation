@@ -616,6 +616,7 @@ Patches typically fix bugs and apply improvements within the current release. Ke
 - [v301.1.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.1): fix(release-2026-05): Update framework to v34.0.3 (release-2026-05 tag)
 
 ### Livingdocs Editor Patches
+- [v123.21.36](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.36): fix(deps): update dependency @babel/core from 7.29.0 to 7.29.6 [security]
 - [v123.21.35](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.35): fix(dates): add nb-NO and nn-NO to relative-time locales
 - [v123.21.34](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.34): fix(metadata): report initial form validity on mount
 - [v123.21.33](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.33): fix: toggle include overrides of only focused component
