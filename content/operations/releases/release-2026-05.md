@@ -585,6 +585,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Patches typically fix bugs and apply improvements within the current release. Keeping your deployment up-to-date with the latest patch version means you benefit from those fixes. No explicit action is required per patch — bumping the version is enough.
 
 ### Livingdocs Server Patches
+- [v301.1.27](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.27): fix(image-processing): Avoid truncated flag for exact file size match
 - [v301.1.26](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.26): fix(deps): automatically patch Node.js vulnerabilities
 - [v301.1.25](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.25): fix(media-library): add file extension to image downloads in Chrome and Edge
 - [v301.1.24](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.24): fix(deps): bump @opentelemetry to ^0.219 to remove vulnerable protobufjs 8.0.1
