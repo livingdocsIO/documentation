@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-server/pull/9726)
 - [Update logo and favicon assets; serve browser-support logo locally](https://github.com/livingdocsIO/livingdocs-editor/pull/11330)
 - [Use 10MB header when processing gif and webp images](https://github.com/livingdocsIO/livingdocs-server/pull/9709)
 - [Add nb-NO to relative-time supported locales](https://github.com/livingdocsIO/livingdocs-editor/pull/11345)
