@@ -539,6 +539,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v308.1.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.6): fix(image-processing): Avoid truncated flag for exact file size match
 
 - [v308.1.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.5): fix(media-library): add file extension to image downloads in Chrome and Edge
 
