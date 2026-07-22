@@ -406,6 +406,7 @@ Here is a list of all patches after the release has been announced.
 - [v296.2.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.1): fix(deps): update dependency @livingdocs/framework from 32.12.6 to v32.12.7
 
 ### Livingdocs Editor Patches
+- [v123.10.65](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.65): fix(deps): update dependency @livingdocs/framework from 32.12.12 to v32.12.13
 - [v123.10.64](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.64): fix(deps): update dependency @babel/core from 7.29.0 to 7.29.6 [security]
 - [v123.10.63](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.63): fix: toggle include overrides of only focused component
 - [v123.10.62](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.62): fix: keep drag scroll working after window resize
