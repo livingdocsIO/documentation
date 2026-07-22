@@ -37,7 +37,7 @@ Image cards, the image properties panel and placed images show the profile as a 
 
 ### The Publish Gate
 
-The hard block comes at publication. The server checks every referenced image (in the content and in metadata) and blocks publishing when:
+The hard block comes at publication, once enforcement is switched on with `licenseProfiles.enabled: true` (see [Enabling Enforcement](#enabling-enforcement)). The server then checks every referenced image (in the content and in metadata) and blocks publishing when:
 
 - the image has no license profile assigned,
 - the assigned profile no longer exists in the config,
@@ -127,6 +127,9 @@ Define the profiles in the project config:
 // project config
 mediaCenter: {
   licenseProfiles: {
+    // Switches enforcement on. While false, profiles can be assigned to media but
+    // never block publishing. See "Enabling Enforcement" below.
+    enabled: false,
     // Required as soon as one profile has approvalRequired: true.
     // Must match the handle of a li-task-v2 metadata property (see below).
     approvalTaskHandle: 'licenseApproval',
@@ -245,12 +248,19 @@ liServer.registerRecordUsageLogEntryFunctions([
 ])
 ```
 
-That is the whole setup. With profiles configured, the publish gate, usage logging and approval workflow activate automatically. No hook registration call is needed.
+That is the whole setup. No hook registration call is needed: once profiles are configured and `licenseProfiles.enabled` is `true`, the publish gate and approval workflow activate automatically. Usage logging follows the usage purposes and runs independently of `enabled`.
+
+### Enabling Enforcement
+
+`licenseProfiles.enabled` controls whether profiles are enforced:
+
+- **`false`**: profiles can be configured and assigned to media, but they never affect publishing. Media without a profile (or with an unknown or uncovered profile) does not block publication, and no approval tasks are requested. The license profiles can manually be set in the image metadata.
+- **`true`**: the publish gate and approval workflow described above are in effect. License profiles are shown in the UI.
 
 ## Constraints
 
 - License profiles require `mediaLibrary.use2025Behavior: true`.
 - Only media types with a `li-license-profile` metadata property participate in license checks.
-- A content type may belong to at most one usage purpose. Once profiles are configured, a document whose content type resolves to no purpose cannot publish profile-managed images, so every content type that can contain such images needs a purpose.
+- A content type may belong to at most one usage purpose. With enforcement enabled, a document whose content type resolves to no purpose cannot publish profile-managed images, so every content type that can contain such images needs a purpose.
 - Approval is granted per document, not per image: completing the approval task approves all pending images in the document.
 - `costClass` is informational only and not enforced.
