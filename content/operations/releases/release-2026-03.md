@@ -352,6 +352,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v296.2.50](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.50): fix(deps): automatically patch Node.js vulnerabilities
 - [v296.2.49](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.49): fix(image-processing): Avoid truncated flag for exact file size match
 - [v296.2.48](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.48): fix(deps): automatically patch Node.js vulnerabilities
 - [v296.2.47](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.47): fix(media-library): add file extension to image downloads in Chrome and Edge
