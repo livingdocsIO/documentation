@@ -54,6 +54,7 @@ mediaCenter: {
     }
   ],
   licenseProfiles: {
+    enabled: true,
     approvalTaskHandle: 'licenseApproval',
     profiles: [
       {
@@ -95,6 +96,8 @@ Each purpose supports:
 {{< added-in "release-2026-07" block >}}
 
 `mediaCenter.licenseProfiles` defines the license profiles that can be assigned to media library entries and the task used for license approvals. Please see the [License Profiles]({{< ref "/guides/media-library/license-profiles" >}}) guide for the full configuration and behavior.
+
+- `enabled` (optional, defaults to `true`): switches enforcement on. When `false`, profiles can be configured and assigned to media, but they do not affect publishing — unprofiled media never blocks publication and no approval tasks are requested. Set it to `false` while your existing media is still being assigned its profiles, so that a migration of the existing stock cannot lock up the newsroom in the meantime.
 
 ## Usage Log
 
