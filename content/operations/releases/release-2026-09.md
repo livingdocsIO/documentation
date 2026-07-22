@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(draft-storage): Never silently drop unsaved content when saving is disabled](https://github.com/livingdocsIO/livingdocs-editor/pull/11241)
 - [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-server/pull/9726)
 - [Update logo and favicon assets; serve browser-support logo locally](https://github.com/livingdocsIO/livingdocs-editor/pull/11330)
 - [Use 10MB header when processing gif and webp images](https://github.com/livingdocsIO/livingdocs-server/pull/9709)
