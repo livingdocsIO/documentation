@@ -551,6 +551,7 @@ Here is a list of all patches after the release has been announced.
 - [v308.1.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.3): fix(print): Renumber huGO print breaking change to LIBREAKING071
 
 ### Livingdocs Editor Patches
+- [v126.1.15](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.15): fix(license-profiles): treat missing enabled flag as enabled
 - [v126.1.14](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.14): fix(draft-storage): Persist unsaved content while saving is disabled
 - [v126.1.13](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.13): fix(dates): add nb-NO and nn-NO to relative-time locales
 - [v126.1.12](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.12): fix(metadata): report initial form validity on mount
