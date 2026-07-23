@@ -585,6 +585,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Patches typically fix bugs and apply improvements within the current release. Keeping your deployment up-to-date with the latest patch version means you benefit from those fixes. No explicit action is required per patch — bumping the version is enough.
 
 ### Livingdocs Server Patches
+- [v301.1.30](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.30): fix(deprecations): Don't define breaking change date for 3 deprecations
 - [v301.1.29](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.29): fix(includes): speed up regression test
 - [v301.1.28](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.28): fix(deps): automatically patch Node.js vulnerabilities
 - [v301.1.27](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.27): fix(image-processing): Avoid truncated flag for exact file size match
