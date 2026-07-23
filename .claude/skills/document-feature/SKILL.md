@@ -46,6 +46,14 @@ Do this **before** writing the TRN entry. The docs hold the complete, lasting de
 Judge per feature what the change actually introduces:
 
 - **Configuration or API change** (new/changed project-config property, plugin option, API parameter, server hook, CLI flag) → belongs in **reference** under `content/reference/`. Document _every_ option: name, type, default, allowed values, and a minimal example.
+- **Public API change** (a new/changed HTTP endpoint, parameter, or response on the external REST API) → does **not** live under `content/reference/`. Handle both places:
+  - **Endpoint docs**: `data/endpoints/<endpoint>.yaml`. All variants of one endpoint share the same `endpointId`. Each carries `apiVersionConstraints` and a `history:` array; a new change adds a `history:` entry at the **top** of the array with `release:` and a very brief `description:`.
+    - **`apiVersionConstraints`** uses `gte` / `lte` for dated version windows and `eq` for named versions (`eq: v1`, `eq: beta`). The **current** doc uses `gte` alone (open upper bound) and has no file-name suffix. A frozen doc's file-name suffix matches its **upper bound**: `lte` for a dated window (e.g. `get-latest-publication-2025-07.yaml` → `lte: 2025-07`) or the named version for `eq` (e.g. `-v1`, `-beta`). Named-version docs may also carry a `deprecation:` block.
+    - **Change scoped to a new API version** (not applied to earlier versions) → freeze the old shape and create the new one:
+      1. Copy the current unsuffixed file to a version-suffixed name using the **last API version before the change** (e.g. `get-categories-2025-11.yaml`), and set `apiVersionConstraints.lte` to that version. This file keeps the pre-change docs.
+      2. In the unsuffixed file, set `apiVersionConstraints.gte` to the version the change was introduced in, apply the change (`parameters`, `description`, `query`), and add the new `history:` entry at the top.
+    - **Change applies to all API versions** → no new document. Add the new `history:` entry at the top of **every** existing file for that endpoint (unsuffixed plus each version-suffixed and named variant). Word each entry to describe what that version actually does — the same release can read differently per version (e.g. "deprecated, logs a warning" in an older window vs "removed, returns an error" in the current one).
+  - **Changelog**: add a `type: changelog-entry` markdown file under `content/reference/public-api/changelog/YYYY-MM/` (one folder per release). Set `change.date` (`YYYY-MM`) and `change.type` (`feature`, `deprecation`, or `breaking`), and link to the endpoint doc. Bug fixes are not listed here.
 - **New workflow or capability an editor/integrator uses** (setup steps, a task walkthrough, an end-to-end how-to) → belongs in a **guide** under `content/guides/`.
 - **Both** — many features need reference (the options) _and_ a guide (how to use them). Update both.
 - **Neither** — a pure UI polish with no config, API, or new workflow (e.g. a modal made wider) may have nothing to document beyond the TRN. If so, say so explicitly and skip to Step 4 — don't invent doc changes.
@@ -55,7 +63,7 @@ Judge per feature what the change actually introduces:
 For each area to document:
 
 1. If the developer gave existing paths in Step 1, start there.
-2. Otherwise search `content/reference/` and `content/guides/` for the closest related topic (grep for the feature's config handle, plugin name, or domain terms).
+2. Otherwise search `content/reference/` and `content/guides/` for the closest related topic (grep for the feature's config handle, plugin name, or domain terms). For a **Public API** change, the endpoint docs live in `data/endpoints/*.yaml` (grep there by path or `endpointId`), not under `content/reference/`.
 3. **Extend an existing page** when the feature fits an established topic — this is the default; keep related config in one place.
 4. **Create a new page** only when no existing page fits. Place it in the right section and add correct frontmatter:
    - Reference: `title`, `weight`, and `menus:` → `reference:` → `parent: <Section>` (match sibling pages).
