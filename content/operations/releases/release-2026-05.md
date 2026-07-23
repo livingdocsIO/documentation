@@ -621,6 +621,7 @@ Patches typically fix bugs and apply improvements within the current release. Ke
 - [v301.1.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.1): fix(release-2026-05): Update framework to v34.0.3 (release-2026-05 tag)
 
 ### Livingdocs Editor Patches
+- [v123.21.39](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.39): fix(i18n): make image and video upload messages translatable
 - [v123.21.38](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.38): fix(deps): update dependency axios from 1.16.0 to 1.18.0 [security]
 - [v123.21.37](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.37): fix(draft-storage): Persist unsaved content while saving is disabled
 - [v123.21.36](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.36): fix(deps): update dependency @babel/core from 7.29.0 to 7.29.6 [security]
