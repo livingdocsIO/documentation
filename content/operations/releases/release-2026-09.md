@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(i18n): adjust nb-NO editor labels and bundle panel strings](https://github.com/livingdocsIO/livingdocs-editor/pull/11371)
 - [Add explicit enablement to license profiles](https://github.com/livingdocsIO/livingdocs-server/pull/9730)
 - [Add explicit enablement to license profiles](https://github.com/livingdocsIO/livingdocs-editor/pull/11358)
 - [Don't define breaking change date for three deprecations](https://github.com/livingdocsIO/livingdocs-server/pull/9725)
