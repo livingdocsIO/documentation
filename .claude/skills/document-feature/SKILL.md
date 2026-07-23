@@ -45,9 +45,9 @@ Do this **before** writing the TRN entry. The docs hold the complete, lasting de
 
 Judge per feature what the change actually introduces:
 
-- **Configuration or API change** (new/changed project-config property, plugin option, API parameter, server hook, CLI flag) → belongs in **reference** under `content/reference/`. Document *every* option: name, type, default, allowed values, and a minimal example.
+- **Configuration or API change** (new/changed project-config property, plugin option, API parameter, server hook, CLI flag) → belongs in **reference** under `content/reference/`. Document _every_ option: name, type, default, allowed values, and a minimal example.
 - **New workflow or capability an editor/integrator uses** (setup steps, a task walkthrough, an end-to-end how-to) → belongs in a **guide** under `content/guides/`.
-- **Both** — many features need reference (the options) *and* a guide (how to use them). Update both.
+- **Both** — many features need reference (the options) _and_ a guide (how to use them). Update both.
 - **Neither** — a pure UI polish with no config, API, or new workflow (e.g. a modal made wider) may have nothing to document beyond the TRN. If so, say so explicitly and skip to Step 4 — don't invent doc changes.
 
 ### 3b. Locate the target page
@@ -142,7 +142,7 @@ A new optional configuration property `precision` allows you to configure whethe
       }
     }
 
-For more information, see the [Distribution Dates]({{< ref "/reference/distribution-dates" >}}) documentation.
+For more information, see the [Distribution Dates]({{< ref "reference/document/metadata/plugins/li-distribution-dates.md " >}}) documentation.
 ```
 
 ### Writing guidelines
@@ -216,5 +216,7 @@ If yes:
    - <Added/updated doc page(s), with path(s)>
    - Added a Feature entry to <release-handle>
    ```
+
    Omit any line that doesn't apply (e.g. drop the doc-page line if the feature had nothing to document).
+
 6. Return the PR URL to the developer.
