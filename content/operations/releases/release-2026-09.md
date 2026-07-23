@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Resolve all published candidates in curated-list teasers](https://github.com/livingdocsIO/livingdocs-server/pull/9696)
 - [fix(deps): update dependency nanoid from 5.1.16 to v6 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/11353)
 - [fix(deps): update dependency execa from 9.6.1 to v10 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/9721)
 - [fix(deps): update dependency nanoid from 5.1.16 to v6 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/9715)
