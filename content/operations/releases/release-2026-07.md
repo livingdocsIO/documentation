@@ -539,6 +539,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v308.1.10](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.10): fix(license-profiles): explicitly disable all license profile hooks when enabled is false
 - [v308.1.9](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.9): fix(deprecations): Don't define breaking change date for 3 deprecations
 - [v308.1.8](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.8): fix(includes): speed up regression test
 - [v308.1.7](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.7): fix(deps): automatically patch Node.js vulnerabilities
