@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-server/pull/9752)
 - [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-editor/pull/11384)
 - [chore(deps): update dependency jose from 6.2.3 to v6.2.4 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/11385)
 - [fix(deps): update dependency js-yaml from 5.2.1 to 5.2.2 [security] (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/11375)
