@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Image Card Enhancement & License Improvements](https://github.com/livingdocsIO/livingdocs-editor/pull/11344)
 - [fix(deps): update dependency pusher-js from 8.5.0 to v8.6.0 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/11400)
 - [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-server/pull/9752)
 - [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-editor/pull/11384)
