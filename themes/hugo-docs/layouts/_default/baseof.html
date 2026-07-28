@@ -18,6 +18,20 @@
       rel="canonical"
       href="{{ .Permalink }}"
     />
+    <link
+      rel="icon"
+      href="{{ "favicon.svg" | relURL }}"
+      type="image/svg+xml"
+      sizes="any"
+    />
+    <link
+      rel="alternate icon"
+      href="{{ "favicon.ico" | relURL }}"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="{{ "apple-touch-icon.png" | relURL }}"
+    />
     {{ with .OutputFormats.Get "llms" }}
       <link
         rel="alternate"
