@@ -1,3 +1,1 @@
-{{- $link := .Get "link" -}}
-{{- if hasSuffix $link "/" }}{{ $link = print $link "llms.txt" }}{{ end -}}
-- **[{{ .Get "flag" }}]({{ $link }})** — {{ .Get "title" }}
+- **[{{ .Get "flag" }}]({{ .Get "link" }})** — {{ .Get "title" }}
