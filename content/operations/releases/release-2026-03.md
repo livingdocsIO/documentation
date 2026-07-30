@@ -409,6 +409,7 @@ Here is a list of all patches after the release has been announced.
 - [v296.2.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.1): fix(deps): update dependency @livingdocs/framework from 32.12.6 to v32.12.7
 
 ### Livingdocs Editor Patches
+- [v123.10.68](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.68): fix(multilist-editor): Use correct permission to enable multilist editor
 - [v123.10.67](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.67): fix(deps): update dependency @fastify/static from 9.1.3 to 10.1.2 [security]
 - [v123.10.66](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.66): fix(deps): update dependency axios from 1.16.0 to 1.18.0 [security]
 - [v123.10.65](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.65): fix(deps): update dependency @livingdocs/framework from 32.12.12 to v32.12.13
