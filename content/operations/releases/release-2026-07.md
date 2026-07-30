@@ -552,6 +552,7 @@ Here is a list of all patches after the release has been announced.
 - [v308.1.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.3): fix(print): Renumber huGO print breaking change to LIBREAKING071
 
 ### Livingdocs Editor Patches
+- [v126.1.20](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.20): fix(multilist-editor): Use correct permission to enable multilist editor
 - [v126.1.19](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.19): refactor(tags): show variant all for media detail view
 - [v126.1.18](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.18): fix(deps): update dependency @fastify/static from 9.1.3 to 10.1.2 [security]
 - [v126.1.17](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.17): fix(metadata): only mark rendered properties as touched
