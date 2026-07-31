@@ -539,6 +539,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v308.1.14](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.14): fix(indexing): Always load the elasticsearch configs into the process (not only on live indexing)
 - [v308.1.13](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.13): fix(indexing): Avoid caching empty media-library locale fields at startup
 - [v308.1.12](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.12): fix(elasticsearch): Fix index behavior with translated fields
 - [v308.1.11](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.11): fix(deps): automatically patch Node.js vulnerabilities
