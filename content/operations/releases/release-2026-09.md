@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [chore(deps): update dependency posthog-node from 5.46.1 to v5.47.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/9798)
 - [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-editor/pull/11411)
 - [fix(indexing): Avoid caching empty media-library locale fields at startup](https://github.com/livingdocsIO/livingdocs-server/pull/9777)
 - [Image Card Enhancement & License Improvements](https://github.com/livingdocsIO/livingdocs-editor/pull/11344)
