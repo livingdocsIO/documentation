@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [chore(deps): update dependency execa from 10.0.0 to v10.0.1 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/9799)
 - [fix(deps): update dependency @livingdocs/framework from 34.2.0 to v34.2.1 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/11419)
 - [chore(deps): update dependency posthog-node from 5.46.1 to v5.47.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/9798)
 - [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-editor/pull/11411)
