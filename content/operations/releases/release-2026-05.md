@@ -624,6 +624,7 @@ Patches typically fix bugs and apply improvements within the current release. Ke
 - [v301.1.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.1): fix(release-2026-05): Update framework to v34.0.3 (release-2026-05 tag)
 
 ### Livingdocs Editor Patches
+- [v123.21.45](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.45): fix(deps): update dependency sanitize-html from 2.17.4 to 2.17.5 [security]
 - [v123.21.44](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.44): refactor(document-inbox): Use clearer names in drag auto-scroll
 - [v123.21.43](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.43): fix(deps): update dependency js-yaml from 4.3.0 to 5.2.2 [security]
 - [v123.21.42](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.42): fix(multilist-editor): Use correct permission to enable multilist editor
