@@ -585,6 +585,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Patches typically fix bugs and apply improvements within the current release. Keeping your deployment up-to-date with the latest patch version means you benefit from those fixes. No explicit action is required per patch — bumping the version is enough.
 
 ### Livingdocs Server Patches
+- [v301.1.35](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.35): chore(image-processing): compare decoded pixels instead of png bytes in test
 - [v301.1.34](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.34): fix(deps): update dependency undici from 8.5.0 to 8.9.0 [security]
 - [v301.1.33](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.33): fix: restore login through forward proxy
 - [v301.1.32](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.32): fix(deps): automatically patch Node.js vulnerabilities
