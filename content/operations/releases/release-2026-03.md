@@ -412,6 +412,7 @@ Here is a list of all patches after the release has been announced.
 - [v296.2.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.1): fix(deps): update dependency @livingdocs/framework from 32.12.6 to v32.12.7
 
 ### Livingdocs Editor Patches
+- [v123.10.72](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.72): fix(deps): update dependency sanitize-html from 2.17.4 to 2.17.5 [security]
 - [v123.10.71](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.71): fix(metadata): build image urls with crop and original dimensions
 - [v123.10.70](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.70): fix(deps): update dependency @livingdocs/framework from 32.12.13 to v32.12.14
 - [v123.10.69](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.69): fix(deps): update dependency js-yaml from 4.3.0 to 5.2.2 [security]
