@@ -68,7 +68,15 @@ See [here]({{< ref "/guides/media-library/image-services.md#configuring-an-image
 
 ### Image cropping
 
-See [here]({{< ref "./image-cropping.md" >}})
+See the [Named Crops]({{< ref "/guides/media-library/media-library-setup#named-crops" >}}) guide for how image cropping is configured.
+
+You can hide the crop option for specific mime types with `disableCropFor`:
+
+```js
+{
+  disableCropFor: ['image/svg+xml']
+}
+```
 
 ### Sizes
 

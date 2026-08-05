@@ -160,9 +160,39 @@ No rollback steps are required for this release.
 
 ## Breaking Changes :fire:
 
+### Removal of the editor.imageCrop configuration
+
+The editor cropping tool was rebuilt in this release (see [Improved Image Cropping](#improved-image-cropping)). Its settings were specific to the old tool and have been removed without replacement.
+
+#### Detect
+
+In the editor config, an `imageCrop` key under `editor`. Search for `imageCrop`.
+
+#### Fix
+
+Remove the `editor.imageCrop` block and its options (`maxArea`, `showSurroundingImage`, `surroundingImageOpacity`, and `zoomStep`) from all editor configs and test fixtures. No replacement is needed.
+
 ## Deprecations :warning:
 
 ## Features :gift:
+
+### Improved Image Cropping
+
+The image cropping tool has been improved, visually and functionally. It is more intuitive to use. Editors can now:
+
+- Resize crops with a fixed aspect ratio by dragging the frame, which previously was not possible.
+- Grab the crop frame on its corners as well as on its sides.
+- Move one edge of the frame without moving the opposite edge along with it.
+
+{{< img src="release-2026-09-image-cropping.png" alt="The image cropping tool with the redesigned aspect ratio picker" width="600" caption="The redesigned aspect ratio picker, including the new freeform option." >}}
+
+Ratios configured with `recommendedRatios` are now always enforced. The crop can be resized, but it keeps the selected ratio. Previously the ratio was dropped as soon as an editor resized the crop. For unconstrained cropping, the picker now offers an additional freeform ratio. In freeform mode, the current aspect ratio can still be preserved by holding the Shift key while resizing.
+
+The behavior of `imageRatios` is unchanged. Those ratios are always enforced and there is no freeform option.
+
+The new cropping tool is available automatically. No configuration is required.
+
+For more information, see the [doc-image directive]({{< ref "/reference/document/document-design/directives/image.md#ratios" >}}) documentation.
 
 ### Search by Filename
 
