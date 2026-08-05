@@ -48,10 +48,9 @@ If defined on any other tag, enables users to set a background image CSS propert
 
 The image ratio definitions control how the crop tool in the Livingdocs editor is configured.
 
-{{< img src="./image-crop.png" alt="Crop presets" >}}
+{{< img src="./image-crop-ratio.png" alt="Aspect ratio picker with 1:1, 16:9, Original and Free options" width="400" caption="The original and freeform option is only offered with recommendedRatios." >}}
 
-There are two ways to configure how the crop tool behaves. If you configure `imageRatios`, one of the given ratios is enforced.
-If you configure `recommendedRatios`, the given ratios are presented to the user, but a custom aspect ratio is possible.
+There are two ways to configure how the crop tool behaves. If you configure `imageRatios`, the user picks one of the given ratios and the crop is locked to it. If you configure `recommendedRatios`, the given ratios are presented to the user alongside an additional freeform option.
 
 `imageRatios`: array of strings, an array of strings, e.g. '16:9'
 `recommendedRatios`: array of strings, an array of strings, e.g. '16:9'

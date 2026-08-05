@@ -232,22 +232,25 @@ projectConfig.designSettings: {
       handle: 'mobile',
       label: 'Mobile',
       description: 'this image will be shown on small screens',
-      // on small screens, having exact same ratios across all images is not that important
-      // we let the user pick one but change freely
+      // On small screens, having the exact same ratios across all images is not that
+      // important. With recommendedRatios, the user picks 1:1 or 16:9, and the selected
+      // ratio is kept while resizing. An additional freeform option allows any ratio.
       recommendedRatios: ['1:1', '16:9']
     },
     {
       handle: 'desktop',
       label: 'Desktop',
       description: 'this image will be shown on wide screens',
-      // for large screens, we want consistent 16:9 image ratios, the user can't change that
+      // For large screens, we want consistent 16:9 images. With imageRatios, the user
+      // can only pick from the listed ratios. There is no freeform option.
       imageRatios: ['16:9']
     },
     {
       handle: 'sm-teaser',
       label: 'SM Teaser',
       description: 'this image will be shown on wide screens',
-      // for social media, we might want to use a different crop, but the ratio is fixed
+      // For social media, the ratio has to be exactly 16:9 as well. With a single
+      // imageRatios entry, the user can only move and resize the crop within that ratio.
       imageRatios: ['16:9']
     }
   ],
@@ -397,57 +400,19 @@ module.exports = {
 
 ### Focal Point Cropping
 
-Focal point selection is supported on [`li-named-crops`]({{< ref "/reference/document/metadata/plugins/li-named-crops" >}}) and [`li-image`]({{< ref "/reference/document/metadata/plugins/li-image" >}}) whenever multiple crops are present.
+Focal point selection is supported on [`li-named-crops`]({{< ref "/reference/document/metadata/plugins/li-named-crops" >}}) and [`li-image`]({{< ref "/reference/document/metadata/plugins/li-image" >}}) whenever multiple crops are present. It requires no configuration.
 
-#### Where automatic cropping struggles
+Every crop starts as an automatic crop, centered within the original image. This does not always give the best result.
 
-Each crop starts with an automatic crop, choosing the default aspect ratio. This does not always lead to ideal results.
+With the cropping tool open, click "Set Focal Point". The original image appears on the left with a circle marking the current focal point, which starts at the center of the image. Live previews of every crop appear on the right, including crops that have not been added yet.
 
-This image of a chapel in front of the famous Matterhorn in the swiss alps is a good example where automatic crops would normally struggle.
+{{< img src="./focal-point-initial.png" alt="Focal point at the center of the image, with previews for the Desktop, Mobile and Tablet crops" width="800" caption="All three Auto crops frame around the focal point, which still sits at its default center position." >}}
 
-The _Mobile_ crop defines an upright aspect ratio of 3:4. By default, the 3:4 crop is centered within the original image.
-But in this case, it cuts off both subjects.
-![Screenshot showing default cropping cuts off main subjects](fp_crop_default.png)
+Click a subject in the left image to move the focal point. Every crop marked "Auto" reframes to include it and the previews update immediately, so you can fine-tune the position until all crops look right.
 
-#### Focal Point Mode
+{{< img src="./focal-point-modified.png" alt="Focal point moved onto the church towers, with the previews reframed around them" width="800" caption="Moving the focal point onto the towers reframes every Auto crop around them." >}}
 
-With the cropping tool opened, click on _Set Focal Point_ to go into focal point selection mode.
-In this mode, all possible crops are showing a live preview on the right side, also those that where not yet added in the previous view.
-On the left side, the original image is shown with slightly faded colors and a circle indicating the current focal point position.
-
-By default, the focal point is the center of the image. This is also true if the focal point is not defined at all.
-![Screenshot showing the focal point in the center of the image](fp_select_center.png)
-
-#### Changing the Focal Point
-
-Let's say we'd like the _Matterhorn_ to be our main subject in this image.
-While in focal point mode, click on the subject inside the left image to update the focal point.
-Notice how the previews on the right side are updated. The 3:4 _Mobile_ crop looks a lot better now.
-![Screenshot showing the focal point on the Matterhorn](fp_select_mountain.png)
-
-We changed our mind and we'd like to put the focal point on the nice chapel.
-Just click on it and observe how the previews are changing.
-For best results, use the previews to fine-tune the focal point by making slight adjustments.
-
-![Screenshot showing the focal point on the chapel](fp_select_chapel.png)
-
-#### Apply the Focal Point
-
-Once you're happy with the previews, click on _Apply Focal Point_.
-This will bring you back to the normal crop view.
-
-**Hint**: After you've made changes to the focal point, don't forget to click on _Save_.
-When clicking on cancel or closing the window without saving, focal point changes are lost.
-
-#### Backwards Compatibility
-
-Focal point cropping is fully backwards compatible and does not need or have any configuration.
-
-Images can now have a `focalPoint` property with `x` and `y` coordinates.
-However, each image starts with no focal point defined.
-
-It will only be set if a user explicitly selected a focal point.
-In all other cases, the automatic crop calculation falls back to the center crop as it was before `release_2022-11`.
+Click "Apply Focal Point" to return to the crop view, then "Save". A crop can still be adjusted by hand afterwards, which overrides the focal point for that crop. Focal point changes are lost when you cancel or close the window without saving.
 
 ## Videos
 
