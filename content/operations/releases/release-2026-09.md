@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [feat(media-library): substring search on asset filenames via ngram](https://github.com/livingdocsIO/livingdocs-server/pull/9743)
 - [Match metadata image urls to the server to avoid merge conflicts](https://github.com/livingdocsIO/livingdocs-editor/pull/11422)
 - [Restore OpenID Connect login through a forward proxy](https://github.com/livingdocsIO/livingdocs-server/pull/9784)
 - [fix(deps): update dependency chalk from 5.6.2 to v6 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/9802)
