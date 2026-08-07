@@ -845,6 +845,51 @@ The purposes are displayed to a user when creating or updating a usage log entry
 
 Usage log purposes can be flagged as internal. When the `internal` property is set to `true` it prevents a user from creating, updating or deleting entries for the purpose within the editor. A read-only entry will still be visible within the UI. This is intended for purposes whose entries are created automatically on publish through a [`recordUsageLogEntry` function]({{< ref "#generating-usage-log-entries-on-publish" >}}).
 
+### Searching by usage log details
+
+{{< added-in "release-2026-09" block >}}
+
+Every usage log entry is indexed individually, so media library searches and dashboard filters can match images by what is in their usage log, and combine several criteria that must all hold on the *same* entry. Typical questions this answers are "used in print within the last two years" or "a confirmed social-media usage in 2026".
+
+The following fields of each entry are indexed: `state`, `purpose`, `reportingDate`, `userId`, `documentId`, `publicationDate`, `publicationId`, and `url`. Both pending and confirmed entries are indexed.
+
+To also search by a purpose's custom `params`, set `config: { index: true }` on the `paramsSchema` property. Only indexed params are queryable, and each keeps its type, so it supports the matching operators of its metadata plugin (for example a `range` on a `li-date` param).
+
+```js
+{
+  mediaCenter: {
+    usagePurposes: [
+      {
+        handle: 'print',
+        label: {en: 'Print', de: 'Druck'},
+        paramsSchema: [
+          {
+            handle: 'department',
+            type: 'li-text',
+            config: {
+              index: true // makes the usage log param searchable
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+Query the indexed entries with the `nested` filter operator, either in a dashboard's `baseFilters` or in the [Expert Search]({{< ref "/customising/advanced/editor-configuration/expert-search/#nested" >}}) display filter. Sub-keys inside a `nested` block are resolved against the entry, and `usageLog` works as an alias for the underlying `usageLogV2` field.
+
+```js
+baseFilters: [
+  {key: 'usageLog', nested: [
+    {key: 'purpose', term: 'print'},
+    {key: 'publicationDate', range: {gte: 'now-2y'}}
+  ]}
+]
+```
+
+The new fields are added by a media library reindex. Run `livingdocs-server elasticsearch-index --handle=li-media` after upgrading so existing entries gain the usage log fields. The mapping is patched in place, so no `--recreate` is needed.
+
 ### Creating usage log dashboards
 
 It's possible to define dashboards which provide an easy way to review incomplete entries:
