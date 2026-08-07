@@ -159,6 +159,32 @@ No rollback steps are required for this release.
 
 ## Features :gift:
 
+### Search Images by Usage Log Details
+
+For newsrooms that run the Media Center as a full DAM, the usage log holds the answers to questions like "which images ran in print in the last two years" or "whose usages still need billing this month". Editors can now search the media library by the contents of the usage log, and combine several conditions that must all hold on the same usage entry.
+
+Each usage log entry is now indexed on its own, so a query can match one entry by its purpose, state, dates, user, and any custom params at the same time. Searches run from a dashboard's base filters or from the Expert Search field.
+
+A new `nested` filter operator ties conditions to a single usage log entry, instead of matching them loosely across all of an image's entries.
+
+```json
+{
+  "key": "usageLog",
+  "nested": [
+    {"key": "purpose", "term": "print"},
+    {"key": "publicationDate", "range": {"gte": "now-2y"}}
+  ]
+}
+```
+
+To search by a purpose's custom params, mark them with `config: { index: true }` in the `paramsSchema`.
+
+{{< info >}}
+The usage log fields are added by a media library reindex. Run `livingdocs-server elasticsearch-index --handle=li-media` after upgrading so existing entries become searchable. The mapping is patched in place, so no `--recreate` is needed.
+{{< /info >}}
+
+For more information, see the [Usage Log]({{< ref "/guides/media-library/media-library-setup/#searching-by-usage-log-details" >}}) and [Expert Search]({{< ref "/customising/advanced/editor-configuration/expert-search/#nested" >}}) documentation.
+
 ## Vulnerability Patches
 
 We are constantly patching module vulnerabilities for the Livingdocs Server and Livingdocs Editor as module fixes are available. Below is a list of all patched vulnerabilities included in the release.
