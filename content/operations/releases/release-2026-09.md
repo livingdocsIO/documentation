@@ -158,6 +158,28 @@ No rollback steps are required for this release.
 
 ## Features :gift:
 
+### Search by Filename
+
+Not every image arrives with a title or description. When metadata is missing, the filename is often the only thing that identifies an image. Editors can now search for images by their filename, and read or copy the full name straight from the detail view.
+
+#### Find images by any part of the filename
+
+Media Library text search now matches any part of a filename, not just the beginning. Matching is case-insensitive and needs at least three characters. Searching for `AXZ87D3X` finds `imago-AXZ87D3X-john-doe-cc.jpg`.
+
+#### Read and copy the full filename
+
+In the media detail view, the "Information" section now shows the complete filename instead of truncating it to a single line. A copy button next to it grabs the full name in one click, which makes long agency filenames and stock IDs easy to reuse.
+
+{{< info >}}
+Substring filename search requires an Elasticsearch index recreation to activate. Until the media library index is recreated, search keeps working as before.
+
+```
+livingdocs-server elasticsearch-index --handle li-media --recreate -y
+```
+
+`--recreate` deletes and rebuilds the index in place, so media search returns incomplete results while it runs (roughly 6,000 to 7,000 entries per second). Plan it for a low-traffic window.
+{{< /info >}}
+
 ## Vulnerability Patches
 
 We are constantly patching module vulnerabilities for the Livingdocs Server and Livingdocs Editor as module fixes are available. Below is a list of all patched vulnerabilities included in the release.
