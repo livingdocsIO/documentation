@@ -241,7 +241,8 @@ designSettings: {
         handle: 'mobile',
         label: 'Mobile',
         description: 'this image will be shown on small screens',
-        // recommendedRatios are a suggestion and the user can easily pick on, but can also use a different ratio
+        // With recommendedRatios, the user picks 1:1 or 16:9, and the selected ratio is
+        // kept while resizing. An additional freeform option allows any ratio.
         recommendedRatios: ['1:1', '16:9']
       },
       {
@@ -254,23 +255,26 @@ designSettings: {
         handle: 'desktop',
         label: 'Desktop',
         description: 'this image will be shown on wide screens',
-        // imageRatios are enforced, the user has to pick one of them, the first is the default
+        // With imageRatios, the user has to pick one of the listed ratios and there is
+        // no freeform option. The first ratio is the default.
         imageRatios: ['21:9', '16:9']
       },
       {
         handle: 'socialMediaTeaser',
         label: 'SM Teaser',
         description: 'This image will be used for social media teasers',
-        // the user won't be able to pick a ratio but can only change the crops position and zoom
+        // With a single imageRatios entry, the user can only move and resize the crop
+        // within 16:9.
         imageRatios: ['16:9']
       },
       {
         handle: 'smallTeaser',
         label: 'Small Teaser',
         description: 'Used for small teasers',
-        // the user can either stay with the recommended 1:1 ratio or change it freely...
+        // The user can stay with the recommended 1:1 ratio or crop freely with the freeform option, ...
         recommendedRatios: ['1:1'],
-        // ... within the boundaries of minRatio and maxRatio (the factor is the ratio, think 16/9 = 1.7777)
+        // ... but only within the boundaries of minRatio and maxRatio. The factor is the
+        // ratio, think 16/9 = 1.7777.
         minRatio: 0.25,
         maxRatio: 3
       },
@@ -278,9 +282,9 @@ designSettings: {
         handle: 'largeTeaser',
         label: 'Large Teaser',
         description: 'Used for large teasers',
-        // the user can stay with 16:9 or change the ratio freely...
+        // The user can stay with 16:9 or crop freely with the freeform option, ...
         recommendedRatios: ['16:9'],
-        // ...as long as the resulting image contains at least 300 * 300 pixels (width * height)
+        // ... as long as the resulting image contains at least 300 * 300 pixels (width * height).
         minResolution: 300 * 300
       }
     ]

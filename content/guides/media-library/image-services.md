@@ -196,7 +196,7 @@ You might be wondering as to why Livingdocs relies on an image service in the fi
 1. cropping
 2. different image widths (sizes) for different devices
 
-The first reason is easily explained. Livingdocs provides an image cropping tool (https://github.com/livingdocsIO/srcissors) in the editor which allows users to crop their images and change the aspect ratio. However, the Livingdocs server does not generate these different versions of the image and deliver them. Instead, it gives this responsibility to a web service such as Imgix. Currently, Livingdocs expects that a web service takes the cropping information in the form of a URL parameter ([example of Imgix](https://docs.imgix.com/en-US/apis/rendering/size/source-rectangle-region)). This is the case for all services we know of.
+The first reason is easily explained. Livingdocs provides an image cropping tool in the editor which allows users to crop their images and change the aspect ratio. However, the Livingdocs server does not generate these different versions of the image and deliver them. Instead, it gives this responsibility to a web service such as Imgix. Currently, Livingdocs expects that a web service takes the cropping information in the form of a URL parameter ([example of Imgix](https://docs.imgix.com/en-US/apis/rendering/size/source-rectangle-region)). This is the case for all services we know of.
 
 The second reason for using an image service is to have images that are responsive. Put simply, you don't want to download a 5 Megapixel image on your mobile phone. Instead you want a website to be "smart" and download the image in such a size that the resolution is perfect for your device but the size is just as large as need be.
 
