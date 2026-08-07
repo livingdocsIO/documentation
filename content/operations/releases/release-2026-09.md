@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Replace the legacy ld-card CSS class with the li-card component](https://github.com/livingdocsIO/livingdocs-editor/pull/11392)
 - [fix(indexing): Always load the elasticsearch configs into the process](https://github.com/livingdocsIO/livingdocs-server/pull/9785)
 - [feat(media-library): improve filename visibility and add copy button](https://github.com/livingdocsIO/livingdocs-editor/pull/11367)
 - [feat(media-library): substring search on asset filenames via ngram](https://github.com/livingdocsIO/livingdocs-server/pull/9743)
