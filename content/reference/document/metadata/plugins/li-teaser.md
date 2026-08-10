@@ -5,7 +5,6 @@ menus:
   reference:
     parent: Metadata Plugins List
 summary: Versatile document teaser management with support for direct, curated, and algorithm-based references.
-addedIn: release-2024-11
 support:
   document: false
   media: false
@@ -111,13 +110,14 @@ module.exports = function () {
             baseFilters: [], // Optional, filters need to conform with publication search!
             sort: 'lastPublicationDate', // Optional, sorting needs to conform with publication search!
             allowExposureBoost: true, // Optional, allows users to enable exposure boost effect for teaser
-            displayFilters: [ // Optional, selectable by user, filters need to conform with publication search!
-              { metadataPropertyName: 'ressorts' },
+            displayFilters: [
+              // Optional, selectable by user, filters need to conform with publication search!
+              {metadataPropertyName: 'ressorts'},
               {
                 filterName: 'liDateTimeRange',
                 config: {
                   documentPropertyName: 'lastPublicationDate',
-                  label: { 'en': 'Publication Date', 'de': 'Publikationsdatum' }
+                  label: {en: 'Publication Date', de: 'Publikationsdatum'}
                 }
               }
             ]
@@ -127,18 +127,20 @@ module.exports = function () {
     ],
     rendering: {
       type: 'function',
-      render (params) {
+      render(params) {
         // The preloaded document is resolved as value of li-teaser handle.
         // It can be originated from any of the configured levels.
         const document = params.teaser?.value
         const content = document
-          ? [{
-            id: `textTeaser-${document.systemdata.documentId}`,
-            component: 'textTeaser',
-            content: {
-              title: document.metadata.title
-            }
-          }]
+          ? [
+              {
+                id: `textTeaser-${document.systemdata.documentId}`,
+                component: 'textTeaser',
+                content: {
+                  title: document.metadata.title
+                }
+              }
+            ]
           : [] // make sure not to fail if no document was resolved
 
         return {
@@ -225,12 +227,10 @@ If no brand is provided in a request, `componentConditions.brand` uses the [defa
 
 ### Teaser Containers
 
-{{< added-in "release-2025-03" block >}}
-
 In real-world page management scenarios, teasers often come in groups (technically achieved with `doc-container` directives). It can be tedious to define and manage the level 2 and level 3 settings for all teasers in a group.
 
 It is possible to edit these settings at once for all teasers in a container. Teasers within the container can still have a different level 1 direct reference to a document. For this to work, all teasers need to have an identical paramsSchema configuration for `curatedList` and `algorithm` in their service. Additionally, the container directive needs to be configured with `isTeaserContainer: true`.
-The best way to guarantee compatability of teasers within a teaser container is to use the `allowedChildren` configuration for `doc-container` and only list teaser components in there, which are known to be compatible with each other. 
+The best way to guarantee compatability of teasers within a teaser container is to use the `allowedChildren` configuration for `doc-container` and only list teaser components in there, which are known to be compatible with each other.
 
 If everything is set up correctly, it's no longer possible to define the curated list and algorithm setting for an individual teaser in the container using the component inspector. Instead, it links to the container where the setting is available. Changing it on the container will update all teasers with the same settings.
 
@@ -240,14 +240,11 @@ Please note that on a technical level, all teasers are still independent. They h
 
 {{< img src="../images/li-teaser-container-child-settings.png" alt="Focused teaser within a teaser showing that it receives the settings from the container." >}}
 
-
 #### Command API
 
 Since teaser containers are not holding any information about the teaser settings, this has some implications on the Command API. To update the settings for all teasers in a teaser container, the `setIncludeDirective` command can be used. If the targeted directive is within a teaser container and all sibling teasers have a compatible params schema, the Command API will make sure to apply the same algorithm and curatedList settings to the siblings.
 
 ### Teaser Side Table
-
-{{< added-in "release-2025-03" block >}}
 
 In a typical page management use case, an article might "tickle down" the page throughout the day. Editors can place a particular article on a teaser by setting it as a direct reference (Level 1). This can happen in several ways:
 
@@ -271,11 +268,6 @@ Make sure to configure either one for the content types where it shall be suppor
 
 ### Exposure Boosting
 
-{{< added-in "release-2025-05" block >}}
-
 By activating the [exposure boost]({{< ref "/reference/document/metadata/plugins/li-exposure-boost" >}}) for a document, it will win over all other sort criteria in algorithmic teasers.
 The teaser algorithm config needs to have the option `allowExposureBoost` to support the behavior in general.
 Additionally, for each teaser the behavior needs to be activated in the UI.
-
-
-

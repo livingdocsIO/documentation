@@ -35,6 +35,6 @@ contentTypeConfig: |2
         handle: 'myHandle'
         type: 'li-metadata-translations',
         config: {
-          index: true                      // optional, default: false. {{< added-in "release-2023-07" >}}
+          index: true                      // optional, default: false
         }
 ---

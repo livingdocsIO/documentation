@@ -20,7 +20,6 @@ support:
   webhookConditions: true
 description: |
   A simple text value store, almost identical to `li-text`, but as system metadata (does not indicate a draft content change).
-  {{< added-in "release-2024-09" >}}.
 
   It can be used in cases where a simple text value should be stored in the metadata, but the document version should not
   be increased when the metadata value changes. Or in other words, it will not show up as unpublished change.

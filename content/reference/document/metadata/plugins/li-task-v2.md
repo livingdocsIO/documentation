@@ -73,7 +73,7 @@ contentTypeConfig: |2
           // Modes allow users to select how they approach a task. Once
           // configured, selecting a mode becomes mandatory for every newly
           // created task. Modes are displayed in the order they are defined,
-          // with the first mode being the default. {{< added-in "release-2024-11" >}}
+          // with the first mode being the default.
           modes: [
             {
               handle: 'thorough',

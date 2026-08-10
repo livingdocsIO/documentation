@@ -24,8 +24,6 @@ support:
   webhookConditions: true
 description: |
   A `li-enum` metadata field shows a select form based on a statically defined list. On publish the selected value gets validated against the defined static list. With that you can assure that only specific values gets published.
-
-  [Display Filters]({{< ref "/customising/advanced/editor-configuration/display-filter#metadata-filters" >}}) support {{< added-in "release-2023-09" >}}
 defaultUI: |
   Select input
 
@@ -39,7 +37,7 @@ contentTypeConfig: |2
           hideFromForm: false,                     // optional, default: false
           required: true,                          // optional, default: false
           requiredErrorMessage: 'Provide a value', // optional
-          index: true,                              // optional, default: false. {{< added-in "release-2023-07" >}}
+          index: true,                              // optional, default: false
           // specific
           dataProvider: {                          // required
             type: 'labelValuePair',                // required

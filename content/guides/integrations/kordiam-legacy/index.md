@@ -4,7 +4,7 @@ description: Integrate Kordiam with Livingdocs using a publication platform
 ---
 
 {{< info >}}
-{{< added-in "release-2024-11" >}}. Prior to {{< release "release-2024-11" >}}, the Kordiam Platform Integration was known as [Desk-Net Platform Integration]({{< ref "/guides/integrations/desknet-legacy" >}}).
+Prior to {{< release "release-2024-11" >}}, the Kordiam Platform Integration was known as [Desk-Net Platform Integration]({{< ref "/guides/integrations/desknet-legacy" >}}).
 {{< /info >}}
 
 {{< warning >}}

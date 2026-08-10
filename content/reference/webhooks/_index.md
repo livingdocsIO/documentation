@@ -96,7 +96,7 @@ The following events are supported:
 - `mediaLibraryEntry.revoke`
 - `mediaLibraryEntry.active`
 - `mediaLibraryEntry.invalid`
-- `mediaLibraryEntry.delete` ({{< added-in "release-2025-07" >}})
+- `mediaLibraryEntry.delete`
 
 {{< info >}}
 When a document or media library event is emitted, the Elasticsearch index may not have been updated yet. Hence, when fetching data from a Public API endpoint that internally queries the Elasticsearch index, the response may not immediately reflect the event.
@@ -110,9 +110,9 @@ For more precise control over the triggering of webhooks, additional conditions 
 
 Three types of conditions are supported:
 
-- Content Types ({{< added-in "release-2024-03" >}})
+- Content Types
 - Delivery Handles
-- Metadata Properties ({{< added-in "release-2024-03" >}})
+- Metadata Properties
 
 #### Content Types
 

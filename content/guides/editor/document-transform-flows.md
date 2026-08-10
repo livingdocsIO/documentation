@@ -4,8 +4,6 @@ description: Transform documents using server functions
 weight: 1
 ---
 
-{{< added-in "release-2024-09" block >}}
-
 {{< info >}}
 See the [Declarative Document Copy (Legacy)]({{< ref "/guides/editor/declarative-document-copy" >}}) guide for details about the legacy feature used prior to {{< release "release-2024-09" >}}.
 {{< /info >}}

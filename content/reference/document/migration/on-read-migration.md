@@ -7,8 +7,6 @@ menus:
     parent: Migration
 ---
 
-{{< added-in "release-2025-03" block >}}
-
 On-Read Migrations are applied whenever a document is read from the database. This means they take effect immediately, allowing all hooks, functions and clients consuming the data to work with the updated document structure. As such, they are ideal for applying structural changes to your existing documents.
 
 Importantly, whenever you introduce a breaking change to your document's design or metadata, you must ensure that existing documents are still compatible with the changes. Usually, this is achieved by providing an On-read Migration alongside these changes. This ensures that the documents delivered to the Livingdocs Editor or other clients are compatible with the document's design and metadata properties.

@@ -4,8 +4,6 @@ description: News Agency Integration
 weight: 2
 ---
 
-{{< added-in "release-2025-07" block >}}
-
 Livingdocs offers built-in support for News Agencies, enabling editorial teams to review and process news agency reports directly within Livingdocs. With a single click, reports can be copied into regular Livingdocs articles, ready for editing and publication.
 
 The News Agency integration supports two kinds of import flows: manual flows and auto-publish flows.
@@ -70,7 +68,6 @@ newsAgency: {
   // - Maps raw source values to descriptive or localized labels shown in the
   //   Livingdocs Editor.
   // - Defines what source display filter options appear on news agency screens.
-  // {{< added-in "release-2025-11" >}}
   sources: [
     {label: 'afp', value: 'afp'},
     {label: 'dpa', value: 'dpa'},
@@ -82,7 +79,6 @@ newsAgency: {
   //   Livingdocs Editor.
   // - Defines what category display filter options appear on news agency
   //   screens.
-  // {{< added-in "release-2025-11" >}}
   categories: [
     {label: {en: 'Politics', de: 'Politik'}, value: 'politics'},
     {label: {en: 'Economy', de: 'Wirtschaft'}, value: 'economy'},
@@ -135,11 +131,11 @@ Since this function works with a `liNewsAgencyReport`, it's important to underst
   metadata: [
     {handle: 'title', type: 'li-text', config: {index: true, required: true}},
     {handle: 'lead', type: 'li-text', config: {index: true, required: true}},
-    {handle: 'note', type: 'li-text', config: {index: true}}, // {{< added-in "release-2025-11" >}}
+    {handle: 'note', type: 'li-text', config: {index: true}},
     {handle: 'source', type: 'li-text', config: {index: true, required: true}},
     {handle: 'category', type: 'li-text', config: {index: true, required: true}},
     {handle: 'keywords', type: 'li-string-list', config: {index: true}},
-    {handle: 'location', type: 'li-text', config: {index: true}}, // {{< added-in "release-2025-11" >}}
+    {handle: 'location', type: 'li-text', config: {index: true}},
     // Indicates the urgency of a report as an integer from 1 (highest)
     // to 6 (lowest).
     {handle: 'priority', type: 'li-system-priority', config: {index: true, required: true}},
@@ -251,8 +247,6 @@ POST /api/{{< api-version >}}/import/documents
 ```
 
 ## Notifications
-
-{{< added-in "release-2025-09" block >}}
 
 To ensure that users don't miss breaking news while working on other topics, Livingdocs provides notifications for incoming news agency reports. These notifications appear throughout Livingdocs—whether on a dashboard, article, or in any other view. Users can directly create an article from a notification with a single click.
 

@@ -4,8 +4,6 @@ description: Create print copies of documents using server functions and a dedic
 weight: 1
 ---
 
-{{< added-in "release-2024-11" block >}}
-
 ## Introduction
 
 Document Print Flows provide a flexible way to create print copies of web documents. They can also be used to create web versions of print documents in situations where the print version was created first. They are configured in a similar way to [Document Copy Flows]({{< ref "/guides/editor/document-copy-flows" >}}), with the server functions handling most of the logic. The main difference is that there is a 1:1 relationship between a print and web document, and they use a different UI to initiate the copy. There are also additional indicators within the UI to show the status of the linked documents.

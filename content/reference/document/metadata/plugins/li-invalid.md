@@ -18,7 +18,6 @@ support:
   systemMetadata: false
   planningSystem: false
   webhookConditions: false
-addedIn: release-2024-03
 description: |
   A simple Boolean value store, represented in the UI with a checkbox which you can toggle on/off.
 

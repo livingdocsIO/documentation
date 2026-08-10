@@ -24,8 +24,6 @@ support:
   webhookConditions: false
 description: |
   A `li-document-references` metadata field is a list of references to other documents. A Document Selection Dialog is shown, based on shorthand queries and `useDashboard` to select documents.
-
-  [Display Filters]({{< ref "/customising/advanced/editor-configuration/display-filter#metadata-filters" >}}) support {{< added-in "release-2023-09" >}}
 defaultUI: |
   Selected documents, or document selection dialog
 
@@ -47,14 +45,14 @@ contentTypeConfig: |2
           hideFromForm: false,                     // optional, default: false
           required: true,                          // optional, default: false
           requiredErrorMessage: 'Provide a value', // optional
-          index: true,                             // optional, default: false. {{< added-in "release-2023-07" >}}
+          index: true,                             // optional, default: false
           // specific
           documentType: 'article',                 // optional, one of article, page, data-record
           contentType: 'my-content-type',          // optional, filters the document selection
           published: true,                         // optional, shorthand for publication displayFilter, default: false
-          prefillAuthor: true,                     // optional, add document creator if the prefilling configuration for the current user exists, default: false. {{< added-in "release-2023-09" >}}
-          min: 2,                                  // optional, minimum number of articles required. Use in combination with `required: true` if you would like to prevent `undefined` from being allowed. {{< added-in "release-2023-09" >}}
-          max: 4                                   // optional, maximum number of articles required. {{< added-in "release-2023-09" >}}
+          prefillAuthor: true,                     // optional, add document creator if the prefilling configuration for the current user exists, default: false
+          min: 2,                                  // optional, minimum number of articles required. Use in combination with `required: true` if you would like to prevent `undefined` from being allowed
+          max: 4                                   // optional, maximum number of articles required
         },
         ui: {
           label: 'foo',         // optional, takes camelized name otherwise

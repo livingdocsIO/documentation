@@ -20,8 +20,6 @@ support:
   webhookConditions: false
 description: |
   Requires a `dataProvider` to work.
-
-  [Display Filters]({{< ref "/customising/advanced/editor-configuration/display-filter#metadata-filters" >}}) support {{< added-in "release-2023-09" >}}
 defaultUI: Multiselect input
 storageFormat: |
   [<String>]
@@ -33,7 +31,7 @@ contentTypeConfig: |2
           hideFromForm: false,                     // optional, default: false
           required: true,                          // optional, default: false
           requiredErrorMessage: 'Provide a value', // optional
-          index: true,                             // optional, default: false. {{< added-in "release-2023-07" >}}
+          index: true,                             // optional, default: false
           // specific
           dataProvider: { // required
             // Option 1 - list of items

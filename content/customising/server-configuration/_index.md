@@ -836,7 +836,6 @@ elasticIndex: {
   // The indexes are created with the following pattern: `${indexNamePrefix}-${index.handle}-index`
   indexNamePrefix: 'your-company-local',
 
-  // {{< added-in "release-2024-05" >}}
   // By default content is indexed using a german analyzer and language specific fields are not enabled.
   // Please configure the indexSettings for improved search accuracy and exact word matching.
   indexSettings: {

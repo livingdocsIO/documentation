@@ -4,7 +4,7 @@ description: An optional side panel that can be configured alongside the Kordiam
 ---
 
 {{< info >}}
-{{< added-in "release-2024-11" >}}. Prior to {{< release "release-2024-11" >}}, Kordiam Schedule was known as [Desk-Net Schedule]({{< ref "/guides/integrations/desknet-schedule" >}}).
+Prior to {{< release "release-2024-11" >}}, Kordiam Schedule was known as [Desk-Net Schedule]({{< ref "/guides/integrations/desknet-schedule" >}}).
 {{< /info >}}
 
 The Kordiam Schedule side panel can be configured to only display for certain content types, for example pages to help with page management. This step can also be done without mapping Kordiam values, but this will result in the side panel displaying document titles instead of document reference cards.

@@ -33,7 +33,7 @@ contentTypeConfig: |2
           required: true,                          // optional, default: false
           requiredErrorMessage: 'Provide a value', // optional
           translatable: false,                     // optional, default: false
-          index: true                              // optional, default: false. {{< added-in "release-2023-07" >}}
+          index: true                              // optional, default: false
         },
         ui: {
           label: 'foo',                   // optional, takes camelized name otherwise

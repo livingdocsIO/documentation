@@ -23,13 +23,13 @@ description: |
   Push **Messages** has been introduced as an alternative to the existing [Push **Notifications**]({{< ref "/guides/editor/push-notifications" >}}) feature, which will be removed in release-2026-09.
   {{< /info >}}
 
-  The Push Messages feature enables a user to send messages directly from Table Dashboards, and from the article editor ({{< added-in "release-2023-11" >}}), with a customisable message format.
+  The Push Messages feature enables a user to send messages directly from Table Dashboards, and from the article editor, with a customisable message format.
 
   The two features may be merged in the future, but for now they co-exist independently.
 
   |                | Push Notifications                        | Push Messages                           |
   |----------------|-------------------------------------------|-----------------------------------------|
-  | Accessed from  | Editor Toolbar Action                     | Editor Toolbar Action ({{< added-in "release-2023-11" >}}), Table Dashboards |
+  | Accessed from  | Editor Toolbar Action                     | Editor Toolbar Action, Table Dashboards |
   | Push Services  | Google Firebase, Urban airship, Ethinking | Custom Implementation                   |
   | Message Format | Fixed (Message + Topic)                   | Dynamic (Params Schema)                 |
 

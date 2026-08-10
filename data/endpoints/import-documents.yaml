@@ -58,8 +58,8 @@ parameters:
 
       **publishControl:** An object with
         - `firstPublicationDate`: sets the first publication date
-        - `significantPublicationDate`: ({{< added-in "release-2023-07" >}}) sets a date which can be used by deliveries to display to viewers
-        - `visiblePublicationDateOverride`: ({{< added-in "release-2024-01" >}}) sets a date which can be used by deliveries to display to viewers
+        - `significantPublicationDate`: sets a date which can be used by deliveries to display to viewers
+        - `visiblePublicationDateOverride`: sets a date which can be used by deliveries to display to viewers
         - `lastPublicationDate`: sets the most recent publication date
         The `autoPublish` flag must be set for 'publishControl' to have an effect.
 

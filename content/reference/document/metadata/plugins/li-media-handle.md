@@ -23,7 +23,6 @@ defaultUI: |
   {{< img src="../images/li-media-handle-card.png" alt="Image cards with a media handle tag." >}}
   {{< img src="../images/li-media-handle-metadata.png" alt="Metadata form with a li-media-handle property." >}}
 storageFormat: <String>
-addedIn: release-2025-09
 description: |
   When looking at a series of similar images, they can be hard to distinguish based on the visible information. By providing a visually recognizable and unique identifier, it becomes easier to communicate and locate a particular image.
 

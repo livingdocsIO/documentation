@@ -6,8 +6,6 @@ menus:
     parent: Publications
 ---
 
-{{< added-in "release-2023-07" block >}}
-
 Search filters can be used to filter documents using a custom query DSL.
 
 ### Filter Fields

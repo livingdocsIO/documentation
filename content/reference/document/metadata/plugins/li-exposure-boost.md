@@ -5,7 +5,6 @@ menus:
   reference:
     parent: Metadata Plugins List
 summary: A system metadata plugin to temporarily increase a documents relevance within an li-teaser algorithm.
-addedIn: release-2025-05
 support:
   document: true
   media: false

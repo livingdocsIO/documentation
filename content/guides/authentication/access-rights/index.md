@@ -22,8 +22,6 @@ All permissions are additive, so if a user is in two groups, the user will have 
 
 ### Media Type Access Control
 
-{{< added-in "release-2025-09" >}}
-
 Similar to document content type permissions, groups can be granted specific permissions for individual media types in the Media Center. This allows for granular control over media library operations per media type (e.g., `image`, `video`, `file`).
 
 Available media type actions:

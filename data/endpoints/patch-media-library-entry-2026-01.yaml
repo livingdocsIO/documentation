@@ -49,14 +49,14 @@ parameters:
         - `replaceAsset`
         - `removeAsset`
         - `revokeAsset`
-        - `unrevokeAsset` ({{< added-in "release-2026-01" >}})
+        - `unrevokeAsset`
         - `addUsageLogEntry` ({{< added-in "release-2026-05" >}})
         - `updateUsageLogEntry` ({{< added-in "release-2026-05" >}})
         - `removeUsageLogEntry` ({{< added-in "release-2026-05" >}})
       - **propertyName** string of the propertyName (only for setMetadataProperty)
       - **value** string or object for the new value. If set to null or value is not set it will remove the property for setMetadataProperty. **required** for replaceAsset operation.
       - **locale** string of the asset to be removed (only in multilingual setups for removeAsset)
-      - **note** optional string with a maximum length of 200 characters. Only supported by the `revokeAsset` operation. ({{< added-in "release-2026-01" >}})
+      - **note** optional string with a maximum length of 200 characters. Only supported by the `revokeAsset` operation
       - **usageLogEntryId** required string to identify the usage log entry to operate on. Only supported by the `updateUsageLogEntry` and `removeUsageLogEntry` operations. ({{< added-in "release-2026-05" >}})
       - **oldValue** optional object containing the previous usage log entry which must match for the operation to proceed. Only supported by the `updateUsageLogEntry` operation. ({{< added-in "release-2026-05" >}})
 

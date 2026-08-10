@@ -20,7 +20,7 @@ contentTypes: [
     handle: 'gallery',
     documentType: 'article', // either 'article', 'page' or 'data-record'
     isAuthor: false, // only true if this content-type represents an author, must be 'data-record'
-    displayTitlePattern: '{{metadata.title}}', // optional, defaults to undefined. {{< added-in "release-2023-05" >}}
+    displayTitlePattern: '{{metadata.title}}', // optional, defaults to undefined
 
     info: {
       label: 'Boilerplate Article',
@@ -65,7 +65,6 @@ contentTypes: [
       }
     ],
 
-    // {{< added-in "release-2023-05" >}}
     metadataPreviews: [
       {
         iframe: {
@@ -151,7 +150,6 @@ contentTypes: [
         }
       ],
 
-      // {{< added-in "release-2025-09" >}}
       // Restrict image operations to specific media types for this content type
       images: {
         mediaTypes: ['image', 'infographic']
@@ -267,8 +265,6 @@ defaultContent: [
 
 ## displayTitlePattern
 
-{{< added-in "release-2023-05" block >}}
-
 Without this configuration, the `document.title` property holds a value representing the internal Working Title of a Document and users can change it via the Editor Toolbar.
 
 If you like the Working Title (`document.title` property) to be computed based on metadata fields, you can achieve that by configuring the `displayTitlePattern` on a Content Type using string replacements for metadata fields, e.g. `{{metadata.author}}`. Bear in mind that the usage of `displayTitlePattern` makes the Working Title readonly in the Editor Toolbar and users cannot change it from there.
@@ -382,8 +378,6 @@ metadataGroups: [
 
 ## Metadata Previews
 
-{{< added-in "release-2023-05" block >}}
-
 With Metadata Previews, you can show the user how the value of a certain metadata property will be visually represented.
 This enables things like manual line-break optimization.
 
@@ -468,10 +462,6 @@ componentGroups: [
 ```
 
 ### Conditional Components
-
-{{< added-in "release-2024-03" >}} (`dateTime`)
-
-{{< added-in "release-2025-01" >}} (`brands`)
 
 Conditional components introduce the ability to render a component in the delivery based on a `brands` or `dateTime` condition. The conditions are stored with the component data and can be input in the Livingdocs Editor.
 
@@ -568,7 +558,6 @@ The above example disables direct image uploads to Livingdocs and allows only th
 
 ## Image Media Type Restrictions
 
-{{< added-in "release-2025-09" block >}}
 {{< deprecated-in "release-2026-05" block >}}
 
 {{< warning >}}
@@ -759,7 +748,6 @@ Following attribute types can be added to a customElement:
 
 - li-document-reference
 
-  {{< added-in "release-2023-07" block >}}
   Users can link a document. The attribute name is always `data-li-document-ref`. And the references are extracted as with a normal link to a document.
 
   ```js
@@ -949,8 +937,6 @@ editor: {
 ```
 
 ## On-Read Migrations
-
-{{< added-in "release-2025-03" block >}}
 
 On-Read Migrations are applied whenever a document is read from the database. This means they take effect immediately, allowing all functions and clients consuming the data to work with the updated document structure. They are ideal for applying structural changes to existing documents.
 

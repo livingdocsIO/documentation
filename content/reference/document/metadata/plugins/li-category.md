@@ -28,6 +28,6 @@ contentTypeConfig: |2
         handle: 'myHandle',
         type: 'li-category',
         config: {
-          index: true         // optional, default: false. {{< added-in "release-2023-07" >}}
+          index: true         // optional, default: false
         }
 ---

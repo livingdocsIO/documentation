@@ -99,7 +99,7 @@ This are all available `queryTypes` which can be used to form a filter query.
 {type: 'state', value: 'active'}
 {type: 'state', value: 'revoked'}
 
-// userInTeam ({{< added-in "release-2023-03" >}})
+// userInTeam
 {type: 'userInTeam', key: 'myTeamMetadataPropertyName'}
 ```
 
@@ -108,9 +108,7 @@ This are all available `queryTypes` which can be used to form a filter query.
 #### Example 1 - filter by documentType
 
 ```js
-baseFilters: [
-  {type: 'documentType', value: 'article'}
-]
+baseFilters: [{type: 'documentType', value: 'article'}]
 ```
 
 This would reduce the search to only articles (no pages).
@@ -118,9 +116,7 @@ This would reduce the search to only articles (no pages).
 #### Example 2 - filter by metadata with key/value
 
 ```js
-baseFilters: [
-  {type: 'metadata', key: 'foo', value: 'bar'}
-]
+baseFilters: [{type: 'metadata', key: 'foo', value: 'bar'}]
 ```
 
 This would filter for only documents that have the value `bar` in the metadata field `foo`. You have to make sure that `foo` is an indexed metadata field.
@@ -128,9 +124,7 @@ This would filter for only documents that have the value `bar` in the metadata f
 #### Example 3 - filter by metadata with objects
 
 ```js
-defaultQueries: [
-  {type: 'metadata', key: 'author.reference.id', value: 42}
-]
+defaultQueries: [{type: 'metadata', key: 'author.reference.id', value: 42}]
 ```
 
 More complex metadata fields are indexed as an object (instead of key/value). In this case one can filter based on subproperties.
@@ -163,9 +157,7 @@ This would filter for only documents that have had a successful proofreading. Th
 #### Example 5 - filter by metadata with dataType keyword for mediaIndex
 
 ```js
-baseFilters: [
-  {type: 'metadata', key: 'transformed', value: true, dataType: 'boolean'}
-]
+baseFilters: [{type: 'metadata', key: 'transformed', value: true, dataType: 'boolean'}]
 ```
 
 This would filter for only transformed assets.

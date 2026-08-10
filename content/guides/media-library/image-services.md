@@ -66,9 +66,7 @@ You can also use other image services as described [at the end of this document]
 
 #### Computing the image URL in the delivery
 
-March Release Image Services and how to use them in the Delivery
-
-With the new image format {{< added-in "release-2024-03" >}} we have introduced a `key` property next to the `originalUrl`. This can be used to compute the path to the file on storage.
+With the new image format we have introduced a `key` property next to the `originalUrl`. This can be used to compute the path to the file on storage.
 
 The image object will now look like this:
 
