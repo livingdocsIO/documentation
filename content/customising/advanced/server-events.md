@@ -113,8 +113,8 @@ Currently, Livingdocs does not provide a mechanism to circumvent this limitation
 
 ### Publication
 
-  - publication.update, `(eventName, {user, documentVersion})` ({{< added-in "release-2024-03" >}})
-  - publication.updated, `(eventName, {user, documentVersion})` ({{< deprecated-in "release-2024-03" >}})
+- publication.update, `(eventName, {user, documentVersion})` ({{< added-in "release-2024-03" >}})
+- publication.updated, `(eventName, {user, documentVersion})` ({{< deprecated-in "release-2024-03" >}})
 
 ### Document List
 
@@ -140,11 +140,3 @@ Currently, Livingdocs does not provide a mechanism to circumvent this limitation
 ### Category
 
 - category.update, `(eventName, {pointer, value, projectId, user})`
-
-### Migration
-
-{{< removed-in "release-2025-01" >}}
-
-- migration.prepare, `(eventName, {migration})`
-- migration.accept, `(eventName, {migration})`
-- migration.cancel, `(eventName, {migration})`

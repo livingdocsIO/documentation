@@ -157,7 +157,7 @@ We added 2 properties `configSchema` and `uiSchema` to a metadata plugin where o
 
 - :fire: Add strict validation for [`li-enum`]({{< ref "/reference/document/metadata/plugins/li-enum" >}})
 - :fire: Add strict validation for [`li-text`]({{< ref "/reference/document/metadata/plugins/li-text" >}})
-- :fire: Add strict validation for [`li-reference`]({{< ref "/reference/document/metadata/plugins/li-reference" >}})
+- :fire: Add strict validation for `li-reference`
 - :fire: Add strict validation for [`li-document-reference`]({{< ref "/reference/document/metadata/plugins/li-document-reference" >}})
 
 References:

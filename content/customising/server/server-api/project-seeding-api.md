@@ -97,7 +97,6 @@ Project configurations can be of three types:
 
 - Embedded design
 - Referenced design {{< deprecated-in "release-2026-01" >}}
-- Multi-channel Configuration (where only referenced designs can be used) {{< removed-in "release-2025-07" >}}
 
 #### Groups
 
