@@ -33,7 +33,6 @@ contentTypeConfig: |2
         type: 'li-distribution-dates',
         ui: {
           config: {
-            // {{< added-in "release-2025-11" >}}
             precision: 'datetime' // Options: 'datetime' (default) or 'date'
           }
         }

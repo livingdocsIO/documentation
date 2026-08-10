@@ -23,15 +23,15 @@ To execute a Data Migration, run `livingdocs-server data-migration-run` on the t
 - `--migration-file-path` (required): Path to a migration file that exposes a `migrateAsync` function.
 - `--filter-by-content-type`: Migrates only documents of the specified content type.
 - `--filter-by-id`: Migrates only documents with matching document IDs.
-- `--filter-by-id-from`, `--filter-by-id-to`: Migrates only documents with matching document IDs. ({{< added-in "release-2025-03" >}})
+- `--filter-by-id-from`, `--filter-by-id-to`: Migrates only documents with matching document IDs.
 - `--filter-by-time-from`, `--filter-by-time-to`: Migrates only documents created within the specified time range.
 
 The `migrateAsync function` in the specified migration file is applied to each matching document. It receives the following arguments:
 
 - `serializedLivingdoc`
 - `metadata`
-- `metadataSource` ({{< added-in "release-2025-03" >}})
-- `translations` as an object with locales as keys ({{< added-in "release-2025-03" >}})
+- `metadataSource`
+- `translations` as an object with locales as keys
 - `systemdata` (read-only), containing `documentId` and `contentType`.
 
 For example:

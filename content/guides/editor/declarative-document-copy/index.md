@@ -110,10 +110,10 @@ copy: [
       {
         contentType: 'regular',
 
-        // custom label shown with the copy target item ({{< added-in "release-2023-07" >}})
+        // custom label shown with the copy target item
         label: 'Web Article',
 
-        // custom icon shown with the copy target item ({{< added-in "release-2023-07" >}})
+        // custom icon shown with the copy target item
         icon: 'web',
 
         // Path to a config of instructions to be applied when transforming one component to another

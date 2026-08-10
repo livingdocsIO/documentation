@@ -62,7 +62,7 @@ settings: {
           name: 'imatrics-20211027'
         }
       },
-      testEnvironment: false, // {{< added-in "release-2024-09" >}}
+      testEnvironment: false,
       minchars: 20,
       language: {
         name: 'German',
@@ -428,8 +428,6 @@ It's an array of copy definitions. Each definition first defines the `source`, i
 For the enterprise version we also have a detailed [guide for copy and transform workflows]({{< ref "/guides/editor/declarative-document-copy" >}}).
 
 ## Product Usage Analytics
-
-{{< added-in "release-2025-01" block>}}
 
 In order to drive the continuous improvement of Livingdocs in a user-centered way, usage data and patterns can greatly improve our perspective and point us to pain points worth interviewing users about.
 Livingdocs tracks certain user interactions along with some context data and sends it to [PostHog](https://posthog.com), a cloud service to store, process and visualize such data.

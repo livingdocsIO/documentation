@@ -73,14 +73,14 @@ This are all available `queryTypes` which can be used to form a filter query.
 {key: 'state', term: 'active'}
 {key: 'state', term: 'revoked'}
 
-// userInTeam ({{< added-in "release-2023-03" >}})
+// userInTeam
 {key: 'metadata.myTeamHandle.activeUsers.id', termPattern: '{{ userId }}'}
 
-// term variables ({{< added-in "release-2025-01" >}})
+// term variables
 // only supported by li-teaser and li-document-search
 {key: 'metadata.category.id', termVariable: 'metadata.category.id'}
 
-// embargo ({{< added-in "release-2025-07">}})
+// embargo
 {key: 'publishControl.embargo.enforced', term: true},
 {or: [
     {key: 'publishControl.embargo.until', exists: false},

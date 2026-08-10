@@ -25,7 +25,7 @@ support:
   webhookConditions: false
 description: |
   {{< info >}}
-    {{< added-in "release-2024-11" >}}. Prior to {{< release "release-2024-11" >}}, `li-kordiam-schedule` was known as [`li-desknet-schedule`]({{< ref "/reference/document/metadata/plugins/li-desknet-schedule" >}}).
+    Prior to {{< release "release-2024-11" >}}, `li-kordiam-schedule` was known as [`li-desknet-schedule`]({{< ref "/reference/document/metadata/plugins/li-desknet-schedule" >}}).
   {{< /info >}}
 
   This plugin will allow a user to select Kordiam platforms and categories that they would like to view in the Kordiam Schedule side panel. Once selected the Kordiam button in the editor becomes active and the side panel can be opened. It is possible to lock the schedule to a specific date, as well as filter the Kordiam stories that are displayed. Further details can be found in the [Kordiam Schedule Guide]({{< ref "/guides/integrations/kordiam-schedule" >}}).

@@ -53,11 +53,10 @@ app: {
 
 When the transform option is enabled, all compatible components become available. Compatibility is determined by the following rules:
 
-* Components with exactly one directive can be transformed if the directive matches the target type.
-* Components with multiple directives can only be transformed if all directives have matching names and types.
-* Only directives of the following types are supported: editable, image, video, audio, and link. Components containing any other directive types cannot be transformed.
-* Components must be permitted at their intended location within the document structure.
-
+- Components with exactly one directive can be transformed if the directive matches the target type.
+- Components with multiple directives can only be transformed if all directives have matching names and types.
+- Only directives of the following types are supported: editable, image, video, audio, and link. Components containing any other directive types cannot be transformed.
+- Components must be permitted at their intended location within the document structure.
 
 ## Images
 
@@ -185,14 +184,14 @@ The following actions are supported:
 - `insert middle dot`
 - `insert left guillemets`
 - `insert right guillemets`
-- `insert left double quotation mark` inserts `“` {{< added-in "release-2024-03" >}}
-- `insert right double quotation mark` inserts `”` {{< added-in "release-2024-03" >}}
-- `insert double low-9 quotation mark` inserts `„` {{< added-in "release-2023-11" >}}
-- `insert double high-reversed-9 quotation mark` inserts `‟` {{< added-in "release-2023-11" >}}
+- `insert left double quotation mark` inserts `“`
+- `insert right double quotation mark` inserts `”`
+- `insert double low-9 quotation mark` inserts `„`
+- `insert double high-reversed-9 quotation mark` inserts `‟`
 - `insert en space`
 - `insert four-per-em space`
 - `insert en dash`
-- `insert figure dash` inserts `‒` {{< added-in "release-2023-11" >}}
+- `insert figure dash` inserts `‒`
 - `insert fract12`
 - `insert fract14`
 - `print interactive view`

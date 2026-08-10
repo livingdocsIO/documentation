@@ -50,8 +50,6 @@ If no `Media Type` config is provided it falls back to a default config where `t
 
 #### Access Control per Media Type
 
-{{< added-in "release-2025-09" >}}
-
 - Groups can be granted specific permissions (create, read, update, revoke, delete) for individual media types
 - Access control works similar to existing document content type permissions
 
@@ -267,8 +265,6 @@ When you use the image Drag&Drop from [Hugo+](https://sternwald.com/hugo/) you c
 This feature is only supported for the `mediaImage` mediaType.
 
 ## Comyan Extraction
-
-{{< added-in "release-2024-07" block >}}
 
 When you use the image Drag&Drop from Comyan you can configure mappings from Comyan fields to metadata properties similar to the exif extraction. For this you have to set the `comyanExtraction` property.
 

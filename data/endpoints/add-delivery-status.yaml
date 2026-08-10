@@ -50,7 +50,7 @@ parameters:
     type: string
     required: true
     notes: |
-      One of: `success`, `failed`, `aborted` ({{< added-in "release-2024-07" >}}), `in-progress`
+      One of: `success`, `failed`, `aborted`, `in-progress`
   - name: message
     type: string
     required: false
@@ -59,7 +59,7 @@ parameters:
     type: |
       Array<{label: string, value: string}>
     required: false
-    notes: An array of options given to the user to choose from. This parameter is only allowed when `status` is set to `in-progress`. ({{< added-in "release-2024-07" >}})
+    notes: An array of options given to the user to choose from. This parameter is only allowed when `status` is set to `in-progress`
 
 responses:
   - code: '200'

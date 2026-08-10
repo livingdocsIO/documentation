@@ -23,18 +23,18 @@ description: |
 
   Data Records also support translations, but need to add the metadata plugin [li-metadata-translations]({{< ref "/reference/document/metadata/plugins/li-metadata-translations" >}}).
 defaultUI: |
-    Optional but can be configured as follows:
+  Optional but can be configured as follows:
 
-    ```js
-    ui: {
-      label: 'Language', // optional
-      config: {
-        readOnly: true // optional, default: false
-      }
+  ```js
+  ui: {
+    label: 'Language', // optional
+    config: {
+      readOnly: true // optional, default: false
     }
-    ```
+  }
+  ```
 
-    This will permit users with multiple languages enabled to change the language metadata field via a dropdown field.
+  This will permit users with multiple languages enabled to change the language metadata field via a dropdown field.
 storageFormat: |
   {
     locale: <String>,
@@ -45,6 +45,6 @@ contentTypeConfig: |2
         handle: 'myHandle',
         type: 'li-language',
         config: {
-          index: true         // optional, default: false. {{< added-in "release-2023-07" >}}
+          index: true         // optional, default: false
         }
 ---

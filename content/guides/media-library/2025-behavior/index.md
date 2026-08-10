@@ -39,8 +39,6 @@ Be aware that this also requires additional configuration steps such as modifyin
 
 ### Image Variant Storage / Delivery
 
-{{< added-in "release-2025-03" block >}}
-
 There have been significant enhancements to how images are stored and served within the Media Center. With the new approach, the system now retains the original image upon upload and automatically generates cropped and width-based resized variants for use within the editor.
 
 Resized and cropped image variants are stored in the image storage under the `image-variants-cache/` prefix. To manage storage efficiently, we recommend setting up a retention policy for these cached variants in your blob storage provider.
@@ -126,8 +124,6 @@ extractKey(url) {
 
 ### Image Editing
 
-{{< added-in "release-2025-05" block >}}
-
 Livingdocs supports image editing to allow journalists to redact sensitive areas (such as license plates or faces) and apply colour corrections, without the need for external tools.
 
 Image editing is supported for jpg, png, and webp formats. Images must be requested via the public API endpoint [`GET /api/2025-03/mediaLibrary/serve-image/:key`]({{< ref "/reference/public-api/media-library/#serve-image" >}}) for the modifications to be applied.
@@ -164,8 +160,6 @@ This supports:
 
 ### Archive/Revoke/Delete
 
-{{< added-in "release-2025-03" block >}}
-
 When you enable the new behavior you will notice that the **Archive** action has been removed from the UI at the bottom of the media library entry detail page. To recap, this action removed the entry from Elasticsearch, and therefore all dashboards, but the image still existed in Postgres and remained in documents it had already been added to.
 
 **Revoke** remains largely the same, with the same hooks etc. The main change is that we no longer delete the image from the storage bucket so that we retain the image for legal cases. The new image delivery route will prevent the image from being served, but the CDN or image service cache will still need clearing. You can listen for the the [`mediaLibraryEntry.revoke`]({{< ref "/customising/advanced/server-events/#media-library-entry" >}}) server event.
@@ -175,8 +169,6 @@ When you enable the new behavior you will notice that the **Archive** action has
 Finally, a new **Store in Archive** action has been added (along with **Remove from Archive**). This sets a state on the media library entry which prevents its deletion.
 
 ### Deletion Routines
-
-{{< added-in "release-2025-07" block >}}
 
 Deletion Routines are background tasks which run every 30 minutes and delete unwanted media library entries. They can be particularly useful when you have regular imports from image agencies. Filter criteria can be configured per media type to remove specific media library entries.
 

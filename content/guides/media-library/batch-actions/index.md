@@ -4,8 +4,6 @@ description: Perform actions on multiple media library assets simultaneously
 weight: 6
 ---
 
-{{< added-in "release-2025-11" block >}}
-
 The Media Center supports selecting multiple assets and performing actions on all of them at once. This is useful when you need to manage, enrich, or organize large numbers of assets efficiently.
 
 ## Selecting Multiple Assets

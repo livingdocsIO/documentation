@@ -18,7 +18,6 @@ support:
   systemMetadata: true
   planningSystem: true
   webhookConditions: false
-addedIn: release-2023-03
 description: |
   As part of the Planning System, users want to ask for buy-in when writing an article or pitching an idea.
   Other users can express their backing by accepting a buy-in request.

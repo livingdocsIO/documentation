@@ -690,8 +690,6 @@ With {{< release "release-2023-05" >}} and following, `allowQuickPublish: true` 
 
 ##### liTableDashboardCellTaskList
 
-{{< added-in "release-2023-03" block >}}
-
 The `liTableDashboardCellTaskList` gives an overview of current tasks connected with the given document.
 
 {{< img src="images/table-dashboard-task-list.png" alt="liTableDashboardCellTaskList upstream component" >}}
@@ -714,8 +712,6 @@ columns: [
 ```
 
 ##### liTableDashboardCellStatistics
-
-{{< added-in "release-2024-05" block >}}
 
 The `liTableDashboardCellStatistics` displays Document Statistics such as component count, character count and line count (depending on provided `componentOptions`).
 
@@ -752,8 +748,6 @@ columns: [
 ```
 
 ##### liTableDashboardCellPrint
-
-{{< added-in "release-2024-11" block >}}
 
 The `liTableDashboardCellPrint` cell provides a quick overview of the state of print versions of web articles. The cell shows the print icon when a print copy exists, and clicking on it will open the print document. It also uses a small dot to indicate that the web version has changed since the print copy was created. [Document Print Flows]({{< ref "guides/editor/document-print-flows" >}}) must be configured to use this cell.
 
@@ -894,8 +888,6 @@ documentCreationFlows: [
 
 ## Document Copy Flows
 
-{{< added-in "release-2024-09" block >}}
-
 Document Copy Flows define how a document gets copied to another document. This feature allows for the transformation of content and metadata to match different content types or scenarios.
 
 Note: This feature is separate from the declarative copy feature and is designed with different mechanics. The older declarative copy feature will be deprecated and removed in future versions.
@@ -951,8 +943,6 @@ liServer.registerCopyFunction({
 
 ## Document Print Flows
 
-{{< added-in "release-2024-11" block >}}
-
 Document Print Flows provide a flexible way to create print copies of web documents. They are similar to Document Copy Flows, but they have a different UI based on a 1:1 relationship between a print and web document.
 
 ```js
@@ -991,8 +981,6 @@ liServer.registerPrintFunction({
 ```
 
 ## Document Transform Flows
-
-{{< added-in "release-2024-09" block >}}
 
 Document transform flows allow you to transform a document to either the same content type or a different one.
 
@@ -1057,13 +1045,13 @@ Supported plugin types in `additionalInfo`:
 
 - `li-text`
 - `li-document-reference`
-- `li-integer` ({{< added-in "release-2025-09" >}})
-- `li-boolean` ({{< added-in "release-2025-09" >}})
-- `li-date` ({{< added-in "release-2025-09" >}})
-- `li-date-time` ({{< added-in "release-2025-09" >}})
-- `li-enum` ({{< added-in "release-2025-09" >}})
-- `li-string-list` ({{< added-in "release-2025-09" >}})
-- `li-media-handle` ({{< added-in "release-2025-09" >}})
+- `li-integer`
+- `li-boolean`
+- `li-date`
+- `li-date-time`
+- `li-enum`
+- `li-string-list`
+- `li-media-handle`
 
 Since {{< release "release-2025-09" >}}, additional metadata is no longer displayed by default! Users have to switch it on via the "Show metadata" control in the filter bar. The choice is remembered in local storage.
 
@@ -1086,23 +1074,17 @@ additionalInfo: [
 
 #### Title
 
-{{< added-in "release-2025-09" block >}}
-
 Available as option for `liMediaLibraryCard`.
 
 We allow the title to take up to three lines of text before we truncate it. Additionally, you no longer have to name your metadata property `title` or `caption`. We still look in there by default to display the title, but you can now also provide a mapping configuration yourself (see an example configuration further down).
 
 #### Date
 
-{{< added-in "release-2025-09" block >}}
-
 Available as option for `liMediaLibraryCard`.
 
 By default, we're showing the date when an image was uploaded or imported next to the image. In some cases, it might be more suitable to show the date when the photo was taken. You can do that as well by providing a mapping configuration as well (see an example configuration further down).
 
 #### Credit
-
-{{< added-in "release-2025-09" block >}}
 
 Available as option for `liMediaLibraryCard`.
 
@@ -1386,7 +1368,6 @@ Following attribute types can be added to a customElement:
 
 - li-document-reference
 
-  {{< added-in "release-2023-07" block >}}
   Users can link a document. The attribute name is always `data-li-document-ref`. And the references are extracted as with a normal link to a document.
 
   ```js

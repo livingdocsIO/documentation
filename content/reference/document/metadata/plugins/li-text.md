@@ -20,8 +20,6 @@ support:
   webhookConditions: true
 description: |
   A simple text value store.
-
-  [Display Filters]({{< ref "/customising/advanced/editor-configuration/display-filter#metadata-filters" >}}) support {{< added-in "release-2023-09" >}}
 defaultUI: Renders a select element if a `dataProvider` is configured, otherwise renders an autogrowing reasonably sized textarea.
 storageFormat: <String>
 contentTypeConfig: |2
@@ -38,7 +36,7 @@ contentTypeConfig: |2
           recommendedMinLength: 110,               // optional
           recommendedMaxLength: 150,               // optional
           allowNewlines: false,                    // default: undefined, validated if set. Effect on ui: newlines are stripped uf not true and ui.config.rows is undefined and ui.component is not liMetaTextareaForm
-          index: true,                             // optional, default: false. {{< added-in "release-2023-07" >}}
+          index: true,                             // optional, default: false
           translatable: true,                      // optional, default: false, translations are only supported for data-record and mediaLibrary
           dataProvider: {                          // optional
             // Option 1 - list of items

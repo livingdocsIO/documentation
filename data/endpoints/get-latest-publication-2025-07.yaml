@@ -67,8 +67,6 @@ parameters:
     type: boolean
     required: false
     notes: |
-      {{< added-in \"release-2024-03\" >}}
-
       Provides a way to opt out of component filtering and return all content regardless of whether each component passes the conditional checks.
 
       Default: `false`
@@ -77,8 +75,6 @@ parameters:
     type: string
     required: false
     notes: |
-      {{< added-in \"release-2024-03\" >}}
-
       JSON stringified object which contains the component conditions you would like to apply.
 
       Default: `{"dateTime": new Date()}`  

@@ -8,14 +8,14 @@ The oEmbed include service (`li-oembed-service`) allows users to embed content (
 
 ## Core oEmbed Providers
 
-- Bluesky (`li-bluesky`), {{< added-in "release-2025-05" >}}
+- Bluesky (`li-bluesky`),
 - Dailymotion (`li-dailymotion`)
 - Datawrapper (`li-datawrapper`)
 - Facebook (`li-facebook-post`), ATTENTION: requires credentials
 - Instagram (`li-instagram`), ATTENTION: requires credentials
-- Pinterest (`li-pinterest`), {{< added-in "release-2025-05" >}}
+- Pinterest (`li-pinterest`),
 - Podigee (`li-podigee`)
-- Reddit (`li-reddit`), {{< added-in "release-2025-05" >}}
+- Reddit (`li-reddit`),
 - Spotify (`li-spotify`)
 - TikTok (`li-tiktok`)
 - Twitter (`li-twitter`)
@@ -256,7 +256,6 @@ oembed: {
 2. **Submit and Monitor Review**:
    - Submit the app for review and await feedback or approval.
 3. **Make the App Live**:
-
    - After approval, switch your app to live mode to enable oEmbed functionality.
 
    **Note:** When taking your app live, you are also required to complete the **Data Use Checkup** form to confirm your compliance with Meta's data usage policies. You can find more information about the Data Use Checkup process [here](https://developers.facebook.com/docs/resp-plat-initiatives/data-use-checkup).

@@ -101,8 +101,8 @@ To configure Delivery Builds, define the `build` property:
 - `triggerButtonLabel`: Shown when there is no existing build.
 - `retriggerButtonLabel`: Shown when a build already exists.
 - `retryButtonLabel`: Shown when the last build failed.
-- `abortButtonEnabled`: Specifies whether the abort button is shown. By default, the abort button is shown only for builds with user choice prompts. If set to `false`, the button is never shown. If set to `true`, it is shown for in-progress builds, including builds with user choice prompts. ({{< added-in "release-2024-07" >}})
-- `abortButtonLabel`: Shown when a build can be aborted. ({{< added-in "release-2024-07" >}})
+- `abortButtonEnabled`: Specifies whether the abort button is shown. By default, the abort button is shown only for builds with user choice prompts. If set to `false`, the button is never shown. If set to `true`, it is shown for in-progress builds, including builds with user choice prompts.
+- `abortButtonLabel`: Shown when a build can be aborted.
 
 ```js
 // projectConfig.deliveries

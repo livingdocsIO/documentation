@@ -31,7 +31,7 @@ storageFormat: |
         score: <Number>,
         inappropriate: <Boolean>,
         userAdded: <Boolean>,
-        isMain: <Boolean>, // {{< added-in "release-2024-09" >}}
+        isMain: <Boolean>,
         userOverrideIsMain: <Boolean> // {{< added-in "release-2026-07" >}}
       }
     ]

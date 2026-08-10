@@ -29,7 +29,7 @@ Usually you configure `displayFilters` in Dashboard configurations like this:
        }
     },
 
-    // gives you a filter for this metadata property, caveats apply, see below. {{< added-in "release-2023-03" >}}
+    // gives you a filter for this metadata property, caveats apply, see below.
     {metadataPropertyName: "myMetadataProperty"}
   ],
   // ...
@@ -52,7 +52,7 @@ They are separately listed here:
   // custom config
   //   documentPropertyName: Supports 'createdAt'/'updatedAt', defaults to updatedAt
   //   metadataPropertyName: Supports any of your metadata date fields
-  //   label is useful if you have multiple liDateTimeRange filters on one Dashboard {{< added-in "release-2023-11" >}}
+  //   label is useful if you have multiple liDateTimeRange filters on one Dashboard
   displayFilters: [
     {
       filterName: 'liDateTimeRange',
@@ -83,8 +83,6 @@ They are separately listed here:
 
 ## Metadata Filters
 
-{{< added-in "release-2023-03" block >}}
-
 You can use Metadata Filters, wherever Display Filters are allowed. The example below shows a Metadata Filter on a Dashboard:
 
 ```js
@@ -102,23 +100,23 @@ All metadata properties in your `Content Type`|`Media Type` config can be used a
 
 - [`li-integer`]({{< ref "/reference/document/metadata/plugins/li-integer">}})
 - [`li-category`]({{< ref "/reference/document/metadata/plugins/li-category">}})
-- [`li-document-reference`]({{< ref "/reference/document/metadata/plugins/li-document-reference">}}) {{< added-in "release-2023-09" >}}
+- [`li-document-reference`]({{< ref "/reference/document/metadata/plugins/li-document-reference">}})
   - Only supported for `minimal` style
   - Shows a max of 1000 filter options ([Filter limits are handled by the `limit` field on `paginationFindConfig`]({{< ref "/customising/server-configuration/#documents" >}}))
-- [`li-document-references`]({{< ref "/reference/document/metadata/plugins/li-document-references">}}) {{< added-in "release-2023-09" >}}
+- [`li-document-references`]({{< ref "/reference/document/metadata/plugins/li-document-references">}})
   - Only supported for `minimal` style
   - Shows a max of 1000 filter options ([Filter limits are handled by the `limit` field on `paginationFindConfig`]({{< ref "/customising/server-configuration/#documents" >}}))
-- [`li-enum`]({{< ref "/reference/document/metadata/plugins/li-enum">}}) {{< added-in "release-2023-09" >}}
+- [`li-enum`]({{< ref "/reference/document/metadata/plugins/li-enum">}})
   - Shows a max of 1000 filter options ([Filter limits are handled by the `limit` field on `paginationFindConfig`]({{< ref "/customising/server-configuration/#documents" >}}))
-- [`li-text`]({{< ref "/reference/document/metadata/plugins/li-text">}}) {{< added-in "release-2023-09" >}}
+- [`li-text`]({{< ref "/reference/document/metadata/plugins/li-text">}})
   - Only supported if plugin has a `dataProvider`
   - Shows a max of 1000 filter options ([Filter limits are handled by the `limit` field on `paginationFindConfig`]({{< ref "/customising/server-configuration/#documents" >}}))
-- [`li-string-list`]({{< ref "/reference/document/metadata/plugins/li-string-list">}}) {{< added-in "release-2023-09" >}}
+- [`li-string-list`]({{< ref "/reference/document/metadata/plugins/li-string-list">}})
   - Shows a max of 1000 filter options ([Filter limits are handled by the `limit` field on `paginationFindConfig`]({{< ref "/customising/server-configuration/#documents" >}}))
-- [`li-imatrics-nlp-tags`]({{< ref "/reference/document/metadata/plugins/li-imatrics-nlp-tags">}}) {{< added-in "release-2024-05" >}}
-- [`li-retresco`]({{< ref "/reference/document/metadata/plugins/li-retresco">}}) {{< added-in "release-2024-05" >}}
+- [`li-imatrics-nlp-tags`]({{< ref "/reference/document/metadata/plugins/li-imatrics-nlp-tags">}})
+- [`li-retresco`]({{< ref "/reference/document/metadata/plugins/li-retresco">}})
   - To enable the Retresco display filter, modifications on your Retresco TMS instance might be necessary. For more details, please contact your Livingdocs Customer Solutions representative.
-- [`li-task-v2`]({{< ref "/reference/document/metadata/plugins/li-task-v2">}}) {{< added-in "release-2024-11" >}}
+- [`li-task-v2`]({{< ref "/reference/document/metadata/plugins/li-task-v2">}})
   - Provides a way to filter by task assignee
   - Only supported if `config.assignUsers` is `true`
 

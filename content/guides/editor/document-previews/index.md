@@ -8,8 +8,6 @@ bullets:
 weight: 5
 ---
 
-{{< added-in "release-2023-07" block >}}
-
 ## Register Document Preview Functions
 
 First, you need to register Document Preview Functions in the server. You can register as many as you want.

@@ -105,15 +105,15 @@ Currently, Livingdocs does not provide a mechanism to circumvent this limitation
 - document.copy, `(eventName, {documentVersion, originalDocumentId, isTranslation})`
 - document.transform, `(eventName, {documentVersion, originalContentType})`
 - document.build `(eventName, {user, documentVersion, reportId, deliveryHandle})`
-- document.build.abort `(eventName, {user, documentVersion, reportId, deliveryHandle})` ({{< added-in "release-2024-07" >}})
-- document.build.userChoice `(eventName, {user, documentVersion, reportId, deliveryHandle, selectedUserChoice})` ({{< added-in "release-2024-07" >}})
+- document.build.abort `(eventName, {user, documentVersion, reportId, deliveryHandle})`
+- document.build.userChoice `(eventName, {user, documentVersion, reportId, deliveryHandle, selectedUserChoice})`
 - document.build.draft `(eventName, {user, documentVersion, reportId, deliveryHandle})`
-- document.build.draft.abort `(eventName, {user, documentVersion, reportId, deliveryHandle})` ({{< added-in "release-2024-07" >}})
-- document.build.draft.userChoice `(eventName, {user, documentVersion, reportId, deliveryHandle, selectedUserChoice})` ({{< added-in "release-2024-07" >}})
+- document.build.draft.abort `(eventName, {user, documentVersion, reportId, deliveryHandle})`
+- document.build.draft.userChoice `(eventName, {user, documentVersion, reportId, deliveryHandle, selectedUserChoice})`
 
 ### Publication
 
-- publication.update, `(eventName, {user, documentVersion})` ({{< added-in "release-2024-03" >}})
+- publication.update, `(eventName, {user, documentVersion})`
 
 ### Document List
 
@@ -128,8 +128,8 @@ Currently, Livingdocs does not provide a mechanism to circumvent this limitation
 - mediaLibraryEntry.update, `(eventName, {userId, projectId, id, changes})`
 - mediaLibraryEntry.archive, `(eventName, {userId, projectId, id})`
 - mediaLibraryEntry.revoke, `(eventName, {userId, projectId, id, mediaLibraryEntry})`
-- mediaLibraryEntry.active, `(eventName, {userId, projectId, id})` ({{< added-in "release-2024-03" >}})
-- mediaLibraryEntry.invalid, `(eventName, {userId, projectId, id})` ({{< added-in "release-2024-03" >}})
+- mediaLibraryEntry.active, `(eventName, {userId, projectId, id})`
+- mediaLibraryEntry.invalid, `(eventName, {userId, projectId, id})`
 
 ### Project
 

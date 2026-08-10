@@ -5,7 +5,6 @@ weight: 1
 ---
 
 {{< info >}}
-{{< added-in "release-2024-11" >}}.
 Prior to {{< release "release-2024-11" >}}, the Kordiam Global Integration was known as {{< a href="/guides/integrations/desknet" title="Desk-Net Global Integration" >}}.
 {{< /info >}}
 

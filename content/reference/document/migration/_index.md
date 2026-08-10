@@ -15,8 +15,6 @@ Livingdocs supports two migration approaches: [On-Read Migrations]({{< relref "o
 
 ## On-Read Migrations
 
-{{< added-in "release-2025-03" block >}}
-
 [On-Read Migrations]({{< relref "on-read-migration" >}}) are applied whenever a document is read from the database. This means they take effect immediately, allowing all functions and clients consuming the data to work with the updated document structure without requiring time-consuming migration processes.
 
 Since {{< release "release-2025-03" >}}, documents are always delivered in the newest design version. To ensure compatibility, documents must be presented in an up-to-date structure that aligns with the latest design version. On-Read Migrations help achieve this by transforming documents on the fly.

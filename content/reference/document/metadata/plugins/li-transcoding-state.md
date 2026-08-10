@@ -41,7 +41,7 @@ contentTypeConfig: |2
         handle: 'myHandle'
         type: 'li-transcoding-state',
         config: {
-          index: true                              // optional, default: false. {{< added-in "release-2023-07" >}}
+          index: true                              // optional, default: false
         }
         ui: {
           label: 'My Transcoding'     // optional, takes "Transcoding State" otherwise

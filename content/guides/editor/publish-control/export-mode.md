@@ -3,8 +3,6 @@ title: Export Mode
 description: Export documents to print, newsletters, or other external systems with a single click.
 ---
 
-{{< added-in "release-2026-01" block >}}
-
 Publish control export mode lets editors export content to a external system with one click. Instead of publishing to your website, Livingdocs exports the document to an external system. This is useful if you produce print products, digital editions, or newsletters with Livingdocs.
 
 When export mode is enabled, the editor UI uses “export” wording instead of “publish” wording. For example:
@@ -24,15 +22,15 @@ This works the same way in the UI and through the API. If a document is publishe
 
 2. Enable export mode on a content type:
 
-    ```js
-    // projectConfig.contentTypes
-    {
-      publishControl: {
-        mode: 'export',
-        // Optional. If no delivery is referenced, only the wording
-        // changes in the editor, but no delivery build is triggered
-        // when clicking "Export".
-        deliveryHandle: 'print'
-      }
-    }
-    ```
+   ```js
+   // projectConfig.contentTypes
+   {
+     publishControl: {
+       mode: 'export',
+       // Optional. If no delivery is referenced, only the wording
+       // changes in the editor, but no delivery build is triggered
+       // when clicking "Export".
+       deliveryHandle: 'print'
+     }
+   }
+   ```

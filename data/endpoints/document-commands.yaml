@@ -80,22 +80,22 @@ parameters:
       Possible operations:
       - `setMetadataProperty`
       - `setTitle`
-      - `insertComponent` {{< added-in "release-2024-05" >}}
-      - `removeComponent` {{< added-in "release-2024-07" >}}
-      - `setComponentCondition` {{< added-in "release-2024-11" >}}
-      - `setComponentStyle` {{< added-in "release-2024-11" >}}
+      - `insertComponent`
+      - `removeComponent`
+      - `setComponentCondition`
+      - `setComponentStyle`
       - `setEditableDirective`
-      - `setIncludeDirective` {{< added-in "release-2024-11" >}}
-      - `setLinkDirective` {{< added-in "release-2024-11" >}}
-      - `setStyleDirective` {{< added-in "release-2024-11" >}}
-      - `setEmbargo` {{< added-in "release-2025-07" >}}
-      - `removeEmbargo` {{< added-in "release-2025-07" >}}
-      - `addPublishSchedule` {{< added-in "release-2025-07" >}}
-      - `cancelPublishSchedule` {{< added-in "release-2025-07" >}}
-      - `addUnpublishSchedule` {{< added-in "release-2025-07" >}}
-      - `cancelUnpublishSchedule` {{< added-in "release-2025-07" >}}
+      - `setIncludeDirective`
+      - `setLinkDirective`
+      - `setStyleDirective`
+      - `setEmbargo`
+      - `removeEmbargo`
+      - `addPublishSchedule`
+      - `cancelPublishSchedule`
+      - `addUnpublishSchedule`
+      - `cancelUnpublishSchedule`
       - `publish`
-      - `unpublish` {{< added-in "release-2024-07" >}}
+      - `unpublish`
 
       Some commands supports an optional `oldValue` parameter. When specified, the system verifies that the value being updated matches the provided `oldValue`. This prevents accidental overwrites that might occur due to changes made between reading a document and issuing the command. If the `oldValue` does not match, a conflict error is thrown. `oldValue` is redundant when providing a document version.
 

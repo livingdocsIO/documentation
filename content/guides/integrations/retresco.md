@@ -123,7 +123,7 @@ The Retresco entities will be stored in the document's metadata using the metada
       score: 16.924834941594718, // Only when not user-added
       userAdded: false,
       inappropriate: false, // Entity removed (but still visible in the UI with strikethrough)
-      isMain: true, // Marks main entities ({{< added-in "release-2024-09" >}})
+      isMain: true, // Marks main entities
       userOverrideIsMain: true // Set when an editor changed the main state ({{< added-in "release-2026-07" >}})
     }
   ]
@@ -141,8 +141,6 @@ Retresco marks the strongest tags in a document as main entities in the `isMain`
 Toggling a tag stores the new value in `isMain` and sets `userOverrideIsMain: true`. Once set, the tag stays even if Retresco no longer detects it, and re-enrichment no longer overwrites the editor's choice.
 
 ## Re-enrich Documents
-
-{{< added-in "release-2023-03" block >}}
 
 If you want to use the re-enrich feature from Retresco, you will need to configure the webhook and token in Retresco's website.
 

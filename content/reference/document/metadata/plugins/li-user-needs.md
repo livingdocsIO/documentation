@@ -18,7 +18,6 @@ support:
   systemMetadata: false
   planningSystem: false
   webhookConditions: false
-addedIn: release-2025-01
 description: |
   This plugin allows newsrooms to categorize Livingdocs articles based on the [*User Needs Model 2.0*](https://smartocto.com/blog/explaining-user-needs).
   __User Needs__ provide an easy and intuitive way to align content creation with audience-focused goals.  
