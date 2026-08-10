@@ -17,7 +17,7 @@ support:
   systemMetadata: false
   planningSystem: false
   webhookConditions: false
-deprecatedIn: release-2026-01
+removedIn: release-2026-07
 defaultUI: Specialised UI in the Media Library Image Detail View, no config possible
 storageFormat: |
   {

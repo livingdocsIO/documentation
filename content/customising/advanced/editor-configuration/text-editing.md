@@ -89,9 +89,7 @@ textFormatting: {
       // the icon which will be displayed. Only existing icons in the editor can be used.
       icon: 'format-color-highlight',
       // the attributes which are set on the tag
-      attributes: [
-        { name: 'class', value: 'blue' }
-      ]
+      attributes: [{name: 'class', value: 'blue'}]
     },
     // example using a plugin
     {
@@ -120,47 +118,47 @@ The `specialChars` can be configured separately. The button for special chars (a
 app: {
   specialChars: [
     {
-    'name': 'general',
-    'label': 'General',
-    'charList': [
-      {
-          'name': 'EN DASH',
-          'label': '–',
-          'caption': null,
-          'value': '–',
-          'description': 'Dash of 1 en length'
-        }, 
+      name: 'general',
+      label: 'General',
+      charList: [
         {
-          'name': 'VULGAR FRACTION ONE HALF',
-          'label': '½',
-          'caption': null,
-          'value': '½',
-          'description': 'Fraction: one half'
+          name: 'EN DASH',
+          label: '–',
+          caption: null,
+          value: '–',
+          description: 'Dash of 1 en length'
+        },
+        {
+          name: 'VULGAR FRACTION ONE HALF',
+          label: '½',
+          caption: null,
+          value: '½',
+          description: 'Fraction: one half'
         }
-        ]
-      }, 
-      {
-        'name': 'white_spaces',
-        'label': 'White Spaces',
-        'charList': [
-          {
-            'name': 'EN SPACE',
-            'label': '◅···▻',
-            'caption': 'en',
-            'value': ' ',
-            'description': 'EN Space'
-          }, 
-          {
-            'name': 'FOUR-PER-EM SPACE',
-            'label': '◅··▻',
-            'caption': '1/4',
-            'value': ' ',
-            'description': '1/4 EM Space'
-          }
-        ]
-      }
-    ]
-  }
+      ]
+    },
+    {
+      name: 'white_spaces',
+      label: 'White Spaces',
+      charList: [
+        {
+          name: 'EN SPACE',
+          label: '◅···▻',
+          caption: 'en',
+          value: ' ',
+          description: 'EN Space'
+        },
+        {
+          name: 'FOUR-PER-EM SPACE',
+          label: '◅··▻',
+          caption: '1/4',
+          value: ' ',
+          description: '1/4 EM Space'
+        }
+      ]
+    }
+  ]
+}
 ```
 
 #### Advanced Formatting Options
@@ -390,24 +388,6 @@ The default value is `border`.
 spellcheck: {
   isEnabled: true,
   underline: 'text-decoration'
-}
-```
-
-## Character Counter
-
-{{< info >}}
-{{< deprecated-in "release-2024-05" >}}.
-Please migrate to `projectConfig.editorSettings.textCount` (see [here]({{< ref "reference/project-config/editor-settings#text-count" >}})).
-{{< /info >}}
-
-A character counter can be configured. The counter can be limited to only
-count text within certain components.
-
-```js
-textcount: {
-  isEnabled: true,
-  showEditableCount: true // shows the chars of the selected doc-editable
-  timeout: 200
 }
 ```
 

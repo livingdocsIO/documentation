@@ -114,7 +114,6 @@ Currently, Livingdocs does not provide a mechanism to circumvent this limitation
 ### Publication
 
 - publication.update, `(eventName, {user, documentVersion})` ({{< added-in "release-2024-03" >}})
-- publication.updated, `(eventName, {user, documentVersion})` ({{< deprecated-in "release-2024-03" >}})
 
 ### Document List
 

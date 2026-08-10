@@ -329,7 +329,7 @@ settings: {
     enabled: true
   },
 
-  editMode: 'default' // {{< deprecated-in "release-2026-01" >}}
+  editMode: 'default' // {{< removed-in "release-2026-07" >}}
 }
 ```
 
