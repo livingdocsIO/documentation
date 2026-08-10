@@ -167,12 +167,8 @@ Not every image arrives with a title or description. When metadata is missing, t
 
 Media Library text search now matches any part of a filename, not just the beginning. Matching is case-insensitive and needs at least three characters. Searching for `AXZ87D3X` finds `imago-AXZ87D3X-john-doe-cc.jpg`.
 
-#### Read and copy the full filename
-
-In the media detail view, the "Information" section now shows the complete filename instead of truncating it to a single line. A copy button next to it grabs the full name in one click, which makes long agency filenames and stock IDs easy to reuse.
-
 {{< info >}}
-Substring filename search requires an Elasticsearch index recreation to activate. Until the media library index is recreated, search keeps working as before.
+Substring filename search is opt-in. Recreate the media library Elasticsearch index only if you want the feature; until then, search keeps working as before, and it activates automatically the next time the index is recreated for any other reason.
 
 ```
 livingdocs-server elasticsearch-index --handle li-media --recreate -y
@@ -180,6 +176,10 @@ livingdocs-server elasticsearch-index --handle li-media --recreate -y
 
 `--recreate` deletes and rebuilds the index in place, so media search returns incomplete results while it runs (roughly 6,000 to 7,000 entries per second). Plan it for a low-traffic window.
 {{< /info >}}
+
+#### Read and copy the full filename
+
+In the media detail view, the "Information" section now shows the complete filename instead of truncating it to a single line. A copy button next to it grabs the full name in one click, which makes long agency filenames and stock IDs easy to reuse.
 
 ## Vulnerability Patches
 
