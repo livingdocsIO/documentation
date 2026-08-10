@@ -4,7 +4,7 @@ description: Print Integration with WoodWing Studio
 weight: 4
 ---
 
-{{< deprecated-in "release-2026-01" block >}}
+{{< removed-in "release-2026-07" block >}}
 
 ## Motivation
 

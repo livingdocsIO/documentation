@@ -754,7 +754,7 @@ search: {
   // The metadata mapping determines which metadata fields will be indexed
   // in elasticsearch. This can then be used to e.g. create search filters
   // based on metadata.
-  // {{< deprecated-in "release-2026-01" >}}
+  // {{< removed-in "release-2026-07" >}}
   metadataMapping: require.resolve('../some/path/metadata/es_metadata_mapping'),
 
   // your optional custom elasticsearch search function
@@ -1374,7 +1374,7 @@ When you want to index your metadata image fields in Elasticsearch (e.g. for das
 
 #### Google Vision API
 
-{{< deprecated-in "release-2026-01" block >}}
+{{< removed-in "release-2026-07" block >}}
 
 Livingdocs supports auto-tagging of images through the Google Vision API integration. In order to use this feature you need to open an account on GCP. Careful, use of this feature will incur costs with GCP. Refer to Google's pricing for more details. Livingdocs uses the label annotation and web detection features (can be configured).
 The node vision API package has some good documentation on how to create an account: https://github.com/googleapis/nodejs-vision

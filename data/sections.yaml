@@ -236,13 +236,6 @@
     - get-sitemap-index
     - get-sitemap-entries
 
-- title: Menus
-  weight: 12
-  renderTOC: false
-  menu: public-api
-  endpoints:
-    - get-menus
-
 - title: Routing
   weight: 13
   renderTOC: false

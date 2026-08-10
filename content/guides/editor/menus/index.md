@@ -4,9 +4,6 @@ description: Model menus with data records
 weight: 4
 ---
 
-> [!WARNING] {{< deprecated-in "release-2024-11" >}}
-> The dedicated Menu Tool with the endpoint [GET /api/v1/menus/:channelHandle]({{< ref "/reference/public-api/menus" >}}) has been deprecated in favor of modeling menus with data records as described below. Please reach out for assistance with migrating from the Menu Tool to data records. The dedicated Menu Tool will be removed with release-2025-05.
-
 Menus can be conveniently modeled using data records, which can be included in dashboards and referenced in other documents. Like all documents in Livingdocs, they define the content but not the presentation.
 
 Common use cases for menus include:
