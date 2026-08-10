@@ -103,7 +103,6 @@ contentTypeConfig: |2
 
             // Optional. Only allows the input of an exact number
             // instead of picking a step.
-            // {{< deprecated-in "release-2025-11" >}}
             // {{< removed-in "release-2026-05" >}}
             allowAnyNumber: true,
 
@@ -114,15 +113,12 @@ contentTypeConfig: |2
             // Starting with {{< release "release-2025-09" >}}, multiple units can be
             // specified as an array. Previously, only a single unit
             // (string) was supported.
-            // {{< deprecated-in "release-2025-11" >}}
             // {{< removed-in "release-2026-05" >}}
             unit: 'lines',
 
             // Optional. Allows the input of an exact number besides
             // picking a step. Users can toggle between the input
             // modes. 
-            // {{< added-in "release-2025-07" >}}
-            // {{< deprecated-in "release-2025-11" >}}
             // {{< removed-in "release-2026-05" >}}
             showExactCountCheckbox: true
           }

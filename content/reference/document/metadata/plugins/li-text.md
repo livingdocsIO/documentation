@@ -38,7 +38,6 @@ contentTypeConfig: |2
           recommendedMinLength: 110,               // optional
           recommendedMaxLength: 150,               // optional
           allowNewlines: false,                    // default: undefined, validated if set. Effect on ui: newlines are stripped uf not true and ui.config.rows is undefined and ui.component is not liMetaTextareaForm
-          useAsTitle: true,                        // optional. {{< removed-in "release-2023-07" >}}, migrate to `displayTitlePattern`
           index: true,                             // optional, default: false. {{< added-in "release-2023-07" >}}
           translatable: true,                      // optional, default: false, translations are only supported for data-record and mediaLibrary
           dataProvider: {                          // optional

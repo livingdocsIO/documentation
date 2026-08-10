@@ -1417,48 +1417,6 @@ You can turn on detection of web entities separately. Refer to the Google Vision
 The credentials object is just the google service account json. We advise you to download the json from GCP and then entering the values here.
 The language enables a separate call to Google Translate API to translate the labels received from an image analysis. You GCP Account needs to have Google Translate API activated for this to work (will also infer costs).
 
-### Custom previews
-
-{{< deprecated-in "release-2023-07" block >}}
-{{< removed-in "release-2023-09" block >}}
-
-Read [the guide on custom previews]({{< ref "/guides/editor/document-previews" >}}) to learn how to use `documentPreview` functions.
-
-Custom previews are a way to display a custom preview of a document. This could be a custom mobile preview, a preview of a finished article living on the frontend or anything that fits the specific customer need. You will need to enable the feature and register a custom render function that will contain the `documentId`.
-
-```js
-// all.js
-preview: {
-  enabled: true
-}
-```
-
-```js
-liServer.registerInitializedHook(async () => {
-  const previewApi = liServer.features.api('li-preview')
-  const documentApi = liServer.features.api('li-documents').document
-  const renderFunction = async ({documentId}) => {
-    const doc = await documentApi.getLatestDocument(documentId)
-    return {html: `<div><h1>${doc.title}</h1><p>This is a custom preview</p></div>`}
-  }
-  previewApi.registerRenderFunction(renderFunction)
-})
-```
-
-{{< img src="images/custom_preview.png" alt="Teaser Preview" >}}
-
-Alternatively, your render function can just return the url with rendered html. It can be useful when your document is rendered on an external system or to have a preview of your published article on the delivery.
-
-```js
-liServer.registerInitializedHook(async () => {
-  const previewApi = liServer.features.api('li-preview')
-  const renderFunction = async ({documentId}) => {
-    return {previewUrl: `https://website.io/article/${documentId}`}
-  }
-  previewApi.registerRenderFunction(renderFunction)
-})
-```
-
 ## Integrations
 
 There is a general `integrations` configuration for small integrations that can be configured in the `channelConfig` through editor UI. They need to be enabled in the server config with the following config.

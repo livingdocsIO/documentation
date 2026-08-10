@@ -4,11 +4,6 @@ description: How to configure and use the publication index of Livingdocs.
 weight: 1
 ---
 
-{{< info >}}
-A version of this document for releases prior to {{< release "release-2023-07" >}} is available
-[here]({{< ref "/guides/search/publication-index-legacy" >}}).
-{{< /info >}}
-
 The publication index is an Elasticsearch index that allows developers to do queries in order to retrieve published documents from Livingdocs.
 
 There are two parts to the feature:
