@@ -352,6 +352,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v296.2.59](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.59): fix(deps): automatically patch Node.js vulnerabilities
 - [v296.2.58](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.58): chore(image-processing): compare decoded pixels instead of png bytes in test
 - [v296.2.57](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.57): fix(deps): update dependency undici from 7.28.0 to 7.29.0 [security]
 - [v296.2.56](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.56): fix(deps): update dependency @livingdocs/framework from 32.12.13 to v32.12.14
