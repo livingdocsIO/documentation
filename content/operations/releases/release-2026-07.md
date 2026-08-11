@@ -539,6 +539,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v308.1.17](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.17): fix(deps): automatically patch Node.js vulnerabilities
 - [v308.1.16](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.16): fix(deps): update dependency undici from 8.6.0 to 8.9.0 [security]
 - [v308.1.15](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.15): fix: restore login through forward proxy
 - [v308.1.14](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.14): fix(indexing): Always load the elasticsearch configs into the process (not only on live indexing)
