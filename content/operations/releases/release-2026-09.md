@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+
 - [fix(deps): update dependency @livingdocs/framework from 34.2.1 to v34.2.2 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/9844)
 - [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-editor/pull/11437)
 - [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-server/pull/9830)
@@ -96,7 +97,6 @@ These are the release notes of the upcoming release (pull requests merged to the
 - [fix(draft-storage): Never silently drop unsaved content when saving is disabled](https://github.com/livingdocsIO/livingdocs-editor/pull/11241)
 - [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-server/pull/9726)
 - [Update logo and favicon assets; serve browser-support logo locally](https://github.com/livingdocsIO/livingdocs-editor/pull/11330)
-- [Use 10MB header when processing gif and webp images](https://github.com/livingdocsIO/livingdocs-server/pull/9709)
 - [Add nb-NO to relative-time supported locales](https://github.com/livingdocsIO/livingdocs-editor/pull/11345)
 - [fix(deps): update babel from 7.29.7 to v8 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/11239)
 - [Fix release date in deprecation message of li-authentication functions](https://github.com/livingdocsIO/livingdocs-server/pull/9701)
@@ -140,13 +140,31 @@ To learn about the necessary actions to update Livingdocs to `release-2026-09`, 
 
 ### Before the deployment
 
-No pre-deployment steps are required before rolling out this release.
+#### Prepare a Directory for Image Upload Processing
+
+Large animated GIF and WebP uploads are now written to a temporary file while they are validated (see [Large Animated Image Uploads](#large-animated-image-uploads)). They land in the system temp directory unless configured otherwise, and in a container that is often a `tmpfs` (RAM-backed) mount, where the files count against the memory limit instead of relieving it.
+
+Mount a directory on real disk for them, sized for the concurrent worst case: `mediaLibrary.images.processing.maxConcurrentProcesses` uploads of `mediaLibrary.images.uploadRestrictions.maxFileSize` each, so 20 × 15MB ≈ 300MB with the defaults. The property that points at it comes with the new version, so configure it during the rollout.
 
 ### Rollout deployment
 
 #### Migrate the Postgres Database
 
 No migrations are required for this release.
+
+#### Point Image Upload Processing at the Prepared Directory
+
+Roll out `mediaLibrary.images.uploadProcessingDirectory` together with the new version:
+
+```js
+mediaLibrary: {
+  images: {
+    uploadProcessingDirectory: '/var/lib/livingdocs/uploads'
+  }
+}
+```
+
+With `use2025Behavior` enabled, `mediaLibrary.images.resizingDirectory` is worth setting at the same time if it is not already defined: it also defaults to the system temp directory, and holds the files written while generating image variants on demand. It can point at the same directory, as long as the volume is sized for both — filenames are random, so the two never collide.
 
 ### After the deployment
 
@@ -183,6 +201,26 @@ livingdocs-server elasticsearch-index --handle li-media --recreate -y
 #### Read and copy the full filename
 
 In the media detail view, the "Information" section now shows the complete filename instead of truncating it to a single line. A copy button next to it grabs the full name in one click, which makes long agency filenames and stock IDs easy to reuse.
+
+### Large Animated Image Uploads
+
+Animated GIF and WebP images upload up to `mediaLibrary.images.uploadRestrictions.maxFileSize`, the same as every other format. Earlier releases rejected them above 10MB, because counting the frames of an animated image needs the complete file and that file was held in memory.
+
+Livingdocs now writes those uploads to a temporary file and reads them from disk. This works without any configuration, but the directory it writes to is worth setting in the server config:
+
+```js
+mediaLibrary: {
+  images: {
+    uploadProcessingDirectory: '/var/lib/livingdocs/uploads' // default os.tmpdir()
+  }
+}
+```
+
+{{< warning >}}
+The default is the system temp directory, which in a container is often a `tmpfs` (RAM-backed) mount. Files written there count against the container's memory limit, so several large uploads at once can exhaust it — the very thing writing them to disk avoids. Point `uploadProcessingDirectory` at real disk.
+{{< /warning >}}
+
+For more information, see the [Temporary Directories]({{< ref "/customising/server-configuration/#temporary-directories" >}}) documentation.
 
 ## Vulnerability Patches
 
