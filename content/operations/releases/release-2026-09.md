@@ -142,9 +142,9 @@ To learn about the necessary actions to update Livingdocs to `release-2026-09`, 
 
 #### Prepare a Directory for Image Upload Processing
 
-Large animated GIF and WebP uploads are now written to a temporary file while they are validated (see [Large Animated Image Uploads](#large-animated-image-uploads)). They land in the system temp directory unless configured otherwise, and in a container that is often a `tmpfs` (RAM-backed) mount, where the files count against the memory limit instead of relieving it.
+Image uploads are now written to a temporary file instead of being held in memory (see [Large Animated Image Uploads](#large-animated-image-uploads)). They land in the system temp directory unless configured otherwise, and in a container that is often a `tmpfs` (RAM-backed) mount, where the files count against the memory limit instead of relieving it.
 
-Mount a directory on real disk for them, sized for the concurrent worst case: `mediaLibrary.images.processing.maxConcurrentProcesses` uploads of `mediaLibrary.images.uploadRestrictions.maxFileSize` each, so 20 × 15MB ≈ 300MB with the defaults. The property that points at it comes with the new version, so configure it during the rollout.
+Mount a directory on real disk for them, sized for the concurrent worst case: `mediaLibrary.images.processing.maxConcurrentProcesses` uploads of `mediaLibrary.images.uploadRestrictions.maxFileSize` each. That is 20 × 15MB ≈ 300MB with the defaults, but 2GB if you have raised `maxFileSize` to `100mb`. The property that points at it comes with the new version, so configure it during the rollout.
 
 ### Rollout deployment
 
@@ -221,6 +221,29 @@ The default is the system temp directory, which in a container is often a `tmpfs
 {{< /warning >}}
 
 For more information, see the [Temporary Directories]({{< ref "/customising/server-configuration/#temporary-directories" >}}) documentation.
+
+### Image Processing Limits
+
+Processing an image is the most resource-hungry thing the server does, and several of its limits were either missing or decided by the host instead of the configuration. This release closes those gaps.
+
+```js
+mediaLibrary: {
+  images: {
+    processing: {
+      timeout: '5m',           // new, default '5m'
+      maxConcurrentResizes: 4  // new, default 4
+    }
+  }
+}
+```
+
+- **`timeout`** puts a time limit on transforming an upload or generating a variant. Nothing interrupted that work before, and `maxFrames` together with `maxResolution` permits images that would occupy a processing slot for close to an hour.
+
+- **`maxConcurrentResizes`** limits how many image variants are generated at the same time. Requests for a variant that is not cached yet each decode and re-encode the whole image, and their number was previously unbounded. `maxConcurrentProcesses`, which is unchanged, applies to uploads only.
+
+Two further changes need no configuration. Image processing now uses one thread per image rather than one per CPU core of the machine the container runs on: measured on a 120-frame animated WebP, that is both slightly faster and less than half the memory. And an image upload now has 15 minutes to complete instead of 4 — the budget covers the transfer, the wait for a free processing slot and the processing itself, and a large animated image can need several minutes of that on its own.
+
+For more information, see the [Image Processing]({{< ref "/customising/server-configuration/#image-processing-with-use2025behavior" >}}) documentation.
 
 ## Vulnerability Patches
 

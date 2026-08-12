@@ -1056,6 +1056,8 @@ mediaLibrary: {
       maxResolution: 24 * 1000 * 1000, // 24MP,  default 24 mega-pixels
       maxFrames: 1800, // default 1800
       maxConcurrentProcesses: 20, // default 20
+      maxConcurrentResizes: 4, // default 4. {{< added-in "release-2026-09" >}}
+      timeout: '5m', // default '5m'. {{< added-in "release-2026-09" >}}
     }
 
     // {{< a href="#image-processing-legacy-use2025behavior-false" title="Image Processing (legacy, use2025Behavior: false)">}}
@@ -1065,6 +1067,7 @@ mediaLibrary: {
     //   maxResolution: 24 * 1000 * 1000, // 24MP,  default 24 mega-pixels
     //   maxFrames: 1800, // default 1800
     //   maxConcurrentProcesses: 20, // default 20
+    //   timeout: '5m', // default '5m'. {{< added-in "release-2026-09" >}}
     //   lossy: {
     //     maxDimension: 6000, // default 6000
     //     quality: 80 // default 80
@@ -1139,6 +1142,8 @@ mediaLibrary: {
       maxResolution: 24 * 1000 * 1000, // default 24 mega-pixels
       maxFrames: 1800,                  // default 1800
       maxConcurrentProcesses: 20,       // default 20
+      maxConcurrentResizes: 4,          // default 4
+      timeout: '5m',                    // default '5m'
     }
   }
 }
@@ -1152,7 +1157,13 @@ mediaLibrary: {
   The default of 1800 frames corresponds to approximately 90 seconds at 20 fps, or 60 seconds at 30 fps.
 
 - **`maxConcurrentProcesses`** (number, default `20`)
-  Maximum number of images validated in parallel. Lower this if uploads cause memory pressure on the server.
+  Maximum number of uploads validated in parallel. Lower this if uploads cause memory pressure on the server.
+
+- **`maxConcurrentResizes`** (number, default `4`) {{< added-in "release-2026-09" >}}
+  Maximum number of image variants generated in parallel when they are served. Generating a variant decodes the whole image, so raising this raises peak memory use.
+
+- **`timeout`** (duration, default `'5m'`) {{< added-in "release-2026-09" >}}
+  Time limit for generating a single image variant. It is a backstop against images that are pathologically expensive to process rather than a latency target: `maxResolution` and `maxFrames` together permit images that would otherwise occupy a processing slot for close to an hour. A large animated image can legitimately need several minutes.
 
 #### Image Processing (legacy, `use2025Behavior: false`)
 
@@ -1166,6 +1177,7 @@ mediaLibrary: {
       maxResolution: 24 * 1000 * 1000, // default 24 mega-pixels
       maxFrames: 1800,                 // default 1800
       maxConcurrentProcesses: 20,      // default 20
+      timeout: '5m',                   // default '5m'
       lossy: {
         maxDimension: 6000,            // default 6000
         quality: 80                    // default 80
@@ -1199,6 +1211,9 @@ mediaLibrary: {
 - **`maxConcurrentProcesses`** (number, default `20`)
   Maximum number of images processed in parallel. Lower this if uploads cause memory pressure on the server.
 
+- **`timeout`** (duration, default `'5m'`) {{< added-in "release-2026-09" >}}
+  Time limit for transforming a single upload. It is a backstop against images that are pathologically expensive to process rather than a latency target: `maxResolution` and `maxFrames` together permit images that would otherwise occupy a processing slot for close to an hour. A large animated image can legitimately need several minutes.
+
 - **`lossy`** / **`lossless`**
   Output quality and dimension settings applied when images are transformed at upload time:
   - `maxDimension` — largest allowed side in pixels (default `6000`); images exceeding this are downscaled.
@@ -1231,7 +1246,7 @@ mediaLibrary: {
 ```
 
 - **`uploadProcessingDirectory`** (string, default `os.tmpdir()`)
-  Scratch space for reading image metadata at upload time. Livingdocs reads dimensions and frame counts from the beginning of an upload, which is enough for most images. Animated GIF and WebP report an accurate frame count only from the complete file, so those uploads are written here and read from disk instead of being held in memory. The same applies to any image whose dimensions sit further into the file, for example behind a large embedded colour profile. Used with `use2025Behavior` both enabled and disabled.
+  Scratch space for image uploads. Livingdocs reads dimensions and frame counts from the beginning of an upload, which is enough for most images. Animated GIF and WebP report an accurate frame count only from the complete file, so those uploads are written here and read from disk instead of being held in memory. The same applies to any image whose dimensions sit further into the file, for example behind a large embedded colour profile. With `use2025Behavior` disabled, every upload that is transformed is written here, because the transformation reads the image from disk.
 
 - **`resizingDirectory`** (string, default `os.tmpdir()`)
   Scratch space for generating image variants on demand, when `use2025Behavior` is `true` and an image is requested through the [`/api/{{< api-version >}}/mediaLibrary/serve-image/:key`](/reference/public-api/media-library/#serve-image) endpoint. The original is downloaded here, resized or cropped, and uploaded to the variants cache storage. Nothing is written here for cache hits.
@@ -1240,7 +1255,7 @@ mediaLibrary: {
 Point both at real disk. On a `tmpfs` (RAM-backed) mount — which `/tmp` often is in a container — the files count against the container's memory limit, which defeats the purpose of writing them out of memory in the first place.
 {{< /warning >}}
 
-Size the volume for the concurrent worst case: `maxConcurrentProcesses` uploads of `uploadRestrictions.maxFileSize` each, so 20 × 15MB ≈ 300MB with the defaults.
+Size each volume for its own concurrent worst case. For `uploadProcessingDirectory` that is `processing.maxConcurrentProcesses` uploads of `uploadRestrictions.maxFileSize` each — 20 × 15MB ≈ 300MB with the defaults, but 2GB if you have raised `maxFileSize` to `100mb`. For `resizingDirectory` it is `processing.maxConcurrentResizes` originals plus their variants, so it follows the size of the images in your media library rather than the upload limit.
 
 Each file is removed as soon as the operation that created it ends, whether it succeeded or failed. Only a process that dies first leaves files behind — an OOM kill, or a `SIGKILL` during a restart — and Livingdocs deletes just the files it is currently working on, so a later start does not clear them either. Point each option at a directory that holds nothing else, which leaves you free to clear leftovers from outside: an ephemeral volume that is discarded when the container stops, or a periodic sweep with a tool such as `systemd-tmpfiles`.
 
