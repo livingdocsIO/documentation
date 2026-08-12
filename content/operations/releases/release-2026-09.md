@@ -241,7 +241,7 @@ mediaLibrary: {
 
 - **`maxConcurrentResizes`** limits how many image variants are generated at the same time. Requests for a variant that is not cached yet each decode and re-encode the whole image, and their number was previously unbounded. `maxConcurrentProcesses`, which is unchanged, applies to uploads only.
 
-Two further changes need no configuration. Image processing now uses one thread per image rather than one per CPU core of the machine the container runs on: measured on a 120-frame animated WebP, that is both slightly faster and less than half the memory. And an image upload now has 15 minutes to complete instead of 4 — the budget covers the transfer, the wait for a free processing slot and the processing itself, and a large animated image can need several minutes of that on its own.
+Three further changes need no configuration. Requests that arrive for the same uncached variant now share a single job instead of each generating it, so a cold cache no longer multiplies the work by the number of readers who happen to load the same page. Image processing uses one thread per image rather than one per CPU core of the machine the container runs on: measured on a 120-frame animated WebP, that is both slightly faster and less than half the memory. And an image upload now has 15 minutes to complete instead of 4 — the budget covers the transfer, the wait for a free processing slot and the processing itself, and a large animated image can need several minutes of that on its own.
 
 For more information, see the [Image Processing]({{< ref "/customising/server-configuration/#image-processing-with-use2025behavior" >}}) documentation.
 
