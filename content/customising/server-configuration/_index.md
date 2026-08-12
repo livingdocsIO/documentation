@@ -1160,7 +1160,9 @@ mediaLibrary: {
   Maximum number of uploads validated in parallel. Lower this if uploads cause memory pressure on the server.
 
 - **`maxConcurrentResizes`** (number, default `4`) {{< added-in "release-2026-09" >}}
-  Maximum number of image variants generated in parallel when they are served. Generating a variant decodes the whole image, so raising this raises peak memory use. Requests that ask for the same variant share a single job, so the limit counts distinct variants rather than requests.
+  Maximum number of image variants generated in parallel when they are served. Requests that ask for the same variant share a single job, so the limit counts distinct variants rather than requests.
+
+  The default matches the size of Node.js' thread pool, which is what runs the work, so a higher value does not process images any faster. What it does add is a longer queue inside that thread pool, which every other file and DNS operation in the process then waits behind, and more originals downloaded into `resizingDirectory` at the same time. Raise it together with `UV_THREADPOOL_SIZE`, or not at all.
 
 - **`timeout`** (duration, default `'5m'`) {{< added-in "release-2026-09" >}}
   Time limit for a single image operation while generating a variant. It is a backstop against images that are pathologically expensive to process rather than a latency target: `maxResolution` and `maxFrames` together permit images that would otherwise occupy a processing slot for close to an hour. A large animated image can legitimately need several minutes.
