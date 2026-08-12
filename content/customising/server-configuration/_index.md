@@ -1163,7 +1163,9 @@ mediaLibrary: {
   Maximum number of image variants generated in parallel when they are served. Generating a variant decodes the whole image, so raising this raises peak memory use. Requests that ask for the same variant share a single job, so the limit counts distinct variants rather than requests.
 
 - **`timeout`** (duration, default `'5m'`) {{< added-in "release-2026-09" >}}
-  Time limit for generating a single image variant. It is a backstop against images that are pathologically expensive to process rather than a latency target: `maxResolution` and `maxFrames` together permit images that would otherwise occupy a processing slot for close to an hour. A large animated image can legitimately need several minutes.
+  Time limit for a single image operation while generating a variant. It is a backstop against images that are pathologically expensive to process rather than a latency target: `maxResolution` and `maxFrames` together permit images that would otherwise occupy a processing slot for close to an hour. A large animated image can legitimately need several minutes.
+
+  It bounds the image processing, not the request. A redacted image is processed in two passes and each gets the full limit, and downloading the original and uploading the result are not covered — those are bounded by [`httpServer.requestTimeout`](#http-server) instead.
 
 #### Image Processing (legacy, `use2025Behavior: false`)
 
@@ -1213,6 +1215,8 @@ mediaLibrary: {
 
 - **`timeout`** (duration, default `'5m'`) {{< added-in "release-2026-09" >}}
   Time limit for transforming a single upload. It is a backstop against images that are pathologically expensive to process rather than a latency target: `maxResolution` and `maxFrames` together permit images that would otherwise occupy a processing slot for close to an hour. A large animated image can legitimately need several minutes.
+
+  It bounds the transformation, not the upload. Receiving the file and storing the result are not covered, and the whole job is aborted after 15 minutes regardless.
 
 - **`lossy`** / **`lossless`**
   Output quality and dimension settings applied when images are transformed at upload time:
