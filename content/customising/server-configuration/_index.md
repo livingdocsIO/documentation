@@ -1045,8 +1045,11 @@ mediaLibrary: {
     },
     // max upload values of Livingdocs API endpoints
     uploadRestrictions: {
-      maxFileSize: '15mb', // webp and gif images are limited to a maximum size of 10MB
+      maxFileSize: '15mb',
     },
+    // {{< a href="#temporary-directories" title="Temporary Directories">}}
+    uploadProcessingDirectory: '/var/lib/livingdocs/uploads', // default os.tmpdir(). {{< added-in "release-2026-09" >}}
+    resizingDirectory: '/var/lib/livingdocs/resizing', // default os.tmpdir()
     // {{< a href="#image-processing-with-use2025behavior" title="Image Processing (use2025Behavior: true)">}}
     // Used when use2025Behavior is true — upload-time validation only; transformation happens on-demand.
     processing: {
@@ -1213,6 +1216,33 @@ mediaLibrary: {
   - `lossless` (boolean) — fully lossless WebP compression.
 
   Using `quality`, `nearLossless`, or `lossless` with any `targetFormat` other than `'webp'` throws a configuration error at startup.
+
+#### Temporary Directories
+
+Some image operations need a file on disk rather than in memory. Both directories below hold short-lived files, and both default to the system temp directory.
+
+```js
+mediaLibrary: {
+  images: {
+    uploadProcessingDirectory: '/var/lib/livingdocs/uploads', // default os.tmpdir()
+    resizingDirectory: '/var/lib/livingdocs/resizing',        // default os.tmpdir()
+  }
+}
+```
+
+- **`uploadProcessingDirectory`** (string, default `os.tmpdir()`)
+  Scratch space for reading image metadata at upload time. Livingdocs reads dimensions and frame counts from the beginning of an upload, which is enough for most images. Animated GIF and WebP report an accurate frame count only from the complete file, so those uploads are written here and read from disk instead of being held in memory. The same applies to any image whose dimensions sit further into the file, for example behind a large embedded colour profile. Used with `use2025Behavior` both enabled and disabled.
+
+- **`resizingDirectory`** (string, default `os.tmpdir()`)
+  Scratch space for generating image variants on demand, when `use2025Behavior` is `true` and an image is requested through the [`/api/{{< api-version >}}/mediaLibrary/serve-image/:key`](/reference/public-api/media-library/#serve-image) endpoint. The original is downloaded here, resized or cropped, and uploaded to the variants cache storage. Nothing is written here for cache hits.
+
+{{< warning >}}
+Point both at real disk. On a `tmpfs` (RAM-backed) mount — which `/tmp` often is in a container — the files count against the container's memory limit, which defeats the purpose of writing them out of memory in the first place.
+{{< /warning >}}
+
+Size the volume for the concurrent worst case: `maxConcurrentProcesses` uploads of `uploadRestrictions.maxFileSize` each, so 20 × 15MB ≈ 300MB with the defaults.
+
+Each file is removed as soon as the operation that created it ends, whether it succeeded or failed. Only a process that dies first leaves files behind — an OOM kill, or a `SIGKILL` during a restart — and Livingdocs deletes just the files it is currently working on, so a later start does not clear them either. Point each option at a directory that holds nothing else, which leaves you free to clear leftovers from outside: an ephemeral volume that is discarded when the container stops, or a periodic sweep with a tool such as `systemd-tmpfiles`.
 
 #### Filename Strategy
 
