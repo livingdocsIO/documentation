@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Preserve document updatedAt when re-enriching Retresco metadata](https://github.com/livingdocsIO/livingdocs-server/pull/9858)
 - [fix(deps): update dependency @livingdocs/framework from 34.2.1 to v34.2.2 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/9844)
 - [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-editor/pull/11437)
 - [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-server/pull/9830)
