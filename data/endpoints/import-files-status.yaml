@@ -27,7 +27,7 @@ responses:
         "id": "25bzj8j",
         "files": [
           {
-            "state": "success",
+            "state": "imported",
             "mediaId": "jjiwhsf23kdk",
             "systemName": "identifier-for-your-system",
             "externalId": "external-unique-id-123"
@@ -96,7 +96,7 @@ openapi:
                 state: success
                 id: 25bzj8j
                 files:
-                  - state: success
+                  - state: imported
                     mediaId: jjiwhsf23kdk
                     systemName: identifier-for-your-system
                     externalId: external-unique-id-123
