@@ -1246,16 +1246,20 @@ Size the limits from the CPUs the container is allowed to use, which `os.availab
 
 | CPU limit | `maxConcurrentResizes` | `maxConcurrentProcesses` | `UV_THREADPOOL_SIZE` |
 | --------- | ---------------------- | ------------------------ | -------------------- |
-| 1–2       | `2`                    | `20` (default)           | `30`                 |
-| 4         | `4`                    | `20`                     | `32`                 |
-| 8         | `6`                    | `20`                     | `34`                 |
-| 16        | `8`                    | `20`                     | `36`                 |
+| 1–2       | `2`                    | `20` (default)           | `12`                 |
+| 4         | `4`                    | `20`                     | `16`                 |
+| 8         | `6`                    | `20`                     | `24`                 |
+| 16        | `8`                    | `20`                     | `32`                 |
 
 - **`maxConcurrentResizes`** is CPU-bound, so keep it near the CPU limit and below `8`. Memory is usually the tighter constraint: a large animated image needs roughly 200MB while it is resized, so 2GB available for image work supports about five concurrent variants however many CPUs there are.
 
-- **`maxConcurrentProcesses`** covers a whole upload — receiving the file, transforming it, storing the result — and most of that time is spent on the network rather than the CPU. Tying it to the CPU limit would throttle transfers that cost nothing to run in parallel, so leave it at its default unless uploads cause memory pressure.
+- **`maxConcurrentProcesses`** bounds how many uploads are received and inspected in parallel, and most of that time is spent on the network rather than the CPU. Tying it to the CPU limit would throttle transfers that cost nothing to run in parallel, so leave it at its default unless uploads cause memory pressure.
 
-- **`UV_THREADPOOL_SIZE`** should be large enough that the thread pool is never what limits image work; the two options above are there to do that. Idle threads cost almost nothing, so set it above both limits combined, with headroom for the rest of the process. Raising it on its own does not make image processing faster — it stops image processing from delaying everything else.
+- **`UV_THREADPOOL_SIZE`** decides how much work of any kind the process can have in flight, so raising it keeps file and DNS operations from queueing behind image processing. It is not a substitute for the two limits above, and on its own it does not make image processing faster.
+
+{{< warning >}}
+With `use2025Behavior` disabled, `UV_THREADPOOL_SIZE` is also what bounds how many uploads are transformed at the same time, because the transformation runs while the result is streamed to storage rather than inside the `maxConcurrentProcesses` queue. Raising the thread pool there raises peak memory during upload bursts. Keep it close to the CPU limit and lower `maxConcurrentProcesses` if uploads are what you need to bound.
+{{< /warning >}}
 
 {{< warning >}}
 Set `UV_THREADPOOL_SIZE` as an environment variable before the process starts, for example in your deployment manifest. Setting it from inside the application is unreliable, because the thread pool is created the first time anything uses it — which can happen while modules are still loading.
