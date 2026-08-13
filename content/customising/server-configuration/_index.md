@@ -1157,7 +1157,7 @@ mediaLibrary: {
   The default of 1800 frames corresponds to approximately 90 seconds at 20 fps, or 60 seconds at 30 fps.
 
 - **`maxConcurrentProcesses`** (number, default `20`)
-  Maximum number of uploads validated in parallel. Lower this if uploads cause memory pressure on the server.
+  Maximum number of uploads validated and stored in parallel. Lower this if uploads cause memory pressure on the server. See [Sizing the Processing Limits](#sizing-the-processing-limits).
 
 - **`maxConcurrentResizes`** (number, default `4`) {{< added-in "release-2026-09" >}}
   Maximum number of image variants generated in parallel when they are served. Requests that ask for the same variant share a single job, so the limit counts distinct variants rather than requests.
@@ -1213,7 +1213,7 @@ mediaLibrary: {
   The default of 1800 frames corresponds to approximately 90 seconds at 20 fps, or 60 seconds at 30 fps.
 
 - **`maxConcurrentProcesses`** (number, default `20`)
-  Maximum number of images processed in parallel. Lower this if uploads cause memory pressure on the server.
+  Maximum number of images processed in parallel. Lower this if uploads cause memory pressure on the server. See [Sizing the Processing Limits](#sizing-the-processing-limits).
 
 - **`timeout`** (duration, default `'5m'`) {{< added-in "release-2026-09" >}}
   Time limit for transforming a single upload. It is a backstop against images that are pathologically expensive to process rather than a latency target: `maxResolution` and `maxFrames` together permit images that would otherwise occupy a processing slot for close to an hour. A large animated image can legitimately need several minutes.
@@ -1240,9 +1240,11 @@ mediaLibrary: {
 
 #### Sizing the Processing Limits
 
-Image processing runs on Node.js' thread pool, which is also what every file, DNS and compression operation in the process uses. Its default size is **4 threads**, and one image holds a thread for the whole operation — several seconds for a large animated image. Four images in parallel therefore leave nothing for anything else, and unrelated file reads wait behind them.
+Image processing runs on Node.js' thread pool, which is also what every file, DNS and compression operation in the process uses. Its default size is **4 threads**. An image takes a thread once one is free and then holds it for the whole operation — several seconds for a large animated image. Four images in parallel therefore leave nothing for anything else, and unrelated file reads wait behind them.
 
-Size the limits from the CPUs the container is allowed to use, which `os.availableParallelism()` reports — rounded down, never below `1`. Do not use `os.cpus().length`: it reports the host's cores and ignores the container's CPU limit.
+The thread pool, rather than either option below, is therefore what decides how many images are processed at the same time. Peak memory follows `min(limit, UV_THREADPOOL_SIZE)` multiplied by what one image needs, which is roughly 200MB for a large animated one. The two options bound how much work is accepted; the thread pool bounds how much of it runs.
+
+Size all three from the CPUs the container is allowed to use, which `os.availableParallelism()` reports — rounded down, never below `1`. Do not use `os.cpus().length`: it reports the host's cores and ignores the container's CPU limit.
 
 | CPU limit | `maxConcurrentResizes` | `maxConcurrentProcesses` | `UV_THREADPOOL_SIZE` |
 | --------- | ---------------------- | ------------------------ | -------------------- |
@@ -1251,15 +1253,11 @@ Size the limits from the CPUs the container is allowed to use, which `os.availab
 | 8         | `6`                    | `20`                     | `24`                 |
 | 16        | `8`                    | `20`                     | `32`                 |
 
-- **`maxConcurrentResizes`** is CPU-bound, so keep it near the CPU limit and below `8`. Memory is usually the tighter constraint: a large animated image needs roughly 200MB while it is resized, so 2GB available for image work supports about five concurrent variants however many CPUs there are.
+- **`maxConcurrentResizes`** covers generating a variant, which occupies the CPU from start to finish. Keep it near the CPU limit and below `8`.
 
-- **`maxConcurrentProcesses`** bounds how many uploads are received and inspected in parallel, and most of that time is spent on the network rather than the CPU. Tying it to the CPU limit would throttle transfers that cost nothing to run in parallel, so leave it at its default unless uploads cause memory pressure.
+- **`maxConcurrentProcesses`** covers a whole upload — receiving the file, transforming it and storing the result. Much of that is spent on the network, so it does not need to follow the CPU limit. What it does bound is how many uploads at once hold a file in `uploadProcessingDirectory` and a finished result waiting to be written to storage, so size it against `uploadRestrictions.maxFileSize` and lower it if uploads cause memory pressure.
 
-- **`UV_THREADPOOL_SIZE`** decides how much work of any kind the process can have in flight, so raising it keeps file and DNS operations from queueing behind image processing. It is not a substitute for the two limits above, and on its own it does not make image processing faster.
-
-{{< warning >}}
-With `use2025Behavior` disabled, `UV_THREADPOOL_SIZE` is also what bounds how many uploads are transformed at the same time, because the transformation runs while the result is streamed to storage rather than inside the `maxConcurrentProcesses` queue. Raising the thread pool there raises peak memory during upload bursts. Keep it close to the CPU limit and lower `maxConcurrentProcesses` if uploads are what you need to bound.
-{{< /warning >}}
+- **`UV_THREADPOOL_SIZE`** decides how much work of any kind the process can have in flight. Keep it a little above the CPU limit: the headroom stops file and DNS operations from queueing behind image processing, while a much larger pool only lets more images be processed at once, which costs memory without making any of them faster.
 
 {{< warning >}}
 Set `UV_THREADPOOL_SIZE` as an environment variable before the process starts, for example in your deployment manifest. Setting it from inside the application is unreliable, because the thread pool is created the first time anything uses it — which can happen while modules are still loading.
