@@ -1162,7 +1162,7 @@ mediaLibrary: {
 - **`maxConcurrentResizes`** (number, default `4`) {{< added-in "release-2026-09" >}}
   Maximum number of image variants generated in parallel when they are served. Requests that ask for the same variant share a single job, so the limit counts distinct variants rather than requests.
 
-  The default matches the size of Node.js' thread pool, which is what runs the work, so a higher value does not process images any faster. What it does add is a longer queue inside that thread pool, which every other file and DNS operation in the process then waits behind, and more originals downloaded into `resizingDirectory` at the same time. Raise it together with `UV_THREADPOOL_SIZE`, or not at all.
+  The default matches the size of Node.js' thread pool, which is what runs the work. Raising it without raising `UV_THREADPOOL_SIZE` as well only lengthens the queue inside that pool, which every other file and DNS operation in the process then waits behind, and downloads more originals into `resizingDirectory` at the same time. See [Sizing the Processing Limits](#sizing-the-processing-limits).
 
 - **`timeout`** (duration, default `'5m'`) {{< added-in "release-2026-09" >}}
   Time limit for a single image operation while generating a variant. It is a backstop against images that are pathologically expensive to process rather than a latency target: `maxResolution` and `maxFrames` together permit images that would otherwise occupy a processing slot for close to an hour. A large animated image can legitimately need several minutes.
@@ -1237,6 +1237,29 @@ mediaLibrary: {
   - `lossless` (boolean) — fully lossless WebP compression.
 
   Using `quality`, `nearLossless`, or `lossless` with any `targetFormat` other than `'webp'` throws a configuration error at startup.
+
+#### Sizing the Processing Limits
+
+Image processing runs on Node.js' thread pool, which is also what every file, DNS and compression operation in the process uses. Its default size is **4 threads**, and one image holds a thread for the whole operation — several seconds for a large animated image. Four images in parallel therefore leave nothing for anything else, and unrelated file reads wait behind them.
+
+Size the limits from the CPUs the container is allowed to use, which `os.availableParallelism()` reports — rounded down, never below `1`. Do not use `os.cpus().length`: it reports the host's cores and ignores the container's CPU limit.
+
+| CPU limit | `maxConcurrentResizes` | `maxConcurrentProcesses` | `UV_THREADPOOL_SIZE` |
+| --------- | ---------------------- | ------------------------ | -------------------- |
+| 1–2       | `2`                    | `20` (default)           | `30`                 |
+| 4         | `4`                    | `20`                     | `32`                 |
+| 8         | `6`                    | `20`                     | `34`                 |
+| 16        | `8`                    | `20`                     | `36`                 |
+
+- **`maxConcurrentResizes`** is CPU-bound, so keep it near the CPU limit and below `8`. Memory is usually the tighter constraint: a large animated image needs roughly 200MB while it is resized, so 2GB available for image work supports about five concurrent variants however many CPUs there are.
+
+- **`maxConcurrentProcesses`** covers a whole upload — receiving the file, transforming it, storing the result — and most of that time is spent on the network rather than the CPU. Tying it to the CPU limit would throttle transfers that cost nothing to run in parallel, so leave it at its default unless uploads cause memory pressure.
+
+- **`UV_THREADPOOL_SIZE`** should be large enough that the thread pool is never what limits image work; the two options above are there to do that. Idle threads cost almost nothing, so set it above both limits combined, with headroom for the rest of the process. Raising it on its own does not make image processing faster — it stops image processing from delaying everything else.
+
+{{< warning >}}
+Set `UV_THREADPOOL_SIZE` as an environment variable before the process starts, for example in your deployment manifest. Setting it from inside the application is unreliable, because the thread pool is created the first time anything uses it — which can happen while modules are still loading.
+{{< /warning >}}
 
 #### Temporary Directories
 
