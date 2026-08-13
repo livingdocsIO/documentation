@@ -28,7 +28,7 @@ responses:
         "id": "25bzj8j",
         "images": [
           {
-            "state": "success",
+            "state": "imported",
             "externalId": "external-unique-id-123",
             "systemName": "identifier-for-your-system",
             "image": {
@@ -115,7 +115,7 @@ openapi:
                 state: success
                 id: 25bzj8j
                 images:
-                  - state: success
+                  - state: imported
                     externalId: external-unique-id-123
                     systemName: identifier-for-your-system
                     image:
