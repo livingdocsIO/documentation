@@ -539,6 +539,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v308.1.19](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.19): fix(indexing): Make indexing consumer stop less noisy on server shutdown
 - [v308.1.18](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.18): fix(retresco): Preserve document updatedAt when re-enriching
 - [v308.1.17](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.17): fix(deps): automatically patch Node.js vulnerabilities
 - [v308.1.16](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.16): fix(deps): update dependency undici from 8.6.0 to 8.9.0 [security]
