@@ -224,29 +224,17 @@ For more information, see the [Temporary Directories]({{< ref "/customising/serv
 
 ### Image Processing Limits
 
-Processing an image is the most resource-hungry thing the server does, and several of its limits were missing, decided by the host instead of the configuration, or narrower in scope than they looked. This release closes those gaps.
+Processing an image is the most resource-hungry thing the server does, and several of its limits were missing, decided by the host instead of the configuration, or narrower in scope than they looked. Two options are new, and one changes what it covers:
 
-```js
-mediaLibrary: {
-  images: {
-    processing: {
-      timeout: '5m',            // new, default '5m'
-      maxConcurrentResizes: 4,  // new, default 4
-      maxConcurrentProcesses: 20 // unchanged, but now covers the whole upload
-    }
-  }
-}
-```
+- **`timeout`** (default `'5m'`) puts a time limit on transforming an upload or generating a variant. Nothing interrupted that work before, and `maxFrames` together with `maxResolution` permits images that would occupy a processing slot for close to an hour.
 
-- **`timeout`** puts a time limit on transforming an upload or generating a variant. Nothing interrupted that work before, and `maxFrames` together with `maxResolution` permits images that would occupy a processing slot for close to an hour.
+- **`maxConcurrentResizes`** (default `4`) limits how many image variants are generated at the same time. Their number was previously unbounded, so a cold cache filled Node.js' thread pool with a backlog that every other file and DNS operation in the process had to wait behind.
 
-- **`maxConcurrentResizes`** limits how many image variants are generated at the same time. Each request for a variant that is not cached yet downloads the original and submits it for processing, and their number was previously unbounded — so a cold cache filled Node.js' thread pool with a backlog that every other file and DNS operation in the process had to wait behind.
+- **`maxConcurrentProcesses`** keeps its name and its default of `20`, but now covers an upload from start to finish. It used to release its slot before the image was transformed and stored, which left those unbounded.
 
-- **`maxConcurrentProcesses`** keeps its name, its default and its place in the configuration, but now covers an upload from start to finish. It used to release its slot as soon as the file had been received and inspected, because transforming an image is deferred until the result is read on its way to storage — which left no limit at all on how many images were transformed, or written to storage, at the same time. Uploads beyond the limit now wait for a slot instead of piling up behind the thread pool.
+Three further changes need no configuration: concurrent requests for the same uncached variant share a single job rather than each generating it, image processing uses one thread per image instead of one per CPU core the container can see, and an image upload has 15 minutes to complete instead of 4.
 
-Three further changes need no configuration. Requests that arrive for the same uncached variant now share a single job instead of each generating it, so a cold cache no longer multiplies the work by the number of readers who happen to load the same page. Image processing uses one thread per image rather than one per CPU core the container can see, which on a container limited by a CPU quota rather than a CPU set is every core of the host: measured on a 120-frame animated WebP, one thread is both slightly faster and less than half the memory. And an image upload now has 15 minutes to complete instead of 4 — the budget covers the transfer, the wait for a free processing slot and the processing itself, and a large animated image can need several minutes of that on its own.
-
-For more information, see the [Image Processing]({{< ref "/customising/server-configuration/#image-processing-with-use2025behavior" >}}) documentation.
+For how to size these limits against the CPUs and memory a container has, see the configuration reference for [image processing]({{< ref "/customising/server-configuration/#image-processing-with-use2025behavior" >}}) and for [legacy image processing]({{< ref "/customising/server-configuration/#image-processing-legacy-use2025behavior-false" >}}).
 
 ## Vulnerability Patches
 
