@@ -224,9 +224,11 @@ For more information, see the [Temporary Directories]({{< ref "/customising/serv
 
 ### Image Processing Limits
 
-Processing an image is the most resource-hungry thing the server does, and several of its limits were missing, decided by the host instead of the configuration, or narrower in scope than they looked. Two options are new, and one changes what it covers:
+Processing an image is the most resource-hungry thing the server does, and several of its limits were missing, decided by the host instead of the configuration, or narrower in scope than they looked. Three options are new, and one changes what it covers:
 
 - **`timeout`** (default `'5m'`) puts a time limit on transforming an upload or generating a variant. Nothing interrupted that work before, and `maxFrames` together with `maxResolution` permits images that would occupy a processing slot for close to an hour.
+
+- **`maxTotalResolution`** (default `500` megapixels) limits the pixels of every frame of an image together. `maxResolution` applies to one frame and `maxFrames` to their number, so the two of them accepted a 24 megapixel frame repeated 1800 times — minutes of work and gigabytes of memory for a single upload. Animated images used to be capped at 10MB, which this replaces: the new limit is roughly what a well-compressed 10MB animation reaches, while the file itself may now be as large as `uploadRestrictions.maxFileSize`.
 
 - **`maxConcurrentResizes`** (default `4`) limits how many image variants are generated at the same time. Their number was previously unbounded, so a cold cache filled Node.js' thread pool with a backlog that every other file and DNS operation in the process had to wait behind.
 

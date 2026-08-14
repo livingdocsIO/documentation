@@ -1139,22 +1139,26 @@ mediaLibrary: {
   use2025Behavior: true,
   images: {
     processing: {
-      maxResolution: 24 * 1000 * 1000, // default 24 mega-pixels
-      maxFrames: 1800,                  // default 1800
-      maxConcurrentProcesses: 20,       // default 20
-      maxConcurrentResizes: 4,          // default 4
-      timeout: '5m',                    // default '5m'
+      maxResolution: 24 * 1000 * 1000,        // default 24 mega-pixels
+      maxFrames: 1800,                        // default 1800
+      maxTotalResolution: 500 * 1000 * 1000,  // default 500 mega-pixels
+      maxConcurrentProcesses: 20,             // default 20
+      maxConcurrentResizes: 4,                // default 4
+      timeout: '5m',                          // default '5m'
     }
   }
 }
 ```
 
 - **`maxResolution`** (number, default `24_000_000`)
-  Maximum total pixel count (width × height). Uploads exceeding this are rejected. Default is 24 megapixels (e.g. 6000 × 4000 px).
+  Maximum pixel count of a single frame (width × height). Uploads exceeding this are rejected. Default is 24 megapixels (e.g. 6000 × 4000 px).
 
 - **`maxFrames`** (number, default `1800`)
   Maximum number of frames allowed for **animated images** (GIF and animated WebP). Uploads exceeding this limit are rejected.
   The default of 1800 frames corresponds to approximately 90 seconds at 20 fps, or 60 seconds at 30 fps.
+
+- **`maxTotalResolution`** (number, default `500_000_000`) {{< added-in "release-2026-09" >}}
+  Maximum pixel count across every frame of an image (width × height × frames). Uploads exceeding this are rejected. `maxResolution` applies to a single frame and `maxFrames` to their number, so without this a 24 megapixel frame repeated 1800 times would be accepted — an image that takes minutes and gigabytes of memory to decode. The default of 500 megapixels is about what a well-compressed 10MB animation reaches, and a still image counts as one frame.
 
 - **`maxConcurrentProcesses`** (number, default `20`)
   Maximum number of uploads validated and stored in parallel. Lower this if uploads cause memory pressure on the server. See [Sizing the Processing Limits](#sizing-the-processing-limits).
@@ -1177,17 +1181,18 @@ When `mediaLibrary.use2025Behavior` is `false` (the default), the `processing` b
 mediaLibrary: {
   images: {
     processing: {
-      failOn: 'warning',               // 'warning' | 'error' | 'truncated' | 'none'
-      maxResolution: 24 * 1000 * 1000, // default 24 mega-pixels
-      maxFrames: 1800,                 // default 1800
-      maxConcurrentProcesses: 20,      // default 20
-      timeout: '5m',                   // default '5m'
+      failOn: 'warning',                      // 'warning' | 'error' | 'truncated' | 'none'
+      maxResolution: 24 * 1000 * 1000,        // default 24 mega-pixels
+      maxFrames: 1800,                        // default 1800
+      maxTotalResolution: 500 * 1000 * 1000,  // default 500 mega-pixels
+      maxConcurrentProcesses: 20,             // default 20
+      timeout: '5m',                          // default '5m'
       lossy: {
-        maxDimension: 6000,            // default 6000
-        quality: 80                    // default 80
+        maxDimension: 6000,                   // default 6000
+        quality: 80                           // default 80
       },
       lossless: {
-        maxDimension: 6000,            // default 6000
+        maxDimension: 6000,                   // default 6000
       },
       // optional - convert images to another format at upload time
       convert: [
@@ -1206,11 +1211,14 @@ mediaLibrary: {
   Controls how strict the processing is about corrupt or non-conformant images when reading metadata. `'warning'` rejects images with any issue; `'none'` is the most permissive.
 
 - **`maxResolution`** (number, default `24_000_000`)
-  Maximum total pixel count (width × height). Uploads exceeding this are rejected. Default is 24 megapixels (e.g. 6000 × 4000 px).
+  Maximum pixel count of a single frame (width × height). Uploads exceeding this are rejected. Default is 24 megapixels (e.g. 6000 × 4000 px).
 
 - **`maxFrames`** (number, default `1800`)
   Maximum number of frames allowed for **animated images** (GIF and animated WebP). Uploads exceeding this limit are rejected.
   The default of 1800 frames corresponds to approximately 90 seconds at 20 fps, or 60 seconds at 30 fps.
+
+- **`maxTotalResolution`** (number, default `500_000_000`) {{< added-in "release-2026-09" >}}
+  Maximum pixel count across every frame of an image (width × height × frames). Uploads exceeding this are rejected. `maxResolution` applies to a single frame and `maxFrames` to their number, so without this a 24 megapixel frame repeated 1800 times would be accepted — an image that takes minutes and gigabytes of memory to decode. The default of 500 megapixels is about what a well-compressed 10MB animation reaches, and a still image counts as one frame.
 
 - **`maxConcurrentProcesses`** (number, default `20`)
   Maximum number of images processed in parallel. Lower this if uploads cause memory pressure on the server. See [Sizing the Processing Limits](#sizing-the-processing-limits).
