@@ -352,6 +352,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v296.2.61](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.61): fix(deps): automatically patch Node.js vulnerabilities
 - [v296.2.60](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.60): fix(retresco): Preserve document updatedAt when re-enriching
 - [v296.2.59](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.59): fix(deps): automatically patch Node.js vulnerabilities
 - [v296.2.58](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.58): chore(image-processing): compare decoded pixels instead of png bytes in test
