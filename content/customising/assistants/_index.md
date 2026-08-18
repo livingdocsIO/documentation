@@ -35,7 +35,7 @@ With `release-2024-11` we added the following improvements:
 - Assistant Buttons next to a focused component
 
 {{< img src="./assistant-custom-error-message.png" alt="Assistant custom error messages" >}}
-{{< img width="320" height="320" src="./assistant-focused-component-button.png" alt="Assistant Buttons next to a focused component" >}}
+{{< img width="320" src="./assistant-focused-component-button.png" alt="Assistant Buttons next to a focused component" >}}
 
 ### Document Command API
 
