@@ -1,0 +1,3 @@
+{{- /* Markdown images are not resolved in llms.txt output, which renders pages */ -}}
+{{- /* with .RenderShortcodes and so never runs this hook. Fail loudly instead. */ -}}
+{{- errorf "Use the img shortcode instead of a markdown image for %q, referenced from %s" .Destination .Position -}}
