@@ -39,7 +39,8 @@ services:
     id: GTM-K6QTH5K
 
 imaging:
-  quality: 75
+  quality: 80
+  resampleFilter: Lanczos
 
 # Files live next to the content that references them, but Hugo can only
 # resolve them as assets. The extra mount exposes content/ under both roots.
@@ -51,6 +52,13 @@ module:
       target: data
     - source: content
       target: assets
+
+# Originals are never served, only their processed WebP variants, so publish
+# resources on demand instead of copying every source image into public/.
+cascade:
+  - target: {}
+    build:
+      publishResources: false
 
 disableKinds:
   - taxonomy

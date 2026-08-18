@@ -1,4 +1,3 @@
-{{- $raw := .Get "src" -}}
-{{- $src := cond (hasPrefix $raw "https:") $raw (path.Join .Page.File.Dir $raw | relURL) -}}
+{{- $img := partial "image.html" (dict "page" .Page "src" (.Get "src") "displayWidth" (.Get "width")) -}}
 {{- $alt := or (.Get "alt") (.Get "caption") "" -}}
-![{{ $alt }}]({{ $src }}{{ with .Get "caption" }} "{{ . }}"{{ end }})
+![{{ $alt }}]({{ or $img.src (.Get "src") }}{{ with .Get "caption" }} "{{ . }}"{{ end }})

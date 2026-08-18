@@ -41,14 +41,16 @@
     {{- $rel := replaceRE `^\{\{<\s*release\s+\\?"([^"\\]+)\\?".*$` "$1" $m -}}
     {{- $text = replace $text $m (printf "[`%s`](/operations/releases/%s/)" $rel $rel) -}}
   {{- end -}}
-  {{- /* img -> markdown image; resolve src relative to the page's source dir.
-         Content-adapter pages have no .File, so fall back to the public-api root. */ -}}
+  {{- /* img -> markdown image pointing at the processed WebP. Resolved relative
+         to the page's source dir; content-adapter pages have no .File, so fall
+         back to the public-api root. */ -}}
   {{- range $m := findRE `\{\{<\s*img\s[^}]*>\}\}` $text -}}
     {{- $src := replaceRE `^.*\bsrc="([^"]+)".*$` "$1" $m -}}
     {{- $alt := cond (in $m "alt=") (replaceRE `^.*\balt="([^"]*)".*$` "$1" $m) "" -}}
     {{- $base := "reference/public-api" -}}
     {{- with $page.File }}{{ $base = .Dir }}{{ end -}}
-    {{- $text = replace $text $m (printf "![%s](%s)" $alt (path.Join $base $src | relURL)) -}}
+    {{- $img := partial "image.html" (dict "page" $page "src" $src) -}}
+    {{- $text = replace $text $m (printf "![%s](%s)" $alt (or $img.src (path.Join $base $src | relURL))) -}}
   {{- end -}}
   {{- /* warning / info paired shortcodes -> GFM alerts */ -}}
   {{- range $m := findRE `(?s)\{\{<\s*warning\s*>\}\}.*?\{\{<\s*/warning\s*>\}\}` $text -}}
