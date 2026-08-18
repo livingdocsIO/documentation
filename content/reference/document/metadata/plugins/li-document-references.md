@@ -27,7 +27,7 @@ description: |
 defaultUI: |
   Selected documents, or document selection dialog
 
-  ![image](../images/163945540-02557891-ee21-42c5-a03e-4bfb1723e228.png)
+  {{< img src="images/li-document-references-ui.png" alt="An Author field with the document John Doe selected, next to a Change link that opens the selection dialog" >}}
 storageFormat: |
   {
     $ref: 'documents',
