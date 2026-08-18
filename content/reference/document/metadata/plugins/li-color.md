@@ -25,7 +25,7 @@ description: |
 defaultUI: |
   Text input with color picker.
 
-  ![image](../images/li-color-ui.png)
+  {{< img src="images/li-color-ui.png" alt="A text input holding the hex value #8CBA51, with a swatch of that green at its right edge" >}}
 storageFormat: <String>
 contentTypeConfig: |2
         handle: 'myHandle',

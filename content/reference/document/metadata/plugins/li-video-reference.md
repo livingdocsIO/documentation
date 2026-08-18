@@ -22,7 +22,7 @@ description: A `li-video-reference` metadata field shows a list of video referen
 defaultUI: |
   Video & Poster Image Upload/Media Library Selection
 
-  ![image](../images/li-video-reference-ui.png)
+  {{< img src="images/li-video-reference-ui.png" alt="A Video field offering Upload, Media Library and Remove actions above a checkbox for using a custom poster image" >}}
 storageFormat: |
   {
     $ref: 'video',

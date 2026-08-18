@@ -97,7 +97,7 @@ To learn more, please refer to the [term variable documentation]({{< ref "/refer
 
 Editors can adjust display filters in the user interface to control which articles should be included. If enabled, they can also adjust the number of included articles.
 
-![li-document-search UI](/reference/document/metadata/li-document-search-example.png)
+{{< img src="../li-document-search-example.png" alt="li-document-search UI" >}}
 
 {{< info >}}
 When utilizing custom display filters, it is crucial to conduct thorough testing. Your display filter must be capable of restoring its state solely from the `filter`, `sort` and `context` attributes. All other attributes are not persisted. For more details, refer to our guide on how to write [custom display filters]({{< ref "/guides/editor/custom-dashboard-filters#custom-vue-component-filter" >}}).

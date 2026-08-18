@@ -9,7 +9,7 @@ In addition to the mandatory database dependencies (Postgres, Redis and Elastics
 
 Please consult the list below in case your security team needs to verify and whitelist them in your http proxy.
 
-{{< img src="images/architecture-external-services.png" >}}
+{{< img src="images/architecture-external-services.png" alt="The editing server connecting outwards to a websocket service, a DAM and feeds service and object storage, while editorial and end users load assets through a CDN backed by an image service" >}}
 
 - **Object Storage (e.g. Amazon S3, Google Cloud Storage)**:
 
@@ -88,4 +88,4 @@ The following external service hosts have to be whitelisted on the proxy for the
 
 Often times, the application processes are not allowed to have direct access to the internet for security reasons. In this case, Livingdocs can be configured to run all outgoing connections through a proxy
 
-{{< img src="images/architecture-proxy.png" >}}
+{{< img src="images/architecture-proxy.png" alt="A server node process on the internal server network and an Editor in the client browser on the internal user network, each reaching external services through its own proxy" >}}

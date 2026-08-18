@@ -1286,7 +1286,7 @@ documentLists: {
 
 ## Inline Links
 
-{{< img src="images/inline_links.png" alt="image" >}}
+{{< img src="images/inline_links.png" alt="A text formatting toolbar with the link tool active, opening an input to enter a URL or search a document above an Extended Search button" >}}
 
 ```js
 inlineLinks: {

@@ -8,15 +8,15 @@ This guide will show you how to enable and use scheduled auto publishing / un-pu
 
 Click the "Publish later" button to set a future auto publish date.
 
-![publish-later](./publish-later.png)
+{{< img src="publish-later.png" alt="publish-later" >}}
 
 A confirmation message is shown, if one wants to publish instantly while a publish later date is set.
 
-![publish-later-now](./publish-later-now.png)
+{{< img src="publish-later-now.png" alt="publish-later-now" >}}
 
 Click the "Un-Publish Later" button to set a future auto un-publish date.
 
-![un-publish-later](./un-publish-later.png)
+{{< img src="un-publish-later.png" alt="un-publish-later" >}}
 
 ## Configuration
 

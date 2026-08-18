@@ -8,7 +8,7 @@ menu: operations
 
 _Architecture diagrams source files can be found [on google drive](https://docs.google.com/document/d/1TQhW3HtzurI78kinxUCqf5OxG3RSoiEURXEn4AIztP0/edit#heading=h.snjxmn1ywzn)_
 
-{{< img src="images/architecture-stacks-apps.png" >}}
+{{< img src="images/architecture-stacks-apps.png" alt="Editorial users reach the Editor and a server in editing mode through the Editing API, end users reach a Delivery app and a server in delivery mode through the Public API, and both stacks share Elasticsearch, Postgres and Redis" >}}
 
 ## Stacks
 

@@ -23,7 +23,7 @@ description: |
 defaultUI: |
   Selected document, or document selection dialog
 
-  ![image](../images/li-document-reference-ui.png)
+  {{< img src="images/li-document-reference-ui.png" alt="An Author field with the document John Doe selected, next to a Change link that opens the selection dialog" >}}
 
 storageFormat: |
   {

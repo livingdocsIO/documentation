@@ -21,15 +21,15 @@ First we add a few [gallery components](#add-gallery-components) and a new conte
 
 Content Type "gallery"
 
-![image](../images/image-gallery-content-type.png)
+{{< img src="images/image-gallery-content-type.png" alt="The gallery content type in the editor, with a title field and two images each carrying a caption and credit" >}}
 
 Gallery Teaser Placeholder (no gallery linked yet)
 
-![image](../images/image-gallery-teaser-placeholder.png)
+{{< img src="images/image-gallery-teaser-placeholder.png" alt="An article showing the gallery teaser as a grey crossed-out placeholder because no gallery is linked yet" >}}
 
 Gallery Teaser
 
-![image](../images/image-gallery-teaser.png)
+{{< img src="images/image-gallery-teaser.png" alt="The same article with a linked gallery, the teaser now showing the gallery image titled Apple Gallery and an Image Gallery badge" >}}
 
 ## Guide
 

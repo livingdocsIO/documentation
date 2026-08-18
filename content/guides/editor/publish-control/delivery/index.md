@@ -6,7 +6,7 @@ weight: 6
 
 Delivery Builds add support for products requiring a build stage, such as generating an e-paper. They allow users to trigger an external system via webhook from within the Livingdocs editor to initiate the build process. The external system can report the build status back via the Public API. This information is displayed in the editor, providing users with an overview of the product life cycle. Delivery Builds even facilitate advanced use cases where actions and feedback need to be repeatedly exchanged between Livingdocs users and external systems.
 
-![delivery](./delivery.png)
+{{< img src="delivery.png" alt="delivery" >}}
 
 The life cycle of Delivery Builds is tracked through a status, which needs to be supplied to Public API requests.
 

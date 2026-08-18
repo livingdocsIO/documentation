@@ -9,10 +9,10 @@ Cross Project Content Sharing enables you to share content between different Liv
 
 1. Dashboards can be used to search and filter those external documents and link them to your content in metadata properties.
 
-   ![Alt text](useDashboard-table-dashboard.png)
+   {{< img src="useDashboard-table-dashboard.png" alt="Alt text" >}}
 
 2. The document card of li-document-references shows the externalSystem as label. In this case `Magazine Project`
-   ![Alt text](li-document-references-card.png)
+   {{< img src="li-document-references-card.png" alt="Alt text" >}}
 
 3. Metadata Plugins that support referencing external documents:
    - `li-document-reference`

@@ -6,7 +6,7 @@ weight: 4
 
 This guide will show you how to publish changes marked as "Significant update".
 
-![significant-update](./significant-update.png)
+{{< img src="significant-update.png" alt="significant-update" >}}
 
 ## Configuration
 

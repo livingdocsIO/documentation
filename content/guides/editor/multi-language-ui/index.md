@@ -20,7 +20,7 @@ keywords:
 This guide explains how to configure Livingdocs to show the UI in different languages. Starting with {{< release "release-2023-07" >}} the default UI language can be configured and labels from the config, e.g. metadata plugin label, can be declared in multiple languages.
 A language switcher has been added to user profile menu with {{< release "release-2023-09" >}}.
 
-![Language Switcher](language-switcher.png)
+{{< img src="language-switcher.png" alt="Language Switcher" >}}
 
 ## Configure Default UI Language
 
@@ -107,4 +107,4 @@ metadata: [
 
 Metadata plugin displayed with German translations.
 
-![label german](label-german.png)
+{{< img src="label-german.png" alt="label german" >}}
