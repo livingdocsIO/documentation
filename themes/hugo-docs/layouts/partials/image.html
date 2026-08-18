@@ -1,0 +1,65 @@
+{{- /* Resolves an image reference to processed WebP variants. */ -}}
+{{- /* Images live under content/, which hugo.yaml also mounts into assets/. */ -}}
+{{- /* src is relative to the referencing file, or absolute from the content root. */ -}}
+{{- /* Hugo only honours `return` at the top level, hence the single exit. */ -}}
+
+{{- $src := .src -}}
+{{- $displayWidth := int (default 0 .displayWidth) -}}
+{{- $result := dict -}}
+
+{{- if or (hasPrefix $src "http://") (hasPrefix $src "https://") (hasPrefix $src "//") -}}
+  {{- $result = dict "external" true "src" $src -}}
+{{- else -}}
+  {{- $dir := "" -}}
+  {{- with .page.File -}}
+    {{- $dir = .Dir -}}
+  {{- end -}}
+  {{- $path := cond (hasPrefix $src "/") (strings.TrimPrefix "/" $src) (path.Join $dir $src) -}}
+  {{- $res := resources.Get $path -}}
+
+  {{- if not $res -}}
+    {{- $result = dict "missing" true "path" $path -}}
+  {{- else if not (in (slice "png" "jpeg" "webp" "tiff" "bmp") $res.MediaType.SubType) -}}
+    {{- $result = dict "src" $res.RelPermalink -}}
+  {{- else -}}
+    {{- /* Untargeted images fill the article column, widest (~983px) below 1024px. */ -}}
+    {{- $sizes := "(min-width: 1650px) 750px, (min-width: 1280px) 620px, (min-width: 1024px) calc(100vw - 320px), calc(100vw - 40px)" -}}
+    {{- $baseWidth := 800 -}}
+    {{- if gt $displayWidth 0 -}}
+      {{- $sizes = printf "%dpx" $displayWidth -}}
+      {{- $baseWidth = $displayWidth -}}
+    {{- end -}}
+
+    {{- /* Add the 2x variant only when the source has headroom to be larger. */ -}}
+    {{- $base := int (math.Min $baseWidth $res.Width) -}}
+    {{- $widths := slice $base -}}
+    {{- if gt $res.Width (mul $base 1.5) -}}
+      {{- $widths = $widths | append (int (math.Min (mul $baseWidth 2) $res.Width)) -}}
+    {{- end -}}
+
+    {{- $variants := slice -}}
+    {{- range $widths -}}
+      {{- $variants = $variants | append ($res.Process (printf "resize %dx webp" .)) -}}
+    {{- end -}}
+
+    {{- $largest := index $variants (sub (len $variants) 1) -}}
+    {{- $srcset := "" -}}
+    {{- if gt (len $variants) 1 -}}
+      {{- $parts := slice -}}
+      {{- range $variants -}}
+        {{- $parts = $parts | append (printf "%s %dw" .RelPermalink .Width) -}}
+      {{- end -}}
+      {{- $srcset = delimit $parts ", " -}}
+    {{- end -}}
+
+    {{- $result = dict
+      "src" $largest.RelPermalink
+      "srcset" $srcset
+      "sizes" $sizes
+      "width" $largest.Width
+      "height" $largest.Height
+    -}}
+  {{- end -}}
+{{- end -}}
+
+{{- return $result -}}

@@ -28,7 +28,7 @@ We strongly recommend constantly updating your apps to make requests to the late
 
 Whenever a request is made to an API version that's not available anymore, a `410 Gone` error will be returned.
 
-![image](../api-versioning-schedule.svg)
+{{< img src="api-versioning-schedule.svg" alt="A timeline of API versions, each running through a short Current phase, a long Maintenance phase and a final Deprecation phase, with successive versions starting two months apart" >}}
 
 ### Deprecations
 

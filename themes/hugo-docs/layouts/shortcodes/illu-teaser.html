@@ -1,8 +1,9 @@
+{{- $image := partial "image.html" (dict "page" .Page "src" (.Get "image")) -}}
 <div class="illu-teaser">
   <div class="illu-teaser__image-wrapper">
     <img
       class="illu-teaser__image"
-      src="{{ .Get "image" }}"
+      src="{{ $image.src }}"
     />
   </div>
   <div class="illu-teaser__text">

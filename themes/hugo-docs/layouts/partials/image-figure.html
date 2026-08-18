@@ -1,0 +1,54 @@
+{{- /* Renders a <figure class="img">, shared by the img shortcode and the */ -}}
+{{- /* markdown image render hook so both emit identical markup. */ -}}
+
+{{- $src := .src -}}
+{{- $alt := .alt -}}
+{{- $caption := .caption -}}
+{{- $width := int (default 0 .width) -}}
+{{- $height := int (default 0 .height) -}}
+{{- $position := .position -}}
+
+{{- $img := partial "image.html" (dict "src" $src "page" .page "displayWidth" $width) -}}
+
+
+<figure class="img">
+  {{- if $img.external }}
+    {{- warnf "Please do not link to external images. The image in %s referenced %s" $position $src }}
+    <img
+      src="{{ $img.src }}"
+      {{ with $alt }}alt='{{ . }}'{{ end }}
+    />
+  {{- else if $img.missing }}
+    {{- $notfound := resources.Get "svg/not-found.svg" | fingerprint }}
+    {{- warnf "Image '%s' not found. It was referenced from %s" $img.path $position }}
+    <img
+      src="{{ $notfound.RelPermalink }}"
+      width="600"
+      height="300"
+      alt="Image Not Found"
+    />
+  {{- else }}
+    {{- $intrinsicWidth := int (default 0 $img.width) -}}
+    {{- $intrinsicHeight := int (default 0 $img.height) -}}
+    {{- /* An author-set width is a display width, so scale the height hint to match. */ -}}
+    {{- if and (gt $width 0) (eq $height 0) (gt $intrinsicWidth 0) -}}
+      {{- $height = int (math.Round (mul $width (div (float $intrinsicHeight) $intrinsicWidth))) -}}
+    {{- end -}}
+    <img
+      src="{{ $img.src }}"
+      {{- with $img.srcset }}
+        srcset="{{ . }}" sizes="{{ $img.sizes }}"
+      {{- end }}
+      {{- with (or $width $intrinsicWidth) }}
+        width="{{ . }}"
+      {{- end }}
+      {{- with (or $height $intrinsicHeight) }}
+        height="{{ . }}"
+      {{- end }}
+      {{- with $alt }}
+        alt='{{ . }}'
+      {{- end }}
+    />
+    {{- with $caption }}<figcaption>{{ . }}</figcaption>{{ end }}
+  {{- end }}
+</figure>
