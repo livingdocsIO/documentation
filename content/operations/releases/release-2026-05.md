@@ -574,17 +574,15 @@ This release we have patched the following vulnerabilities in the Livingdocs Ser
 
 ### Livingdocs Editor
 
-We are aware of the following vulnerabilities in the Livingdocs Editor:
-
-- [CVE-2023-44270](https://github.com/advisories/GHSA-7fh5-64p2-3v2j) vulnerability in `postcss`, it affects linters using PostCSS to parse external Cascading Style Sheets (CSS). It is not exploitable in the editor as we don't load untrusted external CSS at build time.
-- [CVE-2022-25844](https://github.com/advisories/GHSA-m2h2-264f-f486), [CVE-2022-25869](https://github.com/advisories/GHSA-prc3-vjfx-vhm9), [CVE-2023-26116](https://github.com/advisories/GHSA-2vrf-hf26-jrp5), [CVE-2023-26117](https://github.com/advisories/GHSA-2qqx-w9hr-q5gx), [CVE-2023-26118](https://github.com/advisories/GHSA-qwqh-hm9m-p5hr), [CVE-2024-8372](https://github.com/advisories/GHSA-m9gf-397r-hwpg), [CVE-2024-8373](https://github.com/advisories/GHSA-mqm9-c95h-x2p6), [CVE-2024-21490](https://github.com/advisories/GHSA-4w4v-5hc9-xrr2), [CVE-2025-0716](https://github.com/advisories/GHSA-j58c-ww9w-pwp5) are all AngularJS vulnerabilities that don't have a patch available. We are working on removing all AngularJS from our code and vulnerabilities will go away when we complete the transition to Vue.js.
-- [CVE-2024-9506](https://github.com/advisories/GHSA-5j4c-8p2g-v4jx) vulnerability in `vue`, an ReDoS vulnerability exploitable through inefficient regex evaluation in parseHTML function. The issue can cause excessive CPU usage but is not exploitable in the editor as we don't load untrusted HTML at runtime.
+This release we haven't patched any vulnerabilities in the Livingdocs Editor.
+There are no known vulnerabilities. :tada:
 
 ## Patches
 
 Patches typically fix bugs and apply improvements within the current release. Keeping your deployment up-to-date with the latest patch version means you benefit from those fixes. No explicit action is required per patch — bumping the version is enough.
 
 ### Livingdocs Server Patches
+
 - [v301.1.38](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.38): fix(deps): automatically patch Node.js vulnerabilities
 - [v301.1.37](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.37): fix(retresco): Preserve document updatedAt when re-enriching
 - [v301.1.36](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.36): fix(deps): automatically patch Node.js vulnerabilities
@@ -601,7 +599,6 @@ Patches typically fix bugs and apply improvements within the current release. Ke
 - [v301.1.25](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.25): fix(media-library): add file extension to image downloads in Chrome and Edge
 - [v301.1.24](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.24): fix(deps): bump @opentelemetry to ^0.219 to remove vulnerable protobufjs 8.0.1
 - [v301.1.23](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.23): fix: comply with demo platform code rules
-
 - [v301.1.22](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.22): fix: Trigger release after deps update
 - [v301.1.21](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.21): fix(deps): update livingdocs-patch
 - [v301.1.20](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.20): fix: remove server-lib workspace
@@ -620,15 +617,13 @@ Patches typically fix bugs and apply improvements within the current release. Ke
 - [v301.1.7](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.7): fix(deps): update dependency ws from 8.20.0 to 8.20.1 [security]
 - [v301.1.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.6): fix(migrations): Only generate statistics and references with content
 - [v301.1.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.5): test: Adjust transform tests to account for serialized component IDs
-
 - [v301.1.4](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.4): fix(image-collections): add breaking change to not use any dashboards with handle imageCollections
 - [v301.1.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.3): fix(blob-store): suppress late AbortError from Azure download streams
-
 - [v301.1.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.2): fix(deps): update dependency @opentelemetry/sdk-node from 0.215.0 to 0.217.0 [security]
-
 - [v301.1.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.1): fix(release-2026-05): Update framework to v34.0.3 (release-2026-05 tag)
 
 ### Livingdocs Editor Patches
+
 - [v123.21.46](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.46): fix(deps): update dependency pdfjs-dist from 5.7.284 to 6.2.108 [security]
 - [v123.21.45](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.45): fix(deps): update dependency sanitize-html from 2.17.4 to 2.17.5 [security]
 - [v123.21.44](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.44): refactor(document-inbox): Use clearer names in drag auto-scroll
@@ -650,7 +645,6 @@ Patches typically fix bugs and apply improvements within the current release. Ke
 - [v123.21.28](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.28): fix: trigger a new release version
 - [v123.21.27](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.27): fix(deps): ship angular, vue and vue-demi TuxCare forks as direct deps
 - [v123.21.26](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.26): fix: show component groups with translated labels
-
 - [v123.21.25](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.25): fix(media-library): Prevent li-metadata-translations save on open
 - [v123.21.24](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.24): fix(deps): update livingdocs-patch from 34.0.5 to v34.0.6
 - [v123.21.23](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.23): fix(deps): update dependency js-yaml from 4.1.1 to 4.2.0 [security]
@@ -668,13 +662,10 @@ Patches typically fix bugs and apply improvements within the current release. Ke
 - [v123.21.11](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.11): fix(project-config): show kordiam form and nav
 - [v123.21.10](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.10): fix(drafts): Reload editor when document contentType changes via remote update
 - [v123.21.9](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.9): fix(deps): update dependency sanitize-html from 2.17.3 to 2.17.4 [security]
-
 - [v123.21.8](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.8): fix(image-collections): add imageCollections as coreItem instead of enrichedItem
 - [v123.21.7](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.7): fix(image-collections): use container's filtered items for move position
-
 - [v123.21.6](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.6): fix(deps): automatically patch Node.js vulnerabilities
 - [v123.21.5](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.5): fix(includes): expose params getter to maintain public API for tests
-
 - [v123.21.4](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.4): fix: hide images count earlier to prevent overlap with batch actions
 - [v123.21.3](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.3): fix(media-library): Hide state of media source items
 - [v123.21.2](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.2): fix(publish-control): Use correct publishControlMode for labels

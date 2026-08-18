@@ -528,17 +528,15 @@ There are no known vulnerabilities. :tada:
 
 ### Livingdocs Editor
 
-We are aware of the following vulnerabilities in the Livingdocs Editor:
-
-- [CVE-2023-44270](https://github.com/advisories/GHSA-7fh5-64p2-3v2j) vulnerability in `postcss`, it affects linters using PostCSS to parse external Cascading Style Sheets (CSS). It is not exploitable in the editor as we don't load untrusted external CSS at build time.
-- [CVE-2022-25844](https://github.com/advisories/GHSA-m2h2-264f-f486), [CVE-2022-25869](https://github.com/advisories/GHSA-prc3-vjfx-vhm9), [CVE-2023-26116](https://github.com/advisories/GHSA-2vrf-hf26-jrp5), [CVE-2023-26117](https://github.com/advisories/GHSA-2qqx-w9hr-q5gx), [CVE-2023-26118](https://github.com/advisories/GHSA-qwqh-hm9m-p5hr), [CVE-2024-8372](https://github.com/advisories/GHSA-m9gf-397r-hwpg), [CVE-2024-8373](https://github.com/advisories/GHSA-mqm9-c95h-x2p6), [CVE-2024-21490](https://github.com/advisories/GHSA-4w4v-5hc9-xrr2), [CVE-2025-0716](https://github.com/advisories/GHSA-j58c-ww9w-pwp5) are all AngularJS vulnerabilities that don't have a patch available. We are working on removing all AngularJS from our code and vulnerabilities will go away when we complete the transition to Vue.js.
-- [CVE-2024-9506](https://github.com/advisories/GHSA-5j4c-8p2g-v4jx) vulnerability in `vue`, an ReDoS vulnerability exploitable through inefficient regex evaluation in parseHTML function. The issue can cause excessive CPU usage but is not exploitable in the editor as we don't load untrusted HTML at runtime.
+This release we haven't patched any vulnerabilities in the Livingdocs Editor.
+There are no known vulnerabilities. :tada:
 
 ## Patches
 
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+
 - [v308.1.20](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.20): fix(deps): automatically patch Node.js vulnerabilities
 - [v308.1.19](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.19): fix(indexing): Make indexing consumer stop less noisy on server shutdown
 - [v308.1.18](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.18): fix(retresco): Preserve document updatedAt when re-enriching
@@ -554,13 +552,12 @@ Here is a list of all patches after the release has been announced.
 - [v308.1.8](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.8): fix(includes): speed up regression test
 - [v308.1.7](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.7): fix(deps): automatically patch Node.js vulnerabilities
 - [v308.1.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.6): fix(image-processing): Avoid truncated flag for exact file size match
-
 - [v308.1.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.5): fix(media-library): add file extension to image downloads in Chrome and Edge
-
 - [v308.1.4](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.4): fix(license-profile): allow internal usagePurposes without recordUsageLogEntry
 - [v308.1.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.3): fix(print): Renumber huGO print breaking change to LIBREAKING071
 
 ### Livingdocs Editor Patches
+
 - [v126.1.22](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.22): fix(deps): update dependency pdfjs-dist from 6.1.200 to 6.2.108 [security]
 - [v126.1.21](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.21): fix(metadata): build image urls with crop and original dimensions
 - [v126.1.20](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.20): fix(multilist-editor): Use correct permission to enable multilist editor
@@ -572,12 +569,10 @@ Here is a list of all patches after the release has been announced.
 - [v126.1.14](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.14): fix(draft-storage): Persist unsaved content while saving is disabled
 - [v126.1.13](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.13): fix(dates): add nb-NO and nn-NO to relative-time locales
 - [v126.1.12](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.12): fix(metadata): report initial form validity on mount
-
 - [v126.1.11](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.11): fix: toggle include overrides of only focused component
 - [v126.1.10](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.10): fix: keep drag scroll working after window resize
 - [v126.1.9](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.9): fix(search): Stop cheat sheet flyout from being pushed below the button
 - [v126.1.8](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.8): fix(media-library): add standard cost class translation to license profile form
-
 - [v126.1.7](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.7): fix(media-library): hide license profile tag when profiles not configured
 - [v126.1.6](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.6): fix(media-library): hide media state badge on empty image placeholder
 - [v126.1.5](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.5): fix(metadata): initialize named crops once the image is available

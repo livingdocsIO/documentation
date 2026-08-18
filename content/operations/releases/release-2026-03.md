@@ -340,18 +340,18 @@ This release we have patched the following vulnerabilities in the Livingdocs Edi
 - [CVE-2026-25639 / GHSA-43fc-jf86-j433](https://github.com/advisories/GHSA-43fc-jf86-j433) patched in axios v1.13.5
 - [CVE-2025-13465 / GHSA-xxjr-mmjv-4gpg](https://github.com/advisories/GHSA-xxjr-mmjv-4gpg) patched in lodash v4.17.23
 - [GHSA-73rr-hh4g-fpgx](https://github.com/kpdecker/jsdiff/security/advisories/GHSA-73rr-hh4g-fpgx) patched in diff v8.0.0
+- [CVE-2023-44270](https://github.com/advisories/GHSA-7fh5-64p2-3v2j) patched in postcss v8.4.31
+- [CVE-2022-25844](https://github.com/advisories/GHSA-m2h2-264f-f486), [CVE-2022-25869](https://github.com/advisories/GHSA-prc3-vjfx-vhm9), [CVE-2023-26116](https://github.com/advisories/GHSA-2vrf-hf26-jrp5), [CVE-2023-26117](https://github.com/advisories/GHSA-2qqx-w9hr-q5gx), [CVE-2023-26118](https://github.com/advisories/GHSA-qwqh-hm9m-p5hr), [CVE-2024-8372](https://github.com/advisories/GHSA-m9gf-397r-hwpg), [CVE-2024-8373](https://github.com/advisories/GHSA-mqm9-c95h-x2p6), [CVE-2024-21490](https://github.com/advisories/GHSA-4w4v-5hc9-xrr2), [CVE-2025-0716](https://github.com/advisories/GHSA-j58c-ww9w-pwp5) all patched with TuxCare Long Term Support License for AngularJS
+- [CVE-2024-9506](https://github.com/advisories/GHSA-5j4c-8p2g-v4jx) patched with TuxCare Long Term Support License for Vue
 
-We are aware of the following vulnerabilities in the Livingdocs Editor:
-
-- [CVE-2023-44270](https://github.com/advisories/GHSA-7fh5-64p2-3v2j) vulnerability in `postcss`, it affects linters using PostCSS to parse external Cascading Style Sheets (CSS). It is not exploitable in the editor as we don't load untrusted external CSS at build time.
-- [CVE-2022-25844](https://github.com/advisories/GHSA-m2h2-264f-f486), [CVE-2022-25869](https://github.com/advisories/GHSA-prc3-vjfx-vhm9), [CVE-2023-26116](https://github.com/advisories/GHSA-2vrf-hf26-jrp5), [CVE-2023-26117](https://github.com/advisories/GHSA-2qqx-w9hr-q5gx), [CVE-2023-26118](https://github.com/advisories/GHSA-qwqh-hm9m-p5hr), [CVE-2024-8372](https://github.com/advisories/GHSA-m9gf-397r-hwpg), [CVE-2024-8373](https://github.com/advisories/GHSA-mqm9-c95h-x2p6), [CVE-2024-21490](https://github.com/advisories/GHSA-4w4v-5hc9-xrr2), [CVE-2025-0716](https://github.com/advisories/GHSA-j58c-ww9w-pwp5) are all AngularJS vulnerabilities that don't have a patch available. We are working on removing all AngularJS from our code and vulnerabilities will go away when we complete the transition to Vue.js.
-- [CVE-2024-9506](https://github.com/advisories/GHSA-5j4c-8p2g-v4jx) vulnerability in `vue`, an ReDoS vulnerability exploitable through inefficient regex evaluation in parseHTML function. The issue can cause excessive CPU usage but is not exploitable in the editor as we don't load untrusted HTML at runtime.
+No known vulnerabilities. :tada:
 
 ## Patches
 
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+
 - [v296.2.61](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.61): fix(deps): automatically patch Node.js vulnerabilities
 - [v296.2.60](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.60): fix(retresco): Preserve document updatedAt when re-enriching
 - [v296.2.59](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.59): fix(deps): automatically patch Node.js vulnerabilities
@@ -407,7 +407,6 @@ Here is a list of all patches after the release has been announced.
 - [v296.2.9](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.9): fix(deps): update dependency file-type from 21.3.0 to 21.3.2 [security]
 - [v296.2.8](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.8): fix(media-library): Don't replace time in usage log reporting date
 - [v296.2.7](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.7): fix(image-collections): remove custom desktop/mobile create label for simplicity
-
 - [v296.2.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.6): fix(deps): update dependency fastify from 5.7.4 to 5.8.1 [security]
 - [v296.2.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.5): refactor: rename preserveDate to preserveUpdatedAt
 - [v296.2.4](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.4): refactor(image-rotation): retry logic and sanity checks
@@ -416,6 +415,7 @@ Here is a list of all patches after the release has been announced.
 - [v296.2.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.1): fix(deps): update dependency @livingdocs/framework from 32.12.6 to v32.12.7
 
 ### Livingdocs Editor Patches
+
 - [v123.10.73](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.73): fix(deps): update dependency nanoid to v5.1.16 [security]
 - [v123.10.72](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.72): fix(deps): update dependency sanitize-html from 2.17.4 to 2.17.5 [security]
 - [v123.10.71](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.71): fix(metadata): build image urls with crop and original dimensions
@@ -472,9 +472,7 @@ Here is a list of all patches after the release has been announced.
 - [v123.10.20](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.20): fix: request confirmation before archiving a group
 - [v123.10.19](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.19): fix: add scroll offset
 - [v123.10.18](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.18): fix(image-collections): remove specific mobile/desktop label after refactoring
-
 - [v123.10.17](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.17): fix(app navigation): Line wrapping
-
 - [v123.10.16](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.16): fix(deps): update dependency fastify from 5.7.4 to 5.8.1 [security]
 - [v123.10.15](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.15): fix(image-collections): prevent check of undefined
 - [v123.10.14](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.14): fix: add an early return guard if onDrag is not a function
