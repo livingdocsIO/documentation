@@ -27,7 +27,7 @@ description: |
 defaultUI: |
   Select input
 
-  ![image](../images/li-enum-ui.png)
+  {{< img src="images/li-enum-ui.png" alt="A required select field labelled foo label, its dropdown open on the options Tag A, Tag B and Tag C" >}}
 storageFormat: <String>
 contentTypeConfig: |2
         handle: 'myHandle'

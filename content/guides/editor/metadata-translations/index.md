@@ -9,7 +9,7 @@ weight: 5
 
 This guide explains you how to enable metadata translations for Data Records.
 
-![image](./metadata-translations-form.png)
+{{< img src="metadata-translations-form.png" alt="A metadata form on the EN language tab, with the German Title shown beneath it for comparison and the untranslatable Prename, Surname and Shortname fields locked" >}}
 
 ## Add Available Languages
 

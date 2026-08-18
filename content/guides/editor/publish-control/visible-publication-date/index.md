@@ -6,8 +6,8 @@ weight: 5
 
 This guide will show you how to view and edit the visible publication date of an article. One can find the publication date in the lower section of the publication control panel.
 
-![publication-date-view](./publication-date-view.png)
-![publication-date-edit](./publication-date-edit.png)
+{{< img src="publication-date-view.png" alt="publication-date-view" >}}
+{{< img src="publication-date-edit.png" alt="publication-date-edit" >}}
 
 ## Configuration
 

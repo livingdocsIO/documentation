@@ -14,7 +14,7 @@ Use of this Document Copy feature is no longer recommended. For new setups pleas
 
 If everything is set up correctly, one can open a document, click on "Copy" in the toolbar and a copy modal opens, e.g.
 
-{{< img src="copy-article.png" alt="image" >}}
+{{< img src="copy-article.png" alt="A copy dialog for a regular article, set to Copy rather than Transform, offering the Web targets Web Article, Gallery Article and Page and the Print target Print Article" >}}
 
 In the following sections you learn to know three different ways to copy a document.
 

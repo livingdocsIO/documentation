@@ -686,7 +686,7 @@ You can configure it multiple times on the same ContentType and the handle does 
 
 The text formatting toolbar can be customized per content-type in addition to the global config in the [editor settings]({{< ref "editor-settings" >}}).
 
-{{< img src="images/text_formatting.png" alt="image" >}}
+{{< img src="images/text_formatting.png" alt="A formatting toolbar above a line of text, offering bold, italic, quotation marks, angle quotes, link, comment and highlight" >}}
 
 Enable or disable the existing elements for text formatting.
 
@@ -914,11 +914,11 @@ The "Send to inbox" option will only be displayed in a media library entry's con
 
 Send an asset to a document inbox (Media Library):
 
-![image](../images/send-to-inbox-context-menu-button.png)
+{{< img src="images/send-to-inbox-context-menu-button.png" alt="A media library entry context menu listing Download, Edit, Archive and Send to Inbox" >}}
 
 Show asset inbox of a document in the Editor:
 
-![image](../images/asset-inbox-button.png)
+{{< img src="images/asset-inbox-button.png" alt="The Inbox button in the editor toolbar with a badge showing one waiting asset" >}}
 
 Images can be assigned to an Inbox multiple times at the same time. They appear alongside documents and have the same sorting and grouping functionality. It is also possible to add an Image to the Inbox directly from the Inbox using the "Add Image" button.
 

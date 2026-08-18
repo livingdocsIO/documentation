@@ -25,7 +25,7 @@ description: |
 defaultUI: |
   Built-in language selection UI
 
-  ![image](../images/li-metadata-translations-ui.png)
+  {{< img src="images/li-metadata-translations-ui.png" alt="A Title field on the EN language tab reading Title EN, with the German value shown beneath it for comparison" >}}
 storageFormat: |
   {
     locale: <String>,

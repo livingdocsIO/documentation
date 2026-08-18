@@ -17,7 +17,7 @@ See the [mediaType reference]({{< ref "/reference/project-config/media-types.md"
 When you have configured mediaTypes, you will get buttons to let users insert `Images`, `Videos` and `Files` from the Document Editing Toolbar automatically.
 <br>
 <br>
-![Editing Toolbar](editing-toolbar.png)
+{{< img src="editing-toolbar.png" alt="Editing Toolbar" >}}
 
 When users click these buttons, the Media Library opens in the sidepanel of the document editor.
 Alternatively, they can open the Media Library from the main navigation.
@@ -488,10 +488,10 @@ module.exports = {
 For Videos, you want to have a poster image displayed in your Video Player before the Video starts playing. Livingdocs provides a metadata plugin to manage this image.
 
 When configured, a UI to manage the image is provided.
-![poster image](poster-image.png)
+{{< img src="poster-image.png" alt="poster image" >}}
 
 You can even select a specific frame of the video by pausing the player and selecting the current frame as the poster image.
-![poster image frame selection](poster-image-frame-selection.png)
+{{< img src="poster-image-frame-selection.png" alt="poster image frame selection" >}}
 
 Images stored with this metadata plugin will contain one crop in the aspect ratio of the video file automatically. A user can change the zoom and position but not the aspect ratio of that crop.
 
@@ -554,10 +554,10 @@ manages the transcoding state.
 When configured, the transcoding state of a Video is shown in the UI.
 
 Initial state:
-![Initial transcoding state](transcoding-state-zero.png)
+{{< img src="transcoding-state-zero.png" alt="Initial transcoding state" >}}
 
 After transcoding:
-![Final transcoding state](transcoding-state-done.png)
+{{< img src="transcoding-state-done.png" alt="Final transcoding state" >}}
 
 #### li-transcoding-state metadata plugin
 
@@ -694,7 +694,7 @@ module.exports = {
 
 When working with image agency feeds, users often need to visually scan through large volumes of images, for example to pick relevant photos from a live coverage event or to identify the start and end of a photo series. The thumbnail size on Media Library Dashboard screens can be adjusted to fit these needs.
 
-![Media Library with adjustable thumbnail sizes](thumbnail-sizes.png)
+{{< img src="thumbnail-sizes.png" alt="Media Library with adjustable thumbnail sizes" >}}
 
 Three sizes are available: **Small (S)**, **Medium (M)** and **Large (L)**. The number of columns adjusts based on the screen width and the selected size.
 

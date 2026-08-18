@@ -29,7 +29,7 @@ app: {
 
 Availability of advanced features such as component search and collapsable component groups.
 
-![image](../images/insert-panel-advanced-component-groups.png)
+{{< img src="images/insert-panel-advanced-component-groups.png" alt="The Insert panel on its Components tab, showing the component filter box above a collapsable TEXT group" >}}
 
 The search is automatically activated if there are more than 8 components.
 
@@ -39,7 +39,7 @@ The search is automatically activated if there are more than 8 components.
 
 Visibility of the "Transform Component" select menu can be configured.
 
-![image](../images/properties-panel-transform-component.png)
+{{< img src="images/properties-panel-transform-component.png" alt="The Transform Component section of the properties panel, expanded on a paragraph to offer Lead, Subtitle and Title" >}}
 
 ```js
 app: {
@@ -146,7 +146,7 @@ Iframely is used for 2 things:
 
 When you have your own Iframely account, you should disable this [setting](https://iframely.com/settings/app) (red arrow) to prevent issues with link external link validation in Livingdocs.
 
-![image](../images/iframely-settings-screen.png)
+{{< img src="images/iframely-settings-screen.png" alt="The Iframely app settings page, with a red arrow pointing at the unchecked option for URLs Iframely could not generate embed codes for" >}}
 
 ### Spellcheck
 
