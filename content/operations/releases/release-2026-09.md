@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [chore(deps): update aws-sdk from 3.1110.0 to v3.1111.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/9894)
 - [Replace the image cropping tool with Pintura](https://github.com/livingdocsIO/livingdocs-editor/pull/11359)
 - [chore(deps): update dependency mocha from 12.0.0-rc.5 to v12.0.0-rc.6 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/11455)
 - [Preserve document updatedAt when re-enriching Retresco metadata](https://github.com/livingdocsIO/livingdocs-server/pull/9858)
