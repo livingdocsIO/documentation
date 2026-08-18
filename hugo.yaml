@@ -41,6 +41,17 @@ services:
 imaging:
   quality: 75
 
+# Files live next to the content that references them, but Hugo can only
+# resolve them as assets. The extra mount exposes content/ under both roots.
+module:
+  mounts:
+    - source: content
+      target: content
+    - source: data
+      target: data
+    - source: content
+      target: assets
+
 disableKinds:
   - taxonomy
   - term

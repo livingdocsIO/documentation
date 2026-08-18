@@ -78,7 +78,7 @@ As of {{< release "release-2025-03" >}}, documents are delivered with the newest
 
 Now, create a new article and you should have a Header component in the sidebar to drag in. Beautiful!
 
-[Git patch for those changes](./add-component-patch.patch)
+{{< download src="./add-component-patch.patch" title="Git patch for those changes" >}}
 
 #### Configure default content
 
@@ -101,6 +101,6 @@ Again, restart your server. In case of success you will see a line on the CLI li
 
 Create a new article in the editor. It should have an empty header followed by an empty paragraph in it by default and when you select the header, the property panel reads "This component is pinned to its position." and there is no delete option.
 
-[Git patch for those changes](add-default-content.patch)
+{{< download src="./add-default-content.patch" title="Git patch for those changes" >}}
 
 Congratulations, you've taken your first steps in a Livingdocs Design! To learn more about designs, refer to [the design reference documentation]({{< ref "/reference/document/document-design" >}}).

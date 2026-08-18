@@ -1,0 +1,15 @@
+{{- /* Links a file next to the page. Resolving it as a resource is what */ -}}
+{{- /* publishes it, since hugo.yaml publishes resources on demand only. */ -}}
+{{- $src := .Get "src" -}}
+{{- $res := resources.Get (path.Join .Page.File.Dir $src) -}}
+{{- with $res -}}
+  <p>
+    <a
+      href="{{ .RelPermalink }}"
+      download
+      >{{ $.Get "title" }}</a
+    >
+  </p>
+{{- else -}}
+  {{- errorf "Download '%s' not found. It was referenced from %s" $src .Position -}}
+{{- end -}}
