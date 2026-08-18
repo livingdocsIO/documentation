@@ -64,14 +64,14 @@ header:
 
 When the user uploads images or videos, a new Upload Center is visible in the bottom right corner of the editor screen allowing the users to continue their work in the document while assets are uploaded in parallel in the background. If an error with any of the uploads happens it is shown and logged in the upload center.
 
-<img width="377" alt="Screenshot 2021-03-08 at 21 26 16" src="https://user-images.githubusercontent.com/821875/110377665-f884e800-8054-11eb-9891-3f06aafc45ae.png">
+{{< img src="release-2021-03-upload-center.png" alt="The Upload Center listing three uploads, one completed, one rejected for wrong metadata and one still uploading" width="377" >}}
 
 References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4145)
 
 
 ### Media Library - Media Sources :tada:
 
-![image](https://user-images.githubusercontent.com/821875/107018818-35816480-67a1-11eb-945e-02f4838c5b61.png)
+{{< img src="release-2021-03-media-sources.png" alt="The image insert panel listing results from the Livingdocs Images and Unsplash media sources" >}}
 
 Allow to connect/integrate external asset services (e.g. Unsplash, Shutterstock, Pixabay, ...) as a Media Source in the Livingdocs Media Library. Working with a Media Source in Livingdocs feels the same as working with other assets of the Media Library.
 The examples from the Livingdocs core all include free open source platforms, but of course one could also use media sources to integrate external DAM systems that might already be present in a publishers system landscape and by that consolidate the asset workflow for the journalists into Livingdocs.
@@ -97,7 +97,7 @@ References:
 
 ### Media Library - Videos :tada:
 
-![image](https://user-images.githubusercontent.com/4352425/98831646-2312bb80-243c-11eb-9211-5ea665b7e22c.png)
+{{< img src="release-2021-03-videos.png" alt="The Media Library showing video entries with their durations" >}}
 
 With this release we extend the [videos integration in the Media Library]({{< ref "/guides/media-library/media-library-setup/#videos" >}}) with new features:
 
@@ -128,7 +128,7 @@ References:
 
 The Named Crops feature supports multiple crops per image in a document. This allows to preset crops on the source images in the Media Library and on demand overwrite those crops on the image inside an article. Also, the API now provides several crops per image as defined in the named crops settings.
 
-<img width="589" src="https://user-images.githubusercontent.com/821875/103688930-dc9c9180-4f92-11eb-894d-45ae105e72a4.png">
+{{< img src="release-2021-03-named-crops.png" alt="A Named Crops row showing the desktop, graphic, mobile and superflex crops of one image" width="589" >}}
 
 
 References:
@@ -141,7 +141,7 @@ References:
 
 ### Notifications
 
-<img width="285" alt="Screenshot 2021-03-03 at 17 19 37" src="https://user-images.githubusercontent.com/821875/109836673-af8ff680-7c44-11eb-8e21-628a4016ef87.png">
+{{< img src="release-2021-03-notifications.png" alt="The Notifications panel with Publish Events selected among All Events, Proofreading events and Ignore" width="285" >}}
 
 Notifications allow a user to subscribe to specific events of a document (e.g. a publish) and notifies this user via mail/slack when this event happens. Currently we support notification of task changes to the task requester and notification of document status changes to the document author.
 
@@ -200,7 +200,7 @@ References:
 
 A server admin can now reindex every existing index.
 
-![image](https://user-images.githubusercontent.com/431376/108784781-64a11f80-7570-11eb-92eb-7e3604c7b330.png)
+{{< img src="release-2021-03-indexing-ui.png" alt="The Indexing screen listing every configured index with its own reindex button" >}}
 
 References:
   *  [Editor PR](https://github.com/livingdocsIO/livingdocs-server/pull/3409)
