@@ -78,7 +78,7 @@ The multilist editor lets a user view and edit multiple document lists in one sc
 - lists can individually be filtered (visible/invisible)
 - optionally it shows the inbox for one specific document.
 
-![image](https://user-images.githubusercontent.com/172394/139450007-aba52431-b828-4d58-adba-1700a57bc498.png)
+{{< img src="release-2021-11-multilist-editor.png" alt="The Lists on page toolbar action beside a Show lists dropdown toggling the Headlines, International and Domestic lists" >}}
 
 * References
   * [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4760)

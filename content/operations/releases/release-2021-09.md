@@ -110,10 +110,10 @@ We now support list teasers as includes without registering your own plugin.
 
 With the introduction of more an more actions in the Document Editing Toolbar, space was getting rare, especially on smaller screens. Therefore a responsive editing toolbar has been introduced which collapse actions to groups when there is not enough space.
 
-![Screenshot 2021-07-06 at 12 51 19](https://user-images.githubusercontent.com/821875/124588351-fd1da980-de58-11eb-87b8-ec5d3e9cda02.png)
-![Screenshot 2021-07-06 at 12 51 38](https://user-images.githubusercontent.com/821875/124588354-fdb64000-de58-11eb-8c7a-8fd6b68a830b.png)
-![Screenshot 2021-07-06 at 12 51 57](https://user-images.githubusercontent.com/821875/124588356-fe4ed680-de58-11eb-928f-e99dbddacce7.png)
-![Screenshot 2021-07-06 at 12 53 02](https://user-images.githubusercontent.com/821875/124588454-1aeb0e80-de59-11eb-8895-bbcf59ebc960.png)
+{{< img src="release-2021-09-responsive-editing-toolbar-1.png" alt="The editing toolbar at full width, with every action shown individually" >}}
+{{< img src="release-2021-09-responsive-editing-toolbar-2.png" alt="The same toolbar narrower, with proofreading and selection mode collapsed into a Tools group" >}}
+{{< img src="release-2021-09-responsive-editing-toolbar-3.png" alt="The toolbar narrower still, with preview and history collapsed into a View group" >}}
+{{< img src="release-2021-09-responsive-editing-toolbar-4.png" alt="The toolbar at its narrowest, reduced to View, Tools and Content groups" >}}
 
 * References
   * [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4245)
