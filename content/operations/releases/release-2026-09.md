@@ -228,11 +228,15 @@ Processing an image is the most resource-hungry thing the server does, and sever
 
 - **`timeout`** (default `'5m'`) puts a time limit on transforming an upload or generating a variant. Nothing interrupted that work before, and `maxFrames` together with `maxResolution` permits images that would occupy a processing slot for close to an hour.
 
-- **`maxTotalResolution`** (default `500` megapixels) limits the pixels of every frame of an image together. `maxResolution` applies to one frame and `maxFrames` to their number, so the two of them accepted a 24 megapixel frame repeated 1800 times — minutes of work and gigabytes of memory for a single upload. Animated images used to be capped at 10MB, which this replaces: the new limit is roughly what a well-compressed 10MB animation reaches, while the file itself may now be as large as `uploadRestrictions.maxFileSize`.
+- **`maxTotalResolution`** (default `200` megapixels) limits the pixels of every frame of an image together. `maxResolution` applies to one frame and `maxFrames` to their number, so the two of them accepted a 24 megapixel frame repeated 1800 times — an image needing 170GB of memory to decode. Decoding costs about 4 bytes for every pixel of every frame and holds the whole image at once, which makes this the limit that bounds how much memory one image can take: 200 megapixels is roughly 800MB. The default matches the guidance of Imgix. It replaces the 10MB cap on animated images, so the file itself may now be as large as `uploadRestrictions.maxFileSize`.
 
 - **`maxConcurrentResizes`** (default `4`) limits how many image variants are generated at the same time. Their number was previously unbounded, so a cold cache filled Node.js' thread pool with a backlog that every other file and DNS operation in the process had to wait behind.
 
 - **`maxConcurrentProcesses`** keeps its name and its default of `20`, but now covers an upload from start to finish. It used to release its slot before the image was transformed and stored, which left those unbounded.
+
+{{< warning >}}
+`maxTotalResolution` is not simply more permissive than the 10MB cap it replaces. Real animations measure 14 to 46 megapixels per megabyte, so at the dense end of that range a file between roughly 4.5MB and 10MB carries 200 to 460 megapixels — accepted before this release, rejected now. A 9.5MB animation of 440 megapixels is the realistic case. Raise `maxTotalResolution` if you need to keep accepting them, and scale the container's memory in proportion.
+{{< /warning >}}
 
 Three further changes need no configuration: concurrent requests for the same uncached variant share a single job rather than each generating it, image processing uses one thread per image instead of one per CPU core the container can see, and an image upload has 15 minutes to complete instead of 4.
 
