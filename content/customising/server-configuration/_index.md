@@ -1160,7 +1160,7 @@ mediaLibrary: {
 - **`maxTotalResolution`** (number, default `200_000_000`) {{< added-in "release-2026-09" >}}
   Maximum pixel count across every frame of an image (width × height × frames). Uploads exceeding this are rejected. `maxResolution` applies to a single frame and `maxFrames` to their number, so without this a 24 megapixel frame repeated 1800 times would be accepted — an image needing 170GB of memory to decode. A still image counts as one frame.
 
-  Decoding an image needs about 4 bytes for every pixel of every frame, so this limit is what bounds the memory one image can take: 200 megapixels is roughly 800MB. Raising it raises that figure in proportion, and the memory is native rather than heap, so a container that runs out is killed outright instead of raising an error. Read [Sizing the Processing Limits](#sizing-the-processing-limits) before changing it.
+  An animated image may need about 4 bytes for every pixel of every frame while it is processed, so this limit is what bounds the memory a single image can take: 200 megapixels is roughly 800MB. Still images stream and cost far less. Raising it raises that figure in proportion, and the memory is native rather than heap, so a container that runs out is killed outright instead of raising an error. Read [Sizing the Processing Limits](#sizing-the-processing-limits) before changing it.
 
 - **`maxConcurrentProcesses`** (number, default `20`)
   Maximum number of uploads validated and stored in parallel. Lower this if uploads cause memory pressure on the server. See [Sizing the Processing Limits](#sizing-the-processing-limits).
@@ -1222,7 +1222,7 @@ mediaLibrary: {
 - **`maxTotalResolution`** (number, default `200_000_000`) {{< added-in "release-2026-09" >}}
   Maximum pixel count across every frame of an image (width × height × frames). Uploads exceeding this are rejected. `maxResolution` applies to a single frame and `maxFrames` to their number, so without this a 24 megapixel frame repeated 1800 times would be accepted — an image needing 170GB of memory to decode. A still image counts as one frame.
 
-  Decoding an image needs about 4 bytes for every pixel of every frame, so this limit is what bounds the memory one image can take: 200 megapixels is roughly 800MB. Raising it raises that figure in proportion, and the memory is native rather than heap, so a container that runs out is killed outright instead of raising an error. Read [Sizing the Processing Limits](#sizing-the-processing-limits) before changing it.
+  An animated image may need about 4 bytes for every pixel of every frame while it is processed, so this limit is what bounds the memory a single image can take: 200 megapixels is roughly 800MB. Still images stream and cost far less. Raising it raises that figure in proportion, and the memory is native rather than heap, so a container that runs out is killed outright instead of raising an error. Read [Sizing the Processing Limits](#sizing-the-processing-limits) before changing it.
 
 - **`maxConcurrentProcesses`** (number, default `20`)
   Maximum number of images processed in parallel. Lower this if uploads cause memory pressure on the server. See [Sizing the Processing Limits](#sizing-the-processing-limits).
@@ -1269,20 +1269,22 @@ Size all three from the CPUs the container is allowed to use, which `os.availabl
 | 8         | `6`                    | `20`                     | `24`                 |
 | 16        | `8`                    | `20`                     | `32`                 |
 
-The `maxConcurrentProcesses` column assumes `use2025Behavior`. Without it, take that column from the memory ceiling below instead — on the legacy path each of those uploads decodes a whole image.
+The `maxConcurrentProcesses` column assumes `use2025Behavior`. Without it, take that column from the memory ceiling below instead, and ignore `maxConcurrentResizes` — the legacy path does not generate variants.
 
 ##### From the memory
 
-Decoding an image needs about 4 bytes for every pixel of every frame, and the whole image is held at once. A 200 megapixel animation therefore takes roughly 800MB — the same whether a full-size copy or a thumbnail is being produced from it, because the cost is in the pixels going in. Peak memory is:
+A still image is streamed rather than held in full, so its cost follows the size being produced rather than the size going in: an 18 megapixel photo becomes a 360px thumbnail in 8MB. Almost everything in a media library is a single frame, and for those this ceiling never binds.
+
+Animated images are the exception. Some are processed frame by frame, but others hold every frame at once — about 4 bytes for each pixel of each frame — and which of the two happens is a property of the file rather than anything visible in its metadata. Asking for a small variant does not reliably avoid it either: measured on real animations, a 360px thumbnail of a 133 megapixel file needed 576MB. Size for that case:
 
 ```
 concurrent decodes × maxTotalResolution × 4 bytes
 ```
 
-How many decodes can be in flight depends on which upload path is in use. With `use2025Behavior` an upload is validated from its metadata and streamed to storage without any frame being decoded, so it costs around 100MB and only variants count here. Without it, every upload is decoded and re-encoded, so uploads and variants count alike:
+Only one of the two paths decodes anything, and `use2025Behavior` decides which:
 
-- `use2025Behavior: true` — `min(maxConcurrentResizes, UV_THREADPOOL_SIZE)`
-- `use2025Behavior: false` — `min(maxConcurrentProcesses + maxConcurrentResizes, UV_THREADPOOL_SIZE)`
+- **`true`** — an upload is validated from its metadata and streamed to storage without a frame being decoded, costing around 100MB. Generating variants is the work that decodes, so the count is `min(maxConcurrentResizes, UV_THREADPOOL_SIZE)`.
+- **`false`** — variants are not generated here at all; images are served from storage directly. Uploads are the work that decodes, so the count is `min(maxConcurrentProcesses, UV_THREADPOOL_SIZE)`.
 
 Reserve what the server needs for everything else — around 1GB is a safe starting point — and divide the rest by the per-image figure:
 
@@ -1295,6 +1297,8 @@ Reserve what the server needs for everything else — around 1GB is a safe start
 
 Raising `maxTotalResolution` lowers every number in that column in proportion: at 400 megapixels an 8GB container manages four concurrent decodes rather than eight.
 
+Reaching this needs a cold cache, because a variant is generated once and then cached, and the editor and any CDN in front cache it again. The case to plan for is a burst of first-time variants — a dashboard opening on a page of freshly uploaded animations, which requests a screenful of thumbnails that have never been generated.
+
 {{< warning >}}
 This memory is allocated by the image library, not on the JavaScript heap. It does not appear in heap metrics and is unaffected by `--max-old-space-size`. A container that exceeds its limit is killed by the kernel, so there is no error to catch and no stack trace, and every request in flight is lost. Sizing this conservatively is worth more than the throughput it costs.
 {{< /warning >}}
@@ -1303,7 +1307,7 @@ This memory is allocated by the image library, not on the JavaScript heap. It do
 
 - **`maxConcurrentResizes`** covers generating a variant, which occupies the CPU from start to finish and holds the whole decoded image while it does. Keep it near the CPU limit, below `8`, and no higher than the memory table allows.
 
-- **`maxConcurrentProcesses`** covers a whole upload — receiving the file, transforming it and storing the result. With `use2025Behavior` much of that is network and no frame is decoded, so the default of `20` is safe and does not need to follow the CPU limit; what it bounds there is how many uploads at once hold a file in `uploadProcessingDirectory` and a finished result waiting to be written to storage. Without `use2025Behavior` every one of those uploads is a full decode, so treat it exactly as `maxConcurrentResizes` and take it from the memory table instead.
+- **`maxConcurrentProcesses`** covers a whole upload — receiving the file, transforming it and storing the result. With `use2025Behavior` much of that is network and no frame is decoded, so the default of `20` is safe and does not need to follow the CPU limit; what it bounds there is how many uploads at once hold a file in `uploadProcessingDirectory` and a finished result waiting to be written to storage. Without `use2025Behavior` every upload is transformed, which is the only image decoding that server does, so take it from the memory ceiling instead.
 
 - **`UV_THREADPOOL_SIZE`** decides how much work of any kind the process can have in flight, which also makes it the last word on how many images are decoded at once. Keep it a little above the CPU limit: the headroom stops file and DNS operations from queueing behind image processing, while a much larger pool only lets more images be processed at once, which costs memory without making any of them faster.
 
