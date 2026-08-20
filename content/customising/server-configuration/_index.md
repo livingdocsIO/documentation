@@ -1171,7 +1171,7 @@ mediaLibrary: {
   The default matches the size of Node.js' thread pool, which is what runs the work. Raising it without raising `UV_THREADPOOL_SIZE` as well only lengthens the queue inside that pool, which every other file and DNS operation in the process then waits behind, and downloads more originals into `resizingDirectory` at the same time. See [Sizing the Processing Limits](#sizing-the-processing-limits).
 
 - **`timeout`** (duration, default `'5m'`) {{< added-in "release-2026-09" >}}
-  Time limit for a single image operation while generating a variant. It is a backstop rather than a latency target, and at the default limits it should never be reached: the largest image `maxTotalResolution` permits is transformed in well under 20 seconds. What it guards against is work those limits cannot measure — the cost of rendering an SVG follows the complexity of its paths, not the dimensions they declare.
+  Time limit for a single image operation while generating a variant. It is a backstop rather than a latency target, and at the default limits it should never be reached: the largest animation `maxTotalResolution` permits is transformed in 12 to 16 seconds. Processing time scales with that limit, though — roughly 37 seconds at 500 megapixels, and five minutes at around 4,000 — so this is what holds when the limit is raised or set very high.
 
   It bounds the image processing, not the request. A redacted image is processed in two passes and each gets the full limit, and downloading the original and uploading the result are not covered — those are bounded by [`httpServer.requestTimeout`](#http-server) instead.
 
@@ -1228,7 +1228,7 @@ mediaLibrary: {
   Maximum number of images processed in parallel. Lower this if uploads cause memory pressure on the server. See [Sizing the Processing Limits](#sizing-the-processing-limits).
 
 - **`timeout`** (duration, default `'5m'`) {{< added-in "release-2026-09" >}}
-  Time limit for transforming a single upload. It is a backstop rather than a latency target, and at the default limits it should never be reached: the largest image `maxTotalResolution` permits is transformed in well under 20 seconds. What it guards against is work those limits cannot measure — the cost of rendering an SVG follows the complexity of its paths, not the dimensions they declare.
+  Time limit for transforming a single upload. It is a backstop rather than a latency target, and at the default limits it should never be reached: the largest animation `maxTotalResolution` permits is transformed in 12 to 16 seconds. Processing time scales with that limit, though — roughly 37 seconds at 500 megapixels, and five minutes at around 4,000 — so this is what holds when the limit is raised or set very high.
 
   It bounds the transformation, not the upload. Receiving the file and storing the result are not covered, and the whole job is aborted after 15 minutes regardless.
 
