@@ -558,6 +558,7 @@ Here is a list of all patches after the release has been announced.
 - [v308.1.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.3): fix(print): Renumber huGO print breaking change to LIBREAKING071
 
 ### Livingdocs Editor Patches
+- [v126.1.23](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.23): fix(properties): correct German word order in char-limit labels
 
 - [v126.1.22](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.22): fix(deps): update dependency pdfjs-dist from 6.1.200 to 6.2.108 [security]
 - [v126.1.21](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.21): fix(metadata): build image urls with crop and original dimensions
