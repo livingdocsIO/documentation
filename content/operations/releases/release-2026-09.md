@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Fix 500 error when a document's media already exists in the target project](https://github.com/livingdocsIO/livingdocs-server/pull/9832)
 - [Stop the media library indexing consumer group from drifting](https://github.com/livingdocsIO/livingdocs-server/pull/9881)
 
 - [chore(deps): update aws-sdk from 3.1110.0 to v3.1111.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/9894)
