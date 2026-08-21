@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(properties): correct German word order in char-limit labels](https://github.com/livingdocsIO/livingdocs-editor/pull/11466)
 - [Fix 500 error when a document's media already exists in the target project](https://github.com/livingdocsIO/livingdocs-server/pull/9832)
 - [Stop the media library indexing consumer group from drifting](https://github.com/livingdocsIO/livingdocs-server/pull/9881)
 
