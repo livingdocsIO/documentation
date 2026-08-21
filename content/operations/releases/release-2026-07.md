@@ -536,6 +536,7 @@ There are no known vulnerabilities. :tada:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v308.1.21](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.21): fix(media-library): rethrow postgres errors from addEntries inside a transaction
 
 - [v308.1.20](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.20): fix(deps): automatically patch Node.js vulnerabilities
 - [v308.1.19](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.19): fix(indexing): Make indexing consumer stop less noisy on server shutdown
