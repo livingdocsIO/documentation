@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [feat(media-library): search media entries by usage log details](https://github.com/livingdocsIO/livingdocs-server/pull/9764)
 - [fix(search): decompound German only at index time](https://github.com/livingdocsIO/livingdocs-server/pull/9859)
 - [fix(properties): correct German word order in char-limit labels](https://github.com/livingdocsIO/livingdocs-editor/pull/11466)
 - [Fix 500 error when a document's media already exists in the target project](https://github.com/livingdocsIO/livingdocs-server/pull/9832)
