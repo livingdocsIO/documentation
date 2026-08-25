@@ -15,7 +15,7 @@ Two building blocks work together:
 - **Usage purpose**: a named publication context (Web, Print, Newsletter, ...). A document resolves to exactly one purpose via its content type.
 - **License profile**: a color-coded set of rules, one rule per usage purpose. Assigned to a media library entry through the [`li-license-profile`]({{< ref "/reference/document/metadata/plugins/li-license-profile" >}}) metadata plugin.
 
-The feature is opt-in. It only activates for media types that have the `li-license-profile` metadata plugin configured, and only when profiles are present in the project config. Existing setups are unaffected.
+The feature is opt-in. License profiles are only enforced when `licenseProfiles.enabled` is set to `true` and profiles are configured. Media types with the `li-license-profile` metadata plugin are then checked for whether they may be published in a document. Media types without the plugin are not restricted.
 
 ## How License Profiles Work
 
@@ -127,8 +127,8 @@ Define the profiles in the project config:
 // project config
 mediaCenter: {
   licenseProfiles: {
-    // Switches enforcement on. While false, profiles can be assigned to media but
-    // never block publishing. See "Enabling Enforcement" below.
+    // Switches enforcement on. Defaults to false. While false, profiles can be
+    // assigned to media but never block publishing. See "Enabling Enforcement" below.
     enabled: false,
     // Required as soon as one profile has approvalRequired: true.
     // Must match the handle of a li-task-v2 metadata property (see below).
@@ -252,10 +252,12 @@ That is the whole setup. No hook registration call is needed: once profiles are 
 
 ### Enabling Enforcement
 
-`licenseProfiles.enabled` controls whether profiles are enforced:
+`licenseProfiles.enabled` controls whether profiles are enforced. It defaults to `false`, so enforcement has to be switched on deliberately:
 
-- **`false`**: profiles can be configured and assigned to media, but they never affect publishing. Media without a profile (or with an unknown or uncovered profile) does not block publication, and no approval tasks are requested. The license profiles can manually be set in the image metadata.
-- **`true`**: the publish gate and approval workflow described above are in effect. License profiles are shown in the UI.
+- **`false`** (the default): profiles can be configured and assigned to media, but they never affect publishing. Media without a profile (or with an unknown or uncovered profile) does not block publication, and no approval tasks are requested. The license profiles can manually be set in the image metadata.
+- **`true`**: the publish gate and approval workflow described above are in effect. License indicators and warnings are shown in the editor.
+
+In {{< release "release-2026-07" >}} the property defaulted to `true`.
 
 ## Constraints
 
