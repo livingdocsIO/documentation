@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Use the collapse icon for the recenter button in the crop editor](https://github.com/livingdocsIO/livingdocs-editor/pull/11473)
 - [chore(deps): update dependency sass from 1.102.0 to v1.103.0 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/11472)
 - [feat(media-library): search media entries by usage log details](https://github.com/livingdocsIO/livingdocs-server/pull/9764)
 - [fix(search): decompound German only at index time](https://github.com/livingdocsIO/livingdocs-server/pull/9859)
