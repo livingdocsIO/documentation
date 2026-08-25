@@ -183,6 +183,43 @@ In the editor config, an `imageCrop` key under `editor`. Search for `imageCrop`.
 
 Remove the `editor.imageCrop` block and its options (`maxArea`, `showSurroundingImage`, `surroundingImageOpacity`, and `zoomStep`) from all editor configs and test fixtures. No replacement is needed.
 
+### Changed Default of `licenseProfiles.enabled`
+
+The project config property `mediaCenter.licenseProfiles.enabled` now defaults to `false` instead of `true`. License profiles are now only enforced when the feature is explicitly enabled and at least one profile is configured.
+
+Projects that configured license profiles without the property were enforcing them implicitly. After the upgrade, those projects silently stop blocking publication, stop requesting approval tasks, and stop warning about license violations while editing. See the [License Profiles]({{< ref "/guides/media-library/license-profiles#enabling-enforcement" >}}) guide for what enforcement covers.
+
+#### Detect
+
+In the project config, `mediaCenter.licenseProfiles` has a non-empty `profiles` array and no `enabled` key. Search for `licenseProfiles` and check each hit for an `enabled` child property.
+
+```js
+// project config
+mediaCenter: {
+  licenseProfiles: {
+    profiles: [
+      /* ... */
+    ]
+  }
+}
+```
+
+#### Fix
+
+Set `mediaCenter.licenseProfiles.enabled` to `true` to keep the behavior from before the upgrade. Projects that already set the property explicitly need no change.
+
+```js
+// project config
+mediaCenter: {
+  licenseProfiles: {
+    enabled: true,
+    profiles: [
+      /* ... */
+    ]
+  }
+}
+```
+
 ## Deprecations :warning:
 
 ## Features :gift:
