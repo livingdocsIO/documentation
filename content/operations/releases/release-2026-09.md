@@ -144,7 +144,7 @@ To learn about the necessary actions to update Livingdocs to `release-2026-09`, 
 
 Image uploads are now written to a temporary file instead of being held in memory (see [Large Animated Image Uploads](#large-animated-image-uploads)). They land in the system temp directory unless configured otherwise, and in a container that is often a `tmpfs` (RAM-backed) mount, where the files count against the memory limit instead of relieving it.
 
-Mount a directory on real disk for them, sized for the concurrent worst case: `mediaLibrary.images.processing.maxConcurrentProcesses` uploads of `mediaLibrary.images.uploadRestrictions.maxFileSize` each. That is 20 × 15MB ≈ 300MB with the defaults, but 2GB if you have raised `maxFileSize` to `100mb`. The property that points at it comes with the new version, so configure it during the rollout.
+Mount a directory on real disk for them, sized for the concurrent worst case: `mediaLibrary.images.processing.maxConcurrentProcesses` uploads of `mediaLibrary.images.uploadRestrictions.maxFileSize` each. That is 20 × 15MB ≈ 300MB with the defaults, but 2GB if you have raised `maxFileSize` to `100mb`. Without `use2025Behavior`, allow twice that: the transformed result is written beside the original. The property that points at it comes with the new version, so configure it during the rollout.
 
 ### Rollout deployment
 
