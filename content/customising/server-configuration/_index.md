@@ -1144,6 +1144,7 @@ mediaLibrary: {
       maxTotalResolution: 200 * 1000 * 1000,  // default 200 mega-pixels
       maxConcurrentProcesses: 20,             // default 20
       maxConcurrentResizes: 4,                // default 4
+      memoryBudget: '3gb',                    // optional
       timeout: '5m',                          // default '5m'
     }
   }
@@ -1170,6 +1171,11 @@ mediaLibrary: {
 
   The default matches the size of Node.js' thread pool, which is what runs the work. Raising it without raising `UV_THREADPOOL_SIZE` as well only lengthens the queue inside that pool, which every other file and DNS operation in the process then waits behind, and downloads more originals into `resizingDirectory` at the same time. See [Sizing the Processing Limits](#sizing-the-processing-limits).
 
+- **`memoryBudget`** (byte size, optional) {{< added-in "release-2026-09" >}}
+  Total memory image processing may hold for the images it is working on at once, for example `'3gb'`. When it is set, work is admitted by how much memory it needs rather than only by how many jobs are already running: the size of an image is known from its metadata before a pixel of it is decoded, so a small image runs alongside many others while a large one runs on its own.
+
+  Without it the concurrency limits are the only bound, and a count has to be chosen for the largest image `maxTotalResolution` allows, which makes every smaller image reserve a slot sized for that worst case. See [Sizing the Processing Limits](#sizing-the-processing-limits).
+
 - **`timeout`** (duration, default `'5m'`) {{< added-in "release-2026-09" >}}
   Time limit for a single image operation while generating a variant. It is a backstop rather than a latency target, and at the default limits it should never be reached: the largest animation `maxTotalResolution` permits is transformed in 12 to 16 seconds. Processing time scales with that limit, though — roughly 37 seconds at 500 megapixels, and five minutes at around 4,000 — so this is what holds when the limit is raised or set very high.
 
@@ -1188,6 +1194,7 @@ mediaLibrary: {
       maxFrames: 1800,                        // default 1800
       maxTotalResolution: 200 * 1000 * 1000,  // default 200 mega-pixels
       maxConcurrentProcesses: 20,             // default 20
+      memoryBudget: '3gb',                    // optional
       timeout: '5m',                          // default '5m'
       lossy: {
         maxDimension: 6000,                   // default 6000
@@ -1226,6 +1233,11 @@ mediaLibrary: {
 
 - **`maxConcurrentProcesses`** (number, default `20`)
   Maximum number of images processed in parallel. Lower this if uploads cause memory pressure on the server. See [Sizing the Processing Limits](#sizing-the-processing-limits).
+
+- **`memoryBudget`** (byte size, optional) {{< added-in "release-2026-09" >}}
+  Total memory image processing may hold for the images it is working on at once, for example `'3gb'`. When it is set, work is admitted by how much memory it needs rather than only by how many jobs are already running: the size of an image is known from its metadata before a pixel of it is decoded, so a small image runs alongside many others while a large one runs on its own.
+
+  Without it the concurrency limits are the only bound, and a count has to be chosen for the largest image `maxTotalResolution` allows, which makes every smaller image reserve a slot sized for that worst case. See [Sizing the Processing Limits](#sizing-the-processing-limits).
 
 - **`timeout`** (duration, default `'5m'`) {{< added-in "release-2026-09" >}}
   Time limit for transforming a single upload. It is a backstop rather than a latency target, and at the default limits it should never be reached: the largest animation `maxTotalResolution` permits is transformed in 12 to 16 seconds. Processing time scales with that limit, though — roughly 37 seconds at 500 megapixels, and five minutes at around 4,000 — so this is what holds when the limit is raised or set very high.
@@ -1303,11 +1315,33 @@ Reaching this needs a cold cache, because a variant is generated once and then c
 This memory is allocated by the image library, not on the JavaScript heap. It does not appear in heap metrics and is unaffected by `--max-old-space-size`. A container that exceeds its limit is killed by the kernel, so there is no error to catch and no stack trace, and every request in flight is lost. Sizing this conservatively is worth more than the throughput it costs.
 {{< /warning >}}
 
+##### Bounding it by memory instead
+
+The table above turns a memory limit into a count, and that count has to be chosen for the largest image `maxTotalResolution` allows. Every smaller image then reserves a slot sized for that worst case, and almost every image is far smaller.
+
+`memoryBudget` states the limit as what it actually is. Set it to the memory image processing may hold at once, and each image is admitted against what it needs — every frame of an animated image, and for a still what the image library reads it at, which is a fraction of the file when the variant is small.
+
+Measured on a burst of twenty 18 megapixel stills and four 111 megapixel animations:
+
+| configuration                                         | peak   | time  |
+| ----------------------------------------------------- | ------ | ----- |
+| `maxConcurrentProcesses: 4`, no budget                | 2552MB | 9.5s  |
+| `maxConcurrentProcesses: 1`, no budget                | 935MB  | 34.2s |
+| `maxConcurrentProcesses: 20`, `memoryBudget: '1.2gb'` | 1531MB | 17.0s |
+
+The count that holds the peak down costs three and a half times the wall-clock. The budget holds it down and stays much closer to the fast configuration, because the stills are no longer queued behind the animations.
+
+Set it below the memory actually available: peak resident memory ran between 1.0 and 1.3 times the budget in testing, because freed native memory is not returned to the operating system straight away. Around 70% of what is left after the reserve above is a sound starting point.
+
+The largest image `maxTotalResolution` allows has to fit inside the budget, and the server refuses to start if it does not — at the default limit that is 800MB. An image needing more than the whole budget runs on its own rather than never running.
+
 ##### The options
 
 - **`maxConcurrentResizes`** covers generating a variant, which occupies the CPU from start to finish and holds the whole decoded image while it does. Keep it near the CPU limit, below `8`, and no higher than the memory table allows.
 
 - **`maxConcurrentProcesses`** covers a whole upload — receiving the file, transforming it and storing the result. With `use2025Behavior` much of that is network and no frame is decoded, so the default of `20` is safe and does not need to follow the CPU limit; what it bounds there is how many uploads at once hold a file in `uploadProcessingDirectory` and a finished result waiting to be written to storage. Without `use2025Behavior` every upload is transformed, which is the only image decoding that server does, so take it from the memory ceiling instead.
+
+- **`memoryBudget`** is the limit to reach for when the concurrency counts are being set from the memory table rather than from the CPU limit, which is the case whenever `maxTotalResolution` has been raised. It replaces nothing: the counts still bound the CPU and the slots, and this bounds the memory.
 
 - **`UV_THREADPOOL_SIZE`** decides how much work of any kind the process can have in flight, which also makes it the last word on how many images are decoded at once — it caps the memory even when nothing else does. Keep it a little above the CPU limit: the headroom stops file and DNS operations from queueing behind image processing, while a much larger pool mostly buys memory. For a screenful of uncached animated thumbnails, raising it from `4` to `16` took the time from 12.8s to 8.8s and the peak from 2.6GB to 8.2GB. That trade is why `maxConcurrentResizes` should hold the line independently of the pool.
 

@@ -234,6 +234,8 @@ Processing an image is the most resource-hungry thing the server does, and sever
 
 - **`maxConcurrentProcesses`** keeps its name and its default of `20`, but now covers an upload from start to finish. It used to release its slot before the image was transformed and stored, which left those unbounded.
 
+- **`memoryBudget`** (optional, for example `'3gb'`) bounds image processing by the memory it holds rather than by the number of jobs running. How much an image needs is known from its metadata before a pixel of it is decoded, so a small image runs alongside many others while a large one runs on its own. Without it a concurrency limit has to be chosen for the largest image `maxTotalResolution` allows, and every smaller image reserves a slot sized for that worst case. On a burst of twenty 18 megapixel stills and four 111 megapixel animations, the concurrency limit that held the peak to 935MB took 34.2s, while `memoryBudget: '1.2gb'` peaked at 1531MB in 17.0s.
+
 {{< warning >}}
 `maxTotalResolution` is not simply more permissive than the 10MB cap it replaces. Real animations measure 14 to 46 megapixels per megabyte, so at the dense end of that range a file between roughly 4.5MB and 10MB carries 200 to 460 megapixels — accepted before this release, rejected now. A 9.5MB animation of 440 megapixels is the realistic case. Raise `maxTotalResolution` if you need to keep accepting them, and scale the container's memory in proportion.
 {{< /warning >}}
