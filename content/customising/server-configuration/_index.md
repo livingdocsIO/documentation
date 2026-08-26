@@ -1161,7 +1161,7 @@ mediaLibrary: {
   An animated image may be held in full while it is processed, at about 5 bytes for every pixel of every frame, so this limit is what bounds the memory a single image can take: 200 megapixels is roughly 1GB. Still images stream and cost far less. Raising it raises that figure in proportion, and the container has to be able to hold one such image — the server warns at startup when it cannot. Read [Sizing the Processing Limits](#sizing-the-processing-limits) before changing it.
 
 - **`maxConcurrentProcesses`** (number, default `20`)
-  Maximum number of uploads validated and stored in parallel. Lower this if uploads cause memory pressure on the server. See [Sizing the Processing Limits](#sizing-the-processing-limits).
+  Maximum number of uploads validated and stored in parallel. An upload on this path never decodes a frame, so what this bounds is the disk they hold in `uploadProcessingDirectory` and how many results are written to storage at once — not the memory image processing takes, which the container decides. See [Sizing the Processing Limits](#sizing-the-processing-limits).
 
 - **`timeout`** (duration, default `'5m'`) {{< added-in "release-2026-09" >}}
   Time limit for a single image operation while generating a variant. It is a backstop rather than a latency target, and at the default limits it should never be reached: the largest animation `maxTotalResolution` permits is transformed in 12 to 16 seconds. Processing time scales with that limit, though — roughly 37 seconds at 500 megapixels, and five minutes at around 4,000 — so this is what holds when the limit is raised or set very high.
@@ -1218,7 +1218,7 @@ mediaLibrary: {
   An animated image may be held in full while it is processed, at about 5 bytes for every pixel of every frame, so this limit is what bounds the memory a single image can take: 200 megapixels is roughly 1GB. Still images stream and cost far less. Raising it raises that figure in proportion, and the container has to be able to hold one such image — the server warns at startup when it cannot. Read [Sizing the Processing Limits](#sizing-the-processing-limits) before changing it.
 
 - **`maxConcurrentProcesses`** (number, default `20`)
-  Maximum number of images processed in parallel. Lower this if uploads cause memory pressure on the server. See [Sizing the Processing Limits](#sizing-the-processing-limits).
+  Maximum number of uploads transformed and stored in parallel. The memory each transform holds is reserved against the container instead, so what this bounds is the disk they hold in `uploadProcessingDirectory` and how many results are written to storage at once. See [Sizing the Processing Limits](#sizing-the-processing-limits).
 
 - **`timeout`** (duration, default `'5m'`) {{< added-in "release-2026-09" >}}
   Time limit for transforming a single upload. It is a backstop rather than a latency target, and at the default limits it should never be reached: the largest animation `maxTotalResolution` permits is transformed in 12 to 16 seconds. Processing time scales with that limit, though — roughly 37 seconds at 500 megapixels, and five minutes at around 4,000 — so this is what holds when the limit is raised or set very high.
