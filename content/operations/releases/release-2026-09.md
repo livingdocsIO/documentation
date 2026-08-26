@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Require license profiles to be enabled explicitly](https://github.com/livingdocsIO/livingdocs-editor/pull/11474)
 - [chore(deps): update dependency eslint from 10.8.1 to v10.9.0 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/11480)
 - [Use the collapse icon for the recenter button in the crop editor](https://github.com/livingdocsIO/livingdocs-editor/pull/11473)
 - [chore(deps): update dependency sass from 1.102.0 to v1.103.0 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/11472)
