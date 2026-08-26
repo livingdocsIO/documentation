@@ -1056,6 +1056,7 @@ mediaLibrary: {
       maxResolution: 24 * 1000 * 1000, // 24MP,  default 24 mega-pixels
       maxFrames: 1800, // default 1800
       maxConcurrentProcesses: 20, // default 20
+      timeout: '5m', // default '5m'. {{< added-in "release-2026-09" >}}
     }
 
     // {{< a href="#image-processing-legacy-use2025behavior-false" title="Image Processing (legacy, use2025Behavior: false)">}}
@@ -1065,6 +1066,7 @@ mediaLibrary: {
     //   maxResolution: 24 * 1000 * 1000, // 24MP,  default 24 mega-pixels
     //   maxFrames: 1800, // default 1800
     //   maxConcurrentProcesses: 20, // default 20
+    //   timeout: '5m', // default '5m'. {{< added-in "release-2026-09" >}}
     //   lossy: {
     //     maxDimension: 6000, // default 6000
     //     quality: 80 // default 80
@@ -1136,23 +1138,35 @@ mediaLibrary: {
   use2025Behavior: true,
   images: {
     processing: {
-      maxResolution: 24 * 1000 * 1000, // default 24 mega-pixels
-      maxFrames: 1800,                  // default 1800
-      maxConcurrentProcesses: 20,       // default 20
+      maxResolution: 24 * 1000 * 1000,        // default 24 mega-pixels
+      maxFrames: 1800,                        // default 1800
+      maxTotalResolution: 200 * 1000 * 1000,  // default 200 mega-pixels
+      maxConcurrentProcesses: 20,             // default 20
+      timeout: '5m',                          // default '5m'
     }
   }
 }
 ```
 
 - **`maxResolution`** (number, default `24_000_000`)
-  Maximum total pixel count (width × height). Uploads exceeding this are rejected. Default is 24 megapixels (e.g. 6000 × 4000 px).
+  Maximum pixel count of a single frame (width × height). Uploads exceeding this are rejected. Default is 24 megapixels (e.g. 6000 × 4000 px).
 
 - **`maxFrames`** (number, default `1800`)
   Maximum number of frames allowed for **animated images** (GIF and animated WebP). Uploads exceeding this limit are rejected.
   The default of 1800 frames corresponds to approximately 90 seconds at 20 fps, or 60 seconds at 30 fps.
 
+- **`maxTotalResolution`** (number, default `200_000_000`) {{< added-in "release-2026-09" >}}
+  Maximum pixel count across every frame of an image (width × height × frames). Uploads exceeding this are rejected. `maxResolution` applies to a single frame and `maxFrames` to their number, so without this a 24 megapixel frame repeated 1800 times would be accepted — an image needing 170GB of memory to decode. A still image counts as one frame.
+
+  An animated image may be held in full while it is processed, at about 5 bytes for every pixel of every frame, so this limit is what bounds the memory a single image can take: 200 megapixels is roughly 1GB. Still images stream and cost far less. Raising it raises that figure in proportion, and the container has to be able to hold one such image — the server warns at startup when it cannot. Read [Sizing the Processing Limits](#sizing-the-processing-limits) before changing it.
+
 - **`maxConcurrentProcesses`** (number, default `20`)
-  Maximum number of images validated in parallel. Lower this if uploads cause memory pressure on the server.
+  Maximum number of uploads validated and stored in parallel. An upload on this path never decodes a frame, so what this bounds is the disk they hold in `uploadProcessingDirectory` and how many results are written to storage at once — not the memory image processing takes, which the container decides. See [Sizing the Processing Limits](#sizing-the-processing-limits).
+
+- **`timeout`** (duration, default `'5m'`) {{< added-in "release-2026-09" >}}
+  Time limit for a single image operation while generating a variant. It is a backstop rather than a latency target, and at the default limits it should never be reached: the largest animation `maxTotalResolution` permits is transformed in 12 to 16 seconds. Processing time scales with that limit, though — roughly 37 seconds at 500 megapixels, and five minutes at around 4,000 — so this is what holds when the limit is raised or set very high.
+
+  It bounds the image processing, not the request. A redacted image is processed in two passes and each gets the full limit, and downloading the original and uploading the result are not covered — those are bounded by [`httpServer.requestTimeout`](#http-server) instead.
 
 #### Image Processing (legacy, `use2025Behavior: false`)
 
@@ -1162,16 +1176,18 @@ When `mediaLibrary.use2025Behavior` is `false` (the default), the `processing` b
 mediaLibrary: {
   images: {
     processing: {
-      failOn: 'warning',               // 'warning' | 'error' | 'truncated' | 'none'
-      maxResolution: 24 * 1000 * 1000, // default 24 mega-pixels
-      maxFrames: 1800,                 // default 1800
-      maxConcurrentProcesses: 20,      // default 20
+      failOn: 'warning',                      // 'warning' | 'error' | 'truncated' | 'none'
+      maxResolution: 24 * 1000 * 1000,        // default 24 mega-pixels
+      maxFrames: 1800,                        // default 1800
+      maxTotalResolution: 200 * 1000 * 1000,  // default 200 mega-pixels
+      maxConcurrentProcesses: 20,             // default 20
+      timeout: '5m',                          // default '5m'
       lossy: {
-        maxDimension: 6000,            // default 6000
-        quality: 80                    // default 80
+        maxDimension: 6000,                   // default 6000
+        quality: 80                           // default 80
       },
       lossless: {
-        maxDimension: 6000,            // default 6000
+        maxDimension: 6000,                   // default 6000
       },
       // optional - convert images to another format at upload time
       convert: [
@@ -1190,14 +1206,24 @@ mediaLibrary: {
   Controls how strict the processing is about corrupt or non-conformant images when reading metadata. `'warning'` rejects images with any issue; `'none'` is the most permissive.
 
 - **`maxResolution`** (number, default `24_000_000`)
-  Maximum total pixel count (width × height). Uploads exceeding this are rejected. Default is 24 megapixels (e.g. 6000 × 4000 px).
+  Maximum pixel count of a single frame (width × height). Uploads exceeding this are rejected. Default is 24 megapixels (e.g. 6000 × 4000 px).
 
 - **`maxFrames`** (number, default `1800`)
   Maximum number of frames allowed for **animated images** (GIF and animated WebP). Uploads exceeding this limit are rejected.
   The default of 1800 frames corresponds to approximately 90 seconds at 20 fps, or 60 seconds at 30 fps.
 
+- **`maxTotalResolution`** (number, default `200_000_000`) {{< added-in "release-2026-09" >}}
+  Maximum pixel count across every frame of an image (width × height × frames). Uploads exceeding this are rejected. `maxResolution` applies to a single frame and `maxFrames` to their number, so without this a 24 megapixel frame repeated 1800 times would be accepted — an image needing 170GB of memory to decode. A still image counts as one frame.
+
+  An animated image may be held in full while it is processed, at about 5 bytes for every pixel of every frame, so this limit is what bounds the memory a single image can take: 200 megapixels is roughly 1GB. Still images stream and cost far less. Raising it raises that figure in proportion, and the container has to be able to hold one such image — the server warns at startup when it cannot. Read [Sizing the Processing Limits](#sizing-the-processing-limits) before changing it.
+
 - **`maxConcurrentProcesses`** (number, default `20`)
-  Maximum number of images processed in parallel. Lower this if uploads cause memory pressure on the server.
+  Maximum number of uploads transformed and stored in parallel. The memory each transform holds is reserved against the container instead, so what this bounds is the disk they hold in `uploadProcessingDirectory` and how many results are written to storage at once. See [Sizing the Processing Limits](#sizing-the-processing-limits).
+
+- **`timeout`** (duration, default `'5m'`) {{< added-in "release-2026-09" >}}
+  Time limit for transforming a single upload. It is a backstop rather than a latency target, and at the default limits it should never be reached: the largest animation `maxTotalResolution` permits is transformed in 12 to 16 seconds. Processing time scales with that limit, though — roughly 37 seconds at 500 megapixels, and five minutes at around 4,000 — so this is what holds when the limit is raised or set very high.
+
+  It bounds the transformation, not the upload. Receiving the file and storing the result are not covered, and the whole job is aborted after 15 minutes regardless.
 
 - **`lossy`** / **`lossless`**
   Output quality and dimension settings applied when images are transformed at upload time:
@@ -1217,6 +1243,53 @@ mediaLibrary: {
 
   Using `quality`, `nearLossless`, or `lossless` with any `targetFormat` other than `'webp'` throws a configuration error at startup.
 
+#### Sizing the Processing Limits
+
+Image processing bounds its own memory. At startup it reads the memory limit of the container it runs in and reserves a share of it for the images it is working on, then admits each image against what that image needs — which is known from its metadata before a pixel of it is decoded. A small image runs alongside many others; a large one runs on its own. Nothing to configure, and nothing to keep in step with the container size.
+
+What is left to decide is how large an image you are willing to accept, and how much of the process' thread pool image work may take.
+
+##### What the memory goes on
+
+A still image is streamed rather than held in full, so its cost follows the size being produced rather than the size going in: an 18 megapixel photo becomes a 360px thumbnail in 8MB. Almost everything in a media library is a single frame.
+
+Animated images are the exception. Some are processed frame by frame, but others hold every frame at once — about 5 bytes for each pixel of each frame — and which of the two happens is a property of the file rather than anything visible in its metadata. Asking for a small variant does not reliably avoid it either: measured on real animations, a 360px thumbnail of a 133 megapixel file needed 576MB. The reservation assumes the worse of the two.
+
+Only one of the two paths decodes anything, and `use2025Behavior` decides which. With it, an upload is validated from its metadata and streamed to storage without a frame being decoded, and generating variants is the work that decodes. Without it, variants are not generated here at all and uploads are the work that decodes.
+
+{{< warning >}}
+This memory is allocated by the image library, not on the JavaScript heap. It does not appear in heap metrics and is unaffected by `--max-old-space-size`. A container that exceeds its limit is killed by the kernel, so there is no error to catch and no stack trace, and every request in flight is lost. That is what the reservation exists to prevent, and why it is deliberately pessimistic about how much an image will need.
+{{< /warning >}}
+
+##### `maxTotalResolution` and the container
+
+This is the one number that decides how much memory a single image may need. At the default of 200 megapixels that is roughly 1GB, and the container has to be able to hold one of them — the server logs a warning at startup when it cannot, because such an image is processed on its own and may still exhaust the container.
+
+| container memory | reserved for images | images at 200 megapixels |
+| ---------------- | ------------------- | ------------------------ |
+| 2GB              | 1.2GB               | `1`                      |
+| 4GB              | 2.5GB               | `2`                      |
+| 8GB              | 5.1GB               | `4`                      |
+| 16GB             | 10.3GB              | `10`                     |
+
+Raising `maxTotalResolution` lowers the last column in proportion: at 500 megapixels one image needs about 2.5GB, so a 4GB container manages one at a time and a 2GB container cannot process such an image at all. Lower it if the containers are small and you would rather reject those images than serialise them.
+
+The thread pool is the other ceiling, so the last column is only reached where `UV_THREADPOOL_SIZE` allows it.
+
+##### The thread pool
+
+Image processing runs on Node.js' thread pool, which is also what every file, DNS and compression operation in the process uses. Its default size is **4 threads**. An image takes a thread once one is free and then holds it for the whole operation — several seconds for a large animated image.
+
+Keep `UV_THREADPOOL_SIZE` a little above the container's CPU limit, which `os.availableParallelism()` reports. Do not use `os.cpus().length`: it reports the host's cores and ignores the container's CPU limit. The headroom stops file and DNS operations from queueing behind image processing, while a much larger pool mostly buys memory — for a screenful of uncached animated thumbnails, raising it from `4` to `16` took the time from 12.8s to 8.8s and the peak from 2.6GB to 8.2GB. The memory reservation is what holds that second figure down now, but the pool is still what decides whether the extra threads are worth having.
+
+{{< warning >}}
+Set `UV_THREADPOOL_SIZE` as an environment variable before the process starts, for example in your deployment manifest. Setting it from inside the application is unreliable, because the thread pool is created the first time anything uses it — which can happen while modules are still loading.
+{{< /warning >}}
+
+##### `maxConcurrentProcesses`
+
+This bounds uploads rather than memory. What it decides is how many uploads at once hold a file in `uploadProcessingDirectory` and a finished result waiting to be written to storage, so it follows the disk sizing below rather than the container's memory. The default of `20` is a sound starting point on both paths.
+
 #### Temporary Directories
 
 Some image operations need a file on disk rather than in memory. Both directories below hold short-lived files, and both default to the system temp directory.
@@ -1231,7 +1304,7 @@ mediaLibrary: {
 ```
 
 - **`uploadProcessingDirectory`** (string, default `os.tmpdir()`)
-  Scratch space for reading image metadata at upload time. Livingdocs reads dimensions and frame counts from the beginning of an upload, which is enough for most images. Animated GIF and WebP report an accurate frame count only from the complete file, so those uploads are written here and read from disk instead of being held in memory. The same applies to any image whose dimensions sit further into the file, for example behind a large embedded colour profile. Used with `use2025Behavior` both enabled and disabled.
+  Scratch space for image uploads. Livingdocs reads dimensions and frame counts from the beginning of an upload, which is enough for most images. Animated GIF and WebP report an accurate frame count only from the complete file, so those uploads are written here and read from disk instead of being held in memory. The same applies to any image whose dimensions sit further into the file, for example behind a large embedded colour profile. With `use2025Behavior` disabled, every upload is written here twice over: the transformation reads the image from disk and writes its result back here for the upload to storage to read.
 
 - **`resizingDirectory`** (string, default `os.tmpdir()`)
   Scratch space for generating image variants on demand, when `use2025Behavior` is `true` and an image is requested through the [`/api/{{< api-version >}}/mediaLibrary/serve-image/:key`](/reference/public-api/media-library/#serve-image) endpoint. The original is downloaded here, resized or cropped, and uploaded to the variants cache storage. Nothing is written here for cache hits.
@@ -1240,7 +1313,7 @@ mediaLibrary: {
 Point both at real disk. On a `tmpfs` (RAM-backed) mount — which `/tmp` often is in a container — the files count against the container's memory limit, which defeats the purpose of writing them out of memory in the first place.
 {{< /warning >}}
 
-Size the volume for the concurrent worst case: `maxConcurrentProcesses` uploads of `uploadRestrictions.maxFileSize` each, so 20 × 15MB ≈ 300MB with the defaults.
+Size each volume for its own concurrent worst case. For `uploadProcessingDirectory` that is `processing.maxConcurrentProcesses` uploads of `uploadRestrictions.maxFileSize` each — 20 × 15MB ≈ 300MB with the defaults, but 2GB if you have raised `maxFileSize` to `100mb`. Without `use2025Behavior` allow twice that, for the transformed result sitting beside the original: it is normally the smaller of the two, but nothing bounds it to be. For `resizingDirectory` it is `UV_THREADPOOL_SIZE` originals plus their variants, so it follows the size of the images in your media library rather than the upload limit.
 
 Each file is removed as soon as the operation that created it ends, whether it succeeded or failed. Only a process that dies first leaves files behind — an OOM kill, or a `SIGKILL` during a restart — and Livingdocs deletes just the files it is currently working on, so a later start does not clear them either. Point each option at a directory that holds nothing else, which leaves you free to clear leftovers from outside: an ephemeral volume that is discarded when the container stops, or a periodic sweep with a tool such as `systemd-tmpfiles`.
 

@@ -142,9 +142,9 @@ To learn about the necessary actions to update Livingdocs to `release-2026-09`, 
 
 #### Prepare a Directory for Image Upload Processing
 
-Large animated GIF and WebP uploads are now written to a temporary file while they are validated (see [Large Animated Image Uploads](#large-animated-image-uploads)). They land in the system temp directory unless configured otherwise, and in a container that is often a `tmpfs` (RAM-backed) mount, where the files count against the memory limit instead of relieving it.
+Image uploads are now written to a temporary file instead of being held in memory (see [Large Animated Image Uploads](#large-animated-image-uploads)). They land in the system temp directory unless configured otherwise, and in a container that is often a `tmpfs` (RAM-backed) mount, where the files count against the memory limit instead of relieving it.
 
-Mount a directory on real disk for them, sized for the concurrent worst case: `mediaLibrary.images.processing.maxConcurrentProcesses` uploads of `mediaLibrary.images.uploadRestrictions.maxFileSize` each, so 20 × 15MB ≈ 300MB with the defaults. The property that points at it comes with the new version, so configure it during the rollout.
+Mount a directory on real disk for them, sized for the concurrent worst case: `mediaLibrary.images.processing.maxConcurrentProcesses` uploads of `mediaLibrary.images.uploadRestrictions.maxFileSize` each. That is 20 × 15MB ≈ 300MB with the defaults, but 2GB if you have raised `maxFileSize` to `100mb`. Without `use2025Behavior`, allow twice that: the transformed result is written beside the original. The property that points at it comes with the new version, so configure it during the rollout.
 
 ### Rollout deployment
 
@@ -221,6 +221,26 @@ The default is the system temp directory, which in a container is often a `tmpfs
 {{< /warning >}}
 
 For more information, see the [Temporary Directories]({{< ref "/customising/server-configuration/#temporary-directories" >}}) documentation.
+
+### Image Processing Limits
+
+Processing an image is the most resource-hungry thing the server does, and several of its limits were missing, decided by the host instead of the configuration, or narrower in scope than they looked. Two options are new, one changes what it covers, and the memory is now bounded without being configured at all:
+
+- **`timeout`** (default `'5m'`) puts a time limit on transforming an upload or generating a variant. Nothing interrupted that work before. At the default `maxTotalResolution` it should never be reached, since the largest animation permitted transforms in 12 to 16 seconds, but processing time scales with that limit — so it is the bound that holds if you raise it.
+
+- **`maxTotalResolution`** (default `200` megapixels) limits the pixels of every frame of an image together. `maxResolution` applies to one frame and `maxFrames` to their number, so the two of them accepted a 24 megapixel frame repeated 1800 times — an image needing 170GB of memory to decode. An animated image may be held in memory in full while it is processed, at about 5 bytes for every pixel of every frame, which makes this the limit that bounds how much memory a single image can take: 200 megapixels is roughly 1GB. Still images stream and cost far less. The default matches the guidance of Imgix. It replaces the 10MB cap on animated images, so the file itself may now be as large as `uploadRestrictions.maxFileSize`.
+
+- **`maxConcurrentProcesses`** keeps its name and its default of `20`, but now covers an upload from start to finish. It used to release its slot before the image was transformed and stored, which left those unbounded. It is no longer the dial for memory either — that is the next entry — so what it decides now is how many uploads at once hold a temp file and a write to storage.
+
+- **The memory image processing may hold is now bounded automatically.** It reads the container's own memory limit at startup and admits each image against what that image needs, which is known from its metadata before a pixel of it is decoded — so a small image runs alongside many others while a large one runs on its own. Nothing to configure, and nothing to keep in step with the container size. On a burst of twenty 18 megapixel stills and four 111 megapixel animations, a concurrency limit low enough to hold the peak to 935MB took 34.2s, where the reservation peaked at 1531MB in 17.0s. Generating variants is bounded by the size of Node.js' thread pool for the same reason: beyond it, extra work only lengthens the queue that every other file and DNS operation in the process waits behind.
+
+{{< warning >}}
+`maxTotalResolution` is not simply more permissive than the 10MB cap it replaces. Real animations measure 14 to 46 megapixels per megabyte, so at the dense end of that range a file between roughly 4.5MB and 10MB carries 200 to 460 megapixels — accepted before this release, rejected now. A 9.5MB animation of 440 megapixels is the realistic case. Raise `maxTotalResolution` if you need to keep accepting them, and check the container has the memory for one such image — the server warns at startup when it does not.
+{{< /warning >}}
+
+Three further changes need no configuration either: concurrent requests for the same uncached variant share a single job rather than each generating it, image processing uses one thread per image instead of one per CPU core the container can see, and an image upload has 15 minutes to complete instead of 4.
+
+For how to choose `maxTotalResolution` and `UV_THREADPOOL_SIZE` for the container you run, see the configuration reference for [image processing]({{< ref "/customising/server-configuration/#image-processing-with-use2025behavior" >}}) and for [legacy image processing]({{< ref "/customising/server-configuration/#image-processing-legacy-use2025behavior-false" >}}).
 
 ## Vulnerability Patches
 
