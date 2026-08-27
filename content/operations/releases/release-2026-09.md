@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Remove mediaLibrary.disableImageEditingInDocuments (LIBREAKING078)](https://github.com/livingdocsIO/livingdocs-server/pull/9834)
 - [Remove the push notifications UI (LIBREAKING077)](https://github.com/livingdocsIO/livingdocs-editor/pull/11439)
 - [Remove the legacy session grant upgrade path](https://github.com/livingdocsIO/livingdocs-server/pull/9836)
 - [Keep auto-loading search results until the container is filled](https://github.com/livingdocsIO/livingdocs-editor/pull/11456)
