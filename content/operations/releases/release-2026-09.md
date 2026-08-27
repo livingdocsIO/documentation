@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Keep auto-loading search results until the container is filled](https://github.com/livingdocsIO/livingdocs-editor/pull/11456)
 - [fix(editor): localize notification error card title](https://github.com/livingdocsIO/livingdocs-editor/pull/11246)
 - [Require license profiles to be enabled explicitly](https://github.com/livingdocsIO/livingdocs-server/pull/9919)
 - [Require license profiles to be enabled explicitly](https://github.com/livingdocsIO/livingdocs-editor/pull/11474)
