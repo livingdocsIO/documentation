@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [test(playwright): Automate the release-2026-07 manual test cases](https://github.com/livingdocsIO/livingdocs-editor/pull/11314)
 - [feat(search): Add /documents/count endpoint for exact ES totals](https://github.com/livingdocsIO/livingdocs-server/pull/9520)
 - [fix(media-library): keep legacy search fields for un-reindexed entries](https://github.com/livingdocsIO/livingdocs-server/pull/9867)
 - [Remove mediaLibrary.disableImageEditingInDocuments (LIBREAKING078)](https://github.com/livingdocsIO/livingdocs-server/pull/9834)
