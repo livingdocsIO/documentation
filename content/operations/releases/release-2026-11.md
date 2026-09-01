@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [chore(deps): update aws-sdk from 3.1120.0 to v3.1121.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/9950)
 
 To get an overview about new functionality, read the [Release Notes](TODO).
 To learn about the necessary actions to update Livingdocs to `release-2026-11`, read on.
