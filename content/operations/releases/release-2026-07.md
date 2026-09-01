@@ -110,7 +110,17 @@ livingdocs-server migrate up
 
 This release adds Norwegian language support (Bokmål `nb` and Nynorsk `nn`) across the drafts, publications, and media library indices, and language-aware text fields plus a German decompounder to the media library.
 
-The change is backwards compatible: until the indices are recreated, the new language-specific fields are silently skipped and search keeps working as before.
+The change is backwards compatible for indices created with a server from 2024-04 or later: until the indices are recreated, the new language-specific fields are silently skipped and search keeps working as before.
+
+{{< warning >}}
+Indices created with a server older than 2024-04 do not carry the `exact` analyzer in their settings, and the mapping changes in this release reference it. Elasticsearch rejects the mapping patch with `analyzer [exact] has not been configured in mappings`, and index initialization gives up after five minutes of retries, so the index stops being updated.
+
+An index that lists `german_html_analyzer` but no `exact` is affected and has to be recreated:
+
+```sh
+curl -s "$ELASTIC_URL/<index>/_settings?filter_path=**.analysis.analyzer"
+```
+{{< /warning >}}
 
 {{< info >}}
 To enable Norwegian language support, the affected Elasticsearch indices need to be
