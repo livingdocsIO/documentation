@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Improve Image Collections](https://github.com/livingdocsIO/livingdocs-server/pull/9763)
 - [chore(deps): update dependency webpack from 5.109.2 to v5.110.1 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/11491)
 - [Remove the push notifications feature (LIBREAKING079)](https://github.com/livingdocsIO/livingdocs-server/pull/9833)
 - [Stop storing generated component data in the comment thread context](https://github.com/livingdocsIO/livingdocs-editor/pull/11441)
