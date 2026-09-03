@@ -624,6 +624,7 @@ Patches typically fix bugs and apply improvements within the current release. Ke
 - [v301.1.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.1): fix(release-2026-05): Update framework to v34.0.3 (release-2026-05 tag)
 
 ### Livingdocs Editor Patches
+- [v123.21.49](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.49): fix(deps): update dependency sanitize-html from 2.17.5 to 2.17.7 [security]
 - [v123.21.48](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.48): fix(media-library): keep the search query when switching panel tabs
 - [v123.21.47](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.47): fix(properties): correct German word order in char-limit labels
 
