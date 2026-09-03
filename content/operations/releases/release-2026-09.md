@@ -306,6 +306,7 @@ No known vulnerabilities. :tada:
 Patches typically fix bugs and apply improvements within the current release. Keeping your deployment up-to-date with the latest patch version means you benefit from those fixes. No explicit action is required per patch — bumping the version is enough.
 
 ### Livingdocs Server Patches
+- [v312.0.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v312.0.3): chore: Add fontconfig to server dockerfile
 - [v312.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v312.0.2): fix(imatrics-nlp): Add createConceptSuggestion to the API mock and match the getConcepts shape
 
 ### Livingdocs Editor Patches
