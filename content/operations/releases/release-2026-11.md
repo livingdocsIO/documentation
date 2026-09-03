@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(indexing): strip sub-field analyzers missing from the live index settings](https://github.com/livingdocsIO/livingdocs-server/pull/9947)
 - [fix(deps): update dependency @livingdocs/framework from 34.2.2 to v34.3.0 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/11508)
 - [chore(deps): update aws-sdk from 3.1120.0 to v3.1121.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/9950)
 
