@@ -536,6 +536,7 @@ There are no known vulnerabilities. :tada:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v308.1.25](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.25): fix(deps): update dependency fastify from 5.9.0 to 5.12.1 [security]
 - [v308.1.24](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.24): fix(media-library): score metadata.title separately from texts_*
 - [v308.1.23](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.23): fix(public-api): Support API version 2026-07
 - [v308.1.22](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.22): fix(search): decompound German only at index time
