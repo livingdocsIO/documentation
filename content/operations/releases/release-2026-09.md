@@ -310,4 +310,5 @@ Patches typically fix bugs and apply improvements within the current release. Ke
 - [v312.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v312.0.2): fix(imatrics-nlp): Add createConceptSuggestion to the API mock and match the getConcepts shape
 
 ### Livingdocs Editor Patches
+- [v128.1.3](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v128.1.3): fix(playwright): Use e2e-planning-system components in the publish control spec
 - [v128.1.2](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v128.1.2): fix(deps): update dependency @livingdocs/framework from 34.2.2 to v34.2.3
