@@ -25,7 +25,7 @@ responses:
         "id": "25bzj8j",
         "videos": [
           {
-            "state": "success",
+            "state": "imported",
             "systemName": "identifier-for-your-system",
             "externalId": "external-unique-id-123",
             "video": {
@@ -104,7 +104,7 @@ openapi:
                 state: success
                 id: 25bzj8j
                 videos:
-                  - state: success
+                  - state: imported
                     systemName: identifier-for-your-system
                     externalId: external-unique-id-123
                     video:
