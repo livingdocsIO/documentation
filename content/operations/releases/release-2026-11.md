@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Fix tooltip line break for unpublished ticker entries](https://github.com/livingdocsIO/livingdocs-editor/pull/11551)
 - [Prevent dart-sass BOM from breaking scoped styles](https://github.com/livingdocsIO/livingdocs-editor/pull/11546)
 - [chore(deps): update dependency nodemailer from 9.0.6 to v9.1.1 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/9975)
 - [fix(deps): update dependency @livingdocs/framework from 34.3.0 to v34.3.1 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/11545)
