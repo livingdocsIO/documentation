@@ -311,6 +311,7 @@ Patches typically fix bugs and apply improvements within the current release. Ke
 - [v312.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v312.0.2): fix(imatrics-nlp): Add createConceptSuggestion to the API mock and match the getConcepts shape
 
 ### Livingdocs Editor Patches
+- [v128.1.6](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v128.1.6): fix(media-library): show open state on display settings dropdown
 - [v128.1.5](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v128.1.5): fix(webpack): Prevent dart-sass BOM from breaking scoped styles
 - [v128.1.4](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v128.1.4): test(dashboard): restore an article on the article management dashboard
 - [v128.1.3](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v128.1.3): fix(playwright): Use e2e-planning-system components in the publish control spec
