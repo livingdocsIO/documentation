@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Fix open-state styling on display settings dropdown button](https://github.com/livingdocsIO/livingdocs-editor/pull/11556)
 - [fix(rotated-images): import intoBuffer default export](https://github.com/livingdocsIO/livingdocs-server/pull/9981)
 - [Fix tooltip line break for unpublished ticker entries](https://github.com/livingdocsIO/livingdocs-editor/pull/11551)
 - [Prevent dart-sass BOM from breaking scoped styles](https://github.com/livingdocsIO/livingdocs-editor/pull/11546)
