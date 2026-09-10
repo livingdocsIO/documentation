@@ -536,6 +536,7 @@ There are no known vulnerabilities. :tada:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v308.1.27](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.27): fix(deps): update dependency sharp from 0.35.3 to 0.35.4 [security]
 - [v308.1.26](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.26): chore(benchmarks): import job-queue-scripts default export
 - [v308.1.25](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.25): fix(deps): update dependency fastify from 5.9.0 to 5.12.1 [security]
 - [v308.1.24](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.24): fix(media-library): score metadata.title separately from texts_*
