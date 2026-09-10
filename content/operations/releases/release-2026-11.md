@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-server/pull/9979)
 - [fix(deps): update dependency nodemailer from 9.1.1 to v10 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/9992)
 - [Fix open-state styling on display settings dropdown button](https://github.com/livingdocsIO/livingdocs-editor/pull/11556)
 - [fix(rotated-images): import intoBuffer default export](https://github.com/livingdocsIO/livingdocs-server/pull/9981)
