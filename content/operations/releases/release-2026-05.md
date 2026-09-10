@@ -582,6 +582,7 @@ There are no known vulnerabilities. :tada:
 Patches typically fix bugs and apply improvements within the current release. Keeping your deployment up-to-date with the latest patch version means you benefit from those fixes. No explicit action is required per patch — bumping the version is enough.
 
 ### Livingdocs Server Patches
+- [v301.1.42](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.42): fix(deps): update dependency sharp from 0.35.3 to 0.35.4 [security]
 - [v301.1.41](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.41): chore(benchmarks): import job-queue-scripts default export
 - [v301.1.40](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.40): fix(deps): update dependency fastify from 5.8.5 to 5.12.1 [security]
 - [v301.1.39](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.39): fix(media-library): rethrow postgres errors from addEntries inside a transaction
