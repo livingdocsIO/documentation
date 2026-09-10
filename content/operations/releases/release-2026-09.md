@@ -19,19 +19,21 @@ systemRequirements:
     - name: NPM
       version: 11
     - name: Postgres
-      version: 17
+      version: 18
     - name: Elasticsearch
       version: 9
     - name: OpenSearch
       version: 3
     - name: Redis
       version: 8
+    - name: Valkey
+      version: 9
     - name: Livingdocs Server Docker Image
       version: livingdocs/server-base:24
     - name: Livingdocs Editor Docker Image
       version: livingdocs/editor-base:24
     - name: Browser Support
-      version: Chrome >= 145, Edge >= 145, Firefox >= 148, Safari >= 26.3
+      version: Chrome >= 152, Edge >= 152, Firefox >= 154, Safari >= 26.6
 
   minimal:
     - name: Node
@@ -45,13 +47,15 @@ systemRequirements:
     - name: OpenSearch
       version: 2
     - name: Redis
-      version: 6.2
+      version: 7.4
+    - name: Valkey
+      version: 7
     - name: Livingdocs Server Docker Image
       version: livingdocs/server-base:22
     - name: Livingdocs Editor Docker Image
       version: livingdocs/editor-base:22
     - name: Browser Support
-      version: Chrome >= 138, Edge >= 138, Firefox >= 140, Safari >= 18.6
+      version: Chrome >= 139, Edge >= 139, Firefox >= 142, Safari >= 18.6
 ---
 
 ## Caveat :fire:
@@ -64,6 +68,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+
 - [Bump main to the next minor and update supported releases](https://github.com/livingdocsIO/livingdocs-editor/pull/11492)
 - [Bump main to the next minor and update supported releases](https://github.com/livingdocsIO/livingdocs-server/pull/9946)
 - [Improve Image Collections](https://github.com/livingdocsIO/livingdocs-editor/pull/11369)
@@ -306,6 +311,7 @@ No known vulnerabilities. :tada:
 Patches typically fix bugs and apply improvements within the current release. Keeping your deployment up-to-date with the latest patch version means you benefit from those fixes. No explicit action is required per patch — bumping the version is enough.
 
 ### Livingdocs Server Patches
+
 - [v312.0.7](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v312.0.7): fix: Deprecate Postgres 14
 - [v312.0.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v312.0.6): fix(deps): automatically patch Node.js vulnerabilities
 - [v312.0.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v312.0.5): fix(deps): update dependency nodemailer from 9.0.6 to 9.1.1 [security]
@@ -314,6 +320,7 @@ Patches typically fix bugs and apply improvements within the current release. Ke
 - [v312.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v312.0.2): fix(imatrics-nlp): Add createConceptSuggestion to the API mock and match the getConcepts shape
 
 ### Livingdocs Editor Patches
+
 - [v128.1.6](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v128.1.6): fix(media-library): show open state on display settings dropdown
 - [v128.1.5](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v128.1.5): fix(webpack): Prevent dart-sass BOM from breaking scoped styles
 - [v128.1.4](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v128.1.4): test(dashboard): restore an article on the article management dashboard

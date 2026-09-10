@@ -19,19 +19,21 @@ systemRequirements:
     - name: NPM
       version: 11
     - name: Postgres
-      version: 17
+      version: 18
     - name: Elasticsearch
       version: 9
     - name: OpenSearch
       version: 3
     - name: Redis
       version: 8
+    - name: Valkey
+      version: 9
     - name: Livingdocs Server Docker Image
       version: livingdocs/server-base:24
     - name: Livingdocs Editor Docker Image
       version: livingdocs/editor-base:24
     - name: Browser Support
-      version: Chrome >= 145, Edge >= 145, Firefox >= 148, Safari >= 26.3
+      version: Chrome >= 147, Edge >= 147, Firefox >= 150, Safari >= 26.4
 
   minimal:
     - name: Node
@@ -46,6 +48,8 @@ systemRequirements:
       version: 2
     - name: Redis
       version: 6.2
+    - name: Valkey
+      version: 7
     - name: Livingdocs Server Docker Image
       version: livingdocs/server-base:22
     - name: Livingdocs Editor Docker Image
