@@ -170,29 +170,70 @@ Some entries may only have a GHSA identifier (no CVE) — that's fine, just omit
 
 Replace each `- TBD` placeholder with the extracted list. If a subsection has no patches, leave its `- TBD` in place. If neither subsection has any patches, also add a checkbox to the PR's `## Open Tasks` section (do not mention it in the changelog).
 
-### 5f. Review the System Requirements versions
+### 5f. Fill in the System Requirements versions
 
-The System Requirements live in the file's **frontmatter** under `systemRequirements:` — a `suggested:` and a `minimal:` list, each with a `version` for Node, NPM, Postgres, Elasticsearch, OpenSearch, Redis, the two Livingdocs Docker images, and Browser Support. The release bot copies these forward from the previous release unchanged, so they must be reviewed each cycle for version bumps.
+The System Requirements live in the file's **frontmatter** under `systemRequirements:` — a `suggested:` and a `minimal:` list, each with a `version` for Node, NPM, Postgres, Elasticsearch, OpenSearch, Redis, Valkey, the two Livingdocs Docker images, and Browser Support. The `{{< system-versions >}}` shortcodes in the body render from this block, so edit the frontmatter and nothing else.
 
-Run these three checks, then confirm with the user before changing anything:
+The template sets every value to `TBD`. Fill them all in — a `TBD` still there on announcement day blocks the release. If a row already holds a real version, an earlier pass filled it in; verify it against the source of truth below rather than trusting it.
 
-1. **Diff against the previous release.** Compare this release's `systemRequirements` block against the previous release's (read in Step 1). Note which values carried forward unchanged and which differ.
-2. **Cross-check Node & NPM against the server's engines.** Use the GitHub MCP to read `package.json` (the `engines` field) and `.nvmrc` from `livingdocsIO/livingdocs-server`:
-   - `engines.node` / `engines.npm` lower bounds define the **minimal** Node / NPM.
-   - `.nvmrc` is the development Node version and is a good signal for the **suggested** Node.
-   - Flag any mismatch — e.g. engines allow `>=26` but suggested Node still says `24`.
-3. **Scan this release's own content for version changes.** Re-read the `## Features`, `## Breaking Changes`, and `## Deprecations` sections for any entry that changes a supported version — e.g. "Officially Support Node.js vXX", "Drop support for Postgres XX", or a browser-support bump. Each such entry implies a matching change in `suggested` or `minimal`.
+**Timing.** These versions are only decidable once the release month has begun: the browser boundary is the end of the preceding month, and a Node major's LTS date can fall in that same window. On a mid-cycle pass, leave the rows as `TBD` and add `- [ ] Fill in the System Requirements` to the PR's `## Open Tasks` instead of guessing.
 
-Present the findings and ask:
+#### Suggested versions
 
-> "System Requirements review for `<release-handle>`:
-> - <carried forward unchanged from previous release / differences found>
-> - <Node & NPM vs server engines: match or mismatch>
+| Row                                                | Source of truth                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| -------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Node                                               | The highest major CI actually tests on the release branch — the `test-node-<major>` pipelines in `git -C <livingdocs-server> show origin/<release-handle>:.drone.yml` — that is _also_ Active LTS on announcement day per `curl -s https://raw.githubusercontent.com/nodejs/Release/main/schedule.json`. Both have to hold: CI usually gains a major months before it reaches LTS, and a major with no pipeline and no published base image is not thoroughly tested whatever its LTS status. |
+| NPM                                                | The major bundled with the suggested Node: `curl -s https://nodejs.org/dist/index.json`, read `npm` for that version.                                                                                                                                                                                                                                                                                                                                                                         |
+| Postgres, Redis, Valkey, Elasticsearch, OpenSearch | The newest version CI actually runs on the release branch: `git -C <livingdocs-server> show origin/<release-handle>:.drone.yml`. Use this rather than the upstream GA date — the image has to exist and be in the pipeline before we recommend it.                                                                                                                                                                                                                                            |
+| Docker images                                      | `livingdocs/server-base:<suggested Node major>` and `livingdocs/editor-base:<same major>`. Confirm both tags exist — the editor image is sometimes published later than the server one: `curl -s "https://hub.docker.com/v2/repositories/livingdocs/server-base/tags?page_size=50"`, and the same for `editor-base`. If either is missing, the major is not ready to be suggested.                                                                                                            |
+| Browser Support                                    | See the browser rule below.                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+
+#### Minimal versions
+
+| Row                                                | Source of truth                                                                                                                                                                                                                                                   |
+| -------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Node                                               | The lowest version `engines.node` allows on the release branch, which must match the lowest `test-node-<major>` pipeline in `.drone.yml`. Server and editor must agree; if the three disagree, stop and report it rather than picking one.                        |
+| NPM                                                | The major bundled with that minimal Node — not `engines.npm`, which has lagged behind before.                                                                                                                                                                     |
+| Postgres, Redis, Valkey, Elasticsearch, OpenSearch | `app/deprecations.js` and `app/breaking-changes.js` on the release branch. A minimum moves only in the release carrying the `LIBREAKING…` entry that drops the old version. A `LIDEP…` entry names the future release where it will move and changes nothing yet. |
+| Docker images                                      | `:<minimal Node major>` for both images.                                                                                                                                                                                                                          |
+| Browser Support                                    | The same rule as suggested, one year earlier.                                                                                                                                                                                                                     |
+
+#### Browser rule
+
+Suggested is the last stable version available on the final day of the month _before_ the release month; minimal is that same boundary one year earlier. For `release-2026-07`, suggested Chrome is 150 (released 2026-06-30), not 151 from July; minimal Chrome is 138 (released 2025-06-24).
+
+Look each browser up separately — their trains don't line up:
+
+- **Chrome:** `curl -s "https://chromiumdash.appspot.com/fetch_milestone_schedule?mstone=<major>"`, field `stable_date`
+- **Firefox:** `curl -s "https://whattrainisitnow.com/api/release/schedule/?version=<major>"`, field `release`
+- **Safari:** `curl -s https://support.apple.com/en-us/100100` — Apple's security-releases list, each entry dated
+- **Edge:** pin to the Chrome major. Edge ships two to five days after Chrome, so at a month boundary its own date sometimes falls just outside; keep the numbers aligned regardless.
+
+Write Safari as it ships (`18.6`, `26.2`) and the rest as bare majors.
+
+#### Check against the previous release
+
+Before moving on, diff your rows against the previous release's `systemRequirements` block. No row may go _backwards_: a suggested or minimal version lower than the previous release's is almost always a value copied from a stale template, not a real change. Minimums in particular only ever rise, and only in the release that carries the `LIBREAKING…` entry dropping the old version.
+
+If a row does go down and you can't name the reason — we stopped testing that version, we pulled the image — treat it as a copy-paste error and go back to the source of truth. This has bitten us: suggested Postgres was correct at 18 in `release-2026-01`, then sat at 17 for the next three releases because each one inherited a stale value.
+
+Do not copy your finished block into `_release-template.md`. The template deliberately holds `TBD` in every row so that each release has to derive its own versions.
+
+#### Cross-check this release's own content
+
+Re-read this release's `## Features`, `## Breaking Changes` and `## Deprecations` sections for any entry that changes a supported version — "Officially Support Node.js vXX", "Drop support for Postgres XX", a browser-support bump. Each such entry implies a matching change here, and a mismatch means one of the two is wrong.
+
+Present what you derived and confirm before writing:
+
+> "System Requirements for `<release-handle>`:
+>
+> - Suggested: <rows that change, with the source that decided each>
+> - Minimal: <rows that change, with the source that decided each>
 > - <version changes announced in this release, if any>
 >
-> Should I update any Suggested or Minimal values? (yes, with the changes — or no, leave as is)"
+> Apply these?"
 
-Apply only the changes the user confirms, editing the `systemRequirements` frontmatter. **Never bump a value on your own** — these are support commitments, so always confirm first.
+**Never bump a value on your own** — these are support commitments, so always confirm first.
 
 ## Step 6: Commit, push, and open PR
 

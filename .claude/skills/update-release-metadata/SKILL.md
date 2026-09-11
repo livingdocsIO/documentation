@@ -1,11 +1,11 @@
 ---
 name: update-release-metadata
-description: Prepares a GitHub PR to update Livingdocs release metadata on announcement day. Use this skill when the user mentions updating release metadata, announcement day, a release going live, or wants to prepare the metadata PR for a new release (e.g. "release-2026-05 is being announced today", "update the release metadata", "prepare announcement day PR"). This skill handles the full git workflow: branch creation, file edits, commit, push, and PR creation.
+description: Prepares a GitHub PR to update Livingdocs release metadata on announcement day. Use this skill when the user mentions updating release metadata, announcement day, a release going live, or wants to prepare the metadata PR for a new release (e.g. "release-2026-05 is being announced today", "update the release metadata", "prepare announcement day PR"). This skill handles the full git workflow - branch creation, file edits, commit, push, and PR creation. The TRN content itself, system requirements included, is handled by cleanup-trn beforehand.
 ---
 
 # Update Release Metadata
 
-On announcement day, the release state machine needs to advance: a new release moves from `upcoming` to `current`, the previous current becomes `maintained`, and the oldest maintained becomes `legacy`. This skill handles all the file edits and git workflow.
+On announcement day, the release state machine needs to advance: a new release moves from `upcoming` to `current`, the previous current becomes `maintained`, and the oldest maintained becomes `legacy`. This skill handles all the file edits and git workflow. It is deliberately lightweight — the content work, system requirements included, belongs to `cleanup-trn` and should already be done by now.
 
 ## Step 1: Identify the release
 
@@ -108,6 +108,8 @@ Apply the same logical changes for all three releases in their respective JSON o
 "maintained": false,
 "legacy": true,
 ```
+
+Finally, check that the new release's `systemRequirements` block holds no `TBD` rows. Filling them in is `cleanup-trn` step 5f's job and should have happened in the final cleanup pass; a `TBD` reaching a current release is a blocker, so stop and finish that first rather than deriving versions here.
 
 ## Step 4: Commit
 
