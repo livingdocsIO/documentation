@@ -828,7 +828,9 @@ Usage log purposes can be flagged as internal. When the `internal` property is s
 
 Every usage log entry is indexed individually, so media library searches and dashboard filters can match images by what is in their usage log, and combine several criteria that must all hold on the *same* entry. Typical questions this answers are "used in print within the last two years" or "a confirmed social-media usage in 2026".
 
-The following fields of each entry are indexed: `state`, `purpose`, `reportingDate`, `userId`, `documentId`, `publicationDate`, `publicationId`, and `url`. Both pending and confirmed entries are indexed.
+The following fields of each entry are indexed: `state`, `purpose`, `reportingDate`, `userId`, `documentId`, `publicationDate`, `publicationId`, `url`, and `billing`. Both pending and confirmed entries are indexed.
+
+Date fields support `range` queries, `billing` is a boolean, and the remaining fields match on exact values.
 
 To also search by a purpose's custom `params`, set `config: { index: true }` on the `paramsSchema` property. Only indexed params are queryable, and each keeps its type, so it supports the matching operators of its metadata plugin (for example a `range` on a `li-date` param).
 
@@ -854,7 +856,9 @@ To also search by a purpose's custom `params`, set `config: { index: true }` on 
 }
 ```
 
-Query the indexed entries with the `nested` filter operator, either in a dashboard's `baseFilters` or in the [Expert Search]({{< ref "/customising/advanced/editor-configuration/expert-search/#nested" >}}) display filter. Sub-keys inside a `nested` block are resolved against the entry, and `usageLog` works as an alias for the underlying `usageLogV2` field.
+Query the indexed entries with the [`nested`]({{< ref "/reference/public-api/publications/search-filters#nested" >}}) filter operator, either in a dashboard's `baseFilters` or in the [Expert Search]({{< ref "/customising/advanced/editor-configuration/expert-search/#searching-nested-fields" >}}) display filter. Sub-keys inside a `nested` block are resolved against the entry, and `usageLog` works as an alias for the underlying `usageLogEntries` field.
+
+A `nested` block is the only way to reach these fields. Usage log conditions written as plain top-level keys do not resolve against the indexed entries.
 
 ```js
 baseFilters: [
@@ -865,7 +869,41 @@ baseFilters: [
 ]
 ```
 
-The new fields are added by a media library reindex. Run `livingdocs-server elasticsearch-index --handle=li-media` after upgrading so existing entries gain the usage log fields. The mapping is patched in place, so no `--recreate` is needed.
+A list inside `nested` is an implicit AND, so the conditions above must hold on one and the same entry. To express anything else, pass a logical operator instead of a list. The example below answers "which photos ran in the politics department in print in the last year", combining built-in fields with two indexed `params`.
+
+```js
+baseFilters: [
+  {key: 'usageLog', nested: [
+    {key: 'state', term: 'confirmed'},
+    {key: 'params.medium', term: 'print'},
+    {key: 'params.department', term: 'politik'},
+    {key: 'publicationDate', range: {gte: 'now-1y'}}
+  ]}
+]
+```
+
+Wrapping a nested block in `not` matches entries that have no such usage at all, which is how questions like "not used online in the past two years" are expressed.
+
+```js
+baseFilters: [
+  {not: {key: 'usageLog', nested: [
+    {key: 'purpose', term: 'online'},
+    {key: 'publicationDate', range: {gte: 'now-2y'}}
+  ]}}
+]
+```
+
+{{< warning >}}
+The new fields are added by a media library reindex. Run the following after upgrading so existing entries gain the usage log fields:
+
+```
+livingdocs-server elasticsearch-index --handle=li-media
+```
+
+The `usageLogBilledEntryDates` and `usageLogUnresolvedBillingEntryDates` display filters now compile to nested queries as well, so they return no results until the reindex has run.
+
+The mapping is patched in place, so no `--recreate` is needed. A `--recreate` is only necessary if the mapping patch is rejected as incompatible.
+{{< /warning >}}
 
 ### Creating usage log dashboards
 

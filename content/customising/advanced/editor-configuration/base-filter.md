@@ -24,7 +24,7 @@ At all these places, one can use the same query format, e.g.
 {key: 'contentType', term: 'regular'}
 ```
 
-Learn more about the filter queries format [here]({{< ref "/reference/public-api/publications/search-filters" >}})
+The query expressions and logical operators are documented in the [Search Filters Query DSL]({{< ref "/reference/public-api/publications/search-filters#query-expressions" >}}) reference. Base filters use the same structure, written as JavaScript objects.
 
 ## Filter Query Examples
 
@@ -90,6 +90,13 @@ This are all available `queryTypes` which can be used to form a filter query.
 
 // media library entry usage logs ({{< added-in "release-2026-03" >}})
 {key: 'usageLog.pendingUserIds', termPattern: '{{ userId }}'}
+
+// media library entry usage log details ({{< added-in "release-2026-09" >}})
+// all conditions must hold on the same usage log entry
+{key: 'usageLog', nested: [
+  {key: 'purpose', term: 'print'},
+  {key: 'publicationDate', range: {gte: 'now-2y'}}
+]}
 ```
 
 ### Example - Filter by metadata with key/value
