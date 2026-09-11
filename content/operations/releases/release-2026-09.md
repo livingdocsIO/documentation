@@ -531,6 +531,7 @@ No known vulnerabilities. :tada:
 Patches typically fix bugs and apply improvements within the current release. Keeping your deployment up-to-date with the latest patch version means you benefit from those fixes. No explicit action is required per patch — bumping the version is enough.
 
 ### Livingdocs Server Patches
+- [v312.0.8](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v312.0.8): fix: Use correct warning type for all breaking changes
 
 - [v312.0.7](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v312.0.7): fix: Deprecate Postgres 14
 - [v312.0.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v312.0.6): fix(deps): automatically patch Node.js vulnerabilities
