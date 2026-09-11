@@ -847,6 +847,7 @@ The print options allow you to enable the WoodWing Studio print connector on a c
 - {{< release "release-2025-03" >}}: Removed support for videos and files in inbox.
 - {{< release "release-2025-05" >}}: The Document Inbox is now also supported for documents of type Data Record.
 - {{< release "release-2026-07" >}}: Inbox items can be kept in the inbox after being dropped into a document via the `settings.inbox.keepItemsOnDrop` project setting.
+- {{< release "release-2026-09" >}}: Image cards in the inbox can be rendered with a dashboard card configuration via `inbox.useCardConfiguration`.
 
 ### Configuration
 
@@ -861,10 +862,13 @@ using the `useDashboardColumns` property.
   inbox: {
     useDashboardColumns: 'inboxDashboard', // added in release-2024-09
     contentTypes: ['regular', 'another-handle'], // added in release-2024-09
-    mediaTypes: ['image'] // changed in release-2025-03
+    mediaTypes: ['image'], // changed in release-2025-03
+    useCardConfiguration: 'myImageCard' // added in release-2026-09
   }
 }
 ```
+
+`useCardConfiguration` references a [dashboard card configuration]({{< ref "/reference/project-config/editor-settings#dashboard-cards" >}}) used to render the image cards in the inbox. The referenced configuration must exist and must be based on `liMediaLibraryCard`, otherwise the project config validation fails.
 
 ### Keep Items on Drop
 

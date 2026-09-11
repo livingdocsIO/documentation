@@ -39,7 +39,7 @@ dashboards: [
     baseFilters: [{key: 'mediaType', term: ['image1', 'image2']}], // Optional: Invisible base filters applied to every search (including the default result list)
     displayFilters: [{filterName: 'liDateTimeRange'}], // Optional: Filters shown to the user below the search input
     sort: 'updated_at', // Optional: Defaults to 'updated_at'
-    useCard: 'myImageCard' // Optional: References an existing DashboardCardConfiguration
+    useCardConfiguration: 'myImageCard' // Optional: References an existing DashboardCardConfiguration
   }
 ]
 ```
@@ -57,10 +57,16 @@ You can find more information on those common dashboard properties [in the edito
 Must be one of `mediaImage`, `mediaVideo` or `mediaFile`.
 It retrieves all available mediaTypes that have this assetType defined as their `type` property, unless they are filtered by a baseFilter with `key: 'mediaType'`.
 
-#### useCard
+#### useCardConfiguration
 
 You can reference an existing dashboard card, which will be used to render the media element within a dashboard.
 To do so, add the card’s handle here. ([Read more about dashboard cards]({{< ref "/reference/project-config/editor-settings#dashboard-cards" >}}))
+
+The same property is available on [image collections]({{< ref "/guides/media-library/image-collections/#project-config" >}}) and on a [content type inbox]({{< ref "/reference/project-config/content-types#inbox" >}}).
+
+{{< info >}}
+This property was called `useCard` until {{< release "release-2026-09" >}}. The old name still works but is deprecated and will be removed in `release-2027-03`. Note that `dashboardCardConfigurations[].useCard`, which names the built-in card type, is a different property and is unaffected.
+{{< /info >}}
 
 {{< info >}}
 **Legacy Media Library Configuration**<br>

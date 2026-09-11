@@ -33,6 +33,8 @@ module.exports = {
     mediaTypes: ['image'],
     // Optional: handle or array of handles of media library dashboards
     useDashboard: 'myImagesDashboard',
+    // Optional: references an existing dashboardCardConfigurations entry
+    useCardConfiguration: 'myImageCard',
     // Optional
     pageTitle: {en: 'My Image Collections', de: 'Meine Bild-Sammlungen'}
   }
@@ -49,6 +51,11 @@ These dashboards are shown as tabs inside the dialog when browsing for images to
 More about that in [Tabs in Media Library Sidepanels and Dialogs]({{< ref "/operations/releases/release-2026-05#tabs-in-media-library-sidepanels-and-dialogs-gift" >}}).
 Make sure the dashboard's filters and base filters cover the same media types listed in `mediaTypes`.
 If `useDashboard` is not configured, all available media is shown in a single "Feed" tab and grouped by media type.
+
+**`useCardConfiguration`** (optional): {{< added-in "release-2026-09" >}} The handle of a [dashboard card configuration]({{< ref "/reference/project-config/editor-settings#dashboard-cards" >}}), used to render the image cards inside a collection.
+The referenced configuration must exist and must be based on `liMediaLibraryCard`, otherwise the project config validation fails.
+Without it, collections render the default image card.
+When the card configuration adds metadata fields, the display settings dropdown gains a "metadata" option to show or hide them.
 
 **`pageTitle`** (optional): Used as the page title of the Image Collections screen. Defaults to "Image Collections".
 

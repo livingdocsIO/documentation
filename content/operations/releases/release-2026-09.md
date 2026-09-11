@@ -489,6 +489,8 @@ contentTypes: [
 
 On media library dashboards the same property is called `useCard`, which is renamed to `useCardConfiguration` in this release - see [Deprecation of dashboards[].useCard](#deprecation-of-dashboardsusecard).
 
+For more information, see the [Image Collections]({{< ref "/guides/media-library/image-collections/#project-config" >}}) guide and the [content type inbox]({{< ref "/reference/project-config/content-types#inbox" >}}) reference.
+
 ### Image Card and License Improvements
 
 License and tag information was not shown consistently across the product. The same image could carry a license badge in the properties panel but nothing on an approval task, and display settings were reset per dashboard instead of following the editor around.
