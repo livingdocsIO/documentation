@@ -58,99 +58,7 @@ systemRequirements:
       version: Chrome >= 139, Edge >= 139, Firefox >= 142, Safari >= 18.6
 ---
 
-## Caveat :fire:
-
-These are the release notes of the upcoming release (pull requests merged to the main branch).
-
-- :information_source: this document is updated automatically by a bot (pr's to categorize section)
-- :information_source: this document will be roughly updated manually once a week (put PRs + description to the right section)
-- :fire: We don't guarantee stable APIs. They can still change until the official release
-- :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
-
-## PRs to Categorize
-
-- [Bump main to the next minor and update supported releases](https://github.com/livingdocsIO/livingdocs-editor/pull/11492)
-- [Bump main to the next minor and update supported releases](https://github.com/livingdocsIO/livingdocs-server/pull/9946)
-- [Improve Image Collections](https://github.com/livingdocsIO/livingdocs-editor/pull/11369)
-- [Improve Image Collections](https://github.com/livingdocsIO/livingdocs-server/pull/9763)
-- [chore(deps): update dependency webpack from 5.109.2 to v5.110.1 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/11491)
-- [Remove the push notifications feature (LIBREAKING079)](https://github.com/livingdocsIO/livingdocs-server/pull/9833)
-- [Stop storing generated component data in the comment thread context](https://github.com/livingdocsIO/livingdocs-editor/pull/11441)
-- [test(playwright): Automate the release-2026-07 manual test cases](https://github.com/livingdocsIO/livingdocs-editor/pull/11314)
-- [feat(search): Add /documents/count endpoint for exact ES totals](https://github.com/livingdocsIO/livingdocs-server/pull/9520)
-- [fix(media-library): keep legacy search fields for un-reindexed entries](https://github.com/livingdocsIO/livingdocs-server/pull/9867)
-- [Remove mediaLibrary.disableImageEditingInDocuments (LIBREAKING078)](https://github.com/livingdocsIO/livingdocs-server/pull/9834)
-- [Remove the push notifications UI (LIBREAKING077)](https://github.com/livingdocsIO/livingdocs-editor/pull/11439)
-- [Remove the legacy session grant upgrade path](https://github.com/livingdocsIO/livingdocs-server/pull/9836)
-- [Keep auto-loading search results until the container is filled](https://github.com/livingdocsIO/livingdocs-editor/pull/11456)
-- [fix(editor): localize notification error card title](https://github.com/livingdocsIO/livingdocs-editor/pull/11246)
-- [Require license profiles to be enabled explicitly](https://github.com/livingdocsIO/livingdocs-server/pull/9919)
-- [Require license profiles to be enabled explicitly](https://github.com/livingdocsIO/livingdocs-editor/pull/11474)
-- [chore(deps): update dependency eslint from 10.8.1 to v10.9.0 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/11480)
-- [Use the collapse icon for the recenter button in the crop editor](https://github.com/livingdocsIO/livingdocs-editor/pull/11473)
-- [chore(deps): update dependency sass from 1.102.0 to v1.103.0 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/11472)
-- [feat(media-library): search media entries by usage log details](https://github.com/livingdocsIO/livingdocs-server/pull/9764)
-- [fix(search): decompound German only at index time](https://github.com/livingdocsIO/livingdocs-server/pull/9859)
-- [fix(properties): correct German word order in char-limit labels](https://github.com/livingdocsIO/livingdocs-editor/pull/11466)
-- [Fix 500 error when a document's media already exists in the target project](https://github.com/livingdocsIO/livingdocs-server/pull/9832)
-- [Stop the media library indexing consumer group from drifting](https://github.com/livingdocsIO/livingdocs-server/pull/9881)
-
-- [chore(deps): update aws-sdk from 3.1110.0 to v3.1111.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/9894)
-- [Replace the image cropping tool with Pintura](https://github.com/livingdocsIO/livingdocs-editor/pull/11359)
-- [chore(deps): update dependency mocha from 12.0.0-rc.5 to v12.0.0-rc.6 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/11455)
-- [Preserve document updatedAt when re-enriching Retresco metadata](https://github.com/livingdocsIO/livingdocs-server/pull/9858)
-- [fix(deps): update dependency @livingdocs/framework from 34.2.1 to v34.2.2 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/9844)
-- [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-editor/pull/11437)
-- [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-server/pull/9830)
-- [Replace the legacy ld-card CSS class with the li-card component](https://github.com/livingdocsIO/livingdocs-editor/pull/11392)
-- [fix(indexing): Always load the elasticsearch configs into the process](https://github.com/livingdocsIO/livingdocs-server/pull/9785)
-- [feat(media-library): improve filename visibility and add copy button](https://github.com/livingdocsIO/livingdocs-editor/pull/11367)
-- [feat(media-library): substring search on asset filenames via ngram](https://github.com/livingdocsIO/livingdocs-server/pull/9743)
-- [Match metadata image urls to the server to avoid merge conflicts](https://github.com/livingdocsIO/livingdocs-editor/pull/11422)
-- [Restore OpenID Connect login through a forward proxy](https://github.com/livingdocsIO/livingdocs-server/pull/9784)
-- [fix(deps): update dependency chalk from 5.6.2 to v6 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/9802)
-- [chore(deps): update dependency execa from 10.0.0 to v10.0.1 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/9799)
-- [fix(deps): update dependency @livingdocs/framework from 34.2.0 to v34.2.1 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/11419)
-- [chore(deps): update dependency posthog-node from 5.46.1 to v5.47.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/9798)
-- [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-editor/pull/11411)
-- [fix(indexing): Avoid caching empty media-library locale fields at startup](https://github.com/livingdocsIO/livingdocs-server/pull/9777)
-- [Image Card Enhancement & License Improvements](https://github.com/livingdocsIO/livingdocs-editor/pull/11344)
-- [fix(deps): update dependency pusher-js from 8.5.0 to v8.6.0 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/11400)
-- [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-server/pull/9752)
-- [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-editor/pull/11384)
-- [chore(deps): update dependency jose from 6.2.3 to v6.2.4 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/11385)
-- [fix(deps): update dependency js-yaml from 5.2.1 to 5.2.2 [security] (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/11375)
-- [fix(i18n): adjust nb-NO editor labels and bundle panel strings](https://github.com/livingdocsIO/livingdocs-editor/pull/11371)
-- [Add explicit enablement to license profiles](https://github.com/livingdocsIO/livingdocs-server/pull/9730)
-- [Add explicit enablement to license profiles](https://github.com/livingdocsIO/livingdocs-editor/pull/11358)
-- [Don't define breaking change date for three deprecations](https://github.com/livingdocsIO/livingdocs-server/pull/9725)
-- [Resolve all published candidates in curated-list teasers](https://github.com/livingdocsIO/livingdocs-server/pull/9696)
-- [fix(deps): update dependency nanoid from 5.1.16 to v6 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/11353)
-- [fix(deps): update dependency execa from 9.6.1 to v10 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/9721)
-- [fix(deps): update dependency nanoid from 5.1.16 to v6 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/9715)
-- [fix(draft-storage): Never silently drop unsaved content when saving is disabled](https://github.com/livingdocsIO/livingdocs-editor/pull/11241)
-- [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-server/pull/9726)
-- [Update logo and favicon assets; serve browser-support logo locally](https://github.com/livingdocsIO/livingdocs-editor/pull/11330)
-- [Use 10MB header when processing gif and webp images](https://github.com/livingdocsIO/livingdocs-server/pull/9709)
-- [Add nb-NO to relative-time supported locales](https://github.com/livingdocsIO/livingdocs-editor/pull/11345)
-- [fix(deps): update babel from 7.29.7 to v8 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/11239)
-- [Fix release date in deprecation message of li-authentication functions](https://github.com/livingdocsIO/livingdocs-server/pull/9701)
-- [Run node vulnerability patch weekly across main and the three latest releases](https://github.com/livingdocsIO/livingdocs-server/pull/9670)
-- [fix(metadata): report initial form validity on mount](https://github.com/livingdocsIO/livingdocs-editor/pull/11337)
-- [fix(deps): update dependency cookie from 1.1.1 to v2 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/9635)
-- [Toggle include overrides of only focused component](https://github.com/livingdocsIO/livingdocs-editor/pull/11135)
-- [Keep drag auto-scroll working after window resize](https://github.com/livingdocsIO/livingdocs-editor/pull/11324)
-- [Add file extension to image downloads in Chrome and Edge](https://github.com/livingdocsIO/livingdocs-server/pull/9636)
-- [fix(search): Position simple-search cheat sheet flyout correctly](https://github.com/livingdocsIO/livingdocs-editor/pull/11323)
-- [Re-expose addUsageLogEntriesForMediaInDocument](https://github.com/livingdocsIO/livingdocs-server/pull/9684)
-- [Hide license profile tag when license profiles are not configured](https://github.com/livingdocsIO/livingdocs-editor/pull/11320)
-- [Hide "media not found" badge on empty image placeholders](https://github.com/livingdocsIO/livingdocs-editor/pull/11318)
-- [fix(auth): Always refresh tokens, makes `auth.authTokenRenewalInterval` config obsolete](https://github.com/livingdocsIO/livingdocs-editor/pull/11308)
-- [Add standard cost class translation to the license profile form](https://github.com/livingdocsIO/livingdocs-editor/pull/11310)
-- [chore(deps): update dependency webpack from 5.108.3 to v5.108.4 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/11306)
-- [fix(deps): update opentelemetry (main) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/9679)
-
-To get an overview about new functionality, read the [Release Notes](TODO).
+To get an overview about new functionality, read the [Release Notes](https://livingdocs.io/en/blog/release-september-2026).
 To learn about the necessary actions to update Livingdocs to `release-2026-09`, read on.
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
@@ -181,17 +89,136 @@ No pre-deployment steps are required before rolling out this release.
 
 #### Migrate the Postgres Database
 
-No migrations are required for this release.
+When upgrading, first run the database migrations. At Livingdocs, we run this command in an initContainer on Kubernetes.
+
+The migration executes quickly and does not lock write-heavy tables.
+
+```sh
+# 219-remove-legacy-sessions.js
+#   Drops the unused `user_sessions` table and its `user_sessions_states` type.
+#   Sessions have been stored in `oauth_grants` since {{< release "release-2026-07" >}}
+#   (migration `217-oauth-grants.js`). The `user_sessions_activity*` tables hold
+#   concurrent-user statistics and are left untouched.
+livingdocs-server migrate up
+```
 
 ### After the deployment
 
-No post-deployment steps are required after rolling out this release.
+#### Reindex the Media Library Elasticsearch Index
+
+This step applies to projects that configure `mediaCenter.usagePurposes`. Usage logging stays off until at least one purpose is defined, so a project without it has no usage log entries to index, nothing that queries them, and no post-deployment step to run.
+
+This release indexes every media library usage log entry as its own nested object, which is what makes the new usage log search work (see [Search Images by Usage Log Details](#search-images-by-usage-log-details)). Existing entries only gain the new fields once the media library index has been reindexed.
+
+The mapping additions are additive and are patched in place, so a plain reindex is enough. A `--recreate` is only necessary if Elasticsearch rejects the mapping patch as incompatible.
+
+```sh
+livingdocs-server elasticsearch-index --handle li-media
+```
+
+{{< info >}}
+Usage log filters now compile to nested Elasticsearch queries. Entries that have not been reindexed no longer match them, so dashboards and base filters that rely on usage log criteria return incomplete results until the reindex has finished. Schedule it as part of the rollout.
+{{< /info >}}
 
 ### Rollback
 
-No rollback steps are required for this release.
+The `219-remove-legacy-sessions.js` migration has no down migration - the `user_sessions` table is dropped for good.
+
+Rolling back to a {{< release "release-2026-07" >}} build is still safe. That release already keeps sessions in `oauth_grants` and never reads `user_sessions`. Rolling back two releases is not: {{< release "release-2026-05" >}} and older use `user_sessions` as the session store and fail against a database where the table is gone.
+
+To roll back the Elasticsearch changes, no action is required. The new media library fields are additive and are ignored by an older server build.
 
 ## Breaking Changes :fire:
+
+### Removal of mediaLibrary.disableImageEditingInDocuments
+
+**Code:** `LIBREAKING078`
+
+The server config property `mediaLibrary.disableImageEditingInDocuments` has been removed and now throws during startup. It was deprecated in {{< release "release-2026-03" >}} (`LIDEP078`). Image editing in documents is always enabled, along with the image variant creation it depends on.
+
+#### Detect
+
+In the server config, `disableImageEditingInDocuments`.
+
+#### Fix
+
+Remove the property. There is no replacement - editors can create image variants from within a document in every project.
+
+### Removal of the Push Notifications Feature
+
+**Codes:** `LIBREAKING079-feature:li-push-notifications`, `LIBREAKING079-metadataPlugin:li-push-notifications`, `LIBREAKING079-serverConfig:pushNotifications`, `LIBREAKING079-serverConfig:push_notifications`, `LIBREAKING079-channelConfig:settings.pushNotifications`
+
+The push notifications feature has been removed. It was deprecated in {{< release "release-2026-03" >}} (`LIDEP076`) in favour of the [li-push-messages]({{< ref "/reference/document/metadata/plugins/li-push-messages" >}}) metadata plugin. Configuring any part of it now throws during server startup or project config validation, and the `/push-notifications` endpoints, the firebase, ethinking and airship providers and the editor side panel are gone.
+
+Documents that already carry `li-push-notifications` metadata keep validating and indexing - the plugin declaration is retained in a read-only form - but the metadata is no longer editable and config writes referencing the plugin are rejected.
+
+#### Detect
+
+Any of the following:
+
+- In the server config, `pushNotifications` or `push_notifications`.
+- In channel configs, a `pushNotifications` key under `settings`.
+- In content type configs, a metadata plugin entry `li-push-notifications`.
+- In project source code, a call against the `/push-notifications` endpoints or the editor `pushNotificationsProxy`.
+
+#### Fix
+
+| Removed                                                  | Replacement                                                                                             |
+| -------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| `li-push-notifications` metadata plugin                  | [li-push-messages]({{< ref "/reference/document/metadata/plugins/li-push-messages" >}}) metadata plugin |
+| Server config `pushNotifications` / `push_notifications` | Configure the providers on `li-push-messages`                                                           |
+| Channel config `settings.pushNotifications`              | Remove, `li-push-messages` needs no channel setting                                                     |
+| `/push-notifications` endpoints                          | The `li-push-messages` endpoints                                                                        |
+
+Existing `li-push-notifications` metadata is not converted to `li-push-messages` automatically. Reach out to your Customer Solutions contact if you need the stored metadata migrated.
+
+### Drop of Support for Redis Versions Older Than v7.4
+
+**Code:** `LIBREAKING080`
+
+Redis versions older than v7.4 are no longer supported. This was announced in {{< release "release-2026-03" >}} (`LIDEP079`). The minimal supported Redis version moves from 6.2 to 7.4, the suggested version stays at 8.
+
+#### Detect
+
+Run `INFO server` against the Redis instance the deployment is configured with and read `redis_version`. Anything below 7.4 is affected.
+
+#### Fix
+
+Upgrade the Redis instance to v8. Note that v7.4 is only the minimum, and is itself deprecated in this release (see [Deprecation of Redis and Valkey Versions Older Than v8](#deprecation-of-redis-and-valkey-versions-older-than-v8)), so upgrading straight to v8 avoids a second round.
+
+### Removal of registerCustomEmbeds() and registerIframePlugin()
+
+The editor APIs `embeds.registerCustomEmbeds()` and `coreApi.registerIframePlugin()` have been removed. Both were deprecated in {{< release "release-2026-03" >}} with no replacement. Calling either now logs a breaking-change error. The embed handler registry only registers the built-in Tweet and Iframe handlers.
+
+#### Detect
+
+In editor project source code, a call to `registerCustomEmbeds` or `registerIframePlugin`.
+
+#### Fix
+
+Remove the calls. There is no replacement: the embed handler registry is no longer extensible, and the iframe plugin registry it fed has been dropped. A project that registered custom embed handlers or iframe plugins through them loses that functionality - reach out to your Customer Solutions contact to work out a replacement.
+
+### Removal of the .ld-card CSS Class
+
+The legacy `.ld-card` construct has been replaced throughout the editor by the `li-card` Vue component, and the class - along with all of its BEM children and modifiers - has been deleted.
+
+Custom editor styles that target it lose their styling silently, since a missing class produces no error.
+
+#### Detect
+
+In custom SCSS and in custom editor markup, `ld-card`.
+
+#### Fix
+
+Replace the markup with the `li-card` Vue component, or define the styles locally.
+
+There is also a transitional option. Adding this line at the top of the SCSS file configured as `CUSTOM_STYLE_PATH_BEFORE` or `CUSTOM_STYLE_PATH_AFTER` restores the deleted classes:
+
+```sass
+@import "~styles/backwards-compatibility/release-2026-09.scss";
+```
+
+Custom UI then renders as before, which buys time to update the markup. The file is kept around for a while but will eventually be removed, so treat the import as a bridge rather than a fix.
 
 ### Removal of the editor.imageCrop configuration
 
@@ -199,7 +226,7 @@ The editor cropping tool was rebuilt in this release (see [Improved Image Croppi
 
 #### Detect
 
-In the editor config, an `imageCrop` key under `editor`. Search for `imageCrop`.
+In the editor config, an `imageCrop` key under `editor`.
 
 #### Fix
 
@@ -243,6 +270,114 @@ mediaCenter: {
 ```
 
 ## Deprecations :warning:
+
+### Deprecation of the Aggregate usageLog Search Fields
+
+**Codes:** `LIDEP087-pendingUserIds`, `LIDEP087-confirmedEntryDates`, `LIDEP087-billedEntryDates`, `LIDEP087-unresolvedBillingEntryDates`
+
+Querying media library entries through the aggregate `usageLog.*` fields is deprecated and will be removed in `release-2027-03`. Usage log entries are now indexed individually (see [Search Images by Usage Log Details](#search-images-by-usage-log-details)), so a filter can require several criteria to hold on the _same_ usage entry - which the aggregate fields, flattened across all entries of an image, could never express.
+
+#### Detect
+
+In base filters, dashboard display filters and expert searches, a filter key ending in `pendingUserIds`, `confirmedEntryDates`, `billedEntryDates` or `unresolvedBillingEntryDates`. Searching the `usageLog.` prefix instead also matches the nested sub-keys of the replacement syntax, which are not deprecated.
+
+#### Fix
+
+Replace the aggregate key with a `nested` filter on `usageLog`. The conditions inside a `nested` block are implicitly combined with `and` and all have to hold on the same usage log entry:
+
+| Deprecated key                         | Nested conditions                                                            |
+| -------------------------------------- | ---------------------------------------------------------------------------- |
+| `usageLog.pendingUserIds`              | `state` is `pending`, `userId` matches                                       |
+| `usageLog.confirmedEntryDates`         | `state` is `confirmed`, `publicationDate` in range                           |
+| `usageLog.billedEntryDates`            | `state` is `confirmed`, `billing` is `true`, `publicationDate` in range      |
+| `usageLog.unresolvedBillingEntryDates` | `state` is `confirmed`, `billing` does not exist, `publicationDate` in range |
+
+```js
+// before
+{key: 'usageLog.billedEntryDates', range: {gte: '2026-01-01'}}
+
+// after
+{
+  key: 'usageLog',
+  nested: [
+    {key: 'state', term: 'confirmed'},
+    {key: 'billing', term: true},
+    {key: 'publicationDate', range: {gte: '2026-01-01'}}
+  ]
+}
+```
+
+Nested filters only match entries that carry the new index fields, so run the media library reindex described under [Reindex the Media Library Elasticsearch Index](#reindex-the-media-library-elasticsearch-index) before switching filters over.
+
+### Deprecation of Redis and Valkey Versions Older Than v8
+
+**Code:** `LIDEP088`
+
+Redis and Valkey versions older than v8 are deprecated and will no longer be supported from `release-2027-03`. Redis below v7.4 is already unsupported in this release (see [Drop of Support for Redis Versions Older Than v7.4](#drop-of-support-for-redis-versions-older-than-v74)).
+
+#### Detect
+
+Run `INFO server` against the configured Redis or Valkey instance and read `redis_version`. Anything below 8 is affected.
+
+#### Fix
+
+Upgrade the instance to v8 or newer.
+
+### Deprecation of the Public API Versions v1 and beta
+
+**Codes:** `LIDEP089-v1`, `LIDEP089-beta`
+
+The Public API versions `v1` and `beta` are deprecated and will be removed in `release-2027-03`. Requests to them answer with a deprecation warning header.
+
+#### Detect
+
+In project source code and in integrations calling Livingdocs, a request path starting with `/api/v1/` or `/api/beta/`. Server-side, the deprecation is logged with the codes above on every such request.
+
+#### Fix
+
+Migrate the integration to the newest API version, `2026-05`. Consult the [Public API changelog]({{< ref "/reference/public-api/changelog" >}}) for what each version in between changes, or the history on the reference page of each endpoint the integration calls.
+
+Where that migration cannot happen before `release-2027-03`, switching the path segment to `/api/2025-03/` clears this deprecation on its own: `v1` and `beta` are both contained in `2025-03`, so no request or response changes are needed. Treat it as a stopgap rather than a destination - `2025-03` is itself deprecated in `release-2026-11` and removed in `release-2027-05`, one release after `v1` and `beta` are gone.
+
+The [versioning policy]({{< ref "/reference/public-api/versioning" >}}) explains how versions are dated and how long each one is supported.
+
+### Deprecation of dashboards[].useCard
+
+**Code:** `LIDEP090`
+
+The project config property `useCard` on media library dashboards is deprecated and will be removed in `release-2027-03`. It is renamed to `useCardConfiguration`, which is the name the same property already carries on image collections and content type inboxes (see [Improved Image Collections](#improved-image-collections)).
+
+Both names are accepted in this release and behave identically.
+
+#### Detect
+
+In the project config, a `useCard` key on an `editorSettings.dashboards` entry of type `mediaLibraryDashboard`. Search for `useCard` and ignore hits that already read `useCardConfiguration`.
+
+#### Fix
+
+Rename the property.
+
+```js
+// editorSettings.dashboards[]
+{
+  type: 'mediaLibraryDashboard',
+  useCardConfiguration: 'liMediaLibraryCard' // previously: useCard
+}
+```
+
+### Deprecation of Postgres 14
+
+**Code:** `LIDEP091`
+
+Support for Postgres 14 is deprecated and will be dropped in `release-2027-03`. The minimal supported version stays at 14 for now.
+
+#### Detect
+
+Run `SELECT version();` against the configured Postgres instance. A major version of 14 is affected.
+
+#### Fix
+
+Upgrade to Postgres 18, the suggested version for this release.
 
 ## Features :gift:
 
@@ -324,6 +459,44 @@ The existing `usageLogBilledEntryDates` and `usageLogUnresolvedBillingEntryDates
 
 For more information, see the [Usage Log]({{< ref "/guides/media-library/media-library-setup/#searching-by-usage-log-details" >}}), [Search Filters]({{< ref "/reference/public-api/publications/search-filters#nested" >}}) and [Expert Search]({{< ref "/customising/advanced/editor-configuration/expert-search" >}}) documentation.
 
+The aggregate `usageLog.*` filter keys this replaces are deprecated, see [Deprecation of the Aggregate usageLog Search Fields](#deprecation-of-the-aggregate-usagelog-search-fields).
+
+### Improved Image Collections
+
+Image collections are where images are curated together for later use. They had fallen behind the media library dashboards: no lightbox navigation, no way to choose which tags show on cards, no download, and no way to configure the cards at all. Collections and document inboxes now behave like the media library.
+
+- **Lightbox navigation.** Instead of viewing a single image, editors page through all items of a collection or inbox in the lightbox.
+- **Download.** Single and batch downloads are available on collections, matching the media library. Collections shown in a modal or side panel stay read-only.
+- **Display settings.** The display settings dropdown is now on collections and inboxes as well. Preferences are saved globally rather than per dashboard, so a choice carries across views.
+- **Drag and drop with multiselect.** Multiple selected images can be dragged at once within a collection.
+
+#### Configurable image cards
+
+Image cards in collections and inboxes can now use a `dashboardCardConfigurations` entry, the same mechanism the media library dashboards use. The referenced configuration has to exist and be based on `liMediaLibraryCard`, otherwise project config validation fails. Where a card configuration adds metadata fields, the display settings dropdown gains a "metadata" option.
+
+```js
+// project config
+imageCollections: {
+  useCardConfiguration: 'myImageCard'
+},
+contentTypes: [
+  {
+    handle: 'regular',
+    inbox: {useCardConfiguration: 'myImageCard'}
+  }
+]
+```
+
+On media library dashboards the same property is called `useCard`, which is renamed to `useCardConfiguration` in this release - see [Deprecation of dashboards[].useCard](#deprecation-of-dashboardsusecard).
+
+### Image Card and License Improvements
+
+License and tag information was not shown consistently across the product. The same image could carry a license badge in the properties panel but nothing on an approval task, and display settings were reset per dashboard instead of following the editor around.
+
+This release lines that up. Media library tags now appear on the image and video properties panels and metadata panels, on license approval task thumbnails, and the media library detail view shows all tags including references. Display settings are shared globally instead of per view, and the tag tooltip finally reflects the actual asset type instead of always saying "image".
+
+The changes are available automatically. No configuration is required.
+
 ## Vulnerability Patches
 
 We are constantly patching module vulnerabilities for the Livingdocs Server and Livingdocs Editor as module fixes are available. Below is a list of all patched vulnerabilities included in the release.
@@ -332,7 +505,10 @@ We are constantly patching module vulnerabilities for the Livingdocs Server and 
 
 This release we have patched the following vulnerabilities in the Livingdocs Server:
 
-- TBD
+- [GHSA-2x7j-588g-ccc2](https://github.com/advisories/GHSA-2x7j-588g-ccc2) patched in nodemailer v9.1.1
+- [GHSA-cc9r-2j5m-2m83](https://github.com/advisories/GHSA-cc9r-2j5m-2m83) patched in nodemailer v9.1.1
+- [GHSA-wmmp-3585-3rmp](https://github.com/advisories/GHSA-wmmp-3585-3rmp) patched in nodemailer v9.1.1
+- [GHSA-8m3c-c648-2xjj](https://github.com/advisories/GHSA-8m3c-c648-2xjj) patched in nodemailer v9.1.1
 
 No known vulnerabilities. :tada:
 
@@ -340,7 +516,9 @@ No known vulnerabilities. :tada:
 
 This release we have patched the following vulnerabilities in the Livingdocs Editor:
 
-- TBD
+- [CVE-2026-15074 / GHSA-83w8-p2f5-377r](https://github.com/advisories/GHSA-83w8-p2f5-377r) patched in @fastify/static v10.1.2
+- [CVE-2026-7120 / GHSA-8pvw-jcv7-9cmj](https://github.com/advisories/GHSA-8pvw-jcv7-9cmj) patched in @fastify/static v10.1.2
+- [GHSA-pm4m-ph32-ghv5](https://github.com/advisories/GHSA-pm4m-ph32-ghv5) patched in js-yaml v5.2.2
 
 No known vulnerabilities. :tada:
 

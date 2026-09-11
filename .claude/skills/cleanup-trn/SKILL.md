@@ -128,9 +128,9 @@ To learn about the necessary actions to update Livingdocs to `release-XXXX-XX`, 
 ```
 
 The `[Release Notes](TODO)` link should point to the public marketing release notes URL. The URL pattern is based on the release month name:
-`https://livingdocs.io/en/release-<month-name>-<year>`
+`https://livingdocs.io/en/blog/release-<month-name>-<year>`
 
-For example, `release-2026-03` → `https://livingdocs.io/en/release-march-2026`.
+For example, `release-2026-03` → `https://livingdocs.io/en/blog/release-march-2026`.
 
 Update the `TODO` with the correct URL.
 
