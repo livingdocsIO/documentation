@@ -8,6 +8,17 @@ menus:
 
 Search filters can be used to filter documents using a custom query DSL.
 
+The same DSL is used in several places. The structure is identical everywhere, only the literal syntax differs:
+
+| Where                                                 | Context                                                                                               | Syntax            |
+| :---------------------------------------------------- | :---------------------------------------------------------------------------------------------------- | :---------------- |
+| `filters` query parameter                             | Public API                                                                                            | JSON string       |
+| `baseFilters`, `defaultQueries`, `emptySearchQueries` | [Base Filter]({{< ref "/customising/advanced/editor-configuration/base-filter" >}}) project config     | JavaScript object |
+| `filter` property of a display filter                 | [Display Filter]({{< ref "/customising/advanced/editor-configuration/display-filter" >}}) definition   | JavaScript object |
+| Expert Search input                                   | [Expert Search]({{< ref "/customising/advanced/editor-configuration/expert-search" >}}) display filter | JSON              |
+
+The examples on this page are written as JavaScript objects. In the Public API and the Expert Search, write the same expressions as JSON, with quoted keys and double-quoted strings.
+
 ### Filter Fields
 
 | Property                        | Type    |
@@ -148,6 +159,51 @@ To negate multiple conditions nest another logical operator within.
   }
 }
 ```
+
+#### Nested
+
+{{< added-in "release-2026-09" block >}}
+
+Some fields hold a list of sub-objects, where each entry carries its own set of properties. A `nested` block matches when a **single** entry satisfies all of its conditions at once, so criteria that belong together are not spread across different entries of the same document.
+
+The clearest example is a media library entry's usage log: one image can have many usage log entries, each with its own `purpose`, `state`, `publicationDate` and per-purpose `params`.
+
+```js
+{
+  key: 'usageLog',
+  nested: [
+    {key: 'purpose', term: 'print'},
+    {key: 'publicationDate', range: {gte: 'now-2y'}}
+  ]
+}
+```
+
+This matches entries that have at least one usage log entry whose purpose is `print` and whose publication date is within the last two years. Sub-keys are resolved relative to the nested field, so `purpose` means `usageLog.purpose`.
+
+The `nested` value accepts the following forms:
+
+| Value                   | Meaning                    |
+| :---------------------- | :------------------------- |
+| Array                   | Implicit AND               |
+| `{and: [...]}`          | All conditions must match  |
+| `{or: [...]}`           | Any condition may match    |
+| `{not: {...}}`          | Negates the contained block |
+| `{key: ..., term: ...}` | A single condition         |
+
+Because a nested block is an expression like any other, it combines with top-level conditions and can be negated.
+
+```js
+{
+  and: [
+    {key: 'mediaType', term: 'image'},
+    {not: {key: 'usageLog', nested: [{key: 'purpose', term: 'socialMedia'}]}}
+  ]
+}
+```
+
+This matches images that were never used for the `socialMedia` purpose.
+
+Which fields of a media library usage log are indexed, and how to make per-purpose `params` searchable, is described in the [Usage Log]({{< ref "/guides/media-library/media-library-setup/#searching-by-usage-log-details" >}}) guide.
 
 ### Example
 

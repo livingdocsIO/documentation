@@ -298,9 +298,9 @@ For more information, see the [Media Library]({{< ref "/guides/media-library/med
 
 ### Search Images by Usage Log Details
 
-For newsrooms that run the Media Center as a full DAM, the usage log holds the answers to questions like "which images ran in print in the last two years" or "whose usages still need billing this month". Editors can now search the media library by the contents of the usage log, and combine several conditions that must all hold on the same usage entry.
+An image's usage log records where and when it was used. Until now that information was not searchable: editors could filter by billing status, but not by the details that actually matter, such as "ran in print under politics" or "not used online in two years". Editors can now search the media library by the contents of the usage log, and get back the images themselves rather than a list of log entries.
 
-Each usage log entry is now indexed on its own, so a query can match one entry by its purpose, state, dates, user, and any custom params at the same time. Searches run from a dashboard's base filters or from the Expert Search field.
+Every usage log entry is indexed on its own, so one query can match a single entry by its purpose, state, dates, user, billing flag, and any custom params at the same time. Searches run from a dashboard's base filters or from the Expert Search field.
 
 A new `nested` filter operator ties conditions to a single usage log entry, instead of matching them loosely across all of an image's entries.
 
@@ -318,9 +318,11 @@ To search by a purpose's custom params, mark them with `config: { index: true }`
 
 {{< info >}}
 The usage log fields are added by a media library reindex. Run `livingdocs-server elasticsearch-index --handle=li-media` after upgrading so existing entries become searchable. The mapping is patched in place, so no `--recreate` is needed.
+
+The existing `usageLogBilledEntryDates` and `usageLogUnresolvedBillingEntryDates` display filters now use nested queries too, so they return no results until the reindex has run.
 {{< /info >}}
 
-For more information, see the [Usage Log]({{< ref "/guides/media-library/media-library-setup/#searching-by-usage-log-details" >}}) and [Expert Search]({{< ref "/customising/advanced/editor-configuration/expert-search/#nested" >}}) documentation.
+For more information, see the [Usage Log]({{< ref "/guides/media-library/media-library-setup/#searching-by-usage-log-details" >}}), [Search Filters]({{< ref "/reference/public-api/publications/search-filters#nested" >}}) and [Expert Search]({{< ref "/customising/advanced/editor-configuration/expert-search" >}}) documentation.
 
 ## Vulnerability Patches
 
