@@ -15,47 +15,47 @@ header:
 systemRequirements:
   suggested:
     - name: Node
-      version: 26
+      version: TBD
     - name: NPM
-      version: 11
+      version: TBD
     - name: Postgres
-      version: 18
+      version: TBD
     - name: Elasticsearch
-      version: 9
+      version: TBD
     - name: OpenSearch
-      version: 3
+      version: TBD
     - name: Redis
-      version: 8
+      version: TBD
     - name: Valkey
-      version: 9
+      version: TBD
     - name: Livingdocs Server Docker Image
-      version: livingdocs/server-base:26
+      version: TBD
     - name: Livingdocs Editor Docker Image
-      version: livingdocs/editor-base:26
+      version: TBD
     - name: Browser Support
-      version: Chrome >= 156, Edge >= 156, Firefox >= 159, Safari >= 27.0
+      version: TBD
 
   minimal:
     - name: Node
-      version: 24
+      version: TBD
     - name: NPM
-      version: 11
+      version: TBD
     - name: Postgres
-      version: 14
+      version: TBD
     - name: Elasticsearch
-      version: 8
+      version: TBD
     - name: OpenSearch
-      version: 2
+      version: TBD
     - name: Redis
-      version: 7.4
+      version: TBD
     - name: Valkey
-      version: 7
+      version: TBD
     - name: Livingdocs Server Docker Image
-      version: livingdocs/server-base:24
+      version: TBD
     - name: Livingdocs Editor Docker Image
-      version: livingdocs/editor-base:24
+      version: TBD
     - name: Browser Support
-      version: Chrome >= 143, Edge >= 143, Firefox >= 146, Safari >= 26.2
+      version: TBD
 ---
 
 ## Caveat :fire:
