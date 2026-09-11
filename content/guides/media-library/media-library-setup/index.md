@@ -856,7 +856,7 @@ To also search by a purpose's custom `params`, set `config: { index: true }` on 
 }
 ```
 
-Query the indexed entries with the [`nested`]({{< ref "/reference/public-api/publications/search-filters#nested" >}}) filter operator, either in a dashboard's `baseFilters` or in the [Expert Search]({{< ref "/customising/advanced/editor-configuration/expert-search/#searching-nested-fields" >}}) display filter. Sub-keys inside a `nested` block are resolved against the entry, and `usageLog` works as an alias for the underlying `usageLogEntries` field.
+Query the indexed entries with the [`nested`]({{< ref "/reference/public-api/publications/search-filters#nested" >}}) filter operator, either in a dashboard's `baseFilters` or in the [Expert Search]({{< ref "/customising/advanced/editor-configuration/expert-search/#searching-nested-fields" >}}) display filter. Use `usageLog` as the key, and sub-keys inside the `nested` block are resolved against a single entry.
 
 A `nested` block is the only way to reach these fields. Usage log conditions written as plain top-level keys do not resolve against the indexed entries.
 
