@@ -17,7 +17,7 @@ header:
 
 **Attention:** If you skipped one or more releases, please also check the technical release notes of the skipped releases.
 
-To get an overview about new functionality, read the [Release Notes](https://livingdocs.io/en/livingdocs-release-july-2023).
+To get an overview about new functionality, read the [Release Notes](https://livingdocs.io/en/blog/livingdocs-release-july-2023).
 To learn about the necessary actions to update Livingdocs to `release-2023-07`, read on.
 
 ## Webinar
@@ -201,7 +201,7 @@ Please also check the [Public API Search DSL]({{< ref "/reference/public-api/pub
 
 ## Features :gift:
 
-For a business level explanation of the new features please check [July Release Notes](https://livingdocs.io/en/livingdocs-release-july-2023)
+For a business level explanation of the new features please check [July Release Notes](https://livingdocs.io/en/blog/livingdocs-release-july-2023)
 
 - [Display Filters ListV2 with OR combination](#display-filters-listv2-with-or-combination)
 - [Document Preview](#document-preview)

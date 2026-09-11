@@ -58,7 +58,7 @@ systemRequirements:
       version: Chrome >= 133, Edge >= 133, Firefox >= 135, Safari >= 18.3
 ---
 
-To get an overview about new functionality, read the [Release Notes](https://livingdocs.io/en/release-march-2026).
+To get an overview about new functionality, read the [Release Notes](https://livingdocs.io/en/blog/release-march-2026).
 To learn about the necessary actions to update Livingdocs to `release-2026-03`, read on.
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.

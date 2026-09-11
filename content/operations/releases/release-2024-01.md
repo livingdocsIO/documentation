@@ -13,7 +13,7 @@ header:
   branchHandle: release-2024-01
 ---
 
-To get an overview about new functionality, read the [Release Notes](https://livingdocs.io/en/release-january-2024).
+To get an overview about new functionality, read the [Release Notes](https://livingdocs.io/en/blog/release-january-2024).
 To learn about the necessary actions to update Livingdocs to `release-2024-01`, read on.
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
