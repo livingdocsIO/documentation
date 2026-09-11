@@ -94,6 +94,18 @@ Which options appear depends on the dashboard's asset type and your project conf
 Warning tags (for example missing license or expired usage rights) are always shown on cards, regardless of the Display Settings selection. This also applies on images inside a document.
 {{< /info >}}
 
+## Result Count
+
+Media Library dashboards show an exact result count up to 10,000 items. Above that, Elasticsearch stops counting and the dashboard shows `10000+ Images`.
+
+{{< added-in "release-2026-09" block >}}
+
+An **Exact Number** button appears next to a capped count. It runs a separate count query and replaces the pill with the real total, for example `37128 Images`. The pill falls back to `10000+` when the search term or a filter changes, so the number always matches the current result set.
+
+{{< img src="exact-result-count.png" alt="The result count pill showing 10000+ Images next to the Exact Number button" width="300" >}}
+
+Counting across a large archive is expensive, so it only runs when a user clicks the button. No configuration is required.
+
 ## 2025 Behavior
 
 A new set of features has been added to the Media Library which can be enabled using an opt-in server config property. To learn more please see the [2025 Behavior]({{< ref "/guides/media-library/2025-behavior" >}}) guide.
