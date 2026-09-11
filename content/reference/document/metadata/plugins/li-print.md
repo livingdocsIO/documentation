@@ -17,6 +17,7 @@ support:
   systemMetadata: false
   planningSystem: false
   webhookConditions: false
+removedIn: release-2026-07
 storageFormat: |
   {
     name: <String>,
