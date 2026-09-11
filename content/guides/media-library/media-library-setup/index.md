@@ -893,18 +893,6 @@ baseFilters: [
 ]
 ```
 
-{{< warning >}}
-The new fields are added by a media library reindex. Run the following after upgrading so existing entries gain the usage log fields:
-
-```
-livingdocs-server elasticsearch-index --handle=li-media
-```
-
-The `usageLogBilledEntryDates` and `usageLogUnresolvedBillingEntryDates` display filters now compile to nested queries as well, so they return no results until the reindex has run.
-
-The mapping is patched in place, so no `--recreate` is needed. A `--recreate` is only necessary if the mapping patch is rejected as incompatible.
-{{< /warning >}}
-
 ### Creating usage log dashboards
 
 It's possible to define dashboards which provide an easy way to review incomplete entries:
