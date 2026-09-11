@@ -77,6 +77,20 @@ Both [Base Filters]({{< ref "/customising/advanced/editor-configuration/base-fil
 This approach has been deprecated in `release-2026-05` and will be removed in `release-2026-11`. We recommend using the new Media Library Dashboard Configuration and referencing configured Media Library dashboards directly on the Content Type via [useDashboard]({{< ref "/reference/project-config/content-types#usedashboard" >}}) (see description above).
 {{< /info >}}
 
+## Searching by Filename
+
+{{< added-in "release-2026-09" block >}}
+
+Images often arrive from agencies and photographers with no title or description, leaving the filename as the only identifier. Media Library text search therefore matches any part of a filename, not just its beginning: searching `AXZ87D3X` finds `imago-AXZ87D3X-john-doe-cc.jpg`.
+
+Matching is case-insensitive, works across separators such as `-`, `.` and `_`, and needs at least three characters. Shorter fragments fall back to the previous exact and prefix matching on the whole filename.
+
+In the media detail view, the "Information" section shows the complete filename rather than truncating it, with a copy button next to it.
+
+Substring matching relies on a filename analyzer on the media library index. Projects created before {{< release "release-2026-09" >}} activate it with the upgrade step described in those release notes; until then, search keeps working as before.
+
+The feature adds an `asset.filename.ngram` sub-field to the media library index. It is an inverted index only, costing roughly 2.7 bytes per indexed filename character - about 8 MB per 100,000 entries, or 780 MB at 10 million. Multiply by `1 + number_of_replicas` for the on-disk footprint.
+
 ## Card Tags and Display Settings
 
 Small tags on each Media Library card show details about an item at a glance, such as its license, usage, and resolution, so editors can assess an image without opening its detail view or the lightbox. The same tags also appear in the lightbox, the Media Library detail panel, and the editor sidepanel.

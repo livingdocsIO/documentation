@@ -421,6 +421,8 @@ livingdocs-server elasticsearch-index --handle li-media --recreate -y
 
 In the media detail view, the "Information" section now shows the complete filename instead of truncating it to a single line. A copy button next to it grabs the full name in one click, which makes long agency filenames and stock IDs easy to reuse.
 
+For more information, see the [Searching by Filename]({{< ref "/guides/media-library/media-library-setup/#searching-by-filename" >}}) guide.
+
 ### Exact Number of Search Results
 
 A search matching more than 10,000 images shows `10000+`, which leaves editors guessing whether the archive holds 11,000 or 500,000 of them. An **Exact Number** button next to the capped count now resolves the real total on request.
