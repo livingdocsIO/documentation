@@ -68,6 +68,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-editor/pull/11579)
 - [fix(framework): Attach the violations to the thrown parse error [main]](https://github.com/livingdocsIO/livingdocs-editor/pull/11577)
 - [chore(deps): update dependency eslint-plugin-jsdoc from 64.3.6 to v64.3.8 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/10012)
 
