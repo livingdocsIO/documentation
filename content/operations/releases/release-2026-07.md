@@ -326,11 +326,11 @@ Remove the entire `LIFEAT011: { ... }` block from every affected `mediaImage` me
 
 ### Deprecation of the legacy li-authentication session methods
 
-**Codes:** `LIDEP084-createCookies`, `LIDEP084-extendSessionCookie`, `LIDEP084-hasActiveClients`, `LIDEP084-isActiveClient`, `LIDEP084-isActiveSession`, `LIDEP084-revokeSessionsOfUser`, `LIDEP084-revokeSessionOfUser`
+**Codes:** `LIDEP085-createCookies`, `LIDEP085-extendSessionCookie`, `LIDEP085-hasActiveClients`, `LIDEP085-isActiveClient`, `LIDEP085-isActiveSession`, `LIDEP085-revokeSessionsOfUser`, `LIDEP085-revokeSessionOfUser`
 
-With the introduction of the Authorization Server and its `oauth_grants`-backed session storage, seven legacy `li-authentication` methods are deprecated and will be removed in `release-2026-12`. Each is replaced by a grant-based equivalent on the authentication API:
+With the introduction of the Authorization Server and its `oauth_grants`-backed session storage, seven legacy `li-authentication` methods are deprecated and will be removed in `release-2027-01`. Each is replaced by a grant-based equivalent on the authentication API:
 
-| Deprecated method (`LIDEP084-…`) | Replacement                                                                                                     |
+| Deprecated method (`LIDEP085-…`) | Replacement                                                                                                     |
 | -------------------------------- | --------------------------------------------------------------------------------------------------------------- |
 | `createCookies`                  | `authApi.createSessionGrant({...})`                                                                             |
 | `extendSessionCookie`            | `authApi.extendSessionGrant({...})`                                                                             |
@@ -342,7 +342,7 @@ With the introduction of the Authorization Server and its `oauth_grants`-backed 
 
 #### Detect
 
-In the project's server code, a call to any of the seven methods above on the `li-authentication` API. Each call emits a throttled `LIDEP084-*` deprecation warning at runtime.
+In the project's server code, a call to any of the seven methods above on the `li-authentication` API. Each call emits a throttled `LIDEP085-*` deprecation warning at runtime.
 
 #### Fix
 
@@ -514,7 +514,7 @@ auth: {
 Independently of the Authorization Server, editor session cookies now move from JWT-only to rotating refresh tokens backed by the new `oauth_grants` table. Legacy JWT cookies upgrade in place on the next refresh, so there is no user-visible change. This substrate also powers session-management capabilities such as listing active devices, per-device revocation, and refresh-token rotation with reuse detection through the new `authApi` grant methods (`createSessionGrant`, `listGrantsForUser`, `revokeGrant`, and others).
 
 {{< info >}}
-This change replaces the `authApi.createAccessToken` API (see `LIBREAKING069`) and deprecates seven legacy `li-authentication` session methods (see `LIDEP084`).
+This change replaces the `authApi.createAccessToken` API (see `LIBREAKING069`) and deprecates seven legacy `li-authentication` session methods (see `LIDEP085`).
 {{< /info >}}
 
 ### Officially Support Node.js v26
