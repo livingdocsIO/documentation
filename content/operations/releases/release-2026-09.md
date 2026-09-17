@@ -379,6 +379,20 @@ Run `SELECT version();` against the configured Postgres instance. A major versio
 
 Upgrade to Postgres 18, the suggested version for this release.
 
+### Deprecation of Node.js 22
+
+**Code:** `LIDEP084`
+
+Support for Node.js 22 is deprecated and will be dropped in `release-2027-01`. Node.js 24 and 26 remain supported - 24 is the suggested version for this release. Servers running Node.js 22 have emitted this warning since {{< release "release-2026-07" >}}.
+
+#### Detect
+
+Run `node --version` against the process running the server. A major version of 22 is affected, and an affected server emits `LIDEP084` on every boot.
+
+#### Fix
+
+Upgrade to Node.js 24 or 26, and update the pinned versions alongside it: `.nvmrc`, the `FROM` tags in Dockerfiles, and CI job images.
+
 ## Features :gift:
 
 ### Improved Image Cropping
