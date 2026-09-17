@@ -65,7 +65,7 @@ To learn about the necessary actions to update Livingdocs to `release-2026-09`, 
 
 ## Webinar
 
-- [Feature Webinar Recording](https://drive.google.com/file/d/1vsskkk5qhgslfjbSklNbUC5zzClrmBp_/view?usp=drive_link)
+- [Feature Webinar Recording](https://vimeo.com/1227636361?share=copy)
 - [Feature Webinar Slides](https://drive.google.com/file/d/1WGWcSVxMeKwcv480AwMFN2RUTQtV7cMc/view?usp=sharing)
 - [Release Newsletter Subscription](https://confirmsubscription.com/h/j/61B064416E79453D)
 
