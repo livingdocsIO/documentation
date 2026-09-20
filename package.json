@@ -37,7 +37,7 @@
     ]
   },
   "devDependencies": {
-    "prettier": "3.9.6",
+    "prettier": "3.9.7",
     "prettier-plugin-go-template": "0.0.15"
   }
 }
