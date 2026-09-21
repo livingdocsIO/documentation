@@ -68,6 +68,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Spellcheck: Live check](https://github.com/livingdocsIO/livingdocs-server/pull/9840)
 - [fix(imatrics-nlp): Match the API mock's concept search against the search term [main]](https://github.com/livingdocsIO/livingdocs-server/pull/10051)
 - [test(table-dashboards): Cover the table dashboard manual test cases [main]](https://github.com/livingdocsIO/livingdocs-editor/pull/11596)
 - [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-editor/pull/11579)
