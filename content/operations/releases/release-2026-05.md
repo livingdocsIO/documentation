@@ -586,6 +586,7 @@ There are no known vulnerabilities. :tada:
 Patches typically fix bugs and apply improvements within the current release. Keeping your deployment up-to-date with the latest patch version means you benefit from those fixes. No explicit action is required per patch — bumping the version is enough.
 
 ### Livingdocs Server Patches
+- [v301.1.47](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.47): fix(deps): automatically patch Node.js vulnerabilities
 - [v301.1.46](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.46): fix(deps): automatically patch Node.js vulnerabilities
 - [v301.1.45](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.45): fix: Use correct warning type for all breaking changes
 - [v301.1.44](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.44): fix(deps): automatically patch Node.js vulnerabilities
