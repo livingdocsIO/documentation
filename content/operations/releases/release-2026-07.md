@@ -540,6 +540,7 @@ There are no known vulnerabilities. :tada:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v308.1.32](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.32): fix(deps): automatically patch Node.js vulnerabilities
 - [v308.1.31](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.31): fix(deps): automatically patch Node.js vulnerabilities
 - [v308.1.30](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.30): fix: Use correct warning type for all breaking changes
 - [v308.1.29](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.29): fix(deps): automatically patch Node.js vulnerabilities
