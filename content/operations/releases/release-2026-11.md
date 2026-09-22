@@ -68,6 +68,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [test(hugo): Cover huGO image drag and drop [main]](https://github.com/livingdocsIO/livingdocs-editor/pull/11609)
 - [Preserve `updateAt` when modifying media library entry usage logs](https://github.com/livingdocsIO/livingdocs-server/pull/9953)
 - [Spellcheck: Live check](https://github.com/livingdocsIO/livingdocs-editor/pull/11445)
 - [chore(deps): update dependency @google-cloud/storage from 8.1.0 to v8.2.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/10058)
