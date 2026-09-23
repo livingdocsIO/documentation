@@ -68,6 +68,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Rebuild the navigation panel in Vue with favourites and filtering](https://github.com/livingdocsIO/livingdocs-editor/pull/11370)
 - [chore(deps): update dependency eslint from 10.10.0 to v10.11.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/10068)
 - [test(publish-control): Cover publish, unpublish and scheduled unpublish [main]](https://github.com/livingdocsIO/livingdocs-editor/pull/11608)
 - [test(hugo): Cover huGO image drag and drop [main]](https://github.com/livingdocsIO/livingdocs-editor/pull/11609)
