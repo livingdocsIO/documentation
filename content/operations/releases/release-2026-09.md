@@ -557,6 +557,7 @@ Patches typically fix bugs and apply improvements within the current release. Ke
 - [v312.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v312.0.2): fix(imatrics-nlp): Add createConceptSuggestion to the API mock and match the getConcepts shape
 
 ### Livingdocs Editor Patches
+- [v128.1.10](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v128.1.10): fix(deps): update dependency @livingdocs/framework from 34.2.3 to v34.2.5
 - [v128.1.9](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v128.1.9): test(ticker): Run the collaboration cases with two real users
 - [v128.1.8](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v128.1.8): test(table-dashboards): Tighten the display filter assertions
 - [v128.1.7](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v128.1.7): fix(deps): automatically patch Node.js vulnerabilities
