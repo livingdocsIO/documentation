@@ -574,6 +574,7 @@ Here is a list of all patches after the release has been announced.
 - [v308.1.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.3): fix(print): Renumber huGO print breaking change to LIBREAKING071
 
 ### Livingdocs Editor Patches
+- [v126.1.32](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.32): fix(deps): update dependency @livingdocs/framework from 34.1.8 to v34.1.9
 - [v126.1.31](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.31): fix(deps): update dependency @livingdocs/framework from 34.1.7 to v34.1.8
 - [v126.1.30](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.30): fix(deps): automatically patch Node.js vulnerabilities
 - [v126.1.29](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.29): fix(config): rotate iframely api key
