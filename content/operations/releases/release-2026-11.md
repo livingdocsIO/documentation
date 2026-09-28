@@ -68,6 +68,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Update sharp to 0.35.5 to patch libheif vulnerabilities](https://github.com/livingdocsIO/livingdocs-server/pull/10085)
 - [Handle migration jobs where only some revisions get an update](https://github.com/livingdocsIO/livingdocs-server/pull/10021)
 - [Rebuild the navigation panel in Vue with favourites and filtering](https://github.com/livingdocsIO/livingdocs-editor/pull/11370)
 - [chore(deps): update dependency eslint from 10.10.0 to v10.11.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/10068)
