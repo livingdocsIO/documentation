@@ -577,6 +577,7 @@ Here is a list of all patches after the release has been announced.
 - [v308.1.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.3): fix(print): Renumber huGO print breaking change to LIBREAKING071
 
 ### Livingdocs Editor Patches
+- [v126.1.34](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.34): chore(ci): wait up to 25 minutes for the unit tests before releasing
 - [v126.1.33](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.33): fix(proxy): survive a browser that drops a websocket before the upstream upgrade
 - [v126.1.32](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.32): fix(deps): update dependency @livingdocs/framework from 34.1.8 to v34.1.9
 - [v126.1.31](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.31): fix(deps): update dependency @livingdocs/framework from 34.1.7 to v34.1.8
