@@ -639,6 +639,7 @@ Patches typically fix bugs and apply improvements within the current release. Ke
 - [v301.1.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.1): fix(release-2026-05): Update framework to v34.0.3 (release-2026-05 tag)
 
 ### Livingdocs Editor Patches
+- [v123.21.53](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.53): fix(proxy): survive a browser that drops a websocket before the upstream upgrade
 - [v123.21.52](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.52): fix(deps): update dependency @livingdocs/framework from 34.0.6 to v34.0.10
 - [v123.21.51](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.51): fix(deps): automatically patch Node.js vulnerabilities
 - [v123.21.50](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.50): fix(webpack): Prevent dart-sass BOM from breaking scoped styles
