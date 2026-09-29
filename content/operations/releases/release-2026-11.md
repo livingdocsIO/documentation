@@ -68,6 +68,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(ci): pin npm-tag-latest to the release that loads](https://github.com/livingdocsIO/livingdocs-server/pull/10098)
 - [fix(proxy): survive a browser that drops a websocket before the upstream upgrade](https://github.com/livingdocsIO/livingdocs-editor/pull/11647)
 - [Update sharp to 0.35.5 to patch libheif vulnerabilities](https://github.com/livingdocsIO/livingdocs-server/pull/10085)
 - [Handle migration jobs where only some revisions get an update](https://github.com/livingdocsIO/livingdocs-server/pull/10021)
