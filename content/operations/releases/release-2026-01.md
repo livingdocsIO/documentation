@@ -63,6 +63,7 @@ To learn about the necessary actions to update Livingdocs to `release-2026-01`, 
 
 - [Feature Webinar Recording](https://vimeo.com/1228058078) | Passcode: `+.W7Sq5T`
 - [Feature Webinar Slides](https://drive.google.com/file/d/1kT9sUclNt4iz7QXrjW6l98k_cjsE-ZfR/view?usp=sharing)
+- [Developer Webinar Recording](https://vimeo.com/1231284847) | Passcode: `9D&h@J#J`
 - [Developer Webinar Slides](https://drive.google.com/file/d/1GGbiqFOJUd7KFoexOYez3WqADAzDW3Wq/view?usp=sharing)
 - [Release Newsletter Subscription](https://confirmsubscription.com/h/j/61B064416E79453D)
 

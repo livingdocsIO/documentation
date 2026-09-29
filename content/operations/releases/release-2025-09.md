@@ -61,9 +61,9 @@ To learn about the necessary actions to update Livingdocs to `release-2025-09`, 
 
 ## Webinar
 
-- [Feature Webinar Recording](https://us02web.zoom.us/rec/share/I-1M_DMZbYZKNlZlgOhJB_Y8WbdRQuMFlhzzroeIZSjkakCWy38J4zybPhUkjuBm.682EmkL78KHAa0Dh) | Passcode: `DuA+@0rQ`
+- [Feature Webinar Recording](https://vimeo.com/1231279356) | Passcode: `DuA+@0rQ`
 - [Feature Webinar Slides](https://drive.google.com/file/d/1MkYh2QKUoOEitdpMPV4zkdtoINCbfyrP/view?usp=sharing)
-- [Dev Webinar Recording](https://us02web.zoom.us/rec/share/4quALbzep7T3ZgrMMW0OjExXsrHqpfcwnClxXe_ERdSs5t9yHFAAtTtX1fbfIOp2.I0rrPih4FmYCL_vn) | Passcode: `bR1*Uk*W`
+- [Dev Webinar Recording](https://vimeo.com/1231284839) | Passcode: `bR1*Uk*W`
 - [Dev Webinar Slides](https://drive.google.com/file/d/1um5zN0sY2yLgrajeW0-l8wPaEE1cbmbp/view?usp=sharing)
 - [Release Newsletter Subscription](https://confirmsubscription.com/h/j/61B064416E79453D)
 

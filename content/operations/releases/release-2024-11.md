@@ -20,9 +20,9 @@ To learn about the necessary actions to update Livingdocs to `release-2024-11`, 
 
 ## Webinar
 
-- [Feature Webinar Recording](https://us02web.zoom.us/rec/share/OdACLbg51PBPVNQBlE9mSZ0EIMXMHTTeXVBUELrUhwsyt3AwPCJE3_8uIXjM9L-_.65e1GPV2u1lAsv-T) | Passcode: N0Z$qqxh
+- [Feature Webinar Recording](https://vimeo.com/1231284808) | Passcode: N0Z$qqxh
 - [Feature Webinar Documentation](https://docs.google.com/presentation/d/1dbjXQ5IoQvjdeqT7R_ZsYvIM70VyLrtuREuclQzyNDg/edit?usp=sharing)
-- [Dev Webinar Recording](https://us02web.zoom.us/rec/share/1t_wLXwC2qbcVlpgD62QrUcVBYEu2XDzGHecS5E0Vwn03dPpLD0y7xl3HS8Sdk_A.lK9gDzPbyUD7XBGx) | Passcode: QzP1F&Ar
+- [Dev Webinar Recording](https://vimeo.com/1231284804) | Passcode: QzP1F&Ar
 - [Dev Webinar Slides](https://docs.google.com/presentation/d/1QgpiRXIkM7SPgT6ndxXOgAX0LtxlaOV8exPhfxbOdtY/edit?usp=sharing)
 - [Release Newsletter Subscription](https://confirmsubscription.com/h/j/61B064416E79453D)
 
