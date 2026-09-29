@@ -586,6 +586,7 @@ There are no known vulnerabilities. :tada:
 Patches typically fix bugs and apply improvements within the current release. Keeping your deployment up-to-date with the latest patch version means you benefit from those fixes. No explicit action is required per patch — bumping the version is enough.
 
 ### Livingdocs Server Patches
+- [v301.1.51](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.51): chore(ci): wait up to 25 minutes for the unit tests before releasing
 - [v301.1.50](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.50): fix(deps): update dependency sharp from 0.35.4 to 0.35.5 [security]
 - [v301.1.49](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.49): fix(migrations): Skip the reference index update when no reference changed
 - [v301.1.48](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.48): fix(media-library): Preserve updateAt when modifying usage logs
