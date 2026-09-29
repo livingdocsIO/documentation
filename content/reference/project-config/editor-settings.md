@@ -1438,22 +1438,22 @@ There can be only one attribute with a type in the attributes array. Static valu
 
 ## Smart Quotes
 
-A feature, which automatically replaces quotation marks as you type with the appropriate ones defined in your configuration. This enhancement helps editors maintain high-quality typography without manual effort.
-With the provided switch in the editor UI, users are allowed to disable the feature when necessary for special cases.
+Smart Quotes replace quotation marks as you type with the ones defined in your configuration. This helps editors keep high-quality typography without manual effort. With a switch in the editor UI, users can turn off the feature for special cases.
 
-**How to Use Smart Quotes**
+To enable Smart Quotes, the `smartQuotes` property must be added to the `textFormatting` configuration. This can be done in `editor_settings.js`. You can also override this config for each content type.
 
-To enable the Smart Quotes toggle, the `smartQuotes` property must be added to the `textFormatting` configuration. This can be done in `editor_settings.js`. You can also overwrite this config for each content type.
+Additionally, `quotes` and `singleQuotes` must be set in `textFormatting`, either directly or for at least one language in `locales`. These are used as replacement quotes. If `apostrophe` is set, Smart Quotes also replace apostrophes.
 
-Additionally, either the `quotes` & `singleQuotes` properties or the `locales` property must be set in `textFormatting`, as these will be used as replacement quotes.
+The values in `locales` for the document language take precedence over the project-wide values. This applies to the quotes and to the apostrophe.
 
 ```js
 // Either in editor_settings.js or content-types/*
 textFormatting: {
-  smartQuotes: {enabled: true}, // Alternatively: `smartQuotes: true``
+  smartQuotes: {enabled: true}, // Alternatively: `smartQuotes: true`
+  // Set quotes and singleQuotes directly, in locales, or both
   quotes: ['«', '»'],
   singleQuotes: ['‹', '›'],
-  // Either quotes and singleQuotes OR locales need to be set
+  apostrophe: '’',
   locales: {
     en: {
       quotes: ['“', '”'],
@@ -1468,7 +1468,7 @@ textFormatting: {
 // ...
 ```
 
-Once configured, the Smart Quotes toggle will be available in the editor on the bottom left corner. Each time a document is opened, the toggle will be turned on by default. Users can turn off the toggle when needed, allowing flexibility for special cases where standard quotation marks are required.
+Once configured, the Smart Quotes toggle is available in the bottom left corner of the editor. Each time a document is opened, the toggle is turned on by default. Users can turn it off for special cases where straight quotation marks are required.
 
 ## Text Count
 

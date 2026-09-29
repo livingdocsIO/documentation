@@ -50,7 +50,7 @@ app: {
 The example would result in a toolbar with a buttons for
 `bold`, `italic`, `double quotes`, `single quotes`, `link`,
 `superscript`, `subscript` and adding `specialChars`
-(The apostrophe is currently only used for the pasting logic).
+(The apostrophe has no toolbar button. It is used when pasting and, with Smart Quotes enabled, while typing).
 
 The `locales` config is only active if you have translations enabled.
 With translations enabled when you create or open a document which has
@@ -60,6 +60,9 @@ for the current language will be used if set (Note that the locale value in the 
 **Behavior when pasting text:**
 If `quotes`, `singleQuotes` or `apostrophe` are configured then
 incorrect quotes and apostrophe will be replaced with the configured ones.
+
+**Behavior when typing text:**
+If [Smart Quotes]({{< ref "/reference/project-config/editor-settings#smart-quotes" >}}) are enabled, typed quotes and apostrophes are replaced with the configured `quotes`, `singleQuotes` and `apostrophe`.
 
 **Per-component toolbar restrictions:**
 The above configuration applies globally to all editable directives. If you need to restrict the toolbar for a specific component (e.g. show no formatting options on a subtitle but retain the full toolbar on a paragraph), you can use `plainText` on the component's editable directive. See the [Editable directive docs]({{< ref "/reference/document/document-design/directives/editable#plaintext-tagallowlist-and-tagdenylist" >}}) for details.
