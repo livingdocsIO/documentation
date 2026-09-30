@@ -540,6 +540,7 @@ There are no known vulnerabilities. :tada:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v308.1.37](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.37): fix(deps): update dependency @livingdocs/framework from 34.1.9 to v34.1.10
 - [v308.1.36](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.36): fix(ci): pin npm-tag-latest to the release that loads
 - [v308.1.35](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.35): fix(deps): update dependency sharp from 0.35.4 to 0.35.5 [security]
 - [v308.1.34](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.34): fix(migrations): Skip the reference index update when no reference changed
