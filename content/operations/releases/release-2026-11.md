@@ -168,6 +168,25 @@ Upgrade the Node.js runtime to 22.22.0 or newer, and update every pinned version
 
 ## Features :gift:
 
+### Smart Quotes Replace Apostrophes
+
+Editors cannot type the typographic apostrophe (’) on Windows with a German keyboard. The layout only types the straight apostrophe ('). Livingdocs already replaced it on paste, and now Smart Quotes also replace it while typing, for example `O'Brien` → `O’Brien`.
+
+To enable it, set `apostrophe` in `textFormatting` next to `quotes` and `singleQuotes`. Without it, typed apostrophes stay unchanged.
+
+```js
+textFormatting: {
+  smartQuotes: {enabled: true},
+  quotes: ['„', '“'],
+  singleQuotes: ['‚', '‘'],
+  apostrophe: '’'
+}
+```
+
+Alternatively, set `apostrophe` per document language in `locales`. Typing then uses the quotes and apostrophe of the document language, the same ones pasting uses.
+
+For more information, see the [Smart Quotes]({{< ref "/reference/project-config/editor-settings#smart-quotes" >}}) documentation.
+
 ## Vulnerability Patches
 
 We are constantly patching module vulnerabilities for the Livingdocs Server and Livingdocs Editor as module fixes are available. Below is a list of all patched vulnerabilities included in the release.
