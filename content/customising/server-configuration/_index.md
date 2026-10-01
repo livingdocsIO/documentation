@@ -1027,6 +1027,10 @@ mediaLibrary: {
   // Enables {{< a ref="/guides/media-library/2025-behavior" title="an improved user experience and functionality" >}}
   use2025Behavior: true, // default false
 
+  // Disables {{< a ref="/guides/media-library/2025-behavior/#disabling-image-editing" title="image editing" >}}
+  // (colour corrections, rotation and redaction). Cropping stays available.
+  disableImageEditing: true, // default false
+
   generateImageServiceUrlsOnRead: true, // default false
 
   // define behavior for images in Livingdocs (upload, upload processing, storage)
