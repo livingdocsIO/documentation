@@ -7,6 +7,8 @@
         display: block;
         padding: $space-xs 0;
         color: inherit;
+        hyphens: auto;
+        word-break: break-word;
       }
     }
   }
