@@ -134,7 +134,9 @@ To roll back the Elasticsearch changes, no action is required. The new media lib
 
 **Code:** `LIBREAKING078`
 
-The server config property `mediaLibrary.disableImageEditingInDocuments` has been removed and now throws during startup. It was deprecated in {{< release "release-2026-03" >}} (`LIDEP078`). Image editing in documents is always enabled, along with the image variant creation it depends on.
+The server config property `mediaLibrary.disableImageEditingInDocuments` has been removed and now throws during startup. It was deprecated in {{< release "release-2026-03" >}} (`LIDEP078`). Image editing in documents is enabled by default, along with the image variant creation it depends on.
+
+Setups that cannot apply image modifications, for example because images are delivered by an external DAM, can turn image editing off with the new server config property `mediaLibrary.disableImageEditing`. Unlike the removed property it also hides redaction in the media library. Cropping stays available.
 
 #### Detect
 
@@ -142,7 +144,19 @@ In the server config, `disableImageEditingInDocuments`.
 
 #### Fix
 
-Remove the property. There is no replacement - editors can create image variants from within a document in every project.
+Remove the property. If image editing should be available, no further change is needed.
+
+To keep image editing turned off, replace it with `disableImageEditing`:
+
+```diff
+ mediaLibrary: {
+   use2025Behavior: true,
+-  disableImageEditingInDocuments: true
++  disableImageEditing: true
+ }
+```
+
+This is not a one-to-one rename: `disableImageEditing` hides the "Adjust" button in documents and metadata as well as the redaction button in the media library, where `disableImageEditingInDocuments` kept redaction and colour corrections in the media library. For more information, see the [Disabling Image Editing]({{< ref "/guides/media-library/2025-behavior/#disabling-image-editing" >}}) documentation.
 
 ### Removal of the Push Notifications Feature
 
