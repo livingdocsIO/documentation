@@ -144,7 +144,7 @@ This supports:
 {{< added-in "release-2026-03" block >}}
 
 {{< info >}}
-Use `mediaLibrary.disableImageEditingInDocuments` to temporarily revert to the behavior prior to {{< release "release-2026-03" >}} while your newsroom adapts. This option is deprecated and will be removed in {{< release "release-2026-09" >}}. Set it before users start editing images in documents. Disabling it afterwards will not remove existing variants, which will continue to be applied in their respective placements.
+The server config property `mediaLibrary.disableImageEditingInDocuments`, which temporarily reverted to the behavior prior to {{< release "release-2026-03" >}}, has been removed in {{< release "release-2026-09" >}}. Use [`mediaLibrary.disableImageEditing`](#disabling-image-editing) to turn image editing off.
 {{< /info >}}
 
 Journalists can edit images directly within a document using the "Adjust" button on each image placement. Edits here only affect that specific placement within the document. Other documents using the same image are not affected. The original can always be restored by resetting the adjustments.
@@ -157,6 +157,29 @@ This supports:
 {{< img src="image-editing-adjust.png" alt="Adjust image" width="400" caption="The Adjust button lets users apply colour adjustments or fix a skewed horizon per placement." >}}
 
 {{< img src="image-editing-rotate.png" alt="Rotate image" caption="Images can be rotated per placement directly within a document." >}}
+
+#### Disabling Image Editing
+
+{{< added-in "release-2026-09" block >}}
+
+Some setups cannot apply image modifications, for example when images are delivered by an external DAM instead of the Livingdocs `serve-image` endpoint. In that case edits made in the editor would have no effect on the delivered image. Set `mediaLibrary.disableImageEditing` in the server config to turn image editing off:
+
+```js
+mediaLibrary: {
+  use2025Behavior: true,
+  disableImageEditing: true // default false
+}
+```
+
+When enabled:
+
+- The "Adjust" button (colour corrections and rotation) is hidden on image placements in documents and on images in metadata.
+- The redaction button is hidden in the media library detail view.
+- The server rejects the creation of new image variants.
+
+Cropping is not affected and stays available.
+
+Existing modifications are not removed. Redactions and image variants that were created before the option was set continue to be applied when the image is served by Livingdocs.
 
 ### Archive/Revoke/Delete
 
