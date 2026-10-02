@@ -586,6 +586,7 @@ There are no known vulnerabilities. :tada:
 Patches typically fix bugs and apply improvements within the current release. Keeping your deployment up-to-date with the latest patch version means you benefit from those fixes. No explicit action is required per patch — bumping the version is enough.
 
 ### Livingdocs Server Patches
+- [v301.1.55](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.55): fix(deps): update dependency proxy-addr from 2.0.7 to 2.0.8 [security]
 - [v301.1.54](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.54): fix(deps): update dependency fastify from 5.12.1 to 5.12.5 [security]
 - [v301.1.52](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.52): chore(ci): move livingdocsIO/actions to 1d986e6
 - [v301.1.51](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.51): chore(ci): wait up to 25 minutes for the unit tests before releasing
