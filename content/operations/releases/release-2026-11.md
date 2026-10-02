@@ -68,6 +68,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Update proxy-addr to 2.0.8 to patch CVE-2026-90711](https://github.com/livingdocsIO/livingdocs-server/pull/10136)
 - [Mount the demo's decompounder folder in the Downstream Demo job](https://github.com/livingdocsIO/livingdocs-server/pull/10142)
 - [fix(ci): queue releases and publish with npm trusted publishing](https://github.com/livingdocsIO/livingdocs-editor/pull/11659)
 - [fix(ci): pin npm-tag-latest to the release that loads](https://github.com/livingdocsIO/livingdocs-server/pull/10098)
