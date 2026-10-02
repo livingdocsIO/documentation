@@ -540,6 +540,7 @@ There are no known vulnerabilities. :tada:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v308.1.39](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.39): fix(deps): update dependency proxy-addr from 2.0.7 to 2.0.8 [security]
 - [v308.1.38](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.38): fix(deps): update dependency axios from 1.18.1 to 1.20.0 [security]
 - [v308.1.37](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.37): fix(deps): update dependency @livingdocs/framework from 34.1.9 to v34.1.10
 - [v308.1.36](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.36): fix(ci): pin npm-tag-latest to the release that loads
