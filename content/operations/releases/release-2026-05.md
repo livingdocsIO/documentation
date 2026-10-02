@@ -641,6 +641,7 @@ Patches typically fix bugs and apply improvements within the current release. Ke
 - [v301.1.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.1): fix(release-2026-05): Update framework to v34.0.3 (release-2026-05 tag)
 
 ### Livingdocs Editor Patches
+- [v123.21.57](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.57): fix(deps): update dependency fastify from 5.12.1 to 5.12.5 [security]
 - [v123.21.56](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.56): fix(deps): update dependency js-yaml from 5.2.2 to 5.4.1 [security]
 - [v123.21.55](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.55): fix(deps): update dependency @livingdocs/framework from 34.0.10 to v34.0.11
 - [v123.21.54](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.54): chore(ci): wait up to 25 minutes for the unit tests before releasing
