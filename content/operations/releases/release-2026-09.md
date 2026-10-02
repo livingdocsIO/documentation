@@ -545,6 +545,7 @@ No known vulnerabilities. :tada:
 Patches typically fix bugs and apply improvements within the current release. Keeping your deployment up-to-date with the latest patch version means you benefit from those fixes. No explicit action is required per patch — bumping the version is enough.
 
 ### Livingdocs Server Patches
+- [v312.0.16](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v312.0.16): fix(deps): update dependency proxy-addr from 2.0.7 to 2.0.8 [security]
 - [v312.0.15](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v312.0.15): fix(deps): update dependency fastify from 5.12.1 to 5.12.5 [security]
 - [v312.0.14](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v312.0.14): chore(ci): move livingdocsIO/actions to 1d986e6
 - [v312.0.13](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v312.0.13): fix(ci): pin npm-tag-latest to the release that loads
