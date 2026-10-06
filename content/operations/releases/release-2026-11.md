@@ -68,6 +68,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(comyan): keep metadata validation errors on image upload](https://github.com/livingdocsIO/livingdocs-server/pull/10093)
 - [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-server/pull/10176)
 - [fix(publish-control): Skip empty and invalid metadata dates in visiblePublicationDatePreference](https://github.com/livingdocsIO/livingdocs-server/pull/10137)
 - [chore(deps): update dependency chai from 6.2.2 to v6.3.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/10149)
