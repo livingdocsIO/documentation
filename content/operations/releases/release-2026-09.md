@@ -246,9 +246,7 @@ In the project config, `mediaCenter.licenseProfiles` has a non-empty `profiles` 
 // project config
 mediaCenter: {
   licenseProfiles: {
-    profiles: [
-      /* ... */
-    ]
+    profiles: [/* ... */]
   }
 }
 ```
@@ -545,6 +543,7 @@ No known vulnerabilities. :tada:
 Patches typically fix bugs and apply improvements within the current release. Keeping your deployment up-to-date with the latest patch version means you benefit from those fixes. No explicit action is required per patch — bumping the version is enough.
 
 ### Livingdocs Server Patches
+
 - [v312.0.18](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v312.0.18): fix(ci): mount the demo's decompounder folder in the Downstream Demo job
 - [v312.0.17](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v312.0.17): fix(publish-control): Skip empty and invalid metadata dates in visiblePublicationDatePreference
 - [v312.0.16](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v312.0.16): fix(deps): update dependency proxy-addr from 2.0.7 to 2.0.8 [security]
@@ -556,7 +555,6 @@ Patches typically fix bugs and apply improvements within the current release. Ke
 - [v312.0.10](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v312.0.10): fix(media-library): Preserve updateAt when modifying usage logs
 - [v312.0.9](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v312.0.9): fix(imatrics-nlp): Match the API mock's concept search against the search term
 - [v312.0.8](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v312.0.8): fix: Use correct warning type for all breaking changes
-
 - [v312.0.7](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v312.0.7): fix: Deprecate Postgres 14
 - [v312.0.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v312.0.6): fix(deps): automatically patch Node.js vulnerabilities
 - [v312.0.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v312.0.5): fix(deps): update dependency nodemailer from 9.0.6 to 9.1.1 [security]
@@ -565,6 +563,7 @@ Patches typically fix bugs and apply improvements within the current release. Ke
 - [v312.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v312.0.2): fix(imatrics-nlp): Add createConceptSuggestion to the API mock and match the getConcepts shape
 
 ### Livingdocs Editor Patches
+
 - [v128.1.16](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v128.1.16): fix(properties): show delete button for components in ticker entries
 - [v128.1.15](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v128.1.15): fix(deps): update dependency fastify from 5.12.1 to 5.12.5 [security]
 - [v128.1.14](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v128.1.14): fix(deps): update dependency moment from 2.30.1 to 2.31.0 [security]
