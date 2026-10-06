@@ -175,14 +175,6 @@ Upgrade the Node.js runtime to 22.22.0 or newer, and update every pinned version
 
 ## Features :gift:
 
-### Named Crops without ratios
-
-A Named Crop that sets neither `imageRatios` nor `recommendedRatios` no longer crashes the editor. It now behaves like a crop with `recommendedRatios` but without presets: the automatic crop is the uncropped original image, and the crop tool offers "Original" and "Free". `minRatio` and `maxRatio` still apply: if the original ratio is outside that range, the automatic crop is the largest centered crop at the nearest allowed ratio. This applies to images in documents and to `li-image` metadata. No configuration is required.
-
-On earlier releases, keep setting `imageRatios` or `recommendedRatios` on every Named Crop.
-
-For more information, see [Named Crops without ratios]({{< ref "/guides/media-library/media-library-setup#named-crops-without-ratios" >}}).
-
 ## Vulnerability Patches
 
 We are constantly patching module vulnerabilities for the Livingdocs Server and Livingdocs Editor as module fixes are available. Below is a list of all patched vulnerabilities included in the release.
