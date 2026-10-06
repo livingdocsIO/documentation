@@ -1,0 +1,71 @@
+name: Release Notes
+
+# livingdocs-server and livingdocs-editor start this for every tag they
+# release, with what they read from their own repository. Only this workflow
+# writes the release notes, one run at a time, so concurrent releases cannot
+# overwrite each other's change.
+on:
+  workflow_dispatch:
+    inputs:
+      repo:
+        description: The repository that released
+        required: true
+        type: choice
+        options: [livingdocs-server, livingdocs-editor]
+      tag:
+        description: The released tag, e.g. v312.0.17
+        required: true
+      branch:
+        description: The branch that released, main or release-YYYY-MM
+        required: true
+      message:
+        description: First line of the released commit's message, for the patches of a release branch
+        default: ''
+      pull-title:
+        description: Title of the released pull request, for the upcoming release on main
+        default: ''
+      pull-url:
+        description: URL of the released pull request
+        default: ''
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-notes
+  queue: max
+  cancel-in-progress: false
+
+jobs:
+  patch:
+    name: ${{ inputs.repo }} ${{ inputs.tag }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      # main as it is when the run starts, not when it was queued.
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: main
+
+      # A push that lost against another one starts over on the new main.
+      - name: Add the release to the release notes
+        env:
+          REPO: ${{ inputs.repo }}
+          TAG: ${{ inputs.tag }}
+          BRANCH: ${{ inputs.branch }}
+          MESSAGE: ${{ inputs.message }}
+          PULL_TITLE: ${{ inputs.pull-title }}
+          PULL_URL: ${{ inputs.pull-url }}
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          sync() { git fetch -q origin main && git reset -q --hard origin/main; }
+          for attempt in 1 2 3; do
+            node bin/release-notes.js
+            if git diff --quiet; then echo "Nothing to change"; exit 0; fi
+            git commit -qam "fix($BRANCH): add $REPO $TAG to the release notes"
+            git push -q origin HEAD:main && { git show --stat --format='%h %s' HEAD; exit 0; }
+            sync
+          done
+          echo "::error::pushing to main failed three times"
+          exit 1
