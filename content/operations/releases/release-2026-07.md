@@ -540,6 +540,7 @@ There are no known vulnerabilities. :tada:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v308.1.41](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.41): fix(publish-control): Skip empty and invalid metadata dates in visiblePublicationDatePreference
 - [v308.1.40](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.40): fix(ci): mount the demo's decompounder folder in the Downstream Demo job
 - [v308.1.39](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.39): fix(deps): update dependency proxy-addr from 2.0.7 to 2.0.8 [security]
 - [v308.1.38](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.38): fix(deps): update dependency axios from 1.18.1 to 1.20.0 [security]
