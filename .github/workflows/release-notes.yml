@@ -42,12 +42,13 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      # main as it is when the run starts, not when it was queued.
+      # The branch the run is on as it is when the run starts, not when it
+      # was queued: main, or a branch to try the workflow on.
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          ref: main
+          ref: ${{ github.ref_name }}
 
-      # A push that lost against another one starts over on the new main.
+      # A push that lost against another one starts over on the new tip.
       - name: Add the release to the release notes
         env:
           REPO: ${{ inputs.repo }}
@@ -59,13 +60,13 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          sync() { git fetch -q origin main && git reset -q --hard origin/main; }
+          sync() { git fetch -q origin "$GITHUB_REF_NAME" && git reset -q --hard "origin/$GITHUB_REF_NAME"; }
           for attempt in 1 2 3; do
             node bin/release-notes.js
             if git diff --quiet; then echo "Nothing to change"; exit 0; fi
             git commit -qam "fix($BRANCH): add $REPO $TAG to the release notes"
-            git push -q origin HEAD:main && { git show --stat --format='%h %s' HEAD; exit 0; }
+            git push -q origin "HEAD:$GITHUB_REF_NAME" && { git show --stat --format='%h %s' HEAD; exit 0; }
             sync
           done
-          echo "::error::pushing to main failed three times"
+          echo "::error::pushing to $GITHUB_REF_NAME failed three times"
           exit 1
