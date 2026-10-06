@@ -540,6 +540,7 @@ There are no known vulnerabilities. :tada:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v308.1.43](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.43): fix(comyan): keep metadata validation errors on image upload
 - [v308.1.42](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.42): fix(deps): automatically patch Node.js vulnerabilities
 - [v308.1.41](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.41): fix(publish-control): Skip empty and invalid metadata dates in visiblePublicationDatePreference
 - [v308.1.40](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.40): fix(ci): mount the demo's decompounder folder in the Downstream Demo job
