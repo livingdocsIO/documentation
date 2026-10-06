@@ -545,6 +545,7 @@ No known vulnerabilities. :tada:
 Patches typically fix bugs and apply improvements within the current release. Keeping your deployment up-to-date with the latest patch version means you benefit from those fixes. No explicit action is required per patch — bumping the version is enough.
 
 ### Livingdocs Server Patches
+- [v312.0.18](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v312.0.18): fix(ci): mount the demo's decompounder folder in the Downstream Demo job
 - [v312.0.17](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v312.0.17): fix(publish-control): Skip empty and invalid metadata dates in visiblePublicationDatePreference
 - [v312.0.16](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v312.0.16): fix(deps): update dependency proxy-addr from 2.0.7 to 2.0.8 [security]
 - [v312.0.15](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v312.0.15): fix(deps): update dependency fastify from 5.12.1 to 5.12.5 [security]
