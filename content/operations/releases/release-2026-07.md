@@ -583,6 +583,7 @@ Here is a list of all patches after the release has been announced.
 - [v308.1.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.3): fix(print): Renumber huGO print breaking change to LIBREAKING071
 
 ### Livingdocs Editor Patches
+- [v126.1.39](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.39): fix(deps): automatically patch Node.js vulnerabilities
 - [v126.1.38](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.38): fix(properties): show delete button for components in ticker entries
 - [v126.1.37](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.37): fix(deps): update dependency fastify from 5.12.1 to 5.12.5 [security]
 - [v126.1.36](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.36): chore(ci): move livingdocsIO/actions to ea0601d
