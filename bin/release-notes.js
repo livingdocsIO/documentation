@@ -15,24 +15,29 @@ export function setVersion(releases, {repo, branch, tag}) {
   return true
 }
 
+// On top of the list below the heading, laid out as prettier does: a blank
+// line after the heading, and one after the list.
+function addItem(notes, isHeading, item) {
+  const lines = notes.split('\n')
+  const heading = lines.findIndex(isHeading)
+  if (heading === -1) return notes
+  const at = lines[heading + 1] === '' ? heading + 2 : heading + 1
+  const list = lines[at]?.startsWith('- ')
+  lines.splice(at, 0, ...(at === heading + 1 ? [''] : []), item, ...(list ? [] : ['']))
+  return lines.join('\n')
+}
+
 // Below `### Livingdocs Server Patches` of a release branch's notes.
 export function addPatch(notes, {repo, tag, message}) {
   if (notes.includes(`[${tag}](`)) return notes
-  const lines = notes.split('\n')
-  const heading = lines.findIndex((l) => new RegExp(`^#+ livingdocs ${PRODUCTS[repo]} patches\\s*$`, 'i').test(l))
-  if (heading === -1) return notes
-  lines.splice(heading + 1, 0, `- [${tag}](https://github.com/livingdocsIO/${repo}/releases/tag/${tag}): ${message}`)
-  return lines.join('\n')
+  const heading = new RegExp(`^#+ livingdocs ${PRODUCTS[repo]} patches\\s*$`, 'i')
+  return addItem(notes, (l) => heading.test(l), `- [${tag}](https://github.com/livingdocsIO/${repo}/releases/tag/${tag}): ${message}`)
 }
 
 // Below `## PRs to Categorize` of the upcoming release's notes.
 export function addPull(notes, {pullTitle, pullUrl}) {
   if (!pullUrl || notes.includes(`](${pullUrl})`)) return notes
-  const lines = notes.split('\n')
-  const heading = lines.indexOf('## PRs to Categorize')
-  if (heading === -1) return notes
-  lines.splice(heading + 1, 0, `- [${pullTitle}](${pullUrl})`)
-  return lines.join('\n')
+  return addItem(notes, (l) => l === '## PRs to Categorize', `- [${pullTitle}](${pullUrl})`)
 }
 
 function main(env, root) {
