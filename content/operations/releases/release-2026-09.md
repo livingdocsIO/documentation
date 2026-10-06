@@ -543,6 +543,7 @@ No known vulnerabilities. :tada:
 Patches typically fix bugs and apply improvements within the current release. Keeping your deployment up-to-date with the latest patch version means you benefit from those fixes. No explicit action is required per patch — bumping the version is enough.
 
 ### Livingdocs Server Patches
+- [v312.0.20](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v312.0.20): fix(comyan): keep metadata validation errors on image upload
 - [v312.0.19](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v312.0.19): fix(deps): automatically patch Node.js vulnerabilities
 
 - [v312.0.18](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v312.0.18): fix(ci): mount the demo's decompounder folder in the Downstream Demo job
