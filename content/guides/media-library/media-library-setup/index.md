@@ -290,6 +290,22 @@ projectConfig.designSettings: {
 }
 ```
 
+#### Ratios of a Named Crop
+
+Each Named Crop sets `imageRatios`, `recommendedRatios`, or both:
+
+- `imageRatios`: the user picks one of the listed ratios. The crop stays locked to it. There is no freeform option.
+- `recommendedRatios`: the user picks one of the listed ratios or "Free". A picked ratio is kept while resizing. "Free" allows any ratio.
+- Both: the picker lists the `imageRatios` first, then the `recommendedRatios`, and offers "Free". Unlike on a simple image directive, the two options may be combined on a Named Crop.
+
+`minRatio`, `maxRatio` and `minResolution` limit every choice, including "Original" and "Free".
+
+#### Named Crops without ratios
+
+{{< added-in "release-2026-11" >}} A Named Crop with neither `imageRatios` nor `recommendedRatios` behaves like a crop with `recommendedRatios` but without presets. The automatic crop is the uncropped original image, and the crop tool offers "Original" and "Free". `minRatio` and `maxRatio` still apply. If the original ratio is outside that range, the automatic crop is the largest centered crop at the nearest allowed ratio. This applies to images in documents and to `li-image` metadata.
+
+Before `release-2026-11`, such a Named Crop crashed the editor when an image was set. On those releases, always configure `imageRatios` or `recommendedRatios` on every Named Crop.
+
 Subsequently, you can reference and enable them on image directives and image metadata properties. Specifically, Livingdocs supports Named Crops in three places:
 
 1. On media types with `li-named-crops`.

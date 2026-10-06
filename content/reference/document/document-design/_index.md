@@ -291,6 +291,8 @@ designSettings: {
 },
 ```
 
+Every Named Crop should set `imageRatios` or `recommendedRatios`. For the behavior of a Named Crop without either, see [Named Crops without ratios]({{< ref "/guides/media-library/media-library-setup#named-crops-without-ratios" >}}).
+
 ### Assets
 
 Livingdocs uses CSS and possible JS assets to render documents. The `assets` object contains 2 keys, `css` and `js`, both of which are arrays and contain fully specified URLs to your CSS and JS files respectively. We advise you to upload the files to an AWS S3 bucket or similar and link them.

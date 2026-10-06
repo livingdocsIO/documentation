@@ -50,14 +50,16 @@ The image ratio definitions control how the crop tool in the Livingdocs editor i
 
 {{< img src="./image-crop-ratio.png" alt="Aspect ratio picker with 1:1, 16:9, Original and Free options" width="400" caption="The original and freeform option is only offered with recommendedRatios." >}}
 
-There are two ways to configure how the crop tool behaves. If you configure `imageRatios`, the user picks one of the given ratios and the crop is locked to it. If you configure `recommendedRatios`, the given ratios are presented to the user alongside an additional freeform option.
+There are two ways to configure how the crop tool behaves. If you configure `imageRatios`, the user picks one of the given ratios and the crop is locked to it. If you configure `recommendedRatios`, the given ratios are presented to the user alongside an additional freeform option. Configure only one of the two on an image directive. A directive with both is rejected when the design is loaded.
 
-`imageRatios`: array of strings, an array of strings, e.g. '16:9'
-`recommendedRatios`: array of strings, an array of strings, e.g. '16:9'
+If you configure neither (and no `namedCrops`), the image has no crop configuration: the editor offers no crop tool and shows the image uncropped.
+
+`imageRatios`: array of strings, e.g. `'16:9'`
+`recommendedRatios`: array of strings, e.g. `'16:9'`
 
 ### Named Crops
 
-Alternatively to `imageRatios`/`recommendedRatios` you can configure `namedCrops` if you are using that system.
+Alternatively to `imageRatios`/`recommendedRatios`, you can configure `namedCrops` if you are using that system. Each Named Crop has its own `imageRatios` and `recommendedRatios`. Always set at least one of them. See [Named Crops without ratios]({{< ref "/guides/media-library/media-library-setup#named-crops-without-ratios" >}}).
 To understand what Named Crops are, read the [Media Library Guide]({{< ref "/guides/media-library/media-library-setup" >}}).
 
 ### SrcSet
