@@ -68,6 +68,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Skip category republish without a user instead of failing](https://github.com/livingdocsIO/livingdocs-server/pull/10170)
 - [fix(public-api): accept oldValue in setEditableDirective command](https://github.com/livingdocsIO/livingdocs-server/pull/10156)
 - [fix(comyan): keep metadata validation errors on image upload](https://github.com/livingdocsIO/livingdocs-server/pull/10093)
 - [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-server/pull/10176)
