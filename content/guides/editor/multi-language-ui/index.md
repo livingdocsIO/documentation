@@ -3,6 +3,7 @@ title: Configure Multi-Language UI
 bullets:
   - Configure Default UI Language
   - Translating Config Labels, Placeholders and Titles
+  - Number Formatting
 weight: 5
 keywords:
   - locale
@@ -15,6 +16,8 @@ keywords:
   - German
   - Norwegian
   - Translating Config
+  - number format
+  - thousands separator
 ---
 
 This guide explains how to configure Livingdocs to show the UI in different languages. Starting with {{< release "release-2023-07" >}} the default UI language can be configured and labels from the config, e.g. metadata plugin label, can be declared in multiple languages.
@@ -108,3 +111,28 @@ metadata: [
 Metadata plugin displayed with German translations.
 
 {{< img src="label-german.png" alt="label german" >}}
+
+## Number Formatting
+
+{{< added-in "release-2026-11" block >}}
+
+Users can choose how the editor formats numbers, for example `1.234.567` in Germany or `1'234'567` in Switzerland. Number format is a separate setting from the UI language, because users with the same UI language often expect different formats depending on their region.
+
+The setting is a personal preference. Each user picks a format in the **Preferences** card on their account page, next to the UI language and the high contrast mode. The choice applies to all projects and takes effect immediately, without a page reload.
+
+Number formatting is off by default, so numbers are shown as raw digits until a user picks a format. The editor does not derive a format from the browser, because a wrong thousands separator can make a number read as a thousand times larger or smaller.
+
+The dropdown shows each format as a sample instead of a country name, because one format covers many countries:
+
+| Sample          | Locale    |
+| --------------- | --------- |
+| `1234567.89`    | (default) |
+| `1,234,567.89`  | `en-US`   |
+| `1.234.567,89`  | `de-DE`   |
+| `1'234'567.89`  | `de-CH`   |
+| `1 234 567,89`  | `fr-FR`   |
+| `12,34,567.89`  | `en-IN`   |
+
+The chosen format applies to the result totals in kanban boards and in the media library.
+
+The preference is stored as a locale tag under the `numberFormat` key of the user config. No project or server configuration is required.
