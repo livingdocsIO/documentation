@@ -39,6 +39,7 @@ Here is an overview of the top level properties. You can find detailed documenta
   finiteProducts: [{...}],
   brands: [{...}],
   newsAgency: [{...}],
-  mediaCenter: {...}
+  mediaCenter: {...},
+  spellcheck: {...}
 }
 ```

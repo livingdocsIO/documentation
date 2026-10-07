@@ -297,6 +297,10 @@ By default the editable selection event is only fired once the user releases the
 
 ## Spellcheck
 
+{{< info >}}
+This section describes the legacy spellcheck. For the spellcheck based on LanguageTool, see the [Spellcheck]({{< ref "/reference/project-config/spellcheck" >}}) project config. If a project configures it, the legacy spellcheck below is ignored for that project.
+{{< /info >}}
+
 Livingdocs allows you to use the default browser spellcheck, a custom spellcheck server or no spellchecking at all. The browser spellcheck is the default browser behaviour and will differ between Chrome, Firefox etc. The custom spellcheck requires a spellcheck service that analyzes the text and returns a list of words that have been spelled wrong. Thus the custom spellchecker is completely customizable.
 
 Spellchecking turned off:
