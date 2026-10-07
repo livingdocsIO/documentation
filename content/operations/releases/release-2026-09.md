@@ -565,6 +565,7 @@ Patches typically fix bugs and apply improvements within the current release. Ke
 - [v312.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v312.0.2): fix(imatrics-nlp): Add createConceptSuggestion to the API mock and match the getConcepts shape
 
 ### Livingdocs Editor Patches
+- [v128.1.18](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v128.1.18): test(image-crop): cover named crops without ratios
 - [v128.1.17](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v128.1.17): fix(deps): automatically patch Node.js vulnerabilities
 
 - [v128.1.16](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v128.1.16): fix(properties): show delete button for components in ticker entries
