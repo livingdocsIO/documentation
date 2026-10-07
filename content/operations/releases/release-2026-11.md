@@ -176,6 +176,36 @@ Upgrade the Node.js runtime to 22.22.0 or newer, and update every pinned version
 
 ## Features :gift:
 
+### Spellcheck
+
+Writers now get spelling and grammar checks right in the Livingdocs Editor, with a fix one click away. The spellcheck runs against a LanguageTool server hosted by Livingdocs, so there is nothing to install or maintain on the writers' machines.
+
+#### Live Check
+
+The whole document is checked when it opens, and each paragraph is checked again while the writer types. Matches are highlighted in the text. A click on a highlight opens a flyout with the message and the suggestions. The writer applies a suggestion or rejects the match.
+
+#### Proofread the Whole Document
+
+A button in the bottom right corner of the editor shows the number of open matches. It opens a panel that lists every match of the document, so writers can step through them in one pass and fix or reject each one from the list. Writers who prefer an undisturbed writing flow can turn on "Checks only while the panel is open" in the panel. The highlights then only show while the panel is open.
+
+#### Configuration
+
+The spellcheck is enabled per project in the project config:
+
+```js
+spellcheck: {
+  url: 'https://languagetool.example.com'
+}
+```
+
+If a project configures it, the legacy spellcheck of the editor config is ignored for that project. Projects without it behave as before.
+
+{{< info >}}
+Livingdocs operates the LanguageTool server for each customer. Reach out to your customer solutions contact to get one for your project.
+{{< /info >}}
+
+For more information, see the [Spellcheck]({{< ref "/reference/project-config/spellcheck" >}}) documentation.
+
 ## Vulnerability Patches
 
 We are constantly patching module vulnerabilities for the Livingdocs Server and Livingdocs Editor as module fixes are available. Below is a list of all patched vulnerabilities included in the release.
