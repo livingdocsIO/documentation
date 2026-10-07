@@ -176,6 +176,14 @@ Upgrade the Node.js runtime to 22.22.0 or newer, and update every pinned version
 
 ## Features :gift:
 
+### Number Formatting as a User Preference
+
+Large numbers are easier to read with thousands separators, but the expected separator depends on the region: `1.234.567` in Germany, `1'234'567` in Switzerland. Users can now choose their number format in a new **Preferences** card on the account page, which also holds the UI language and the high contrast mode. Result totals in kanban boards and in the media library render in the chosen format.
+
+The preference is off by default and needs no configuration. Numbers stay unformatted until a user picks a format.
+
+For more information, see the [Multi-Language UI]({{< ref "/guides/editor/multi-language-ui#number-formatting" >}}) documentation.
+
 ## Vulnerability Patches
 
 We are constantly patching module vulnerabilities for the Livingdocs Server and Livingdocs Editor as module fixes are available. Below is a list of all patched vulnerabilities included in the release.
