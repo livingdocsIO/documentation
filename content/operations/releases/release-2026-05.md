@@ -646,6 +646,7 @@ Patches typically fix bugs and apply improvements within the current release. Ke
 - [v301.1.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.1): fix(release-2026-05): Update framework to v34.0.3 (release-2026-05 tag)
 
 ### Livingdocs Editor Patches
+- [v123.21.59](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.59): test(tasks): cover the other groups' deadline sort and expanding the done group
 - [v123.21.58](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.58): fix(deps): automatically patch Node.js vulnerabilities
 - [v123.21.57](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.57): fix(deps): update dependency fastify from 5.12.1 to 5.12.5 [security]
 - [v123.21.56](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.56): fix(deps): update dependency js-yaml from 5.2.2 to 5.4.1 [security]
