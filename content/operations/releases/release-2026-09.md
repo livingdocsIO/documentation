@@ -136,7 +136,7 @@ To roll back the Elasticsearch changes, no action is required. The new media lib
 
 The server config property `mediaLibrary.disableImageEditingInDocuments` has been removed and now throws during startup. It was deprecated in {{< release "release-2026-03" >}} (`LIDEP078`). Image editing in documents is enabled by default, along with the image variant creation it depends on.
 
-Setups that cannot apply image modifications, for example because images are delivered by an external DAM, can turn image editing off with the new server config property `mediaLibrary.disableImageEditing`. Unlike the removed property it also hides redaction in the media library. Cropping stays available.
+Setups that cannot apply image modifications, for example because images are delivered by an external DAM, can turn image editing off with the server config property `mediaLibrary.disableImageEditing`, added in a patch of this release. Unlike the removed property it also hides redaction in the media library. Cropping stays available.
 
 #### Detect
 
@@ -146,7 +146,7 @@ In the server config, `disableImageEditingInDocuments`.
 
 Remove the property. If image editing should be available, no further change is needed.
 
-To keep image editing turned off, replace it with `disableImageEditing`:
+To keep image editing turned off, upgrade to at least `@livingdocs/server@312.0.22` and `@livingdocs/editor@128.1.21`, then replace it with `disableImageEditing`. Earlier patch versions of `release-2026-09` reject the property during startup.
 
 ```diff
  mediaLibrary: {
@@ -526,6 +526,25 @@ License and tag information was not shown consistently across the product. The s
 This release lines that up. Media library tags now appear on the image and video properties panels and metadata panels, on license approval task thumbnails, and the media library detail view shows all tags including references. Display settings are shared globally instead of per view, and the tag tooltip finally reflects the actual asset type instead of always saying "image".
 
 The changes are available automatically. No configuration is required.
+
+### Disabling Image Editing
+
+Not every setup can apply image modifications. When images are delivered by an external DAM instead of the Livingdocs `serve-image` endpoint, colour corrections, rotation and redaction made in the editor never reach the delivered image. Such setups can now turn image editing off.
+
+With `mediaLibrary.disableImageEditing`, the "Adjust" button disappears from images in documents and metadata, and the redaction button disappears from the media library detail view. The server rejects the creation of image variants. Cropping stays available, and existing modifications are still applied.
+
+The property requires configuration and is available from `@livingdocs/server@312.0.22` and `@livingdocs/editor@128.1.21`:
+
+```diff
+ mediaLibrary: {
+   use2025Behavior: true,
++  disableImageEditing: true
+ }
+```
+
+It replaces `mediaLibrary.disableImageEditingInDocuments`, see [Removal of mediaLibrary.disableImageEditingInDocuments](#removal-of-medialibrarydisableimageeditingindocuments).
+
+For more information, see the [Disabling Image Editing]({{< ref "/guides/media-library/2025-behavior/#disabling-image-editing" >}}) documentation.
 
 ## Vulnerability Patches
 
