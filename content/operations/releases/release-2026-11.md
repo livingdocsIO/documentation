@@ -191,7 +191,7 @@ textFormatting: {
 }
 ```
 
-Alternatively, set `apostrophe` per document language in `locales`. Typing then uses the quotes and apostrophe of the document language, the same ones pasting uses.
+Smart Quotes now also support `locales`. You can set `quotes`, `singleQuotes` and `apostrophe` for each language. If a document is in that language, Smart Quotes use these values instead of the ones at the top level. Pasting already worked this way.
 
 For more information, see the [Smart Quotes]({{< ref "/reference/project-config/editor-settings#smart-quotes" >}}) documentation.
 

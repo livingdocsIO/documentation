@@ -1442,15 +1442,13 @@ Smart Quotes replace quotation marks as you type with the ones defined in your c
 
 To enable Smart Quotes, the `smartQuotes` property must be added to the `textFormatting` configuration. This can be done in `editor_settings.js`. You can also override this config for each content type.
 
-Additionally, `quotes` and `singleQuotes` must be set in `textFormatting`, either directly or for at least one language in `locales`. These are used as replacement quotes. If `apostrophe` is set, Smart Quotes also replace apostrophes ({{< added-in "release-2026-11" >}}).
-
-The values in `locales` for the document language take precedence over the project-wide values. This applies to the quotes and to the apostrophe.
+Smart Quotes also need `quotes` and `singleQuotes`, which define the quotation marks they insert. If you set `apostrophe`, Smart Quotes also replace apostrophes ({{< added-in "release-2026-11" >}}). If a document has a language, the values in its locale take precedence over the top-level values ({{< added-in "release-2026-11" >}}). Documents without a language always use the top-level values.
 
 ```js
 // Either in editor_settings.js or content-types/*
 textFormatting: {
   smartQuotes: {enabled: true}, // Alternatively: `smartQuotes: true`
-  // Set quotes and singleQuotes directly, in locales, or both
+  // Used if a document is in a language that is not defined below
   quotes: ['«', '»'],
   singleQuotes: ['‹', '›'],
   apostrophe: '’',
