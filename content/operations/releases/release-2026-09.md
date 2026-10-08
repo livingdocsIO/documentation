@@ -529,7 +529,7 @@ The changes are available automatically. No configuration is required.
 
 ### Disabling Image Editing
 
-Not every setup can apply image modifications. When images are delivered by an external DAM instead of the Livingdocs `serve-image` endpoint, colour corrections, rotation and redaction made in the editor never reach the delivered image. Such setups can now turn image editing off.
+Not every setup can apply image modifications. When images are delivered by an external DAM instead of the Livingdocs [`serve-image`]({{< ref "/reference/public-api/media-library/#serve-image" >}}) endpoint, colour corrections, rotation and redaction made in the editor never reach the delivered image. Such setups can now turn image editing off.
 
 With `mediaLibrary.disableImageEditing`, the "Adjust" button disappears from images in documents and metadata, and the redaction button disappears from the media library detail view. The server rejects the creation of image variants. Cropping stays available, and existing modifications are still applied.
 
