@@ -585,6 +585,7 @@ Here is a list of all patches after the release has been announced.
 - [v308.1.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.3): fix(print): Renumber huGO print breaking change to LIBREAKING071
 
 ### Livingdocs Editor Patches
+- [v126.1.41](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.41): test(tasks): cover the other groups' deadline sort and expanding the done group
 - [v126.1.40](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.40): fix(auth): Decide a failed reissue by its outcome, not by the browser clock
 - [v126.1.39](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.39): fix(deps): automatically patch Node.js vulnerabilities
 - [v126.1.38](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.38): fix(properties): show delete button for components in ticker entries
