@@ -29,7 +29,11 @@
     img {
       max-width: 100%;
       height: auto;
-      border: solid 1px $color-grey-6;
+
+      // Only content images, not icons
+      &:not([class]) {
+        border: solid 1px $color-grey-6;
+      }
     }
 
     hr {
