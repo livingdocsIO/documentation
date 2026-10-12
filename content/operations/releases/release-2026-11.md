@@ -195,6 +195,22 @@ Smart Quotes now also support `locales`. You can set `quotes`, `singleQuotes` an
 
 For more information, see the [Smart Quotes]({{< ref "/reference/project-config/editor-settings#smart-quotes" >}}) documentation.
 
+### Images in News Agency Reports
+
+News agencies often deliver images along with their reports. News agency reports can now include them, and editors see them in a collapsible "Images" section when they open a report on a news agency screen or in a notification.
+
+Hover over a thumbnail to jump to its media library entry. On news agency screens, you can also open the images in a lightbox and click through all images of the report.
+
+{{< img src="release-2026-11-agency-report-images.png" alt="Images section of a news agency report with six image thumbnails" width="450" caption="Images are now supported in news agency reports." >}}
+
+The Images section is available automatically. Images are imported as `image` components with an optional caption and source, and reference existing media library entries.
+
+{{< info >}}
+Your news agency function decides what happens to images when a report is copied into an article. Make sure it handles `image` components before you import reports with images.
+{{< /info >}}
+
+For more information, see the [News Agencies]({{< ref "/guides/integrations/news-agencies#images" >}}) documentation.
+
 ## Vulnerability Patches
 
 We are constantly patching module vulnerabilities for the Livingdocs Server and Livingdocs Editor as module fixes are available. Below is a list of all patched vulnerabilities included in the release.

@@ -114,6 +114,10 @@ liServer.registerNewsAgencyFunction({
 })
 ```
 
+{{< info >}}
+If your news agency reports contain images, see [Map Images in the News Agency Function](#map-images-in-the-news-agency-function) to learn how to copy them into articles.
+{{< /info >}}
+
 Since this function works with a `liNewsAgencyReport`, it's important to understand the structure of this content type. The `newsAgencyReport` is pre-configured by Livingdocs and only supports a specific set of metadata properties and content components.
 
 #### Content Type Config `liNewsAgencyReport`
@@ -126,7 +130,8 @@ Since this function works with a `liNewsAgencyReport`, it's important to underst
     {name: 'p'},
     {name: 'ol'},
     {name: 'ul'},
-    {name: 'li'}
+    {name: 'li'},
+    {name: 'image'}
   ],
   metadata: [
     {handle: 'title', type: 'li-text', config: {index: true, required: true}},
@@ -157,11 +162,19 @@ Since this function works with a `liNewsAgencyReport`, it's important to underst
 {
   name: 'liNewsAgencyReport',
   components: [
-    {name: 'h2', directives: [{type: 'editable', name: 'text', plainText: true}]},
+    {name: 'h2', directives: [{type: 'editable', name: 'text'}]},
     {name: 'p', directives: [{type: 'editable', name: 'text'}]},
-    {name: 'ol', directives: {items: {allowedChildren: ['ol']}}},
+    {name: 'ol', directives: {items: {allowedChildren: ['li']}}},
     {name: 'ul', directives: {items: {allowedChildren: ['li']}}},
-    {name: 'li', directives: [{type: 'editable', name: 'text'}], allowedParents: ['ol', 'ul']}
+    {name: 'li', directives: [{type: 'editable', name: 'text'}], allowedParents: ['ol', 'ul']},
+    {
+      name: 'image',
+      directives: [
+        {type: 'image', name: 'image'},
+        {type: 'editable', name: 'caption'},
+        {type: 'editable', name: 'source'}
+      ]
+    }
   ]
 }
 ```
@@ -239,12 +252,93 @@ POST /api/{{< api-version >}}/import/documents
         "autoPublish": true
       },
       "content": [
-        {"component": "p", "content": {"text": "From the content..."}}
+        {"component": "p", "content": {"text": "From the content..."}},
+        {
+          "component": "image",
+          "content": {
+            "image": {
+              "mediaId": "dHrZ7Ej8PyNK",
+              "key": "2026/11/03/0a704a7b-18fc-4a74-a31b-9fbf0ae7beb3.jpeg",
+              "originalUrl": "https://bucket-name.s3.amazonaws.com/2026/11/03/0a704a7b-18fc-4a74-a31b-9fbf0ae7beb3.jpeg",
+              "url": "https://bucket-name.s3.amazonaws.com/2026/11/03/0a704a7b-18fc-4a74-a31b-9fbf0ae7beb3.jpeg",
+              "width": 2048,
+              "height": 1329,
+              "mimeType": "image/jpeg"
+            },
+            "caption": "Some caption",
+            "source": "dpa"
+          }
+        }
       ]
     }
   ]
 }
 ```
+
+## Images
+
+{{< added-in "release-2026-11" block >}}
+
+News agency reports can contain images. Users see them when they open a report on a news agency screen or in a notification, and your news agency function decides what happens to them when a report is copied into an article.
+
+### Import Images
+
+Images are sent as `image` components in the `content` array of a `liNewsAgencyReport` document, as shown in the [import example](#5-import-news-agency-reports):
+
+- **Media library entry**: Each image must already exist in the media library. Import it first, e.g. with the [Import Media Library Entries]({{< ref "/reference/public-api/imports/media-library-entries/" >}}) endpoint. Then fill the `image` directive with the image attributes of the entry, including its `mediaId`.
+- **Caption and source**: The editable directives `caption` and `source` are optional.
+- **Position**: Images can appear at any position at the top level of the content, and there is no limit on their number.
+
+An import fails if a component is placed where the design doesn't allow it, such as an image inside a list, or if a component contains an unknown directive. To find out why an import failed, [check the import status]({{< ref "/reference/public-api/imports/documents/#check-import-status-for-documents" >}}): the `reason` of a failed document describes the violation.
+
+### Map Images in the News Agency Function
+
+Your news agency function decides if and how images are copied into the resulting article. Make sure it handles `image` components before you import reports with images.
+
+If your design has an `image` component with the directives `image`, `caption` and `source`, you can pass `document.content` through unchanged. Livingdocs validates the returned content against your design, but not against the components the target content type allows, so make sure the target content type allows `image`.
+
+If your image component has a different name or different directives, map the images in the function. In this example, the design has a `figure` component with a `credit` directive for the source:
+
+```js
+liServer.registerNewsAgencyFunction({
+  handle: 'someNewsAgencyFunction',
+  action({document}) {
+    const content = document.content.map((component) => {
+      if (component.component !== 'image') return component
+      const {image, caption, source} = component.content
+
+      // Map the report's image to the figure component of your design.
+      return {component: 'figure', content: {image, caption, credit: source}}
+    })
+
+    return {
+      title: document.title,
+      contentType: 'newswireArticle',
+      content,
+      metadata: document.metadata.toJSON()
+    }
+  }
+})
+```
+
+To leave images out of the article, filter them:
+
+```js
+const content = document.content.filter((component) => component.component !== 'image')
+```
+
+### View Images in a Report
+
+When a report contains images, they are shown in a collapsible "Images" section of the report. The section title shows the number of images.
+
+Hovering over an image thumbnail opens a flyout with two actions:
+
+- **Go to media library entry**: Opens the media library entry in a new tab.
+- **View details**: Opens the image in a lightbox. Use the previous/next buttons or the arrow keys to cycle through the images of the report. This action is available on news agency screens, not in notifications.
+
+Images that can't be displayed are reported in a message below the thumbnails. This happens when the user lacks the permission to view an image, or when an image referenced in the report can't be loaded. The latter hints at an image that wasn't imported correctly.
+
+{{< img src="./news-agencies-report-images-alerts.png" alt="Images section with messages for denied and failed images" width="400" >}}
 
 ## Notifications
 
