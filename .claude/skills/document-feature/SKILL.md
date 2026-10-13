@@ -13,17 +13,18 @@ Workflow order: gather inputs → read sources → **update the documentation fi
 
 Ask **one question at a time** — wait for each answer before asking the next:
 
-1. **Release** — identifier in `release-YYYY-MM` format. Accept plain year/month and normalize it yourself.
-2. **GitHub PR URLs** — ask whether they'd like to add all URLs at once or one at a time. If one at a time: ask for the first URL, then ask "Any more PRs? (say 'done' to continue)" and keep collecting until done. If all at once: accept a list of URLs in a single message.
-3. **Notion requirement URL** — original requirement page (if available)
+1. **Release** — ask with `AskUserQuestion`. The options are the upcoming release (the file in `content/operations/releases/` whose frontmatter has `upcoming: true`) and the three releases before it, newest first, e.g. `release-2026-11`, `release-2026-09`, `release-2026-07`, `release-2026-05`. Use the release identifier as the label. Set the description of the upcoming release to "Upcoming" and leave the others empty (`""`). `AskUserQuestion` adds "Other" for any other release; accept plain year/month there and normalize it to `release-YYYY-MM` yourself.
+2. **Notion requirement URL** — original requirement page (if available).
+3. **GitHub PR URLs** — if a Notion page was given, fetch it and collect the GitHub PR links it contains. Let the developer pick the relevant ones with `AskUserQuestion` and `multiSelect: true`, one option per PR (label e.g. `server#10182`, the PR title as description). A question takes 2-4 options and a call up to 4 questions, so split more than four PRs across several questions. In that case, number the headers (`PRs 1/2`, `PRs 2/2`) and end each question but the last with "(more PRs follow)", so the developer doesn't paste URLs into "Other" too early. "Other" lets the developer add URLs. If the page has a single PR link, confirm it in plain text instead. Without a Notion page or PR links on it, ask whether they'd like to add all URLs at once or one at a time. If one at a time: ask for the first URL, then ask "Any more PRs? (say 'done' to continue)" and keep collecting until done. If all at once: accept a list of URLs in a single message.
 4. **Cycle Demo Presentation** — a Figma Slides URL (see Step 2 for how it's read). Prefer a **node-specific** link: in Figma, select the relevant slide → Copy link → the URL contains `node-id=...`, which lets a single slide be read at full resolution. A plain deck URL works too. Say "no" to skip.
 5. **Additional context** — free-form notes, summaries, or exclusions (e.g. "ignore PR #123"). Optional.
-6. **Screenshots or Images** — ask the developer to paste images (`Cmd+V` / `Ctrl+V`). For each: ask for the filename (`release-YYYY-MM-description.png`) and a short description of what is shown. Say "no" to skip.
+6. **Screenshots or Images** — ask the developer to paste images (`Cmd+V` / `Ctrl+V`). For each: ask for a short description of what is shown, and tell them they can pass a filename too, otherwise you'll generate one. Generate TRN image names from the release and the description (`release-YYYY-MM-<short-slug>.png`); for documentation images, follow the naming of the images next to the target page. Say "no" to skip.
 7. **Existing documentation** — path(s) to any existing `/reference/` or `/guides/` pages this feature relates to, if the developer knows them. Say "no" and the skill will search for the right page(s) in Step 3.
 
 ## Step 2: Read the sources
 
 - Fetch each GitHub PR: title, description, linked issues — understand what was built and why.
+- Verify behavior in the actual implementation (the PR diff or a local checkout), not just the PR description, before you document it.
 - If a Notion URL was provided, fetch it to understand the original user requirement.
 - If a Figma Slides URL was provided, read the deck to understand how the feature was positioned (see **Reading a Figma Slides deck** below).
 - Place each image after the paragraph it best illustrates, using the developer's description to decide.
@@ -64,7 +65,7 @@ For each area to document:
 
 1. If the developer gave existing paths in Step 1, start there.
 2. Otherwise search `content/reference/` and `content/guides/` for the closest related topic (grep for the feature's config handle, plugin name, or domain terms). For a **Public API** change, the endpoint docs live in `data/endpoints/*.yaml` (grep there by path or `endpointId`), not under `content/reference/`.
-3. **Extend an existing page** when the feature fits an established topic — this is the default; keep related config in one place.
+3. **Extend an existing page** when the feature fits an established topic — this is the default; keep related config in one place. Before modifying it, check that its current content still matches the code it documents, and mention any drift you find.
 4. **Create a new page** only when no existing page fits. Place it in the right section and add correct frontmatter:
    - Reference: `title`, `weight`, and `menus:` → `reference:` → `parent: <Section>` (match sibling pages).
    - Guide: `title`, optional `bullets:` (list of what the guide covers), `weight`.
@@ -75,11 +76,25 @@ For each area to document:
 - Follow the repo conventions in `README.md`: start sections at `##`, `###` for subsections; brief, concise prose; `js`/`json`/`yaml` code blocks.
 - Mark new additions with `{{< added-in "release-YYYY-MM" >}}` (add `block` for a standalone line, e.g. `{{< added-in "release-YYYY-MM" block >}}` at the top of a new page or section).
 - Cross-link related pages with `{{< ref "/path" >}}`.
-- If screenshots/images illustrate a workflow, reference them with `{{< img >}}` and follow the image reminder in Step 6.
+- **Lead with how to do it right**: describe the recommended approach first, then alternatives. Mention pitfalls where they matter, but don't build a section around what can go wrong.
+- **Say why a link is worth following**: an info box or sentence that points elsewhere adds a short reason, e.g. "see [X](#x) to learn how to copy them into articles."
+- **Use only established terms**: don't name a UI area or concept the page hasn't introduced (e.g. "the report view"). Describe it in plain words instead, e.g. "when users open a report on a news agency screen".
+- If screenshots/images illustrate a workflow, reference them with `{{< img >}}`. Whenever you place an image, give it alt text and a `caption`.
 
-### 3d. Confirm, then write
+### 3d. Outline, then write
 
-Show the developer the planned doc changes — which page(s), extend-vs-new, and the drafted content. Ask: _"Does this documentation look right before I write it?"_ Apply changes, then write the files with the editing tools. Note the final doc path(s); the TRN entry links to them in Step 4.
+Show the developer a rough outline first: which page(s) and sections you'll extend, change or create, each with a very short description of the planned change. Ask: _"Does this outline look right?"_ Apply their feedback, then write the files with the editing tools. Note the final doc path(s); the TRN entry links to them in Step 4.
+
+### 3e. Preview locally
+
+Offer to run the docs locally so the developer can read the changes in the browser:
+
+1. If `hugo` is missing, install it as described in `README.md` (`brew install hugo`), and run `npm install` if `node_modules` is missing.
+2. Start the server in the background: `hugo server --buildDrafts --buildFuture --disableFastRender`.
+3. Give the developer the URL of the changed page, e.g. `http://localhost:1313/guides/<path>/`.
+4. **Restart the server after every edit.** `hugo.yaml` mounts `content/` as assets too, so Hugo treats an edited Markdown file as a changed asset and keeps serving the old page.
+
+Then ask: _"Does the documentation look right? Anything to adjust?"_ Apply the feedback before moving on to Step 4.
 
 ## Step 4: Write the TRN feature entry
 
@@ -94,7 +109,7 @@ INTRO_PARAGRAPH
 
 [CONFIG_OR_API_SECTION if activation/config is required]
 
-[{{< img src="FILENAME" alt="ALT TEXT" width="600" >}} if screenshot provided]
+[{{< img src="FILENAME" alt="ALT TEXT" width="600" caption="CAPTION" >}} if screenshot provided]
 
 [{{< info >}}...{{< /info >}} if there's a prerequisite or important note]
 
@@ -174,11 +189,11 @@ For more information, see the [Distribution Dates]({{< ref "reference/document/m
 - **More Sales, less Packungsbeilage**: focus on value and excitement, not exhaustive description.
 - **Less is more**: short, punchy sentences. Omit anything not directly relevant. If in doubt, leave it out.
 - **Use regular hyphens**: write `-` not `—` in the output.
-- **Use visuals**: include screenshots for UI-facing features. Use `{{< img >}}` with meaningful alt text.
+- **Use visuals**: include screenshots for UI-facing features. Use `{{< img >}}` with meaningful alt text and a caption.
 
 ## Step 5: Ask for feedback
 
-Ask: _"Does this look right? Anything to adjust — in the documentation or the TRN entry — wording, missing details, or config examples?"_
+Ask: _"Does this look right? Anything to adjust — in the documentation or the TRN entry — wording, missing details, or config examples?"_ If the local preview from 3e is running, link the release page too, e.g. `http://localhost:1313/operations/releases/<release-identifier>/`.
 
 Apply any requested changes to both the docs and the TRN entry.
 
@@ -188,7 +203,7 @@ Apply any requested changes to both the docs and the TRN entry.
 2. Locate `## Features :gift:`.
 3. Append the entry at the end of that section, before the next `##` heading.
 4. Save and confirm to the developer — summarize both what changed in the documentation (with paths) and the TRN entry that was added.
-5. If images were provided: remind the developer to manually save each image to its target directory (`content/operations/releases/` for TRN images, the relevant doc folder for documentation images) using the exact filename from the `{{< img src="..." >}}` tags. Claude cannot write image files directly.
+5. If images were provided: copy each pasted image (its path on disk is shown with the image) to its target directory — `content/operations/releases/` for TRN images, the folder of the page for documentation images — using the exact filename from its `{{< img src="..." >}}` tag.
 
 ## Step 7: Optionally commit and open a PR
 
@@ -201,30 +216,22 @@ If yes:
    git checkout -b docs/<short-feature-slug>
    ```
    If already on a feature branch, commit there.
-2. **Stage only the files this skill touched** — the documentation page(s) from Step 3 and the release file from Step 6. Check `git status` first; don't blanket-add unrelated changes.
-3. **Commit.** Use a `feat` prefix so a docs deployment is triggered (a prefix like `docs`/`chore` does not deploy):
+2. **Stage only the files this skill touched** — the documentation page(s) from Step 3, the release file from Step 6, and their images. Check `git status` first; don't blanket-add unrelated changes.
+3. **Commit.** Put all documentation changes in one commit with a `feat` prefix so a docs deployment is triggered (a prefix like `docs`/`chore` does not deploy):
    ```bash
    git commit -m "feat(<release-handle>): document <feature name>"
    ```
+   Changes unrelated to the feature that came up along the way (e.g. a theme or config fix) go in separate commits with their own type.
 4. **Push:**
    ```bash
    git push -u origin docs/<short-feature-slug>
    ```
-5. **Open the PR** with `gh pr create`, base branch `main`. Keep the description **short, simple, and straightforward** — a couple of lines on what happened, no ceremony:
+5. **Open the PR** with `gh pr create`, base branch `main`. Fill the description from `.github/pull_request_template.md` and keep it **short, simple, and straightforward**. Take the `Relations:` links from the Notion page and the PRs from Step 1. Fill the Motivation with:
 
-   ```
-   ## Motivation
-
+   ```markdown
    Documents <feature name> for <release-handle>.
 
    _Created using the [document-feature](/.claude/skills/document-feature/SKILL.md) Claude Code skill._
-
-   ## Changelog
-
-   - <Added/updated doc page(s), with path(s)>
-   - Added a Feature entry to <release-handle>
    ```
-
-   Omit any line that doesn't apply (e.g. drop the doc-page line if the feature had nothing to document).
 
 6. Return the PR URL to the developer.
