@@ -195,6 +195,14 @@ contentTypes: [
       {useDocumentTransformFlow: 'externalArticleToArticle'}
     ],
 
+    // Enable a document translation flow for this content type
+    // useDocumentTranslationFlow references a document translation flow
+    // in {{< a href="/reference/project-config/editor-settings#document-translation-flows" title="projectConfig.editorSettings.documentTranslationFlows">}}
+    // A content type supports one translation flow
+    documentTranslationFlows: [
+      {useDocumentTranslationFlow: 'deepl'}
+    ],
+
     // defines where to go after creating a document
     viewAfterDocumentCreation: 'publish'
 

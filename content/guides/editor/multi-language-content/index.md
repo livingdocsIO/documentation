@@ -18,6 +18,7 @@ The metadata screen gets a new language select box if the multi-language feature
 
 #### Related Infos
 
+- Read the [Document Translation Flows]({{< ref "/guides/editor/document-translation-flows" >}}) guide to learn how to run your own translate function when a user adds a language to a document.
 - Read the [metadata translations for Data Records]({{< ref "/guides/editor/metadata-translations" >}}) guide to learn how to use translations for Data Records.
 - Read the [setting up the Media Library]({{< ref "/guides/media-library/media-library-setup" >}}) guide to learn how to configure translations for your Images, Videos and Files.
 - Get a list of available [metadata plugins]({{< ref "/reference/document/metadata/plugins" >}})
