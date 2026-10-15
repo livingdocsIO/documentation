@@ -1025,6 +1025,42 @@ liServer.registerTransformFunction({
 })
 ```
 
+## Document Translation Flows
+
+{{< added-in "release-2026-11" block >}}
+
+Document Translation Flows define how a document is translated into another language of its language group. A flow references a translate function registered on the server. Content types without a translation flow duplicate the document. See the [Document Translation Flows guide]({{< ref "/guides/editor/document-translation-flows" >}}) for details.
+
+```js
+// projectConfig.editorSettings
+documentTranslationFlows: [
+  {
+    handle: 'deepl',
+    // register a translateFunction with liServer.registerTranslateFunction()
+    translateFunction: 'machineTranslation',
+
+    // additional info for your translateFunction
+    // the editor loads it for every user, so keep credentials out of it
+    context: {glossary: 'news'}
+  }
+]
+```
+
+```js
+liServer.registerTranslateFunction({
+  handle: 'machineTranslation',
+  async translate({projectConfig, document, userId, context, sourceLocale, targetLocale}) {
+    const options = {from: sourceLocale, to: targetLocale, glossary: context.glossary}
+    return {
+      title: await translateText(document.title, options),
+      // metadata, metadataSource and translations can be returned as well
+      // The content type cannot be changed
+      content: await translateContent(document.content, options)
+    }
+  }
+})
+```
+
 ## Media Library
 
 ### Dashboards
