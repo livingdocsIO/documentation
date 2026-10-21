@@ -13,7 +13,7 @@ Workflow order: gather inputs → read sources → **update the documentation fi
 
 Ask **one question at a time** — wait for each answer before asking the next:
 
-1. **Release** — ask with `AskUserQuestion`. The options are the upcoming release (the file in `content/operations/releases/` whose frontmatter has `upcoming: true`) and the three releases before it, newest first, e.g. `release-2026-11`, `release-2026-09`, `release-2026-07`, `release-2026-05`. Use the release identifier as the label. Set the description of the upcoming release to "Upcoming" and leave the others empty (`""`). `AskUserQuestion` adds "Other" for any other release; accept plain year/month there and normalize it to `release-YYYY-MM` yourself.
+1. **Release** — ask with `AskUserQuestion`. Read the options from `data/releases.json`: the four releases with the highest `sortId`, newest first (`jq -r '[.[]] | sort_by(-.sortId) | .[:4][].key' data/releases.json`), e.g. `release-2026-11`, `release-2026-09`, `release-2026-07`, `release-2026-05`. The first one is the upcoming release (`upcoming: true`). Use each release's `key` as the label. Set the description of the upcoming release to "Upcoming" and leave the others empty (`""`). `AskUserQuestion` adds "Other" for any other release; accept plain year/month there and normalize it to `release-YYYY-MM` yourself.
 2. **Notion requirement URL** — original requirement page (if available).
 3. **GitHub PR URLs** — if a Notion page was given, fetch it and collect the GitHub PR links it contains. Let the developer pick the relevant ones with `AskUserQuestion` and `multiSelect: true`, one option per PR (label e.g. `server#10182`, the PR title as description). A question takes 2-4 options and a call up to 4 questions, so split more than four PRs across several questions. In that case, number the headers (`PRs 1/2`, `PRs 2/2`) and end each question but the last with "(more PRs follow)", so the developer doesn't paste URLs into "Other" too early. "Other" lets the developer add URLs. If the page has a single PR link, confirm it in plain text instead. Without a Notion page or PR links on it, ask whether they'd like to add all URLs at once or one at a time. If one at a time: ask for the first URL, then ask "Any more PRs? (say 'done' to continue)" and keep collecting until done. If all at once: accept a list of URLs in a single message.
 4. **Cycle Demo Presentation** — a Figma Slides URL (see Step 2 for how it's read). Prefer a **node-specific** link: in Figma, select the relevant slide → Copy link → the URL contains `node-id=...`, which lets a single slide be read at full resolution. A plain deck URL works too. Say "no" to skip.
@@ -87,12 +87,17 @@ Show the developer a rough outline first: which page(s) and sections you'll exte
 
 ### 3e. Preview locally
 
-Offer to run the docs locally so the developer can read the changes in the browser:
+Offer to run the docs locally so the developer can read the changes in the browser. Ask with `AskUserQuestion`:
 
-1. If `hugo` is missing, install it as described in `README.md` (`brew install hugo`), and run `npm install` if `node_modules` is missing.
-2. Start the server in the background: `hugo server --buildDrafts --buildFuture --disableFastRender`.
+- **Start preview server**
+- **Install/update Hugo and start preview server**: runs `brew install hugo` first, which installs Hugo or updates it to the latest version. Homebrew only; on Linux, developers update Hugo themselves and pick the first option.
+- **Skip**
+
+To start the preview server:
+
+1. Run `npm install` if `node_modules` is missing.
+2. Start the server in the background with `npm start`. It opens the browser and navigates to a page when it changes.
 3. Give the developer the URL of the changed page, e.g. `http://localhost:1313/guides/<path>/`.
-4. **Restart the server after every edit.** `hugo.yaml` mounts `content/` as assets too, so Hugo treats an edited Markdown file as a changed asset and keeps serving the old page.
 
 Then ask: _"Does the documentation look right? Anything to adjust?"_ Apply the feedback before moving on to Step 4.
 
