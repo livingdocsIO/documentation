@@ -233,7 +233,8 @@ Translations created through the new endpoint differ from the legacy translation
 - The metadata source of the source document is kept. The legacy translation dropped it.
 - The inbox of the source document is copied to the translation, as in copy and print flows.
 - A translation is linked to its source through `systemdata.translationSource` instead of a copy document relation.
-- A translation into a locale that already exists in the language group is rejected.
+- A translation into the locale of the source document, or into a locale that already exists in the language group, is rejected.
+- No `document.copy` server event is emitted, so users who subscribed to `document.copy` notifications of the source document are no longer notified about new translations.
 
 For more information, see the [Document Translation Flows]({{< ref "/guides/editor/document-translation-flows" >}}) documentation.
 
