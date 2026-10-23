@@ -17,7 +17,8 @@
     "build": "./bin/build.sh",
     "build:fast": "./bin/build.sh --fast",
     "start": "exec hugo server --buildDrafts --buildFuture --openBrowser --navigateToChanged",
-    "start:production": "serve --config ../serve.json ./public"
+    "start:production": "serve --config ../serve.json ./public",
+    "test:docker": "./bin/smoke-test.sh"
   },
   "repository": {
     "type": "git",
