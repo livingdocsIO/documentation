@@ -211,6 +211,33 @@ Your news agency function decides what happens to images when a report is copied
 
 For more information, see the [News Agencies]({{< ref "/guides/integrations/news-agencies#images" >}}) documentation.
 
+### Document Translation Flows
+
+Adding a language to a document no longer runs through the legacy declarative copy feature, which is scheduled for removal (LIDEP071). The translation card calls a dedicated translate endpoint, and projects can plug in their own translate function, for example to machine translate the new document instead of duplicating it. Translations keep working without configuration. Only projects that want a custom translation need to register a function and reference it in the project config.
+
+```js
+// runtime config
+liServer.registerTranslateFunctions([{handle: 'machineTranslation', translate}])
+
+// projectConfig.editorSettings
+documentTranslationFlows: [{handle: 'deepl', translateFunction: 'machineTranslation'}]
+
+// content type
+documentTranslationFlows: [{useDocumentTranslationFlow: 'deepl'}]
+```
+
+Translations created through the new endpoint differ from the legacy translation in a few ways:
+
+- The title stays the title of the source document. It is no longer prefixed with "{language} translation of".
+- Metadata is filtered like in document copy flows. Properties whose plugin is marked with `removeDuringDefaultCopy`, such as `li-external-id`, `li-publish-date` or `li-task-v2`, are not copied. The legacy translation copied all metadata.
+- The metadata source of the source document is kept. The legacy translation dropped it.
+- The inbox of the source document is copied to the translation, as in copy and print flows.
+- A translation is linked to its source through `systemdata.translationSource` instead of a copy document relation.
+- A translation into the locale of the source document, or into a locale that already exists in the language group, is rejected.
+- No `document.copy` server event is emitted, so users who subscribed to `document.copy` notifications of the source document are no longer notified about new translations.
+
+For more information, see the [Document Translation Flows]({{< ref "/guides/editor/document-translation-flows" >}}) documentation.
+
 ## Vulnerability Patches
 
 We are constantly patching module vulnerabilities for the Livingdocs Server and Livingdocs Editor as module fixes are available. Below is a list of all patched vulnerabilities included in the release.
