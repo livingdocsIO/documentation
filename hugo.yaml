@@ -39,7 +39,10 @@ services:
     id: GTM-K6QTH5K
 
 imaging:
-  quality: 80
+  jpeg:
+    quality: 80
+  webp:
+    quality: 80
   resampleFilter: Lanczos
 
 # Files live next to the content that references them, but Hugo can only
