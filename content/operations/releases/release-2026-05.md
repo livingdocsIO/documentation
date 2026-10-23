@@ -15,7 +15,7 @@ header:
 systemRequirements:
   suggested:
     - name: Node
-      version: 24
+      version: 24.22.1
     - name: NPM
       version: 11
     - name: Postgres
@@ -37,7 +37,7 @@ systemRequirements:
 
   minimal:
     - name: Node
-      version: 22.17.1
+      version: 22.23.4
     - name: NPM
       version: 10
     - name: Postgres
@@ -70,6 +70,10 @@ To learn about the necessary actions to update Livingdocs to `release-2026-05`, 
 - [Release Newsletter Subscription](https://confirmsubscription.com/h/j/61B064416E79453D)
 
 ## System Requirements
+
+{{< warning >}}
+The [Node.js October 2026 security releases](https://nodejs.org/en/blog/vulnerability/october-2026-security-releases) fix several high severity vulnerabilities, among them remote code execution through the Brotli decoder and TLS certificate hostname bypasses. Upgrade the Node.js runtime to 22.23.4 or 24.22.1, or a newer patch of those versions. The latest patch releases of the Livingdocs Server and Editor raise `engines.node` to these versions.
+{{< /warning >}}
 
 ### Suggested
 
