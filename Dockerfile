@@ -5,7 +5,7 @@ FROM ghcr.io/gohugoio/hugo:v${HUGO_VERSION} AS hugo
 
 FROM livingdocs/node:26 AS builder
 COPY --from=hugo /usr/bin/hugo /usr/local/bin/hugo
-ADD package*.json /app/
+ADD package*.json .npmrc /app/
 WORKDIR /app
 RUN npm ci
 ADD . /app
