@@ -71,6 +71,10 @@ To learn about the necessary actions to update Livingdocs to `release-2026-09`, 
 
 ## System Requirements
 
+{{< warning >}}
+The [Node.js October 2026 security releases](https://nodejs.org/en/blog/vulnerability/october-2026-security-releases) fix several high severity vulnerabilities, among them remote code execution through the Brotli decoder and TLS certificate hostname bypasses. Upgrade the Node.js runtime to 22.23.4, 24.22.1, 26.12.1 or newer. The latest patch releases of the Livingdocs Server and Editor raise `engines.node` to these versions.
+{{< /warning >}}
+
 ### Suggested
 
 {{< system-versions list="suggested" >}}
