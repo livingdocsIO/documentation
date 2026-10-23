@@ -15,7 +15,7 @@ header:
 systemRequirements:
   suggested:
     - name: Node
-      version: 26
+      version: 26.12.1
     - name: NPM
       version: 11
     - name: Postgres
@@ -37,7 +37,7 @@ systemRequirements:
 
   minimal:
     - name: Node
-      version: 22.22.0
+      version: 22.23.4
     - name: NPM
       version: 10
     - name: Postgres
@@ -121,6 +121,10 @@ To learn about the necessary actions to update Livingdocs to `release-2026-11`, 
 
 ## System Requirements
 
+{{< warning >}}
+The [Node.js October 2026 security releases](https://nodejs.org/en/blog/vulnerability/october-2026-security-releases) fix several high severity vulnerabilities, among them remote code execution through the Brotli decoder and TLS certificate hostname bypasses. Upgrade the Node.js runtime to 22.23.4, 24.22.1, 26.12.1 or newer. See [Minimum Node.js Versions Raised]({{< ref "#minimum-nodejs-versions-raised" >}}).
+{{< /warning >}}
+
 ### Suggested
 
 {{< system-versions list="suggested" >}}
@@ -151,11 +155,11 @@ No rollback steps are required for this release.
 
 ## Breaking Changes :fire:
 
-### Minimum Node.js 22 Version Raised to 22.22.0
+### Minimum Node.js Versions Raised
 
-The supported Node.js 22 range moved from `>=22.17.1` to `>=22.22.0`. Node.js 24 and 26 are unaffected.
+The supported Node.js range moved from `>=22.17.1 <23 || >=24.0.0 <25 || >=26.0.0` to `>=22.23.4 <23 || >=24.22.1 <25 || >=26.12.1`.
 
-`undici` 8 requires Node.js `>=22.19.0` and `posthog-node` 5 requires `>=22.22.0`, so the previous floor advertised a minimum those dependencies never supported. Running on 22.17.1-22.21.x was already outside what those packages declare; it is now outside `engines.node` as well.
+The new minimums are the [Node.js October 2026 security releases](https://nodejs.org/en/blog/vulnerability/october-2026-security-releases), which fix several high severity vulnerabilities, among them remote code execution through the Brotli decoder and TLS certificate hostname bypasses. Earlier patches of each release line remain exploitable. The patch releases of `release-2026-07` and `release-2026-09` raise `engines.node` the same way.
 
 Node.js 22 as a whole is deprecated and will be dropped in `release-2027-01`, so moving to Node.js 24 or 26 is worth more than chasing a 22.x patch.
 
@@ -163,14 +167,14 @@ Node.js 22 as a whole is deprecated and will be dropped in `release-2027-01`, so
 
 Either of:
 
-- The Node.js version running the server is 22.17.1-22.21.x. Check with `node --version`. An affected server emits `You're using an unsupported version` on boot.
-- A Node.js 22 patch below 22.22.0 pinned in the project - check `.nvmrc`, `FROM` lines in Dockerfiles, and CI job images. Search for `22\.(1[789]|2[01])\.`.
+- The Node.js version running the server is below 22.23.4, 24.22.1 or 26.12.1 on its release line. Check with `node --version`. An affected server emits `You're using an unsupported version` on boot.
+- A Node.js patch version below these minimums pinned in the project - check `.nvmrc`, `FROM` lines in Dockerfiles, and CI job images.
 
 #### Fix
 
-Upgrade the Node.js runtime to 22.22.0 or newer, and update every pinned version alongside it: `.nvmrc`, the `FROM` tags in Dockerfiles, and CI job images. Upgrading to Node.js 24 or 26 instead also resolves it, and avoids a second upgrade when Node.js 22 support is dropped.
+Upgrade the Node.js runtime to 22.23.4, 24.22.1, 26.12.1 or newer, and update every pinned version alongside it: `.nvmrc`, the `FROM` tags in Dockerfiles, and CI job images. Images pinned to a major version only, such as `livingdocs/server-base:26`, pick up the patch on the next pull. Upgrading to Node.js 24 or 26 instead of a 22.x patch avoids a second upgrade when Node.js 22 support is dropped.
 
-`npm install` on an affected version reports `EBADENGINE` for `undici` and `posthog-node`.
+`npm install` on an affected version reports `EBADENGINE` for `@livingdocs/server` and `@livingdocs/editor`.
 
 ## Deprecations :warning:
 
