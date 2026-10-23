@@ -12,12 +12,30 @@ steps:
       - name: dockersocket
         path: /var/run/docker.sock
     settings:
-      push: true
       repo: livingdocs/docs
-      username:
+
+  - name: smoke-test
+    image: livingdocs/docker-node:28-22
+    volumes:
+      - name: dockersocket
+        path: /var/run/docker.sock
+    commands:
+      - ./bin/smoke-test.sh livingdocs/docs:sha-$DRONE_COMMIT_SHA
+
+  - name: push
+    image: livingdocs/docker-node:28-22
+    volumes:
+      - name: dockersocket
+        path: /var/run/docker.sock
+    environment:
+      PLUGIN_REPO: livingdocs/docs
+      DOCKER_USERNAME:
         from_secret: DOCKER_USERNAME
-      password:
+      DOCKER_PASSWORD:
         from_secret: DOCKER_PASSWORD
+    commands:
+      - docker-login
+      - push-docker-sha
 
   - name: release
     image: livingdocs/semantic-release:v3.0.3
@@ -57,6 +75,6 @@ trigger:
 
 ---
 kind: signature
-hmac: 14b59a09279d47928fb83dedfe6de5ace7e75f64e14ad53f5e9bbe0e8ce53640
+hmac: 9392c741b2194a664a6809bbe54ae57b90135d9bd90ccb6eef3cecccc9e7d96a
 
 ...

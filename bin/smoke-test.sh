@@ -3,7 +3,6 @@
 set -euo pipefail
 
 image=${1:-}
-port=${PORT:-18080}
 container=docs-smoke-$$
 
 if [[ -z $image ]]; then
@@ -11,11 +10,17 @@ if [[ -z $image ]]; then
   docker build -t "$image" "$(dirname "$0")/.."
 fi
 
-docker run -d --rm --name "$container" -p "127.0.0.1:$port:8080" "$image" >/dev/null
-trap 'docker rm -f "$container" >/dev/null 2>&1' EXIT
+# curl runs in a sidecar sharing nginx's network, so this also works when
+# the docker daemon is remote, e.g. a CI step talking to the host's socket
+docker run -d --rm --name "$container" "$image" >/dev/null
+trap 'docker rm -f "$container" "$container-curl" >/dev/null 2>&1' EXIT
+docker run -d --rm --name "$container-curl" --network "container:$container" \
+  --entrypoint sleep curlimages/curl:8.23.0 300 >/dev/null
+
+curl() { docker exec "$container-curl" curl "$@"; }
 
 for _ in $(seq 50); do
-  curl -fs -o /dev/null "http://127.0.0.1:$port/" && break
+  curl -fs -o /dev/null http://127.0.0.1:8080/ && break
   sleep 0.1
 done
 
@@ -25,7 +30,7 @@ check() {
   shift 5
   local got_status got_type got_encoding
   IFS='|' read -r got_status got_type got_encoding < <(
-    curl -s -o /dev/null "$@" -w '%{http_code}|%{content_type}|%header{content-encoding}\n' "http://127.0.0.1:$port$path"
+    curl -s -o /dev/null "$@" -w '%{http_code}|%{content_type}|%header{content-encoding}\n' "http://127.0.0.1:8080$path"
   )
   got_type=${got_type%%;*}
   if [[ $got_status == "$status" && $got_type == "$type" && ${got_encoding:-none} == "$encoding" ]]; then
