@@ -54,6 +54,8 @@ When a document contains images whose profile requires approval, the approval ta
 
 Completing the task approves all images pending approval in that document at once.
 
+The task closes itself when nothing is left to approve, for example when the images that requested it are removed again. If the task was completed before, it goes back to that completion. Otherwise it is removed. Deleting or restarting the task drops its approvals, so images that are still in the document request a new task right away.
+
 {{< img src="./images/license-profile-approval-task.png" alt="License Approval task with an 'Images to review' thumbnail and a 'Begin image license review' button" width="400" caption="The approval task panel shows the images to review before publishing." >}}
 
 ### Usage Log and Billing
