@@ -18,7 +18,9 @@ You can register translate functions using the `liServer.registerTranslateFuncti
 
 When the function is executed it is provided with the `document` being translated, the `projectConfig` which the document belongs to, the `userId` of the user which triggered the translation, the `sourceLocale` and `targetLocale`, and a `context` object which is defined within the project config later.
 
-The function can return the following values: `title`, `metadata`, `metadataSource`, `translations`, `content`. All of them are optional. If a property is not returned, the value of the source document is used. Returning nothing duplicates the source document, which is what the built-in default function does. A translate function cannot change the content type.
+The function can return the following values: `title`, `metadata`, `metadataSource`, `translations`, `content`. All of them are optional. If `metadata` is not returned, the translation receives the metadata of the source document without the properties whose plugin is marked with `removeDuringDefaultCopy`. For all other values that are not returned, the value of the source document is used. Returning nothing duplicates the source document, which is what the built-in default function does. A translate function cannot change the content type.
+
+Content types with a `displayTitlePattern` build the title that users see from metadata, for example from `metadata.title`. For those content types, return the translated title in `metadata`. The returned `title` is only displayed for content types without a `displayTitlePattern`.
 
 When a user edits content that the editor extracts into metadata, for example the headline into the title, the editor updates that metadata property again. If your function returns a metadata value that intentionally differs from the content, return `metadataSource: {title: 'manual'}` for it so the editor keeps it.
 
@@ -97,8 +99,8 @@ A content type can reference one translation flow. The referenced flow must exis
 
 ## Behavior
 
-- A translation keeps the title of the source document unless the translate function returns a `title`.
-- The default function removes metadata properties whose plugin is marked with `removeDuringDefaultCopy`, in the same way as [Document Copy Flows]({{< ref "/guides/editor/document-copy-flows" >}}).
+- A translation keeps the title of the source document unless the translate function returns a translated title. For content types with a `displayTitlePattern`, the title comes from the metadata returned by the function.
+- When the translate function returns no `metadata`, metadata properties whose plugin is marked with `removeDuringDefaultCopy` are removed, in the same way as [Document Copy Flows]({{< ref "/guides/editor/document-copy-flows" >}}). This applies to the built-in default function.
 - A translation is linked to its source through `systemdata.translationSource`. `documentId` is the source document and `documentTranslationFlow` is the handle of the translate function that ran, which is `liDefaultTranslateFunction` without a translation flow. Both can be used as filters in the document search, and `translationSource.documentId` also in the publication search.
 - The info panel of a translation shows the source under "Translation of", and the info panel of the source lists its translations in the copies section.
 - The server rejects a translation with a `409` status when the target locale is the locale of the source document or already exists in the language group.

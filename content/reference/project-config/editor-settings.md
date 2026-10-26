@@ -1051,9 +1051,20 @@ liServer.registerTranslateFunction({
   handle: 'machineTranslation',
   async translate({projectConfig, document, userId, context, sourceLocale, targetLocale}) {
     const options = {from: sourceLocale, to: targetLocale, glossary: context.glossary}
+
+    // Returned metadata replaces the source metadata, so skip the properties
+    // that a default copy removes as well
+    const metadata = {}
+    for (const {handle, plugin, value} of [...document.metadata, ...document.systemMetadata]) {
+      if (!plugin.removeDuringDefaultCopy) metadata[handle] = value
+    }
+    // A displayTitlePattern builds the visible title from metadata
+    metadata.title = await translateText(metadata.title, options)
+
     return {
-      title: await translateText(document.title, options),
-      // metadata, metadataSource and translations can be returned as well
+      title: metadata.title,
+      metadata,
+      // metadataSource and translations can be returned as well
       // The content type cannot be changed
       content: await translateContent(document.content, options)
     }
