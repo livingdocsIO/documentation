@@ -417,13 +417,15 @@ For releases prior to {{< release "release-2022-03" >}} you should specify a `gr
 
 The `dashboards` entry allows you to configure custom dashboards, e.g. for authors (data-records) or proofreading (tasks).
 
-There are 5 `types` of custom dashboards (`type` property):
+There are 7 `types` of custom dashboards (`type` property):
 
 - `dashboard`
 - `kanbanBoard`
 - `taskBoard` (predefined `kanbanBoard` for a task)
 - `tableDashboard`
 - `mediaLibraryDashboard`
+- `planningBoard`
+- [`planningCalendar`]({{< ref "/guides/editor/planning-calendar" >}})
 
 Kanban Boards are very similar to dashboards, except for having multiple result columns. Each result column shows a list of documents just as a single column dashboard does. The documents cannot be manually sorted or moved between columns, instead each column typically has its own filter settings.
 
