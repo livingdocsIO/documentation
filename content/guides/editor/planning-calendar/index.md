@@ -133,5 +133,6 @@ editorSettings: {
 
 ## Limitations
 
+- The Planning Calendar always shows days and times in the Europe/Zurich timezone, whatever timezone the user is in. This also applies to the [Dates Without a Time](#dates-without-a-time) rules: a day starts and ends at midnight in Zurich.
 - The Planning Calendar shows up to 200 documents at a time. If more documents match, it shows a warning. To see all of them, switch to the 3-day view to show fewer days, or narrow down the results with the search and the filters.
 - [Cross Project Content Sharing]({{< ref "/guides/integrations/cross-project-content-sharing" >}}) is not supported. Documents shared from other projects do not show up on the calendar.
