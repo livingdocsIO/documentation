@@ -45,9 +45,6 @@ responses:
                       "label": "Articles",
                       "dashboard": "articleManagement",
                       "icon": "file-document-edit"
-                  },
-                  {
-                      "liItem": "mediaLibrary"
                   }
               ],
               "dashboards": [
