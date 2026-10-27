@@ -172,6 +172,44 @@ Upgrade the Node.js runtime to 22.22.0 or newer, and update every pinned version
 
 `npm install` on an affected version reports `EBADENGINE` for `undici` and `posthog-node`.
 
+### Removal of `{liItem: 'mediaLibrary'}` in the Main Navigation
+
+**Code:** `LIBREAKING081`
+
+The main navigation item `{liItem: 'mediaLibrary'}`, deprecated in {{< release "release-2026-05" >}}, has been removed. The editor used to expand it into one entry per media type (Images, Videos, Files). The server now rejects a project config that still contains it. [Media library dashboards]({{< ref "/guides/media-library/media-library-setup/#media-library-dashboard-configuration" >}}) replace it.
+
+Projects without `editorSettings.mainNavigation` got these entries from the editor's default navigation. They lose them without an error.
+
+#### Detect
+
+Either of:
+
+- `liItem: 'mediaLibrary'` in `editorSettings.mainNavigation`. Search for `liItem['"]?\s*:\s*['"]mediaLibrary`.
+- No `mainNavigation` in the editor settings of a project that uses the media library. Search for `mainNavigation` and check every project has a hit.
+
+#### Fix
+
+Remove `{liItem: 'mediaLibrary'}` from `mainNavigation`. For each media type that should keep a navigation entry, configure a media library dashboard and a navigation item that references it. The icons below match the previous entries:
+
+```js
+editorSettings: {
+  mainNavigation: [
+    {handle: 'images', label: 'Images', dashboard: 'images', icon: 'image-multiple'},
+    {handle: 'videos', label: 'Videos', dashboard: 'videos', icon: 'play-box-multiple'},
+    {handle: 'files', label: 'Files', dashboard: 'files', icon: 'file-multiple'}
+  ],
+  dashboards: [
+    {handle: 'images', type: 'mediaLibraryDashboard', pageTitle: 'Images', assetType: 'mediaImage'},
+    {handle: 'videos', type: 'mediaLibraryDashboard', pageTitle: 'Videos', assetType: 'mediaVideo'},
+    {handle: 'files', type: 'mediaLibraryDashboard', pageTitle: 'Files', assetType: 'mediaFile'}
+  ]
+}
+```
+
+If a `mainNavigationGroups` entry lists `'mediaLibrary'` in its `items`, replace it with the handles of the new navigation items.
+
+Projects without `mainNavigation` need one now to show media entries. Because it replaces the whole default navigation, list every entry the project should keep, see [Main Navigation]({{< ref "/reference/project-config/editor-settings#main-navigation" >}}).
+
 ## Deprecations :warning:
 
 ## Features :gift:
