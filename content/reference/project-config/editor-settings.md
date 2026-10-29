@@ -890,7 +890,7 @@ documentCreationFlows: [
 
 Document Copy Flows define how a document gets copied to another document. This feature allows for the transformation of content and metadata to match different content types or scenarios.
 
-Note: This feature is separate from the declarative copy feature and is designed with different mechanics. The older declarative copy feature will be deprecated and removed in future versions.
+Note: Document Copy Flows replace the declarative copy feature, which was removed in {{< release "release-2026-11" >}}. Content types without copy flows use the [default copy]({{< ref "/guides/editor/document-copy-flows#default-copy" >}}).
 
 ```js
 // projectConfig.editorSettings
@@ -1020,6 +1020,53 @@ liServer.registerTransformFunction({
       contentType: 'gallery',
       title: params.workingTitle || documentVersion.title,
       content: await transformToGalleryContent(documentVersion.content)
+    }
+  }
+})
+```
+
+## Document Translation Flows
+
+{{< added-in "release-2026-11" block >}}
+
+Document Translation Flows define how a document is translated into another language of its language group. A flow references a translate function registered on the server. Content types without a translation flow duplicate the document. See the [Document Translation Flows guide]({{< ref "/guides/editor/document-translation-flows" >}}) for details.
+
+```js
+// projectConfig.editorSettings
+documentTranslationFlows: [
+  {
+    handle: 'deepl',
+    // register a translateFunction with liServer.registerTranslateFunction()
+    translateFunction: 'machineTranslation',
+
+    // additional info for your translateFunction
+    // the editor loads it for every user, so keep credentials out of it
+    context: {glossary: 'news'}
+  }
+]
+```
+
+```js
+liServer.registerTranslateFunction({
+  handle: 'machineTranslation',
+  async translate({projectConfig, document, userId, context, sourceLocale, targetLocale}) {
+    const options = {from: sourceLocale, to: targetLocale, glossary: context.glossary}
+
+    // Returned metadata replaces the source metadata, so skip the properties
+    // that a default copy removes as well
+    const metadata = {}
+    for (const {handle, plugin, value} of [...document.metadata, ...document.systemMetadata]) {
+      if (!plugin.removeDuringDefaultCopy) metadata[handle] = value
+    }
+    // A displayTitlePattern builds the visible title from metadata
+    metadata.title = await translateText(metadata.title, options)
+
+    return {
+      title: metadata.title,
+      metadata,
+      // metadataSource and translations can be returned as well
+      // The content type cannot be changed
+      content: await translateContent(document.content, options)
     }
   }
 })

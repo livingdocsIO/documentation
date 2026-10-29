@@ -5,7 +5,7 @@ weight: 1
 ---
 
 {{< info >}}
-See the [Declarative Document Copy (Legacy)]({{< ref "/guides/editor/declarative-document-copy" >}}) guide for details about the legacy feature used prior to {{< release "release-2024-09" >}}.
+The [Declarative Document Copy (Legacy)]({{< ref "/guides/editor/declarative-document-copy" >}}) feature used prior to {{< release "release-2024-09" >}} was removed in {{< release "release-2026-11" >}}.
 {{< /info >}}
 
 ## Introduction

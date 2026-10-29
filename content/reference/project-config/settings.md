@@ -232,7 +232,7 @@ settings: {
     ]
   },
 
-  // {{< deprecated-in "release-2026-01" >}}
+  // {{< removed-in "release-2026-11" >}}
   copy: [{
     source: {
       channelHandle: 'web',
@@ -419,7 +419,7 @@ For details on the parameters see our [Webhooks]({{< ref "/reference/webhooks" >
 
 ## Copy Configuration
 
-{{< deprecated-in "release-2026-01" block >}}
+{{< removed-in "release-2026-11" block >}}
 
 The copy configuration allows you to define the mapping of what content-types can be copied to what other content-types and how the metadata is mapped. A common example is the copy of a web article to the print article.
 

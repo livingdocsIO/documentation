@@ -94,9 +94,7 @@ module.exports = {
           'task.change',
           'document.publish',
           'document.unpublish',
-          'document.copy',
           'document.delete',
-          'document.transform',
           'comment.add'
         ]
       // 2nd group: Interested in publishing changes
@@ -133,9 +131,9 @@ Possible action to register on at the moment:
 
 - document.publish
 - document.unpublish
-- document.copy
+- document.copy ({{< removed-in "release-2026-11" >}})
 - document.delete
-- document.transform
+- document.transform ({{< removed-in "release-2026-11" >}})
 - comment.add
 - task.assign
 - task.change

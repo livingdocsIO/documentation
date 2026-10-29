@@ -5,7 +5,7 @@ weight: 1
 ---
 
 {{< info >}}
-See the [Declarative Document Copy (Legacy)]({{< ref "/guides/editor/declarative-document-copy" >}}) guide for details about the legacy feature used prior to {{< release "release-2024-09" >}}.
+The [Declarative Document Copy (Legacy)]({{< ref "/guides/editor/declarative-document-copy" >}}) feature used prior to {{< release "release-2024-09" >}} was removed in {{< release "release-2026-11" >}}.
 {{< /info >}}
 
 ## Introduction
@@ -154,6 +154,23 @@ Finally, you need to enable the copy flow for each content type that should be a
 }
 ```
 
-{{< info >}}
-Once a document copy flow is defined for a content type then the legacy declarative document copy and transform options will no longer be available.
-{{< /info >}}
+Once a content type references a copy flow, Copy opens the copy flow dialog and the [default copy](#default-copy) is no longer available for that content type.
+
+## Default copy
+
+{{< added-in "release-2026-11" block >}}
+
+Content types without `documentCopyFlows` are copied with the built-in `liDefaultCopyFunction`. Clicking Copy duplicates the document and opens the copy without a dialog. The copy keeps the title and content and drops the metadata properties whose plugin is marked with `removeDuringDefaultCopy`, such as `li-routing` or `li-publish-date`.
+
+To let editors choose a target content type, enter a title or set metadata before copying, configure a copy flow for the content type instead.
+
+To hide Copy for content types without copy flows, disable `simpleCopyEnabled` in the editor config:
+
+```js
+// editor config
+app: {
+  copy: {
+    simpleCopyEnabled: false
+  }
+}
+```
