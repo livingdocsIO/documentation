@@ -68,6 +68,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+
 - [Skip category republish without a user instead of failing](https://github.com/livingdocsIO/livingdocs-server/pull/10170)
 - [fix(public-api): accept oldValue in setEditableDirective command](https://github.com/livingdocsIO/livingdocs-server/pull/10156)
 - [fix(comyan): keep metadata validation errors on image upload](https://github.com/livingdocsIO/livingdocs-server/pull/10093)
@@ -172,6 +173,72 @@ Upgrade the Node.js runtime to 22.22.0 or newer, and update every pinned version
 
 `npm install` on an affected version reports `EBADENGINE` for `undici` and `posthog-node`.
 
+### Removal of the Declarative Document Copy API
+
+**Code:** `LIBREAKING077`
+
+The Declarative Document Copy API has been removed. It was deprecated in {{< release "release-2026-01" >}}. Documents are now copied with [Document Copy Flows]({{< ref "/guides/editor/document-copy-flows" >}}) and transformed with [Document Transform Flows]({{< ref "/guides/editor/document-transform-flows" >}}). The server rejects a project config that still contains `settings.copy`, and the legacy copy dialog has been removed from the editor.
+
+```js
+// before: projectConfig.settings
+copy: [
+  {
+    source: {contentType: 'regular'},
+    targets: [{contentType: 'print', label: 'Print Article'}]
+  }
+]
+
+// after: runtime config
+liServer.registerCopyFunctions([{handle: 'toContentType', copy: copyToContentType}])
+
+// after: projectConfig.editorSettings
+documentCopyFlows: [
+  {handle: 'regularToPrint', copyFunction: 'toContentType', context: {targetContentType: 'print'}}
+]
+
+// after: content type 'regular'
+documentCopyFlows: [{useDocumentCopyFlow: 'regularToPrint'}]
+```
+
+Content types without copy flows can still be copied. Clicking Copy duplicates the document with the built-in `liDefaultCopyFunction` and opens the copy without a dialog. The copy keeps the title and content and drops the metadata properties whose plugin is marked with `removeDuringDefaultCopy`, such as `li-routing` or `li-publish-date`. This differs from the legacy simple copy in two ways:
+
+- Properties of type `li-datetime` and properties whose handle contains `publish` or `date` are now copied. The legacy simple copy dropped them.
+- Editors can no longer choose a target content type or enter a title before copying.
+
+#### Detect
+
+Any of:
+
+- In the project config, a `copy` array with `source` and `targets` entries in `settings`. Search for `\bcopy\b` and confirm each hit sits under `settings`. A server with this config fails to start with `LIBREAKING077`.
+- In server code, the feature API `li-document-copy`. Search for `li-document-copy`.
+
+#### Fix
+
+- Remove `settings.copy` from the project config. Recreate each copy target that is still needed as a copy flow, as shown above. Replace transform targets with [Document Transform Flows]({{< ref "/guides/editor/document-transform-flows" >}}).
+- Replace calls to the `li-document-copy` feature API with copy or transform flows.
+- When editors need to choose a target content type, enter a title or set metadata before copying, configure a copy flow with a `paramsSchema` for that content type.
+- When the default copy keeps a property that should not be copied, configure a copy flow for that content type that drops the property. Custom metadata plugins can set `removeDuringDefaultCopy: true` instead.
+- To hide Copy for content types without copy flows, set `app.copy.simpleCopyEnabled: false` in the editor config.
+
+For more information, see the [Document Copy Flows]({{< ref "/guides/editor/document-copy-flows#default-copy" >}}) documentation.
+
+### Removal of the document.copy and document.transform Server Events
+
+Only the Declarative Document Copy API emitted the `document.copy` and `document.transform` server events, so they have been removed together with it. Copy and translation flows emit `document.create` and transform flows emit `document.update`. Notification action groups that still list `document.copy` or `document.transform` stay valid, but these actions no longer send notifications.
+
+#### Detect
+
+Any of:
+
+- In the project config, `document.copy` or `document.transform` in the `actions` of `notifications.actionGroups`.
+- In server code, listeners for the `document.copy` or `document.transform` server events.
+
+Search for `document\.(copy|transform)\b`.
+
+#### Fix
+
+Remove `document.copy` and `document.transform` from the notification actions. Move server event listeners to `document.create` for copies and translations, or to `document.update` for transforms.
+
 ## Deprecations :warning:
 
 ## Features :gift:
@@ -213,7 +280,7 @@ For more information, see the [News Agencies]({{< ref "/guides/integrations/news
 
 ### Document Translation Flows
 
-Adding a language to a document no longer runs through the legacy declarative copy feature, which is scheduled for removal (LIDEP071). The translation card calls a dedicated translate endpoint, and projects can plug in their own translate function, for example to machine translate the new document instead of duplicating it. Translations keep working without configuration. Only projects that want a custom translation need to register a function and reference it in the project config.
+Projects can now decide how documents are translated, for example to machine translate a new language version instead of duplicating the source document. Translations keep working without configuration. For a custom translation, register a translate function and reference it in the project config:
 
 ```js
 // runtime config
@@ -226,17 +293,11 @@ documentTranslationFlows: [{handle: 'deepl', translateFunction: 'machineTranslat
 documentTranslationFlows: [{useDocumentTranslationFlow: 'deepl'}]
 ```
 
-Translations created through the new endpoint differ from the legacy translation in a few ways:
+Translation flows replace the translation of the [Declarative Document Copy API](#removal-of-the-declarative-document-copy-api), which has been removed in this release. Compared with it, the title is no longer prefixed with "{language} translation of", and metadata properties whose plugin is marked with `removeDuringDefaultCopy` are no longer copied.
 
-- The title stays the title of the source document. It is no longer prefixed with "{language} translation of".
-- Metadata is filtered like in document copy flows. Properties whose plugin is marked with `removeDuringDefaultCopy`, such as `li-external-id`, `li-publish-date` or `li-task-v2`, are not copied. The legacy translation copied all metadata.
-- The metadata source of the source document is kept. The legacy translation dropped it.
-- The inbox of the source document is copied to the translation, as in copy and print flows.
-- A translation is linked to its source through `systemdata.translationSource` instead of a copy document relation.
-- A translation into the locale of the source document, or into a locale that already exists in the language group, is rejected.
-- No `document.copy` server event is emitted, so users who subscribed to `document.copy` notifications of the source document are no longer notified about new translations.
+Reach out to your Customer Solutions contact for help getting started.
 
-For more information, see the [Document Translation Flows]({{< ref "/guides/editor/document-translation-flows" >}}) documentation.
+For more information, see the [Document Translation Flows]({{< ref "/guides/editor/document-translation-flows#behavior" >}}) documentation.
 
 ## Vulnerability Patches
 

@@ -102,8 +102,8 @@ Currently, Livingdocs does not provide a mechanism to circumvent this limitation
 - document.create, `(eventName, {user, documentVersion})` <em>Note: this event is also triggered by document transforms</em>
 - document.publish, `(eventName, {user, documentVersion})`
 - document.unpublish, `(eventName, {user, documentVersion})`
-- document.copy, `(eventName, {documentVersion, originalDocumentId, isTranslation})`
-- document.transform, `(eventName, {documentVersion, originalContentType})`
+- document.copy, `(eventName, {documentVersion, originalDocumentId, isTranslation})` ({{< removed-in "release-2026-11" >}})
+- document.transform, `(eventName, {documentVersion, originalContentType})` ({{< removed-in "release-2026-11" >}})
 - document.build `(eventName, {user, documentVersion, reportId, deliveryHandle})`
 - document.build.abort `(eventName, {user, documentVersion, reportId, deliveryHandle})`
 - document.build.userChoice `(eventName, {user, documentVersion, reportId, deliveryHandle, selectedUserChoice})`

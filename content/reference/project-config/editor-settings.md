@@ -890,7 +890,7 @@ documentCreationFlows: [
 
 Document Copy Flows define how a document gets copied to another document. This feature allows for the transformation of content and metadata to match different content types or scenarios.
 
-Note: This feature is separate from the declarative copy feature and is designed with different mechanics. The older declarative copy feature will be deprecated and removed in future versions.
+Note: Document Copy Flows replace the declarative copy feature, which was removed in {{< release "release-2026-11" >}}. Content types without copy flows use the [default copy]({{< ref "/guides/editor/document-copy-flows#default-copy" >}}).
 
 ```js
 // projectConfig.editorSettings
