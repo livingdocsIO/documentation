@@ -69,9 +69,7 @@ editorSettings: {
       dashboard: 'kanban-proofreading',
       icon: 'clipboard-check'
     },
-    {liItem: 'mediaLibrary'},
     {liItem: 'lists'},
-    {liItem: 'menus'},
     {liItem: 'contentSetup'},
     { // external link
       handle: 'website',
@@ -377,12 +375,6 @@ editorSettings: {
         'pages',
         'authors'
       ]
-    },
-    {
-      // The {liItem: 'mediaLibrary'} will be split into a separate dashboard for each media type
-      handle: 'media',
-      label: 'Media Library',
-      items: ['mediaLibrary']
     },
     {
       // A group for custom workflow dashboards
@@ -1147,7 +1139,7 @@ dashboardCardConfigurations: [
 ]
 ```
 
-This will define a card `myImageCard` to be used in `mediaType.editor.dashboard.card.name`. See the See [Media Type config example]({{< ref "/reference/project-config/media-types.md" >}}).
+This will define a card `myImageCard` to be used in `useCardConfiguration` of a [media library dashboard]({{< ref "/guides/media-library/media-library-setup/#usecardconfiguration" >}}).
 
 ### Export Flows
 

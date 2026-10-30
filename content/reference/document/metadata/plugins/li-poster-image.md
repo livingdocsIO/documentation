@@ -51,7 +51,7 @@ contentTypeConfig: |2
           label: 'Poster Image',                   // optional
           config: {
             uploadMediaType: 'posterImage',        // optional, default: 'image'
-            useDashboard: 'posterImagesDashboard', // optional
+            useDashboard: 'posterImagesDashboard', // optional, without it the media library can't be used to pick a poster image
           }
         }
 ---

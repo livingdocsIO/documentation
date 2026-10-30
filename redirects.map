@@ -10,3 +10,4 @@
 /reference/public-api/publications/latest-publication-beta /reference/public-api/publications/latest-publication?version=beta;
 /reference/public-api/publications/latest-publications-beta /reference/public-api/publications/latest-publications?version=beta;
 /reference/public-api/drafts/latest-draft-beta /reference/public-api/drafts/latest-draft?version=beta;
+/reference/project-config/media-type-example-legacy /guides/media-library/media-library-setup/;

@@ -172,6 +172,247 @@ Upgrade the Node.js runtime to 22.22.0 or newer, and update every pinned version
 
 `npm install` on an affected version reports `EBADENGINE` for `undici` and `posthog-node`.
 
+### Removal of `{liItem: 'mediaLibrary'}` in the Main Navigation
+
+**Code:** `LIBREAKING081`
+
+The main navigation item `{liItem: 'mediaLibrary'}`, deprecated in {{< release "release-2026-05" >}}, has been removed. The editor used to expand it into one entry per media type (Images, Videos, Files). The server now rejects a project config that still contains it. [Media library dashboards]({{< ref "/guides/media-library/media-library-setup/#media-library-dashboard-configuration" >}}) replace it.
+
+Projects without `editorSettings.mainNavigation` got these entries from the editor's default navigation. They lose them without an error.
+
+#### Detect
+
+Either of:
+
+- `liItem: 'mediaLibrary'` in `editorSettings.mainNavigation`. Search for `liItem['"]?\s*:\s*['"]mediaLibrary`.
+- No `mainNavigation` in the editor settings of a project that uses the media library. Search for `mainNavigation` and check every project has a hit.
+
+#### Fix
+
+Remove `{liItem: 'mediaLibrary'}` from `mainNavigation`. For each media type that should keep a navigation entry, configure a media library dashboard and a navigation item that references it. The icons below match the previous entries:
+
+```js
+editorSettings: {
+  mainNavigation: [
+    {handle: 'images', label: 'Images', dashboard: 'images', icon: 'image-multiple'},
+    {handle: 'videos', label: 'Videos', dashboard: 'videos', icon: 'play-box-multiple'},
+    {handle: 'files', label: 'Files', dashboard: 'files', icon: 'file-multiple'}
+  ],
+  dashboards: [
+    {handle: 'images', type: 'mediaLibraryDashboard', pageTitle: 'Images', assetType: 'mediaImage'},
+    {handle: 'videos', type: 'mediaLibraryDashboard', pageTitle: 'Videos', assetType: 'mediaVideo'},
+    {handle: 'files', type: 'mediaLibraryDashboard', pageTitle: 'Files', assetType: 'mediaFile'}
+  ]
+}
+```
+
+If a `mainNavigationGroups` entry lists `'mediaLibrary'` in its `items`, replace it with the handles of the new navigation items.
+
+Projects without `mainNavigation` need one now to show media entries. Because it replaces the whole default navigation, list every entry the project should keep, see [Main Navigation]({{< ref "/reference/project-config/editor-settings#main-navigation" >}}).
+
+### Removal of the Fallback in Media Library Sidepanels and Dialogs
+
+Media library sidepanels and selection dialogs only show the [media library dashboards]({{< ref "/guides/media-library/media-library-setup/#media-library-dashboard-configuration" >}}) the project config references. The "Feed" fallback, which listed all media of an asset type grouped by media type, has been removed, together with the auto-generated full-page media libraries at `/media-library/dashboard/:type`. That URL now redirects to the first media library dashboard of the same asset type in the main navigation, otherwise to the home screen or the first dashboard. The back button of the media library detail view leads to the same place when there is no previous page.
+
+Every entry point without a referenced dashboard is hidden **without an error**, also when the project has media sources or image collections. Every project has at least the `image` media type, so this affects most projects.
+
+#### Detect
+
+Any of:
+
+- A content type without `useDashboard` under `editor.images`, `editor.videos` or `editor.files`, for an asset type the project has media types for. Search the content types for `useDashboard` and check every content type with a document editor has one per asset type.
+- A data record with `li-image` or `li-video-reference`, where neither the plugin's `ui.config` nor the content type's `editor.images|videos` sets `useDashboard`.
+- `li-image`, `li-poster-image` or `li-video-reference` on a media type without `useDashboard` (`posterImageUseDashboard` for the poster image of `li-video-reference`) in `ui.config`. A media type has no content type to fall back to.
+- `imageCollections` without `useDashboard`.
+- Custom editor code that opens the internal selection dialog or panel without a `useDashboard` prop. Search for `li-media-library-selection-dialog` and `li-media-library-panel`.
+
+#### Fix
+
+Configure one media library dashboard per asset type and reference it. This config restores the previous behavior. The fallback added `{key: 'state', term: 'active'}` on its own, so add it to the sidepanel dashboards:
+
+```js
+editorSettings: {
+  dashboards: [
+    {
+      handle: 'imagesSidepanel',
+      type: 'mediaLibraryDashboard',
+      pageTitle: 'Images',
+      assetType: 'mediaImage',
+      baseFilters: [{key: 'state', term: 'active'}]
+    },
+    {
+      handle: 'videosSidepanel',
+      type: 'mediaLibraryDashboard',
+      pageTitle: 'Videos',
+      assetType: 'mediaVideo',
+      baseFilters: [{key: 'state', term: 'active'}]
+    },
+    {
+      handle: 'filesSidepanel',
+      type: 'mediaLibraryDashboard',
+      pageTitle: 'Files',
+      assetType: 'mediaFile',
+      baseFilters: [{key: 'state', term: 'active'}]
+    }
+  ]
+},
+contentTypes: [
+  {
+    handle: 'article',
+    editor: {
+      images: {useDashboard: 'imagesSidepanel'},
+      videos: {useDashboard: 'videosSidepanel'},
+      files: {useDashboard: 'filesSidepanel'}
+    }
+  }
+]
+```
+
+Each entry point reads its dashboards from these properties:
+
+| Entry point | Property |
+| --- | --- |
+| Images, Videos and Files buttons in the toolbar, media library actions of images and videos in the document and the properties panel, "Add image" in the document inbox | `contentTypes[].editor.images\|videos\|files.useDashboard` |
+| `li-image` | `ui.config.useDashboard` (new), in a document otherwise `editor.images.useDashboard` |
+| `li-poster-image` (media types only) | `ui.config.useDashboard` |
+| Video of `li-video-reference` | `ui.config.useDashboard` (new), in a document otherwise `editor.videos.useDashboard` |
+| Poster image of `li-video-reference` | `ui.config.posterImageUseDashboard`, in a document otherwise `editor.images.useDashboard` |
+| "Add image" in image collections | `imageCollections.useDashboard` |
+
+Every `useDashboard` must reference a dashboard with `type: 'mediaLibraryDashboard'` and the matching `assetType`. The server rejects other references. Results are no longer grouped by media type. To keep media types apart, configure one dashboard per media type with a `mediaType` base filter and reference them as a list, each dashboard is shown as a tab. Custom editor code that opens the selection dialog has to pass `useDashboard`.
+
+### Removal of `mediaTypes[].editor`
+
+**Code:** `LIBREAKING082`
+
+The media type properties `editor.dashboard` and `editor.managementDashboard`, deprecated in {{< release "release-2026-05" >}}, have been removed. They configured the auto-generated media libraries. The server rejects any `editor` on a media type, also an empty `editor: {}`.
+
+#### Detect
+
+In the media type configs, the key `editor`. Search the media type files for `\beditor\b`.
+
+#### Fix
+
+Remove `editor` from every media type, and set up the dashboards from [Removal of the Fallback in Media Library Sidepanels and Dialogs](#removal-of-the-fallback-in-media-library-sidepanels-and-dialogs) first. Move the settings into media library dashboards:
+
+| Before | After |
+| --- | --- |
+| `editor.dashboard.baseFilters`, `editor.dashboard.displayFilters` | `baseFilters`, `displayFilters` of the sidepanel dashboard |
+| `editor.managementDashboard.*` | the navigation dashboards from [Removal of `{liItem: 'mediaLibrary'}` in the Main Navigation](#removal-of-liitem-medialibrary-in-the-main-navigation) |
+| `editor.*.card` | `useCardConfiguration` of the dashboard, see [Dashboard Cards]({{< ref "/reference/project-config/editor-settings#dashboard-cards" >}}) |
+
+For example:
+
+```js
+// Before, in mediaTypes
+{
+  handle: 'image',
+  type: 'mediaImage',
+  editor: {
+    dashboard: {
+      baseFilters: [{key: 'mediaType', term: 'image'}],
+      displayFilters: [{filterName: 'liDateTimeRange'}]
+    }
+  }
+}
+
+// After, in editorSettings.dashboards
+{
+  handle: 'imagesSidepanel',
+  type: 'mediaLibraryDashboard',
+  pageTitle: 'Images',
+  assetType: 'mediaImage',
+  baseFilters: [
+    {key: 'state', term: 'active'},
+    {key: 'mediaType', term: 'image'}
+  ],
+  displayFilters: [{filterName: 'liDateTimeRange'}]
+}
+```
+
+Base filters in the old `{type: 'sortBy', value: '-createdAt'}` form can be moved as they are, they set the sort order of the dashboard. The `sort` property of a dashboard has no effect in sidepanels and dialogs.
+
+### Removal of `mediaTypes[].hidden`
+
+**Code:** `LIBREAKING083`
+
+The media type property `hidden`, deprecated in {{< release "release-2026-05" >}}, has been removed. It excluded a media type from the fallback in sidepanels and dialogs. Media library dashboards without a `mediaType` base filter list every media type of their asset type, including the formerly hidden ones.
+
+#### Detect
+
+In the media type configs, the key `hidden`. Search the media type files for `\bhidden\b`.
+
+#### Fix
+
+Set up the dashboards from [Removal of the Fallback in Media Library Sidepanels and Dialogs](#removal-of-the-fallback-in-media-library-sidepanels-and-dialogs) first. Remove `hidden`. Add a `mediaType` base filter to every media library dashboard of the same asset type that should not list the media type, for example `{key: 'mediaType', term: ['image', 'infographic']}`.
+
+If the hidden media type stores poster images (the `uploadMediaType` of `li-poster-image` or the `posterImageUploadMediaType` of `li-video-reference`), configure a dashboard for it and reference it from the poster image pickers:
+
+```js
+// In editorSettings.dashboards
+{
+  handle: 'posterImages',
+  type: 'mediaLibraryDashboard',
+  pageTitle: 'Poster Images',
+  assetType: 'mediaImage',
+  baseFilters: [
+    {key: 'state', term: 'active'},
+    {key: 'mediaType', term: 'posterImage'}
+  ]
+}
+
+// li-poster-image
+ui: {config: {uploadMediaType: 'posterImage', useDashboard: 'posterImages'}}
+
+// li-video-reference
+ui: {config: {posterImageUploadMediaType: 'posterImage', posterImageUseDashboard: 'posterImages'}}
+```
+
+### Removal of `contentTypes[].editor.images.mediaTypes`
+
+**Code:** `LIBREAKING084`
+
+The content type property `editor.images.mediaTypes`, deprecated in {{< release "release-2026-05" >}}, has been removed. It restricted image uploads, drops and the media library selection to the listed media types.
+
+#### Detect
+
+In the content type configs, `mediaTypes` inside `editor.images`. Search the content type files for `mediaTypes` and check whether the hit sits under `images` (`inbox.mediaTypes` is unaffected).
+
+#### Fix
+
+Remove `editor.images.mediaTypes`. Restrict drops with [`allowedMediaTypes`]({{< ref "/reference/project-config/content-types#allowed-media-types" >}}), and the media library selection with a `mediaType` base filter on the dashboard referenced by `editor.images.useDashboard`:
+
+```js
+// Before
+{
+  handle: 'article',
+  editor: {
+    images: {mediaTypes: ['image', 'infographic']}
+  }
+}
+
+// After
+{
+  handle: 'article',
+  allowedMediaTypes: {mediaImage: ['image', 'infographic']},
+  editor: {
+    images: {useDashboard: 'articleImages'}
+  }
+}
+
+// In editorSettings.dashboards
+{
+  handle: 'articleImages',
+  type: 'mediaLibraryDashboard',
+  pageTitle: 'Images',
+  assetType: 'mediaImage',
+  baseFilters: [
+    {key: 'state', term: 'active'},
+    {key: 'mediaType', term: ['image', 'infographic']}
+  ]
+}
+```
+
 ## Deprecations :warning:
 
 ## Features :gift:
