@@ -45,8 +45,9 @@ contentTypeConfig: |2
         },
         ui: {
           config: {
+            useDashboard: 'videosDashboard',  // optional, default: editor.videos.useDashboard of the content type
             posterImageUploadMediaType: 'posterImage',  // optional, default: 'image'
-            posterImageUseDashboard: 'posterImagesDashboard',  // optional
+            posterImageUseDashboard: 'posterImagesDashboard',  // optional, default: editor.images.useDashboard of the content type
           }
         }
 ---

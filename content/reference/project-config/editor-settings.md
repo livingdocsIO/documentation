@@ -1139,7 +1139,7 @@ dashboardCardConfigurations: [
 ]
 ```
 
-This will define a card `myImageCard` to be used in `mediaType.editor.dashboard.card.name`. See the See [Media Type config example]({{< ref "/reference/project-config/media-types.md" >}}).
+This will define a card `myImageCard` to be used in `useCardConfiguration` of a [media library dashboard]({{< ref "/guides/media-library/media-library-setup/#usecardconfiguration" >}}).
 
 ### Export Flows
 
