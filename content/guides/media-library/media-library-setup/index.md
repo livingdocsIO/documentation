@@ -14,7 +14,7 @@ You can configure as many different `Media Types` as you want. You want to have 
 
 See the [mediaType reference]({{< ref "/reference/project-config/media-types.md" >}}) for a full reference of the `mediaType` configuration options.
 
-When you have configured mediaTypes, you will get buttons to let users insert `Images`, `Videos` and `Files` from the Document Editing Toolbar automatically.
+To let users insert `Images`, `Videos` and `Files` from the Document Editing Toolbar, reference a Media Library Dashboard for each of them on the content type with [`useDashboard`]({{< ref "/reference/project-config/content-types#media-library-sidepanels-and-dialogs" >}}). Without it, the button is not shown.
 <br>
 <br>
 {{< img src="editing-toolbar.png" alt="Editing Toolbar" >}}
@@ -69,12 +69,7 @@ This property was called `useCard` until {{< release "release-2026-09" >}}. The 
 {{< /info >}}
 
 {{< info >}}
-**Legacy Media Library Configuration**<br>
-<br>
-Before [release-2026-01]({{< ref "/operations/releases/release-2026-01#media-library-dashboards" >}}), it was only possible to have a single Media Library per media category: Images, Videos, and Files.
-The [Main Navigation]({{< ref "/reference/project-config/editor-settings#main-navigation" >}}) automatically included entries for Images, Videos, and Files when a `liItem: 'mediaLibrary'` entry was present in the `mainNavigation` configuration and at least one corresponding Media Type existed.
-Both [Base Filters]({{< ref "/customising/advanced/editor-configuration/base-filter" >}}) and [Display Filters]({{< ref "/customising/advanced/editor-configuration/display-filter" >}}) were defined on the Media Type ([legacy example]({{< ref "/reference/project-config/media-type-example-legacy" >}})). They could be defined individually for the Media Library shown in the document editor and for the Media Library accessible via the main navigation.
-This approach has been deprecated in `release-2026-05` and will be removed in `release-2026-11`. We recommend using the new Media Library Dashboard Configuration and referencing configured Media Library dashboards directly on the Content Type via [useDashboard]({{< ref "/reference/project-config/content-types#usedashboard" >}}) (see description above).
+Before {{< release "release-2026-11" >}}, Media Types could configure their own Media Library with `mediaTypes[].editor`. See the {{< release "release-2026-11" >}} release notes to move such a configuration to Media Library Dashboards.
 {{< /info >}}
 
 ## Searching by Filename
@@ -203,16 +198,6 @@ module.exports = {
   ]
 }
 ```
-
-{{< info >}}
-**Media Library Filters:**<br>
-**Legacy Media Type Configuration vs. Dashboard-Based Setup**<br>
-<br>
-Before [release-2026-01]({{< ref "/operations/releases/release-2026-01#media-library-dashboards" >}}), Display Filters and Base Filters were defined directly on the Media Type. This approach has been deprecated in `release-2026-05` and will be removed in `release-2026-11`. We recommend configuring the Media Library via a dedicated Media Library Dashboard (see the section above) and referencing that dashboard from the Content Type, which shows your Images/Videos/Files.
-When using this new setup, any Display Filters and Base Filters defined on the Media Type are automatically ignored for _Media Library dashboards opened from the Main Navigation_.
-For _Media Library dashboards opened from the document editor_, Display Filters and Base Filters are instead resolved from the [referenced Media Library dashboard]({{< ref "/reference/project-config/content-types#usedashboard" >}}) (`useDashboard`), if one is configured.
-For reference, the legacy configuration is documented here: [Basic Media Type example before release-2026-01]({{< ref "/reference/project-config/media-type-example-legacy" >}}).
-{{< /info >}}
 
 ### IPTC extraction
 
@@ -516,18 +501,7 @@ module.exports = {
         index: true
       }
     }
-  ],
-  editor: {
-    // Deprecated since release-2026-05, will be removed in release-2026-11.
-    // Use useDashboard on the content type instead.
-    dashboard: {
-      displayFilters: [{filterName: 'liDateTimeRange'}]
-    },
-    // the dashboard opened through the main navigation
-    managementDashboard: {
-      displayFilters: [{filterName: 'liDateTimeRange'}]
-    }
-  }
+  ]
 }
 ```
 
@@ -557,7 +531,6 @@ module.exports = {
   info: {
     label: 'Poster Images'
   },
-  hidden: true, // Deprecated since release-2026-05, will be removed in release-2026-11
   metadata: [
     {
       handle: 'title',
@@ -565,6 +538,26 @@ module.exports = {
     }
   ]
 }
+```
+
+#### Media Library Dashboard for poster images
+
+Add a Media Library Dashboard that lists only the poster images, and add a `mediaType` base filter to your other image dashboards, so that poster images don't show up there.
+
+```js
+// In editorSettings
+dashboards: [
+  {
+    type: 'mediaLibraryDashboard',
+    handle: 'posterImages',
+    assetType: 'mediaImage',
+    pageTitle: 'Poster Images',
+    baseFilters: [
+      {key: 'state', term: 'active'},
+      {key: 'mediaType', term: 'posterImage'}
+    ]
+  }
+]
 ```
 
 #### li-poster-image metadata plugin
@@ -584,7 +577,8 @@ module.exports = {
       type: 'li-poster-image',
       ui: {
         config: {
-          uploadMediaType: 'posterImage' // this is the handle of the mediaType used for uploaded images
+          uploadMediaType: 'posterImage', // this is the handle of the mediaType used for uploaded images
+          useDashboard: 'posterImages' // the Media Library Dashboard to pick existing poster images from
         }
       }
     }
