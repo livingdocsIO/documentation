@@ -36,6 +36,13 @@ storageFormat: |
     }
   }
 contentTypeConfig: |2
-        handle: 'myHandle'
-        type: 'li-image'
+        handle: 'myHandle',
+        type: 'li-image',
+        ui: {
+          config: {
+            uploadMediaType: 'image',  // optional
+            useDashboard: 'images',    // optional, default: editor.images.useDashboard of the content type
+            readOnly: false            // optional, default: false
+          }
+        }
 ---
