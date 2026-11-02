@@ -455,6 +455,31 @@ Here is a list of all patches after the release has been announced.
 - [v276.3.65](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.65): fix(deps): update dependency nodemailer from 10.0.13 to 10.1.4 [security]
 - [v276.3.64](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.64): fix(authentication): keep account confirmation and password reset codes apart
 - [v276.3.63](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.63): fix(deps): update dependency @fastify/busboy from 3.1.1 to 3.2.2 [security]
+- [v276.3.62](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.62): fix(deps): update dependency fastify from 5.12.1 to 5.12.5 [security]
+- [v276.3.61](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.61): fix(deps): update dependency proxy-addr from 2.0.7 to 2.0.8 [security]
+- [v276.3.60](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.60): fix(deps): update dependency sharp from 0.35.4 to 0.35.5 [security]
+- [v276.3.59](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.59): fix(deps): update dependency exifreader from 4.40.1 to 4.41.1 [security]
+- [v276.3.58](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.58): fix(deps): update dependency nodemailer from 9.0.3 to 9.1.1 [security]
+- [v276.3.57](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.57): fix(deps): update dependency sharp from 0.35.3 to 0.35.4 [security]
+- [v276.3.56](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.56): fix(deps): update dependency fastify from 5.8.5 to 5.12.1 [security]
+- [v276.3.55](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.55): chore: bump nvmrc to node v24
+- [v276.3.54](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.54): fix(deps): update dependency @livingdocs/framework from 32.7.13 to v32.7.14
+- [v276.3.53](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.53): fix(deps): update dependency nanoid from 5.1.5 to 5.1.16 [security]
+- [v276.3.52](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.52): fix(deps): update dependency sharp from 0.34.1 to 0.35.0 [security]
+- [v276.3.51](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.51): fix(deps): update dependency nodemailer from 8.0.5 to 9.0.1 [security]
+- [v276.3.50](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.50): fix(deps): update livingdocs-patch from 32.7.12 to v32.7.13
+- [v276.3.49](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.49): fix(deps): update dependency exifreader from 4.29.0 to 4.39.0 [security]
+- [v276.3.48](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.48): fix(deps): update dependency ws from 8.18.1 to 8.20.1 [security]
+- [v276.3.47](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.47): fix(deps): update dependency @opentelemetry/sdk-node from 0.57.2 to 0.217.0 [security]
+- [v276.3.46](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.46): fix: Fix ajv string format for comma separated ids
+- [v276.3.45](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.45): fix(deps): update dependency nodemailer from 8.0.4 to 8.0.5 [security]
+- [v276.3.44](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.44): fix(deps): update dependency @livingdocs/framework from 32.7.11 to v32.7.12
+- [v276.3.43](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.43): fix(deps): update dependency nodemailer from 7.0.11 to 8.0.4 [security]
+- [v276.3.42](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.42): fix(deps): update dependency file-type from 20.5.0 to 21.3.1 [security]
+- [v276.3.41](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.41): fix(dep): Update dependencies
+- [v276.3.40](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.40): fix(deps): update dependency @livingdocs/framework from 32.7.10 to v32.7.11
+- [v276.3.39](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.39): fix(deps): update dependency axios from 1.12.1 to 1.13.5 [security]
+- [v276.3.38](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.38): fix(deps): update dependency fastify from 5.6.1 to 5.7.3 [security]
 - [v276.3.37](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.37): fix(security): Update packages that have vulnerabilities
 - [v276.3.36](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.36): fix: add li-tree UI config property treeInitiallyCollapsed
 
@@ -502,6 +527,25 @@ Here is a list of all patches after the release has been announced.
 - [v117.6.83](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.83): fix(deps): update dependency fastify from 5.12.1 to 5.12.5 [security]
 - [v117.6.82](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.82): fix(deps): update dependency sanitize-html from 2.17.7 to 2.18.0 [security]
 - [v117.6.81](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.81): chore(ci): release without package.json release, like main
+- [v117.6.80](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.80): fix(deps): update dependency fastify from 5.8.5 to 5.12.1 [security]
+- [v117.6.79](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.79): fix(deps): update dependency @livingdocs/framework from 32.7.13 to v32.7.14
+- [v117.6.78](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.78): fix(deps): update dependency nanoid to v5.1.16 [security]
+- [v117.6.77](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.77): fix(deps): update dependency sanitize-html from 2.17.4 to 2.17.5 [security]
+- [v117.6.76](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.76): fix(deps): update dependency js-yaml from 4.3.0 to 5.2.2 [security]
+- [v117.6.75](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.75): fix(deps): update dependency @fastify/static from 9.1.3 to 10.1.2 [security]
+- [v117.6.74](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.74): fix(deps): update dependency @babel/core from 7.26.10 to 7.29.6 [security]
+- [v117.6.73](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.73): fix(deps): update dependency js-yaml from 4.1.1 to 4.2.0 [security]
+- [v117.6.72](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.72): fix(deps): update livingdocs-patch from 32.7.12 to v32.7.13
+- [v117.6.71](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.71): fix(deps): update dependency axios from 1.15.2 to 1.16.0 [security]
+- [v117.6.70](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.70): fix(deps): update dependency sanitize-html from 2.16.0 to 2.17.4 [security]
+- [v117.6.69](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.69): fix(deps): update dependency axios from 1.15.0 to 1.15.2 [security]
+- [v117.6.68](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.68): fix(deps): update dependency fastify from 5.8.3 to 5.8.5 [security]
+- [v117.6.67](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.67): fix(deps): update dependency @livingdocs/framework from 32.7.11 to v32.7.12
+- [v117.6.66](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.66): fix(deps): update dependency fastify from 5.8.1 to 5.8.3 [security]
+- [v117.6.65](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.65): fix(deps): update dependency fastify from 5.7.3 to 5.8.1 [security]
+- [v117.6.64](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.64): fix(deps): update dependency @livingdocs/framework from 32.7.10 to v32.7.11
+- [v117.6.63](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.63): chore: Remove code-highlight angular component
+- [v117.6.62](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.62): fix(deps): update dependency fastify from 5.6.1 to 5.7.3 [security]
 - [v117.6.61](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.61): fix(tableDashboard): show language dialog for single contentTypes on the document-creation-flow-button
 - [v117.6.60](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.60): fix(metadata): Prevent nested items jumping when dragging li-tree items
 - [v117.6.59](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.59): fix(dataload): Add maxBatchSize to Dataloader instances to reduce url lengths when loading a lot of entries
