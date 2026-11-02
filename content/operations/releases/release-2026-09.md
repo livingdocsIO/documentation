@@ -576,6 +576,17 @@ No known vulnerabilities. :tada:
 Patches typically fix bugs and apply improvements within the current release. Keeping your deployment up-to-date with the latest patch version means you benefit from those fixes. No explicit action is required per patch — bumping the version is enough.
 
 ### Livingdocs Server Patches
+
+- [v312.0.31](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v312.0.31): chore(ci): Use the official Node builds instead of pointer compression
+- [v312.0.30](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v312.0.30): fix(sitemaps): support api versioning for sitemap routes
+- [v312.0.29](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v312.0.29): fix(deps): update dependency @livingdocs/framework from 34.2.6 to v34.2.7
+- [v312.0.28](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v312.0.28): fix(deps): automatically patch Node.js vulnerabilities
+- [v312.0.27](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v312.0.27): fix(authentication): keep account confirmation and password reset codes apart
+- [v312.0.26](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v312.0.26): chore(image-processing): Add variant prefix to cache variable names
+- [v312.0.25](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v312.0.25): fix(image-processing): remove the partial download when serving a variant fails
+- [v312.0.24](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v312.0.24): fix(redis): check for waiting listeners when a job completes
+- [v312.0.23](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v312.0.23): fix(media-library): enable LIFEAT010 for dfv
+- [v312.0.22](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v312.0.22): chore(ci): release without package.json release, like main
 - [v312.0.21](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v312.0.21): fix(deps): automatically patch Node.js vulnerabilities
 - [v312.0.20](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v312.0.20): fix(comyan): keep metadata validation errors on image upload
 - [v312.0.19](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v312.0.19): fix(deps): automatically patch Node.js vulnerabilities
@@ -599,6 +610,18 @@ Patches typically fix bugs and apply improvements within the current release. Ke
 - [v312.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v312.0.2): fix(imatrics-nlp): Add createConceptSuggestion to the API mock and match the getConcepts shape
 
 ### Livingdocs Editor Patches
+
+- [v128.1.31](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v128.1.31): chore(ci): Use the official Node builds instead of pointer compression
+- [v128.1.30](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v128.1.30): fix(dashboards): Keep display filter popups below their trigger
+- [v128.1.29](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v128.1.29): fix(deps): automatically patch Node.js vulnerabilities
+- [v128.1.28](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v128.1.28): fix(text-formatting): keep popover panels inside the popover in narrow windows
+- [v128.1.27](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v128.1.27): chore(media-library): Note offset page repeats in result list comments
+- [v128.1.26](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v128.1.26): fix(metadata): fall back when a dragged li-tree item has no subtree depth
+- [v128.1.25](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v128.1.25): fix(use-document-store): Load an outdated document again when it is claimed
+- [v128.1.24](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v128.1.24): fix(media-library): place video detail actions below the player
+- [v128.1.23](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v128.1.23): test: Unload workspaces after each test
+- [v128.1.22](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v128.1.22): fix(metadata): Show a read-only minimal document reference without crashing
+- [v128.1.21](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v128.1.21): test(metadata): check minimal references select without warnings
 - [v128.1.20](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v128.1.20): test(tasks): cover the other groups' deadline sort and expanding the done group
 - [v128.1.19](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v128.1.19): fix(auth): Decide a failed reissue by its outcome, not by the browser clock
 - [v128.1.18](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v128.1.18): test(image-crop): cover named crops without ratios

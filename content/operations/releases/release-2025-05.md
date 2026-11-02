@@ -451,6 +451,10 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+
+- [v276.3.65](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.65): fix(deps): update dependency nodemailer from 10.0.13 to 10.1.4 [security]
+- [v276.3.64](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.64): fix(authentication): keep account confirmation and password reset codes apart
+- [v276.3.63](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.63): fix(deps): update dependency @fastify/busboy from 3.1.1 to 3.2.2 [security]
 - [v276.3.37](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.37): fix(security): Update packages that have vulnerabilities
 - [v276.3.36](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.36): fix: add li-tree UI config property treeInitiallyCollapsed
 
@@ -493,6 +497,11 @@ Here is a list of all patches after the release has been announced.
 - [v276.3.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.1): fix(peiq-agency): Improve handling of empty property image_ids
 
 ### Livingdocs Editor Patches
+
+- [v117.6.84](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.84): fix(deps): update dependency fastify from 5.12.5 to 5.12.6 [security]
+- [v117.6.83](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.83): fix(deps): update dependency fastify from 5.12.1 to 5.12.5 [security]
+- [v117.6.82](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.82): fix(deps): update dependency sanitize-html from 2.17.7 to 2.18.0 [security]
+- [v117.6.81](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.81): chore(ci): release without package.json release, like main
 - [v117.6.61](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.61): fix(tableDashboard): show language dialog for single contentTypes on the document-creation-flow-button
 - [v117.6.60](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.60): fix(metadata): Prevent nested items jumping when dragging li-tree items
 - [v117.6.59](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.59): fix(dataload): Add maxBatchSize to Dataloader instances to reduce url lengths when loading a lot of entries
