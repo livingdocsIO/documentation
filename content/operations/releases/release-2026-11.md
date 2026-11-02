@@ -69,6 +69,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 
 ## PRs to Categorize
 
+- [Image processing: Transform legacy uploads from disk](https://github.com/livingdocsIO/livingdocs-server/pull/9852)
 - [Image processing: Encode AVIF at a low effort](https://github.com/livingdocsIO/livingdocs-server/pull/10246)
 - [Skip category republish without a user instead of failing](https://github.com/livingdocsIO/livingdocs-server/pull/10170)
 - [fix(public-api): accept oldValue in setEditableDirective command](https://github.com/livingdocsIO/livingdocs-server/pull/10156)
