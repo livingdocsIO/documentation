@@ -611,6 +611,7 @@ Patches typically fix bugs and apply improvements within the current release. Ke
 
 ### Livingdocs Editor Patches
 
+- [v128.1.32](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v128.1.32): fix(deps): update dependency @livingdocs/framework from 34.2.7 to v34.2.8
 - [v128.1.31](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v128.1.31): chore(ci): Use the official Node builds instead of pointer compression
 - [v128.1.30](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v128.1.30): fix(dashboards): Keep display filter popups below their trigger
 - [v128.1.29](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v128.1.29): fix(deps): automatically patch Node.js vulnerabilities
