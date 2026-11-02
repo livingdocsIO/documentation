@@ -540,6 +540,16 @@ There are no known vulnerabilities. :tada:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+
+- [v308.1.53](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.53): fix(indexing): only initialize a managed index once
+- [v308.1.52](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.52): fix(sitemaps): support api versioning for sitemap routes
+- [v308.1.51](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.51): fix(deps): automatically patch Node.js vulnerabilities
+- [v308.1.50](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.50): fix(deps): update dependency @livingdocs/framework from 34.1.10 to v34.1.11
+- [v308.1.49](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.49): fix(authentication): keep account confirmation and password reset codes apart
+- [v308.1.48](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.48): fix(deps): update dependency @opentelemetry/instrumentation-pg from 0.71.0 to 0.73.0 [security]
+- [v308.1.47](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.47): chore(image-processing): Add variant prefix to cache variable names
+- [v308.1.46](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.46): fix(image-processing): remove the partial download when serving a variant fails
+- [v308.1.45](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.45): fix(redis): check for waiting listeners when a job completes
 - [v308.1.44](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.44): fix(deps): automatically patch Node.js vulnerabilities
 - [v308.1.43](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.43): fix(comyan): keep metadata validation errors on image upload
 - [v308.1.42](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.42): fix(deps): automatically patch Node.js vulnerabilities
@@ -585,6 +595,20 @@ Here is a list of all patches after the release has been announced.
 - [v308.1.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.3): fix(print): Renumber huGO print breaking change to LIBREAKING071
 
 ### Livingdocs Editor Patches
+
+- [v126.1.54](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.54): chore(ci): Use the official Node builds instead of pointer compression
+- [v126.1.53](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.53): fix(deps): update dependency @livingdocs/framework from 34.1.11 to v34.1.12
+- [v126.1.52](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.52): fix(deps): automatically patch Node.js vulnerabilities
+- [v126.1.51](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.51): fix(deps): update dependency fastify from 5.12.5 to 5.12.6 [security]
+- [v126.1.50](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.50): fix(dashboards): Keep display filter popups below their trigger
+- [v126.1.49](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.49): fix(deps): update dependency sanitize-html from 2.17.7 to 2.18.0 [security]
+- [v126.1.48](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.48): fix(text-formatting): keep popover panels inside the popover in narrow windows
+- [v126.1.47](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.47): chore(media-library): Note offset page repeats in result list comments
+- [v126.1.46](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.46): fix(metadata): fall back when a dragged li-tree item has no subtree depth
+- [v126.1.45](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.45): fix(use-document-store): Load an outdated document again when it is claimed
+- [v126.1.44](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.44): fix(media-library): place video detail actions below the player
+- [v126.1.43](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.43): test: Unload workspaces after each test
+- [v126.1.42](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.42): fix(metadata): Show a read-only minimal document reference without crashing
 - [v126.1.41](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.41): test(tasks): cover the other groups' deadline sort and expanding the done group
 - [v126.1.40](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.40): fix(auth): Decide a failed reissue by its outcome, not by the browser clock
 - [v126.1.39](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.39): fix(deps): automatically patch Node.js vulnerabilities

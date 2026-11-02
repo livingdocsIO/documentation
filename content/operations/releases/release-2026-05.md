@@ -586,11 +586,21 @@ There are no known vulnerabilities. :tada:
 Patches typically fix bugs and apply improvements within the current release. Keeping your deployment up-to-date with the latest patch version means you benefit from those fixes. No explicit action is required per patch — bumping the version is enough.
 
 ### Livingdocs Server Patches
+
+- [v301.1.66](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.66): fix(sitemaps): support api versioning for sitemap routes
+- [v301.1.65](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.65): fix(deps): update dependency @livingdocs/framework from 34.0.11 to v34.0.12
+- [v301.1.64](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.64): fix(deps): automatically patch Node.js vulnerabilities
+- [v301.1.63](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.63): fix(authentication): keep account confirmation and password reset codes apart
+- [v301.1.62](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.62): chore(image-processing): Add variant prefix to cache variable names
+- [v301.1.61](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.61): fix(image-processing): remove the partial download when serving a variant fails
+- [v301.1.60](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.60): fix(redis): check for waiting listeners when a job completes
+- [v301.1.59](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.59): fix(deps): update dependency @opentelemetry/instrumentation-pg from 0.71.0 to 0.73.0 [security]
 - [v301.1.58](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.58): fix(deps): automatically patch Node.js vulnerabilities
 - [v301.1.57](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.57): fix(deps): automatically patch Node.js vulnerabilities
 - [v301.1.56](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.56): fix(publish-control): Skip empty and invalid metadata dates in visiblePublicationDatePreference
 - [v301.1.55](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.55): fix(deps): update dependency proxy-addr from 2.0.7 to 2.0.8 [security]
 - [v301.1.54](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.54): fix(deps): update dependency fastify from 5.12.1 to 5.12.5 [security]
+- [v301.1.53](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.53): fix(deps): update dependency axios from 1.18.1 to 1.20.0 [security]
 - [v301.1.52](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.52): chore(ci): move livingdocsIO/actions to 1d986e6
 - [v301.1.51](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.51): chore(ci): wait up to 25 minutes for the unit tests before releasing
 - [v301.1.50](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.50): fix(deps): update dependency sharp from 0.35.4 to 0.35.5 [security]
@@ -646,6 +656,13 @@ Patches typically fix bugs and apply improvements within the current release. Ke
 - [v301.1.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.1): fix(release-2026-05): Update framework to v34.0.3 (release-2026-05 tag)
 
 ### Livingdocs Editor Patches
+
+- [v123.21.65](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.65): fix(draft-storage): Set the conflicts before loading the user name
+- [v123.21.64](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.64): fix(deps): update dependency @livingdocs/framework from 34.0.11 to v34.0.12
+- [v123.21.63](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.63): fix(deps): automatically patch Node.js vulnerabilities
+- [v123.21.62](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.62): chore(media-library): Note offset page repeats in result list comments
+- [v123.21.61](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.61): test: Unload workspaces after each test
+- [v123.21.60](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.60): fix(metadata): Show a read-only minimal document reference without crashing
 - [v123.21.59](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.59): test(tasks): cover the other groups' deadline sort and expanding the done group
 - [v123.21.58](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.58): fix(deps): automatically patch Node.js vulnerabilities
 - [v123.21.57](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.57): fix(deps): update dependency fastify from 5.12.1 to 5.12.5 [security]
