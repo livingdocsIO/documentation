@@ -657,6 +657,7 @@ Patches typically fix bugs and apply improvements within the current release. Ke
 
 ### Livingdocs Editor Patches
 
+- [v123.21.66](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.66): fix(deps): update dependency @livingdocs/framework from 34.0.12 to v34.0.13
 - [v123.21.65](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.65): fix(draft-storage): Set the conflicts before loading the user name
 - [v123.21.64](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.64): fix(deps): update dependency @livingdocs/framework from 34.0.11 to v34.0.12
 - [v123.21.63](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.63): fix(deps): automatically patch Node.js vulnerabilities
