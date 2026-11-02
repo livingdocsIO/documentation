@@ -596,6 +596,7 @@ Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Editor Patches
 
+- [v126.1.55](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.55): fix(deps): update dependency @livingdocs/framework from 34.1.12 to v34.1.13
 - [v126.1.54](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.54): chore(ci): Use the official Node builds instead of pointer compression
 - [v126.1.53](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.53): fix(deps): update dependency @livingdocs/framework from 34.1.11 to v34.1.12
 - [v126.1.52](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.52): fix(deps): automatically patch Node.js vulnerabilities
