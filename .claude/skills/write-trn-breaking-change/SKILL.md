@@ -31,7 +31,7 @@ Ask **one question at a time** — wait for each answer before asking the next:
 
 ## Step 3: Write the breaking change entry
 
-Write the entry following the **Breaking Change entry shape** and its **Rules** in `.claude/trn-format-reference.md` — the source of truth for the title, the `**Code:**` line, the concise prose intro with before/after, the greppable `Detect`, and the `Fix`. Read it now rather than restating it here.
+Write the entry following the **Breaking Change entry shape** and its **Rules** in `.claude/trn-format-reference.md` — the source of truth for the title, the `**Code:**` or `**Codes:**` line, the concise prose intro with before/after, the greppable `Detect`, and the `Fix`. Read it now rather than restating it here.
 
 Skill-specific note: if you adapted an earlier deprecation entry (Step 2), carry over its still-accurate detail and update whatever changed between the deprecation and the removal.
 
@@ -58,6 +58,6 @@ Apply any requested changes. If the developer flags the entry as a deprecation r
 
 ## Step 7: Sanity-check after insertion
 
-Verify the finished entry against the **Rules** in `.claude/trn-format-reference.md` (icon-free `###` heading, `**Code:**` line with codes verbatim from the source, greppable Detect, both Detect and Fix present, no extra `####` sub-headings). Then confirm the insertion itself: the entry sits inside `## Breaking Changes :fire:`, before the next `##` heading.
+Verify the finished entry against the **Rules** in `.claude/trn-format-reference.md` (icon-free `###` heading, `**Code:**` or `**Codes:**` line with codes verbatim from the source, greppable Detect, both Detect and Fix present, no extra `####` sub-headings). Then confirm the insertion itself: the entry sits inside `## Breaking Changes :fire:`, before the next `##` heading.
 
 If any check fails, surface it to the developer and propose a fix before closing.
