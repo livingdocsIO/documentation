@@ -29,7 +29,7 @@ on:
         default: ''
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: release-notes
@@ -39,14 +39,23 @@ concurrency:
 jobs:
   patch:
     name: ${{ inputs.repo }} ${{ inputs.tag }}
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     timeout-minutes: 10
     steps:
+      - id: token
+        uses: livingdocsIO/actions/token@0bc5eab38b93cf312e0c0fb4b11227a29ddadc35
+        with: { repositories: livingdocsIO/documentation, permissions: "contents: write" }
+
       # The branch the run is on as it is when the run starts, not when it
       # was queued: main, or a branch to try the workflow on.
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: livingdocsIO/actions/checkout@0bc5eab38b93cf312e0c0fb4b11227a29ddadc35
         with:
           ref: ${{ github.ref_name }}
+          token: ${{ steps.token.outputs.token }}
+          persist-credentials: true
+
+      - uses: livingdocsIO/actions/setup-node@0bc5eab38b93cf312e0c0fb4b11227a29ddadc35
+        with: { node-version: 24 }
 
       # A push that lost against another one starts over on the new tip.
       - name: Add the release to the release notes
@@ -58,8 +67,8 @@ jobs:
           PULL_TITLE: ${{ inputs.pull-title }}
           PULL_URL: ${{ inputs.pull-url }}
         run: |
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git config user.name 'li-action-runner[bot]'
+          git config user.email '313909727+li-action-runner[bot]@users.noreply.github.com'
           sync() { git fetch -q origin "$GITHUB_REF_NAME" && git reset -q --hard "origin/$GITHUB_REF_NAME"; }
           for attempt in 1 2 3; do
             node bin/release-notes.js
