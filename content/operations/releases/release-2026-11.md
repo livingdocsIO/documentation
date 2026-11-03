@@ -69,6 +69,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 
 ## PRs to Categorize
 
+- [Media library: Download an unmodified image as stored](https://github.com/livingdocsIO/livingdocs-server/pull/10251)
 - [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-editor/pull/11876)
 - [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-server/pull/10405)
 - [fix(deps): update dependency @livingdocs/framework from 34.3.14 to v34.3.15 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/10420)
