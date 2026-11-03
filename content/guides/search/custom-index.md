@@ -41,10 +41,6 @@ elasticIndex: {
   // Size of batches for background indexing
   batchSize: 1000, // default: 1000
 
-  // Elasticsearch load in %. The background indexing process will automatically
-  // be throttled when the load is higher
-  maxCpu: 80, // default: 80
-
   // every index name will be prefixed to prevent name clashes
   // the index will be created with this pattern: `${indexNamePrefix}-${handle}-index`
   indexNamePrefix: 'your-company-local',

@@ -870,9 +870,10 @@ elasticIndex: {
   // aggregated into a single elasticsearch /_bulk request
   batchSize: 100,
 
-  // Define the maximum cpu threshold of the elasticsearch cluster
-  // that pauses the elasticsearch indexing once it's exceeded.
-  maxCpu: 80,
+  // {{< deprecated-in "release-2026-11" >}}. Will be removed in release-2027-05.
+  // Defines the maximum CPU threshold of the Elasticsearch cluster that pauses
+  // the indexing once it's exceeded. Defaults to 0, which turns the check off.
+  maxCpu: 0,
 
   // To support multi cluster indexing, you can declare multiple clusters.
   // By default we index into the cluster defined in `search.host` or `search.elasticsearchClient`.

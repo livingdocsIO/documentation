@@ -259,15 +259,15 @@ Upgrade the Node.js runtime to 22.22.0 or newer, and update every pinned version
 
 **Codes:** `LIDEP092-maxCpu`, `LIDEP092-maxCpuFunction`
 
-The server configs `elasticIndex.maxCpu` and `elasticIndex.maxCpuFunction` are deprecated and will be removed in `release-2027-05`. Indexing no longer needs to pause based on the Elasticsearch CPU usage, because bulk requests that an overloaded Elasticsearch rejects with status 429 are already retried. Until the removal, the default of `maxCpu` changes from `80` to `0`, which turns the CPU check off.
+The server configs `elasticIndex.maxCpu` and `elasticIndex.maxCpuFunction` are deprecated and will be removed in `release-2027-05`. Indexing no longer needs to pause based on the Elasticsearch CPU usage, because bulk requests that an overloaded Elasticsearch rejects with status 429 are already retried. With this release, the default of `maxCpu` changes from `80` to `0`, which turns the CPU check off. Projects that don't set `maxCpu` no longer pause indexing when the Elasticsearch CPU usage is high.
 
 #### Detect
 
-In the server config, `maxCpu` or `maxCpuFunction` under `elasticIndex`. Search for `maxCpu|max_cpu` and confirm each hit sits under `elasticIndex`. A `maxCpu` under `import.jobs` is a different config and not affected.
+In the server config, `maxCpu` or `maxCpuFunction` under `elasticIndex`. Search for `maxCpu|max_cpu` and confirm each hit sits under `elasticIndex`. A `maxCpu` under `import.jobs` is a separate, already unused config. You can remove it as well.
 
 #### Fix
 
-Remove `maxCpu` and `maxCpuFunction` from the `elasticIndex` server config. There is no replacement. A config with `maxCpu: 0` already matches the new default.
+Remove `maxCpu` and `maxCpuFunction` from the `elasticIndex` server config. There is no replacement. This includes `maxCpu: 0`. Removing it doesn't change the behavior, because `0` is the new default.
 
 ## Features :gift:
 
