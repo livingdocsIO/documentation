@@ -69,6 +69,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 
 ## PRs to Categorize
 
+- [Planning calendar](https://github.com/livingdocsIO/livingdocs-server/pull/10240)
 - [Planning calendar](https://github.com/livingdocsIO/livingdocs-editor/pull/11771)
 - [Image processing: Treat only gif and webp frames as an animation](https://github.com/livingdocsIO/livingdocs-server/pull/10250)
 - [Public API: Serve an unmodified image as stored from 2026-11](https://github.com/livingdocsIO/livingdocs-server/pull/10299)
