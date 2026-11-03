@@ -76,7 +76,7 @@ Mechanical instructions when possible. Use a table for property-rename mappings.
 - **Don't duplicate the prose in Detect/Fix.** Prose gives the what/why (plus any before/after snippet); the itemized specifics live in Detect/Fix. Detect and Fix naming the same tokens (how to find them vs. what to do) is fine — the redundancy to cut is a "removed X, Y, Z" list in the prose that Detect/Fix then restate. Breaking changes should be thorough, but via Detect/Fix detail, not padded prose.
 - Link to the relevant guide or reference page when one exists (e.g. a replacement's documentation) — as a supplement to, not a substitute for, the self-contained Detect/Fix.
 - Spell out the Fix mechanically: give the old → new mapping (use a table when it has more than two rows), and put "what to use instead" here — alongside the removal steps — not in a separate prose "Replacements" section. If a Fix requires a data migration, say so explicitly and point at the Customer Solutions contact when appropriate.
-- **The Fix gives one action for every value.** Never describe a value as fine to keep ("a config with `maxCpu: 0` already matches the new default") — the reader takes it as permission to leave the config in place. When removing a value changes nothing, still tell the reader to remove it, and give that as the reason it is safe: "This includes `maxCpu: 0`. Removing it doesn't change the behavior, because `0` is the new default."
+- **The Fix gives one action for every value.** Never describe a value as fine to keep (for example because it already matches the new default) — the reader takes it as permission to leave the config in place. When removing a value changes nothing, still tell the reader to remove it, and give that as the reason it is safe.
 - "Risk if skipped" is implicit: every entry under `## Breaking Changes :fire:` is upgrade-blocking. No need to restate.
 
 ## Deprecation entry shape
@@ -103,7 +103,7 @@ Project config property `X` is deprecated and will be removed in `release-YYYY-M
 
 - All Breaking Change rules above apply (title, greppable Detect, Code line, before/after, no prose/Detect duplication).
 - Always name the planned removal release in the prose intro. Open-ended deprecations (no fixed removal release announced) state that explicitly.
-- **Separate what changes now from what changes at removal.** When the deprecation also changes a default or a behaviour in this release, say so with "With this release, …" — not "Until the removal, …", which reads as if nothing changes yet. Then name the consequence for the readers who rely on the old default: "Projects that don't set `maxCpu` no longer pause indexing when the Elasticsearch CPU usage is high."
+- **Separate what changes now from what changes at removal.** When the deprecation also changes a default or a behaviour in this release, say so with "With this release, …" — not "Until the removal, …", which reads as if nothing changes yet. Then name the consequence for the readers who rely on the old default: who is affected and what changes for them.
 
 ## Feature entry shape
 
