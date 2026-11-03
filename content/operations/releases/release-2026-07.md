@@ -541,6 +541,7 @@ Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
 
+- [v308.1.54](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.54): fix(deps): update dependency @livingdocs/framework from 34.1.12 to v34.1.13
 - [v308.1.53](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.53): fix(indexing): only initialize a managed index once
 - [v308.1.52](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.52): fix(sitemaps): support api versioning for sitemap routes
 - [v308.1.51](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.51): fix(deps): automatically patch Node.js vulnerabilities
