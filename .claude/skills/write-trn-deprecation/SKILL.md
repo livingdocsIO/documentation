@@ -48,18 +48,14 @@ Apply any requested changes. If the developer flags the entry as a breaking chan
 3. Append the entry at the end of that section, before the next `##` heading.
 4. Save and confirm to the developer.
 
-## Step 6: Update the reference docs
+## Step 6: Propose reference doc changes
 
-The release notes announce the change; the reference and guide pages are the source of truth for how a feature works (see `CLAUDE.md`), so they must not keep showing the old setup.
-
-1. Search `content/` for every token named in Detect, leaving out `content/operations/releases/`.
-2. Handle each hit:
-   - **Reference page** (`content/reference/`, `content/customising/`): keep the entry and mark it. In a code block, add `// {{< deprecated-in "release-YYYY-MM" >}}. Will be removed in release-YYYY-MM.` on the line above the key; in prose, add `{{< deprecated-in "release-YYYY-MM" block >}}` below the heading. Update any default, value, or description the deprecation changes, so the example doesn't recommend the deprecated setup.
-   - **Guide example or starter config** (`content/guides/`), which readers copy: remove the key.
-3. Show the developer the reference changes next to the entry, and mention hits you left alone and why.
+1. Search `content/` for the key names in Detect, not the dot paths, leaving out `content/operations/releases/`.
+2. For each hit, propose a change: a marker, a rewrite, or removing the line. Also correct text that is no longer true after the change, such as a stated default. Mark the way existing pages do, e.g. `// {{< deprecated-in "release-YYYY-MM" >}}. Will be removed in release-YYYY-MM.` in a code block, directly above the key and below its description.
+3. Show the developer the hits and your proposals next to the entry, and apply only the ones they confirm.
 
 ## Step 7: Sanity-check after insertion
 
-Verify the finished entry against the **Rules** in `.claude/trn-format-reference.md` (icon-free `###` heading, `**Code:**` line with codes verbatim from the source, prose names a planned removal release or states none, greppable Detect, both Detect and Fix present, no extra `####` sub-headings). Then confirm the insertion itself: the entry sits inside `## Deprecations :warning:`, before the next `##` heading. Finally, search `content/` (outside `content/operations/releases/`) for the Detect tokens once more: every remaining hit carries a `deprecated-in` marker.
+Verify the finished entry against the **Rules** in `.claude/trn-format-reference.md` (icon-free `###` heading, `**Code:**` line with codes verbatim from the source, prose names a planned removal release or states none, greppable Detect, both Detect and Fix present, no extra `####` sub-headings). Then confirm the insertion itself: the entry sits inside `## Deprecations :warning:`, before the next `##` heading.
 
 If any check fails, surface it to the developer and propose a fix before closing.
