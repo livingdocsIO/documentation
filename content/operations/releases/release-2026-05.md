@@ -587,6 +587,7 @@ Patches typically fix bugs and apply improvements within the current release. Ke
 
 ### Livingdocs Server Patches
 
+- [v301.1.67](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.67): fix(deps): update dependency @livingdocs/framework from 34.0.12 to v34.0.13
 - [v301.1.66](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.66): fix(sitemaps): support api versioning for sitemap routes
 - [v301.1.65](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.65): fix(deps): update dependency @livingdocs/framework from 34.0.11 to v34.0.12
 - [v301.1.64](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.64): fix(deps): automatically patch Node.js vulnerabilities
