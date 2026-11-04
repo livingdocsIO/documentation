@@ -609,7 +609,7 @@ In {{< release "release-2026-01" >}} and {{< release "release-2026-03" >}}, `use
 }
 ```
 
-Each referenced dashboard must have `type: 'mediaLibraryDashboard'` and the matching `assetType`. Add `{key: 'state', term: 'active'}` to its `baseFilters`, otherwise archived and revoked media can be picked as well.
+Each referenced dashboard must have `type: 'mediaLibraryDashboard'` and the matching `assetType`. Without `{key: 'state', term: 'active'}` in its `baseFilters`, archived and revoked media can be picked as well. On a dashboard that is also in the main navigation, this filter hides them there too, so give sidepanels their own dashboard if editors need them in the navigation.
 
 If `useDashboard` is not configured for an asset type, the editor hides its entry points in this content type: the Images, Videos or Files button in the toolbar, the media library actions of images and videos in the document and the properties panel, and "Add image" in the document inbox. Metadata plugins like [`li-image`]({{< ref "/reference/document/metadata/plugins/li-image" >}}) and [`li-video-reference`]({{< ref "/reference/document/metadata/plugins/li-video-reference" >}}) use these dashboards unless they configure their own `ui.config.useDashboard`.
 

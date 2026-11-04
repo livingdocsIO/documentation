@@ -50,7 +50,7 @@ contentTypeConfig: |2
         ui: {
           label: 'Poster Image',                   // optional
           config: {
-            uploadMediaType: 'posterImage',        // required
+            uploadMediaType: 'posterImage',        // required when ui.config is set
             useDashboard: 'posterImagesDashboard', // optional, without it the media library can't be used to pick a poster image
           }
         }
