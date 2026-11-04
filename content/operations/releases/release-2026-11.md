@@ -69,6 +69,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 
 ## PRs to Categorize
 
+- [Derive the Public API versions from the release](https://github.com/livingdocsIO/livingdocs-server/pull/10375)
 - [Deprecate the publicApi.minimumApiVersion server config](https://github.com/livingdocsIO/livingdocs-server/pull/10376)
 - [Keep a failing or hanging external system from hiding other cross-project documents](https://github.com/livingdocsIO/livingdocs-server/pull/10426)
 - [Fix cross-project content sharing for documents outside the latest 100 publications](https://github.com/livingdocsIO/livingdocs-server/pull/10425)
