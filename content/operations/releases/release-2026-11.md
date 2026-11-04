@@ -69,6 +69,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 
 ## PRs to Categorize
 
+- [Fix cross-project content sharing for documents outside the latest 100 publications](https://github.com/livingdocsIO/livingdocs-server/pull/10425)
 - [Image processing: Write the legacy transform output to disk](https://github.com/livingdocsIO/livingdocs-server/pull/9916)
 - [chore(deps): update dependency posthog-node from 5.60.1 to v5.61.1 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/10424)
 - [chore(deps): update dependency sass from 1.107.0 to v1.107.1 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/11883)
