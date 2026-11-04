@@ -256,7 +256,7 @@ Either of:
 
 **Code:** `LIBREAKING081`
 
-The main navigation item `{liItem: 'mediaLibrary'}`, deprecated in {{< release "release-2026-05" >}}, has been removed. The editor used to expand it into one entry per media type (Images, Videos, Files). The server now rejects a project config that still contains it. [Media library dashboards]({{< ref "/guides/media-library/media-library-setup/#media-library-dashboard-configuration" >}}) replace it.
+The main navigation item `{liItem: 'mediaLibrary'}`, deprecated in {{< release "release-2026-05" >}} (`LIDEP083`), has been removed. The editor used to expand it into one entry per media type (Images, Videos, Files). The server now rejects a project config that still contains it. [Media library dashboards]({{< ref "/guides/media-library/media-library-setup/#media-library-dashboard-configuration" >}}) replace it.
 
 Projects without `editorSettings.mainNavigation` got these entries from the editor's default navigation. They lose them without an error.
 
@@ -304,11 +304,12 @@ Any of:
 - A data record with `li-image` or `li-video-reference`, where neither the plugin's `ui.config` nor the content type's `editor.images|videos` sets `useDashboard`.
 - `li-image`, `li-poster-image` or `li-video-reference` on a media type without `useDashboard` (`posterImageUseDashboard` for the poster image of `li-video-reference`) in `ui.config`. A media type has no content type to fall back to.
 - `imageCollections` without `useDashboard`.
+- A content type with `allowedMediaTypes` whose referenced dashboards have no matching `mediaType` base filter.
 - Custom editor code that opens the internal selection dialog or panel without a `useDashboard` prop. Search for `li-media-library-selection-dialog` and `li-media-library-panel`.
 
 #### Fix
 
-Configure one media library dashboard per asset type and reference it. This config restores the previous behavior. The fallback added `{key: 'state', term: 'active'}` on its own, so add it to the sidepanel dashboards:
+Configure one media library dashboard per asset type and reference it. The config below comes close to the previous behavior. The fallback added `{key: 'state', term: 'active'}` on its own, so add it to the sidepanel dashboards:
 
 ```js
 editorSettings: {
@@ -348,6 +349,8 @@ contentTypes: [
 ]
 ```
 
+The fallback also hid media types that the content type's [`allowedMediaTypes`]({{< ref "/reference/project-config/content-types#allowed-media-types" >}}) excludes. Dashboards don't, so disallowed media show up in the list, and picking one fails with "Image of media type 'infographic' is not allowed in this document." If a content type sets `allowedMediaTypes`, add a matching `mediaType` base filter to every dashboard it references, for example `{key: 'mediaType', term: ['image', 'infographic']}`. This applies to each asset type `allowedMediaTypes` lists. Content types with different `allowedMediaTypes` need separate dashboards.
+
 Each entry point reads its dashboards from these properties:
 
 | Entry point | Property |
@@ -365,7 +368,7 @@ Every `useDashboard` must reference a dashboard with `type: 'mediaLibraryDashboa
 
 **Code:** `LIBREAKING082`
 
-The media type properties `editor.dashboard` and `editor.managementDashboard`, deprecated in {{< release "release-2026-05" >}}, have been removed. They configured the auto-generated media libraries. The server rejects any `editor` on a media type, also an empty `editor: {}`.
+The media type properties `editor.dashboard` and `editor.managementDashboard`, deprecated in {{< release "release-2026-05" >}} (`LIDEP080`), have been removed. They configured the auto-generated media libraries. The server rejects any `editor` on a media type, also an empty `editor: {}`.
 
 #### Detect
 
@@ -416,7 +419,7 @@ Base filters in the old `{type: 'sortBy', value: '-createdAt'}` form can be move
 
 **Code:** `LIBREAKING083`
 
-The media type property `hidden`, deprecated in {{< release "release-2026-05" >}}, has been removed. It excluded a media type from the fallback in sidepanels and dialogs. Media library dashboards without a `mediaType` base filter list every media type of their asset type, including the formerly hidden ones.
+The media type property `hidden`, deprecated in {{< release "release-2026-05" >}} (`LIDEP082`), has been removed. It excluded a media type from the fallback in sidepanels and dialogs. Media library dashboards without a `mediaType` base filter list every media type of their asset type, including the formerly hidden ones.
 
 #### Detect
 
@@ -452,7 +455,7 @@ ui: {config: {posterImageUploadMediaType: 'posterImage', posterImageUseDashboard
 
 **Code:** `LIBREAKING084`
 
-The content type property `editor.images.mediaTypes`, deprecated in {{< release "release-2026-05" >}}, has been removed. It restricted image uploads, drops and the media library selection to the listed media types.
+The content type property `editor.images.mediaTypes`, deprecated in {{< release "release-2026-05" >}} (`LIDEP081`), has been removed. It restricted image uploads, drops and the media library selection to the listed media types.
 
 #### Detect
 
