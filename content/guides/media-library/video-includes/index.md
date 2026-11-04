@@ -68,7 +68,10 @@ module.exports = function ({liServer, framework}) {
         preload: true,
         ui: {
           config: {
-            posterImageUploadMediaType: 'poster-image'
+            posterImageUploadMediaType: 'poster-image',
+            // A Media Library Dashboard that lists the 'poster-image' media type,
+            // otherwise uploaded poster images can't be picked again
+            posterImageUseDashboard: 'posterImages'
           }
         }
       }

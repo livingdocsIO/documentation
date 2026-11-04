@@ -50,7 +50,7 @@ See the [mediaType reference]({{< ref "/reference/project-config/media-types.md"
 These dashboards are shown as tabs inside the dialog when browsing for images to add to a collection from within a collection.
 More about that in [Tabs in Media Library Sidepanels and Dialogs]({{< ref "/operations/releases/release-2026-05#tabs-in-media-library-sidepanels-and-dialogs-gift" >}}).
 Make sure the dashboard's filters and base filters cover the same media types listed in `mediaTypes`.
-If `useDashboard` is not configured, all available media is shown in a single "Feed" tab and grouped by media type.
+If `useDashboard` is not configured, "Add image" is not shown in image collections. Before {{< release "release-2026-11" >}}, all available media was shown in a single "Feed" tab, grouped by media type.
 
 **`useCardConfiguration`** (optional): {{< added-in "release-2026-09" >}} The handle of a [dashboard card configuration]({{< ref "/reference/project-config/editor-settings#dashboard-cards" >}}), used to render the image cards inside a collection.
 The referenced configuration must exist and must be based on `liMediaLibraryCard`, otherwise the project config validation fails.

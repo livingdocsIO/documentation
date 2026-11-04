@@ -572,6 +572,8 @@ The above example disables direct image uploads to Livingdocs and allows only th
 }
 ```
 
+Media library sidepanels and dialogs don't filter by `allowedMediaTypes`. To only list the allowed media types, add a matching `mediaType` base filter to the dashboards referenced in [`useDashboard`](#media-library-sidepanels-and-dialogs), for example `{key: 'mediaType', term: ['myImage', 'myInfographic']}`.
+
 ## Media Library Sidepanels and Dialogs
 
 {{< added-in "release-2026-05" block >}}
@@ -599,7 +601,7 @@ In {{< release "release-2026-01" >}} and {{< release "release-2026-03" >}}, `use
 }
 ```
 
-Each referenced dashboard must have `type: 'mediaLibraryDashboard'` and the matching `assetType`.
+Each referenced dashboard must have `type: 'mediaLibraryDashboard'` and the matching `assetType`. Add `{key: 'state', term: 'active'}` to its `baseFilters`, otherwise archived and revoked media can be picked as well.
 
 If `useDashboard` is not configured for an asset type, the editor hides its entry points in this content type: the Images, Videos or Files button in the toolbar, the media library actions of images and videos in the document and the properties panel, and "Add image" in the document inbox. Metadata plugins like [`li-image`]({{< ref "/reference/document/metadata/plugins/li-image" >}}) and [`li-video-reference`]({{< ref "/reference/document/metadata/plugins/li-video-reference" >}}) use these dashboards unless they configure their own `ui.config.useDashboard`.
 
