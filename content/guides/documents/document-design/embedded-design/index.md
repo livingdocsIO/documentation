@@ -8,9 +8,13 @@ Embedded designs are around for a while now and several Livingdocs customers use
 
 The main benefit for customers is that they can completely separate Livingdocs designs from whatever technology they want to use in the frontend. E.g. Swisscom has embedded designs in the server project and uses the HTML framework nitro in the frontend (without any dependency on Livingdocs).
 
+{{< warning >}}
+Referenced designs were removed in {{< release "release-2026-11" >}}. Migrate every project that still uses a referenced design to an embedded design before you upgrade to that release. After the upgrade, document revisions that were saved with a referenced design can no longer be rendered, and the editor shows them as "design no longer available" in the history.
+{{< /warning >}}
+
 ## Overview
 
-Prerequesites: you need to have a configurable channel, meaning that your Livingdocs configuration is done via a seeding process of project configuration files in your server repository and **not via static configuration files**.
+Prerequisites: your Livingdocs configuration is done via a seeding process of project configuration files in your server repository.
 
 In order to go from a reference design to an embedded design the following steps are necessary:
 
