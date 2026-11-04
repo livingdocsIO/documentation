@@ -93,7 +93,7 @@ You can define users in two places:
 
 ### Projects
 
-Project configurations can be of three types:
+Project configurations can be of two types:
 
 - Embedded design
 - Referenced design {{< removed-in "release-2026-11" >}}

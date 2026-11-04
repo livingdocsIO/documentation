@@ -103,7 +103,7 @@ The migration executes quickly, does not change the schema and does not lock any
 # 220-check-channels-without-embedded-design.js
 #   Stops and lists the affected channels if a project still uses a referenced
 #   design or a channel without a project config still exists. Such a channel
-#   can no longer load a design. Contact your Customer Solutions contact before
+#   can no longer load a design. Reach out to your Customer Solutions contact before
 #   upgrading if the migration stops.
 livingdocs-server migrate up
 ```
@@ -229,13 +229,15 @@ Remove `document.copy` and `document.transform` from the notification actions. M
 
 Referenced designs, deprecated in {{< release "release-2026-01" >}}, have been removed. A project's design now always lives in its project config as an [embedded design]({{< ref "/guides/documents/document-design/embedded-design" >}}) (`designSettings` and `components`). The design server, hosted designs and designs loaded from local files are gone. The server keeps serving every stored version of a project's embedded design, and the built-in news agency report design, over `GET /design-loader/:name/:version`.
 
-Document revisions that were saved with a referenced design can no longer be rendered. This affects the older revisions of projects that switched from a referenced to an embedded design. The editor shows them as "design no longer available" in the history and in compare.
+A document whose current draft or publication still uses a referenced design can no longer be opened, edited, saved or published, so move all documents to the embedded design before upgrading. Older revisions that were saved with a referenced design can no longer be rendered. The editor shows them as "design no longer available" in the history and in compare.
 
 #### Detect
 
 Any of:
 
 - In the server config, a top-level `designs` key, or `hostedDesigns`, `designRepository`, `localDesigns` or `publicAssetsUrl` under `designLoader`. Search for `designs\s*:|hostedDesigns|designRepository|localDesigns|publicAssetsUrl`. The server refuses to start with `LIBREAKING085` while one of them is set.
+- Documents that still use a referenced design. `livingdocs-server release-2025-03-check-document-design-versions` lists the projects whose documents use more than one design. Any listed design name that does not start with `p:` is a referenced design.
+- In the server config, `staticConfigs` under `projectConfigs` or `channelConfigs`, or `channelConfigurations` under `projects`. Search for `staticConfigs|channelConfigurations`. The server refuses to start with `LIBREAKING085` while one of them is set, even to an empty array.
 - A project that still uses a referenced design. In the database, `SELECT c.id, c.project_id, c.design_name FROM projects p JOIN channels c ON c.id = p.default_channel_id WHERE c.design_name NOT LIKE 'p:%'` returns it. The migration `220-check-channels-without-embedded-design.js` stops while one exists.
 - Public API calls to `POST /api/:apiVersion/projectConfig` with a project config without `components`. They answer `400` with `LIBREAKING085`.
 - Project seeding that sets `designName` or `designVersion` on a project's `channel`. Search the seeding config for `designName|designVersion`.
@@ -245,7 +247,9 @@ Any of:
 
 #### Fix
 
-- Migrate every project that still uses a referenced design to an embedded design before upgrading, following the [migration guide]({{< ref "/guides/documents/document-design/embedded-design" >}}). Reach out to your Customer Solutions contact if you need help migrating existing documents.
+- Migrate every project that still uses a referenced design to an embedded design before upgrading, following the [migration guide]({{< ref "/guides/documents/document-design/embedded-design" >}}).
+- Move the documents of every project listed by the check to the project's embedded design with `livingdocs-server change-design-name-and-version-to-latest-project-design --project <project-handle>`, as described in [Migrate old documents to embedded design]({{< ref "/guides/documents/document-design/embedded-design#migrate-old-documents-to-embedded-design" >}}). The task only changes the design reference, so the embedded design must contain every component of the referenced design.
+- Remove `staticConfigs` and `channelConfigurations` from the server config. A project with a static project config needs a seeded project config with an embedded design instead.
 - Remove `designs` from the server config, and `hostedDesigns`, `designRepository`, `localDesigns` and `publicAssetsUrl` from `designLoader`. `designLoader.cacheSize` and `designLoader.cacheMaxAge` stay.
 - Publish project configs over the Public API together with their embedded design (`designSettings` and `components`).
 - Remove `designName` and `designVersion` from the `channel` of seeded projects, and configure `designSettings` and `components` in their project config instead.
@@ -275,12 +279,12 @@ For more information, see the [Registration]({{< ref "/customising/server-config
 Any of:
 
 - In the server config, a `design` key under `registration`. Search for `registration\s*:` and check its keys. The server refuses to start with `LIBREAKING085` while `registration.design` is set.
-- Server code that calls `registrationApi.createSSOUserWithProject()` with `designName` or `designVersion`. Search for `createSSOUserWithProject`. The call throws `LIBREAKING085`.
+- Server code that calls `registrationApi.createUserWithProject()` or `registrationApi.createSSOUserWithProject()` with `designName` or `designVersion`. Search for `createUserWithProject|createSSOUserWithProject`. The call throws `LIBREAKING085`.
 
 #### Fix
 
 - Remove `registration.design`. Only if the server offers self-service signup, set `registration.projectConfig` to the project config that new signup projects start with, including `designSettings`, `components` and at least one content type. The server validates it on startup and does not start when it is invalid or one of them is missing.
-- Pass the project config of the new project as `projectConfig` to `registrationApi.createSSOUserWithProject()` instead of `designName` and `designVersion`.
+- Pass the project config of the new project as `projectConfig` to `registrationApi.createUserWithProject()` and `registrationApi.createSSOUserWithProject()` instead of `designName` and `designVersion`.
 
 ## Deprecations :warning:
 
