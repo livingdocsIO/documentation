@@ -269,14 +269,15 @@ Upgrade the Node.js runtime to 22.22.0 or newer, and update every pinned version
 
 The main navigation item `{liItem: 'mediaLibrary'}`, deprecated in {{< release "release-2026-05" >}} (`LIDEP083`), has been removed. The editor used to expand it into one entry per asset type (Images, Videos, Files). The server now rejects a project config that still contains it. [Media library dashboards]({{< ref "/guides/media-library/media-library-setup/#media-library-dashboard-configuration" >}}) replace it.
 
-Projects without `editorSettings.mainNavigation` got these entries from the editor's default navigation. They lose them without an error.
+The editor already hid these entries when the project had a dashboard with `type: 'mediaLibraryDashboard'` or `mediaLibrary.showUi: false`. Otherwise, projects without `editorSettings.mainNavigation` got them from the editor's default navigation, and lose them without an error.
 
 #### Detect
 
-Either of:
+Any of:
 
-- `'mediaLibrary'` as `liItem` in `mainNavigation`, or in the `items` of a `mainNavigationGroups` entry. Search for `['"]mediaLibrary['"]`. A group with `handle: 'mediaLibrary'` is unaffected.
-- No `mainNavigation` in the editor settings a project uses, which are often shared or merged from a common config. Search for `\bmainNavigation\b`.
+- `{liItem: 'mediaLibrary'}` in `mainNavigation`. Search for `['"]mediaLibrary['"]`. Hits on the `editorSettings.mediaLibrary` key, on server config reads, and on a group or custom navigation item with `handle: 'mediaLibrary'` are unaffected.
+- A `mainNavigationGroups` entry whose `items` lists the handle of that `liItem`, which is `'mediaLibrary'` unless the item sets its own `handle`. If `'mediaLibrary'` is the handle of a custom navigation item instead, the group is unaffected.
+- No `mainNavigation` in the editor settings a project uses, which are often shared or merged from a common config, and no dashboard with `type: 'mediaLibraryDashboard'`. Search for `\bmainNavigation\b` and `mediaLibraryDashboard`.
 
 #### Fix
 
@@ -297,7 +298,7 @@ editorSettings: {
 }
 ```
 
-If a `mainNavigationGroups` entry lists `'mediaLibrary'` in its `items`, replace it with the handles of the new navigation items.
+If a `mainNavigationGroups` entry lists the handle of the removed item in its `items`, replace it with the handles of the new navigation items.
 
 Projects without `mainNavigation` need one now to show media entries. Because it replaces the whole default navigation, list every entry the project should keep, see [Main Navigation]({{< ref "/reference/project-config/editor-settings#main-navigation" >}}).
 
@@ -309,27 +310,28 @@ Every entry point without a referenced dashboard is hidden **without an error**,
 
 #### Detect
 
-Content types and media types are often built by shared helpers or metadata templates, so a search of single files can miss a key or flag a correct config. Check the resolved project config instead, for example the project config approval file.
+If `editorSettings.mediaLibrary.showUi` is `false`, only "Add image" is affected: in the document inbox of content types with `inbox.mediaTypes`, and in image collections.
+
+Content types and media types are often built by shared helpers or metadata templates, and environment configs can add content types. A text search can miss a key or flag a correct config, so check the resolved project config of every environment, for example the project config approval file. Its keys are quoted (`"images"`).
 
 Any of:
 
-- A content type without `useDashboard` under `editor.images`, `editor.videos` or `editor.files`, for an asset type the project has media types for. Search for `^\s*(images|videos|files)\b` and check each hit has `useDashboard`. Other `useDashboard` keys, for document references or `documentDashboards`, don't count.
-- A data record with `li-image` or `li-video-reference`, or with `image` in `inbox.mediaTypes`, where neither the plugin's `ui.config` nor the content type's `editor.images|videos` sets `useDashboard`. Search for `li-image|li-video-reference|inbox`.
+- A content type that is not a data record, without `useDashboard` under `editor.images`, `editor.videos` or `editor.files`, for an asset type the project has media types for. A missing key or a missing `editor` counts too, so searching for the key is not enough. List these content types from the resolved config, for example with `jq -r '.contentTypes[] | select(.documentType != "data-record" and .editor.images.useDashboard == null) | .handle' <approval file>`, and repeat it for `videos` and `files`. Other `useDashboard` keys, for document references or `documentDashboards`, don't count.
+- A data record with `li-image` or `li-video-reference`, or with `image` in `inbox.mediaTypes`, where neither the plugin's `ui.config` nor the content type's `editor.images|videos` sets `useDashboard`. Search for `li-image|li-video-reference`, and for `mediaTypes` under `inbox`.
 - `li-image`, `li-poster-image` or `li-video-reference` on a media type without `useDashboard` (`posterImageUseDashboard` for the poster image of `li-video-reference`) in `ui.config`. A media type has no content type to fall back to. Search the media type files and the metadata templates they import for `li-image|li-poster-image|li-video-reference`.
-- `li-image` or `li-video-reference` in the `paramsSchema` of an include, without `useDashboard` in `ui.config`, used in a content type without `editor.images|videos.useDashboard`.
+- `li-image` or `li-video-reference` in the `paramsSchema` of an include, without `useDashboard` (`posterImageUseDashboard` for the poster image) in `ui.config`, used in a content type without `editor.images|videos.useDashboard`. Search the files that contain `paramsSchema` for `li-image|li-video-reference`.
+- A picker with `uploadMediaType` or `posterImageUploadMediaType` whose dashboards don't list that media type. Search for `[uU]ploadMediaType`.
 - `imageCollections` without `useDashboard`.
 - A content type with `allowedMediaTypes` whose referenced dashboards have no matching `mediaType` base filter. Base filters can also use the older `{type: 'mediaType', value: 'image'}` form, so search for the bare `mediaType`.
 - Custom editor code that opens the internal selection dialog or panel without a `useDashboard` prop. Search for `media-library-(selection-dialog|panel)|MediaLibrary(SelectionDialog|Panel)` and follow wrapper modules to their callers.
 
-Projects with `editorSettings.mediaLibrary.showUi: false` are only affected through "Add image" in the document inbox.
-
 #### Fix
 
-Configure a media library dashboard for each asset type the project has media types for, and reference it. Leave out the other asset types: a reference to a videos or files dashboard shows the toolbar button even when the project has no media type of that asset type. Whether a toolbar button should stay is a choice. If the project's file media types only serve a metadata plugin, leaving out `editor.files` hides the Files button. Data records only need `editor.images`, plus `editor.videos` if they use `li-video-reference`.
+Configure a media library dashboard for each asset type the project has media types for, and reference it. Leave out the other asset types: a reference to a videos or files dashboard shows the toolbar button even when the project has no media type of that asset type. Whether a toolbar button should stay is a choice. If the project's file media types only serve a metadata plugin, leaving out `editor.files` hides the Files button. Data records need `editor.images` only if they have `li-image` or `image` in `inbox.mediaTypes`, and `editor.videos` only if they use `li-video-reference`.
 
 If content types already reference media library dashboards, keep those references and only add the missing asset types and content types. You can also reference an existing dashboard, for example one from the main navigation. It keeps its filters and card config.
 
-The fallback only listed active media. Add `{key: 'state', term: 'active'}` to every dashboard used in sidepanels and dialogs, also to an existing one. On a dashboard that is also in the main navigation, this hides archived and revoked media there as well.
+The fallback only listed active media. To keep that, add `{key: 'state', term: 'active'}` to the dashboards that replace the fallback. Dashboards that content types already referenced never filtered by state, so adding the filter there is a choice. On a dashboard that is also in the main navigation, the filter hides archived and revoked media there as well. To avoid that, give sidepanels their own dashboard.
 
 The dashboards and `useDashboard` references are valid since {{< release "release-2026-05" >}}, so you can set them up before the upgrade. Only `ui.config.useDashboard` of `li-image` and `li-video-reference` is new in this release.
 
@@ -393,7 +395,7 @@ Each entry point reads its dashboards from these properties:
 
 Every `useDashboard` must reference a dashboard with `type: 'mediaLibraryDashboard'` and the matching `assetType`. The server rejects other references. Results are no longer grouped by media type. To keep media types apart, configure one dashboard per media type with a `mediaType` base filter and reference them as a list, each dashboard is shown as a tab.
 
-Custom editor code that opens `li-media-library-selection-dialog` or `li-media-library-panel` has to pass `useDashboard`. They no longer read the content type's `editor.images|videos|files.useDashboard`, and without the prop the dialog opens empty. Take the handles for example from the `ui.config.useDashboard` of the custom metadata plugin. The `includeHiddenMediaTypes` prop has been removed.
+Custom editor code that opens `li-media-library-selection-dialog` or `li-media-library-panel` has to pass `useDashboard`. They no longer read the content type's `editor.images|videos|files.useDashboard`, and without the prop the dialog opens empty. Take the handles for example from the `ui.config.useDashboard` of the custom metadata plugin. If the plugin defines a `uiSchema`, add `useDashboard` to its `config`. The `includeHiddenMediaTypes` prop has been removed.
 
 ### Removal of `mediaTypes[].editor`
 
@@ -458,7 +460,7 @@ In the media type configs, the key `hidden`. Search the media type files for `^\
 
 #### Fix
 
-Set up the dashboards from [Removal of the Fallback in Media Library Sidepanels and Dialogs](#removal-of-the-fallback-in-media-library-sidepanels-and-dialogs) first. Remove `hidden`. Add a `mediaType` base filter to every media library dashboard of the same asset type that should not list the media type, for example `{key: 'mediaType', term: ['image', 'infographic']}`. A filter like `{not: {key: 'mediaType', term: 'posterImage'}}` also hides the media, but the upload button of a full-page dashboard still offers that media type.
+Set up the dashboards from [Removal of the Fallback in Media Library Sidepanels and Dialogs](#removal-of-the-fallback-in-media-library-sidepanels-and-dialogs) first. Remove `hidden`. Add a `mediaType` base filter to every media library dashboard of the same asset type that should not list the media type, for example `{key: 'mediaType', term: ['image', 'infographic']}`. A filter like `{not: {key: 'mediaType', term: 'posterImage'}}` also hides the media, but the upload button of a full-page dashboard still offers that media type. Replace such a filter with a positive `mediaType` filter.
 
 If the hidden media type stores poster images (the `uploadMediaType` of `li-poster-image` or the `posterImageUploadMediaType` of `li-video-reference`), configure a dashboard for it and reference it from the poster image pickers. Search for `[uU]ploadMediaType`, and skip this step if no hit names the hidden media type:
 
