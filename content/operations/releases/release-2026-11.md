@@ -69,6 +69,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 
 ## PRs to Categorize
 
+- [Media library: Explain why an image upload was rejected](https://github.com/livingdocsIO/livingdocs-editor/pull/11454)
 - [Derive the Public API versions from the release](https://github.com/livingdocsIO/livingdocs-server/pull/10375)
 - [Deprecate the publicApi.minimumApiVersion server config](https://github.com/livingdocsIO/livingdocs-server/pull/10376)
 - [Keep a failing or hanging external system from hiding other cross-project documents](https://github.com/livingdocsIO/livingdocs-server/pull/10426)
