@@ -23,8 +23,7 @@ To execute a livingdocs-server CLI command, go to your Livingdocs Server folder 
 | cleanup-metadata                  | Truncate metadata with no reference to documents or publications. |
 | data-migration-run                | Execute a data migration (create/prepare/accept)                  |
 | database                          | Postgres database actions                                         |
-| design-add                        | Upload a design to the design server                              |
-| design-set-active                 | Set active design version of a project                            |
+| design-set-active                 | Set active design version of a project {{< removed-in "release-2026-11" >}} |
 | elasticsearch-delete-index        | Delete Elasticsearch index                                        |
 | elasticsearch-index               | Index documents into Elasticsearch                                |
 | migrate                           | Execute database migrations                                       |
@@ -34,7 +33,7 @@ To execute a livingdocs-server CLI command, go to your Livingdocs Server folder 
 | redis-flushdb                     | Flush Redis DB                                                    |
 | revision-migration                | Migrate document revisions                                        |
 | test                              | Execute livingdocs tests                                          |
-| transform-to-configurable-channel | Transform a static channel to a configurable channel              |
+| transform-to-configurable-channel | Transform a channel to a configurable channel {{< removed-in "release-2026-11" >}} |
 | user-assign-group                 | Assign a user to a group in a project                             |
 | user-create-admin                 | Create an admin user                                              |
 | user-create-admins                | Create admin users                                                |

@@ -47,11 +47,6 @@ combination. You can of course customize the metadata plugins to:
 The UI allows you to do all of those things over the "Project Setup" screens in particular the subsections
 for the specific content-types.
 
-If you are working on an Enterprise project with static configuration files, you can always make an
-account on edit.livingdocs.io make the respective settings with the UI, download the generated configuration JSON
-and copy paste from there to your static files. The structure of the JSON is exactly the same for static as for
-configurable projects.
-
 ## Querying categories and resolving routes
 
 Route resolving is used if you want your delivery to know the document after a given route, e.g. when a ready puts in

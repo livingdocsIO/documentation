@@ -59,7 +59,7 @@ const v1 = {
 
 ## Design Config v2
 
-This is an example of a design config v2 of a referenced design. If you use an embedded design, you only will have to specify `components` and `designSettings`
+This is an example of a design config v2 of a referenced design. Referenced designs were removed in {{< release "release-2026-11" >}}. With an embedded design, you only will have to specify `components` and `designSettings`
 in your project configuration.
 
 ```js
