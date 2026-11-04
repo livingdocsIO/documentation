@@ -69,6 +69,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 
 ## PRs to Categorize
 
+- [chore(deps): update dependency sass from 1.107.0 to v1.107.1 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/11883)
 - [fix(deps): update dependency entities from 8.1.0 to v9 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/10407)
 - [Planning calendar](https://github.com/livingdocsIO/livingdocs-server/pull/10240)
 - [Planning calendar](https://github.com/livingdocsIO/livingdocs-editor/pull/11771)
