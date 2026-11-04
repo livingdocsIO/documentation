@@ -71,7 +71,6 @@ The following external service hosts have to be whitelisted on the proxy for the
 
 The following external service hosts have to be whitelisted on the proxy for the server. This concerns the network where the server process is running.
 
-- The host to your Livingdocs design server (eg. http://api.livingdocs.io if you're using the default design server)
 - The hosts for the configured S3 buckets
   - eg. for images: `livingdocs-evaluation-images.s3.amazonaws.com`
   - eg. for designs: `livingdocs-evaluation-designs.s3.amazonaws.com`
@@ -81,7 +80,6 @@ The following external service hosts have to be whitelisted on the proxy for the
 
 ### Delivery
 
-- The host to your Livingdocs design server (eg. http://api.livingdocs.io if you're using the default design server)
 - The host to your Livingdocs Server (if it's not in the same network)
 
 ### Connecting to external services through a proxy
