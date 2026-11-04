@@ -69,6 +69,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 
 ## PRs to Categorize
 
+- [Remove legacy media library config (LIBREAKING082-084)](https://github.com/livingdocsIO/livingdocs-server/pull/10393)
 - [Remove the media library sidepanel fallback and auto-generated dashboards](https://github.com/livingdocsIO/livingdocs-editor/pull/11865)
 - [Image processing: Limit concurrent Sharp pipelines](https://github.com/livingdocsIO/livingdocs-server/pull/10249)
 - [Media library: Explain why an image upload was rejected](https://github.com/livingdocsIO/livingdocs-editor/pull/11454)
