@@ -98,10 +98,11 @@ When upgrading, first run the database migrations. At Livingdocs, we run this co
 The migration executes quickly, does not change the schema and does not lock any tables.
 
 ```sh
-# 220-check-channels-without-project-config.js
-#   Stops and lists the affected channels if a channel without a project config
-#   still exists. Such a channel can no longer load a design. Contact your
-#   Customer Solutions contact before upgrading if the migration stops.
+# 220-check-channels-without-embedded-design.js
+#   Stops and lists the affected channels if a project still uses a referenced
+#   design or a channel without a project config still exists. Such a channel
+#   can no longer load a design. Contact your Customer Solutions contact before
+#   upgrading if the migration stops.
 livingdocs-server migrate up
 ```
 
@@ -232,8 +233,9 @@ Document revisions that were saved with a referenced design can no longer be ren
 
 Any of:
 
-- In the server config, a top-level `designs` key, or `hostedDesigns`, `designRepository` or `localDesigns` under `designLoader`. Search for `designs\s*:|hostedDesigns|designRepository|localDesigns`. The server refuses to start with `LIBREAKING085` while one of them is set.
-- A project whose channel still uses a referenced design. In the database, `SELECT id, project_id, design_name FROM channels WHERE design_name NOT LIKE 'p:%'` returns it.
+- In the server config, a top-level `designs` key, or `hostedDesigns`, `designRepository`, `localDesigns` or `publicAssetsUrl` under `designLoader`. Search for `designs\s*:|hostedDesigns|designRepository|localDesigns|publicAssetsUrl`. The server refuses to start with `LIBREAKING085` while one of them is set.
+- A project that still uses a referenced design. In the database, `SELECT c.id, c.project_id, c.design_name FROM projects p JOIN channels c ON c.id = p.default_channel_id WHERE c.design_name NOT LIKE 'p:%'` returns it. The migration `220-check-channels-without-embedded-design.js` stops while one exists.
+- Public API calls to `POST /api/:apiVersion/projectConfig` with a project config without `components`. They answer `400` with `LIBREAKING085`.
 - Project seeding that sets `designName` or `designVersion` on a project's `channel`. Search the seeding config for `designName|designVersion`.
 - Server code that uses the `li-designs` feature or `setCurrentDesignVersion`. Search for `li-designs|setCurrentDesignVersion`.
 - Scripts or CI jobs that run the CLI command `design-set-active` or `transform-to-configurable-channel`. Search for `design-set-active|transform-to-configurable-channel`.
@@ -242,7 +244,8 @@ Any of:
 #### Fix
 
 - Migrate every project that still uses a referenced design to an embedded design before upgrading, following the [migration guide]({{< ref "/guides/documents/document-design/embedded-design" >}}). Reach out to your Customer Solutions contact if you need help migrating existing documents.
-- Remove `designs` from the server config, and `hostedDesigns`, `designRepository` and `localDesigns` from `designLoader`. `designLoader.cacheSize` and `designLoader.cacheMaxAge` stay.
+- Remove `designs` from the server config, and `hostedDesigns`, `designRepository`, `localDesigns` and `publicAssetsUrl` from `designLoader`. `designLoader.cacheSize` and `designLoader.cacheMaxAge` stay.
+- Publish project configs over the Public API together with their embedded design (`designSettings` and `components`).
 - Remove `designName` and `designVersion` from the `channel` of seeded projects, and configure `designSettings` and `components` in their project config instead.
 - Remove the use of `li-designs` and `channelApi.setCurrentDesignVersion()`. Publishing a project config that changes `designSettings` or `components` creates the next design version.
 - Remove the calls to the CLI commands `design-set-active` and `transform-to-configurable-channel`. Both have been removed without replacement.
@@ -267,11 +270,15 @@ For more information, see the [Registration]({{< ref "/customising/server-config
 
 #### Detect
 
-In the server config, a `design` key under `registration`. Search for `registration\s*:` and check its keys. The server refuses to start with `LIBREAKING085` while `registration.design` is set.
+Any of:
+
+- In the server config, a `design` key under `registration`. Search for `registration\s*:` and check its keys. The server refuses to start with `LIBREAKING085` while `registration.design` is set.
+- Server code that calls `registrationApi.createSSOUserWithProject()` with `designName` or `designVersion`. Search for `createSSOUserWithProject`. The call throws `LIBREAKING085`.
 
 #### Fix
 
-Remove `registration.design`. Only if the server offers self-service signup, set `registration.projectConfig` to the project config that new signup projects start with, including `designSettings`, `components` and at least one content type. The server validates it on startup and does not start when it is invalid or one of them is missing.
+- Remove `registration.design`. Only if the server offers self-service signup, set `registration.projectConfig` to the project config that new signup projects start with, including `designSettings`, `components` and at least one content type. The server validates it on startup and does not start when it is invalid or one of them is missing.
+- Pass the project config of the new project as `projectConfig` to `registrationApi.createSSOUserWithProject()` instead of `designName` and `designVersion`.
 
 ## Deprecations :warning:
 

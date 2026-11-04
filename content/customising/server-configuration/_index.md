@@ -533,7 +533,7 @@ designLoader: {
 }
 ```
 
-`hostedDesigns`, `localDesigns` and `designRepository` {{< removed-in "release-2026-11" >}} loaded referenced designs from a URL, a local file or another Livingdocs server. The server does not start while one of them is set.
+`hostedDesigns`, `localDesigns`, `designRepository` and `publicAssetsUrl` {{< removed-in "release-2026-11" >}} loaded referenced designs from a URL, a local file or another Livingdocs server. The server does not start while one of them is set.
 
 #### Designs
 
