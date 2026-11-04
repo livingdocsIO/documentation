@@ -324,7 +324,7 @@ Each entry point reads its dashboards from one property:
 
 Helpers, metadata templates and environment configs often build the project config, so check the resolved config of every environment, for example the project config approval file. Its keys are quoted (`"images"`). Affected is any of:
 
-- A content type that is not a data record, without `useDashboard` for an asset type the project has media types for. A missing key or a missing `editor` counts too, so list them with `jq -r '.contentTypes[] | select(.documentType != "data-record" and .editor.images.useDashboard == null) | .handle' <approval file>`, and repeat it for `videos` and `files`.
+- A content type that is not a data record, without `useDashboard` for an asset type the project has media types for. A missing key or a missing `editor` counts too, so list them with `jq -r '.contentTypes[] | select(.documentType != "data-record" and .handle != "liNewsAgencyReport" and .editor.images.useDashboard == null) | .handle' <approval file>`, and repeat it for `videos` and `files`.
 - A metadata picker from the table without `useDashboard`, in a data record or a media type, or in the `paramsSchema` of an include used in a content type without one. A media type has nothing to fall back to, and the server doesn't validate include params. Search the content types, media types, the metadata templates they import, and the files with `paramsSchema` for `li-image|li-poster-image|li-video-reference`.
 - A data record with `image` in `inbox.mediaTypes` and no `editor.images.useDashboard`. Search for `mediaTypes` under `inbox`.
 - `imageCollections` without `useDashboard`.
