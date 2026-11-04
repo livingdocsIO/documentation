@@ -95,12 +95,13 @@ Point `resizingDirectory` at a disk-backed volume. See [Temporary Directory]({{<
 
 When upgrading, first run the database migrations. At Livingdocs, we run this command in an initContainer on Kubernetes.
 
-The migration executes quickly and does not lock write-heavy tables.
+The migration executes quickly, does not change the schema and does not lock any tables.
 
 ```sh
-# 220-remove-channel-static-config-column.js
-#   Drops the unused column `channels.static_config`. The migration stops and
-#   lists the affected channels if a channel without a project config still uses it.
+# 220-check-channels-without-project-config.js
+#   Stops and lists the affected channels if a channel without a project config
+#   still exists. Such a channel can no longer load a design. Contact your
+#   Customer Solutions contact before upgrading if the migration stops.
 livingdocs-server migrate up
 ```
 
@@ -270,7 +271,7 @@ In the server config, a `design` key under `registration`. Search for `registrat
 
 #### Fix
 
-Remove `registration.design`. Only if the server offers self-service signup, set `registration.projectConfig` to the project config that new signup projects start with, including `designSettings`, `components` and their content types. The server validates it on startup and does not start with an invalid one.
+Remove `registration.design`. Only if the server offers self-service signup, set `registration.projectConfig` to the project config that new signup projects start with, including `designSettings`, `components` and at least one content type. The server validates it on startup and does not start when it is invalid or one of them is missing.
 
 ## Deprecations :warning:
 
