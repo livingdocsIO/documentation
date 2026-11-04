@@ -270,19 +270,19 @@ Any of:
 
 #### Fix
 
-Remove `{liItem: 'mediaLibrary'}` from `mainNavigation`. For each asset type the project has media types for, configure a media library dashboard and a navigation item that references it. Leave out the other entries, they would open an empty media library. The icons below match the previous entries:
+Remove `{liItem: 'mediaLibrary'}` from `mainNavigation`. For each asset type the project has media types for, configure a media library dashboard and a navigation item that references it. Leave out the other entries, they would open an empty media library. The previous entries showed the editor's translated name of the asset type, so use a translatable `label` for the languages your editors use, and leave out `pageTitle`, which then defaults to that name. The icons below match the previous entries:
 
 ```js
 editorSettings: {
   mainNavigation: [
-    {handle: 'images', label: 'Images', dashboard: 'images', icon: 'image-multiple'},
+    {handle: 'images', label: {en: 'Images', de: 'Bilder'}, dashboard: 'images', icon: 'image-multiple'},
     {handle: 'videos', label: 'Videos', dashboard: 'videos', icon: 'play-box-multiple'},
     {handle: 'files', label: 'Files', dashboard: 'files', icon: 'file-multiple'}
   ],
   dashboards: [
-    {handle: 'images', type: 'mediaLibraryDashboard', pageTitle: 'Images', assetType: 'mediaImage'},
-    {handle: 'videos', type: 'mediaLibraryDashboard', pageTitle: 'Videos', assetType: 'mediaVideo'},
-    {handle: 'files', type: 'mediaLibraryDashboard', pageTitle: 'Files', assetType: 'mediaFile'}
+    {handle: 'images', type: 'mediaLibraryDashboard', assetType: 'mediaImage'},
+    {handle: 'videos', type: 'mediaLibraryDashboard', assetType: 'mediaVideo'},
+    {handle: 'files', type: 'mediaLibraryDashboard', assetType: 'mediaFile'}
   ]
 }
 ```
@@ -306,15 +306,15 @@ Each entry point reads its dashboards from one property:
 | Entry point | Property |
 | --- | --- |
 | Images, Videos and Files buttons in the toolbar, media library actions of images and videos in the document and the properties panel, "Add image" in the document inbox | `contentTypes[].editor.images\|videos\|files.useDashboard` |
-| `li-image`, video of `li-video-reference` | `ui.config.useDashboard` (new), in a document otherwise `editor.images\|videos.useDashboard` |
-| Poster image of `li-video-reference` | `ui.config.posterImageUseDashboard`, in a document otherwise `editor.images.useDashboard` |
+| `li-image`, video of `li-video-reference` | `ui.config.useDashboard` (new), in a document or data record otherwise `editor.images\|videos.useDashboard` |
+| Poster image of `li-video-reference` | `ui.config.posterImageUseDashboard`, in a document or data record otherwise `editor.images.useDashboard` |
 | `li-poster-image` (media types only) | `ui.config.useDashboard` |
 | "Add image" in image collections | `imageCollections.useDashboard` |
 
-Helpers, metadata templates and environment configs often build the project config, so check the resolved config of every environment, for example the project config approval file. Its keys are quoted (`"images"`). Affected is any of:
+Helpers, metadata templates and environment configs often build the project config, so check the resolved config of every project and environment. The project config approval file often covers only the base config, and not every project has one. Print the resolved config instead, for example in `server/` with `ENVIRONMENT=<environment> node -p 'JSON.stringify(require("./projects/<project>/<environment>"))' > config.json`. Some environments need more of their environment variables. Affected is any of:
 
-- A content type that is not a data record, without `useDashboard` for an asset type the project has media types for. A missing key or a missing `editor` counts too, so list them with `jq -r '.contentTypes[] | select(.documentType != "data-record" and .handle != "liNewsAgencyReport" and .editor.images.useDashboard == null) | .handle' <approval file>`, and repeat it for `videos` and `files`.
-- A metadata picker from the table without `useDashboard`, in a data record or a media type, or in the `paramsSchema` of an include used in a content type without one. A media type has nothing to fall back to, and the server doesn't validate include params. Search the content types, media types, the metadata templates they import, and the files with `paramsSchema` for `li-image|li-poster-image|li-video-reference`.
+- A content type that is not a data record, without `useDashboard` for an asset type the project has media types for. A missing key or a missing `editor` counts too. List the asset types with `jq -r '[.mediaTypes[].type] | unique[]' config.json`, then the content types per asset type, here for `mediaImage`: `jq -r '.contentTypes[] | select(.documentType != "data-record" and .handle != "liNewsAgencyReport" and .editor.images.useDashboard == null) | .handle' config.json`. Use `videos` for `mediaVideo` and `files` for `mediaFile`.
+- A metadata picker from the table without `useDashboard`: in a data record without `editor.images|videos.useDashboard`, in a media type, or in the `paramsSchema` of an include used in a content type without `editor.images|videos.useDashboard`. A media type has nothing to fall back to, and the server doesn't validate include params. Search the content types, media types, the metadata templates they import, and the files with `paramsSchema` for `li-image|li-poster-image|li-video-reference`.
 - A data record with `image` in `inbox.mediaTypes` and no `editor.images.useDashboard`. Search for `mediaTypes` under `inbox`.
 - `imageCollections` without `useDashboard`.
 - A `useDashboard` or `posterImageUseDashboard` from the table that references a dashboard which is not a `mediaLibraryDashboard` of the matching `assetType`. The server now rejects such a reference when it validates the project config. Before, the dashboard only had to exist.
@@ -324,11 +324,11 @@ Helpers, metadata templates and environment configs often build the project conf
 
 #### Fix
 
-Configure a media library dashboard for each asset type the project has media types for, and reference it from every affected entry point. Leave out the other asset types, their toolbar button would open an empty library. Whether a toolbar button stays is a choice, for example leaving out `editor.files` hides the Files button when the file media types only serve a metadata plugin. Keep existing references and only add what is missing. An existing dashboard, also one from the main navigation, can be referenced with its filters and card config.
+Configure a media library dashboard for each asset type the project has media types for, and reference it from every affected entry point. Leave out the other asset types, their toolbar button would open an empty library. Whether a toolbar button stays is a choice, for example leaving out `editor.files` hides the Files button when the file media types only serve a metadata plugin. Keep existing references as they are and only add what is missing. In a data record, `editor.images|videos.useDashboard` covers all its pickers.
 
-The fallback only listed active media. To keep that, add `{key: 'state', term: 'active'}` to the dashboards that replace it. For dashboards that content types already referenced, this is a choice: they never filtered by state, and on a dashboard that is also in the main navigation the filter hides archived and revoked media there too. Give sidepanels their own dashboard to avoid that.
+Give the entry points that used the fallback their own sidepanel dashboards with `{key: 'state', term: 'active'}`, because the fallback listed all active media of the asset type. Don't reuse existing dashboards for them: their base filters can hide media the fallback showed, and adding the state filter would also change them where they are used already, for example in the main navigation.
 
-Apart from `ui.config.useDashboard` of `li-image` and `li-video-reference`, this config works since {{< release "release-2026-05" >}}, so you can set it up before the upgrade. For a project without media library dashboards, this comes close to the previous behavior:
+Apart from `ui.config.useDashboard` of `li-image` and `li-video-reference`, this config works since {{< release "release-2026-05" >}}, so you can set it up before the upgrade. Without `pageTitle`, a sidepanel tab shows the translated name of the asset type:
 
 ```js
 editorSettings: {
@@ -336,21 +336,18 @@ editorSettings: {
     {
       handle: 'imagesSidepanel',
       type: 'mediaLibraryDashboard',
-      pageTitle: 'Images',
       assetType: 'mediaImage',
       baseFilters: [{key: 'state', term: 'active'}]
     },
     {
       handle: 'videosSidepanel',
       type: 'mediaLibraryDashboard',
-      pageTitle: 'Videos',
       assetType: 'mediaVideo',
       baseFilters: [{key: 'state', term: 'active'}]
     },
     {
       handle: 'filesSidepanel',
       type: 'mediaLibraryDashboard',
-      pageTitle: 'Files',
       assetType: 'mediaFile',
       baseFilters: [{key: 'state', term: 'active'}]
     }
