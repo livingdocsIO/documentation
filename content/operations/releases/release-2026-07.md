@@ -541,6 +541,7 @@ Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
 
+- [v308.1.58](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.58): fix(node): drop Node.js 22 in release-2027-03 instead of release-2027-01 (LIDEP084)
 - [v308.1.57](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.57): fix(cross-project): log a timed out external system request as a timeout
 - [v308.1.56](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.56): fix(cross-project): report remote documents without systemdata as invalid
 - [v308.1.55](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.55): fix(deps): automatically patch Node.js vulnerabilities
