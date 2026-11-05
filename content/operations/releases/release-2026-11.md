@@ -69,6 +69,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 
 ## PRs to Categorize
 
+- [Remove referenced designs (LIDEP072)](https://github.com/livingdocsIO/livingdocs-server/pull/9645)
 - [Remove referenced designs (LIDEP072)](https://github.com/livingdocsIO/livingdocs-editor/pull/11303)
 - [Fast image processing](https://github.com/livingdocsIO/livingdocs-server/pull/10435)
 - [Request the Public API version of a year before the release in cross-project content sharing](https://github.com/livingdocsIO/livingdocs-server/pull/10371)
