@@ -69,6 +69,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 
 ## PRs to Categorize
 
+- [Drop support for Elasticsearch 7 and OpenSearch 1](https://github.com/livingdocsIO/livingdocs-server/pull/10434)
 - [Remove referenced designs (LIDEP072)](https://github.com/livingdocsIO/livingdocs-server/pull/9645)
 - [Remove referenced designs (LIDEP072)](https://github.com/livingdocsIO/livingdocs-editor/pull/11303)
 - [Fast image processing](https://github.com/livingdocsIO/livingdocs-server/pull/10435)
