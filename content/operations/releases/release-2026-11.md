@@ -69,6 +69,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 
 ## PRs to Categorize
 
+- [Fast image processing](https://github.com/livingdocsIO/livingdocs-server/pull/10435)
 - [Request the Public API version of a year before the release in cross-project content sharing](https://github.com/livingdocsIO/livingdocs-server/pull/10371)
 - [Remove legacy media library config (LIBREAKING082-084)](https://github.com/livingdocsIO/livingdocs-server/pull/10393)
 - [Remove the media library sidepanel fallback and auto-generated dashboards](https://github.com/livingdocsIO/livingdocs-editor/pull/11865)
