@@ -359,4 +359,5 @@ Patches typically fix bugs and apply improvements within the current release. Ke
 
 ### Livingdocs Editor Patches
 
+- [v131.0.2](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v131.0.2): fix(deps): update dependency @livingdocs/framework from 34.3.16 to v34.3.17
 - [v131.0.1](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v131.0.1): fix(release-2026-11): set up the release branch
