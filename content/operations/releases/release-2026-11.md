@@ -355,6 +355,8 @@ Patches typically fix bugs and apply improvements within the current release. Ke
 
 ### Livingdocs Server Patches
 
+- [v317.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v317.0.2): fix(release-2026-11): set up the release branch
+
 ### Livingdocs Editor Patches
 
 - [v131.0.1](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v131.0.1): fix(release-2026-11): set up the release branch
