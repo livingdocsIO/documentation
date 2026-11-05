@@ -69,6 +69,8 @@ These are the release notes of the upcoming release (pull requests merged to the
 
 ## PRs to Categorize
 
+- [Cut release-2026-11](https://github.com/livingdocsIO/livingdocs-server/pull/10441)
+
 To get an overview about new functionality, read the [Release Notes](TODO).
 To learn about the necessary actions to update Livingdocs to `release-2027-01`, read on.
 
