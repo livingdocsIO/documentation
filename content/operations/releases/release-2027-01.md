@@ -69,6 +69,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 
 ## PRs to Categorize
 
+- [fix(deps): update dependency @livingdocs/framework from 34.3.16 to v34.4.0 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/11891)
 - [Cut release-2026-11](https://github.com/livingdocsIO/livingdocs-editor/pull/11886)
 - [Cut release-2026-11](https://github.com/livingdocsIO/livingdocs-server/pull/10441)
 
