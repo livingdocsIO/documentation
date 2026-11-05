@@ -577,6 +577,7 @@ Patches typically fix bugs and apply improvements within the current release. Ke
 
 ### Livingdocs Server Patches
 
+- [v312.0.36](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v312.0.36): fix(node): drop Node.js 22 in release-2027-03 instead of release-2027-01 (LIDEP084)
 - [v312.0.35](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v312.0.35): fix(cross-project): log a timed out external system request as a timeout
 - [v312.0.34](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v312.0.34): fix(cross-project): report remote documents without systemdata as invalid
 - [v312.0.33](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v312.0.33): fix(deps): automatically patch Node.js vulnerabilities
