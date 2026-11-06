@@ -150,9 +150,9 @@ contentTypes: [
         }
       ],
 
-      // Restrict image operations to specific media types for this content type
+      // Media library dashboards of the image sidepanel and dialogs
       images: {
-        mediaTypes: ['image', 'infographic']
+        useDashboard: ['images', 'infographics']
       }
     },
 
@@ -556,31 +556,6 @@ You may set a `contentType` specific sourcePolicy here.
 
 The above example disables direct image uploads to Livingdocs and allows only the external image DAM hugo.
 
-## Image Media Type Restrictions
-
-{{< deprecated-in "release-2026-05" block >}}
-
-{{< warning >}}
-`editor.images.mediaTypes` is deprecated and will be removed in `release-2026-11`. Use [`allowedMediaTypes.mediaImage`](#allowedmediatypes) instead.
-{{< /warning >}}
-
-You can restrict image operations (upload, drag & drop, media library selection) to specific media types for each content type using the `editor.images.mediaTypes` configuration.
-
-```js
-{
-  handle: 'article',
-  editor: {
-    images: {
-      mediaTypes: ['image', 'infographic']
-    }
-  }
-}
-```
-
-When configured, this content type will only allow image operations using the specified media types. This is useful when different content types have specific image workflow requirements (e.g., articles might use regular images while galleries might use high-resolution photography media types).
-
-If not configured, all image media types are allowed (default behavior).
-
 ## Allowed Media Types
 
 {{< added-in "release-2026-05" block >}}
@@ -596,6 +571,8 @@ If not configured, all image media types are allowed (default behavior).
   }
 }
 ```
+
+Media library sidepanels and dialogs don't filter by `allowedMediaTypes`. To only list the allowed media types, add a matching `mediaType` base filter to the dashboards referenced in [`useDashboard`](#media-library-sidepanels-and-dialogs), for example `{key: 'mediaType', term: ['myImage', 'myInfographic']}`.
 
 ## Media Library Sidepanels and Dialogs
 
@@ -624,7 +601,13 @@ In {{< release "release-2026-01" >}} and {{< release "release-2026-03" >}}, `use
 }
 ```
 
-If `useDashboard` is not configured, all available media is shown in a single "Feed" tab and grouped by media type. This fallback behavior is deprecated and scheduled to change in `release-2026-11`.
+Each referenced dashboard must have `type: 'mediaLibraryDashboard'` and the matching `assetType`. Without `{key: 'state', term: 'active'}` in its `baseFilters`, archived and revoked media can be picked as well. On a dashboard that is also in the main navigation, this filter hides them there too, so give sidepanels their own dashboard if editors need them in the navigation.
+
+If `useDashboard` is not configured for an asset type, the editor hides its entry points in this content type: the Images, Videos or Files button in the toolbar, the media library actions of images and videos in the document and the properties panel, and "Add image" in the document inbox. Metadata plugins like [`li-image`]({{< ref "/reference/document/metadata/plugins/li-image" >}}) and [`li-video-reference`]({{< ref "/reference/document/metadata/plugins/li-video-reference" >}}) use these dashboards unless they configure their own `ui.config.useDashboard`.
+
+{{< info >}}
+Before {{< release "release-2026-11" >}}, a content type without `useDashboard` showed all available media in a single "Feed" tab, grouped by media type.
+{{< /info >}}
 
 ## Teaser Previews
 

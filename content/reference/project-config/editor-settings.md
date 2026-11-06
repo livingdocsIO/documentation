@@ -69,9 +69,13 @@ editorSettings: {
       dashboard: 'kanban-proofreading',
       icon: 'clipboard-check'
     },
-    {liItem: 'mediaLibrary'},
+    { // media library dashboard
+      handle: 'images',
+      label: {en: 'Images', de: 'Bilder'},
+      dashboard: 'images',
+      icon: 'image-multiple'
+    },
     {liItem: 'lists'},
-    {liItem: 'menus'},
     {liItem: 'contentSetup'},
     { // external link
       handle: 'website',
@@ -95,9 +99,9 @@ editorSettings: {
       ]
     },
     {
-      handle: 'mediaLibrary',
+      handle: 'media',
       label: 'Media Library',
-      items: ['mediaLibrary'] // Media library types are split, but remain in the same group
+      items: ['images']
     },
     {
       handle: 'workflow',
@@ -281,11 +285,11 @@ Makes it possible to configure custom entries within the Livingdocs user menu. I
 
 ## Main Navigation
 
-The main navigation menu items are configured using the `mainNavigation` array. Within this array you can either specify a predefined `liItem`, link to a custom dashboard, or link to an external page. If the `mainNavigation` array is not provided then all core `liItem` menu items will be added by default.
+The main navigation menu items are configured using the `mainNavigation` array. Within this array you can either specify a predefined `liItem`, link to a custom dashboard, or link to an external page. If the `mainNavigation` array is not provided then all core `liItem` menu items will be added by default. This default has no media library entries, add them as custom dashboards that reference a [media library dashboard]({{< ref "/guides/media-library/media-library-setup/#media-library-dashboard-configuration" >}}).
 
 ### `liItem`
 
-The possible values for `liItem` are: `articles`, `pages`, `dataRecords`, `mediaLibrary`, `proofreading`, `lists`, `menus`, `tags` (imatrics), `contentSetup`, `projectSettings`, `serverAdmin` (enterprise only) and `imageCollections`.
+The possible values for `liItem` are: `articles`, `pages`, `dataRecords`, `proofreading`, `lists`, `menus`, `tags` (imatrics), `contentSetup`, `projectSettings`, `serverAdmin` (enterprise only) and `imageCollections`.
 
 For each item you can either use the default properties defined by Livingdocs:
 
@@ -377,12 +381,6 @@ editorSettings: {
         'pages',
         'authors'
       ]
-    },
-    {
-      // The {liItem: 'mediaLibrary'} will be split into a separate dashboard for each media type
-      handle: 'media',
-      label: 'Media Library',
-      items: ['mediaLibrary']
     },
     {
       // A group for custom workflow dashboards
@@ -1147,7 +1145,7 @@ dashboardCardConfigurations: [
 ]
 ```
 
-This will define a card `myImageCard` to be used in `mediaType.editor.dashboard.card.name`. See the See [Media Type config example]({{< ref "/reference/project-config/media-types.md" >}}).
+This will define a card `myImageCard` to be used in `useCardConfiguration` of a [media library dashboard]({{< ref "/guides/media-library/media-library-setup/#usecardconfiguration" >}}).
 
 ### Export Flows
 
