@@ -243,7 +243,18 @@ No pre-deployment steps are required before rolling out this release.
 
 #### Migrate the Postgres Database
 
-No migrations are required for this release.
+When upgrading, first run the database migrations. At Livingdocs, we run this command in an initContainer on Kubernetes.
+
+The migration executes quickly, does not change the schema and does not lock any tables.
+
+```sh
+# 220-check-channels-without-embedded-design.js
+#   Stops and lists the affected channels if a project still uses a referenced
+#   design or a channel without a project config still exists. Such a channel
+#   can no longer load a design. Reach out to your Customer Solutions contact before
+#   upgrading if the migration stops.
+livingdocs-server migrate up
+```
 
 ### After the deployment
 
@@ -275,6 +286,69 @@ Either of:
 Upgrade the Node.js runtime to 22.22.0 or newer, and update every pinned version alongside it: `.nvmrc`, the `FROM` tags in Dockerfiles, and CI job images. Upgrading to Node.js 24 or 26 instead also resolves it, and avoids a second upgrade when Node.js 22 support is dropped.
 
 `npm install` on an affected version reports `EBADENGINE` for `undici` and `posthog-node`.
+
+### Removal of Referenced Designs
+
+**Code:** `LIBREAKING085`
+
+Referenced designs, deprecated in {{< release "release-2026-01" >}}, have been removed. A project's design now always lives in its project config as an [embedded design]({{< ref "/guides/documents/document-design/embedded-design" >}}) (`designSettings` and `components`). The design server, hosted designs and designs loaded from local files are gone. The server keeps serving every stored version of a project's embedded design, and the built-in news agency report design, over `GET /design-loader/:name/:version`.
+
+A document whose current draft or publication still uses a referenced design can no longer be opened, edited, saved or published, so move all documents to the embedded design before upgrading. Older revisions that were saved with a referenced design can no longer be rendered. The editor shows them as "design no longer available" in the history and in compare.
+
+#### Detect
+
+Any of:
+
+- In the server config, a top-level `designs` key, or `hostedDesigns`, `designRepository`, `localDesigns` or `publicAssetsUrl` under `designLoader`. Search for `designs\s*:|hostedDesigns|designRepository|localDesigns|publicAssetsUrl`. The server refuses to start with `LIBREAKING085` while one of them is set.
+- Documents that still use a referenced design. `livingdocs-server release-2025-03-check-document-design-versions` lists the projects whose documents use more than one design. Any listed design name that does not start with `p:` is a referenced design.
+- In the server config, `staticConfigs` under `projectConfigs` or `channelConfigs`, or `channelConfigurations` under `projects`. Search for `staticConfigs|channelConfigurations`. The server refuses to start with `LIBREAKING085` while one of them is set, even to an empty array.
+- A project that still uses a referenced design. In the database, `SELECT c.id, c.project_id, c.design_name FROM projects p JOIN channels c ON c.id = p.default_channel_id WHERE c.design_name NOT LIKE 'p:%'` returns it. The migration `220-check-channels-without-embedded-design.js` stops while one exists.
+- Public API calls to `POST /api/:apiVersion/projectConfig` with a project config without `components`. They answer `400` with `LIBREAKING085`.
+- Project seeding that sets `designName` or `designVersion` on a project's `channel`. Search the seeding config for `designName|designVersion`.
+- Server code that uses the `li-designs` feature or `setCurrentDesignVersion`. Search for `li-designs|setCurrentDesignVersion`.
+- Scripts or CI jobs that run the CLI command `design-set-active` or `transform-to-configurable-channel`. Search for `design-set-active|transform-to-configurable-channel`.
+- In the editor config, `designsApi`. Search for `designsApi`.
+
+#### Fix
+
+- Migrate every project that still uses a referenced design to an embedded design before upgrading, following the [migration guide]({{< ref "/guides/documents/document-design/embedded-design" >}}).
+- Move the documents of every project listed by the check to the project's embedded design with `livingdocs-server change-design-name-and-version-to-latest-project-design --project <project-handle>`, as described in [Migrate old documents to embedded design]({{< ref "/guides/documents/document-design/embedded-design#migrate-old-documents-to-embedded-design" >}}). The task only changes the design reference, so the embedded design must contain every component of the referenced design.
+- Remove `staticConfigs` and `channelConfigurations` from the server config. A project with a static project config needs a seeded project config with an embedded design instead.
+- Remove `designs` from the server config, and `hostedDesigns`, `designRepository`, `localDesigns` and `publicAssetsUrl` from `designLoader`. `designLoader.cacheSize` and `designLoader.cacheMaxAge` stay.
+- Publish project configs over the Public API together with their embedded design (`designSettings` and `components`).
+- Remove `designName` and `designVersion` from the `channel` of seeded projects, and configure `designSettings` and `components` in their project config instead.
+- Remove the use of `li-designs` and `channelApi.setCurrentDesignVersion()`. Publishing a project config that changes `designSettings` or `components` creates the next design version.
+- Remove the calls to the CLI commands `design-set-active` and `transform-to-configurable-channel`. Both have been removed without replacement.
+- Remove `designsApi` from the editor config. The editor always loads designs from the Livingdocs server.
+- Tests that load fixture designs through `designLoader.localDesigns` need an embedded design in their test project config instead.
+
+### Self-Service Signup Requires registration.projectConfig
+
+**Code:** `LIBREAKING085`
+
+A self-service signup (`POST /register/editor`) creates a new user together with a new project. That project used to get the referenced design named in `registration.design`. With referenced designs removed, `registration.projectConfig` replaces it: the complete starter project config, with an embedded design and content types, that every new signup project is created with. Without `registration.projectConfig`, the server refuses self-service signups and creates neither a user nor a project. This keeps self-service signup turned off on every server that does not configure it on purpose.
+
+```js
+// before
+registration: {design: {name: 'living-times', version: '0.0.14'}}
+
+// after
+registration: {projectConfig: require('./projects/signup')}
+```
+
+For more information, see the [Registration]({{< ref "/customising/server-configuration#registration" >}}) server configuration.
+
+#### Detect
+
+Any of:
+
+- In the server config, a `design` key under `registration`. Search for `registration\s*:` and check its keys. The server refuses to start with `LIBREAKING085` while `registration.design` is set.
+- Server code that calls `registrationApi.createUserWithProject()` or `registrationApi.createSSOUserWithProject()` with `designName` or `designVersion`. Search for `createUserWithProject|createSSOUserWithProject`. The call throws `LIBREAKING085`.
+
+#### Fix
+
+- Remove `registration.design`. Only if the server offers self-service signup, set `registration.projectConfig` to the project config that new signup projects start with, including `designSettings`, `components` and at least one content type. The server validates it on startup and does not start when it is invalid or one of them is missing.
+- Pass the project config of the new project as `projectConfig` to `registrationApi.createUserWithProject()` and `registrationApi.createSSOUserWithProject()` instead of `designName` and `designVersion`.
 
 ## Deprecations :warning:
 

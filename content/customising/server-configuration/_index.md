@@ -30,6 +30,7 @@ menus:
 
   "auth": "{{< a href="#authentication" title="<authentication config>">}}",
   "emails": "{{< a href="#user-management-emails" title="<user management emails>">}}",
+  "registration": "{{< a href="#registration" title="<self-service registration config>">}}",
 
   "designLoader": "{{< a href="#design-loader" title="<design loader config>">}}",
   "designs": "{{< a href="#designs" title="<designs config>">}}",
@@ -507,56 +508,38 @@ prevent access for the possibly abusing actor.
 In case you want to adjust the email template, head over to the original file `@livingdocs/server/plugins/email-templates/new_login_device.html`
 and copy it's content into your target file which you then can adapt to your needs.
 
-### Design Loader
+### Registration
 
-The DesignLoader offers different options how designs are loaded. By default designs
-are loaded from the local database.
+Self-service registration lets a person sign up in the editor (`POST /register/editor`). Every registration creates a new user together with a new project. `registration.projectConfig` is the starter [project config]({{< ref "/reference/project-config" >}}) of that project, including its embedded design (`designSettings` and `components`) and at least one content type. The server validates it on startup and does not start when it is invalid or one of them is missing.
 
-Options include:
-
-- Load a specific design from a url
-- Preload a design into memory (useful for testing, or if you only change designs
-  during a deployment)
-- Load a design from another Livingdocs Server
-
-All these options can work alongside each other.
-
-If a design is requested the design loader will execute these steps in the given order:
-
-1. check if the design is preloaded in `localDesigns`.
-   -> If yes, return it, otherwise continue.
-2. check if for this design name a custom url is configured in `hostedDesigns`.
-   -> If yes append the version to the url and fetch from that url. Return the design or an error.
-3. load from a remote design server if a `designRepository` is configured otherwise load from local server
+Without `registration.projectConfig`, the server refuses self-service registrations and creates neither a user nor a project. The signup link in the editor appears when a login connection sets `registrationEnabled: true`, see [`auth.connections.local`](#authconnectionslocal).
 
 ```js
-designLoader: {
-  // optional
-  hostedDesigns: [
-    {
-      designName: 'timeline',
-
-      // The final request for timeline design v1.0.0 will go to this url:
-      // -> http://assets.livingdocs.io/timeline/1.0.0
-      url: 'http://assets.livingdocs.io/timeline'
-    }
-  ],
-  // optional
-  localDesigns: [
-    // path to design
-    {path: '/designs/timeline/v1.1.0'}
-  ],
-  // optional, defaults to the local design server
-  designRepository: {
-    remoteHost: 'http://api.livingdocs.io'
-  },
-  cacheSize: 100 // optional, defaults to '20'
+registration: {
+  projectConfig: require('./projects/signup')
 }
 ```
 
+`registration.design` {{< removed-in "release-2026-11" >}} named the referenced design of new signup projects. The server does not start while it is set.
+
+### Design Loader
+
+The design loader resolves the design of a document: the [embedded design]({{< ref "/guides/documents/document-design/embedded-design" >}}) of a project, in every version stored in the project config history, and the built-in news agency report design.
+
+```js
+designLoader: {
+  cacheSize: 100, // optional, defaults to 20
+  cacheMaxAge: 3600000 // optional, maximum age of a cached design in milliseconds
+}
+```
+
+`hostedDesigns`, `localDesigns`, `designRepository` and `publicAssetsUrl` {{< removed-in "release-2026-11" >}} loaded referenced designs from a URL, a local file or another Livingdocs server. The server does not start while one of them is set.
+
 #### Designs
 
-Configure the Livingdocs Design Server. When a design is uploaded the assets
+{{< removed-in "release-2026-11" block >}}
+
+Configure the Livingdocs Design Server, which hosted referenced designs. The server does not start while `designs` is set. When a design is uploaded the assets
 are moved to the [storage configured]({{< ref "/customising/server-configuration/storage" >}}) here.
 
 ```js

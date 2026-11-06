@@ -8,9 +8,13 @@ Embedded designs are around for a while now and several Livingdocs customers use
 
 The main benefit for customers is that they can completely separate Livingdocs designs from whatever technology they want to use in the frontend. E.g. Swisscom has embedded designs in the server project and uses the HTML framework nitro in the frontend (without any dependency on Livingdocs).
 
+{{< warning >}}
+Referenced designs were removed in {{< release "release-2026-11" >}}. Migrate every project that still uses a referenced design, and [its documents](#migrate-old-documents-to-embedded-design), to an embedded design before you upgrade to that release. After the upgrade, a document whose current draft or publication still uses a referenced design can no longer be opened, edited, saved or published. Older revisions saved with a referenced design can no longer be rendered, and the editor shows them as "design no longer available" in the history.
+{{< /warning >}}
+
 ## Overview
 
-Prerequesites: you need to have a configurable channel, meaning that your Livingdocs configuration is done via a seeding process of project configuration files in your server repository and **not via static configuration files**.
+Prerequisites: your Livingdocs configuration is done via a seeding process of project configuration files in your server repository.
 
 In order to go from a reference design to an embedded design the following steps are necessary:
 
@@ -116,18 +120,24 @@ Ideally you have a webpack (or similar) development setup in your delivery proje
 
 ## Migrate old documents to embedded design
 
-{{< warning >}}
-The functionality described here was removed in {{< release "release-2025-03" >}}. If you're on a later release and migrating to an embedded design, please contact your Livingdocs Customer Solutions representative for assistance.
-{{< /warning >}}
+Move all documents to the embedded design before you upgrade to {{< release "release-2026-11" >}}. After the upgrade, a document whose current draft or publication still uses a referenced design can no longer be opened, edited, saved or published.
 
-A migration from a reference design to an embedded design should always be a bump migrations. You are responsible to make sure of this. The migration of a certain version, say 1.2.3 of a reference design to the first version (1.0.0) of an embedded design is always non-breaking, i.e. the migration itself does not change anyhting to the logic of the design. **You should never mix a migration to an embedded design with new design features or refactoring, take those aparat into 2 steps**.
-Also, you need to make sure that you always migrate from the last version of your reference design (1.2.3 in the example above) to the first version of your embedded design (1.0.0). If you migrate older documents, say 0.8.1, then split into 2 steps:
+The first version of your embedded design must be a non-breaking copy of the latest version of your referenced design, with the same components and directives. **Never mix the switch to an embedded design with new design features or refactoring.** Make those changes in a later version of the embedded design.
 
-- migrate your reference design from 0.8.1 to 1.2.3 (with a migration file if necessary)
-- bump reference design 1.2.3 to embedded design 1.0.0
+1. Find the projects whose documents still use a referenced design:
 
-There is currently no support for bump from a reference design to an embedded design over the CLI, but the UI allows you to do so.
+   ```sh
+   livingdocs-server release-2025-03-check-document-design-versions
+   ```
 
-Navigate to "Project Setup / Design Migration". If your project config is setup correctly and contains an embedded design then you will have the option to choose "migrate to embedded design" in the Design Bump setup. The option is only shown when you already have a document created with the embedded Design version. Just check this and make sure the version of the reference design and the embedded design are correct.
+   The task lists every project whose documents use more than one design. Design names that start with `p:` are embedded designs, any other name is a referenced design. A project that is only listed with several versions of its embedded design needs no action.
 
-{{< img src="bump-to-embedded-design.png" alt="Embedded Design Bump" >}}
+2. Move the documents of each listed project to the latest version of the project's embedded design:
+
+   ```sh
+   livingdocs-server change-design-name-and-version-to-latest-project-design --project <project-handle>
+   ```
+
+   The task changes the design of each document's current draft, last publication and scheduled publication. It only changes the design reference and does not validate the content against the embedded design, which is why the embedded design must contain every component of the referenced design. Older revisions keep their referenced design. The editor shows them as "design no longer available" in the history.
+
+3. Run the check from step 1 again to confirm that no document uses a referenced design anymore.
