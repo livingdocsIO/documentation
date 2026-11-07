@@ -45,6 +45,7 @@ menus:
   "elasticIndex": "{{< a href="#custom-elasticsearch-index" title="<elasticIndex config>">}}",
 
   // Interactions between server, editor and users
+  "realtime": "{{< a href="#realtime" title="<realtime config>">}}",
   "pusher": "{{< a href="#pusher" title="<pusher config>">}}",
   "pushNotifications": "{{< a href="#push-notifications" title="<push notification config>">}}",
   "preview": "{{< a href="#custom-previews" title="<preview config>">}}",
@@ -918,6 +919,26 @@ elasticIndex: {
 },
 ```
 
+### Realtime
+
+Selects the provider for the realtime collaboration features of the editor, e.g. showing who is viewing a document, component locks and live updates of lists and dashboards.
+
+```js
+realtime: {
+  // 'pusher' (default) or 'livingdocs'
+  provider: 'pusher'
+}
+```
+
+- `pusher` uses [Pusher](#pusher) and requires the `pusher` config.
+- `livingdocs` is a drop-in replacement for Pusher that runs on the Livingdocs server. The editor connects to the `/realtime/channels` websocket of the server instances with the `write` role, and messages and presence are distributed between the instances using Redis. The `pusher` config is ignored and `li-pusher-authentication` is disabled.
+
+When using the `livingdocs` provider:
+
+- The load balancer in front of the server instances with the `write` role needs to accept websocket connections, as it does for the [realtime updates](#realtime-updates).
+- Like with Pusher, the editor can send at most 10 client events per second per connection, each up to 10KB.
+- Users of a server instance that stops without shutting down (e.g. a crash) are shown as present for up to 80 seconds.
+
 ### Pusher
 
 Disabled by Default. Enable to show who is viewing a document in real time
@@ -937,6 +958,8 @@ pusher: {
 {{< info >}}
 Please ensure "Enable client events" is enabled on the App settings page of the [Pusher Dashboard](https://dashboard.pusher.com/).
 {{< /info >}}
+
+The `livingdocs` [realtime provider](#realtime) provides the same features without Pusher.
 
 ### Push Notifications
 
