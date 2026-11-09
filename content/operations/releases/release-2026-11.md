@@ -33,7 +33,7 @@ systemRequirements:
     - name: Livingdocs Editor Docker Image
       version: livingdocs/editor-base:26
     - name: Browser Support
-      version: Chrome >= 156, Edge >= 156, Firefox >= 159, Safari >= 27.0
+      version: Chrome >= 156, Edge >= 156, Firefox >= 159, Safari >= 27.2
 
   minimal:
     - name: Node
@@ -58,161 +58,7 @@ systemRequirements:
       version: Chrome >= 142, Edge >= 142, Firefox >= 144, Safari >= 26.0
 ---
 
-## Caveat :fire:
-
-These are the release notes of the upcoming release (pull requests merged to the main branch).
-
-- :information_source: this document is updated automatically by a bot (pr's to categorize section)
-- :information_source: this document will be roughly updated manually once a week (put PRs + description to the right section)
-- :fire: We don't guarantee stable APIs. They can still change until the official release
-- :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
-
-## PRs to Categorize
-
-- [Drop Node.js 22 in release-2027-03 instead of release-2027-01](https://github.com/livingdocsIO/livingdocs-server/pull/10431)
-- [Drop support for Elasticsearch 7 and OpenSearch 1](https://github.com/livingdocsIO/livingdocs-server/pull/10434)
-- [Remove referenced designs (LIDEP072)](https://github.com/livingdocsIO/livingdocs-server/pull/9645)
-- [Remove referenced designs (LIDEP072)](https://github.com/livingdocsIO/livingdocs-editor/pull/11303)
-- [Fast image processing](https://github.com/livingdocsIO/livingdocs-server/pull/10435)
-- [Request the Public API version of a year before the release in cross-project content sharing](https://github.com/livingdocsIO/livingdocs-server/pull/10371)
-- [Remove legacy media library config (LIBREAKING082-084)](https://github.com/livingdocsIO/livingdocs-server/pull/10393)
-- [Remove the media library sidepanel fallback and auto-generated dashboards](https://github.com/livingdocsIO/livingdocs-editor/pull/11865)
-- [Image processing: Limit concurrent Sharp pipelines](https://github.com/livingdocsIO/livingdocs-server/pull/10249)
-- [Media library: Explain why an image upload was rejected](https://github.com/livingdocsIO/livingdocs-editor/pull/11454)
-- [Derive the Public API versions from the release](https://github.com/livingdocsIO/livingdocs-server/pull/10375)
-- [Deprecate the publicApi.minimumApiVersion server config](https://github.com/livingdocsIO/livingdocs-server/pull/10376)
-- [Keep a failing or hanging external system from hiding other cross-project documents](https://github.com/livingdocsIO/livingdocs-server/pull/10426)
-- [Fix cross-project content sharing for documents outside the latest 100 publications](https://github.com/livingdocsIO/livingdocs-server/pull/10425)
-- [Image processing: Write the legacy transform output to disk](https://github.com/livingdocsIO/livingdocs-server/pull/9916)
-- [chore(deps): update dependency posthog-node from 5.60.1 to v5.61.1 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/10424)
-- [chore(deps): update dependency sass from 1.107.0 to v1.107.1 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/11883)
-- [fix(deps): update dependency entities from 8.1.0 to v9 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/10407)
-- [Planning calendar](https://github.com/livingdocsIO/livingdocs-server/pull/10240)
-- [Planning calendar](https://github.com/livingdocsIO/livingdocs-editor/pull/11771)
-- [Image processing: Treat only gif and webp frames as an animation](https://github.com/livingdocsIO/livingdocs-server/pull/10250)
-- [Public API: Serve an unmodified image as stored from 2026-11](https://github.com/livingdocsIO/livingdocs-server/pull/10299)
-- [Media library: Download an unmodified image as stored](https://github.com/livingdocsIO/livingdocs-server/pull/10251)
-- [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-editor/pull/11876)
-- [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-server/pull/10405)
-- [fix(deps): update dependency @livingdocs/framework from 34.3.14 to v34.3.15 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/10420)
-- [fix(deps): update dependency @livingdocs/framework from 34.3.12 to v34.3.14 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/10411)
-- [fix(deps): update dependency @livingdocs/framework from 34.3.12 to v34.3.14 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/11879)
-- [Allow only supported image types in upload dialog and drop](https://github.com/livingdocsIO/livingdocs-editor/pull/11753)
-- [Image processing: Transform legacy uploads from disk](https://github.com/livingdocsIO/livingdocs-server/pull/9852)
-- [Image processing: Encode AVIF at a low effort](https://github.com/livingdocsIO/livingdocs-server/pull/10246)
-- [Format breaking change messages consistently and include their details](https://github.com/livingdocsIO/livingdocs-server/pull/10304)
-- [fix(deps): update dependency @livingdocs/framework from 34.3.11 to v34.3.12 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/11864)
-- [fix(deps): update dependency @livingdocs/framework from 34.3.11 to v34.3.12 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/10392)
-- [Remove Declarative Copy API (LIDEP071)](https://github.com/livingdocsIO/livingdocs-server/pull/9405)
-- [Remove legacy Declarative Copy UI (LIDEP071)](https://github.com/livingdocsIO/livingdocs-editor/pull/11133)
-- [fix(indexing): Load the mapping before createIndex() writes the mapping hash](https://github.com/livingdocsIO/livingdocs-server/pull/10300)
-- [Reduce edit conflicts that come back or get stuck](https://github.com/livingdocsIO/livingdocs-editor/pull/11844)
-- [chore(deps): update dependency fast-json-stringify from 7.1.5 to v7.2.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/10374)
-- [chore(deps): update dependency @fastify/reply-from from 12.7.1 to v12.8.0 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/11850)
-- [Support API versioning for sitemap routes](https://github.com/livingdocsIO/livingdocs-server/pull/10367)
-- [Clear content validation errors after container or property changes](https://github.com/livingdocsIO/livingdocs-editor/pull/11723)
-- [Remove `{liItem: 'mediaLibrary'}` (LIBREAKING081)](https://github.com/livingdocsIO/livingdocs-server/pull/10355)
-- [Remove `{liItem: 'mediaLibrary'}` (LIBREAKING081)](https://github.com/livingdocsIO/livingdocs-editor/pull/11843)
-- [fix(text-formatting): limit width of the formatting popover](https://github.com/livingdocsIO/livingdocs-editor/pull/11780)
-- [chore(deps): update aws-sdk from 3.1155.0 to v3.1156.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/10354)
-- [feat(translations): translate documents through the server translate endpoint](https://github.com/livingdocsIO/livingdocs-editor/pull/11773)
-- [feat(documents): translate documents with registered translate functions](https://github.com/livingdocsIO/livingdocs-server/pull/10252)
-- [fix(deps): update dependency chartist from 1.5.0 to v2 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/11801)
-- [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-editor/pull/11828)
-- [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-server/pull/10338)
-- [Keep display filter popups below their trigger when the results reload](https://github.com/livingdocsIO/livingdocs-editor/pull/11813)
-- [Enforce the package denylist with ESLint instead of a dead posttest script](https://github.com/livingdocsIO/livingdocs-editor/pull/11821)
-- [fix(deps): update dependency @livingdocs/framework from 34.3.8 to v34.3.9 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/10308)
-- [fix(deps): update dependency @livingdocs/framework from 34.3.8 to v34.3.9 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/11806)
-- [chore(deps): update dependency undici from 8.11.2 to v8.12.2 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/10296)
-- [chore(deps): update dependency webpack from 5.111.1 to v5.112.0 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/11796)
-- [chore(deps): update dependency posthog-node from 5.56.1 to v5.56.2 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/10293)
-- [Fix media library selection breaking when a result page repeats an id](https://github.com/livingdocsIO/livingdocs-editor/pull/11787)
-- [fix(metadata): respect maxDepth when dragging a collapsed li-tree branch](https://github.com/livingdocsIO/livingdocs-editor/pull/11779)
-- [Expire one-time auth codes after their configured TTL](https://github.com/livingdocsIO/livingdocs-server/pull/10280)
-- [Retry failed Pusher batches before dropping them](https://github.com/livingdocsIO/livingdocs-server/pull/10201)
-- [Recover from a save conflict when the document fetch fails](https://github.com/livingdocsIO/livingdocs-editor/pull/11750)
-- [Add tests for the metrics the monitoring reads](https://github.com/livingdocsIO/livingdocs-server/pull/10248)
-- [Recover realtime updates after connection issues](https://github.com/livingdocsIO/livingdocs-editor/pull/11652)
-- [Image processing: Limit the total resolution of an animated image](https://github.com/livingdocsIO/livingdocs-server/pull/9871)
-- [Image processing: Read large gif/webp uploads from disk](https://github.com/livingdocsIO/livingdocs-server/pull/9848)
-- [Media library: Limit how many image variants are generated at once](https://github.com/livingdocsIO/livingdocs-server/pull/9855)
-- [Media library: Add a processing timeout for images](https://github.com/livingdocsIO/livingdocs-server/pull/9854)
-- [Fix/Table Dashboard Header Labels](https://github.com/livingdocsIO/livingdocs-editor/pull/11765)
-- [Support image components in Agency Report content](https://github.com/livingdocsIO/livingdocs-server/pull/10182)
-- [Support image components in Agency Report content](https://github.com/livingdocsIO/livingdocs-editor/pull/11716)
-- [fix(media-library): place video detail actions below the player](https://github.com/livingdocsIO/livingdocs-editor/pull/11768)
-- [Media library: Bound how many uploads are processed at once](https://github.com/livingdocsIO/livingdocs-server/pull/9865)
-- [Image processing: Redact every frame of an animated image](https://github.com/livingdocsIO/livingdocs-server/pull/9929)
-- [Media library: Generate an image variant once for concurrent requests](https://github.com/livingdocsIO/livingdocs-server/pull/9856)
-- [fix(deps): update opentelemetry (main) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/10226)
-- [Image processing: Limit libvips to one thread per image](https://github.com/livingdocsIO/livingdocs-server/pull/9853)
-- [Image processing: Remove the partial download when serving a variant fails](https://github.com/livingdocsIO/livingdocs-server/pull/9850)
-- [Stop workspace timers after unloading and in unit tests](https://github.com/livingdocsIO/livingdocs-editor/pull/11751)
-- [Job queue: Notify waiting listeners registered before a consumer is created](https://github.com/livingdocsIO/livingdocs-server/pull/10205)
-- [Smart Quotes with Apostrophes](https://github.com/livingdocsIO/livingdocs-editor/pull/11653)
-- [feat(media-library): enable LIFEAT010 for dfv](https://github.com/livingdocsIO/livingdocs-server/pull/10208)
-- [Image processing: Convert SVG dimension units to pixels](https://github.com/livingdocsIO/livingdocs-server/pull/9849)
-- [Set translatable poster image on the selected locale](https://github.com/livingdocsIO/livingdocs-editor/pull/11721)
-- [Hide date errors on already planned publish and unpublish schedules](https://github.com/livingdocsIO/livingdocs-editor/pull/11720)
-- [Fix crash of read-only minimal document reference](https://github.com/livingdocsIO/livingdocs-editor/pull/11731)
-- [Notify open editors via Pusher when publishControl changes](https://github.com/livingdocsIO/livingdocs-server/pull/10184)
-- [Apply a new selection in minimal document reference fields](https://github.com/livingdocsIO/livingdocs-editor/pull/11719)
-- [fix(publish): show each unlinked publish error once in the error banner](https://github.com/livingdocsIO/livingdocs-editor/pull/11700)
-- [Fix li-video-reference uploads in media library entries](https://github.com/livingdocsIO/livingdocs-editor/pull/11718)
-- [Keep the completed-date sort when the task screen refreshes](https://github.com/livingdocsIO/livingdocs-editor/pull/11717)
-- [Fix history pagination when the first revision on a page is published](https://github.com/livingdocsIO/livingdocs-server/pull/10183)
-- [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-server/pull/10190)
-- [fix(auth): Renew the access token after a 401 instead of expiring the session](https://github.com/livingdocsIO/livingdocs-editor/pull/11709)
-- [feat(media-library): Add mediaLibrary.disableImageEditing server config](https://github.com/livingdocsIO/livingdocs-server/pull/10124)
-- [feat(image-editor): Hide image editing with mediaLibrary.disableImageEditing](https://github.com/livingdocsIO/livingdocs-editor/pull/11681)
-- [feat(account): Add a number formatting preference](https://github.com/livingdocsIO/livingdocs-editor/pull/11597)
-- [Fix image crop crash for named crops without ratios](https://github.com/livingdocsIO/livingdocs-editor/pull/11701)
-- [Show delete button for components in ticker entries](https://github.com/livingdocsIO/livingdocs-editor/pull/11702)
-- [chore(deps): update dependency sanitize-html from 2.17.7 to v2.18.0 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/11696)
-- [Polish/spellcheck and li tag](https://github.com/livingdocsIO/livingdocs-editor/pull/11691)
-- [feat(spellcheck): proofread the whole document in the command center](https://github.com/livingdocsIO/livingdocs-editor/pull/11640)
-- [Skip category republish without a user instead of failing](https://github.com/livingdocsIO/livingdocs-server/pull/10170)
-- [fix(public-api): accept oldValue in setEditableDirective command](https://github.com/livingdocsIO/livingdocs-server/pull/10156)
-- [fix(comyan): keep metadata validation errors on image upload](https://github.com/livingdocsIO/livingdocs-server/pull/10093)
-- [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-server/pull/10176)
-- [fix(publish-control): Skip empty and invalid metadata dates in visiblePublicationDatePreference](https://github.com/livingdocsIO/livingdocs-server/pull/10137)
-- [chore(deps): update dependency chai from 6.2.2 to v6.3.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/10149)
-- [Update proxy-addr to 2.0.8 to patch CVE-2026-90711](https://github.com/livingdocsIO/livingdocs-server/pull/10136)
-- [Mount the demo's decompounder folder in the Downstream Demo job](https://github.com/livingdocsIO/livingdocs-server/pull/10142)
-- [fix(ci): queue releases and publish with npm trusted publishing](https://github.com/livingdocsIO/livingdocs-editor/pull/11659)
-- [fix(ci): pin npm-tag-latest to the release that loads](https://github.com/livingdocsIO/livingdocs-server/pull/10098)
-- [fix(proxy): survive a browser that drops a websocket before the upstream upgrade](https://github.com/livingdocsIO/livingdocs-editor/pull/11647)
-- [Update sharp to 0.35.5 to patch libheif vulnerabilities](https://github.com/livingdocsIO/livingdocs-server/pull/10085)
-- [Handle migration jobs where only some revisions get an update](https://github.com/livingdocsIO/livingdocs-server/pull/10021)
-- [Rebuild the navigation panel in Vue with favourites and filtering](https://github.com/livingdocsIO/livingdocs-editor/pull/11370)
-- [chore(deps): update dependency eslint from 10.10.0 to v10.11.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/10068)
-- [test(publish-control): Cover publish, unpublish and scheduled unpublish [main]](https://github.com/livingdocsIO/livingdocs-editor/pull/11608)
-- [test(hugo): Cover huGO image drag and drop [main]](https://github.com/livingdocsIO/livingdocs-editor/pull/11609)
-- [Preserve `updateAt` when modifying media library entry usage logs](https://github.com/livingdocsIO/livingdocs-server/pull/9953)
-- [Spellcheck: Live check](https://github.com/livingdocsIO/livingdocs-editor/pull/11445)
-- [chore(deps): update dependency @google-cloud/storage from 8.1.0 to v8.2.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/10058)
-- [fix(deps): update dependency @livingdocs/framework from 34.3.1 to v34.3.4 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/11603)
-- [Spellcheck: Live check](https://github.com/livingdocsIO/livingdocs-server/pull/9840)
-- [fix(imatrics-nlp): Match the API mock's concept search against the search term [main]](https://github.com/livingdocsIO/livingdocs-server/pull/10051)
-- [test(table-dashboards): Cover the table dashboard manual test cases [main]](https://github.com/livingdocsIO/livingdocs-editor/pull/11596)
-- [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-editor/pull/11579)
-- [fix(framework): Attach the violations to the thrown parse error [main]](https://github.com/livingdocsIO/livingdocs-editor/pull/11577)
-- [chore(deps): update dependency eslint-plugin-jsdoc from 64.3.6 to v64.3.8 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/10012)
-
-- [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-server/pull/9979)
-- [fix(deps): update dependency nodemailer from 9.1.1 to v10 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/9992)
-- [Fix open-state styling on display settings dropdown button](https://github.com/livingdocsIO/livingdocs-editor/pull/11556)
-- [fix(rotated-images): import intoBuffer default export](https://github.com/livingdocsIO/livingdocs-server/pull/9981)
-- [Fix tooltip line break for unpublished ticker entries](https://github.com/livingdocsIO/livingdocs-editor/pull/11551)
-- [Prevent dart-sass BOM from breaking scoped styles](https://github.com/livingdocsIO/livingdocs-editor/pull/11546)
-- [chore(deps): update dependency nodemailer from 9.0.6 to v9.1.1 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/9975)
-- [fix(deps): update dependency @livingdocs/framework from 34.3.0 to v34.3.1 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/11545)
-- [fix(indexing): strip sub-field analyzers missing from the live index settings](https://github.com/livingdocsIO/livingdocs-server/pull/9947)
-- [fix(deps): update dependency @livingdocs/framework from 34.2.2 to v34.3.0 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/11508)
-- [chore(deps): update aws-sdk from 3.1120.0 to v3.1121.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/9950)
-
-To get an overview about new functionality, read the [Release Notes](TODO).
+To get an overview about new functionality, read the [Release Notes](https://livingdocs.io/en/blog/release-november-2026).
 To learn about the necessary actions to update Livingdocs to `release-2026-11`, read on.
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
@@ -261,7 +107,7 @@ The supported Node.js 22 range moved from `>=22.17.1` to `>=22.22.0`. Node.js 24
 
 `undici` 8 requires Node.js `>=22.19.0` and `posthog-node` 5 requires `>=22.22.0`, so the previous floor advertised a minimum those dependencies never supported. Running on 22.17.1-22.21.x was already outside what those packages declare; it is now outside `engines.node` as well.
 
-Node.js 22 as a whole is deprecated and will be dropped in `release-2027-01`, so moving to Node.js 24 or 26 is worth more than chasing a 22.x patch.
+Node.js 22 as a whole is deprecated and will be dropped in `release-2027-03` (see [Postponed Drop of Node.js 22](#postponed-drop-of-nodejs-22)), so moving to Node.js 24 or 26 is worth more than chasing a 22.x patch.
 
 #### Detect
 
@@ -275,6 +121,23 @@ Either of:
 Upgrade the Node.js runtime to 22.22.0 or newer, and update every pinned version alongside it: `.nvmrc`, the `FROM` tags in Dockerfiles, and CI job images. Upgrading to Node.js 24 or 26 instead also resolves it, and avoids a second upgrade when Node.js 22 support is dropped.
 
 `npm install` on an affected version reports `EBADENGINE` for `undici` and `posthog-node`.
+
+### Drop of Support for Elasticsearch 7 and OpenSearch 1
+
+**Codes:** `LIBREAKING086`, `LIBREAKING087`
+
+Elasticsearch versions older than v8 and OpenSearch versions older than v2 are no longer supported. The drop was announced in {{< release "release-2026-03" >}}, and the server now enforces it: it refuses to start against an older cluster. The minimal supported versions are Elasticsearch 8 and OpenSearch 2.
+
+#### Detect
+
+Either of:
+
+- Request the root endpoint of the configured Elasticsearch or OpenSearch cluster (`curl <cluster-url>`) and read `version.number`. Elasticsearch below 8 or OpenSearch below 2 is affected.
+- The server fails at startup with `LIBREAKING086` (Elasticsearch) or `LIBREAKING087` (OpenSearch). The check only runs when the cluster is reachable at startup.
+
+#### Fix
+
+Upgrade the cluster to Elasticsearch 9 or OpenSearch 3. Elasticsearch 8 meets the new minimum, but is deprecated in this release (see [Deprecation of Elasticsearch 8](#deprecation-of-elasticsearch-8)), so upgrading straight to 9 avoids a second round.
 
 ## Deprecations :warning:
 
@@ -291,6 +154,66 @@ In the server config, `maxCpu` or `maxCpuFunction` under `elasticIndex`. Search 
 #### Fix
 
 Remove `maxCpu` and `maxCpuFunction` from the `elasticIndex` server config. There is no replacement. This includes `maxCpu: 0`. Removing it doesn't change the behavior, because `0` is the new default.
+
+### Deprecation of Elasticsearch 8
+
+**Code:** `LIDEP094`
+
+Support for Elasticsearch 8 is deprecated and will be dropped in `release-2027-05`. Elasticsearch 8 reaches its End of Maintenance on 2027-01-15. The minimal supported version stays at 8 for now.
+
+#### Detect
+
+Request the root endpoint of the configured Elasticsearch cluster (`curl <cluster-url>`) and read `version.number`. A major version of 8 is affected. OpenSearch clusters are not affected.
+
+#### Fix
+
+Upgrade to Elasticsearch 9, the suggested version for this release.
+
+### Deprecation of Public API Version 2025-03
+
+**Code:** `LIDEP089-2025-03`
+
+The Public API version `2025-03` is deprecated and will be removed in `release-2027-05`, following the [versioning policy]({{< ref "/reference/public-api/versioning" >}}): a version is deprecated 20 months after its release and removed six months later. Requests to it answer with a deprecation warning header.
+
+This release also adds the Public API version `2026-11`. From this release on, the available, deprecated and removed versions follow the schedule automatically with every release.
+
+#### Detect
+
+In project source code and in integrations calling Livingdocs, a request path starting with `/api/2025-03/`. Server-side, the deprecation is logged with the code above on every such request.
+
+#### Fix
+
+Migrate the integration to a newer API version, ideally `2026-11`. Consult the [Public API changelog]({{< ref "/reference/public-api/changelog" >}}) for what each version in between changes.
+
+### Deprecation of publicApi.minimumApiVersion
+
+**Code:** `LIDEP093`
+
+The server config `publicApi.minimumApiVersion` is deprecated and will be removed in `release-2027-03`, together with the Public API versions `v1` and `beta`. The config makes the server reject older API versions, even though they are still supported. This breaks cross-project content sharing: the requesting server can't know the remote server's minimum, and its requests are rejected with `410`.
+
+Cross-project content sharing now requests the Public API version of a year before the release (`2025-11` in this release) instead of `v1`. Remote servers must therefore run a release at most a year older than the requesting server.
+
+#### Detect
+
+In the server config, `minimumApiVersion` under `publicApi`.
+
+#### Fix
+
+Remove `minimumApiVersion` from the `publicApi` server config. There is no replacement.
+
+### Postponed Drop of Node.js 22
+
+**Code:** `LIDEP084`
+
+The drop of Node.js 22 moves from `release-2027-01` to `release-2027-03`. Node.js 22 reaches its end of life on 2027-04-30, which falls into `release-2027-03`. This gives projects one more release to upgrade. Node.js 22 was deprecated in {{< release "release-2026-07" >}}.
+
+#### Detect
+
+Run `node --version` against the process running the server. A major version of 22 is affected, and an affected server emits `LIDEP084` on every boot.
+
+#### Fix
+
+Upgrade to Node.js 24 or 26, and update the pinned versions alongside it: `.nvmrc`, the `FROM` tags in Dockerfiles, and CI job images.
 
 ## Features :gift:
 
@@ -328,6 +251,29 @@ Your news agency function decides what happens to images when a report is copied
 {{< /info >}}
 
 For more information, see the [News Agencies]({{< ref "/guides/integrations/news-agencies#images" >}}) documentation.
+
+### New Navigation
+
+The main navigation has been redesigned. It is wider, easier to scan, and gets editors to the screens they need faster:
+
+- **Search.** A filter field narrows the navigation down to matching entries. Collapse or expand all groups with one click.
+- **Favourites.** Mark single entries or whole groups as favourites. They are collected in a "Favourites" section at the top and saved to the user account, so they follow editors across browsers and devices.
+- **Keyboard navigation.** Move through the entries with the arrow keys, open a group or screen with Enter, and close the navigation with Escape.
+
+The new navigation is available automatically. No configuration is required.
+
+### Unmodified Images Served as Stored
+
+An image without modifications is now delivered exactly as it was uploaded, instead of a re-encoded copy. It keeps its full quality and dimensions, including every page of a multi-page TIFF, and the server no longer has to decode it.
+
+- **Downloads in the editor.** Downloading an image without modifications, crop or width returns the stored file. Previously, every download was re-encoded and capped at 8000 pixels wide. This applies automatically.
+- **Public API.** From API version `2026-11`, [`GET /mediaLibrary/serve-image/:key`]({{< ref "/reference/public-api/media-library/#serve-image" >}}) returns an image without modifications as stored. Earlier API versions are unchanged. To opt in, change the API version in your image service's base URL, for example the Imgix source. Images with modifications such as redactions or colour corrections are processed as before.
+
+{{< info >}}
+A stored image keeps its EXIF orientation as a tag instead of having it applied to the pixels. Imgix and modern browsers apply the tag. A consumer that ignores it, or that sizes the image from the entry's width and height, shows rotated camera and phone photos sideways. Check your consumers before switching to `2026-11`.
+{{< /info >}}
+
+This applies to projects with `mediaLibrary.use2025Behavior` enabled. Without it, images were already served as stored.
 
 ## Vulnerability Patches
 
