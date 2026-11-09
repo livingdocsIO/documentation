@@ -103,7 +103,7 @@ No rollback steps are required for this release.
 
 ### Minimum Node.js 22 Version Raised to 22.22.0
 
-The supported Node.js 22 range moved from `>=22.17.1` to `>=22.22.0`. Node.js 24 and 26 are unaffected.
+The supported Node.js 22 range moved from `>=22.17.1` to `>=22.22.0`. The Livingdocs Editor also requires Node.js 24 to be at least `24.11.0`. Node.js 26 is unaffected.
 
 `undici` 8 requires Node.js `>=22.19.0` and `posthog-node` 5 requires `>=22.22.0`, so the previous floor advertised a minimum those dependencies never supported. Running on 22.17.1-22.21.x was already outside what those packages declare; it is now outside `engines.node` as well.
 
@@ -115,10 +115,11 @@ Either of:
 
 - The Node.js version running the server is 22.17.1-22.21.x. Check with `node --version`. An affected server emits `You're using an unsupported version` on boot.
 - A Node.js 22 patch below 22.22.0 pinned in the project - check `.nvmrc`, `FROM` lines in Dockerfiles, and CI job images. Search for `22\.(1[789]|2[01])\.`.
+- The editor runs on Node.js 24.0-24.10. `npm install` reports `EBADENGINE`.
 
 #### Fix
 
-Upgrade the Node.js runtime to 22.22.0 or newer, and update every pinned version alongside it: `.nvmrc`, the `FROM` tags in Dockerfiles, and CI job images. Upgrading to Node.js 24 or 26 instead also resolves it, and avoids a second upgrade when Node.js 22 support is dropped.
+Upgrade the Node.js runtime to 22.22.0 or newer, or for the editor on Node.js 24 to 24.11.0 or newer, and update every pinned version alongside it: `.nvmrc`, the `FROM` tags in Dockerfiles, and CI job images. Upgrading to Node.js 24 or 26 instead also resolves it, and avoids a second upgrade when Node.js 22 support is dropped.
 
 `npm install` on an affected version reports `EBADENGINE` for `undici` and `posthog-node`.
 
