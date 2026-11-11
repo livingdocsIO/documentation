@@ -1,15 +1,20 @@
 title: Serve Image
+endpointId: media-library-serve-image
 
 apiVersionConstraints:
-  gte: 2025-03
+  gte: 2026-11
 
 history:
+  - release: release-2026-11
+    description: An image without modifications is returned as stored, with its EXIF orientation kept as a tag instead of applied to the pixels.
   - release: release-2025-03
     description: Initial support.
 
 description: |
   This endpoint delivers an image in its original dimensions, provided the asset remains valid (i.e., not revoked or marked as invalid).
   It is designed to serve as a reliable source for image proxies or resizing services, ensuring only authorized and valid images are accessible.
+
+  With `mediaLibrary.use2025Behavior`, modifications such as colour corrections and redactions are applied to the image, and an image without modifications is returned as stored. Its EXIF orientation is kept as a tag rather than applied to the pixels, so consumers have to apply it, as browsers and image services such as Imgix do.
 
 scopes: public-api:read
 query: |
@@ -37,6 +42,8 @@ openapi:
   description: |
     This endpoint delivers an image in its original dimensions, provided the asset remains valid (i.e., not revoked or marked as invalid).
     It is designed to serve as a reliable source for image proxies or resizing services, ensuring only authorized and valid images are accessible.
+
+    With `mediaLibrary.use2025Behavior`, modifications such as colour corrections and redactions are applied to the image, and an image without modifications is returned as stored. Its EXIF orientation is kept as a tag rather than applied to the pixels, so consumers have to apply it, as browsers and image services such as Imgix do.
   parameters:
     - name: key
       in: path
