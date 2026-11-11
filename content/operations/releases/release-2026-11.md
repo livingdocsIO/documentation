@@ -83,7 +83,15 @@ To learn about the necessary actions to update Livingdocs to `release-2026-11`, 
 
 ### Before the deployment
 
-No pre-deployment steps are required before rolling out this release.
+#### Keep the Image Temporary Directory off tmpfs
+
+`mediaLibrary.images.resizingDirectory` now also holds image uploads: every upload without `use2025Behavior`, and large GIF and WebP uploads with it. It defaults to the system temp directory, which in many containers is a `tmpfs` (RAM-backed) mount, where these files count against the memory limit.
+
+Point `resizingDirectory` at a disk-backed volume. See [Temporary Directory]({{< ref "/customising/server-configuration#temporary-directory" >}}) for sizing.
+
+#### Check npm Access to @livingdocs/image
+
+The server now depends on the private package `@livingdocs/image`, even if `useFastProcessing` is not enabled. If the install fails with `E404` for it, ask your Customer Solutions contact to extend your npm token.
 
 ### Rollout deployment
 
@@ -275,6 +283,40 @@ A stored image keeps its EXIF orientation as a tag instead of having it applied 
 {{< /info >}}
 
 This applies to projects with `mediaLibrary.use2025Behavior` enabled. Without it, images were already served as stored.
+
+### More Robust Image Processing
+
+Large animated GIFs and WebPs could exhaust a server's memory, and bursts of uploads or uncached variants slowed down other requests. Image processing now bounds the memory and threads it uses. This is available automatically.
+
+- **Large animations.** GIF and WebP uploads are no longer limited to 10MB, and are read from disk rather than memory.
+- **Total resolution limit.** The new `processing.maxTotalResolution` rejects animations above 200 megapixels across all frames by default, which keeps one image to roughly 1GB of memory.
+- **Concurrency.** At most `UV_THREADPOOL_SIZE - 1` images are processed at once, 3 by default. On containers with more than 2 CPUs, set `UV_THREADPOOL_SIZE` to one more than the CPU limit.
+- **Timeout.** Processing a single image is limited to 3 minutes.
+- **AVIF** is encoded faster, for a slightly larger file. Without `use2025Behavior`, AVIF uploads are stored that way.
+- **Error messages.** The editor explains why an upload was rejected.
+
+{{< warning >}}
+Some images that were processed before are now rejected:
+
+- Animations above `maxTotalResolution`. With the default, this includes dense animations of roughly 4.5MB to 10MB. Raise the limit to accept them. Animations already in the media library are not affected.
+- Images that take longer than 3 minutes to process.
+{{< /warning >}}
+
+For more information, see the [Image Processing Memory]({{< ref "/customising/server-configuration#image-processing-memory" >}}) and [Temporary Directory]({{< ref "/customising/server-configuration#temporary-directory" >}}) documentation.
+
+### Fast Image Processing
+
+Projects can now process images with `@livingdocs/image` instead of sharp. Large images take a fraction of the memory, and processing limits itself to half of the container's memory. sharp stays the default. Enable it with:
+
+```diff
+mediaLibrary: {
++  useFastProcessing: true
+}
+```
+
+On Linux x64, it needs a CPU with AVX2 support (x86-64-v3).
+
+For more information, see the [Fast Image Processing]({{< ref "/customising/server-configuration#fast-image-processing" >}}) documentation.
 
 ## Vulnerability Patches
 

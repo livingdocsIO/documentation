@@ -1034,6 +1034,9 @@ mediaLibrary: {
 
   generateImageServiceUrlsOnRead: true, // default false
 
+  // {{< a href="#fast-image-processing" title="Fast Image Processing">}}
+  useFastProcessing: true, // default false. {{< added-in "release-2026-11" >}}
+
   // define behavior for images in Livingdocs (upload, upload processing, storage)
   images: {
     publicUrl: 'https://livingdocs-images-dev.s3.amazonaws.com', // base url of the storage
@@ -1050,13 +1053,16 @@ mediaLibrary: {
     },
     // max upload values of Livingdocs API endpoints
     uploadRestrictions: {
-      maxFileSize: '15mb', // webp and gif images are limited to a maximum size of 10MB
+      maxFileSize: '15mb',
     },
+    // {{< a href="#temporary-directory" title="Temporary Directory">}}
+    resizingDirectory: '/var/lib/livingdocs/images', // default os.tmpdir()
     // {{< a href="#image-processing-with-use2025behavior" title="Image Processing (use2025Behavior: true)">}}
     // Used when use2025Behavior is true — upload-time validation only; transformation happens on-demand.
     processing: {
       maxResolution: 24 * 1000 * 1000, // 24MP,  default 24 mega-pixels
       maxFrames: 1800, // default 1800
+      maxTotalResolution: 200 * 1000 * 1000, // default 200 mega-pixels. {{< added-in "release-2026-11" >}}
       maxConcurrentProcesses: 20, // default 20
     }
 
@@ -1066,6 +1072,7 @@ mediaLibrary: {
     //   failOn: 'warning', // 'warning' | 'error' | 'truncated' | 'none'
     //   maxResolution: 24 * 1000 * 1000, // 24MP,  default 24 mega-pixels
     //   maxFrames: 1800, // default 1800
+    //   maxTotalResolution: 200 * 1000 * 1000, // default 200 mega-pixels. {{< added-in "release-2026-11" >}}
     //   maxConcurrentProcesses: 20, // default 20
     //   lossy: {
     //     maxDimension: 6000, // default 6000
@@ -1138,23 +1145,27 @@ mediaLibrary: {
   use2025Behavior: true,
   images: {
     processing: {
-      maxResolution: 24 * 1000 * 1000, // default 24 mega-pixels
-      maxFrames: 1800,                  // default 1800
-      maxConcurrentProcesses: 20,       // default 20
+      maxResolution: 24 * 1000 * 1000,       // default 24 mega-pixels
+      maxFrames: 1800,                       // default 1800
+      maxTotalResolution: 200 * 1000 * 1000, // default 200 mega-pixels
+      maxConcurrentProcesses: 20,            // default 20
     }
   }
 }
 ```
 
 - **`maxResolution`** (number, default `24_000_000`)
-  Maximum total pixel count (width × height). Uploads exceeding this are rejected. Default is 24 megapixels (e.g. 6000 × 4000 px).
+  Maximum pixel count of a single frame (width × height). Uploads exceeding this are rejected. Default is 24 megapixels (e.g. 6000 × 4000 px).
 
 - **`maxFrames`** (number, default `1800`)
   Maximum number of frames allowed for **animated images** (GIF and animated WebP). Uploads exceeding this limit are rejected.
   The default of 1800 frames corresponds to approximately 90 seconds at 20 fps, or 60 seconds at 30 fps.
 
+- **`maxTotalResolution`** (number, default `200_000_000`) {{< added-in "release-2026-11" >}}
+  Maximum pixel count across all frames of an animated image (width × height × frames). Uploads exceeding this are rejected. A still image counts as one frame. See [Image Processing Memory](#image-processing-memory) before raising it.
+
 - **`maxConcurrentProcesses`** (number, default `20`)
-  Maximum number of images validated in parallel. Lower this if uploads cause memory pressure on the server.
+  Maximum number of uploads validated and written to storage in parallel. Uploads are not decoded with `use2025Behavior`, so this bounds disk and storage writes rather than memory.
 
 #### Image Processing (legacy, `use2025Behavior: false`)
 
@@ -1164,16 +1175,17 @@ When `mediaLibrary.use2025Behavior` is `false` (the default), the `processing` b
 mediaLibrary: {
   images: {
     processing: {
-      failOn: 'warning',               // 'warning' | 'error' | 'truncated' | 'none'
-      maxResolution: 24 * 1000 * 1000, // default 24 mega-pixels
-      maxFrames: 1800,                 // default 1800
-      maxConcurrentProcesses: 20,      // default 20
+      failOn: 'warning',                     // 'warning' | 'error' | 'truncated' | 'none'
+      maxResolution: 24 * 1000 * 1000,       // default 24 mega-pixels
+      maxFrames: 1800,                       // default 1800
+      maxTotalResolution: 200 * 1000 * 1000, // default 200 mega-pixels
+      maxConcurrentProcesses: 20,            // default 20
       lossy: {
-        maxDimension: 6000,            // default 6000
-        quality: 80                    // default 80
+        maxDimension: 6000,                  // default 6000
+        quality: 80                          // default 80
       },
       lossless: {
-        maxDimension: 6000,            // default 6000
+        maxDimension: 6000,                  // default 6000
       },
       // optional - convert images to another format at upload time
       convert: [
@@ -1192,14 +1204,17 @@ mediaLibrary: {
   Controls how strict the processing is about corrupt or non-conformant images when reading metadata. `'warning'` rejects images with any issue; `'none'` is the most permissive.
 
 - **`maxResolution`** (number, default `24_000_000`)
-  Maximum total pixel count (width × height). Uploads exceeding this are rejected. Default is 24 megapixels (e.g. 6000 × 4000 px).
+  Maximum pixel count of a single frame (width × height). Uploads exceeding this are rejected. Default is 24 megapixels (e.g. 6000 × 4000 px).
 
 - **`maxFrames`** (number, default `1800`)
   Maximum number of frames allowed for **animated images** (GIF and animated WebP). Uploads exceeding this limit are rejected.
   The default of 1800 frames corresponds to approximately 90 seconds at 20 fps, or 60 seconds at 30 fps.
 
+- **`maxTotalResolution`** (number, default `200_000_000`) {{< added-in "release-2026-11" >}}
+  Maximum pixel count across all frames of an animated image (width × height × frames). Uploads exceeding this are rejected. A still image counts as one frame. See [Image Processing Memory](#image-processing-memory) before raising it.
+
 - **`maxConcurrentProcesses`** (number, default `20`)
-  Maximum number of images processed in parallel. Lower this if uploads cause memory pressure on the server.
+  Maximum number of uploads processed in parallel, from reading the upload to writing the result to storage. The transformation within an upload also waits for a free image pipeline, see [Image Processing Memory](#image-processing-memory).
 
 - **`lossy`** / **`lossless`**
   Output quality and dimension settings applied when images are transformed at upload time:
@@ -1218,6 +1233,74 @@ mediaLibrary: {
   - `lossless` (boolean) — fully lossless WebP compression.
 
   Using `quality`, `nearLossless`, or `lossless` with any `targetFormat` other than `'webp'` throws a configuration error at startup.
+
+  AVIF is encoded at a low effort setting, which takes a fraction of the time of the default for a slightly larger file. {{< added-in "release-2026-11" >}}
+
+#### Image Processing Memory
+
+This section describes the default processing with sharp. [Fast Image Processing](#fast-image-processing) limits its memory on its own.
+
+Image processing runs on the Node.js thread pool, which the server also uses for file and DNS operations. At most `UV_THREADPOOL_SIZE - 1` images are processed at once, so one thread always stays free for those operations. With the default thread pool of 4, that is 3 images. Further images wait for a free pipeline. Each image uses a single libvips thread. {{< added-in "release-2026-11" >}}
+
+Which work this covers depends on `use2025Behavior`: with it, generating image variants for the editor and the [`serve-image`](/reference/public-api/media-library/#serve-image) endpoint, and without it, transforming uploads. Uploads with `use2025Behavior` are validated from their metadata and are never decoded.
+
+A still image is streamed, so its memory follows the size of the variant being produced rather than the original. An animated GIF or WebP may be held in memory with every frame decoded, which takes up to roughly 1GB for an image at the default `maxTotalResolution` of 200 megapixels. Plan for each pipeline holding such an image:
+
+- With the default thread pool, 3 such images at once need about 3GB on top of the server's usual memory.
+- Raising `maxTotalResolution` or `UV_THREADPOOL_SIZE` raises this in proportion.
+
+{{< warning >}}
+This memory is allocated outside the JavaScript heap. It does not appear in heap metrics and is not limited by `--max-old-space-size`. A container that exceeds its memory limit is killed without an error, and every request in flight is lost.
+{{< /warning >}}
+
+Set `UV_THREADPOOL_SIZE` as an environment variable of the container, for example in the deployment manifest, rather than from within the application. One more than the container's CPU limit processes one image per CPU. Larger values process more images at once, but each takes the memory above.
+
+Processing a single image is limited to 3 minutes, a safeguard that images within the default limits do not reach. An upload that reaches it is rejected, and a variant request fails with status `503`. {{< added-in "release-2026-11" >}}
+
+Requests for a variant that is already being generated wait for the same result instead of generating it again.
+
+#### Temporary Directory
+
+Image processing writes short-lived files to `resizingDirectory`, which defaults to the system temp directory (`os.tmpdir()`, usually `/tmp`).
+
+```js
+mediaLibrary: {
+  images: {
+    resizingDirectory: '/var/lib/livingdocs/images' // default os.tmpdir()
+  }
+}
+```
+
+The directory holds:
+
+- **Image variants** (with `use2025Behavior`): the original is downloaded here, processed, and the result written here before it is uploaded to the variants storage. Redacting an image also writes an uncompressed copy of it here.
+- **Uploads** (with `use2025Behavior`): GIF and WebP uploads larger than 1MB, and other images whose metadata is not within their first 1MB, are written here to read their metadata from disk. {{< added-in "release-2026-11" >}}
+- **Uploads** (without `use2025Behavior`): every upload is written here, and so is its transformed result before it is uploaded to storage. {{< added-in "release-2026-11" >}}
+
+{{< warning >}}
+Point `resizingDirectory` at a disk-backed volume. In many containers `/tmp` is a `tmpfs` (RAM-backed) mount, where these files count against the container's memory limit.
+{{< /warning >}}
+
+Size the volume for the uploads in flight: `processing.maxConcurrentProcesses` uploads of `uploadRestrictions.maxFileSize` each, which is 20 × 15MB = 300MB with the defaults, or 2GB with a `maxFileSize` of `100mb`. Without `use2025Behavior`, allow twice that for the transformed results. Variants add up to two originals per image pipeline on top, with their results and the uncompressed copies of redacted images.
+
+Files are removed as soon as the operation that created them ends. Only a process that is killed, for example when it runs out of memory, leaves files behind, and they are not removed on the next start. Use a directory that holds nothing else, and either an ephemeral volume that is discarded with the container or a periodic cleanup of old files.
+
+#### Fast Image Processing
+
+{{< added-in "release-2026-11" block >}}
+
+`mediaLibrary.useFastProcessing` processes uploads and image variants with `@livingdocs/image` instead of sharp. It processes images row by row on native threads of its own, which takes a fraction of the memory sharp needs for large images, and it is not bound by the Node.js thread pool. sharp stays the default.
+
+```js
+mediaLibrary: {
+  useFastProcessing: true // default false
+}
+```
+
+- It admits images by their estimated peak memory, up to half of the container's memory limit, rather than by a fixed count. `UV_THREADPOOL_SIZE` does not limit it, and up to one image variant per CPU is processed at once.
+- All `processing` options and limits apply as with sharp.
+- Every upload larger than 1MB, and the original of every variant, is written to `resizingDirectory` while it is processed, see [Temporary Directory](#temporary-directory). Results are streamed directly to storage.
+- On Linux x64 it needs a CPU with AVX2 support (x86-64-v3).
 
 #### Filename Strategy
 
