@@ -8,7 +8,7 @@
     "clipboard": "^2.0.11",
     "domhandler": "^6.0.1",
     "domutils": "^4.0.2",
-    "glob": "^13.0.6",
+    "glob": "^14.0.0",
     "htmlparser2": "^12.0.0",
     "lunr": "^2.3.9",
     "serve": "^14.2.6"
