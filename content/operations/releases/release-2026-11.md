@@ -282,7 +282,9 @@ An image without modifications is now delivered exactly as it was uploaded, inst
 A stored image keeps its EXIF orientation as a tag instead of having it applied to the pixels. Imgix and modern browsers apply the tag. A consumer that ignores it, or that sizes the image from the entry's width and height, shows rotated camera and phone photos sideways. Check your consumers before switching to `2026-11`.
 {{< /info >}}
 
-This applies to projects with `mediaLibrary.use2025Behavior` enabled. Without it, images were already served as stored.
+This applies to projects with `mediaLibrary.use2025Behavior` enabled, which store images as uploaded. Without it, images are transformed when they are uploaded, and the transformed file is served as before.
+
+For more information, see the [Public API changelog]({{< ref "/reference/public-api/changelog" >}}).
 
 ### More Robust Image Processing
 
