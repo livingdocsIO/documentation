@@ -287,8 +287,8 @@ For more information, see the [Public API changelog]({{< ref "/reference/public-
 Large animated GIFs and WebPs could exhaust a server's memory, and bursts of uploads or uncached variants slowed down other requests. Image processing now bounds the memory and threads it uses. This is available automatically.
 
 - **Large animations.** GIF and WebP uploads are no longer limited to 10MB, and are read from disk rather than memory.
-- **Total resolution limit.** The new `processing.maxTotalResolution` rejects animations above 200 megapixels across all frames by default, which keeps one image to roughly 1GB of memory.
-- **Concurrency.** At most `UV_THREADPOOL_SIZE - 1` images are processed at once, 3 by default. On containers with more than 2 CPUs, set `UV_THREADPOOL_SIZE` to one more than the CPU limit.
+- **Total resolution limit.** The new `processing.maxTotalResolution` rejects animations above 200 megapixels across all frames by default, which keeps one animation to roughly 1GB of memory.
+- **Concurrency.** At most `UV_THREADPOOL_SIZE - 1` images are processed at once, 3 by default. On containers with more than 2 CPUs and enough memory, set `UV_THREADPOOL_SIZE` to one more than the CPU limit.
 - **Timeout.** Processing a single image is limited to 3 minutes.
 - **AVIF** is encoded faster, for a slightly larger file. Without `use2025Behavior`, AVIF uploads are stored that way.
 - **Error messages.** The editor explains why an upload was rejected.
