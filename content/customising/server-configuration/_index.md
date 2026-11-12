@@ -1260,12 +1260,12 @@ The table below lists limits that fit the memory left for image processing, whic
 
 | Memory for images | `UV_THREADPOOL_SIZE` | Safe `maxResolution` / `maxTotalResolution` | One large image at a time |
 | ----------------- | -------------------- | ------------------------------------------- | ------------------------- |
-| 0.5GB             | 2 (1 pipeline)       | 30MP / 100MP                                | 30MP / 100MP              |
-| 0.5GB             | 4 (3 pipelines)      | 10MP / 30MP                                 | 20MP / 60MP               |
 | 1GB               | 2 (1 pipeline)       | 65MP / 200MP                                | 65MP / 200MP              |
 | 1GB               | 4 (3 pipelines)      | 20MP / 65MP                                 | 50MP / 150MP              |
 | 2GB               | 2 (1 pipeline)       | 130MP / 400MP                               | 130MP / 400MP             |
 | 2GB               | 4 (3 pipelines)      | 40MP / 130MP                                | 120MP / 350MP             |
+| 4GB               | 2 (1 pipeline)       | 260MP / 800MP                               | 260MP / 800MP             |
+| 4GB               | 4 (3 pipelines)      | 85MP / 260MP                                | 250MP / 750MP             |
 
 The `maxResolution` values allow for AVIF uploads. For JPEG, PNG and WebP alone, about twice as much fits.
 
