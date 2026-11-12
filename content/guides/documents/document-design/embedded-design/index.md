@@ -127,12 +127,12 @@ The first version of your embedded design must be a non-breaking copy of the lat
 1. Find the projects whose documents still use a referenced design:
 
    ```sh
-   livingdocs-server release-2025-03-check-document-design-versions
+   livingdocs-server release-2026-11-check-referenced-designs
    ```
 
-   The task lists every project whose documents use more than one design. Design names that start with `p:` are embedded designs, any other name is a referenced design. A project that is only listed with several versions of its embedded design needs no action.
+   The task lists the documents that still use a referenced design, per project and design, and the command to move them. It also lists the projects that still use a referenced design and the server configs to remove before the upgrade.
 
-2. Move the documents of each listed project to the latest version of the project's embedded design:
+2. Once the project uses its embedded design, move the documents of each listed project to the latest version of that design:
 
    ```sh
    livingdocs-server change-design-name-and-version-to-latest-project-design --project <project-handle>
