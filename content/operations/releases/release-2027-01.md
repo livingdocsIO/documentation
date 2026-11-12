@@ -36,7 +36,9 @@ systemRequirements:
       version: TBD
 
   minimal:
-    - name: Node
+    - name: Node (Server)
+      version: TBD
+    - name: Node (Editor)
       version: TBD
     - name: NPM
       version: TBD
