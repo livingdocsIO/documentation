@@ -36,8 +36,10 @@ systemRequirements:
       version: Chrome >= 156, Edge >= 156, Firefox >= 159, Safari >= 27.2
 
   minimal:
-    - name: Node
-      version: 22.22.0
+    - name: Node (Server)
+      version: '>=22.22.0 <23 || >=24.0.0 <25 || >=26.0.0'
+    - name: Node (Editor)
+      version: '>=22.18.0 <23 || >=24.11.0 <25 || >=26.0.0'
     - name: NPM
       version: 10
     - name: Postgres
