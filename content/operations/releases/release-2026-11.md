@@ -171,7 +171,7 @@ documentCopyFlows: [
 documentCopyFlows: [{useDocumentCopyFlow: 'regularToPrint'}]
 ```
 
-Content types without copy flows can still be copied. Clicking Copy duplicates the document with the built-in `liDefaultCopyFunction` and opens the copy without a dialog. The copy keeps the title and content and drops the metadata properties whose plugin is marked with `removeDuringDefaultCopy`, such as `li-routing` or `li-publish-date`. This differs from the legacy simple copy in two ways:
+Content types without copy flows now use the [default copy]({{< ref "/guides/editor/document-copy-flows#default-copy" >}}), which differs from the legacy simple copy in two ways:
 
 - Properties of type `li-datetime` and properties whose handle contains `publish` or `date` are now copied. The legacy simple copy dropped them.
 - Editors can no longer choose a target content type or enter a title before copying.
@@ -180,7 +180,7 @@ Content types without copy flows can still be copied. Clicking Copy duplicates t
 
 Any of:
 
-- In the project config, a `copy` array with `source` and `targets` entries in `settings`. Search for `\bcopy\b` and confirm each hit sits under `settings`. A server with this config fails to start with `LIBREAKING077`.
+- In the project config, a `copy` array in `settings` whose entries have `source` and `targets`. Search for `\btargets\b` and confirm each hit sits in `settings.copy`. A stored config keeps loading, but every update of it fails with `LIBREAKING077` until `settings.copy` is removed.
 - In server code, the feature API `li-document-copy`. Search for `li-document-copy`.
 
 #### Fix

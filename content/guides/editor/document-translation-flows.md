@@ -22,7 +22,7 @@ The function can return the following values: `title`, `metadata`, `metadataSour
 
 Content types with a `displayTitlePattern` build the title that users see from metadata, for example from `metadata.title`. For those content types, return the translated title in `metadata`. The returned `title` is only displayed for content types without a `displayTitlePattern`.
 
-When a user edits content that the editor extracts into metadata, for example the headline into the title, the editor updates that metadata property again. If your function returns a metadata value that intentionally differs from the content, return `metadataSource: {title: 'manual'}` for it so the editor keeps it.
+When a user edits content that the editor extracts into metadata, for example the headline into the title, the editor updates that metadata property again. If your function returns a metadata value that intentionally differs from the content, mark it as `manual` in `metadataSource` so the editor keeps it. A returned `metadataSource` replaces the one of the source document, so extend it rather than returning only your change: `metadataSource: {...document.metadataSource, title: 'manual'}`.
 
 The language metadata property of the translation is always set by the server. It keeps the `groupId` of the source document and receives the target locale, regardless of what the function returns for that property.
 
@@ -99,10 +99,8 @@ A content type can reference one translation flow. The referenced flow must exis
 
 ## Behavior
 
-- A translation keeps the title of the source document unless the translate function returns a translated title. For content types with a `displayTitlePattern`, the title comes from the metadata returned by the function.
-- When the translate function returns no `metadata`, metadata properties whose plugin is marked with `removeDuringDefaultCopy` are removed, in the same way as [Document Copy Flows]({{< ref "/guides/editor/document-copy-flows" >}}). This applies to the built-in default function.
 - A translation is linked to its source through `systemdata.translationSource`. `documentId` is the source document and `documentTranslationFlow` is the handle of the translate function that ran, which is `liDefaultTranslateFunction` without a translation flow. Both can be used as filters in the document search, and `translationSource.documentId` also in the publication search.
 - The info panel of a translation shows the source under "Translation of", and the info panel of the source lists its translations in the copies section.
 - The server rejects a translation with a `409` status when the target locale is the locale of the source document or already exists in the language group.
 - The user needs the create permission for the content type. It is checked before the translate function runs.
-- Creating a translation emits a `document.create` event and no `document.copy` event.
+- Creating a translation emits a `document.create` event.
