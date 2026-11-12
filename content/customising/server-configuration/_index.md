@@ -1238,22 +1238,42 @@ mediaLibrary: {
 
 #### Image Processing Memory
 
-This section describes the default processing with sharp. [Fast Image Processing](#fast-image-processing) limits its memory on its own.
+This section describes the default processing with sharp. [Fast Image Processing](#fast-image-processing) limits its memory on its own: it uses at most half of the container's memory limit, and an image needs a few MB to about 60MB whatever its size, so the limits below do not change its memory use.
 
 Image processing runs on the Node.js thread pool, which the server also uses for file and DNS operations. At most `UV_THREADPOOL_SIZE - 1` images are processed at once, so one thread always stays free for those operations. With the default thread pool of 4, that is 3 images. Further images wait for a free pipeline. Each image uses a single libvips thread. {{< added-in "release-2026-11" >}}
 
 Which work this covers depends on `use2025Behavior`: with it, generating image variants for the editor and the [`serve-image`](/reference/public-api/media-library/#serve-image) endpoint, and without it, transforming uploads. Uploads with `use2025Behavior` are validated from their metadata and are never decoded.
 
-A still image is streamed, so its memory follows the size of the variant being produced rather than the original. An animated GIF or WebP may be held in memory with every frame decoded, which takes up to roughly 1GB for an image at the default `maxTotalResolution` of 200 megapixels. Plan for each pipeline holding such an image:
+How much memory an image needs depends on its format and the edit. These are approximate peaks with sharp:
 
-- With the default thread pool, 3 such images at once need about 3GB on top of the server's usual memory.
-- Raising `maxTotalResolution` or `UV_THREADPOOL_SIZE` raises this in proportion.
+| Image                                                                       | Peak memory                                |
+| --------------------------------------------------------------------------- | ------------------------------------------ |
+| Baseline JPEG: resize, crop, colour change or redaction                     | Under 50MB, at any size                    |
+| Progressive JPEG, interlaced PNG, or a photo turned by its EXIF orientation | About 4 bytes per pixel                    |
+| Rotation by an angle other than 90°                                         | About 8 bytes per pixel                    |
+| AVIF                                                                        | About 15 bytes per pixel                   |
+| Animated GIF or WebP                                                        | About 5 bytes per pixel, across all frames |
+
+`maxResolution` limits the pixels of a still image, and `maxTotalResolution` those of an animation, so together they set the largest peak: about 360MB for a 24MP AVIF, and about 1GB for an animation at the default 200MP. With the defaults, 3 pipelines can need about 3GB.
+
+The table below lists limits that fit the memory left for image processing, which is the container's memory limit minus the server's usual memory. "Safe" assumes that every pipeline processes the largest possible image at once. "One large image at a time" assumes that only one pipeline does, while the others process typical images of under 100MB.
+
+| Memory for images | `UV_THREADPOOL_SIZE` | Safe `maxResolution` / `maxTotalResolution` | One large image at a time |
+| ----------------- | -------------------- | ------------------------------------------- | ------------------------- |
+| 0.5GB             | 2 (1 pipeline)       | 30MP / 100MP                                | 30MP / 100MP              |
+| 0.5GB             | 4 (3 pipelines)      | 10MP / 30MP                                 | 20MP / 60MP               |
+| 1GB               | 2 (1 pipeline)       | 65MP / 200MP                                | 65MP / 200MP              |
+| 1GB               | 4 (3 pipelines)      | 20MP / 65MP                                 | 50MP / 150MP              |
+| 2GB               | 2 (1 pipeline)       | 130MP / 400MP                               | 130MP / 400MP             |
+| 2GB               | 4 (3 pipelines)      | 40MP / 130MP                                | 120MP / 350MP             |
+
+The `maxResolution` values allow for AVIF uploads. For JPEG, PNG and WebP alone, about twice as much fits.
 
 {{< warning >}}
 This memory is allocated outside the JavaScript heap. It does not appear in heap metrics and is not limited by `--max-old-space-size`. A container that exceeds its memory limit is killed without an error, and every request in flight is lost.
 {{< /warning >}}
 
-Set `UV_THREADPOOL_SIZE` as an environment variable of the container, for example in the deployment manifest, rather than from within the application. One more than the container's CPU limit processes one image per CPU. Larger values process more images at once, but each takes the memory above.
+Set `UV_THREADPOOL_SIZE` as an environment variable of the container, for example in the deployment manifest, rather than from within the application. One more than the container's CPU limit processes one image per CPU, if the memory allows it. A lower value lowers the largest memory use, and variant requests wait for each other instead.
 
 Processing a single image is limited to 3 minutes, a safeguard that images within the default limits do not reach. An upload that reaches it is rejected, and a variant request fails with status `503`. {{< added-in "release-2026-11" >}}
 
