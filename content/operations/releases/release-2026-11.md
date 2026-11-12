@@ -89,6 +89,10 @@ To learn about the necessary actions to update Livingdocs to `release-2026-11`, 
 
 Point `resizingDirectory` at a disk-backed volume. See [Temporary Directory]({{< ref "/customising/server-configuration#temporary-directory" >}}) for sizing.
 
+#### Move Projects and Documents to Embedded Designs
+
+Move every project that still uses a referenced design, and its documents, to an embedded design, as described in [Removal of Referenced Designs](#removal-of-referenced-designs). The database migration stops while a project still uses a referenced design, but it does not check documents. After the upgrade, a document whose current draft or publication still uses a referenced design can no longer be opened, edited, saved or published.
+
 ### Rollout deployment
 
 #### Migrate the Postgres Database

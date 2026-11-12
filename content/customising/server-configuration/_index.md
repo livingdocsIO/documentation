@@ -33,6 +33,7 @@ menus:
   "registration": "{{< a href="#registration" title="<self-service registration config>">}}",
 
   "designLoader": "{{< a href="#design-loader" title="<design loader config>">}}",
+  // {{< removed-in "release-2026-11" >}}
   "designs": "{{< a href="#designs" title="<designs config>">}}",
 
   "documents": "{{< a href="#documents" title="<document feature config>">}}",
