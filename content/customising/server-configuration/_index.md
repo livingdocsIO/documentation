@@ -1301,6 +1301,7 @@ mediaLibrary: {
 - All `processing` options and limits apply as with sharp.
 - Every upload larger than 1MB, and the original of every variant, is written to `resizingDirectory` while it is processed, see [Temporary Directory](#temporary-directory). Results are streamed directly to storage.
 - On Linux x64 it needs a CPU with AVX2 support (x86-64-v3).
+- Your npm token needs access to the private package `@livingdocs/image`. Without it, npm skips the package and the server does not start with `useFastProcessing` enabled. Ask your Customer Solutions contact to extend your npm token.
 
 #### Filename Strategy
 

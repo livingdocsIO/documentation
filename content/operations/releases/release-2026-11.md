@@ -89,10 +89,6 @@ To learn about the necessary actions to update Livingdocs to `release-2026-11`, 
 
 Point `resizingDirectory` at a disk-backed volume. See [Temporary Directory]({{< ref "/customising/server-configuration#temporary-directory" >}}) for sizing.
 
-#### Check npm Access to @livingdocs/image
-
-The server now depends on the private package `@livingdocs/image`, even if `useFastProcessing` is not enabled. If the install fails with `E404` for it, ask your Customer Solutions contact to extend your npm token.
-
 ### Rollout deployment
 
 #### Migrate the Postgres Database
@@ -316,7 +312,7 @@ mediaLibrary: {
 }
 ```
 
-On Linux x64, it needs a CPU with AVX2 support (x86-64-v3).
+On Linux x64, it needs a CPU with AVX2 support (x86-64-v3). Your npm token also needs access to the private package `@livingdocs/image`.
 
 For more information, see the [Fast Image Processing]({{< ref "/customising/server-configuration#fast-image-processing" >}}) documentation.
 
