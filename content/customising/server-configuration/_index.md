@@ -525,7 +525,7 @@ registration: {
 
 ### Design Loader
 
-The design loader resolves the design of a document: the [embedded design]({{< ref "/guides/documents/document-design/embedded-design" >}}) of a project, in every version stored in the project config history, and the built-in news agency report design.
+The design loader resolves the design of a document: the [embedded design]({{< ref "/guides/documents/document-design/embedded-design" >}}) of a project, in every version stored in the project config history.
 
 ```js
 designLoader: {
