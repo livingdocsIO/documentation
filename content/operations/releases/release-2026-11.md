@@ -304,7 +304,9 @@ For more information, see the [Image Processing Memory]({{< ref "/customising/se
 
 ### Fast Image Processing
 
-Projects can now process images with `@livingdocs/image` instead of sharp. Large images take a fraction of the memory, and processing limits itself to half of the container's memory. sharp stays the default. Enable it with:
+Images can now be processed with `@livingdocs/image` instead of sharp. Large images take a fraction of the memory, and processing limits itself to half of the container's memory. sharp stays the default.
+
+This feature is experimental and only available by agreement with Livingdocs. Once it is available to your project, enable it with:
 
 ```diff
 mediaLibrary: {

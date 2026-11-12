@@ -1309,6 +1309,10 @@ Files are removed as soon as the operation that created them ends. Only a proces
 
 {{< added-in "release-2026-11" block >}}
 
+{{< warning >}}
+Fast image processing is experimental and only available by agreement with Livingdocs. Its behaviour and configuration may still change. For any other customer, the server does not start with `useFastProcessing` enabled.
+{{< /warning >}}
+
 `mediaLibrary.useFastProcessing` processes uploads and image variants with `@livingdocs/image` instead of sharp. It processes images row by row on native threads of its own, which takes a fraction of the memory sharp needs for large images, and it is not bound by the Node.js thread pool. sharp stays the default.
 
 ```js
