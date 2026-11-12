@@ -16,6 +16,7 @@ support:
   displayFilter: false
   searchIndexing: false
   systemMetadata: true
+  planningSystem: true
   webhookConditions: false
 description: Stores the dates when a document needs to be ready for distribution, for example on the website, in a newsletter or in print. A document can have several distribution dates. The dates are used by the Planning Board and the Planning Calendar.
 defaultUI: Metadata form and Table Dashboard Cell

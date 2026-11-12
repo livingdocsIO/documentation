@@ -18,7 +18,9 @@ For example, a department can use the calendar to plan its articles for the week
 
 {{< img src="./planning-calendar.png" alt="Planning Calendar with planned and unplanned documents over seven days" caption="A week on the Planning Calendar. Planned documents have a check mark, unplanned documents a question mark." >}}
 
-Each day shows its documents as cards. A card is either planned or unplanned (see [Planning Rules](#planning-rules)). Planned cards have a check mark in the top right corner. Unplanned cards have a question mark.
+Each day shows its documents as cards. The cards of a day are sorted by time. Cards without a time come last. You cannot change the order within a day.
+
+A card is either planned or unplanned (see [Planning Rules](#planning-rules)). Planned cards have a check mark in the top right corner. Unplanned cards have a question mark.
 
 - Plan: Hover over an unplanned card and click the check mark button. Or drag the card to another day to plan it there.
 - Move: Drag a planned card to another day. The time stays the same.
@@ -44,7 +46,7 @@ A distribution date says when a document is planned. A document can have several
 
 ### Planned and Unplanned Cards
 
-A document gets a planned card on every day it has a distribution date. It gets an unplanned card on its best date, unless it has a distribution date on or after the best date.
+A document gets a planned card for each distribution date. Two distribution dates on the same day give two planned cards on that day. It gets an unplanned card on its best date, unless it has a distribution date on or after the best date.
 
 For a document with a best date on Wednesday:
 
@@ -56,7 +58,14 @@ For a document with a best date on Wednesday:
 
 ### Dates Without a Time
 
-A date without a time counts for its whole day, so a distribution date on the same day as the best date always plans the document. When you plan a card that has no time, its distribution date is set to 12:00.
+Two kinds of dates can have no time:
+
+- An estimated time of completion with the precision `date`. It counts from the start of its day.
+- Distribution dates, if the metadata property has the [precision]({{< ref "/reference/document/metadata/plugins/li-distribution-dates#precision" >}}) `date`. They count until the end of their day.
+
+So if one of the two dates has no time, a distribution date on the same day as the best date plans the document. For example, a document is published on Friday at 15:00. A distribution date without a time on Friday plans it.
+
+When you plan a card and the distribution dates have no time, the distribution date is set to 12:00.
 
 ## Configuration
 
@@ -72,7 +81,7 @@ Livingdocs decides whether a document is unplanned when it indexes the document.
 
 ### 1. Add Distribution Dates to Your Content Types
 
-Add a metadata property of type [`li-distribution-dates`]({{< ref "/reference/document/metadata/plugins/li-distribution-dates" >}}) to every content type you want to plan:
+Add a metadata property of type [`li-distribution-dates`]({{< ref "/reference/document/metadata/plugins/li-distribution-dates" >}}) to every content type you want to plan. The calendar only shows documents of content types with this property, even if the `baseFilters` match other content types.
 
 ```js
 // content type config
@@ -112,7 +121,7 @@ These properties are available:
 - `documentCreationFlows`: Adds buttons to create new documents. See [Document Creation Flows]({{< ref "/reference/project-config/editor-settings#document-creation-flows" >}}).
 - `search.strategy`: How the search field works. `'legacy'` (default) or `'simple'`. The simple strategy supports search operators like `+word`, `|`, `"exact phrase"`, `-word` and `word*`.
 
-The calendar sorts its cards by date and time on its own, so it does not support `sort`. It also does not support `pageSize`. It always loads up to 200 documents.
+Other properties are not allowed. A config with `sort` or `pageSize` fails validation. The calendar sorts its cards by date and time on its own, and it always loads up to 200 documents.
 
 ### 3. Add the Planning Calendar to the Main Navigation
 
