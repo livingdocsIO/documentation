@@ -304,7 +304,7 @@ For more information, see the [Image Processing Memory]({{< ref "/customising/se
 
 ### Fast Image Processing
 
-Images can now be processed with `@livingdocs/image` instead of sharp. Large images take a fraction of the memory, and processing limits itself to half of the container's memory. sharp stays the default.
+Images can now be processed with `@livingdocs/image` instead of sharp. sharp holds a whole image in memory, which limits how many large images a server can process at once. `@livingdocs/image` processes images in strips: in our benchmarks it was 3× faster and needed 8× less memory (medians over 76 edits). The gains grow with image size, so they matter most for projects with a high `processing.maxResolution`: rotating an extreme 228 MP photo took 0.15 s and 6 MB instead of 2 s and 1.6 GB. Processing limits itself to half of the container's memory. sharp stays the default.
 
 This feature is experimental and only available by agreement with Livingdocs. Once it is available to your project, enable it with:
 
