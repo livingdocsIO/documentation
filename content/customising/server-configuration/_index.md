@@ -1322,6 +1322,7 @@ mediaLibrary: {
 ```
 
 - It admits images by their estimated peak memory, up to half of the container's memory limit, rather than by a fixed count. `UV_THREADPOOL_SIZE` does not limit it, and up to one image variant per CPU is processed at once.
+- It is faster for every format and edit. Memory savings are largest for large, progressive or rotated images and for animations, and memory barely grows with image size, so a high `processing.maxResolution` costs far less memory than with sharp. A typical JPEG resize needs a few MB with either library.
 - All `processing` options and limits apply as with sharp.
 - Every upload larger than 1MB, and the original of every variant, is written to `resizingDirectory` while it is processed, see [Temporary Directory](#temporary-directory). Results are streamed directly to storage.
 - On Linux x64 it needs a CPU with AVX2 support (x86-64-v3).
