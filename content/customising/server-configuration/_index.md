@@ -511,9 +511,9 @@ and copy it's content into your target file which you then can adapt to your nee
 
 ### Registration
 
-Self-service registration lets a person sign up in the editor (`POST /register/editor`). Every registration creates a new user together with a new project. `registration.projectConfig` is the starter [project config]({{< ref "/reference/project-config" >}}) of that project, including its embedded design (`designSettings` and `components`) and at least one content type. The server validates it on startup and does not start when it is invalid or one of them is missing.
+Self-service registration lets a person sign up in the editor (`POST /register/editor`), which creates a new user together with a new project. It is turned off unless `registration.projectConfig` is set to the starter [project config]({{< ref "/reference/project-config" >}}) of that project, including its embedded design (`designSettings` and `components`) and at least one content type. The server validates it on startup and does not start when it is invalid or one of them is missing.
 
-Without `registration.projectConfig`, the server refuses self-service registrations and creates neither a user nor a project. The signup link in the editor appears when a login connection sets `registrationEnabled: true`, see [`auth.connections.local`](#authconnectionslocal).
+`registrationEnabled: true` on a login connection, see [`auth.connections.local`](#authconnectionslocal), only shows the signup option in the editor.
 
 ```js
 registration: {
