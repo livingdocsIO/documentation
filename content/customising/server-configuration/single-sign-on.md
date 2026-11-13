@@ -9,11 +9,11 @@ menus:
 
 ## Summary
 
-The Single sign-on feature, also known as SSO, allows users to log in with an external identity provider.
+The Single sign-on feature, also known as SSO, allows users to log in with an external identity provider. A user who logs in for the first time is created automatically, unless the connection sets `autoRegistrationEnabled: false`.
 
 ## Configuration
 
-In the following example we set different providers: Azure, Github, Google and Facebook.
+In the following example we set two providers: Azure and Google.
 
 ```js
   auth: {
@@ -61,62 +61,12 @@ In the following example we set different providers: Azure, Github, Google and F
           label: 'Google',
           icon: 'google'
         }
-      },
-      github: {
-        strategy: 'li-authentication-sso',
-        enabled: true,
-        loginEnabled: true,
-        connectionId: 'github',
-        config: {
-          scope: 'user:email',
-          clientID: 'your-github-client-id',
-          clientSecret: 'your-github-client-secret'
-        },
-        ui: {
-          label: 'Github',
-          icon: 'github-circle'
-        }
-      },
-      google: {
-        strategy: 'li-authentication-sso',
-        enabled: true,
-        loginEnabled: true,
-        connectionId: 'google',
-        config: {
-          scope: 'email',
-          clientID: 'your-google-client-id',
-          clientSecret: 'your-google-client-secret',
-          callbackURL: 'http://example.com/auth/google/callback'
-        },
-        ui: {
-          label: 'Google',
-          icon: 'google'
-        }
-      },
-      facebook: {
-        strategy: 'li-authentication-sso',
-        enabled: true,
-        loginEnabled: true,
-        connectionId: 'facebook',
-        config: {
-          scope: 'email',
-          profileFields: ['email', 'displayName'],
-          clientID: 'your-facebook-client-id',
-          clientSecret: 'your-facebook-client-secret',
-          callbackURL: 'http://example.com/auth/facebook/callback'
-        },
-        ui: {
-          label: 'Facebook',
-          icon: 'facebook'
-        }
       }
     }
   },
 ```
 
-- `strategy`
-  - You should be building upon `li-authentication-openid-connect` which builds upon the `openid-connect` (OIDC) standard. OIDC extends OAuth 2.0
-  - `li-authentication-sso` builds on OAuth 2.0
+- `strategy` is `li-authentication-openid-connect`, which builds upon the OpenID Connect (OIDC) standard. OIDC extends OAuth 2.0
 - `connectionId` is the provider handle
-- `config` can contain up to two "fixed" fields: `scope` and `callbackURL`, this is provider specific. The two other fields are `clientID` and `clientSecret` you can get those by creating an Oauth2 application at one of those external providers. For example to get those credentials from Github you have to go to `Settings>Developer settings` and then click on `New Oauth App`.
+- `config` contains the `clientId` and `clientSecret` of the application registered at the provider, and the project that new users are added to (`defaultProjectHandle` or `defaultProjectId`)
 - `ui` is only used by the editor to "draw" the actual login buttons.
