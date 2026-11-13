@@ -26,14 +26,12 @@ module.exports = {
         label: 'Password',
         enabled: true,
         loginEnabled: true,
-        registrationEnabled: false,
         strategy: 'li-authentication-local'
       },
       azure: {
         strategy: 'li-authentication-openid-connect',
         enabled: azureConfig.enabled || false,
         loginEnabled: true,
-        registrationEnabled: false,
         autoRegistrationEnabled: false,
         connectionId: 'azure',
         // Microsoft Entra ID Issuer, replace the tenant with your tenant id
