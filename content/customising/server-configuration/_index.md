@@ -265,11 +265,15 @@ auth: {
     {"crv":"Ed25519","d":"fake-private-key","x":"fake-x","kty":"OKP","kid":"211027-fmJi","alg":"EdDSA","use":"sig"}
   ],
 
-  // The refresh interval of tokens used in the editor
-  accessTokenTtl: '12h',
-
-  // After which time a user needs to log in again
-  sessionTtl: '5d',
+  // Editor sessions, must satisfy tokenTimeout <= idleTimeout <= absoluteTimeout
+  session: {
+    // Lifetime of a session token, renewed automatically (at most '24h')
+    tokenTimeout: '15m',
+    // After which time without activity a user needs to log in again
+    idleTimeout: '2d',
+    // After which time a user needs to log in again
+    absoluteTimeout: '6d'
+  },
 
   // How long a password reset link should be valid
   passwordResetTtl: '6h',
