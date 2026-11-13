@@ -348,6 +348,28 @@ In the project's server code, a call to any of the seven methods above on the `l
 
 Migrate each call to the grant-based replacement listed above. The new methods operate on `oauth_grants` rather than `user_sessions` directly.
 
+### Deprecation of the auth.sessionTtl and auth.accessTokenTtl Server Configs
+
+**Codes:** `LIDEP086-sessionTtl`, `LIDEP086-accessTokenTtl`
+
+The server configs `auth.sessionTtl` and `auth.accessTokenTtl` are deprecated, with no fixed removal release. With this release, the server ignores both: editor sessions are configured with `auth.session` instead. Projects that changed the session lifetime with `sessionTtl` now get the defaults: a session ends after 2 days without activity, and after 6 days at the latest.
+
+#### Detect
+
+In the server config, `sessionTtl` or `accessTokenTtl` under `auth`. Search for `sessionTtl|accessTokenTtl`.
+
+#### Fix
+
+Remove `sessionTtl` and `accessTokenTtl` from the `auth` server config. Removing them changes nothing, because the server already ignores them. Where a project needs a value other than the default, set it under `auth.session`:
+
+| Before           | After                                                            | Default |
+| ---------------- | ---------------------------------------------------------------- | ------- |
+| `sessionTtl`     | `absoluteTimeout`: maximum session lifetime                      | `'6d'`  |
+| –                | `idleTimeout`: the session ends after this long without activity | `'2d'`  |
+| `accessTokenTtl` | `tokenTimeout`: lifetime of a session token, at most `'24h'`     | `'15m'` |
+
+The server does not start unless `tokenTimeout` ≤ `idleTimeout` ≤ `absoluteTimeout`. For a session lifetime below 2 days, also lower `idleTimeout`, for example `session: {idleTimeout: '20h', absoluteTimeout: '20h'}`.
+
 ## Features :gift:
 
 ### License Profiles
@@ -575,7 +597,7 @@ Here is a list of all patches after the release has been announced.
 - [v308.1.27](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.27): fix(deps): update dependency sharp from 0.35.3 to 0.35.4 [security]
 - [v308.1.26](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.26): chore(benchmarks): import job-queue-scripts default export
 - [v308.1.25](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.25): fix(deps): update dependency fastify from 5.9.0 to 5.12.1 [security]
-- [v308.1.24](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.24): fix(media-library): score metadata.title separately from texts_*
+- [v308.1.24](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.24): fix(media-library): score metadata.title separately from texts\_\*
 - [v308.1.23](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.23): fix(public-api): Support API version 2026-07
 - [v308.1.22](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.22): fix(search): decompound German only at index time
 - [v308.1.21](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.21): fix(media-library): rethrow postgres errors from addEntries inside a transaction

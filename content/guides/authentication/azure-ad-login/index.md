@@ -17,8 +17,10 @@ const azureConfig = JSON.parse(process.env.auth_azure || '{}')
 
 module.exports = {
   auth: {
-    accessTokenTtl: '10h',
-    sessionTtl: '20h',
+    session: {
+      idleTimeout: '20h',
+      absoluteTimeout: '20h'
+    },
     connections: {
       local: {
         label: 'Password',
