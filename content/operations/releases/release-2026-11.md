@@ -122,45 +122,6 @@ No rollback steps are required for this release.
 
 ## Breaking Changes :fire:
 
-### Minimum Node.js 22 Version Raised to 22.22.0
-
-The supported Node.js 22 range moved from `>=22.17.1` to `>=22.22.0`. The Livingdocs Editor also requires Node.js 24 to be at least `24.11.0`. Node.js 26 is unaffected.
-
-`undici` 8 requires Node.js `>=22.19.0` and `posthog-node` 5 requires `>=22.22.0`, so the previous floor advertised a minimum those dependencies never supported. Running on 22.17.1-22.21.x was already outside what those packages declare; it is now outside `engines.node` as well.
-
-Node.js 22 as a whole is deprecated and will be dropped in `release-2027-03` (see [Postponed Drop of Node.js 22](#postponed-drop-of-nodejs-22)), so moving to Node.js 24 or 26 is worth more than chasing a 22.x patch.
-
-#### Detect
-
-Either of:
-
-- The Node.js version running the server is 22.17.1-22.21.x. Check with `node --version`. An affected server emits `You're using an unsupported version` on boot.
-- A Node.js 22 patch below 22.22.0 pinned in the project - check `.nvmrc`, `FROM` lines in Dockerfiles, and CI job images. Search for `22\.(1[789]|2[01])\.`.
-- The editor runs on Node.js 24.0-24.10. `npm install` reports `EBADENGINE`.
-
-#### Fix
-
-Upgrade the Node.js runtime to 22.22.0 or newer, or for the editor on Node.js 24 to 24.11.0 or newer, and update every pinned version alongside it: `.nvmrc`, the `FROM` tags in Dockerfiles, and CI job images. Upgrading to Node.js 24 or 26 instead also resolves it, and avoids a second upgrade when Node.js 22 support is dropped.
-
-`npm install` on an affected version reports `EBADENGINE` for `undici` and `posthog-node`.
-
-### Drop of Support for Elasticsearch 7 and OpenSearch 1
-
-**Codes:** `LIBREAKING086`, `LIBREAKING087`
-
-Elasticsearch versions older than v8 and OpenSearch versions older than v2 are no longer supported. The drop was announced in {{< release "release-2026-03" >}}, and the server now enforces it: it refuses to start against an older cluster. The minimal supported versions are Elasticsearch 8 and OpenSearch 2.
-
-#### Detect
-
-Either of:
-
-- Request the root endpoint of the configured Elasticsearch or OpenSearch cluster (`curl <cluster-url>`) and read `version.number`. Elasticsearch below 8 or OpenSearch below 2 is affected.
-- The server fails at startup with `LIBREAKING086` (Elasticsearch) or `LIBREAKING087` (OpenSearch). The check only runs when the cluster is reachable at startup.
-
-#### Fix
-
-Upgrade the cluster to Elasticsearch 9 or OpenSearch 3. Elasticsearch 8 meets the new minimum, but is deprecated in this release (see [Deprecation of Elasticsearch 8](#deprecation-of-elasticsearch-8)), so upgrading straight to 9 avoids a second round.
-
 ### Removal of the Declarative Document Copy API
 
 **Code:** `LIBREAKING077`
@@ -278,13 +239,13 @@ If `editorSettings.mediaLibrary.showUi` is `false`, only "Add image" is affected
 
 Each entry point reads its dashboards from one property:
 
-| Entry point | Property |
-| --- | --- |
-| Images, Videos and Files buttons in the toolbar, media library actions of images and videos in the document and the properties panel, "Add image" in the document inbox | `contentTypes[].editor.images\|videos\|files.useDashboard` |
-| `li-image`, video of `li-video-reference` | `ui.config.useDashboard` (new), in a document or data record otherwise `editor.images\|videos.useDashboard` |
-| Poster image of `li-video-reference` | `ui.config.posterImageUseDashboard`, in a document or data record otherwise `editor.images.useDashboard` |
-| `li-poster-image` (media types only) | `ui.config.useDashboard` |
-| "Add image" in image collections | `imageCollections.useDashboard` |
+| Entry point                                                                                                                                                             | Property                                                                                                    |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| Images, Videos and Files buttons in the toolbar, media library actions of images and videos in the document and the properties panel, "Add image" in the document inbox | `contentTypes[].editor.images\|videos\|files.useDashboard`                                                  |
+| `li-image`, video of `li-video-reference`                                                                                                                               | `ui.config.useDashboard` (new), in a document or data record otherwise `editor.images\|videos.useDashboard` |
+| Poster image of `li-video-reference`                                                                                                                                    | `ui.config.posterImageUseDashboard`, in a document or data record otherwise `editor.images.useDashboard`    |
+| `li-poster-image` (media types only)                                                                                                                                    | `ui.config.useDashboard`                                                                                    |
+| "Add image" in image collections                                                                                                                                        | `imageCollections.useDashboard`                                                                             |
 
 Helpers, metadata templates and environment configs often build the project config, so check the resolved config of every project and environment. The project config approval file often covers only the base config, and not every project has one. Print the resolved config instead, for example in `server/` with `ENVIRONMENT=<environment> node -p 'JSON.stringify(require("./projects/<project>/<environment>"))' > config.json`. Some environments need more of their environment variables. Affected is any of:
 
@@ -364,11 +325,11 @@ In the media type configs, the key `editor`. Search the media type files for `^\
 
 Remove `editor` from every media type, and set up the dashboards from [Removal of the Fallback in Media Library Sidepanels and Dialogs](#removal-of-the-fallback-in-media-library-sidepanels-and-dialogs) first. Move the settings into media library dashboards:
 
-| Before | After |
-| --- | --- |
-| `editor.dashboard.baseFilters`, `editor.dashboard.displayFilters` | `baseFilters`, `displayFilters` of the sidepanel dashboard, and of the navigation dashboard where `editor.managementDashboard` doesn't set them |
-| `editor.managementDashboard.*` | the navigation dashboards from [Removal of `{liItem: 'mediaLibrary'}` in the Main Navigation](#removal-of-liitem-medialibrary-in-the-main-navigation) |
-| `editor.*.card` | `useCardConfiguration` of the dashboard, see [Dashboard Cards]({{< ref "/reference/project-config/editor-settings#dashboard-cards" >}}) |
+| Before                                                            | After                                                                                                                                                 |
+| ----------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `editor.dashboard.baseFilters`, `editor.dashboard.displayFilters` | `baseFilters`, `displayFilters` of the sidepanel dashboard, and of the navigation dashboard where `editor.managementDashboard` doesn't set them       |
+| `editor.managementDashboard.*`                                    | the navigation dashboards from [Removal of `{liItem: 'mediaLibrary'}` in the Main Navigation](#removal-of-liitem-medialibrary-in-the-main-navigation) |
+| `editor.*.card`                                                   | `useCardConfiguration` of the dashboard, see [Dashboard Cards]({{< ref "/reference/project-config/editor-settings#dashboard-cards" >}})               |
 
 For example:
 
@@ -507,35 +468,61 @@ Either of:
 - Pass the project config of the new project as `projectConfig` to `registrationApi.createUserWithProject()` and `registrationApi.createSSOUserWithProject()` instead of `designName` and `designVersion`.
 - The editor ignores `designsApi` in its config. It can be removed.
 
+### Drop of Support for Elasticsearch 7 and OpenSearch 1
+
+**Codes:** `LIBREAKING086`, `LIBREAKING087`
+
+Elasticsearch versions older than v8 and OpenSearch versions older than v2 are no longer supported. The drop was announced in {{< release "release-2026-03" >}}, and the server now enforces it: it refuses to start against an older cluster. The minimal supported versions are Elasticsearch 8 and OpenSearch 2.
+
+#### Detect
+
+Either of:
+
+- Request the root endpoint of the configured Elasticsearch or OpenSearch cluster (`curl <cluster-url>`) and read `version.number`. Elasticsearch below 8 or OpenSearch below 2 is affected.
+- The server fails at startup with `LIBREAKING086` (Elasticsearch) or `LIBREAKING087` (OpenSearch). The check only runs when the cluster is reachable at startup.
+
+#### Fix
+
+Upgrade the cluster to Elasticsearch 9 or OpenSearch 3. Elasticsearch 8 meets the new minimum, but is deprecated in this release (see [Deprecation of Elasticsearch 8](#deprecation-of-elasticsearch-8)), so upgrading straight to 9 avoids a second round.
+
+### Raised Minimum Node.js Versions
+
+The minimum Node.js versions have been raised to match the requirements of their dependencies:
+
+| Node.js | Livingdocs Server     | Livingdocs Editor     |
+| ------- | --------------------- | --------------------- |
+| 22      | `22.17.1` → `22.22.0` | `22.17.1` → `22.18.0` |
+| 24      | `24.0.0` (unchanged)  | `24.0.0` → `24.11.0`  |
+| 26      | `26.0.0` (unchanged)  | `26.0.0` (unchanged)  |
+
+Node.js 22 is deprecated and will be dropped in `release-2027-03` (see [Postponed Drop of Node.js 22](#postponed-drop-of-nodejs-22)), so upgrading to Node.js 24 or 26 is better than moving to a newer Node.js 22 patch.
+
+#### Detect
+
+Either of:
+
+- `node --version` reports 22.17.x-22.21.x for the server, or 22.17.x or 24.0.x-24.10.x for the editor. `npm install` on an affected version warns `EBADENGINE Unsupported engine`.
+- An affected version pinned in `.nvmrc`, the `FROM` lines of Dockerfiles, or CI job images. Search for `22\.(1[7-9]|2[01])\b|24\.([0-9]|10)\b`.
+
+#### Fix
+
+Upgrade to Node.js 24 or 26, or at least to the new minimum of your Node.js major version, and update the pinned versions alongside it: `.nvmrc`, the `FROM` tags in Dockerfiles, and CI job images.
+
 ## Deprecations :warning:
 
-### Deprecation of the elasticIndex.maxCpu and elasticIndex.maxCpuFunction Server Configs
+### Postponed Drop of Node.js 22
 
-**Codes:** `LIDEP092-maxCpu`, `LIDEP092-maxCpuFunction`
+**Code:** `LIDEP084`
 
-The server configs `elasticIndex.maxCpu` and `elasticIndex.maxCpuFunction` are deprecated and will be removed in `release-2027-05`. Indexing no longer needs to pause based on the Elasticsearch CPU usage, because bulk requests that an overloaded Elasticsearch rejects with status 429 are already retried. With this release, the default of `maxCpu` changes from `80` to `0`, which turns the CPU check off. Projects that don't set `maxCpu` no longer pause indexing when the Elasticsearch CPU usage is high.
-
-#### Detect
-
-In the server config, `maxCpu` or `maxCpuFunction` under `elasticIndex`. Search for `maxCpu|max_cpu` and confirm each hit sits under `elasticIndex`. A `maxCpu` under `import.jobs` is a separate, already unused config. You can remove it as well.
-
-#### Fix
-
-Remove `maxCpu` and `maxCpuFunction` from the `elasticIndex` server config. There is no replacement. This includes `maxCpu: 0`. Removing it doesn't change the behavior, because `0` is the new default.
-
-### Deprecation of Elasticsearch 8
-
-**Code:** `LIDEP094`
-
-Support for Elasticsearch 8 is deprecated and will be dropped in `release-2027-05`. Elasticsearch 8 reaches its End of Maintenance on 2027-01-15. The minimal supported version stays at 8 for now.
+The drop of Node.js 22 moves from `release-2027-01` to `release-2027-03`. Node.js 22 reaches its end of life on 2027-04-30, which falls into `release-2027-03`. This gives projects one more release to upgrade. Node.js 22 was deprecated in {{< release "release-2026-07" >}}.
 
 #### Detect
 
-Request the root endpoint of the configured Elasticsearch cluster (`curl <cluster-url>`) and read `version.number`. A major version of 8 is affected. OpenSearch clusters are not affected.
+Run `node --version` against the process running the server. A major version of 22 is affected, and an affected server emits `LIDEP084` on every boot.
 
 #### Fix
 
-Upgrade to Elasticsearch 9, the suggested version for this release.
+Upgrade to Node.js 24 or 26, and update the pinned versions alongside it: `.nvmrc`, the `FROM` tags in Dockerfiles, and CI job images.
 
 ### Deprecation of Public API Version 2025-03
 
@@ -553,6 +540,20 @@ In project source code and in integrations calling Livingdocs, a request path st
 
 Migrate the integration to a newer API version, ideally `2026-11`. Consult the [Public API changelog]({{< ref "/reference/public-api/changelog" >}}) for what each version in between changes.
 
+### Deprecation of the elasticIndex.maxCpu and elasticIndex.maxCpuFunction Server Configs
+
+**Codes:** `LIDEP092-maxCpu`, `LIDEP092-maxCpuFunction`
+
+The server configs `elasticIndex.maxCpu` and `elasticIndex.maxCpuFunction` are deprecated and will be removed in `release-2027-05`. Indexing no longer needs to pause based on the Elasticsearch CPU usage, because bulk requests that an overloaded Elasticsearch rejects with status 429 are already retried. With this release, the default of `maxCpu` changes from `80` to `0`, which turns the CPU check off. Projects that don't set `maxCpu` no longer pause indexing when the Elasticsearch CPU usage is high.
+
+#### Detect
+
+In the server config, `maxCpu` or `maxCpuFunction` under `elasticIndex`. Search for `maxCpu|max_cpu` and confirm each hit sits under `elasticIndex`. A `maxCpu` under `import.jobs` is a separate, already unused config. You can remove it as well.
+
+#### Fix
+
+Remove `maxCpu` and `maxCpuFunction` from the `elasticIndex` server config. There is no replacement. This includes `maxCpu: 0`. Removing it doesn't change the behavior, because `0` is the new default.
+
 ### Deprecation of publicApi.minimumApiVersion
 
 **Code:** `LIDEP093`
@@ -569,19 +570,19 @@ In the server config, `minimumApiVersion` under `publicApi`.
 
 Remove `minimumApiVersion` from the `publicApi` server config. There is no replacement.
 
-### Postponed Drop of Node.js 22
+### Deprecation of Elasticsearch 8
 
-**Code:** `LIDEP084`
+**Code:** `LIDEP094`
 
-The drop of Node.js 22 moves from `release-2027-01` to `release-2027-03`. Node.js 22 reaches its end of life on 2027-04-30, which falls into `release-2027-03`. This gives projects one more release to upgrade. Node.js 22 was deprecated in {{< release "release-2026-07" >}}.
+Support for Elasticsearch 8 is deprecated and will be dropped in `release-2027-05`. Elasticsearch 8 reaches its End of Maintenance on 2027-01-15. The minimal supported version stays at 8 for now.
 
 #### Detect
 
-Run `node --version` against the process running the server. A major version of 22 is affected, and an affected server emits `LIDEP084` on every boot.
+Request the root endpoint of the configured Elasticsearch cluster (`curl <cluster-url>`) and read `version.number`. A major version of 8 is affected. OpenSearch clusters are not affected.
 
 #### Fix
 
-Upgrade to Node.js 24 or 26, and update the pinned versions alongside it: `.nvmrc`, the `FROM` tags in Dockerfiles, and CI job images.
+Upgrade to Elasticsearch 9, the suggested version for this release.
 
 ## Features :gift:
 
@@ -661,7 +662,7 @@ Some images that were processed before are now rejected:
 
 - Animations above `maxTotalResolution`. With the default, this includes dense animations of roughly 4.5MB to 10MB. Raise the limit to accept them. Animations already in the media library are not affected.
 - Images that take longer than 3 minutes to process.
-{{< /warning >}}
+  {{< /warning >}}
 
 For more information, see the [Image Processing Memory]({{< ref "/customising/server-configuration#image-processing-memory" >}}) and [Temporary Directory]({{< ref "/customising/server-configuration#temporary-directory" >}}) documentation.
 
@@ -708,17 +709,9 @@ We are constantly patching module vulnerabilities for the Livingdocs Server and 
 
 ### Livingdocs Server
 
-This release we have patched the following vulnerabilities in the Livingdocs Server:
-
-- TBD
-
 No known vulnerabilities. :tada:
 
 ### Livingdocs Editor
-
-This release we have patched the following vulnerabilities in the Livingdocs Editor:
-
-- TBD
 
 No known vulnerabilities. :tada:
 
