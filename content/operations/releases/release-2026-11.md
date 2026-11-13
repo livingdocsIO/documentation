@@ -233,16 +233,6 @@ Referenced designs, deprecated in {{< release "release-2026-01" >}}, have been r
 
 A document whose current draft or publication still uses a referenced design can no longer be opened, edited, saved or published. Older revisions that were saved with a referenced design can no longer be rendered. The editor shows them as "design no longer available" in the history and in compare.
 
-Self-service signup (`POST /register/editor`) now creates its projects from `registration.projectConfig`, a complete starter project config with an embedded design, which replaces `registration.design`. Without it, the server refuses self-service signups. For more information, see the [Registration]({{< ref "/customising/server-configuration#registration" >}}) server configuration.
-
-```js
-// before
-registration: {design: {name: 'living-times', version: '0.0.14'}}
-
-// after
-registration: {projectConfig: require('./projects/signup')}
-```
-
 #### Detect
 
 Either of:
