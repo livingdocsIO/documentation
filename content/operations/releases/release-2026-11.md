@@ -93,7 +93,7 @@ Point `resizingDirectory` at a disk-backed volume. See [Temporary Directory]({{<
 
 #### Move Projects and Documents to Embedded Designs
 
-Run `livingdocs-server release-2026-11-check-referenced-designs` on the current release and resolve everything it lists, as described in [Removal of Referenced Designs](#removal-of-referenced-designs). The database migration stops while a project still uses a referenced design, but it does not check documents. After the upgrade, a document whose current draft or publication still uses a referenced design can no longer be opened, edited, saved or published.
+Run `livingdocs-server release-2026-11-check-referenced-designs` on release-2026-09 (v312.0.40 or later) and resolve everything it lists, as described in [Removal of Referenced Designs](#removal-of-referenced-designs). The database migration stops while a project still uses a referenced design, but it does not check documents. After the upgrade, a document whose current draft or publication still uses a referenced design can no longer be opened, edited, saved or published.
 
 ### Rollout deployment
 
@@ -249,7 +249,7 @@ registration: {projectConfig: require('./projects/signup')}
 
 Either of:
 
-- `livingdocs-server release-2026-11-check-referenced-designs` lists server configs, projects or documents. Run it on the current release before upgrading.
+- `livingdocs-server release-2026-11-check-referenced-designs` lists server configs, projects or documents. Run it before upgrading, on release-2026-09 v312.0.40 or later.
 - In server code, scripts or CI jobs, the `li-designs` feature, `setCurrentDesignVersion`, the CLI commands `design-set-active` or `transform-to-configurable-channel`, or calls of `createUserWithProject()` or `createSSOUserWithProject()` with `designName` or `designVersion`. Search for `li-designs|setCurrentDesignVersion|design-set-active|transform-to-configurable-channel|createUserWithProject|createSSOUserWithProject`.
 
 #### Fix
