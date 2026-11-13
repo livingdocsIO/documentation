@@ -227,31 +227,6 @@ Search for `document\.(copy|transform)\b`.
 
 Remove `document.copy` and `document.transform` from the notification actions. Move server event listeners to `document.create` for copies and translations, or to `document.update` for transforms.
 
-### Removal of Referenced Designs
-
-**Code:** `LIBREAKING085`
-
-Referenced designs, deprecated in {{< release "release-2026-01" >}}, have been removed, together with static project configs, which always used a referenced design. A project's design now always lives in its project config as an [embedded design]({{< ref "/guides/documents/document-design/embedded-design" >}}) (`designSettings` and `components`). The design server, hosted designs and designs loaded from local files are gone.
-
-A document whose current draft or publication still uses a referenced design can no longer be opened, edited, saved or published. Older revisions that were saved with a referenced design can no longer be rendered. The editor shows them as "design no longer available" in the history and in compare.
-
-#### Detect
-
-Either of:
-
-- `livingdocs-server release-2026-11-check-referenced-designs` lists server configs, projects or documents. Run it before upgrading, on release-2026-09 v312.0.40 or later.
-- In server code, scripts or CI jobs, the `li-designs` feature, `setCurrentDesignVersion`, the CLI commands `design-set-active` or `transform-to-configurable-channel`, or calls of `createUserWithProject()` or `createSSOUserWithProject()` with `designName` or `designVersion`. Search for `li-designs|setCurrentDesignVersion|design-set-active|transform-to-configurable-channel|createUserWithProject|createSSOUserWithProject`.
-
-#### Fix
-
-- Remove the server configs the check lists. `designLoader.cacheSize` and `designLoader.cacheMaxAge` stay. Only if the server offers self-service signup, set `registration.projectConfig` to the project config that new signup projects start with, including `designSettings`, `components` and at least one content type. The server validates it on startup and does not start when it is invalid or one of them is missing.
-- Migrate every project the check lists to an embedded design, following the [migration guide]({{< ref "/guides/documents/document-design/embedded-design" >}}). A project with a static project config needs a seeded project config with an embedded design instead.
-- Move the documents the check lists to the embedded design of their project with the `change-design-name-and-version-to-latest-project-design` command it prints, as described in [Migrate old documents to embedded design]({{< ref "/guides/documents/document-design/embedded-design#migrate-old-documents-to-embedded-design" >}}). The command only changes the design reference, so the embedded design must contain every component of the referenced design.
-- Remove the use of `li-designs` and `channelApi.setCurrentDesignVersion()`. Publishing a project config that changes `designSettings` or `components` creates the next design version.
-- Remove the calls to the CLI commands `design-set-active` and `transform-to-configurable-channel`. Both have been removed without replacement.
-- Pass the project config of the new project as `projectConfig` to `registrationApi.createUserWithProject()` and `registrationApi.createSSOUserWithProject()` instead of `designName` and `designVersion`.
-- The editor ignores `designsApi` in its config. It can be removed.
-
 ### Removal of `{liItem: 'mediaLibrary'}` in the Main Navigation
 
 **Code:** `LIBREAKING081`
@@ -506,6 +481,31 @@ Remove `editor.images.mediaTypes`. Restrict drops with [`allowedMediaTypes`]({{<
   ]
 }
 ```
+
+### Removal of Referenced Designs
+
+**Code:** `LIBREAKING085`
+
+Referenced designs, deprecated in {{< release "release-2026-01" >}}, have been removed, together with static project configs, which always used a referenced design. A project's design now always lives in its project config as an [embedded design]({{< ref "/guides/documents/document-design/embedded-design" >}}) (`designSettings` and `components`). The design server, hosted designs and designs loaded from local files are gone.
+
+A document whose current draft or publication still uses a referenced design can no longer be opened, edited, saved or published. Older revisions that were saved with a referenced design can no longer be rendered. The editor shows them as "design no longer available" in the history and in compare.
+
+#### Detect
+
+Either of:
+
+- `livingdocs-server release-2026-11-check-referenced-designs` lists server configs, projects or documents. Run it before upgrading, on release-2026-09 v312.0.40 or later.
+- In server code, scripts or CI jobs, the `li-designs` feature, `setCurrentDesignVersion`, the CLI commands `design-set-active` or `transform-to-configurable-channel`, or calls of `createUserWithProject()` or `createSSOUserWithProject()` with `designName` or `designVersion`. Search for `li-designs|setCurrentDesignVersion|design-set-active|transform-to-configurable-channel|createUserWithProject|createSSOUserWithProject`.
+
+#### Fix
+
+- Remove the server configs the check lists. `designLoader.cacheSize` and `designLoader.cacheMaxAge` stay. Only if the server offers self-service signup, set `registration.projectConfig` to the project config that new signup projects start with, including `designSettings`, `components` and at least one content type. The server validates it on startup and does not start when it is invalid or one of them is missing.
+- Migrate every project the check lists to an embedded design, following the [migration guide]({{< ref "/guides/documents/document-design/embedded-design" >}}). A project with a static project config needs a seeded project config with an embedded design instead.
+- Move the documents the check lists to the embedded design of their project with the `change-design-name-and-version-to-latest-project-design` command it prints, as described in [Migrate old documents to embedded design]({{< ref "/guides/documents/document-design/embedded-design#migrate-old-documents-to-embedded-design" >}}). The command only changes the design reference, so the embedded design must contain every component of the referenced design.
+- Remove the use of `li-designs` and `channelApi.setCurrentDesignVersion()`. Publishing a project config that changes `designSettings` or `components` creates the next design version.
+- Remove the calls to the CLI commands `design-set-active` and `transform-to-configurable-channel`. Both have been removed without replacement.
+- Pass the project config of the new project as `projectConfig` to `registrationApi.createUserWithProject()` and `registrationApi.createSSOUserWithProject()` instead of `designName` and `designVersion`.
+- The editor ignores `designsApi` in its config. It can be removed.
 
 ## Deprecations :warning:
 

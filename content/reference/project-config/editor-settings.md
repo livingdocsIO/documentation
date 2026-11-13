@@ -289,7 +289,7 @@ The main navigation menu items are configured using the `mainNavigation` array. 
 
 ### `liItem`
 
-The possible values for `liItem` are: `articles`, `pages`, `dataRecords`, `proofreading`, `lists`, `menus`, `tags` (imatrics), `contentSetup`, `projectSettings`, `serverAdmin` (enterprise only) and `imageCollections`.
+The possible values for `liItem` are: `articles`, `pages`, `dataRecords`, `proofreading`, `lists`, `tags` (imatrics), `contentSetup`, `projectSettings`, `serverAdmin` (enterprise only) and `imageCollections`.
 
 For each item you can either use the default properties defined by Livingdocs:
 
