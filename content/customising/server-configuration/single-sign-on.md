@@ -9,10 +9,7 @@ menus:
 
 ## Summary
 
-The Single sign-on feature, also known as SSO, allows you to:
-
-- signup: register a new user using one of their social account
-- signin: authenticate that user
+The Single sign-on feature, also known as SSO, allows users to log in with an external identity provider.
 
 ## Configuration
 
@@ -25,7 +22,6 @@ In the following example we set different providers: Azure, Github, Google and F
         strategy: 'li-authentication-openid-connect',
         enabled: true,
         loginEnabled: true,
-        registrationEnabled: false,
         connectionId: 'azure',
         issuer: 'https://login.microsoftonline.com/${tenantId}/v2.0/.well-known/openid-configuration',
         config: {
@@ -48,7 +44,6 @@ In the following example we set different providers: Azure, Github, Google and F
         strategy: 'li-authentication-openid-connect',
         enabled: false,
         loginEnabled: true,
-        registrationEnabled: false,
         connectionId: 'google',
         issuer: 'https://accounts.google.com/.well-known/openid-configuration',
         config: {
@@ -71,7 +66,6 @@ In the following example we set different providers: Azure, Github, Google and F
         strategy: 'li-authentication-sso',
         enabled: true,
         loginEnabled: true,
-        registrationEnabled: true,
         connectionId: 'github',
         config: {
           scope: 'user:email',
@@ -87,7 +81,6 @@ In the following example we set different providers: Azure, Github, Google and F
         strategy: 'li-authentication-sso',
         enabled: true,
         loginEnabled: true,
-        registrationEnabled: true,
         connectionId: 'google',
         config: {
           scope: 'email',
@@ -104,7 +97,6 @@ In the following example we set different providers: Azure, Github, Google and F
         strategy: 'li-authentication-sso',
         enabled: true,
         loginEnabled: true,
-        registrationEnabled: true,
         connectionId: 'facebook',
         config: {
           scope: 'email',
@@ -127,4 +119,4 @@ In the following example we set different providers: Azure, Github, Google and F
   - `li-authentication-sso` builds on OAuth 2.0
 - `connectionId` is the provider handle
 - `config` can contain up to two "fixed" fields: `scope` and `callbackURL`, this is provider specific. The two other fields are `clientID` and `clientSecret` you can get those by creating an Oauth2 application at one of those external providers. For example to get those credentials from Github you have to go to `Settings>Developer settings` and then click on `New Oauth App`.
-- `ui` is only used by the editor to "draw" the actual signin and signup buttons.
+- `ui` is only used by the editor to "draw" the actual login buttons.

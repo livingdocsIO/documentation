@@ -122,6 +122,24 @@ No rollback steps are required for this release.
 
 ## Deprecations :warning:
 
+### Deprecation of Self-Service Registration
+
+**Codes:** `LIDEP095-registration`, `LIDEP095-registrationEnabled`, `LIDEP095-createUserWithProject`, `LIDEP095-createSSOUserWithProject`
+
+Self-service registration is deprecated and will be removed in `release-2027-07`. It lets anyone create an account with a new project through the **Sign up** link on the editor login page (`/signup` and `POST /register/editor`). Since {{< release "release-2026-11" >}}, it only works when the server config `registration.projectConfig` is set. The removal takes out the signup page, the **Sign up** link and the endpoint. Inviting users to a project and creating users on their first single sign-on login (`autoRegistrationEnabled`) are not affected.
+
+#### Detect
+
+Any of:
+
+- In the server config, a top-level `registration` holding `projectConfig`.
+- In the server config, `registrationEnabled` on any connection under `auth.connections`. Search case-sensitively for `\bregistrationEnabled`, which doesn't match `autoRegistrationEnabled`.
+- In server project source code, `createUserWithProject` or `createSSOUserWithProject` of the `li-registration` API.
+
+#### Fix
+
+Remove the `registration` server config. Remove `registrationEnabled` from every connection in `auth.connections`, including `registrationEnabled: false`. Removing `registrationEnabled: true` hides the **Sign up** link, which leads to a signup that fails without `registration.projectConfig`. Keep `autoRegistrationEnabled`. Replace calls to `createUserWithProject` and `createSSOUserWithProject` by inviting users to an existing project, for example with `registrationApi.createUserWithMembership()`.
+
 ## Features :gift:
 
 ## Vulnerability Patches
