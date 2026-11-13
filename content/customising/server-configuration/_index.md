@@ -30,7 +30,6 @@ menus:
 
   "auth": "{{< a href="#authentication" title="<authentication config>">}}",
   "emails": "{{< a href="#user-management-emails" title="<user management emails>">}}",
-  "registration": "{{< a href="#registration" title="<self-service registration config>">}}",
 
   "designLoader": "{{< a href="#design-loader" title="<design loader config>">}}",
   // {{< removed-in "release-2026-11" >}}
@@ -508,20 +507,6 @@ prevent access for the possibly abusing actor.
 
 In case you want to adjust the email template, head over to the original file `@livingdocs/server/plugins/email-templates/new_login_device.html`
 and copy it's content into your target file which you then can adapt to your needs.
-
-### Registration
-
-Self-service registration lets a person sign up in the editor (`POST /register/editor`), which creates a new user together with a new project. It is turned off unless `registration.projectConfig` is set to the starter [project config]({{< ref "/reference/project-config" >}}) of that project, including its embedded design (`designSettings` and `components`) and at least one content type. The server validates it on startup and does not start when it is invalid or one of them is missing.
-
-`registrationEnabled: true` on a login connection, see [`auth.connections.local`](#authconnectionslocal), only shows the signup option in the editor.
-
-```js
-registration: {
-  projectConfig: require('./projects/signup')
-}
-```
-
-`registration.design` {{< removed-in "release-2026-11" >}} named the referenced design of new signup projects. The server does not start while it is set.
 
 ### Design Loader
 
