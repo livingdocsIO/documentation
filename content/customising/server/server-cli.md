@@ -23,6 +23,7 @@ To execute a livingdocs-server CLI command, go to your Livingdocs Server folder 
 | cleanup-metadata                  | Truncate metadata with no reference to documents or publications. |
 | data-migration-run                | Execute a data migration (create/prepare/accept)                  |
 | database                          | Postgres database actions                                         |
+| design-add                        | Upload a design to the design server {{< removed-in "release-2026-07" >}} |
 | design-set-active                 | Set active design version of a project {{< removed-in "release-2026-11" >}} |
 | elasticsearch-delete-index        | Delete Elasticsearch index                                        |
 | elasticsearch-index               | Index documents into Elasticsearch                                |
