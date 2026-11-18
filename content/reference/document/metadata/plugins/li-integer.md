@@ -48,9 +48,9 @@ contentTypeConfig: |2
           }
         },
         ui: {
-          label: 'foo',                   // optional, takes camelized name otherwise
+          label: 'foo',                   // optional, default: start case of handle
           config: {
-            placeholder: 'bar',           // optional, takes camelized name otherwise
+            placeholder: 'bar',           // optional, default: start case of handle
             readOnly: true                // optional, default: false
           }
         }

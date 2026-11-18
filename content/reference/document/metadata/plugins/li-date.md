@@ -36,7 +36,7 @@ contentTypeConfig: |2
           index: true                              // optional, default: false
         },
         ui: {
-          label: 'foo',                   // optional, takes camelized name otherwise
+          label: 'foo',                   // optional, default: start case of handle
           config: {
             readOnly: true                // optional, default: false
           }
