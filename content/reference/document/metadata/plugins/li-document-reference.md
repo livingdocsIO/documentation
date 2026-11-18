@@ -48,7 +48,7 @@ contentTypeConfig: |2
           prefillAuthor: true                      // optional, set value to document creator if the prefilling configuration for the current user exists, default: false
         },
         ui: {
-          label: 'foo',         // optional, takes camelized handle otherwise
+          label: 'foo',         // optional, default: start case of handle
           config: {
             style: 'default',   // optional, defaults to 'default'. Other options: 'teaser' | 'minimal'
             useDashboard: '',   // optional, reference to a custom dashboard

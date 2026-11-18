@@ -88,6 +88,6 @@ contentTypeConfig: |2
           ]
         },
         ui: {
-          label: 'Proofreading' // optional, takes camelized name otherwise
+          label: 'Proofreading' // optional, default: start case of handle
         }
 ---

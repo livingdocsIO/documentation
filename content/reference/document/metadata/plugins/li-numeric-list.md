@@ -36,7 +36,7 @@ contentTypeConfig: |2
           maxItems: 5,                                      // optional
         },
         ui: {
-          label: 'foo',                   // optional, takes camelized name otherwise
+          label: 'foo',                   // optional, default: start case of handle
           config: {
             placeholder: 'bar',           // optional, takes capitalized handle name otherwise
             readOnly: true                // optional, default: false

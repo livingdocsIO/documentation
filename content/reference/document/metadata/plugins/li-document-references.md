@@ -55,7 +55,7 @@ contentTypeConfig: |2
           max: 4                                   // optional, maximum number of articles required
         },
         ui: {
-          label: 'foo',         // optional, takes camelized name otherwise
+          label: 'foo',         // optional, default: start case of handle
           config: {
             style: 'default',   // optional, defaults to 'default'. Other options: 'teaser' | 'minimal'
             useDashboard: '',   // optional, reference to a custom dashboard
