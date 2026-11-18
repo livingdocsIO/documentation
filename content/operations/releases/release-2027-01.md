@@ -162,6 +162,22 @@ No rollback steps are required for this release.
 
 ## Features :gift:
 
+### Clearer Display of the Estimated Time of Completion
+
+For content types with an `li-estimated-time-of-completion` metadata property, the estimated time of completion is now shown with the property's `ui.label` and an hourglass icon, instead of a generic "ready". For example, "ready at 07.01.2027" becomes "Ready for publication on 07.01.2027" for a property labeled "Ready for publication".
+
+As before, the estimated time of completion is shown on dashboards, in the editor toolbar and on Planning Calendar cards when a document has no publication date yet.
+
+{{< img src="release-2027-01-etc-editor-toolbar.png" alt="Editor toolbar showing Ready for publication on 07.01.2027 above the Plan Publication button" width="600" caption="The estimated time of completion in the editor toolbar now shows the property's label and an hourglass icon." >}}
+
+The change is available automatically. If your label is missing or has no text in an editor's UI language, a fallback is shown instead.
+
+{{< info >}}
+Check that your label reads well in front of a preposition and a date, e.g. "on 07.01.2027", in every UI language your editors use, and that a new label still works in the metadata form.
+{{< /info >}}
+
+For more information, see the [li-estimated-time-of-completion]({{< ref "/reference/document/metadata/plugins/li-estimated-time-of-completion#display-on-dashboards" >}}) documentation.
+
 ## Vulnerability Patches
 
 We are constantly patching module vulnerabilities for the Livingdocs Server and Livingdocs Editor as module fixes are available. Below is a list of all patched vulnerabilities included in the release.
