@@ -8,8 +8,8 @@
     "maintained": false,
     "legacy": false,
     "sortId": 59,
-    "editorVersion": "v131.1.2",
-    "serverVersion": "v317.1.1"
+    "editorVersion": "v131.1.21",
+    "serverVersion": "v317.3.10"
   },
   "release-2026-11": {
     "key": "release-2026-11",
@@ -20,8 +20,8 @@
     "maintained": true,
     "legacy": false,
     "sortId": 58,
-    "editorVersion": "v131.0.2",
-    "serverVersion": "v317.0.2"
+    "editorVersion": "v131.0.15",
+    "serverVersion": "v317.0.14"
   },
   "release-2026-09": {
     "key": "release-2026-09",
@@ -32,8 +32,8 @@
     "maintained": true,
     "legacy": false,
     "sortId": 57,
-    "editorVersion": "v128.1.33",
-    "serverVersion": "v312.0.36"
+    "editorVersion": "v128.1.47",
+    "serverVersion": "v312.0.44"
   },
   "release-2026-07": {
     "key": "release-2026-07",
@@ -44,8 +44,8 @@
     "maintained": true,
     "legacy": false,
     "sortId": 56,
-    "editorVersion": "v126.1.56",
-    "serverVersion": "v308.1.58"
+    "editorVersion": "v126.1.69",
+    "serverVersion": "v308.1.65"
   },
   "release-2026-05": {
     "key": "release-2026-05",
@@ -57,7 +57,7 @@
     "legacy": true,
     "sortId": 55,
     "editorVersion": "v123.21.67",
-    "serverVersion": "v301.1.68"
+    "serverVersion": "v301.1.69"
   },
   "release-2026-03": {
     "key": "release-2026-03",
@@ -128,7 +128,7 @@
     "maintained": false,
     "legacy": true,
     "sortId": 49,
-    "editorVersion": "v117.6.84",
+    "editorVersion": "v117.6.85",
     "serverVersion": "v276.3.65"
   },
   "release-2025-03": {

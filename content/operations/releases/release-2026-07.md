@@ -563,6 +563,13 @@ Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
 
+- [v308.1.65](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.65): fix(deps): update dependency @livingdocs/framework from 34.1.15 to v34.1.17
+- [v308.1.64](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.64): fix(deps): automatically patch Node.js vulnerabilities
+- [v308.1.63](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.63): fix(media-library): use the external id index when looking up entries without a systemName
+- [v308.1.62](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.62): fix(deps): update dependency @livingdocs/framework from 34.1.13 to v34.1.15
+- [v308.1.61](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.61): fix(access-control): pass dashboard.get policies on to the user
+- [v308.1.60](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.60): fix(deps): automatically patch Node.js vulnerabilities
+- [v308.1.59](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.59): fix(license-profiles): restore the completed license approval task when a re-request is no longer needed
 - [v308.1.58](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.58): fix(node): drop Node.js 22 in release-2027-03 instead of release-2027-01 (LIDEP084)
 - [v308.1.57](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.57): fix(cross-project): log a timed out external system request as a timeout
 - [v308.1.56](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v308.1.56): fix(cross-project): report remote documents without systemdata as invalid
@@ -623,6 +630,19 @@ Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Editor Patches
 
+- [v126.1.69](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.69): fix(media-library): Link media library card titles and keep card links from being dragged
+- [v126.1.68](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.68): fix(deps): update dependency @livingdocs/framework from 34.1.16 to v34.1.17
+- [v126.1.67](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.67): fix(workspace): Check the document version after the first realtime subscription
+- [v126.1.66](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.66): fix(deps): update dependency @livingdocs/framework from 34.1.15 to v34.1.16
+- [v126.1.65](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.65): fix(deps): automatically patch Node.js vulnerabilities
+- [v126.1.64](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.64): test(editor): Assert the scroll lock instead of scrollY 0 while a dialog or overlay is open
+- [v126.1.63](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.63): fix(deps): update dependency @livingdocs/framework from 34.1.13 to v34.1.15
+- [v126.1.62](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.62): fix(draft-storage): Back off when the fetch after a conflict is stale
+- [v126.1.61](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.61): test(draft-storage): Cover repeated fetch failures and stopped retries
+- [v126.1.60](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.60): chore: Drop trailing blank line in kanban board model
+- [v126.1.59](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.59): fix(proxy): send the upstream host on websocket upgrades
+- [v126.1.58](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.58): fix(deps): automatically patch Node.js vulnerabilities
+- [v126.1.57](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.57): fix(tasks): disable the request button of the license approval task
 - [v126.1.56](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.56): fix(lint): use kebab-case after the colon in update: event names
 - [v126.1.55](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.55): fix(deps): update dependency @livingdocs/framework from 34.1.12 to v34.1.13
 - [v126.1.54](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v126.1.54): chore(ci): Use the official Node builds instead of pointer compression
