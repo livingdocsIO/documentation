@@ -423,6 +423,10 @@ The behavior of `imageRatios` is unchanged. Those ratios are always enforced and
 
 The new cropping tool is available automatically. No configuration is required.
 
+{{< warning >}}
+The new cropping tool loads the image with a fetch request instead of an `<img>` tag. A custom image service must therefore send CORS headers that allow every domain the editor runs on. Without them, the browser blocks the image and the cropping tool shows an error.
+{{< /warning >}}
+
 For more information, see the [doc-image directive]({{< ref "/reference/document/document-design/directives/image.md#ratios" >}}) documentation.
 
 ### Search by Filename
