@@ -351,7 +351,6 @@ auth: {
       label: 'Password',
       enabled: true,
       loginEnabled: true,
-      registrationEnabled: true,
       strategy: 'li-authentication-local',
       config: {
         defaultLoginDomain: 'livingdocs.io',
