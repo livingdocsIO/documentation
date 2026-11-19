@@ -59,7 +59,7 @@ contentTypeConfig: |2
           index: true,                              // optional, default: false
         },
         ui: {
-          label: 'My Team',                         // optional, takes camelized name otherwise
+          label: 'My Team',                         // optional, default: start case of handle
           config: {
             readOnly: false,                        // optional, default: false
           }

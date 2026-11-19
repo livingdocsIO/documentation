@@ -32,6 +32,6 @@ contentTypeConfig: |2
           index: true // required for the license profile and liLicensePurpose display filters
         },
         ui: {
-          label: 'License Profile' // optional, takes camelized name otherwise
+          label: 'License Profile' // optional, default: start case of handle
         }
 ---
