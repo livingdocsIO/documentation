@@ -577,6 +577,14 @@ Patches typically fix bugs and apply improvements within the current release. Ke
 
 ### Livingdocs Server Patches
 
+- [v312.0.44](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v312.0.44): fix(deps): update dependency @livingdocs/framework from 34.2.10 to v34.2.12
+- [v312.0.43](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v312.0.43): fix(deps): update dependency @opentelemetry/instrumentation-http from 0.221.0 to 0.222.0 [security]
+- [v312.0.42](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v312.0.42): fix(deps): automatically patch Node.js vulnerabilities
+- [v312.0.41](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v312.0.41): fix(media-library): use the external id index when looking up entries without a systemName
+- [v312.0.40](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v312.0.40): fix(tasks): keep news agency reports on their design when changing the project design
+- [v312.0.39](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v312.0.39): fix(deps): update dependency @livingdocs/framework from 34.2.8 to v34.2.10
+- [v312.0.38](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v312.0.38): fix(access-control): pass dashboard.get policies on to the user
+- [v312.0.37](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v312.0.37): fix(license-profiles): restore the completed license approval task when a re-request is no longer needed
 - [v312.0.36](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v312.0.36): fix(node): drop Node.js 22 in release-2027-03 instead of release-2027-01 (LIDEP084)
 - [v312.0.35](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v312.0.35): fix(cross-project): log a timed out external system request as a timeout
 - [v312.0.34](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v312.0.34): fix(cross-project): report remote documents without systemdata as invalid
@@ -616,6 +624,20 @@ Patches typically fix bugs and apply improvements within the current release. Ke
 
 ### Livingdocs Editor Patches
 
+- [v128.1.47](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v128.1.47): test(planning-system): Cover moves to Done in the task board paging test
+- [v128.1.46](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v128.1.46): fix(media-library): Link media library card titles and keep card links from being dragged
+- [v128.1.45](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v128.1.45): fix(deps): update dependency @livingdocs/framework from 34.2.11 to v34.2.12
+- [v128.1.44](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v128.1.44): fix(workspace): Check the document version after the first realtime subscription
+- [v128.1.43](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v128.1.43): fix(deps): update dependency @livingdocs/framework from 34.2.10 to v34.2.11
+- [v128.1.42](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v128.1.42): fix(deps): automatically patch Node.js vulnerabilities
+- [v128.1.41](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v128.1.41): test(editor): Assert the scroll lock instead of scrollY 0 while a dialog or overlay is open
+- [v128.1.40](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v128.1.40): fix(deps): update dependency @livingdocs/framework from 34.2.8 to v34.2.10
+- [v128.1.39](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v128.1.39): fix(draft-storage): Back off when the fetch after a conflict is stale
+- [v128.1.38](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v128.1.38): test(draft-storage): Cover repeated fetch failures and stopped retries
+- [v128.1.37](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v128.1.37): chore: Drop trailing blank line in kanban board model
+- [v128.1.36](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v128.1.36): fix(proxy): send the upstream host on websocket upgrades
+- [v128.1.35](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v128.1.35): fix(deps): automatically patch Node.js vulnerabilities
+- [v128.1.34](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v128.1.34): fix(tasks): disable the request button of the license approval task
 - [v128.1.33](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v128.1.33): fix(lint): use kebab-case after the colon in update: event names
 - [v128.1.32](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v128.1.32): fix(deps): update dependency @livingdocs/framework from 34.2.7 to v34.2.8
 - [v128.1.31](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v128.1.31): chore(ci): Use the official Node builds instead of pointer compression

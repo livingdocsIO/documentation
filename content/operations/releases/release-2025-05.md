@@ -523,6 +523,7 @@ Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Editor Patches
 
+- [v117.6.85](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.85): fix(deps): update dependency @livingdocs/framework from 32.7.14 to v32.7.15
 - [v117.6.84](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.84): fix(deps): update dependency fastify from 5.12.5 to 5.12.6 [security]
 - [v117.6.83](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.83): fix(deps): update dependency fastify from 5.12.1 to 5.12.5 [security]
 - [v117.6.82](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.82): fix(deps): update dependency sanitize-html from 2.17.7 to 2.18.0 [security]
