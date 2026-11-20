@@ -161,6 +161,24 @@ No rollback steps are required for this release.
 
 ## Features :gift:
 
+### Distribution Dates in Creation Flows
+
+Editors can now set distribution dates while they create a document, so creating and planning a document takes one step instead of two. The document shows up on the Planning Board and the Planning Calendar right away. The same field also works in copy and transform dialogs.
+
+To enable it, add `li-distribution-dates` to the `paramsSchema` of a flow and store the dates in your create, copy or transform function:
+
+```js
+// editorSettings.documentCreationFlows[]
+paramsSchema: [{handle: 'distributionDates', type: 'li-distribution-dates'}]
+
+// your create function
+metadata: {distributionDates: params.distributionDates}
+```
+
+{{< img src="release-2027-01-distribution-dates-creation-dialog.png" alt="Planning creation dialog with two distribution dates set below the working title, abstract and team" width="450" caption="Editors set distribution dates directly in the creation dialog." >}}
+
+For more information, see the [li-distribution-dates]({{< ref "/reference/document/metadata/plugins/li-distribution-dates#creation-copy-and-transform-flows" >}}) documentation.
+
 ## Vulnerability Patches
 
 We are constantly patching module vulnerabilities for the Livingdocs Server and Livingdocs Editor as module fixes are available. Below is a list of all patched vulnerabilities included in the release.
