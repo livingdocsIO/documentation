@@ -143,6 +143,13 @@ httpServer: {
   // Default: true if the env variable ENVIRONMENT incudes dev/test, false otherwise
   showStackTraces: false,
 
+  // Allow cross-origin requests, needed when the editor is served from another origin
+  cors: {
+    enabled: false,
+    // Origins allowed to make cross-origin requests. If omitted, all origins are allowed.
+    allowlist: ['https://editor.example.com']
+  },
+
   // Optionally, instead of host and port,
   // you can use a unix socket path
   // path: '/path/to/unix.socket
