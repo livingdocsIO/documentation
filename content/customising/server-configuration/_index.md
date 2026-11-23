@@ -143,10 +143,11 @@ httpServer: {
   // Default: true if the env variable ENVIRONMENT incudes dev/test, false otherwise
   showStackTraces: false,
 
-  // Allow cross-origin requests, needed when the editor is served from another origin
+  // Allow cross-origin requests from the editor (see the note below)
   cors: {
     enabled: false,
-    // Origins allowed to make cross-origin requests. If omitted, all origins are allowed.
+    // Only applies when enabled. Origins allowed to make cross-origin requests.
+    // If omitted, all origins are allowed.
     allowlist: ['https://editor.example.com']
   },
 
@@ -160,6 +161,8 @@ httpServer: {
   https: {key, cert}
 }
 ```
+
+Instead of enabling CORS, prefer serving the server on the same domain as the editor, as described in [Hosting Livingdocs]({{< ref "/operations/self-hosting.md" >}}).
 
 #### Editor
 
