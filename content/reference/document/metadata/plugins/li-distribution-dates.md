@@ -139,6 +139,7 @@ liServer.registerCreateFunction({
 
 - The default create function `liDefaultCreateFunction` ignores params. Register your own create function to store the dates.
 - The target content type needs an `li-distribution-dates` property with the handle your function writes to. Otherwise the dates are not stored.
-- Copy and transform dialogs start empty. They don't show the dates the document already has. If your copy or transform function writes the param to the property, it replaces the existing dates, so merge them in your function if you want to keep them.
+- Copy and transform dialogs don't show the dates the document already has. The field starts empty unless the flow sets `defaultParams`. If your copy or transform function writes the param to the property, it replaces the existing dates, so merge them in your function if you want to keep them.
+- The flow's `defaultParams` can prefill the field with fixed dates. Dynamic values such as today are not supported.
 - Use the same `precision` as the content type's property, so the dialog and the metadata form store dates the same way.
 - With `config.required: true`, editors can't submit the dialog without a date. The server doesn't check this when the document is created.
