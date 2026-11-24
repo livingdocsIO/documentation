@@ -50,7 +50,7 @@ contentTypeConfig: |2
         ui: {
           label: 'foo',                   // optional, default: start case of handle
           config: {
-            placeholder: 'bar',           // optional, default: start case of handle
+            placeholder: 'bar',           // optional, default: "Enter {handle}" ("Select {handle}" with a dataProvider)
             readOnly: true                // optional, default: false
           }
         }
