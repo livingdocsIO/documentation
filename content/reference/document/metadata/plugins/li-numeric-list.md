@@ -38,7 +38,7 @@ contentTypeConfig: |2
         ui: {
           label: 'foo',                   // optional, default: start case of handle
           config: {
-            placeholder: 'bar',           // optional, takes capitalized handle name otherwise
+            placeholder: 'bar',           // optional, default: "Enter {handle}"
             readOnly: true                // optional, default: false
           }
         }
