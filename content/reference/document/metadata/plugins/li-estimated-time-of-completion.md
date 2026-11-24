@@ -60,6 +60,6 @@ When a document has no publication date yet, dashboards, the editor toolbar and 
 The label shown depends on the `ui.label` config:
 
 - Without a `ui.label`: the handle in start case, e.g. "Estimated Time Of Completion" for `estimatedTimeOfCompletion`.
-- With a `ui.label`: its text in the editor's UI language. If it has none, its English text is used, and if that is missing too, the built-in label "Ready for publication", translated into all editor languages.
+- With a `ui.label`: its text in the editor's UI language. If it has none, its English text is used, and if that is missing too, the handle in start case.
 
 The same label is also shown in the metadata form.
