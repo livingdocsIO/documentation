@@ -52,7 +52,7 @@ contentTypeConfig: |2
           label: 'foo',                   // optional, default: start case of handle
           config: {
             readOnly: true,               // optional, default: false
-            placeholder: 'foo'           // optional, default: "Select a {handle}"
+            placeholder: 'foo'           // optional, default: "Select a {handle in start case}"
           }
         }
 ---

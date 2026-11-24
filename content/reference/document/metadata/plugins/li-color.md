@@ -44,7 +44,7 @@ contentTypeConfig: |2
           config: {
             useInputTypeColor: false,              // optional, default: true, shows a color picker
             readOnly: true,                        // optional, default: false
-            placeholder: 'foo',                    // optional, default: "Enter a {handle}"
+            placeholder: 'foo',                    // optional, default: "Enter a {handle in start case}"
           }
         }
 ---

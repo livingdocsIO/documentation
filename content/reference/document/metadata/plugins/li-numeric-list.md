@@ -38,7 +38,7 @@ contentTypeConfig: |2
         ui: {
           label: 'foo',                   // optional, default: start case of handle
           config: {
-            placeholder: 'bar',           // optional, default: "Enter {handle}"
+            placeholder: 'bar',           // optional, default: "Enter {handle in start case}"
             readOnly: true                // optional, default: false
           }
         }
