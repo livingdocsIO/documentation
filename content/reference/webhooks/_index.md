@@ -40,6 +40,8 @@ webhooks: {
       active: true,
       // Expose name and email for user actors
       exposeUserActor: true,
+      // Request timeout in milliseconds (1000 - 60000, default: 10000)
+      timeout: 10000,
       // The webhook is triggered only for the specified events when both
       // the conditions and change filters are met
       events: [
@@ -232,6 +234,25 @@ events: [
   }
 ]
 ```
+
+### Timeout
+
+By default, Livingdocs waits 10 seconds for your endpoint to respond. Use `timeout` to set a different limit per webhook, in milliseconds, between `1000` and `60000`.
+
+```js
+{
+  handle: 'my-webhook',
+  url: 'https://example.com/my-webhook-endpoint',
+  timeout: 30000,
+  events: ['document.publish']
+}
+```
+
+When your endpoint does not respond in time, the request is aborted and retried later. If the retries time out as well, the delivery is recorded with status `0`.
+
+{{< info >}}
+Keep the timeout as short as possible. Each Livingdocs server instance delivers at most 20 webhooks in parallel, shared by all webhooks, and each request waiting for a slow endpoint occupies one of these slots. During imports or bulk operations, which emit many events at once, a slow endpoint with a long timeout delays all other webhook deliveries. Respond quickly and process the event asynchronously on your side instead of raising the timeout.
+{{< /info >}}
 
 ## Testing Webhooks
 
