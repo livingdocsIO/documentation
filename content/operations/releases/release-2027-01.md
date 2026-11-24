@@ -71,6 +71,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 
 ## PRs to Categorize
 
+- [Fix checkbox alignment and hyphenation in rubrics dashboard cell](https://github.com/livingdocsIO/livingdocs-editor/pull/12008)
 - [Show the configured ETC label and an hourglass icon](https://github.com/livingdocsIO/livingdocs-editor/pull/11966)
 - [Automate release tests and fix task board column totals](https://github.com/livingdocsIO/livingdocs-editor/pull/11919)
 - [Show media source titles like media library entry titles](https://github.com/livingdocsIO/livingdocs-editor/pull/11965)
