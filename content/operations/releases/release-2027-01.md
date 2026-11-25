@@ -71,6 +71,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 
 ## PRs to Categorize
 
+- [Download multiple media library entry assets in a zip file](https://github.com/livingdocsIO/livingdocs-editor/pull/10889)
 - [Fix checkbox alignment and hyphenation in rubrics dashboard cell](https://github.com/livingdocsIO/livingdocs-editor/pull/12008)
 - [Show the configured ETC label and an hourglass icon](https://github.com/livingdocsIO/livingdocs-editor/pull/11966)
 - [Automate release tests and fix task board column totals](https://github.com/livingdocsIO/livingdocs-editor/pull/11919)
