@@ -71,6 +71,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 
 ## PRs to Categorize
 
+- [Hide the title tooltip and hover controls when dragging a media library card](https://github.com/livingdocsIO/livingdocs-editor/pull/12000)
 - [feat(li-distribution-dates): allow the plugin in creation, copy and transform flows](https://github.com/livingdocsIO/livingdocs-server/pull/10557)
 - [Serve multiple media library entry assets in a zip file](https://github.com/livingdocsIO/livingdocs-server/pull/9094)
 - [Download multiple media library entry assets in a zip file](https://github.com/livingdocsIO/livingdocs-editor/pull/10889)
