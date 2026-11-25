@@ -737,6 +737,7 @@ Patches typically fix bugs and apply improvements within the current release. Ke
 
 ### Livingdocs Editor Patches
 
+- [v131.0.16](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v131.0.16): fix(media-library): Close the title tooltip when the drag of a media library card ends
 - [v131.0.15](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v131.0.15): test(planning-system): Cover moves to Done in the task board paging test
 - [v131.0.14](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v131.0.14): fix(media-library): Link media library card titles and keep card links from being dragged
 - [v131.0.13](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v131.0.13): fix(deps): update dependency @livingdocs/framework from 34.3.19 to v34.3.20
