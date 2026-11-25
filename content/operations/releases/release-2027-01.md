@@ -71,6 +71,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 
 ## PRs to Categorize
 
+- [feat(li-distribution-dates): allow the plugin in creation, copy and transform flows](https://github.com/livingdocsIO/livingdocs-server/pull/10557)
 - [Serve multiple media library entry assets in a zip file](https://github.com/livingdocsIO/livingdocs-server/pull/9094)
 - [Download multiple media library entry assets in a zip file](https://github.com/livingdocsIO/livingdocs-editor/pull/10889)
 - [Fix checkbox alignment and hyphenation in rubrics dashboard cell](https://github.com/livingdocsIO/livingdocs-editor/pull/12008)
