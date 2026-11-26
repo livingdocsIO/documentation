@@ -24,7 +24,6 @@ This walkthrough for developers, explains you how to use the open-source serverl
 The [open-source example](https://github.com/livingdocsIO/dpa-example) uses an S3 Push serverless-offline setup that mimics the setup present on the [DPA Infocom](https://service.dpa-infocom.de/de/support/solutions/articles/76000020926-wie-funktioniert-die-json-feed-s3-push-api-) on a local machine. For the purpose of this guide we will use the local setup but it's easy to change the wiring to use a deployed AWS serverless app connected to the DPA S3 push.
 
 In order to follow the concepts, we recommend you make an account on the DPA API portal: https://api-portal.dpa-newslab.com
-You will also need an account on the Livingdocs service: https://edit.livingdocs.io/signup
 
 ## Setup
 
